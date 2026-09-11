@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "version": 6,
+    "version": 7,
     "updatedAt": "2026-09-11",
     "note": "ดัชนีจากหน้า 'สมุดภาพมอน' ในเกม เก็บแค่สมุด เลขประจำตัว และชื่อไทย ยังไม่ใช่ข้อมูลเต็มของ Monsterling (ยังไม่มีความสามารถและสถานะลิงก์) พอได้ข้อมูลครบค่อยสร้างไฟล์ใน data/monsterlings/ แล้วอ้างกลับมาที่ book+no",
     "source": {
@@ -9,11 +9,10 @@
       "capturedAt": "2026-09-11",
       "screen": "สมุดภาพมอน"
     },
-    "slugNote": "slug ยังเป็น null ทุกตัวเพราะรอชื่ออังกฤษทางการ — id ของเว็บห้ามเปลี่ยนทีหลัง (ดู PLAN.md §13.1) จึงยังไม่ตั้ง ไม่ใช่ลืม",
+    "slugNote": "slug = ชื่ออังกฤษทางการแปลงเป็น kebab-case และเป็น id ถาวรของเว็บ ตั้งแล้วห้ามเปลี่ยน (PLAN.md §13.1) · ตัวที่ยังเป็น null คือยังไม่ได้ชื่ออังกฤษ",
     "coverage": "field 1-165 ครบไม่ขาด · legendary มี No.1 เท่านั้น (No.2 กับ No.3 ในเกมยังเป็น ??? ยังไม่ถูกค้นพบ จึงยังไม่มีชื่อให้เก็บ) · event 1-3",
     "flags": {
-      "nameTruncated": "ชื่อถูก UI ตัดท้าย ต้องแคปใหม่ให้เห็นเต็ม",
-      "nameUncertain": "อ่านจากรูปแล้วไม่มั่นใจ ต้องยืนยันกับเกม"
+      "truncated": "รายชื่อภาษาที่ชื่อยังถูก UI ของเกมตัดท้าย ต้องแคปใหม่"
     },
     "bookNote": "เกมมีสมุดแยกกันและ 'แต่ละเล่มเริ่มนับ No.1 ใหม่' เลขจึงไม่ซ้ำกันเฉพาะภายในเล่มเดียวกัน ต้องใช้ book คู่กับ no เสมอ"
   },
@@ -21,265 +20,298 @@
     {
       "book": "field",
       "no": 1,
-      "slug": null,
+      "slug": "cappy",
       "name": {
-        "th": "ช้อปปี้"
+        "th": "ช้อปปี้",
+        "en": "Cappy"
       }
     },
     {
       "book": "field",
       "no": 2,
-      "slug": null,
+      "slug": "cappyberry",
       "name": {
-        "th": "ช้อปเบอร์รี"
+        "th": "ช้อปเบอร์รี",
+        "en": "Cappyberry"
       }
     },
     {
       "book": "field",
       "no": 3,
-      "slug": null,
+      "slug": "cappy-mama",
       "name": {
-        "th": "ช้อปปี้มัม"
+        "th": "ช้อปปี้มัม",
+        "en": "Cappy Mama"
       }
     },
     {
       "book": "field",
       "no": 4,
-      "slug": null,
+      "slug": "leafy-mama",
       "name": {
-        "th": "ลิฟฟี่มัม"
+        "th": "ลิฟฟี่มัม",
+        "en": "Leafy Mama"
       }
     },
     {
       "book": "field",
       "no": 5,
-      "slug": null,
+      "slug": "slimelet",
       "name": {
-        "th": "สไลม์"
+        "th": "สไลม์",
+        "en": "Slimelet"
       }
     },
     {
       "book": "field",
       "no": 6,
-      "slug": null,
+      "slug": "inklet",
       "name": {
-        "th": "สไลม์มืด"
+        "th": "สไลม์มืด",
+        "en": "Inklet"
       }
     },
     {
       "book": "field",
       "no": 7,
-      "slug": null,
+      "slug": "goblin-recruit",
       "name": {
-        "th": "ก็อบลิน ทหารฝึก"
+        "th": "ก็อบลิน ทหารฝึก",
+        "en": "Goblin Recruit"
       }
     },
     {
       "book": "field",
       "no": 8,
-      "slug": null,
+      "slug": "2nd-lt-goblin",
       "name": {
-        "th": "ก็อบลิน ร้อยตรี"
+        "th": "ก็อบลิน ร้อยตรี",
+        "en": "2nd Lt. Goblin"
       }
     },
     {
       "book": "field",
       "no": 9,
-      "slug": null,
+      "slug": "pvt-goblin",
       "name": {
-        "th": "ก็อบลิน พลทหาร"
+        "th": "ก็อบลิน พลทหาร",
+        "en": "Pvt. Goblin"
       }
     },
     {
       "book": "field",
       "no": 10,
-      "slug": null,
+      "slug": "cpl-goblin",
       "name": {
-        "th": "ก็อบลิน สิบโท"
+        "th": "ก็อบลิน สิบโท",
+        "en": "Cpl. Goblin"
       }
     },
     {
       "book": "field",
       "no": 11,
-      "slug": null,
+      "slug": "white-wolf-warrior",
       "name": {
-        "th": "หมาป่าขาว"
+        "th": "หมาป่าขาว",
+        "en": "White Wolf Warrior"
       }
     },
     {
       "book": "field",
       "no": 12,
-      "slug": null,
+      "slug": "black-wolf",
       "name": {
-        "th": "หมาป่าดำ"
+        "th": "หมาป่าดำ",
+        "en": "Black Wolf"
       }
     },
     {
       "book": "field",
       "no": 13,
-      "slug": null,
+      "slug": "frostjaw",
       "name": {
-        "th": "เกล็ดน้ำค้างขาว"
+        "th": "เกล็ดน้ำค้างขาว",
+        "en": "Frostjaw"
       }
     },
     {
       "book": "field",
       "no": 14,
-      "slug": null,
+      "slug": "crimsonjaw",
       "name": {
-        "th": "เกล็ดน้ำค้างแดง"
+        "th": "เกล็ดน้ำค้างแดง",
+        "en": "Crimsonjaw"
       }
     },
     {
       "book": "field",
       "no": 15,
-      "slug": null,
+      "slug": "forkmugger",
       "name": {
-        "th": "ฟอร์กมักเกอร์"
+        "th": "ฟอร์กมักเกอร์",
+        "en": "Forkmugger"
       }
     },
     {
       "book": "field",
       "no": 16,
-      "slug": null,
+      "slug": "king-slime",
       "name": {
-        "th": "สไลม์คิง"
+        "th": "สไลม์คิง",
+        "en": "King Slime"
       }
     },
     {
       "book": "field",
       "no": 17,
-      "slug": null,
+      "slug": "scarlet-queen",
       "name": {
-        "th": "ราชินีเพลิงโลกันตร์"
+        "th": "ราชินีเพลิงโลกันตร์",
+        "en": "Scarlet Queen"
       }
     },
     {
       "book": "field",
       "no": 18,
-      "slug": null,
+      "slug": "taglock",
       "name": {
-        "th": "ทากรัก"
+        "th": "ทากรัก",
+        "en": "Taglock"
       }
     },
     {
       "book": "field",
       "no": 19,
-      "slug": null,
+      "slug": "big-bro-goblin",
       "name": {
-        "th": "ก็อบลินพี่ใหญ่"
+        "th": "ก็อบลินพี่ใหญ่",
+        "en": "Big Bro Goblin"
       }
     },
     {
       "book": "field",
       "no": 20,
-      "slug": null,
+      "slug": "lupe",
       "name": {
-        "th": "ฮาคา"
+        "th": "ฮาคา",
+        "en": "Lupe"
       }
     },
     {
       "book": "field",
       "no": 21,
-      "slug": null,
+      "slug": "moon-shadow-lupe",
       "name": {
-        "th": "ฮาคาใต้เงาจันทรา"
+        "th": "ฮาคาใต้เงาจันทรา",
+        "en": "Moon Shadow Lupe"
       }
     },
     {
       "book": "field",
       "no": 22,
-      "slug": null,
+      "slug": "ring-slime",
       "name": {
-        "th": "สไลม์ลิ่ง"
+        "th": "สไลม์ลิ่ง",
+        "en": "Ring Slime"
       }
     },
     {
       "book": "field",
       "no": 23,
-      "slug": null,
+      "slug": "uncle-cappy",
       "name": {
-        "th": "ช้อปปู้อังเคิล"
+        "th": "ช้อปปู้อังเคิล",
+        "en": "Uncle Cappy"
       }
     },
     {
       "book": "field",
       "no": 24,
-      "slug": null,
+      "slug": "green-cappy-bro",
       "name": {
-        "th": "ช้อปป้าพี่ใหญ่"
+        "th": "ช้อปป้าพี่ใหญ่",
+        "en": "Green Cappy Bro"
       }
     },
     {
       "book": "field",
       "no": 25,
-      "slug": null,
+      "slug": "digger-mole",
       "name": {
-        "th": "ดูจิ"
+        "th": "ดูจิ",
+        "en": "Digger Mole"
       }
     },
     {
       "book": "field",
       "no": 26,
-      "slug": null,
+      "slug": "gold-digger-mole",
       "name": {
-        "th": "ดูจิทอง"
+        "th": "ดูจิทอง",
+        "en": "Gold Digger Mole"
       }
     },
     {
       "book": "field",
       "no": 27,
-      "slug": null,
+      "slug": "tunneler-mole",
       "name": {
-        "th": "ดอจิ"
+        "th": "ดอจิ",
+        "en": "Tunneler Mole"
       }
     },
     {
       "book": "field",
       "no": 28,
-      "slug": null,
+      "slug": "brown-cappy",
       "name": {
-        "th": "ช้อปปู้"
+        "th": "ช้อปปู้",
+        "en": "Brown Cappy"
       }
     },
     {
       "book": "field",
       "no": 29,
-      "slug": null,
+      "slug": "teal-cappy",
       "name": {
-        "th": "ช้อปปูดร้า"
+        "th": "ช้อปปูดร้า",
+        "en": "Teal Cappy"
       }
     },
     {
       "book": "field",
       "no": 30,
-      "slug": null,
+      "slug": "green-cappy",
       "name": {
-        "th": "ช้อปป้า"
+        "th": "ช้อปป้า",
+        "en": "Green Cappy"
       }
     },
     {
       "book": "field",
       "no": 31,
-      "slug": null,
+      "slug": "orange-cappy",
       "name": {
-        "th": "ช้อปออเร้นจ์"
+        "th": "ช้อปออเร้นจ์",
+        "en": "Orange Cappy"
       }
     },
     {
       "book": "field",
       "no": 32,
-      "slug": null,
+      "slug": "spark-slime",
       "name": {
-        "th": "สไลม์สายฟ้า"
+        "th": "สไลม์สายฟ้า",
+        "en": "Spark Slime"
       }
     },
     {
       "book": "field",
       "no": 33,
-      "slug": null,
+      "slug": "golden-spark-slime",
       "name": {
-        "th": "สไลม์สายฟ้าทอง"
+        "th": "สไลม์สายฟ้าทอง",
+        "en": "Golden Spark Slime"
       }
     },
     {
@@ -287,15 +319,20 @@
       "no": 34,
       "slug": null,
       "name": {
-        "th": "สายฟ้าขาว"
-      }
+        "th": "สายฟ้าขาว",
+        "en": "White Wolf Fulmin"
+      },
+      "truncated": [
+        "en"
+      ]
     },
     {
       "book": "field",
       "no": 35,
-      "slug": null,
+      "slug": "moley-mole",
       "name": {
-        "th": "มอลลี่"
+        "th": "มอลลี่",
+        "en": "Moley Mole"
       }
     },
     {
@@ -303,31 +340,38 @@
       "no": 36,
       "slug": null,
       "name": {
-        "th": "มอลลี่จอมคลั่งรักเงิน"
-      }
+        "th": "มอลลี่จอมคลั่งรักเงิน",
+        "en": "Gold Digger Moley"
+      },
+      "truncated": [
+        "en"
+      ]
     },
     {
       "book": "field",
       "no": 37,
-      "slug": null,
+      "slug": "green-cappy-papa",
       "name": {
-        "th": "ช้อปป้าแดดดี้"
+        "th": "ช้อปป้าแดดดี้",
+        "en": "Green Cappy Papa"
       }
     },
     {
       "book": "field",
       "no": 38,
-      "slug": null,
+      "slug": "custos",
       "name": {
-        "th": "คุสโตส"
+        "th": "คุสโตส",
+        "en": "Custos"
       }
     },
     {
       "book": "field",
       "no": 39,
-      "slug": null,
+      "slug": "el-dorado-guardian",
       "name": {
-        "th": "ผู้พิทักษ์แห่งนครทองคำ"
+        "th": "ผู้พิทักษ์แห่งนครทองคำ",
+        "en": "El Dorado Guardian"
       }
     },
     {
@@ -1241,7 +1285,9 @@
       "name": {
         "th": "ลิซาร์ด มือธนูทอง"
       },
-      "nameTruncated": true
+      "truncated": [
+        "th"
+      ]
     },
     {
       "book": "field",

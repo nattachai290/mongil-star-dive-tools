@@ -116,11 +116,13 @@ const dexRaw = readJson(join(DATA, "meta", "monster-dex.json"), "data/meta/monst
   | { entries?: unknown[] }
   | undefined;
 
+const dexSlugs = new Map<string, string>();
+const dexByKey = new Map<string, { slug: string | null }>();
+
 if (dexRaw) {
   const seen = new Map<string, Set<number>>();
   let unassigned = 0;
   let truncated = 0;
-  let uncertain = 0;
 
   for (const [i, entry] of (dexRaw.entries ?? []).entries()) {
     const where = `data/meta/monster-dex.json[${i}]`;
@@ -132,14 +134,18 @@ if (dexRaw) {
     if (book.has(e.no)) fail(where, `สมุด "${e.book}" มีเลข no ${e.no} ซ้ำ`);
     book.add(e.no);
     seen.set(e.book, book);
+    dexByKey.set(`${e.book}:${e.no}`, { slug: e.slug });
 
-    // slug ที่ตั้งแล้วต้องมีไฟล์ Monsterling จริงรองรับ ไม่งั้นดัชนีจะชี้ไปที่ว่าง
-    if (e.slug && !ids.monsterlings.has(e.slug)) {
-      fail(where, `slug "${e.slug}" ยังไม่มีไฟล์ใน data/monsterlings/`);
+    // slug คือ id ที่ "จอง" ไว้ ยังไม่ต้องมีไฟล์ Monsterling รองรับ
+    // แต่ห้ามซ้ำกัน เพราะมันคือ URL ของเว็บ
+    if (e.slug) {
+      const owner = dexSlugs.get(e.slug);
+      if (owner) fail(where, `slug "${e.slug}" ซ้ำกับ ${owner}`);
+      else dexSlugs.set(e.slug, `${e.book} No.${e.no}`);
+    } else {
+      unassigned += 1;
     }
-    if (!e.slug) unassigned += 1;
-    if (e.nameTruncated) truncated += 1;
-    if (e.nameUncertain) uncertain += 1;
+    if (e.truncated?.length) truncated += 1;
   }
 
   const summary: string[] = [];
@@ -154,7 +160,6 @@ if (dexRaw) {
 
   if (unassigned) warn("data/meta/monster-dex.json", `${unassigned} ตัวยังไม่ได้ตั้ง slug — รอชื่ออังกฤษทางการก่อน (ดู PLAN.md §13.1)`);
   if (truncated) warn("data/meta/monster-dex.json", `${truncated} ตัวชื่อถูกตัดในหน้าจอเกม ต้องแคปใหม่ให้เห็นชื่อเต็ม`);
-  if (uncertain) warn("data/meta/monster-dex.json", `${uncertain} ตัวอ่านจากรูปแล้วไม่มั่นใจ ต้องยืนยันกับเกม`);
 }
 
 // ---------- 3. อ้างอิงข้ามหมวด ----------
@@ -176,6 +181,18 @@ for (const [id, doc] of Object.entries(parsed.characters ?? {})) {
     checkRefs(where, rec.monsterlings, "monsterlings", "recommended.monsterlings");
     checkRefs(where, rec.teammates, "characters", "recommended.teammates");
     checkRefs(where, rec.builds, "builds", "recommended.builds");
+  }
+}
+
+for (const [id, doc] of Object.entries(parsed.monsterlings ?? {})) {
+  const dex = doc.dex as { book: string; no: number } | undefined;
+  if (!dex) continue;
+  const where = `data/monsterlings/${id}.json`;
+  const entry = dexByKey.get(`${dex.book}:${dex.no}`);
+  if (!entry) {
+    fail(where, `dex ชี้ไปที่ ${dex.book} No.${dex.no} แต่ไม่มีรายการนั้นในสมุดภาพมอน`);
+  } else if (entry.slug && entry.slug !== id) {
+    fail(where, `สมุดภาพมอนจอง id "${entry.slug}" ไว้ให้ ${dex.book} No.${dex.no} แต่ไฟล์นี้ใช้ id "${id}"`);
   }
 }
 

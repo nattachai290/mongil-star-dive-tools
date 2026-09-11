@@ -187,12 +187,14 @@ export const monsterDexEntry = z.object({
   /** เกมแยกสมุดหลายเล่ม และแต่ละเล่มเริ่มนับ No.1 ใหม่ — เลขจึงไม่ซ้ำเฉพาะในเล่มเดียวกัน */
   book: vocabEnum("dexBook"),
   no: z.number().int().positive(),
+  /**
+   * id ถาวรของเว็บ ตั้งจากชื่ออังกฤษทางการ
+   * null = ยังไม่ได้ชื่ออังกฤษ จึงยังไม่ตั้ง — ไม่ใช่ลืม เพราะตั้งแล้วห้ามเปลี่ยน
+   */
   slug: slug.nullable(),
   name: text,
-  /** ชื่อถูก UI ของเกมตัดท้าย ต้องแคปใหม่ */
-  nameTruncated: z.boolean().optional(),
-  /** อ่านจากรูปแล้วไม่มั่นใจ ต้องยืนยันกับเกม */
-  nameUncertain: z.boolean().optional(),
+  /** ภาษาที่ชื่อยังถูก UI ของเกมตัดท้าย เช่น ["en"] — ต้องแคปใหม่ */
+  truncated: z.array(z.enum(["th", "en"])).optional(),
 });
 
 /** หมวด -> schema ที่ใช้ตรวจ ใช้ร่วมกันระหว่าง validate:data และตัวโหลดข้อมูลของเว็บ */
