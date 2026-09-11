@@ -1,43 +1,69 @@
+import type { LocalizedText } from "./schema/common";
+
 /**
- * ห้าหมวดหลักของเว็บ — ใช้เป็นแหล่งเดียวทั้งเมนูและการ์ดหน้าแรก
+ * หมวดหลักของเว็บ — แหล่งเดียวทั้งเมนูและการ์ดหน้าแรก
  * `ready` จะเปลี่ยนเป็น true เมื่อหน้านั้นถูกสร้างจริง (ดู milestone M2–M5 ใน docs/PLAN.md)
  */
 export type Section = {
   slug: string;
-  title: string;
-  blurb: string;
+  title: LocalizedText;
+  blurb: LocalizedText;
   ready: boolean;
 };
 
 export const SECTIONS: Section[] = [
   {
     slug: "characters",
-    title: "ตัวละคร",
-    blurb: "สเตตัส สกิลทั้ง 4 พร้อมค่าสเกลเลเวล 1–16 และไทม์ไลน์ Awaken ทั้ง 6 ขั้น",
+    title: { th: "ตัวละคร", en: "Characters" },
+    blurb: {
+      th: "สเตตัส สกิลทั้ง 4 พร้อมค่าสเกลเลเวล 1–16 และไทม์ไลน์ Awaken ทั้ง 6 ขั้น",
+      en: "Stats, all four skills with level 1–16 scaling, and the six Awaken stages",
+    },
     ready: false,
   },
   {
     slug: "artifacts",
-    title: "Artifact",
-    blurb: "ค่าสเตตัสตายตัวและเอฟเฟกต์ประจำชิ้น พร้อมบอกว่าตัวละครไหนควรใส่",
+    title: { th: "Artifact", en: "Artifacts" },
+    blurb: {
+      th: "ค่าสเตตัสตายตัวและเอฟเฟกต์ประจำชิ้น พร้อมบอกว่าตัวละครไหนควรใส่",
+      en: "Fixed stats and per-piece effects, with who should equip them",
+    },
+    ready: false,
+  },
+  {
+    slug: "equipment",
+    title: { th: "Equipment", en: "Equipment" },
+    blurb: {
+      th: "ของสวมใส่ 4 ช่อง ค่าหลัก ค่ารอง และโบนัสเมื่อใส่ครบเซ็ต",
+      en: "Four gear slots, main and sub stats, and set bonuses",
+    },
     ready: false,
   },
   {
     slug: "monsterlings",
-    title: "Monsterling",
-    blurb: "สายพันธุ์ Trait ความสามารถ และแผนผังสูตร Combine",
+    title: { th: "Monsterling", en: "Monsterlings" },
+    blurb: {
+      th: "สายพันธุ์ Trait ความสามารถ และสถานะว่าใส่ลิงก์ได้หรือไม่",
+      en: "Breeds, traits, abilities, and whether each one can be linked",
+    },
     ready: false,
   },
   {
     slug: "food",
-    title: "อาหาร",
-    blurb: "Entree และ Side บัฟ 30 นาที วัตถุดิบที่สลับได้ และค่าเวอร์ชัน Exquisite",
+    title: { th: "อาหาร", en: "Food" },
+    blurb: {
+      th: "Entree และ Side บัฟ 30 นาที วัตถุดิบที่สลับได้ และค่าเวอร์ชัน Exquisite",
+      en: "Entrees and sides, 30-minute buffs, swappable ingredients and Exquisite values",
+    },
     ready: false,
   },
   {
     slug: "builds",
-    title: "Build",
-    blurb: "ชุดของที่แนะนำ ลำดับอัปสกิล เป้าหมาย Awaken และทีมที่เข้ากัน",
+    title: { th: "Build", en: "Builds" },
+    blurb: {
+      th: "ชุดของที่แนะนำ เป้าหมาย Awaken ทีมที่เข้ากัน และตัวเลขดาเมจที่คำนวณจากชุดนั้น",
+      en: "Recommended gear, Awaken targets, team comps and damage computed from that setup",
+    },
     ready: false,
   },
 ];
