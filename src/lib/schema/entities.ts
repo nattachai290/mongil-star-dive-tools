@@ -127,6 +127,9 @@ export const equipmentSet = z.object({
 export const monsterling = z.object({
   id: slug,
   name: text,
+  /** เลขประจำตัวในสมุดภาพมอน — ผูกกลับไปที่ data/meta/monster-dex.json */
+  dexNo: z.number().int().positive().optional(),
+  region: z.string().min(1).optional(),
   rarity: vocabEnum("rarity"),
   breed: text,
   traits: z.array(text).default([]),
@@ -169,6 +172,18 @@ export const build = z.object({
     .default([]),
   notes: text.optional(),
   source,
+});
+
+/**
+ * หนึ่งแถวในสมุดภาพมอน — เก็บแค่เลขกับชื่อ ยังไม่ใช่ข้อมูลเต็มของ Monsterling
+ * slug เป็น null ได้ เพราะยังไม่รู้ชื่ออังกฤษทางการ และ id ของเว็บห้ามเปลี่ยนทีหลัง
+ */
+export const monsterDexEntry = z.object({
+  no: z.number().int().positive(),
+  region: z.string().min(1),
+  slug: slug.nullable(),
+  name: text,
+  nameTruncated: z.boolean().optional(),
 });
 
 /** หมวด -> schema ที่ใช้ตรวจ ใช้ร่วมกันระหว่าง validate:data และตัวโหลดข้อมูลของเว็บ */

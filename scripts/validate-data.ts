@@ -12,7 +12,7 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { z } from "zod";
-import { SCHEMAS, equipmentSet, type Collection } from "../src/lib/schema/entities";
+import { SCHEMAS, equipmentSet, monsterDexEntry, type Collection } from "../src/lib/schema/entities";
 import { FORMULA, IMPLEMENTED_STEPS } from "../src/lib/formula";
 
 const ROOT = process.cwd();
@@ -109,6 +109,38 @@ if (Array.isArray(setsRaw)) {
   });
 } else if (setsRaw !== undefined) {
   fail("data/meta/sets.json", "ต้องเป็น array");
+}
+
+// ---------- สมุดภาพมอน ----------
+const dexRaw = readJson(join(DATA, "meta", "monster-dex.json"), "data/meta/monster-dex.json") as
+  | { regions?: Record<string, unknown>; entries?: unknown[] }
+  | undefined;
+
+if (dexRaw) {
+  const regions = new Set(Object.keys(dexRaw.regions ?? {}));
+  const seenNo = new Set<number>();
+  let unassigned = 0;
+  let truncated = 0;
+
+  for (const [i, entry] of (dexRaw.entries ?? []).entries()) {
+    const where = `data/meta/monster-dex.json[${i}]`;
+    const r = monsterDexEntry.safeParse(entry);
+    if (!r.success) { zodIssues(where, r.error); continue; }
+
+    const e = r.data;
+    if (seenNo.has(e.no)) fail(where, `เลข no ${e.no} ซ้ำ`);
+    seenNo.add(e.no);
+    if (!regions.has(e.region)) fail(where, `region "${e.region}" ไม่มีในรายการ regions`);
+    // slug ที่ตั้งแล้วต้องมีไฟล์ Monsterling จริงรองรับ ไม่งั้นดัชนีจะชี้ไปที่ว่าง
+    if (e.slug && !ids.monsterlings.has(e.slug)) {
+      fail(where, `slug "${e.slug}" ยังไม่มีไฟล์ใน data/monsterlings/`);
+    }
+    if (!e.slug) unassigned += 1;
+    if (e.nameTruncated) truncated += 1;
+  }
+
+  if (unassigned) warn("data/meta/monster-dex.json", `${unassigned} ตัวยังไม่ได้ตั้ง slug — รอชื่ออังกฤษทางการก่อน (ดู PLAN.md §13.1)`);
+  if (truncated) warn("data/meta/monster-dex.json", `${truncated} ตัวชื่อถูกตัดในหน้าจอเกม ต้องแคปใหม่ให้เห็นชื่อเต็ม`);
 }
 
 // ---------- 3. อ้างอิงข้ามหมวด ----------
