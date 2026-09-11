@@ -117,7 +117,7 @@ const dexRaw = readJson(join(DATA, "meta", "monster-dex.json"), "data/meta/monst
   | undefined;
 
 if (dexRaw) {
-  const seenNo = new Set<number>();
+  const seen = new Map<string, Set<number>>();
   let unassigned = 0;
   let truncated = 0;
   let uncertain = 0;
@@ -128,8 +128,10 @@ if (dexRaw) {
     if (!r.success) { zodIssues(where, r.error); continue; }
 
     const e = r.data;
-    if (seenNo.has(e.no)) fail(where, `เลข no ${e.no} ซ้ำ`);
-    seenNo.add(e.no);
+    const book = seen.get(e.book) ?? new Set<number>();
+    if (book.has(e.no)) fail(where, `สมุด "${e.book}" มีเลข no ${e.no} ซ้ำ`);
+    book.add(e.no);
+    seen.set(e.book, book);
 
     // slug ที่ตั้งแล้วต้องมีไฟล์ Monsterling จริงรองรับ ไม่งั้นดัชนีจะชี้ไปที่ว่าง
     if (e.slug && !ids.monsterlings.has(e.slug)) {
@@ -140,11 +142,15 @@ if (dexRaw) {
     if (e.nameUncertain) uncertain += 1;
   }
 
-  const maxNo = Math.max(0, ...seenNo);
-  const gaps = Array.from({ length: maxNo }, (_, i) => i + 1).filter((n) => !seenNo.has(n));
-  console.log(`สมุดภาพมอน: ${seenNo.size} รายการ (สูงสุด No.${maxNo})`);
-  // เลขที่หายไปกลางดัชนีแปลว่าแคปตกหน้า ไม่ใช่เกมข้ามเลข
-  if (gaps.length) warn("data/meta/monster-dex.json", `เลขที่ยังไม่มีข้อมูล: ${gaps.join(", ")}`);
+  const summary: string[] = [];
+  for (const [book, nos] of seen) {
+    const maxNo = Math.max(...nos);
+    summary.push(`${book} ${nos.size} (สูงสุด No.${maxNo})`);
+    // เลขที่หายไปกลางเล่มแปลว่าแคปตกหน้า ไม่ใช่เกมข้ามเลข
+    const gaps = Array.from({ length: maxNo }, (_, i) => i + 1).filter((n) => !nos.has(n));
+    if (gaps.length) warn("data/meta/monster-dex.json", `สมุด "${book}" ขาดเลข: ${gaps.join(", ")}`);
+  }
+  console.log(`สมุดภาพมอน: ${summary.join(" · ")}`);
 
   if (unassigned) warn("data/meta/monster-dex.json", `${unassigned} ตัวยังไม่ได้ตั้ง slug — รอชื่ออังกฤษทางการก่อน (ดู PLAN.md §13.1)`);
   if (truncated) warn("data/meta/monster-dex.json", `${truncated} ตัวชื่อถูกตัดในหน้าจอเกม ต้องแคปใหม่ให้เห็นชื่อเต็ม`);

@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": 4,
+    "version": 5,
     "updatedAt": "2026-09-11",
-    "note": "ดัชนีจากหน้า 'สมุดภาพมอน' ในเกม เก็บแค่เลขประจำตัวกับชื่อไทย ยังไม่ใช่ข้อมูลเต็มของ Monsterling (ยังไม่มีความสามารถและสถานะลิงก์) พอได้ข้อมูลครบค่อยสร้างไฟล์ใน data/monsterlings/ แล้วอ้างกลับมาที่เลข no",
+    "note": "ดัชนีจากหน้า 'สมุดภาพมอน' ในเกม เก็บแค่สมุด เลขประจำตัว และชื่อไทย ยังไม่ใช่ข้อมูลเต็มของ Monsterling (ยังไม่มีความสามารถและสถานะลิงก์) พอได้ข้อมูลครบค่อยสร้างไฟล์ใน data/monsterlings/ แล้วอ้างกลับมาที่ book+no",
     "source": {
       "by": "in-game",
       "gameVersion": "unknown",
@@ -10,14 +10,16 @@
       "screen": "สมุดภาพมอน"
     },
     "slugNote": "slug ยังเป็น null ทุกตัวเพราะรอชื่ออังกฤษทางการ — id ของเว็บห้ามเปลี่ยนทีหลัง (ดู PLAN.md §13.1) จึงยังไม่ตั้ง ไม่ใช่ลืม",
-    "coverage": "เลข 1-144 ครบไม่ขาด · ยังมีโซนในแถบด้านซ้ายที่ยังไม่ได้เก็บ",
+    "coverage": "field 1-165 ครบไม่ขาด · legendary มี No.1 เท่านั้น (No.2 กับ No.3 ในเกมยังเป็น ??? ยังไม่ถูกค้นพบ จึงยังไม่มีชื่อให้เก็บ) · event 1-3",
     "flags": {
       "nameTruncated": "ชื่อถูก UI ตัดท้าย ต้องแคปใหม่ให้เห็นเต็ม",
       "nameUncertain": "อ่านจากรูปแล้วไม่มั่นใจ ต้องยืนยันกับเกม"
-    }
+    },
+    "bookNote": "เกมมีสมุดแยกกันและ 'แต่ละเล่มเริ่มนับ No.1 ใหม่' เลขจึงไม่ซ้ำกันเฉพาะภายในเล่มเดียวกัน ต้องใช้ book คู่กับ no เสมอ"
   },
   "entries": [
     {
+      "book": "field",
       "no": 1,
       "slug": null,
       "name": {
@@ -25,6 +27,7 @@
       }
     },
     {
+      "book": "field",
       "no": 2,
       "slug": null,
       "name": {
@@ -32,6 +35,7 @@
       }
     },
     {
+      "book": "field",
       "no": 3,
       "slug": null,
       "name": {
@@ -39,6 +43,7 @@
       }
     },
     {
+      "book": "field",
       "no": 4,
       "slug": null,
       "name": {
@@ -46,6 +51,7 @@
       }
     },
     {
+      "book": "field",
       "no": 5,
       "slug": null,
       "name": {
@@ -53,6 +59,7 @@
       }
     },
     {
+      "book": "field",
       "no": 6,
       "slug": null,
       "name": {
@@ -60,6 +67,7 @@
       }
     },
     {
+      "book": "field",
       "no": 7,
       "slug": null,
       "name": {
@@ -67,6 +75,7 @@
       }
     },
     {
+      "book": "field",
       "no": 8,
       "slug": null,
       "name": {
@@ -74,6 +83,7 @@
       }
     },
     {
+      "book": "field",
       "no": 9,
       "slug": null,
       "name": {
@@ -81,6 +91,7 @@
       }
     },
     {
+      "book": "field",
       "no": 10,
       "slug": null,
       "name": {
@@ -88,6 +99,7 @@
       }
     },
     {
+      "book": "field",
       "no": 11,
       "slug": null,
       "name": {
@@ -95,6 +107,7 @@
       }
     },
     {
+      "book": "field",
       "no": 12,
       "slug": null,
       "name": {
@@ -102,6 +115,7 @@
       }
     },
     {
+      "book": "field",
       "no": 13,
       "slug": null,
       "name": {
@@ -109,6 +123,7 @@
       }
     },
     {
+      "book": "field",
       "no": 14,
       "slug": null,
       "name": {
@@ -116,6 +131,7 @@
       }
     },
     {
+      "book": "field",
       "no": 15,
       "slug": null,
       "name": {
@@ -123,6 +139,7 @@
       }
     },
     {
+      "book": "field",
       "no": 16,
       "slug": null,
       "name": {
@@ -130,6 +147,7 @@
       }
     },
     {
+      "book": "field",
       "no": 17,
       "slug": null,
       "name": {
@@ -137,6 +155,7 @@
       }
     },
     {
+      "book": "field",
       "no": 18,
       "slug": null,
       "name": {
@@ -144,6 +163,7 @@
       }
     },
     {
+      "book": "field",
       "no": 19,
       "slug": null,
       "name": {
@@ -151,6 +171,7 @@
       }
     },
     {
+      "book": "field",
       "no": 20,
       "slug": null,
       "name": {
@@ -158,6 +179,7 @@
       }
     },
     {
+      "book": "field",
       "no": 21,
       "slug": null,
       "name": {
@@ -165,6 +187,7 @@
       }
     },
     {
+      "book": "field",
       "no": 22,
       "slug": null,
       "name": {
@@ -172,6 +195,7 @@
       }
     },
     {
+      "book": "field",
       "no": 23,
       "slug": null,
       "name": {
@@ -179,6 +203,7 @@
       }
     },
     {
+      "book": "field",
       "no": 24,
       "slug": null,
       "name": {
@@ -186,6 +211,7 @@
       }
     },
     {
+      "book": "field",
       "no": 25,
       "slug": null,
       "name": {
@@ -193,6 +219,7 @@
       }
     },
     {
+      "book": "field",
       "no": 26,
       "slug": null,
       "name": {
@@ -200,6 +227,7 @@
       }
     },
     {
+      "book": "field",
       "no": 27,
       "slug": null,
       "name": {
@@ -207,6 +235,7 @@
       }
     },
     {
+      "book": "field",
       "no": 28,
       "slug": null,
       "name": {
@@ -214,6 +243,7 @@
       }
     },
     {
+      "book": "field",
       "no": 29,
       "slug": null,
       "name": {
@@ -221,6 +251,7 @@
       }
     },
     {
+      "book": "field",
       "no": 30,
       "slug": null,
       "name": {
@@ -228,6 +259,7 @@
       }
     },
     {
+      "book": "field",
       "no": 31,
       "slug": null,
       "name": {
@@ -235,6 +267,7 @@
       }
     },
     {
+      "book": "field",
       "no": 32,
       "slug": null,
       "name": {
@@ -242,6 +275,7 @@
       }
     },
     {
+      "book": "field",
       "no": 33,
       "slug": null,
       "name": {
@@ -249,6 +283,7 @@
       }
     },
     {
+      "book": "field",
       "no": 34,
       "slug": null,
       "name": {
@@ -256,6 +291,7 @@
       }
     },
     {
+      "book": "field",
       "no": 35,
       "slug": null,
       "name": {
@@ -263,6 +299,7 @@
       }
     },
     {
+      "book": "field",
       "no": 36,
       "slug": null,
       "name": {
@@ -270,6 +307,7 @@
       }
     },
     {
+      "book": "field",
       "no": 37,
       "slug": null,
       "name": {
@@ -277,6 +315,7 @@
       }
     },
     {
+      "book": "field",
       "no": 38,
       "slug": null,
       "name": {
@@ -284,6 +323,7 @@
       }
     },
     {
+      "book": "field",
       "no": 39,
       "slug": null,
       "name": {
@@ -291,6 +331,7 @@
       }
     },
     {
+      "book": "field",
       "no": 40,
       "slug": null,
       "name": {
@@ -298,6 +339,7 @@
       }
     },
     {
+      "book": "field",
       "no": 41,
       "slug": null,
       "name": {
@@ -305,6 +347,7 @@
       }
     },
     {
+      "book": "field",
       "no": 42,
       "slug": null,
       "name": {
@@ -312,6 +355,7 @@
       }
     },
     {
+      "book": "field",
       "no": 43,
       "slug": null,
       "name": {
@@ -319,6 +363,7 @@
       }
     },
     {
+      "book": "field",
       "no": 44,
       "slug": null,
       "name": {
@@ -326,6 +371,7 @@
       }
     },
     {
+      "book": "field",
       "no": 45,
       "slug": null,
       "name": {
@@ -333,6 +379,7 @@
       }
     },
     {
+      "book": "field",
       "no": 46,
       "slug": null,
       "name": {
@@ -340,6 +387,7 @@
       }
     },
     {
+      "book": "field",
       "no": 47,
       "slug": null,
       "name": {
@@ -347,6 +395,7 @@
       }
     },
     {
+      "book": "field",
       "no": 48,
       "slug": null,
       "name": {
@@ -354,6 +403,7 @@
       }
     },
     {
+      "book": "field",
       "no": 49,
       "slug": null,
       "name": {
@@ -361,6 +411,7 @@
       }
     },
     {
+      "book": "field",
       "no": 50,
       "slug": null,
       "name": {
@@ -368,6 +419,7 @@
       }
     },
     {
+      "book": "field",
       "no": 51,
       "slug": null,
       "name": {
@@ -375,6 +427,7 @@
       }
     },
     {
+      "book": "field",
       "no": 52,
       "slug": null,
       "name": {
@@ -382,6 +435,7 @@
       }
     },
     {
+      "book": "field",
       "no": 53,
       "slug": null,
       "name": {
@@ -389,6 +443,7 @@
       }
     },
     {
+      "book": "field",
       "no": 54,
       "slug": null,
       "name": {
@@ -396,6 +451,7 @@
       }
     },
     {
+      "book": "field",
       "no": 55,
       "slug": null,
       "name": {
@@ -403,6 +459,7 @@
       }
     },
     {
+      "book": "field",
       "no": 56,
       "slug": null,
       "name": {
@@ -410,6 +467,7 @@
       }
     },
     {
+      "book": "field",
       "no": 57,
       "slug": null,
       "name": {
@@ -417,6 +475,7 @@
       }
     },
     {
+      "book": "field",
       "no": 58,
       "slug": null,
       "name": {
@@ -424,6 +483,7 @@
       }
     },
     {
+      "book": "field",
       "no": 59,
       "slug": null,
       "name": {
@@ -431,6 +491,7 @@
       }
     },
     {
+      "book": "field",
       "no": 60,
       "slug": null,
       "name": {
@@ -438,6 +499,7 @@
       }
     },
     {
+      "book": "field",
       "no": 61,
       "slug": null,
       "name": {
@@ -445,6 +507,7 @@
       }
     },
     {
+      "book": "field",
       "no": 62,
       "slug": null,
       "name": {
@@ -452,6 +515,7 @@
       }
     },
     {
+      "book": "field",
       "no": 63,
       "slug": null,
       "name": {
@@ -459,6 +523,7 @@
       }
     },
     {
+      "book": "field",
       "no": 64,
       "slug": null,
       "name": {
@@ -466,6 +531,7 @@
       }
     },
     {
+      "book": "field",
       "no": 65,
       "slug": null,
       "name": {
@@ -473,6 +539,7 @@
       }
     },
     {
+      "book": "field",
       "no": 66,
       "slug": null,
       "name": {
@@ -480,6 +547,7 @@
       }
     },
     {
+      "book": "field",
       "no": 67,
       "slug": null,
       "name": {
@@ -487,6 +555,7 @@
       }
     },
     {
+      "book": "field",
       "no": 68,
       "slug": null,
       "name": {
@@ -494,6 +563,7 @@
       }
     },
     {
+      "book": "field",
       "no": 69,
       "slug": null,
       "name": {
@@ -501,6 +571,7 @@
       }
     },
     {
+      "book": "field",
       "no": 70,
       "slug": null,
       "name": {
@@ -508,6 +579,7 @@
       }
     },
     {
+      "book": "field",
       "no": 71,
       "slug": null,
       "name": {
@@ -515,6 +587,7 @@
       }
     },
     {
+      "book": "field",
       "no": 72,
       "slug": null,
       "name": {
@@ -522,6 +595,7 @@
       }
     },
     {
+      "book": "field",
       "no": 73,
       "slug": null,
       "name": {
@@ -529,6 +603,7 @@
       }
     },
     {
+      "book": "field",
       "no": 74,
       "slug": null,
       "name": {
@@ -536,6 +611,7 @@
       }
     },
     {
+      "book": "field",
       "no": 75,
       "slug": null,
       "name": {
@@ -543,6 +619,7 @@
       }
     },
     {
+      "book": "field",
       "no": 76,
       "slug": null,
       "name": {
@@ -550,6 +627,7 @@
       }
     },
     {
+      "book": "field",
       "no": 77,
       "slug": null,
       "name": {
@@ -557,6 +635,7 @@
       }
     },
     {
+      "book": "field",
       "no": 78,
       "slug": null,
       "name": {
@@ -564,6 +643,7 @@
       }
     },
     {
+      "book": "field",
       "no": 79,
       "slug": null,
       "name": {
@@ -571,6 +651,7 @@
       }
     },
     {
+      "book": "field",
       "no": 80,
       "slug": null,
       "name": {
@@ -578,6 +659,7 @@
       }
     },
     {
+      "book": "field",
       "no": 81,
       "slug": null,
       "name": {
@@ -585,6 +667,7 @@
       }
     },
     {
+      "book": "field",
       "no": 82,
       "slug": null,
       "name": {
@@ -592,6 +675,7 @@
       }
     },
     {
+      "book": "field",
       "no": 83,
       "slug": null,
       "name": {
@@ -599,6 +683,7 @@
       }
     },
     {
+      "book": "field",
       "no": 84,
       "slug": null,
       "name": {
@@ -606,6 +691,7 @@
       }
     },
     {
+      "book": "field",
       "no": 85,
       "slug": null,
       "name": {
@@ -613,6 +699,7 @@
       }
     },
     {
+      "book": "field",
       "no": 86,
       "slug": null,
       "name": {
@@ -620,6 +707,7 @@
       }
     },
     {
+      "book": "field",
       "no": 87,
       "slug": null,
       "name": {
@@ -627,6 +715,7 @@
       }
     },
     {
+      "book": "field",
       "no": 88,
       "slug": null,
       "name": {
@@ -634,6 +723,7 @@
       }
     },
     {
+      "book": "field",
       "no": 89,
       "slug": null,
       "name": {
@@ -641,6 +731,7 @@
       }
     },
     {
+      "book": "field",
       "no": 90,
       "slug": null,
       "name": {
@@ -648,6 +739,7 @@
       }
     },
     {
+      "book": "field",
       "no": 91,
       "slug": null,
       "name": {
@@ -655,6 +747,7 @@
       }
     },
     {
+      "book": "field",
       "no": 92,
       "slug": null,
       "name": {
@@ -662,6 +755,7 @@
       }
     },
     {
+      "book": "field",
       "no": 93,
       "slug": null,
       "name": {
@@ -669,6 +763,7 @@
       }
     },
     {
+      "book": "field",
       "no": 94,
       "slug": null,
       "name": {
@@ -676,6 +771,7 @@
       }
     },
     {
+      "book": "field",
       "no": 95,
       "slug": null,
       "name": {
@@ -683,6 +779,7 @@
       }
     },
     {
+      "book": "field",
       "no": 96,
       "slug": null,
       "name": {
@@ -690,6 +787,7 @@
       }
     },
     {
+      "book": "field",
       "no": 97,
       "slug": null,
       "name": {
@@ -697,6 +795,7 @@
       }
     },
     {
+      "book": "field",
       "no": 98,
       "slug": null,
       "name": {
@@ -704,6 +803,7 @@
       }
     },
     {
+      "book": "field",
       "no": 99,
       "slug": null,
       "name": {
@@ -711,6 +811,7 @@
       }
     },
     {
+      "book": "field",
       "no": 100,
       "slug": null,
       "name": {
@@ -718,6 +819,7 @@
       }
     },
     {
+      "book": "field",
       "no": 101,
       "slug": null,
       "name": {
@@ -725,6 +827,7 @@
       }
     },
     {
+      "book": "field",
       "no": 102,
       "slug": null,
       "name": {
@@ -732,6 +835,7 @@
       }
     },
     {
+      "book": "field",
       "no": 103,
       "slug": null,
       "name": {
@@ -739,6 +843,7 @@
       }
     },
     {
+      "book": "field",
       "no": 104,
       "slug": null,
       "name": {
@@ -746,6 +851,7 @@
       }
     },
     {
+      "book": "field",
       "no": 105,
       "slug": null,
       "name": {
@@ -753,6 +859,7 @@
       }
     },
     {
+      "book": "field",
       "no": 106,
       "slug": null,
       "name": {
@@ -760,6 +867,7 @@
       }
     },
     {
+      "book": "field",
       "no": 107,
       "slug": null,
       "name": {
@@ -767,6 +875,7 @@
       }
     },
     {
+      "book": "field",
       "no": 108,
       "slug": null,
       "name": {
@@ -774,6 +883,7 @@
       }
     },
     {
+      "book": "field",
       "no": 109,
       "slug": null,
       "name": {
@@ -781,6 +891,7 @@
       }
     },
     {
+      "book": "field",
       "no": 110,
       "slug": null,
       "name": {
@@ -788,6 +899,7 @@
       }
     },
     {
+      "book": "field",
       "no": 111,
       "slug": null,
       "name": {
@@ -795,6 +907,7 @@
       }
     },
     {
+      "book": "field",
       "no": 112,
       "slug": null,
       "name": {
@@ -802,6 +915,7 @@
       }
     },
     {
+      "book": "field",
       "no": 113,
       "slug": null,
       "name": {
@@ -809,6 +923,7 @@
       }
     },
     {
+      "book": "field",
       "no": 114,
       "slug": null,
       "name": {
@@ -816,6 +931,7 @@
       }
     },
     {
+      "book": "field",
       "no": 115,
       "slug": null,
       "name": {
@@ -823,6 +939,7 @@
       }
     },
     {
+      "book": "field",
       "no": 116,
       "slug": null,
       "name": {
@@ -830,6 +947,7 @@
       }
     },
     {
+      "book": "field",
       "no": 117,
       "slug": null,
       "name": {
@@ -837,6 +955,7 @@
       }
     },
     {
+      "book": "field",
       "no": 118,
       "slug": null,
       "name": {
@@ -844,6 +963,7 @@
       }
     },
     {
+      "book": "field",
       "no": 119,
       "slug": null,
       "name": {
@@ -851,6 +971,7 @@
       }
     },
     {
+      "book": "field",
       "no": 120,
       "slug": null,
       "name": {
@@ -858,6 +979,7 @@
       }
     },
     {
+      "book": "field",
       "no": 121,
       "slug": null,
       "name": {
@@ -865,6 +987,7 @@
       }
     },
     {
+      "book": "field",
       "no": 122,
       "slug": null,
       "name": {
@@ -872,6 +995,7 @@
       }
     },
     {
+      "book": "field",
       "no": 123,
       "slug": null,
       "name": {
@@ -879,6 +1003,7 @@
       }
     },
     {
+      "book": "field",
       "no": 124,
       "slug": null,
       "name": {
@@ -886,6 +1011,7 @@
       }
     },
     {
+      "book": "field",
       "no": 125,
       "slug": null,
       "name": {
@@ -893,6 +1019,7 @@
       }
     },
     {
+      "book": "field",
       "no": 126,
       "slug": null,
       "name": {
@@ -900,6 +1027,7 @@
       }
     },
     {
+      "book": "field",
       "no": 127,
       "slug": null,
       "name": {
@@ -907,6 +1035,7 @@
       }
     },
     {
+      "book": "field",
       "no": 128,
       "slug": null,
       "name": {
@@ -914,6 +1043,7 @@
       }
     },
     {
+      "book": "field",
       "no": 129,
       "slug": null,
       "name": {
@@ -921,6 +1051,7 @@
       }
     },
     {
+      "book": "field",
       "no": 130,
       "slug": null,
       "name": {
@@ -928,6 +1059,7 @@
       }
     },
     {
+      "book": "field",
       "no": 131,
       "slug": null,
       "name": {
@@ -935,6 +1067,7 @@
       }
     },
     {
+      "book": "field",
       "no": 132,
       "slug": null,
       "name": {
@@ -942,6 +1075,7 @@
       }
     },
     {
+      "book": "field",
       "no": 133,
       "slug": null,
       "name": {
@@ -949,6 +1083,7 @@
       }
     },
     {
+      "book": "field",
       "no": 134,
       "slug": null,
       "name": {
@@ -956,6 +1091,7 @@
       }
     },
     {
+      "book": "field",
       "no": 135,
       "slug": null,
       "name": {
@@ -963,30 +1099,31 @@
       }
     },
     {
+      "book": "field",
       "no": 136,
       "slug": null,
       "name": {
-        "th": "ดอกไม้ฟื้นฟูกระดูก"
-      },
-      "nameTruncated": true
+        "th": "ดอกไม้ฟื้นฟูกระดูกที่บิดเบี้ยว"
+      }
     },
     {
+      "book": "field",
       "no": 137,
       "slug": null,
       "name": {
-        "th": "ดอกไม้ฟื้นฟูเลือด"
-      },
-      "nameTruncated": true
+        "th": "ดอกไม้ฟื้นฟูเลือดที่บิดเบี้ยว"
+      }
     },
     {
+      "book": "field",
       "no": 138,
       "slug": null,
       "name": {
-        "th": "ดอกไม้ฟื้นฟูเลือด"
-      },
-      "nameTruncated": true
+        "th": "ดอกไม้ฟื้นฟูเลือดที่ฟกช้ำ"
+      }
     },
     {
+      "book": "field",
       "no": 139,
       "slug": null,
       "name": {
@@ -994,6 +1131,7 @@
       }
     },
     {
+      "book": "field",
       "no": 140,
       "slug": null,
       "name": {
@@ -1001,6 +1139,7 @@
       }
     },
     {
+      "book": "field",
       "no": 141,
       "slug": null,
       "name": {
@@ -1008,6 +1147,7 @@
       }
     },
     {
+      "book": "field",
       "no": 142,
       "slug": null,
       "name": {
@@ -1015,6 +1155,7 @@
       }
     },
     {
+      "book": "field",
       "no": 143,
       "slug": null,
       "name": {
@@ -1022,11 +1163,218 @@
       }
     },
     {
+      "book": "field",
       "no": 144,
       "slug": null,
       "name": {
         "th": "ปีศาจเสือบิดเบี้ยว"
       }
+    },
+    {
+      "book": "field",
+      "no": 145,
+      "slug": null,
+      "name": {
+        "th": "วิญญาณเด็ก"
+      }
+    },
+    {
+      "book": "field",
+      "no": 146,
+      "slug": null,
+      "name": {
+        "th": "วิญญาณกระรอก"
+      }
+    },
+    {
+      "book": "field",
+      "no": 147,
+      "slug": null,
+      "name": {
+        "th": "วิญญาณแห่งลมวายุ"
+      }
+    },
+    {
+      "book": "field",
+      "no": 148,
+      "slug": null,
+      "name": {
+        "th": "วิญญาณแห่งการ"
+      },
+      "nameTruncated": true
+    },
+    {
+      "book": "field",
+      "no": 149,
+      "slug": null,
+      "name": {
+        "th": "วิญญาณแห่งควา"
+      },
+      "nameTruncated": true
+    },
+    {
+      "book": "field",
+      "no": 150,
+      "slug": null,
+      "name": {
+        "th": "ปีศาจเสือหิมะ"
+      }
+    },
+    {
+      "book": "field",
+      "no": 151,
+      "slug": null,
+      "name": {
+        "th": "ปีศาจเสือลาวา"
+      }
+    },
+    {
+      "book": "field",
+      "no": 152,
+      "slug": null,
+      "name": {
+        "th": "ลิซาร์ด มือธนู"
+      }
+    },
+    {
+      "book": "field",
+      "no": 153,
+      "slug": null,
+      "name": {
+        "th": "ลิซาร์ด มือธนูทอง"
+      },
+      "nameTruncated": true
+    },
+    {
+      "book": "field",
+      "no": 154,
+      "slug": null,
+      "name": {
+        "th": "ลิซาร์ด มือดาบ"
+      }
+    },
+    {
+      "book": "field",
+      "no": 155,
+      "slug": null,
+      "name": {
+        "th": "ลิซาร์ด ท่านเซอร์"
+      }
+    },
+    {
+      "book": "field",
+      "no": 156,
+      "slug": null,
+      "name": {
+        "th": "อาโก"
+      }
+    },
+    {
+      "book": "field",
+      "no": 157,
+      "slug": null,
+      "name": {
+        "th": "อาโกกระดองหิน"
+      }
+    },
+    {
+      "book": "field",
+      "no": 158,
+      "slug": null,
+      "name": {
+        "th": "กระตุ่ย นักรบ"
+      }
+    },
+    {
+      "book": "field",
+      "no": 159,
+      "slug": null,
+      "name": {
+        "th": "อับเกราะหนา"
+      }
+    },
+    {
+      "book": "field",
+      "no": 160,
+      "slug": null,
+      "name": {
+        "th": "บูกิ เกราะเหล็ก"
+      }
+    },
+    {
+      "book": "field",
+      "no": 161,
+      "slug": null,
+      "name": {
+        "th": "บูกิ ไม้ยักษ์"
+      }
+    },
+    {
+      "book": "field",
+      "no": 162,
+      "slug": null,
+      "name": {
+        "th": "นาควีรณ์"
+      }
+    },
+    {
+      "book": "field",
+      "no": 163,
+      "slug": null,
+      "name": {
+        "th": "นาคบุปผา"
+      }
+    },
+    {
+      "book": "field",
+      "no": 164,
+      "slug": null,
+      "name": {
+        "th": "เงาแดง"
+      }
+    },
+    {
+      "book": "field",
+      "no": 165,
+      "slug": null,
+      "name": {
+        "th": "เงาคราม"
+      }
+    },
+    {
+      "book": "legendary",
+      "no": 1,
+      "slug": null,
+      "name": {
+        "th": "เรกีนูลา"
+      }
+    },
+    {
+      "book": "event",
+      "no": 1,
+      "slug": null,
+      "name": {
+        "th": "ช้อปปี้ : ซัมเมอร์ โ"
+      },
+      "nameTruncated": true
+    },
+    {
+      "book": "event",
+      "no": 2,
+      "slug": null,
+      "name": {
+        "th": "สไลม์ : ซัมเมอร์ โด"
+      },
+      "nameTruncated": true
+    },
+    {
+      "book": "event",
+      "no": 3,
+      "slug": null,
+      "name": {
+        "th": "แอกโซลอเติลหอย"
+      },
+      "nameTruncated": true
     }
   ]
 }

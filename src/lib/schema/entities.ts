@@ -127,8 +127,8 @@ export const equipmentSet = z.object({
 export const monsterling = z.object({
   id: slug,
   name: text,
-  /** เลขประจำตัวในสมุดภาพมอน — ผูกกลับไปที่ data/meta/monster-dex.json */
-  dexNo: z.number().int().positive().optional(),
+  /** ตำแหน่งในสมุดภาพมอน — ต้องมีคู่กัน เพราะแต่ละเล่มเริ่มนับ No.1 ใหม่ */
+  dex: z.object({ book: vocabEnum("dexBook"), no: z.number().int().positive() }).optional(),
   /**
    * ใส่ลิงก์ได้หรือไม่ — ไม่ใส่ = "ยังไม่รู้" ไม่ใช่ "ไม่ได้"
    * หน้าเว็บต้องแยกสามสถานะ ไม่งั้นตัวที่ยังไม่ได้เช็คจะถูกแสดงว่าใส่ลิงก์ไม่ได้
@@ -184,6 +184,8 @@ export const build = z.object({
  * slug เป็น null ได้ เพราะยังไม่รู้ชื่ออังกฤษทางการ และ id ของเว็บห้ามเปลี่ยนทีหลัง
  */
 export const monsterDexEntry = z.object({
+  /** เกมแยกสมุดหลายเล่ม และแต่ละเล่มเริ่มนับ No.1 ใหม่ — เลขจึงไม่ซ้ำเฉพาะในเล่มเดียวกัน */
+  book: vocabEnum("dexBook"),
   no: z.number().int().positive(),
   slug: slug.nullable(),
   name: text,
