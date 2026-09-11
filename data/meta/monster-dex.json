@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "version": 2,
+    "version": 3,
     "updatedAt": "2026-09-11",
     "note": "ดัชนีจากหน้า 'สมุดภาพมอน' ในเกม เก็บแค่เลขประจำตัว โซน และชื่อไทย ยังไม่ใช่ข้อมูลเต็มของ Monsterling (ยังไม่มีความสามารถและสถานะลิงก์) พอได้ข้อมูลครบค่อยสร้างไฟล์ใน data/monsterlings/ แล้วอ้างกลับมาที่เลข no",
     "source": {
@@ -10,7 +10,7 @@
       "screen": "สมุดภาพมอน"
     },
     "slugNote": "slug ยังเป็น null ทุกตัวเพราะรอชื่ออังกฤษทางการ — id ของเว็บห้ามเปลี่ยนทีหลัง (ดู PLAN.md §13.1) จึงยังไม่ตั้ง ไม่ใช่ลืม",
-    "coverage": "เอเลนดอร์ 1-39 ครบ · วาเรน 40-68 ครบ · เซเรเนีย 69-76 (ยังไม่ครบโซน) · โซนอื่นในแถบด้านซ้ายยังไม่ได้เก็บ",
+    "coverage": "เอเลนดอร์ 1-39 ครบ · วาเรน 40-68 ครบ · เซเรเนีย 69-95 ครบ · ซูรา 96-111 (ยังไม่ครบโซน) · โซนอื่นในแถบด้านซ้ายยังไม่ได้เก็บ",
     "flags": {
       "nameTruncated": "ชื่อถูก UI ตัดท้าย ต้องแคปใหม่ให้เห็นเต็ม",
       "nameUncertain": "อ่านจากรูปแล้วไม่มั่นใจ ต้องยืนยันกับเกม"
@@ -358,9 +358,8 @@
       "region": "waren",
       "slug": null,
       "name": {
-        "th": "กายออร์คพึ้งกี้"
-      },
-      "nameUncertain": true
+        "th": "กายออร์คพิ้งกี้"
+      }
     },
     {
       "no": 44,
@@ -375,27 +374,24 @@
       "region": "waren",
       "slug": null,
       "name": {
-        "th": "แอกโซลอเติลกระ"
-      },
-      "nameTruncated": true
+        "th": "แอกโซลอเติลกระดองหิน"
+      }
     },
     {
       "no": 46,
       "region": "waren",
       "slug": null,
       "name": {
-        "th": "แอกโซลอเติลกระ"
-      },
-      "nameTruncated": true
+        "th": "แอกโซลอเติลกระดองหินดิน"
+      }
     },
     {
       "no": 47,
       "region": "waren",
       "slug": null,
       "name": {
-        "th": "แอกโซลอเติลกระ"
-      },
-      "nameTruncated": true
+        "th": "แอกโซลอเติลกระดองหินยักษ์"
+      }
     },
     {
       "no": 48,
@@ -474,27 +470,24 @@
       "region": "waren",
       "slug": null,
       "name": {
-        "th": "แอกโซลอเติลหอย"
-      },
-      "nameTruncated": true
+        "th": "แอกโซลอเติลหอยสังข์"
+      }
     },
     {
       "no": 58,
       "region": "waren",
       "slug": null,
       "name": {
-        "th": "แอกโซลอเติลหอย"
-      },
-      "nameTruncated": true
+        "th": "แอกโซลอเติลหอยสังข์ทะเลลึก"
+      }
     },
     {
       "no": 59,
       "region": "waren",
       "slug": null,
       "name": {
-        "th": "แอกโซลอเติลหอย"
-      },
-      "nameTruncated": true
+        "th": "แอกโซลอเติลหอยสังข์ยักษ์"
+      }
     },
     {
       "no": 60,
@@ -631,6 +624,292 @@
       "slug": null,
       "name": {
         "th": "สโปเดอร์"
+      }
+    },
+    {
+      "no": 77,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "สปาดิก"
+      }
+    },
+    {
+      "no": 78,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "สปูเดอร์"
+      }
+    },
+    {
+      "no": 79,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "สปาดูป้า"
+      }
+    },
+    {
+      "no": 80,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "กปาดูป้า"
+      },
+      "nameUncertain": true
+    },
+    {
+      "no": 81,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "การ์กอย"
+      },
+      "nameUncertain": true
+    },
+    {
+      "no": 82,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "การ์ก่อย"
+      },
+      "nameUncertain": true
+    },
+    {
+      "no": 83,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "การ์ก้อย"
+      },
+      "nameUncertain": true
+    },
+    {
+      "no": 84,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "ซิลฟี่"
+      }
+    },
+    {
+      "no": 85,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "แวมปี้"
+      }
+    },
+    {
+      "no": 86,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "ฟูลฟี่"
+      }
+    },
+    {
+      "no": 87,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "ฮาล์ฟฟี่"
+      }
+    },
+    {
+      "no": 88,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "หัวหน้าฟูลฟี่"
+      }
+    },
+    {
+      "no": 89,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "แวมปี้เดอะฟูลมูน"
+      }
+    },
+    {
+      "no": 90,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "กายหมัดน้ำแข็ง"
+      }
+    },
+    {
+      "no": 91,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "มิโนต้าทุ่งหญ้า"
+      }
+    },
+    {
+      "no": 92,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "สปูนมักเกอร์"
+      }
+    },
+    {
+      "no": 93,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "ช็อปสติกมักเกอร์"
+      }
+    },
+    {
+      "no": 94,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "อวาดัน"
+      }
+    },
+    {
+      "no": 95,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "มานาของอวาดัน"
+      }
+    },
+    {
+      "no": 96,
+      "region": "zura",
+      "slug": null,
+      "name": {
+        "th": "หุ่นฟางจิ๋ว"
+      }
+    },
+    {
+      "no": 97,
+      "region": "zura",
+      "slug": null,
+      "name": {
+        "th": "หุ่นฟางจิ๋วบรรลุธรรม"
+      }
+    },
+    {
+      "no": 98,
+      "region": "zura",
+      "slug": null,
+      "name": {
+        "th": "หุ่นฟาง"
+      }
+    },
+    {
+      "no": 99,
+      "region": "zura",
+      "slug": null,
+      "name": {
+        "th": "หุ่นฟางพุ่มไม้"
+      }
+    },
+    {
+      "no": 100,
+      "region": "zura",
+      "slug": null,
+      "name": {
+        "th": "แกบีฟ้า"
+      }
+    },
+    {
+      "no": 101,
+      "region": "zura",
+      "slug": null,
+      "name": {
+        "th": "แกบีเขียว"
+      }
+    },
+    {
+      "no": 102,
+      "region": "zura",
+      "slug": null,
+      "name": {
+        "th": "หัวหน้าแกบี"
+      }
+    },
+    {
+      "no": 103,
+      "region": "zura",
+      "slug": null,
+      "name": {
+        "th": "เมล็ดสน"
+      }
+    },
+    {
+      "no": 104,
+      "region": "zura",
+      "slug": null,
+      "name": {
+        "th": "ต้นสนผู้เฒ่าคิม"
+      }
+    },
+    {
+      "no": 105,
+      "region": "zura",
+      "slug": null,
+      "name": {
+        "th": "ต้นสนผู้เฒ่าพัด"
+      }
+    },
+    {
+      "no": 106,
+      "region": "zura",
+      "slug": null,
+      "name": {
+        "th": "ภูตต้นไม้"
+      }
+    },
+    {
+      "no": 107,
+      "region": "zura",
+      "slug": null,
+      "name": {
+        "th": "ปีศาจต้นไม้ขวานปัก"
+      }
+    },
+    {
+      "no": 108,
+      "region": "zura",
+      "slug": null,
+      "name": {
+        "th": "กระตุ่ย"
+      },
+      "nameUncertain": true
+    },
+    {
+      "no": 109,
+      "region": "zura",
+      "slug": null,
+      "name": {
+        "th": "กระตุ่ย หน้ากาก"
+      },
+      "nameUncertain": true
+    },
+    {
+      "no": 110,
+      "region": "zura",
+      "slug": null,
+      "name": {
+        "th": "แรคคูน"
+      }
+    },
+    {
+      "no": 111,
+      "region": "zura",
+      "slug": null,
+      "name": {
+        "th": "แรคคูน หน้ากาก"
       }
     }
   ]

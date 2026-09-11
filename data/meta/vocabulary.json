@@ -8,7 +8,8 @@
   "region": {
     "elendor": { "th": "เอเลนดอร์" },
     "waren":   { "th": "วาเรน" },
-    "serenia": { "th": "เซเรเนีย" }
+    "serenia": { "th": "เซเรเนีย" },
+    "zura":    { "th": "ซูรา" }
   },
 
   "element": {
