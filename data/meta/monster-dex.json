@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "version": 7,
+    "version": 8,
     "updatedAt": "2026-09-11",
     "note": "ดัชนีจากหน้า 'สมุดภาพมอน' ในเกม เก็บแค่สมุด เลขประจำตัว และชื่อไทย ยังไม่ใช่ข้อมูลเต็มของ Monsterling (ยังไม่มีความสามารถและสถานะลิงก์) พอได้ข้อมูลครบค่อยสร้างไฟล์ใน data/monsterlings/ แล้วอ้างกลับมาที่ book+no",
     "source": {
@@ -377,297 +377,334 @@
     {
       "book": "field",
       "no": 40,
-      "slug": null,
+      "slug": "rock-fist-dude",
       "name": {
-        "th": "กายหมัดหิน"
+        "th": "กายหมัดหิน",
+        "en": "Rock Fist Dude"
       }
     },
     {
       "book": "field",
       "no": 41,
-      "slug": null,
+      "slug": "golden-fist-dude",
       "name": {
-        "th": "กายหมัดทองคำ"
+        "th": "กายหมัดทองคำ",
+        "en": "Golden Fist Dude"
       }
     },
     {
       "book": "field",
       "no": 42,
-      "slug": null,
+      "slug": "orc-warrior",
       "name": {
-        "th": "ออร์ค นักรบ"
+        "th": "ออร์ค นักรบ",
+        "en": "Orc Warrior"
       }
     },
     {
       "book": "field",
       "no": 43,
-      "slug": null,
+      "slug": "pink-orc-dude",
       "name": {
-        "th": "กายออร์คพิ้งกี้"
+        "th": "กายออร์คพิ้งกี้",
+        "en": "Pink Orc Dude"
       }
     },
     {
       "book": "field",
       "no": 44,
-      "slug": null,
+      "slug": "orc-raider",
       "name": {
-        "th": "ออร์ค พลทหารจู่โจม"
+        "th": "ออร์ค พลทหารจู่โจม",
+        "en": "Orc Raider"
       }
     },
     {
       "book": "field",
       "no": 45,
-      "slug": null,
+      "slug": "rockymander",
       "name": {
-        "th": "แอกโซลอเติลกระดองหิน"
+        "th": "แอกโซลอเติลกระดองหิน",
+        "en": "Rockymander"
       }
     },
     {
       "book": "field",
       "no": 46,
-      "slug": null,
+      "slug": "leafymander",
       "name": {
-        "th": "แอกโซลอเติลกระดองหินดิน"
+        "th": "แอกโซลอเติลกระดองหินดิน",
+        "en": "Leafymander"
       }
     },
     {
       "book": "field",
       "no": 47,
-      "slug": null,
+      "slug": "bouldermander",
       "name": {
-        "th": "แอกโซลอเติลกระดองหินยักษ์"
+        "th": "แอกโซลอเติลกระดองหินยักษ์",
+        "en": "Bouldermander"
       }
     },
     {
       "book": "field",
       "no": 48,
-      "slug": null,
+      "slug": "vikkymander",
       "name": {
-        "th": "แอกโซลอเติลไวกิ้ง"
+        "th": "แอกโซลอเติลไวกิ้ง",
+        "en": "Vikkymander"
       }
     },
     {
       "book": "field",
       "no": 49,
-      "slug": null,
+      "slug": "troll",
       "name": {
-        "th": "โทรลล์"
+        "th": "โทรลล์",
+        "en": "Troll"
       }
     },
     {
       "book": "field",
       "no": 50,
-      "slug": null,
+      "slug": "noxtroll",
       "name": {
-        "th": "ไนท์โทรลล์"
+        "th": "ไนท์โทรลล์",
+        "en": "Noxtroll"
       }
     },
     {
       "book": "field",
       "no": 51,
-      "slug": null,
+      "slug": "urgash",
       "name": {
-        "th": "อูรกัช"
+        "th": "อูรกัช",
+        "en": "Urgash"
       }
     },
     {
       "book": "field",
       "no": 52,
-      "slug": null,
+      "slug": "wolf",
       "name": {
-        "th": "หมาป่า"
+        "th": "หมาป่า",
+        "en": "Wolf"
       }
     },
     {
       "book": "field",
       "no": 53,
-      "slug": null,
+      "slug": "albino-wolf",
       "name": {
-        "th": "หมาป่าเผือก"
+        "th": "หมาป่าเผือก",
+        "en": "Albino Wolf"
       }
     },
     {
       "book": "field",
       "no": 54,
-      "slug": null,
+      "slug": "behemo-wolf",
       "name": {
-        "th": "หมาป่ายักษ์"
+        "th": "หมาป่ายักษ์",
+        "en": "Behemo-wolf"
       }
     },
     {
       "book": "field",
       "no": 55,
-      "slug": null,
+      "slug": "scar",
       "name": {
-        "th": "สกา"
+        "th": "สกา",
+        "en": "Scar"
       }
     },
     {
       "book": "field",
       "no": 56,
-      "slug": null,
+      "slug": "frostbite",
       "name": {
-        "th": "ฟรอสต์ไบต์"
+        "th": "ฟรอสต์ไบต์",
+        "en": "Frostbite"
       }
     },
     {
       "book": "field",
       "no": 57,
-      "slug": null,
+      "slug": "shellymander",
       "name": {
-        "th": "แอกโซลอเติลหอยสังข์"
+        "th": "แอกโซลอเติลหอยสังข์",
+        "en": "Shellymander"
       }
     },
     {
       "book": "field",
       "no": 58,
-      "slug": null,
+      "slug": "mollumander",
       "name": {
-        "th": "แอกโซลอเติลหอยสังข์ทะเลลึก"
+        "th": "แอกโซลอเติลหอยสังข์ทะเลลึก",
+        "en": "Mollumander"
       }
     },
     {
       "book": "field",
       "no": 59,
-      "slug": null,
+      "slug": "swellymander",
       "name": {
-        "th": "แอกโซลอเติลหอยสังข์ยักษ์"
+        "th": "แอกโซลอเติลหอยสังข์ยักษ์",
+        "en": "Swellymander"
       }
     },
     {
       "book": "field",
       "no": 60,
-      "slug": null,
+      "slug": "harvester",
       "name": {
-        "th": "ผู้เก็บเกี่ยว"
+        "th": "ผู้เก็บเกี่ยว",
+        "en": "Harvester"
       }
     },
     {
       "book": "field",
       "no": 61,
-      "slug": null,
+      "slug": "enforcer",
       "name": {
-        "th": "ผู้ลงโทษ"
+        "th": "ผู้ลงโทษ",
+        "en": "Enforcer"
       }
     },
     {
       "book": "field",
       "no": 62,
-      "slug": null,
+      "slug": "void-friar",
       "name": {
-        "th": "นักบวชแห่งความว่างเปล่า"
+        "th": "นักบวชแห่งความว่างเปล่า",
+        "en": "Void Friar"
       }
     },
     {
       "book": "field",
       "no": 63,
-      "slug": null,
+      "slug": "monks-shadow",
       "name": {
-        "th": "เงาของนักบวช"
+        "th": "เงาของนักบวช",
+        "en": "Monk's Shadow"
       }
     },
     {
       "book": "field",
       "no": 64,
-      "slug": null,
+      "slug": "vectus",
       "name": {
-        "th": "เว็กตัส"
+        "th": "เว็กตัส",
+        "en": "Vectus"
       }
     },
     {
       "book": "field",
       "no": 65,
-      "slug": null,
+      "slug": "mountaintaur",
       "name": {
-        "th": "มิโนต้าภูเขาสูง"
+        "th": "มิโนต้าภูเขาสูง",
+        "en": "Mountaintaur"
       }
     },
     {
       "book": "field",
       "no": 66,
-      "slug": null,
+      "slug": "tealtaur",
       "name": {
-        "th": "มินอกต้า"
+        "th": "มินอกต้า",
+        "en": "Tealtaur"
       }
     },
     {
       "book": "field",
       "no": 67,
-      "slug": null,
+      "slug": "amon",
       "name": {
-        "th": "อาม่อน"
+        "th": "อาม่อน",
+        "en": "Amon"
       }
     },
     {
       "book": "field",
       "no": 68,
-      "slug": null,
+      "slug": "amons-shadow",
       "name": {
-        "th": "เงาของอาม่อน"
+        "th": "เงาของอาม่อน",
+        "en": "Amon's Shadow"
       }
     },
     {
       "book": "field",
       "no": 69,
-      "slug": null,
+      "slug": "gorrik",
       "name": {
-        "th": "โกลิค"
+        "th": "โกลิค",
+        "en": "Gorrik"
       }
     },
     {
       "book": "field",
       "no": 70,
-      "slug": null,
+      "slug": "ice-slime",
       "name": {
-        "th": "สไลม์น้ำแข็ง"
+        "th": "สไลม์น้ำแข็ง",
+        "en": "Ice Slime"
       }
     },
     {
       "book": "field",
       "no": 71,
-      "slug": null,
+      "slug": "slimeboo",
       "name": {
-        "th": "สไลม์หญ้า"
+        "th": "สไลม์หญ้า",
+        "en": "Slimeboo"
       }
     },
     {
       "book": "field",
       "no": 72,
-      "slug": null,
+      "slug": "fire-slime",
       "name": {
-        "th": "สไลม์ไฟ"
+        "th": "สไลม์ไฟ",
+        "en": "Fire Slime"
       }
     },
     {
       "book": "field",
       "no": 73,
-      "slug": null,
+      "slug": "queen-slime",
       "name": {
-        "th": "สไลม์ควีน"
+        "th": "สไลม์ควีน",
+        "en": "Queen Slime"
       }
     },
     {
       "book": "field",
       "no": 74,
-      "slug": null,
+      "slug": "empress-slime",
       "name": {
-        "th": "สไลม์รอยัลควีน"
+        "th": "สไลม์รอยัลควีน",
+        "en": "Empress Slime"
       }
     },
     {
       "book": "field",
       "no": 75,
-      "slug": null,
+      "slug": "spaider",
       "name": {
-        "th": "สปาเดอร์"
+        "th": "สปาเดอร์",
+        "en": "Spaider"
       }
     },
     {
       "book": "field",
       "no": 76,
-      "slug": null,
+      "slug": "sparder",
       "name": {
-        "th": "สโปเดอร์"
+        "th": "สโปเดอร์",
+        "en": "Sparder"
       }
     },
     {
