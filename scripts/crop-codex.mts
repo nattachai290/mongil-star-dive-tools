@@ -3,7 +3,9 @@
  *
  * วิธีใช้
  *   1. แคปหน้า Monster Codex เต็มจอ (ภาพไหนก็ได้ที่เห็น 2 แถวเต็ม = 8 ใบ)
- *   2. ตั้งชื่อไฟล์เป็น "เลขของใบแรกในภาพ" เช่น 40.png หมายถึงภาพนั้นเริ่มที่ No.40
+ *   2. ตั้งชื่อไฟล์เป็น "เลขบนการ์ดซ้ายบนสุดของภาพนั้น" — อ่านจากในภาพได้เลย
+ *      เช่น ภาพที่การ์ดซ้ายบนเขียน No.40 ให้ตั้งชื่อ 40.png
+ *      ไม่ใช่ลำดับภาพ! ภาพที่สองมักเป็น 9.png ไม่ใช่ 2.png
  *      วางไว้ใน assets-src/codex/
  *      สมุดเล่มอื่นใส่ชื่อเล่มนำหน้า เช่น event-1.png, legendary-1.png
  *   3. npm run crop:codex -- --preview    ตรวจว่ากรอบตรงไหม (ได้ไฟล์ใน assets-src/preview/)
@@ -63,6 +65,9 @@ mkdirSync(preview ? PREVIEW : OUTPUT, { recursive: true });
 
 let written = 0;
 const skipped: string[] = [];
+/** slug -> ภาพที่เขียนไฟล์นั้น ใช้ดูว่ามีภาพไหนตัดทับกัน */
+const writtenBy = new Map<string, string>();
+const overlaps: string[] = [];
 const maybeSilhouette: string[] = [];
 
 /**
@@ -115,6 +120,9 @@ for (const { file, book, startNo } of parsed.sort((a, b) => a.book.localeCompare
 
       const buf = await (preview ? pipeline.png() : pipeline.webp({ quality: config.output.quality })).toBuffer();
       await sharp(buf).toFile(join(preview ? PREVIEW : OUTPUT, preview ? `${no}-${slug}.png` : `${slug}-icon.webp`));
+      const before = writtenBy.get(slug);
+      if (before && before !== file) overlaps.push(`${slug} — ${before} กับ ${file} ตัดทับกัน`);
+      writtenBy.set(slug, file);
       if (await looksGrey(buf)) maybeSilhouette.push(`No.${no} ${slug}`);
       written += 1;
     }
@@ -122,7 +130,40 @@ for (const { file, book, startNo } of parsed.sort((a, b) => a.book.localeCompare
   console.log(`${file}: ${book} No.${startNo}–${startNo + perSheet - 1}`);
 }
 
-console.log(`\nตัดแล้ว ${written} รูป -> ${preview ? PREVIEW : OUTPUT}`);
+console.log(`\nตัดแล้ว ${written} ครั้ง ได้ไฟล์จริง ${writtenBy.size} รูป -> ${preview ? PREVIEW : OUTPUT}`);
+
+// ---- รายงานว่าครอบคลุมมอนไปแล้วกี่ตัว ยังขาดใคร ----
+// นี่คือตัวเลขที่ต้องดู ไม่ใช่จำนวนครั้งที่ตัด
+const coveredByBook = new Map<string, Set<number>>();
+for (const e of dex.entries) {
+  if (e.slug && writtenBy.has(e.slug)) {
+    const set = coveredByBook.get(e.book) ?? new Set<number>();
+    set.add(e.no);
+    coveredByBook.set(e.book, set);
+  }
+}
+const totalByBook = new Map<string, number[]>();
+for (const e of dex.entries) totalByBook.set(e.book, [...(totalByBook.get(e.book) ?? []), e.no]);
+
+for (const [book, all] of totalByBook) {
+  const covered = coveredByBook.get(book) ?? new Set<number>();
+  if (covered.size === 0) continue;
+  const missing = all.filter((n) => !covered.has(n));
+  console.log(`  ${book}: ${covered.size}/${all.length} ตัว`);
+  if (missing.length) {
+    const shown = missing.slice(0, 20).join(", ");
+    console.log(`    ยังขาด: ${shown}${missing.length > 20 ? ` … อีก ${missing.length - 20} ตัว` : ""}`);
+  }
+}
+
+if (overlaps.length) {
+  console.log(`\n⚠ มี ${overlaps.length} รูปที่ถูกภาพหลายใบตัดทับกัน:`);
+  for (const line of overlaps.slice(0, 5)) console.log(`  ${line}`);
+  if (overlaps.length > 5) console.log(`  … อีก ${overlaps.length - 5} รายการ`);
+  console.log("  ถ้าเลื่อนทีละแถวแล้วภาพคาบกันก็ไม่เป็นไร ผลลัพธ์เหมือนกัน");
+  console.log("  แต่ถ้าตั้งชื่อไฟล์เป็นลำดับภาพ (1,2,3...) แทนเลขการ์ดซ้ายบน ให้แก้ชื่อไฟล์ก่อน");
+  console.log("  กติกา: ชื่อไฟล์ = เลขที่เขียนบนการ์ดซ้ายบนสุดของภาพนั้น");
+}
 if (skipped.length) {
   console.log(`ข้าม ${skipped.length} ตัว:`);
   for (const line of skipped) console.log(`  - ${line}`);
