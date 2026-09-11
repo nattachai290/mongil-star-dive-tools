@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "version": 8,
+    "version": 9,
     "updatedAt": "2026-09-11",
     "note": "ดัชนีจากหน้า 'สมุดภาพมอน' ในเกม เก็บแค่สมุด เลขประจำตัว และชื่อไทย ยังไม่ใช่ข้อมูลเต็มของ Monsterling (ยังไม่มีความสามารถและสถานะลิงก์) พอได้ข้อมูลครบค่อยสร้างไฟล์ใน data/monsterlings/ แล้วอ้างกลับมาที่ book+no",
     "source": {
@@ -710,281 +710,316 @@
     {
       "book": "field",
       "no": 77,
-      "slug": null,
+      "slug": "spardig",
       "name": {
-        "th": "สปาดิก"
+        "th": "สปาดิก",
+        "en": "Spardig"
       }
     },
     {
       "book": "field",
       "no": 78,
-      "slug": null,
+      "slug": "spooder",
       "name": {
-        "th": "สปูเดอร์"
+        "th": "สปูเดอร์",
+        "en": "Spooder"
       }
     },
     {
       "book": "field",
       "no": 79,
-      "slug": null,
+      "slug": "spadupa",
       "name": {
-        "th": "สปาดูป้า"
+        "th": "สปาดูป้า",
+        "en": "Spadupa"
       }
     },
     {
       "book": "field",
       "no": 80,
-      "slug": null,
+      "slug": "greenpadupa",
       "name": {
-        "th": "กปาดูป้า"
+        "th": "กปาดูป้า",
+        "en": "Greenpadupa"
       }
     },
     {
       "book": "field",
       "no": 81,
-      "slug": null,
+      "slug": "gargoyle",
       "name": {
-        "th": "การ์กอย"
+        "th": "การ์กอย",
+        "en": "Gargoyle"
       }
     },
     {
       "book": "field",
       "no": 82,
-      "slug": null,
+      "slug": "grassgoyle",
       "name": {
-        "th": "การ์ก่อย"
+        "th": "การ์ก่อย",
+        "en": "Grassgoyle"
       }
     },
     {
       "book": "field",
       "no": 83,
-      "slug": null,
+      "slug": "soilgoyle",
       "name": {
-        "th": "การ์ก้อย"
+        "th": "การ์ก้อย",
+        "en": "Soilgoyle"
       }
     },
     {
       "book": "field",
       "no": 84,
-      "slug": null,
+      "slug": "sylphid",
       "name": {
-        "th": "ซิลฟี่"
+        "th": "ซิลฟี่",
+        "en": "Sylphid"
       }
     },
     {
       "book": "field",
       "no": 85,
-      "slug": null,
+      "slug": "vamphid",
       "name": {
-        "th": "แวมปี้"
+        "th": "แวมปี้",
+        "en": "Vamphid"
       }
     },
     {
       "book": "field",
       "no": 86,
-      "slug": null,
+      "slug": "stickphid",
       "name": {
-        "th": "ฟูลฟี่"
+        "th": "ฟูลฟี่",
+        "en": "Stickphid"
       }
     },
     {
       "book": "field",
       "no": 87,
-      "slug": null,
+      "slug": "healphid",
       "name": {
-        "th": "ฮาล์ฟฟี่"
+        "th": "ฮาล์ฟฟี่",
+        "en": "Healphid"
       }
     },
     {
       "book": "field",
       "no": 88,
-      "slug": null,
+      "slug": "head-stickphid",
       "name": {
-        "th": "หัวหน้าฟูลฟี่"
+        "th": "หัวหน้าฟูลฟี่",
+        "en": "Head Stickphid"
       }
     },
     {
       "book": "field",
       "no": 89,
-      "slug": null,
+      "slug": "full-moon-vamphid",
       "name": {
-        "th": "แวมปี้เดอะฟูลมูน"
+        "th": "แวมปี้เดอะฟูลมูน",
+        "en": "Full Moon Vamphid"
       }
     },
     {
       "book": "field",
       "no": 90,
-      "slug": null,
+      "slug": "ice-fist-dude",
       "name": {
-        "th": "กายหมัดน้ำแข็ง"
+        "th": "กายหมัดน้ำแข็ง",
+        "en": "Ice Fist Dude"
       }
     },
     {
       "book": "field",
       "no": 91,
-      "slug": null,
+      "slug": "plains-minotaur",
       "name": {
-        "th": "มิโนต้าทุ่งหญ้า"
+        "th": "มิโนต้าทุ่งหญ้า",
+        "en": "Plains Minotaur"
       }
     },
     {
       "book": "field",
       "no": 92,
-      "slug": null,
+      "slug": "spoonmugger",
       "name": {
-        "th": "สปูนมักเกอร์"
+        "th": "สปูนมักเกอร์",
+        "en": "Spoonmugger"
       }
     },
     {
       "book": "field",
       "no": 93,
-      "slug": null,
+      "slug": "stickmugger",
       "name": {
-        "th": "ช็อปสติกมักเกอร์"
+        "th": "ช็อปสติกมักเกอร์",
+        "en": "Stickmugger"
       }
     },
     {
       "book": "field",
       "no": 94,
-      "slug": null,
+      "slug": "avardan",
       "name": {
-        "th": "อวาดัน"
+        "th": "อวาดัน",
+        "en": "Avardan"
       }
     },
     {
       "book": "field",
       "no": 95,
-      "slug": null,
+      "slug": "avardans-mana",
       "name": {
-        "th": "มานาของอวาดัน"
+        "th": "มานาของอวาดัน",
+        "en": "Avardan's Mana"
       }
     },
     {
       "book": "field",
       "no": 96,
-      "slug": null,
+      "slug": "lil-hauntstack",
       "name": {
-        "th": "หุ่นฟางจิ๋ว"
+        "th": "หุ่นฟางจิ๋ว",
+        "en": "Lil' Hauntstack"
       }
     },
     {
       "book": "field",
       "no": 97,
-      "slug": null,
+      "slug": "sacred-hauntstack",
       "name": {
-        "th": "หุ่นฟางจิ๋วบรรลุธรรม"
+        "th": "หุ่นฟางจิ๋วบรรลุธรรม",
+        "en": "Sacred Hauntstack"
       }
     },
     {
       "book": "field",
       "no": 98,
-      "slug": null,
+      "slug": "hauntstack",
       "name": {
-        "th": "หุ่นฟาง"
+        "th": "หุ่นฟาง",
+        "en": "Hauntstack"
       }
     },
     {
       "book": "field",
       "no": 99,
-      "slug": null,
+      "slug": "brush-hauntstack",
       "name": {
-        "th": "หุ่นฟางพุ่มไม้"
+        "th": "หุ่นฟางพุ่มไม้",
+        "en": "Brush Hauntstack"
       }
     },
     {
       "book": "field",
       "no": 100,
-      "slug": null,
+      "slug": "bop-kkaebi",
       "name": {
-        "th": "แกบีฟ้า"
+        "th": "แกบีฟ้า",
+        "en": "Bop-kkaebi"
       }
     },
     {
       "book": "field",
       "no": 101,
-      "slug": null,
+      "slug": "pew-kkaebi",
       "name": {
-        "th": "แกบีเขียว"
+        "th": "แกบีเขียว",
+        "en": "Pew-kkaebi"
       }
     },
     {
       "book": "field",
       "no": 102,
-      "slug": null,
+      "slug": "kkaebi-herder",
       "name": {
-        "th": "หัวหน้าแกบี"
+        "th": "หัวหน้าแกบี",
+        "en": "Kkaebi Herder"
       }
     },
     {
       "book": "field",
       "no": 103,
-      "slug": null,
+      "slug": "odong-seed",
       "name": {
-        "th": "เมล็ดสน"
+        "th": "เมล็ดสน",
+        "en": "Odong Seed"
       }
     },
     {
       "book": "field",
       "no": 104,
-      "slug": null,
+      "slug": "odong",
       "name": {
-        "th": "ต้นสนผู้เฒ่าคิม"
+        "th": "ต้นสนผู้เฒ่าคิม",
+        "en": "Odong"
       }
     },
     {
       "book": "field",
       "no": 105,
-      "slug": null,
+      "slug": "maple-odong",
       "name": {
-        "th": "ต้นสนผู้เฒ่าพัด"
+        "th": "ต้นสนผู้เฒ่าพัด",
+        "en": "Maple Odong"
       }
     },
     {
       "book": "field",
       "no": 106,
-      "slug": null,
+      "slug": "tree-youkai",
       "name": {
-        "th": "ภูตต้นไม้"
+        "th": "ภูตต้นไม้",
+        "en": "Tree Youkai"
       }
     },
     {
       "book": "field",
       "no": 107,
-      "slug": null,
+      "slug": "stumpster",
       "name": {
-        "th": "ปีศาจต้นไม้ขวานปัก"
+        "th": "ปีศาจต้นไม้ขวานปัก",
+        "en": "Stumpster"
       }
     },
     {
       "book": "field",
       "no": 108,
-      "slug": null,
+      "slug": "bunnie",
       "name": {
-        "th": "กระตุ่ย"
+        "th": "กระตุ่ย",
+        "en": "Bunnie"
       }
     },
     {
       "book": "field",
       "no": 109,
-      "slug": null,
+      "slug": "masked-bunnie",
       "name": {
-        "th": "กระตุ่ย หน้ากาก"
+        "th": "กระตุ่ย หน้ากาก",
+        "en": "Masked Bunnie"
       }
     },
     {
       "book": "field",
       "no": 110,
-      "slug": null,
+      "slug": "raccoonie",
       "name": {
-        "th": "แรคคูน"
+        "th": "แรคคูน",
+        "en": "Raccoonie"
       }
     },
     {
       "book": "field",
       "no": 111,
-      "slug": null,
+      "slug": "masked-raccoonie",
       "name": {
-        "th": "แรคคูน หน้ากาก"
+        "th": "แรคคูน หน้ากาก",
+        "en": "Masked Raccoonie"
       }
     },
     {
