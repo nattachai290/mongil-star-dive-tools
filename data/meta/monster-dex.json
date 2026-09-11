@@ -1,55 +1,637 @@
 {
   "_meta": {
-    "version": 1,
+    "version": 2,
     "updatedAt": "2026-09-11",
-    "note": "ดัชนีจากหน้า 'สมุดภาพมอน' ในเกม เก็บแค่เลขประจำตัวกับชื่อไทย ยังไม่ใช่ข้อมูลเต็มของ Monsterling (ไม่มี rarity, สายพันธุ์, Trait, สถานะลิงก์, ความสามารถ) พอได้ข้อมูลครบค่อยสร้างไฟล์ใน data/monsterlings/ แล้วอ้างกลับมาที่เลข no",
-    "source": { "by": "in-game", "gameVersion": "unknown", "capturedAt": "2026-09-11", "screen": "สมุดภาพมอน > เอเลนดอร์" },
-    "slugNote": "slug ยังเป็น null ทุกตัวเพราะยังไม่รู้ชื่ออังกฤษทางการ — id ของเว็บห้ามเปลี่ยนทีหลัง (ดู PLAN.md §13.1) จึงยังไม่ตั้ง ไม่ใช่ลืม"
+    "note": "ดัชนีจากหน้า 'สมุดภาพมอน' ในเกม เก็บแค่เลขประจำตัว โซน และชื่อไทย ยังไม่ใช่ข้อมูลเต็มของ Monsterling (ยังไม่มีความสามารถและสถานะลิงก์) พอได้ข้อมูลครบค่อยสร้างไฟล์ใน data/monsterlings/ แล้วอ้างกลับมาที่เลข no",
+    "source": {
+      "by": "in-game",
+      "gameVersion": "unknown",
+      "capturedAt": "2026-09-11",
+      "screen": "สมุดภาพมอน"
+    },
+    "slugNote": "slug ยังเป็น null ทุกตัวเพราะรอชื่ออังกฤษทางการ — id ของเว็บห้ามเปลี่ยนทีหลัง (ดู PLAN.md §13.1) จึงยังไม่ตั้ง ไม่ใช่ลืม",
+    "coverage": "เอเลนดอร์ 1-39 ครบ · วาเรน 40-68 ครบ · เซเรเนีย 69-76 (ยังไม่ครบโซน) · โซนอื่นในแถบด้านซ้ายยังไม่ได้เก็บ",
+    "flags": {
+      "nameTruncated": "ชื่อถูก UI ตัดท้าย ต้องแคปใหม่ให้เห็นเต็ม",
+      "nameUncertain": "อ่านจากรูปแล้วไม่มั่นใจ ต้องยืนยันกับเกม"
+    }
   },
-
-  "regions": {
-    "elendor": { "th": "เอเลนดอร์", "en": "Elendor" }
-  },
-
   "entries": [
-    { "no": 1,  "region": "elendor", "slug": null, "name": { "th": "ช้อปปี้" } },
-    { "no": 2,  "region": "elendor", "slug": null, "name": { "th": "ช้อปเบอร์รี" } },
-    { "no": 3,  "region": "elendor", "slug": null, "name": { "th": "ช้อปปี้มัม" } },
-    { "no": 4,  "region": "elendor", "slug": null, "name": { "th": "ลิฟฟี่มัม" } },
-    { "no": 5,  "region": "elendor", "slug": null, "name": { "th": "สไลม์" } },
-    { "no": 6,  "region": "elendor", "slug": null, "name": { "th": "สไลม์มืด" } },
-    { "no": 7,  "region": "elendor", "slug": null, "name": { "th": "ก็อบลิน ทหารฝึก" } },
-    { "no": 8,  "region": "elendor", "slug": null, "name": { "th": "ก็อบลิน ร้อยตรี" } },
-    { "no": 9,  "region": "elendor", "slug": null, "name": { "th": "ก็อบลิน พลทหาร" } },
-    { "no": 10, "region": "elendor", "slug": null, "name": { "th": "ก็อบลิน สิบโท" } },
-    { "no": 11, "region": "elendor", "slug": null, "name": { "th": "หมาป่าขาว" } },
-    { "no": 12, "region": "elendor", "slug": null, "name": { "th": "หมาป่าดำ" } },
-    { "no": 13, "region": "elendor", "slug": null, "name": { "th": "เกล็ดน้ำค้างขาว" } },
-    { "no": 14, "region": "elendor", "slug": null, "name": { "th": "เกล็ดน้ำค้างแดง" } },
-    { "no": 15, "region": "elendor", "slug": null, "name": { "th": "ฟอร์กมักเกอร์" } },
-    { "no": 16, "region": "elendor", "slug": null, "name": { "th": "สไลม์คิง" } },
-    { "no": 17, "region": "elendor", "slug": null, "name": { "th": "ราชินีเพลิงโลกันตร์" } },
-    { "no": 18, "region": "elendor", "slug": null, "name": { "th": "ทากรัก" } },
-    { "no": 19, "region": "elendor", "slug": null, "name": { "th": "ก็อบลินพี่ใหญ่" } },
-    { "no": 20, "region": "elendor", "slug": null, "name": { "th": "ฮาคา" } },
-    { "no": 21, "region": "elendor", "slug": null, "name": { "th": "ฮาคาใต้เงาจันทรา" } },
-    { "no": 22, "region": "elendor", "slug": null, "name": { "th": "สไลม์ลิ่ง" } },
-    { "no": 23, "region": "elendor", "slug": null, "name": { "th": "ช้อปปู้อังเคิล" } },
-    { "no": 24, "region": "elendor", "slug": null, "name": { "th": "ช้อปป้าพี่ใหญ่" } },
-    { "no": 25, "region": "elendor", "slug": null, "name": { "th": "ดูจิ" } },
-    { "no": 26, "region": "elendor", "slug": null, "name": { "th": "ดูจิทอง" } },
-    { "no": 27, "region": "elendor", "slug": null, "name": { "th": "ดอจิ" } },
-    { "no": 28, "region": "elendor", "slug": null, "name": { "th": "ช้อปปู้" } },
-    { "no": 29, "region": "elendor", "slug": null, "name": { "th": "ช้อปปูดร้า" } },
-    { "no": 30, "region": "elendor", "slug": null, "name": { "th": "ช้อปป้า" } },
-    { "no": 31, "region": "elendor", "slug": null, "name": { "th": "ช้อปออเร้นจ์" } },
-    { "no": 32, "region": "elendor", "slug": null, "name": { "th": "สไลม์สายฟ้า" } },
-    { "no": 33, "region": "elendor", "slug": null, "name": { "th": "สไลม์สายฟ้าทอง" } },
-    { "no": 34, "region": "elendor", "slug": null, "name": { "th": "สายฟ้าขาว" } },
-    { "no": 35, "region": "elendor", "slug": null, "name": { "th": "มอลลี่" } },
-    { "no": 36, "region": "elendor", "slug": null, "name": { "th": "มอลลี่จอมคลั่งรัก" }, "nameTruncated": true },
-    { "no": 37, "region": "elendor", "slug": null, "name": { "th": "ช้อปป้าแดดดี้" } },
-    { "no": 38, "region": "elendor", "slug": null, "name": { "th": "คุสโตส" } },
-    { "no": 39, "region": "elendor", "slug": null, "name": { "th": "ผู้พิทักษ์แห่งนคร" }, "nameTruncated": true }
+    {
+      "no": 1,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ช้อปปี้"
+      }
+    },
+    {
+      "no": 2,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ช้อปเบอร์รี"
+      }
+    },
+    {
+      "no": 3,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ช้อปปี้มัม"
+      }
+    },
+    {
+      "no": 4,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ลิฟฟี่มัม"
+      }
+    },
+    {
+      "no": 5,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "สไลม์"
+      }
+    },
+    {
+      "no": 6,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "สไลม์มืด"
+      }
+    },
+    {
+      "no": 7,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ก็อบลิน ทหารฝึก"
+      }
+    },
+    {
+      "no": 8,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ก็อบลิน ร้อยตรี"
+      }
+    },
+    {
+      "no": 9,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ก็อบลิน พลทหาร"
+      }
+    },
+    {
+      "no": 10,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ก็อบลิน สิบโท"
+      }
+    },
+    {
+      "no": 11,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "หมาป่าขาว"
+      }
+    },
+    {
+      "no": 12,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "หมาป่าดำ"
+      }
+    },
+    {
+      "no": 13,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "เกล็ดน้ำค้างขาว"
+      }
+    },
+    {
+      "no": 14,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "เกล็ดน้ำค้างแดง"
+      }
+    },
+    {
+      "no": 15,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ฟอร์กมักเกอร์"
+      }
+    },
+    {
+      "no": 16,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "สไลม์คิง"
+      }
+    },
+    {
+      "no": 17,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ราชินีเพลิงโลกันตร์"
+      }
+    },
+    {
+      "no": 18,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ทากรัก"
+      }
+    },
+    {
+      "no": 19,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ก็อบลินพี่ใหญ่"
+      }
+    },
+    {
+      "no": 20,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ฮาคา"
+      }
+    },
+    {
+      "no": 21,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ฮาคาใต้เงาจันทรา"
+      }
+    },
+    {
+      "no": 22,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "สไลม์ลิ่ง"
+      }
+    },
+    {
+      "no": 23,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ช้อปปู้อังเคิล"
+      }
+    },
+    {
+      "no": 24,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ช้อปป้าพี่ใหญ่"
+      }
+    },
+    {
+      "no": 25,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ดูจิ"
+      }
+    },
+    {
+      "no": 26,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ดูจิทอง"
+      }
+    },
+    {
+      "no": 27,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ดอจิ"
+      }
+    },
+    {
+      "no": 28,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ช้อปปู้"
+      }
+    },
+    {
+      "no": 29,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ช้อปปูดร้า"
+      }
+    },
+    {
+      "no": 30,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ช้อปป้า"
+      }
+    },
+    {
+      "no": 31,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ช้อปออเร้นจ์"
+      }
+    },
+    {
+      "no": 32,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "สไลม์สายฟ้า"
+      }
+    },
+    {
+      "no": 33,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "สไลม์สายฟ้าทอง"
+      }
+    },
+    {
+      "no": 34,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "สายฟ้าขาว"
+      }
+    },
+    {
+      "no": 35,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "มอลลี่"
+      }
+    },
+    {
+      "no": 36,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "มอลลี่จอมคลั่งรักเงิน"
+      }
+    },
+    {
+      "no": 37,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ช้อปป้าแดดดี้"
+      }
+    },
+    {
+      "no": 38,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "คุสโตส"
+      }
+    },
+    {
+      "no": 39,
+      "region": "elendor",
+      "slug": null,
+      "name": {
+        "th": "ผู้พิทักษ์แห่งนครทองคำ"
+      }
+    },
+    {
+      "no": 40,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "กายหมัดหิน"
+      }
+    },
+    {
+      "no": 41,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "กายหมัดทองคำ"
+      }
+    },
+    {
+      "no": 42,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "ออร์ค นักรบ"
+      }
+    },
+    {
+      "no": 43,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "กายออร์คพึ้งกี้"
+      },
+      "nameUncertain": true
+    },
+    {
+      "no": 44,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "ออร์ค พลทหารจู่โจม"
+      }
+    },
+    {
+      "no": 45,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "แอกโซลอเติลกระ"
+      },
+      "nameTruncated": true
+    },
+    {
+      "no": 46,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "แอกโซลอเติลกระ"
+      },
+      "nameTruncated": true
+    },
+    {
+      "no": 47,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "แอกโซลอเติลกระ"
+      },
+      "nameTruncated": true
+    },
+    {
+      "no": 48,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "แอกโซลอเติลไวกิ้ง"
+      }
+    },
+    {
+      "no": 49,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "โทรลล์"
+      }
+    },
+    {
+      "no": 50,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "ไนท์โทรลล์"
+      }
+    },
+    {
+      "no": 51,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "อูรกัช"
+      }
+    },
+    {
+      "no": 52,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "หมาป่า"
+      }
+    },
+    {
+      "no": 53,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "หมาป่าเผือก"
+      }
+    },
+    {
+      "no": 54,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "หมาป่ายักษ์"
+      }
+    },
+    {
+      "no": 55,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "สกา"
+      }
+    },
+    {
+      "no": 56,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "ฟรอสต์ไบต์"
+      }
+    },
+    {
+      "no": 57,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "แอกโซลอเติลหอย"
+      },
+      "nameTruncated": true
+    },
+    {
+      "no": 58,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "แอกโซลอเติลหอย"
+      },
+      "nameTruncated": true
+    },
+    {
+      "no": 59,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "แอกโซลอเติลหอย"
+      },
+      "nameTruncated": true
+    },
+    {
+      "no": 60,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "ผู้เก็บเกี่ยว"
+      }
+    },
+    {
+      "no": 61,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "ผู้ลงโทษ"
+      }
+    },
+    {
+      "no": 62,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "นักบวชแห่งความว่"
+      },
+      "nameTruncated": true
+    },
+    {
+      "no": 63,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "เงาของนักบวช"
+      }
+    },
+    {
+      "no": 64,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "เว็กตัส"
+      }
+    },
+    {
+      "no": 65,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "มิโนต้าภูเขาสูง"
+      }
+    },
+    {
+      "no": 66,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "มินอกต้า"
+      }
+    },
+    {
+      "no": 67,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "อาม่อน"
+      }
+    },
+    {
+      "no": 68,
+      "region": "waren",
+      "slug": null,
+      "name": {
+        "th": "เงาของอาม่อน"
+      }
+    },
+    {
+      "no": 69,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "โกลิค"
+      }
+    },
+    {
+      "no": 70,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "สไลม์น้ำแข็ง"
+      }
+    },
+    {
+      "no": 71,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "สไลม์หญ้า"
+      }
+    },
+    {
+      "no": 72,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "สไลม์ไฟ"
+      }
+    },
+    {
+      "no": 73,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "สไลม์ควีน"
+      }
+    },
+    {
+      "no": 74,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "สไลม์รอยัลควีน"
+      }
+    },
+    {
+      "no": 75,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "สปาเดอร์"
+      }
+    },
+    {
+      "no": 76,
+      "region": "serenia",
+      "slug": null,
+      "name": {
+        "th": "สโปเดอร์"
+      }
+    }
   ]
 }

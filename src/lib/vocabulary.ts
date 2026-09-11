@@ -9,7 +9,8 @@ import vocabulary from "../../data/meta/vocabulary.json";
 export const VOCAB = vocabulary;
 
 export type VocabGroup = Exclude<keyof typeof vocabulary, "_meta">;
-export type Label = { th: string; en: string };
+/** บางคำยังไม่มีภาษาอังกฤษ (เช่นชื่อโซน) จึงไม่บังคับครบทั้งสองภาษา */
+export type Label = { th?: string; en?: string };
 
 const GROUPS = Object.keys(vocabulary).filter((k) => k !== "_meta") as VocabGroup[];
 
@@ -24,7 +25,8 @@ export function termsOf(group: VocabGroup): string[] {
 export function label(group: VocabGroup, term: string, locale: "th" | "en" = "th"): string {
   const entry = (vocabulary[group] as Record<string, Label>)[term];
   // คำที่ไม่มีในพจนานุกรมไม่ควรหลุดมาถึงตรงนี้ — validate:data จะจับได้ก่อน
-  return entry ? (entry[locale] ?? entry.en) : term;
+  // ไล่ลงไปจนถึงตัวคำเอง เพื่อไม่ให้หน้าเว็บโชว์ undefined ตอนยังแปลไม่ครบ
+  return entry?.[locale] ?? entry?.en ?? entry?.th ?? term;
 }
 
 /** zod enum ที่ผูกกับพจนานุกรม — พิมพ์ผิดจะ fail ตอน validate ไม่ใช่ตอนคนใช้เจอเลขเพี้ยน */

@@ -129,17 +129,23 @@ export const monsterling = z.object({
   name: text,
   /** เลขประจำตัวในสมุดภาพมอน — ผูกกลับไปที่ data/meta/monster-dex.json */
   dexNo: z.number().int().positive().optional(),
-  region: z.string().min(1).optional(),
-  rarity: vocabEnum("rarity"),
-  breed: text,
-  traits: z.array(text).default([]),
-  /** บางตัวใส่ลิงก์ได้ บางตัวไม่ได้ — แสดงเป็นไอคอนโซ่บนการ์ด */
-  linkable: z.boolean(),
+  region: vocabEnum("region").optional(),
+  /**
+   * ใส่ลิงก์ได้หรือไม่ — ไม่ใส่ = "ยังไม่รู้" ไม่ใช่ "ไม่ได้"
+   * หน้าเว็บต้องแยกสามสถานะ ไม่งั้นตัวที่ยังไม่ได้เช็คจะถูกแสดงว่าใส่ลิงก์ไม่ได้
+   */
+  linkable: z.boolean().optional(),
   effects: z.array(effect).default([]),
-  obtain: z.object({ method: vocabEnum("obtainMethod"), note: text.optional() }),
+  obtain: z.object({ method: vocabEnum("obtainMethod"), note: text.optional() }).optional(),
   images: z.object({ icon: z.string().optional() }).optional(),
   source,
 });
+
+/*
+ * ไม่มี rarity, สายพันธุ์ และ Trait ในนี้โดยตั้งใจ
+ * Trait ถูกสุ่มให้มอนแต่ละตัวตอนจับ ไม่ได้ผูกกับสายพันธุ์ — เก็บไว้ที่นี่เมื่อไหร่
+ * ก็กลายเป็นข้อมูลผิดทันที เพราะมอนชื่อเดียวกันคนละตัวจะได้ Trait ไม่เหมือนกัน
+ */
 
 export const food = z.object({
   id: slug,
@@ -180,10 +186,13 @@ export const build = z.object({
  */
 export const monsterDexEntry = z.object({
   no: z.number().int().positive(),
-  region: z.string().min(1),
+  region: vocabEnum("region"),
   slug: slug.nullable(),
   name: text,
+  /** ชื่อถูก UI ของเกมตัดท้าย ต้องแคปใหม่ */
   nameTruncated: z.boolean().optional(),
+  /** อ่านจากรูปแล้วไม่มั่นใจ ต้องยืนยันกับเกม */
+  nameUncertain: z.boolean().optional(),
 });
 
 /** หมวด -> schema ที่ใช้ตรวจ ใช้ร่วมกันระหว่าง validate:data และตัวโหลดข้อมูลของเว็บ */

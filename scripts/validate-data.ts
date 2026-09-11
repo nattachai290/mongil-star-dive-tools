@@ -113,14 +113,15 @@ if (Array.isArray(setsRaw)) {
 
 // ---------- สมุดภาพมอน ----------
 const dexRaw = readJson(join(DATA, "meta", "monster-dex.json"), "data/meta/monster-dex.json") as
-  | { regions?: Record<string, unknown>; entries?: unknown[] }
+  | { entries?: unknown[] }
   | undefined;
 
 if (dexRaw) {
-  const regions = new Set(Object.keys(dexRaw.regions ?? {}));
   const seenNo = new Set<number>();
+  const byRegion = new Map<string, number>();
   let unassigned = 0;
   let truncated = 0;
+  let uncertain = 0;
 
   for (const [i, entry] of (dexRaw.entries ?? []).entries()) {
     const where = `data/meta/monster-dex.json[${i}]`;
@@ -130,17 +131,23 @@ if (dexRaw) {
     const e = r.data;
     if (seenNo.has(e.no)) fail(where, `เลข no ${e.no} ซ้ำ`);
     seenNo.add(e.no);
-    if (!regions.has(e.region)) fail(where, `region "${e.region}" ไม่มีในรายการ regions`);
+    byRegion.set(e.region, (byRegion.get(e.region) ?? 0) + 1);
+
     // slug ที่ตั้งแล้วต้องมีไฟล์ Monsterling จริงรองรับ ไม่งั้นดัชนีจะชี้ไปที่ว่าง
     if (e.slug && !ids.monsterlings.has(e.slug)) {
       fail(where, `slug "${e.slug}" ยังไม่มีไฟล์ใน data/monsterlings/`);
     }
     if (!e.slug) unassigned += 1;
     if (e.nameTruncated) truncated += 1;
+    if (e.nameUncertain) uncertain += 1;
   }
+
+  const spread = [...byRegion.entries()].map(([r, n]) => `${r} ${n}`).join(" · ");
+  console.log(`สมุดภาพมอน: ${seenNo.size} รายการ (${spread})`);
 
   if (unassigned) warn("data/meta/monster-dex.json", `${unassigned} ตัวยังไม่ได้ตั้ง slug — รอชื่ออังกฤษทางการก่อน (ดู PLAN.md §13.1)`);
   if (truncated) warn("data/meta/monster-dex.json", `${truncated} ตัวชื่อถูกตัดในหน้าจอเกม ต้องแคปใหม่ให้เห็นชื่อเต็ม`);
+  if (uncertain) warn("data/meta/monster-dex.json", `${uncertain} ตัวอ่านจากรูปแล้วไม่มั่นใจ ต้องยืนยันกับเกม`);
 }
 
 // ---------- 3. อ้างอิงข้ามหมวด ----------
