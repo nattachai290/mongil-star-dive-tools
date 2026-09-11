@@ -56,6 +56,19 @@ mkdirSync(preview ? PREVIEW : OUTPUT, { recursive: true });
 
 let written = 0;
 const skipped: string[] = [];
+const maybeSilhouette: string[] = [];
+
+/**
+ * มอนที่ยังจับไม่ครบ การ์ดในเกมจะโชว์เป็นเงาสีเทา ครอปออกมาก็ได้เงา
+ * เช็คด้วยการดูว่าสามช่องสี R G B ใกล้กันแค่ไหน — ใกล้กันมาก = แทบไม่มีสี
+ * เป็นแค่การเตือน ไม่ใช่คำตัดสิน เพราะมอนบางตัวสีเทาจริง ๆ (เช่น Ashen Mask)
+ */
+const GREY_THRESHOLD = 10;
+async function looksGrey(buf: Buffer): Promise<boolean> {
+  const { channels } = await sharp(buf).stats();
+  const [r, g, b] = channels.slice(0, 3).map((c) => c.mean);
+  return Math.max(r, g, b) - Math.min(r, g, b) < GREY_THRESHOLD;
+}
 
 for (const file of sheets.sort((a, b) => parseInt(a, 10) - parseInt(b, 10))) {
   const startNo = parseInt(basename(file), 10);
@@ -83,8 +96,9 @@ for (const file of sheets.sort((a, b) => parseInt(a, 10) - parseInt(b, 10))) {
           background: { r: 0, g: 0, b: 0, alpha: 0 },
         });
 
-      if (preview) await pipeline.png().toFile(join(PREVIEW, `${no}-${slug}.png`));
-      else await pipeline.webp({ quality: config.output.quality }).toFile(join(OUTPUT, `${slug}-icon.webp`));
+      const buf = await (preview ? pipeline.png() : pipeline.webp({ quality: config.output.quality })).toBuffer();
+      await sharp(buf).toFile(join(preview ? PREVIEW : OUTPUT, preview ? `${no}-${slug}.png` : `${slug}-icon.webp`));
+      if (await looksGrey(buf)) maybeSilhouette.push(`No.${no} ${slug}`);
       written += 1;
     }
   }
@@ -95,5 +109,10 @@ console.log(`\nตัดแล้ว ${written} รูป -> ${preview ? PREVIEW
 if (skipped.length) {
   console.log(`ข้าม ${skipped.length} ตัว:`);
   for (const line of skipped) console.log(`  - ${line}`);
+}
+if (maybeSilhouette.length) {
+  console.log(`\nเกือบไม่มีสี ${maybeSilhouette.length} รูป — น่าจะเป็นเงาของมอนที่ยังจับไม่ครบ ให้จับครบแล้วแคปใหม่:`);
+  for (const line of maybeSilhouette) console.log(`  ? ${line}`);
+  console.log("  (มอนบางตัวสีเทาจริง ๆ ก็ติดรายการนี้ได้ ดูรูปก่อนตัดสิน)");
 }
 if (preview) console.log("\nเปิดดูใน assets-src/preview/ ว่ากรอบตรงไหม ถ้าเบี้ยวแก้ตัวเลขใน assets-src/codex-crop.json");

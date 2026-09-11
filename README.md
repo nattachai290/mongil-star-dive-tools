@@ -5,6 +5,7 @@
 
 - 📋 แผนพัฒนา: [`docs/PLAN.md`](docs/PLAN.md)
 - 🚀 Deploy และ CI: [`docs/DEPLOY.md`](docs/DEPLOY.md)
+- 🖼️ ตัดรูปมอนจากเกม: [`docs/IMAGES.md`](docs/IMAGES.md)
 - 🤖 หลังบ้านที่ AI อ่านได้: [`docs/DATA-FOR-AI.md`](docs/DATA-FOR-AI.md)
 
 ## เริ่มพัฒนา
