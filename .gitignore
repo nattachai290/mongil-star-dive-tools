@@ -29,4 +29,6 @@ yarn-error.log*
 *.tsbuildinfo
 
 # แคปหน้าจอดิบจากเกม — ไม่ commit (ดู docs/PLAN.md §6)
-/assets-src/
+# แต่ไฟล์ตั้งค่าพิกัดครอปต้อง commit ไม่งั้นคนที่ clone ไปรันสคริปต์ไม่ได้
+/assets-src/*
+!/assets-src/codex-crop.json

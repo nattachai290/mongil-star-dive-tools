@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "version": 11,
+    "version": 12,
     "updatedAt": "2026-09-11",
     "note": "ดัชนีจากหน้า 'สมุดภาพมอน' ในเกม เก็บแค่สมุด เลขประจำตัว และชื่อไทย ยังไม่ใช่ข้อมูลเต็มของ Monsterling (ยังไม่มีความสามารถและสถานะลิงก์) พอได้ข้อมูลครบค่อยสร้างไฟล์ใน data/monsterlings/ แล้วอ้างกลับมาที่ book+no",
     "source": {
@@ -317,14 +317,11 @@
     {
       "book": "field",
       "no": 34,
-      "slug": null,
+      "slug": "white-wolf-fulminator",
       "name": {
         "th": "สายฟ้าขาว",
-        "en": "White Wolf Fulmin"
-      },
-      "truncated": [
-        "en"
-      ]
+        "en": "White Wolf Fulminator"
+      }
     },
     {
       "book": "field",
@@ -338,14 +335,11 @@
     {
       "book": "field",
       "no": 36,
-      "slug": null,
+      "slug": "gold-digger-moley-mole",
       "name": {
         "th": "มอลลี่จอมคลั่งรักเงิน",
-        "en": "Gold Digger Moley"
-      },
-      "truncated": [
-        "en"
-      ]
+        "en": "Gold Digger Moley Mole"
+      }
     },
     {
       "book": "field",
@@ -1376,14 +1370,11 @@
     {
       "book": "field",
       "no": 151,
-      "slug": null,
+      "slug": "phantom-stone-tiger",
       "name": {
         "th": "ปีศาจเสือลาวา",
-        "en": "Phantom Stone Ti"
-      },
-      "truncated": [
-        "en"
-      ]
+        "en": "Phantom Stone Tiger"
+      }
     },
     {
       "book": "field",
@@ -1526,38 +1517,29 @@
     {
       "book": "event",
       "no": 1,
-      "slug": null,
+      "slug": "cappy-summer-dive",
       "name": {
         "th": "ช้อปปี้ : ซัมเมอร์ ไดฟ์!",
-        "en": "Cappy: Summer Di"
-      },
-      "truncated": [
-        "en"
-      ]
+        "en": "Cappy: Summer Dive!"
+      }
     },
     {
       "book": "event",
       "no": 2,
-      "slug": null,
+      "slug": "slimelet-summer-dive",
       "name": {
         "th": "สไลม์ : ซัมเมอร์ ไดฟ์!",
-        "en": "Slimelet: Summer"
-      },
-      "truncated": [
-        "en"
-      ]
+        "en": "Slimelet: Summer Dive!"
+      }
     },
     {
       "book": "event",
       "no": 3,
-      "slug": null,
+      "slug": "shellymander-summer-dive",
       "name": {
         "th": "แอกโซลอเติลหอยสังข์ : ซัมเมอร์ ไดฟ์!",
-        "en": "Shellymander: Su"
-      },
-      "truncated": [
-        "en"
-      ]
+        "en": "Shellymander: Summer Dive!"
+      }
     }
   ]
 }

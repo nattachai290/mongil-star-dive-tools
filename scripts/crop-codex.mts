@@ -41,9 +41,11 @@ const perSheet = config.columnsX.length * config.rowsY.length;
 const slugByNo = new Map<number, string>();
 for (const e of dex.entries) if (e.book === "field" && e.slug) slugByNo.set(e.no, e.slug);
 
+// assets-src/ ไม่ถูก commit (มีแต่ไฟล์ตั้งค่า) โฟลเดอร์นี้จึงไม่มีหลัง clone
 if (!existsSync(INPUT)) {
-  console.error(`ไม่พบโฟลเดอร์ ${INPUT} — สร้างแล้ววางภาพแคปไว้ในนั้นก่อน`);
-  process.exit(1);
+  mkdirSync(INPUT, { recursive: true });
+  console.log(`สร้างโฟลเดอร์ ${INPUT} ให้แล้ว — วางภาพแคปไว้ในนั้นแล้วรันใหม่`);
+  process.exit(0);
 }
 
 const sheets = readdirSync(INPUT).filter((f) => /^\d+\.(png|jpg|jpeg)$/i.test(f));
