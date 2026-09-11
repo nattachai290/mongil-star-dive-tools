@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "version": 10,
+    "version": 11,
     "updatedAt": "2026-09-11",
     "note": "ดัชนีจากหน้า 'สมุดภาพมอน' ในเกม เก็บแค่สมุด เลขประจำตัว และชื่อไทย ยังไม่ใช่ข้อมูลเต็มของ Monsterling (ยังไม่มีความสามารถและสถานะลิงก์) พอได้ข้อมูลครบค่อยสร้างไฟล์ใน data/monsterlings/ แล้วอ้างกลับมาที่ book+no",
     "source": {
@@ -10,7 +10,7 @@
       "screen": "สมุดภาพมอน"
     },
     "slugNote": "slug = ชื่ออังกฤษทางการแปลงเป็น kebab-case และเป็น id ถาวรของเว็บ ตั้งแล้วห้ามเปลี่ยน (PLAN.md §13.1) · ตัวที่ยังเป็น null คือยังไม่ได้ชื่ออังกฤษ",
-    "coverage": "field 1-165 ครบไม่ขาด · legendary มี No.1 เท่านั้น (No.2 กับ No.3 ในเกมยังเป็น ??? ยังไม่ถูกค้นพบ จึงยังไม่มีชื่อให้เก็บ) · event 1-3",
+    "coverage": "field 1-165 ครบไม่ขาด · legendary No.1 (No.2-3 ในเกมยังเป็น ??? ยังไม่ถูกค้นพบ) · event 1-3",
     "flags": {
       "truncated": "รายชื่อภาษาที่ชื่อยังถูก UI ของเกมตัดท้าย ต้องแคปใหม่"
     },
@@ -1322,49 +1322,55 @@
     {
       "book": "field",
       "no": 145,
-      "slug": null,
+      "slug": "baby-spirit",
       "name": {
-        "th": "วิญญาณเด็ก"
+        "th": "วิญญาณเด็ก",
+        "en": "Baby Spirit"
       }
     },
     {
       "book": "field",
       "no": 146,
-      "slug": null,
+      "slug": "chipmunk-spirit",
       "name": {
-        "th": "วิญญาณกระรอก"
+        "th": "วิญญาณกระรอก",
+        "en": "Chipmunk Spirit"
       }
     },
     {
       "book": "field",
       "no": 147,
-      "slug": null,
+      "slug": "wind-spirit",
       "name": {
-        "th": "วิญญาณแห่งลมวายุ"
+        "th": "วิญญาณแห่งลมวายุ",
+        "en": "Wind Spirit"
       }
     },
     {
       "book": "field",
       "no": 148,
-      "slug": null,
+      "slug": "grudge-spirit",
       "name": {
-        "th": "วิญญาณแห่งการทำนาย"
+        "th": "วิญญาณแห่งการทำนาย",
+        "en": "Grudge Spirit"
       }
     },
     {
       "book": "field",
       "no": 149,
-      "slug": null,
+      "slug": "grudge-revenant",
       "name": {
-        "th": "วิญญาณแห่งความสิ้นหวัง"
+        "th": "วิญญาณแห่งความสิ้นหวัง",
+        "en": "Grudge Revenant"
       }
     },
     {
       "book": "field",
       "no": 150,
-      "slug": null,
+      "slug": "phantom-snow-tiger",
       "name": {
-        "th": "ปีศาจเสือหิมะ"
+        "th": "ปีศาจเสือหิมะ",
+        "en": "Phantom Snow Tiger"
       }
     },
     {
@@ -1372,23 +1378,29 @@
       "no": 151,
       "slug": null,
       "name": {
-        "th": "ปีศาจเสือลาวา"
-      }
+        "th": "ปีศาจเสือลาวา",
+        "en": "Phantom Stone Ti"
+      },
+      "truncated": [
+        "en"
+      ]
     },
     {
       "book": "field",
       "no": 152,
-      "slug": null,
+      "slug": "lizarcher",
       "name": {
-        "th": "ลิซาร์ด มือธนู"
+        "th": "ลิซาร์ด มือธนู",
+        "en": "Lizarcher"
       }
     },
     {
       "book": "field",
       "no": 153,
-      "slug": null,
+      "slug": "sun-lizarcher",
       "name": {
-        "th": "ลิซาร์ด มือธนูทอง"
+        "th": "ลิซาร์ด มือธนูทอง",
+        "en": "Sun Lizarcher"
       },
       "truncated": [
         "th"
@@ -1397,105 +1409,118 @@
     {
       "book": "field",
       "no": 154,
-      "slug": null,
+      "slug": "lizcout",
       "name": {
-        "th": "ลิซาร์ด มือดาบ"
+        "th": "ลิซาร์ด มือดาบ",
+        "en": "Lizcout"
       }
     },
     {
       "book": "field",
       "no": 155,
-      "slug": null,
+      "slug": "master-lizcout",
       "name": {
-        "th": "ลิซาร์ด ท่านเซอร์"
+        "th": "ลิซาร์ด ท่านเซอร์",
+        "en": "Master Lizcout"
       }
     },
     {
       "book": "field",
       "no": 156,
-      "slug": null,
+      "slug": "kroko",
       "name": {
-        "th": "อาโก"
+        "th": "อาโก",
+        "en": "Kroko"
       }
     },
     {
       "book": "field",
       "no": 157,
-      "slug": null,
+      "slug": "krokomander",
       "name": {
-        "th": "อาโกกระดองหิน"
+        "th": "อาโกกระดองหิน",
+        "en": "Krokomander"
       }
     },
     {
       "book": "field",
       "no": 158,
-      "slug": null,
+      "slug": "bunnie-swordsman",
       "name": {
-        "th": "กระตุ่ย นักรบ"
+        "th": "กระตุ่ย นักรบ",
+        "en": "Bunnie Swordsman"
       }
     },
     {
       "book": "field",
       "no": 159,
-      "slug": null,
+      "slug": "toad-alee",
       "name": {
-        "th": "อับเกราะหนา"
+        "th": "อับเกราะหนา",
+        "en": "Toad-alee"
       }
     },
     {
       "book": "field",
       "no": 160,
-      "slug": null,
+      "slug": "irontoise",
       "name": {
-        "th": "บูกิ เกราะเหล็ก"
+        "th": "บูกิ เกราะเหล็ก",
+        "en": "Irontoise"
       }
     },
     {
       "book": "field",
       "no": 161,
-      "slug": null,
+      "slug": "treetoise",
       "name": {
-        "th": "บูกิ ไม้ยักษ์"
+        "th": "บูกิ ไม้ยักษ์",
+        "en": "Treetoise"
       }
     },
     {
       "book": "field",
       "no": 162,
-      "slug": null,
+      "slug": "sunek",
       "name": {
-        "th": "นาควีรณ์"
+        "th": "นาควีรณ์",
+        "en": "Sunek"
       }
     },
     {
       "book": "field",
       "no": 163,
-      "slug": null,
+      "slug": "suhwa",
       "name": {
-        "th": "นาคบุปผา"
+        "th": "นาคบุปผา",
+        "en": "Suhwa"
       }
     },
     {
       "book": "field",
       "no": 164,
-      "slug": null,
+      "slug": "red-shadow",
       "name": {
-        "th": "เงาแดง"
+        "th": "เงาแดง",
+        "en": "Red Shadow"
       }
     },
     {
       "book": "field",
       "no": 165,
-      "slug": null,
+      "slug": "blue-shadow",
       "name": {
-        "th": "เงาคราม"
+        "th": "เงาคราม",
+        "en": "Blue Shadow"
       }
     },
     {
       "book": "legendary",
       "no": 1,
-      "slug": null,
+      "slug": "reginula",
       "name": {
-        "th": "เรกีนูลา"
+        "th": "เรกีนูลา",
+        "en": "Reginula"
       }
     },
     {
@@ -1503,24 +1528,36 @@
       "no": 1,
       "slug": null,
       "name": {
-        "th": "ช้อปปี้ : ซัมเมอร์ ไดฟ์!"
-      }
+        "th": "ช้อปปี้ : ซัมเมอร์ ไดฟ์!",
+        "en": "Cappy: Summer Di"
+      },
+      "truncated": [
+        "en"
+      ]
     },
     {
       "book": "event",
       "no": 2,
       "slug": null,
       "name": {
-        "th": "สไลม์ : ซัมเมอร์ ไดฟ์!"
-      }
+        "th": "สไลม์ : ซัมเมอร์ ไดฟ์!",
+        "en": "Slimelet: Summer"
+      },
+      "truncated": [
+        "en"
+      ]
     },
     {
       "book": "event",
       "no": 3,
       "slug": null,
       "name": {
-        "th": "แอกโซลอเติลหอยสังข์ : ซัมเมอร์ ไดฟ์!"
-      }
+        "th": "แอกโซลอเติลหอยสังข์ : ซัมเมอร์ ไดฟ์!",
+        "en": "Shellymander: Su"
+      },
+      "truncated": [
+        "en"
+      ]
     }
   ]
 }
