@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  --bg: #f4f3f9;
+  --surface: #ffffff;
+  --surface-2: #eceaf4;
+  --ink: #1b1c29;
+  --ink-2: #4c4f66;
+  --muted: #6e7189;
+  --line: #dedbec;
+  --gold: #a87215;
+  --gold-bg: #f6eddb;
+  --rail: #5a63d8;
+}
+
+[data-theme="dark"] {
+  --bg: #101119;
+  --surface: #191b26;
+  --surface-2: #212436;
+  --ink: #eeecf6;
+  --ink-2: #b9bbd0;
+  --muted: #8d90a8;
+  --line: #2c2f42;
+  --gold: #e6ac4c;
+  --gold-bg: #2e2416;
+  --rail: #8b93f4;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-gold: var(--gold);
+  --color-gold-bg: var(--gold-bg);
+  --color-rail: var(--rail);
+
+  --font-display: var(--font-chakra-petch), system-ui, sans-serif;
+  --font-sans: var(--font-plex-thai), system-ui, sans-serif;
+}
+
+html {
+  color-scheme: light;
+}
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
