@@ -16,6 +16,7 @@
  *
  * ไฟล์นี้เป็น .mts เพราะ sharp เป็น ESM-only — ถ้าเปลี่ยนเป็น .ts จะรันไม่ได้
  */
+import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import sharp from "sharp";
@@ -80,6 +81,26 @@ async function looksGrey(buf: Buffer): Promise<boolean> {
   const { channels } = await sharp(buf).stats();
   const [r, g, b] = channels.slice(0, 3).map((c) => c.mean);
   return Math.max(r, g, b) - Math.min(r, g, b) < GREY_THRESHOLD;
+}
+
+/**
+ * ภาพซ้ำกันเป๊ะ ๆ ไม่มีวันถูกต้อง — หนึ่งภาพมีมอนแค่ 8 ตัว คัดลอกภาพเดิมกี่ไฟล์
+ * ก็ยังได้มอน 8 ตัวเดิม แต่จะถูกเซฟทับด้วยชื่อของมอนตัวอื่น = รูปผิดแบบดูไม่ออก
+ * จึงหยุดตั้งแต่ยังไม่ตัด
+ */
+const byHash = new Map<string, string[]>();
+for (const file of sheets) {
+  const hash = createHash("sha1").update(readFileSync(join(INPUT, file))).digest("hex");
+  byHash.set(hash, [...(byHash.get(hash) ?? []), file]);
+}
+const duplicates = [...byHash.values()].filter((group) => group.length > 1);
+if (duplicates.length) {
+  console.error("หยุดก่อน — เจอภาพที่เนื้อในเหมือนกันเป๊ะ:\n");
+  for (const group of duplicates) console.error(`  ${group.join(" = ")}`);
+  console.error("\nหนึ่งภาพมีมอนแค่ 8 ตัว คัดลอกภาพเดิมไม่ได้ทำให้ได้มอนเพิ่ม");
+  console.error("ถ้าตัดต่อ รูปมอนตัวเดิมจะถูกเซฟเป็นชื่อของมอนตัวอื่น = รูปผิดโดยดูไม่ออก");
+  console.error("ต้องแคปหลายภาพโดยเลื่อนหน้าจอไปคนละตำแหน่ง ภาพละ 8 ตัว");
+  process.exit(1);
 }
 
 const parsed = sheets.map((file) => {
