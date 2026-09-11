@@ -20,7 +20,8 @@ npm run dev          # http://localhost:3000
 |---|---|
 | `npm run dev` | รัน dev server |
 | `npm run build` | build สำหรับ production |
-| `npm run check` | typecheck + lint + ตรวจไฟล์ข้อมูล (รันก่อน push) |
+| `npm run check` | typecheck + lint + selftest + ตรวจไฟล์ข้อมูล (รันก่อน push) |
+| `npm run selftest` | ทดสอบ schema และสูตรดาเมจด้วยข้อมูลจำลอง |
 | `npm run validate:data` | ตรวจไฟล์ JSON ใน `data/` |
 | `npm run audit` | ตรวจช่องโหว่ dependency ระดับ high ขึ้นไป |
 

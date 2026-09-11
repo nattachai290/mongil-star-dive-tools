@@ -1,82 +1,198 @@
 /**
- * ตรวจความถูกต้องของไฟล์ข้อมูลใน data/ ก่อนขึ้นเว็บ
+ * ตรวจไฟล์ข้อมูลทั้งหมดก่อนขึ้นเว็บ — รันใน CI ทุก PR ถ้าไม่ผ่าน build จะ fail
  *
- * ตอนนี้ตรวจกฎพื้นฐานที่ใช้ได้กับทุก entity:
- *   1. ไฟล์ JSON ต้อง parse ผ่าน
- *   2. ต้องมีฟิลด์ `id` และตรงกับชื่อไฟล์ (jiwon.json -> "jiwon")
- *   3. ห้ามมี id ซ้ำภายในหมวดเดียวกัน
+ *   1. ทุกไฟล์ผ่าน zod schema ของหมวดตัวเอง (รวมถึงคำศัพท์ต้องอยู่ใน vocabulary.json)
+ *   2. id ตรงกับชื่อไฟล์ และไม่ซ้ำกันในหมวดเดียวกัน
+ *   3. ทุก id ที่อ้างถึงข้ามหมวดมีอยู่จริง
+ *   4. ไฟล์รูปที่ระบุไว้มีอยู่จริงใน public/images/
+ *   5. pipeline ใน formula.json ไม่มีขั้นที่โค้ดยังทำไม่ได้
  *
- * ขั้นถัดไป (M1 ใน docs/PLAN.md): zod schema ต่อ entity, ตรวจว่า id ที่อ้างถึงกันมีอยู่จริง
- * และตรวจว่าไฟล์รูปที่ระบุไว้มีจริงใน public/images/
+ * คำเตือน (ไม่ทำให้ fail) จะถูกสรุปไว้ท้ายผล เช่น ช่องที่ยังไม่มีภาษาไทย
  */
-import { readdirSync, readFileSync, statSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import { z } from "zod";
+import { SCHEMAS, equipmentSet, type Collection } from "../src/lib/schema/entities";
+import { FORMULA, IMPLEMENTED_STEPS } from "../src/lib/formula";
 
-const DATA_DIR = join(process.cwd(), "data");
+const ROOT = process.cwd();
+const DATA = join(ROOT, "data");
+const IMAGES = join(ROOT, "public", "images");
 
 const errors: string[] = [];
+const warnings: string[] = [];
+const ids: Record<string, Set<string>> = {};
 let fileCount = 0;
 
-function listCollections(): string[] {
+function fail(where: string, msg: string) { errors.push(`${where}: ${msg}`); }
+function warn(where: string, msg: string) { warnings.push(`${where}: ${msg}`); }
+
+function readJson(path: string, where: string): unknown | undefined {
   try {
-    return readdirSync(DATA_DIR).filter((name) =>
-      statSync(join(DATA_DIR, name)).isDirectory(),
-    );
-  } catch {
-    errors.push(`ไม่พบโฟลเดอร์ data/ ที่ ${DATA_DIR}`);
-    return [];
+    return JSON.parse(readFileSync(path, "utf8"));
+  } catch (e) {
+    fail(where, `JSON ไม่ถูกต้อง — ${(e as Error).message}`);
+    return undefined;
   }
 }
 
-function validateCollection(collection: string): void {
-  const dir = join(DATA_DIR, collection);
-  const files = readdirSync(dir).filter((name) => name.endsWith(".json"));
-  const seen = new Map<string, string>();
+function zodIssues(where: string, error: z.ZodError) {
+  for (const issue of error.issues) {
+    const at = issue.path.length ? issue.path.join(".") : "(ราก)";
+    fail(where, `${at} — ${issue.message}`);
+  }
+}
 
-  for (const file of files) {
+/** เก็บทุกช่องข้อความที่ยังไม่มีภาษาไทย เพื่อรายงานเป็นคำเตือน */
+function countMissingThai(value: unknown, where: string, path: string[] = []) {
+  if (Array.isArray(value)) {
+    value.forEach((v, i) => countMissingThai(v, where, [...path, String(i)]));
+    return;
+  }
+  if (typeof value !== "object" || value === null) return;
+  const obj = value as Record<string, unknown>;
+  const looksLikeText = ("en" in obj || "th" in obj) && Object.keys(obj).every((k) => k === "en" || k === "th");
+  if (looksLikeText && !obj.th) {
+    warn(where, `${path.join(".") || "(ราก)"} ยังไม่มีภาษาไทย`);
+    return;
+  }
+  for (const [k, v] of Object.entries(obj)) countMissingThai(v, where, [...path, k]);
+}
+
+// ---------- 1–2. schema + id ----------
+const parsed: Record<string, Record<string, Record<string, unknown>>> = {};
+
+for (const collection of Object.keys(SCHEMAS) as Collection[]) {
+  const dir = join(DATA, collection);
+  ids[collection] = new Set();
+  parsed[collection] = {};
+  if (!existsSync(dir)) { fail(`data/${collection}`, "ไม่พบโฟลเดอร์"); continue; }
+
+  for (const file of readdirSync(dir).filter((f) => f.endsWith(".json"))) {
     fileCount += 1;
-    const path = `data/${collection}/${file}`;
-    const slug = file.replace(/\.json$/, "");
+    const where = `data/${collection}/${file}`;
+    const raw = readJson(join(dir, file), where);
+    if (raw === undefined) continue;
 
-    let parsed: unknown;
-    try {
-      parsed = JSON.parse(readFileSync(join(dir, file), "utf8"));
-    } catch (error) {
-      errors.push(`${path}: JSON ไม่ถูกต้อง — ${(error as Error).message}`);
-      continue;
-    }
+    const result = SCHEMAS[collection].safeParse(raw);
+    if (!result.success) { zodIssues(where, result.error); continue; }
 
-    if (typeof parsed !== "object" || parsed === null || Array.isArray(parsed)) {
-      errors.push(`${path}: ต้องเป็น object ไม่ใช่ ${Array.isArray(parsed) ? "array" : typeof parsed}`);
-      continue;
-    }
+    const doc = result.data as Record<string, unknown>;
+    const id = doc.id as string;
+    const stem = file.replace(/\.json$/, "");
+    if (id !== stem) fail(where, `id "${id}" ไม่ตรงกับชื่อไฟล์ "${stem}"`);
+    if (ids[collection].has(id)) fail(where, `id "${id}" ซ้ำกับไฟล์อื่นในหมวดเดียวกัน`);
 
-    const id = (parsed as { id?: unknown }).id;
-    if (typeof id !== "string" || id.length === 0) {
-      errors.push(`${path}: ไม่มีฟิลด์ "id" หรือไม่ใช่ string`);
-      continue;
-    }
-    if (id !== slug) {
-      errors.push(`${path}: id "${id}" ไม่ตรงกับชื่อไฟล์ "${slug}"`);
-    }
+    ids[collection].add(id);
+    parsed[collection][id] = doc;
+    countMissingThai(raw, where);
 
-    const duplicate = seen.get(id);
-    if (duplicate) {
-      errors.push(`${path}: id "${id}" ซ้ำกับ ${duplicate}`);
-    } else {
-      seen.set(id, path);
+    const src = doc.source as { fieldsUnverified?: string[] } | undefined;
+    if (src?.fieldsUnverified?.length) {
+      warn(where, `ยังไม่ยืนยัน ${src.fieldsUnverified.length} ฟิลด์: ${src.fieldsUnverified.join(", ")}`);
     }
   }
 }
 
-for (const collection of listCollections()) {
-  validateCollection(collection);
+// ---------- เซ็ตอุปกรณ์ (อยู่ใน meta) ----------
+const setIds = new Set<string>();
+const setsRaw = readJson(join(DATA, "meta", "sets.json"), "data/meta/sets.json");
+if (Array.isArray(setsRaw)) {
+  setsRaw.forEach((s, i) => {
+    const where = `data/meta/sets.json[${i}]`;
+    const r = equipmentSet.safeParse(s);
+    if (!r.success) zodIssues(where, r.error);
+    else {
+      if (setIds.has(r.data.id)) fail(where, `id เซ็ต "${r.data.id}" ซ้ำ`);
+      setIds.add(r.data.id);
+    }
+  });
+} else if (setsRaw !== undefined) {
+  fail("data/meta/sets.json", "ต้องเป็น array");
 }
 
-if (errors.length > 0) {
+// ---------- 3. อ้างอิงข้ามหมวด ----------
+function checkRefs(where: string, refs: unknown, target: Collection | "sets", field: string) {
+  const list = Array.isArray(refs) ? refs : refs === undefined ? [] : [refs];
+  for (const ref of list) {
+    if (typeof ref !== "string") continue;
+    const pool = target === "sets" ? setIds : ids[target];
+    if (!pool.has(ref)) fail(where, `${field} อ้างถึง "${ref}" ในหมวด ${target} แต่ไม่มีไฟล์นั้น`);
+  }
+}
+
+for (const [id, doc] of Object.entries(parsed.characters ?? {})) {
+  const where = `data/characters/${id}.json`;
+  const rec = doc.recommended as Record<string, unknown> | undefined;
+  if (rec) {
+    checkRefs(where, rec.artifacts, "artifacts", "recommended.artifacts");
+    checkRefs(where, rec.equipment, "equipment", "recommended.equipment");
+    checkRefs(where, rec.monsterlings, "monsterlings", "recommended.monsterlings");
+    checkRefs(where, rec.teammates, "characters", "recommended.teammates");
+    checkRefs(where, rec.builds, "builds", "recommended.builds");
+  }
+}
+
+for (const [id, doc] of Object.entries(parsed.artifacts ?? {})) {
+  checkRefs(`data/artifacts/${id}.json`, doc.recommendedFor, "characters", "recommendedFor");
+}
+
+for (const [id, doc] of Object.entries(parsed.equipment ?? {})) {
+  checkRefs(`data/equipment/${id}.json`, doc.setId, "sets", "setId");
+}
+
+for (const [id, doc] of Object.entries(parsed.builds ?? {})) {
+  const where = `data/builds/${id}.json`;
+  checkRefs(where, doc.characterId, "characters", "characterId");
+  checkRefs(where, doc.artifacts, "artifacts", "artifacts");
+  checkRefs(where, doc.equipment, "equipment", "equipment");
+  checkRefs(where, doc.setIds, "sets", "setIds");
+  checkRefs(where, doc.monsterlings, "monsterlings", "monsterlings");
+  const food = doc.food as { entree?: string; side?: string } | undefined;
+  if (food) {
+    checkRefs(where, food.entree, "food", "food.entree");
+    checkRefs(where, food.side, "food", "food.side");
+  }
+  for (const comp of (doc.teamComps as Array<{ members: string[] }> | undefined) ?? []) {
+    checkRefs(where, comp.members, "characters", "teamComps.members");
+  }
+}
+
+// ---------- 4. รูปภาพ ----------
+for (const collection of Object.keys(SCHEMAS) as Collection[]) {
+  for (const [id, doc] of Object.entries(parsed[collection] ?? {})) {
+    const images = doc.images as Record<string, string> | undefined;
+    if (!images) { warn(`data/${collection}/${id}.json`, "ยังไม่มีรูป"); continue; }
+    for (const [variant, filename] of Object.entries(images)) {
+      if (!filename) continue;
+      if (!existsSync(join(IMAGES, collection, filename))) {
+        fail(`data/${collection}/${id}.json`, `images.${variant} ชี้ไปที่ public/images/${collection}/${filename} แต่ไม่มีไฟล์นั้น`);
+      }
+    }
+  }
+}
+
+// ---------- 5. สูตรดาเมจ ----------
+const implemented = new Set<string>(IMPLEMENTED_STEPS);
+for (const step of FORMULA.pipeline) {
+  if (!implemented.has(step)) {
+    fail("data/meta/formula.json", `pipeline มีขั้น "${step}" ที่ src/lib/formula.ts ยังไม่ได้ทำ`);
+  }
+}
+const missing = Object.entries(FORMULA.constants).filter(([, v]) => v === null).map(([k]) => k);
+if (missing.length) {
+  warn("data/meta/formula.json", `ค่าคงที่ที่ยังไม่ยืนยัน: ${missing.join(", ")} — เครื่องคำนวณจะข้ามขั้นที่ต้องใช้ค่าเหล่านี้`);
+}
+
+// ---------- สรุป ----------
+if (warnings.length) {
+  console.warn(`คำเตือน ${warnings.length} รายการ:`);
+  for (const w of warnings) console.warn(`  ! ${w}`);
+  console.warn("");
+}
+if (errors.length) {
   console.error(`พบข้อผิดพลาด ${errors.length} รายการ:\n`);
-  for (const error of errors) console.error(`  ✗ ${error}`);
+  for (const e of errors) console.error(`  ✗ ${e}`);
   process.exit(1);
 }
-
-console.log(`ข้อมูลผ่านการตรวจทั้งหมด (${fileCount} ไฟล์)`);
+console.log(`ข้อมูลผ่านการตรวจทั้งหมด (${fileCount} ไฟล์, ${setIds.size} เซ็ต)`);

@@ -36,6 +36,9 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: ทดสอบ schema และสูตรดาเมจ
+        run: npm run selftest
+
       - name: ตรวจไฟล์ข้อมูล
         run: npm run validate:data
 
