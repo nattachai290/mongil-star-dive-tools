@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "version": 9,
+    "version": 10,
     "updatedAt": "2026-09-11",
     "note": "ดัชนีจากหน้า 'สมุดภาพมอน' ในเกม เก็บแค่สมุด เลขประจำตัว และชื่อไทย ยังไม่ใช่ข้อมูลเต็มของ Monsterling (ยังไม่มีความสามารถและสถานะลิงก์) พอได้ข้อมูลครบค่อยสร้างไฟล์ใน data/monsterlings/ แล้วอ้างกลับมาที่ book+no",
     "source": {
@@ -1025,265 +1025,298 @@
     {
       "book": "field",
       "no": 112,
-      "slug": null,
+      "slug": "battle-spirit",
       "name": {
-        "th": "วิญญาณนักรบ"
+        "th": "วิญญาณนักรบ",
+        "en": "Battle Spirit"
       }
     },
     {
       "book": "field",
       "no": 113,
-      "slug": null,
+      "slug": "white-wraith",
       "name": {
-        "th": "ซาตานสตะ"
+        "th": "ซาตานสตะ",
+        "en": "White Wraith"
       }
     },
     {
       "book": "field",
       "no": 114,
-      "slug": null,
+      "slug": "shademask",
       "name": {
-        "th": "หน้ากากเงา"
+        "th": "หน้ากากเงา",
+        "en": "Shademask"
       }
     },
     {
       "book": "field",
       "no": 115,
-      "slug": null,
+      "slug": "ashen-mask",
       "name": {
-        "th": "หน้ากากขี้เถ้า"
+        "th": "หน้ากากขี้เถ้า",
+        "en": "Ashen Mask"
       }
     },
     {
       "book": "field",
       "no": 116,
-      "slug": null,
+      "slug": "turtlie",
       "name": {
-        "th": "เต่า"
+        "th": "เต่า",
+        "en": "Turtlie"
       }
     },
     {
       "book": "field",
       "no": 117,
-      "slug": null,
+      "slug": "silvershell",
       "name": {
-        "th": "เต่าเงิน"
+        "th": "เต่าเงิน",
+        "en": "Silvershell"
       }
     },
     {
       "book": "field",
       "no": 118,
-      "slug": null,
+      "slug": "swamp-odong",
       "name": {
-        "th": "ต้นสนผู้เฒ่าอี"
+        "th": "ต้นสนผู้เฒ่าอี",
+        "en": "Swamp Odong"
       }
     },
     {
       "book": "field",
       "no": 119,
-      "slug": null,
+      "slug": "duoxini",
       "name": {
-        "th": "ทูอ็อกชีนี"
+        "th": "ทูอ็อกชีนี",
+        "en": "Duoxini"
       }
     },
     {
       "book": "field",
       "no": 120,
-      "slug": null,
+      "slug": "fiend",
       "name": {
-        "th": "ซาตานเพลิง"
+        "th": "ซาตานเพลิง",
+        "en": "Fiend"
       }
     },
     {
       "book": "field",
       "no": 121,
-      "slug": null,
+      "slug": "black-hauntstack",
       "name": {
-        "th": "หุ่นฟางดำ"
+        "th": "หุ่นฟางดำ",
+        "en": "Black Hauntstack"
       }
     },
     {
       "book": "field",
       "no": 122,
-      "slug": null,
+      "slug": "ronin-bunnie",
       "name": {
-        "th": "กระตุ่ย พเนจร"
+        "th": "กระตุ่ย พเนจร",
+        "en": "Ronin Bunnie"
       }
     },
     {
       "book": "field",
       "no": 123,
-      "slug": null,
+      "slug": "bleacher-bunnie",
       "name": {
-        "th": "กระตุ่ย ฟอกขาว"
+        "th": "กระตุ่ย ฟอกขาว",
+        "en": "Bleacher Bunnie"
       }
     },
     {
       "book": "field",
       "no": 124,
-      "slug": null,
+      "slug": "ronin-raccoonie",
       "name": {
-        "th": "แรคคูน พเนจร"
+        "th": "แรคคูน พเนจร",
+        "en": "Ronin Raccoonie"
       }
     },
     {
       "book": "field",
       "no": 125,
-      "slug": null,
+      "slug": "bleacher-raccoonie",
       "name": {
-        "th": "แรคคูน ฟอกขาว"
+        "th": "แรคคูน ฟอกขาว",
+        "en": "Bleacher Raccoonie"
       }
     },
     {
       "book": "field",
       "no": 126,
-      "slug": null,
+      "slug": "ronin-turtlie",
       "name": {
-        "th": "เต่า พเนจร"
+        "th": "เต่า พเนจร",
+        "en": "Ronin Turtlie"
       }
     },
     {
       "book": "field",
       "no": 127,
-      "slug": null,
+      "slug": "hop-alee",
       "name": {
-        "th": "อับเด้งดึ๋ง"
+        "th": "อับเด้งดึ๋ง",
+        "en": "Hop-alee"
       }
     },
     {
       "book": "field",
       "no": 128,
-      "slug": null,
+      "slug": "salt-alee",
       "name": {
-        "th": "อับแข็งโป๊ก"
+        "th": "อับแข็งโป๊ก",
+        "en": "Salt-alee"
       }
     },
     {
       "book": "field",
       "no": 129,
-      "slug": null,
+      "slug": "brute-alee",
       "name": {
-        "th": "อับจอมโหด"
+        "th": "อับจอมโหด",
+        "en": "Brute-alee"
       }
     },
     {
       "book": "field",
       "no": 130,
-      "slug": null,
+      "slug": "borborg",
       "name": {
-        "th": "โบร์โบก"
+        "th": "โบร์โบก",
+        "en": "Borborg"
       }
     },
     {
       "book": "field",
       "no": 131,
-      "slug": null,
+      "slug": "goald",
       "name": {
-        "th": "จ้าวแห่งอับ"
+        "th": "จ้าวแห่งอับ",
+        "en": "Goald"
       }
     },
     {
       "book": "field",
       "no": 132,
-      "slug": null,
+      "slug": "cacabagge",
       "name": {
-        "th": "กาดน้อย"
+        "th": "กาดน้อย",
+        "en": "Cacabagge"
       }
     },
     {
       "book": "field",
       "no": 133,
-      "slug": null,
+      "slug": "kimkimchi",
       "name": {
-        "th": "กาดน้อยที่ถูกดอง"
+        "th": "กาดน้อยที่ถูกดอง",
+        "en": "Kimkimchi"
       }
     },
     {
       "book": "field",
       "no": 134,
-      "slug": null,
+      "slug": "cocorn",
       "name": {
-        "th": "โพดน้อย"
+        "th": "โพดน้อย",
+        "en": "Cocorn"
       }
     },
     {
       "book": "field",
       "no": 135,
-      "slug": null,
+      "slug": "rococorn",
       "name": {
-        "th": "โพดน้อยที่ถูกย่าง"
+        "th": "โพดน้อยที่ถูกย่าง",
+        "en": "Rococorn"
       }
     },
     {
       "book": "field",
       "no": 136,
-      "slug": null,
+      "slug": "twisted-spineflower",
       "name": {
-        "th": "ดอกไม้ฟื้นฟูกระดูกที่บิดเบี้ยว"
+        "th": "ดอกไม้ฟื้นฟูกระดูกที่บิดเบี้ยว",
+        "en": "Twisted Spineflower"
       }
     },
     {
       "book": "field",
       "no": 137,
-      "slug": null,
+      "slug": "twisted-bloodflower",
       "name": {
-        "th": "ดอกไม้ฟื้นฟูเลือดที่บิดเบี้ยว"
+        "th": "ดอกไม้ฟื้นฟูเลือดที่บิดเบี้ยว",
+        "en": "Twisted Bloodflower"
       }
     },
     {
       "book": "field",
       "no": 138,
-      "slug": null,
+      "slug": "bruised-bloodflower",
       "name": {
-        "th": "ดอกไม้ฟื้นฟูเลือดที่ฟกช้ำ"
+        "th": "ดอกไม้ฟื้นฟูเลือดที่ฟกช้ำ",
+        "en": "Bruised Bloodflower"
       }
     },
     {
       "book": "field",
       "no": 139,
-      "slug": null,
+      "slug": "manwol",
       "name": {
-        "th": "มัลวอลลก"
+        "th": "มัลวอลลก",
+        "en": "Manwol"
       }
     },
     {
       "book": "field",
       "no": 140,
-      "slug": null,
+      "slug": "nokjung",
       "name": {
-        "th": "ปีศาจกวาง"
+        "th": "ปีศาจกวาง",
+        "en": "Nokjung"
       }
     },
     {
       "book": "field",
       "no": 141,
-      "slug": null,
+      "slug": "onsae",
       "name": {
-        "th": "ออนแซ"
+        "th": "ออนแซ",
+        "en": "Onsae"
       }
     },
     {
       "book": "field",
       "no": 142,
-      "slug": null,
+      "slug": "cinder",
       "name": {
-        "th": "ปีศาจเพลิง"
+        "th": "ปีศาจเพลิง",
+        "en": "Cinder"
       }
     },
     {
       "book": "field",
       "no": 143,
-      "slug": null,
+      "slug": "hahnul",
       "name": {
-        "th": "ฮันอุล"
+        "th": "ฮันอุล",
+        "en": "Hahnul"
       }
     },
     {
       "book": "field",
       "no": 144,
-      "slug": null,
+      "slug": "gulgak",
       "name": {
-        "th": "ปีศาจเสือบิดเบี้ยว"
+        "th": "ปีศาจเสือบิดเบี้ยว",
+        "en": "Gulgak"
       }
     },
     {
