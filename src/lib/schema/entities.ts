@@ -129,7 +129,6 @@ export const monsterling = z.object({
   name: text,
   /** เลขประจำตัวในสมุดภาพมอน — ผูกกลับไปที่ data/meta/monster-dex.json */
   dexNo: z.number().int().positive().optional(),
-  region: vocabEnum("region").optional(),
   /**
    * ใส่ลิงก์ได้หรือไม่ — ไม่ใส่ = "ยังไม่รู้" ไม่ใช่ "ไม่ได้"
    * หน้าเว็บต้องแยกสามสถานะ ไม่งั้นตัวที่ยังไม่ได้เช็คจะถูกแสดงว่าใส่ลิงก์ไม่ได้
@@ -186,7 +185,6 @@ export const build = z.object({
  */
 export const monsterDexEntry = z.object({
   no: z.number().int().positive(),
-  region: vocabEnum("region"),
   slug: slug.nullable(),
   name: text,
   /** ชื่อถูก UI ของเกมตัดท้าย ต้องแคปใหม่ */

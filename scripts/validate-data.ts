@@ -118,7 +118,6 @@ const dexRaw = readJson(join(DATA, "meta", "monster-dex.json"), "data/meta/monst
 
 if (dexRaw) {
   const seenNo = new Set<number>();
-  const byRegion = new Map<string, number>();
   let unassigned = 0;
   let truncated = 0;
   let uncertain = 0;
@@ -131,7 +130,6 @@ if (dexRaw) {
     const e = r.data;
     if (seenNo.has(e.no)) fail(where, `เลข no ${e.no} ซ้ำ`);
     seenNo.add(e.no);
-    byRegion.set(e.region, (byRegion.get(e.region) ?? 0) + 1);
 
     // slug ที่ตั้งแล้วต้องมีไฟล์ Monsterling จริงรองรับ ไม่งั้นดัชนีจะชี้ไปที่ว่าง
     if (e.slug && !ids.monsterlings.has(e.slug)) {
@@ -142,8 +140,11 @@ if (dexRaw) {
     if (e.nameUncertain) uncertain += 1;
   }
 
-  const spread = [...byRegion.entries()].map(([r, n]) => `${r} ${n}`).join(" · ");
-  console.log(`สมุดภาพมอน: ${seenNo.size} รายการ (${spread})`);
+  const maxNo = Math.max(0, ...seenNo);
+  const gaps = Array.from({ length: maxNo }, (_, i) => i + 1).filter((n) => !seenNo.has(n));
+  console.log(`สมุดภาพมอน: ${seenNo.size} รายการ (สูงสุด No.${maxNo})`);
+  // เลขที่หายไปกลางดัชนีแปลว่าแคปตกหน้า ไม่ใช่เกมข้ามเลข
+  if (gaps.length) warn("data/meta/monster-dex.json", `เลขที่ยังไม่มีข้อมูล: ${gaps.join(", ")}`);
 
   if (unassigned) warn("data/meta/monster-dex.json", `${unassigned} ตัวยังไม่ได้ตั้ง slug — รอชื่ออังกฤษทางการก่อน (ดู PLAN.md §13.1)`);
   if (truncated) warn("data/meta/monster-dex.json", `${truncated} ตัวชื่อถูกตัดในหน้าจอเกม ต้องแคปใหม่ให้เห็นชื่อเต็ม`);

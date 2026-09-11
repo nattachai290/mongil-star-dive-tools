@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": 3,
+    "version": 4,
     "updatedAt": "2026-09-11",
-    "note": "ดัชนีจากหน้า 'สมุดภาพมอน' ในเกม เก็บแค่เลขประจำตัว โซน และชื่อไทย ยังไม่ใช่ข้อมูลเต็มของ Monsterling (ยังไม่มีความสามารถและสถานะลิงก์) พอได้ข้อมูลครบค่อยสร้างไฟล์ใน data/monsterlings/ แล้วอ้างกลับมาที่เลข no",
+    "note": "ดัชนีจากหน้า 'สมุดภาพมอน' ในเกม เก็บแค่เลขประจำตัวกับชื่อไทย ยังไม่ใช่ข้อมูลเต็มของ Monsterling (ยังไม่มีความสามารถและสถานะลิงก์) พอได้ข้อมูลครบค่อยสร้างไฟล์ใน data/monsterlings/ แล้วอ้างกลับมาที่เลข no",
     "source": {
       "by": "in-game",
       "gameVersion": "unknown",
@@ -10,7 +10,7 @@
       "screen": "สมุดภาพมอน"
     },
     "slugNote": "slug ยังเป็น null ทุกตัวเพราะรอชื่ออังกฤษทางการ — id ของเว็บห้ามเปลี่ยนทีหลัง (ดู PLAN.md §13.1) จึงยังไม่ตั้ง ไม่ใช่ลืม",
-    "coverage": "เอเลนดอร์ 1-39 ครบ · วาเรน 40-68 ครบ · เซเรเนีย 69-95 ครบ · ซูรา 96-111 (ยังไม่ครบโซน) · โซนอื่นในแถบด้านซ้ายยังไม่ได้เก็บ",
+    "coverage": "เลข 1-144 ครบไม่ขาด · ยังมีโซนในแถบด้านซ้ายที่ยังไม่ได้เก็บ",
     "flags": {
       "nameTruncated": "ชื่อถูก UI ตัดท้าย ต้องแคปใหม่ให้เห็นเต็ม",
       "nameUncertain": "อ่านจากรูปแล้วไม่มั่นใจ ต้องยืนยันกับเกม"
@@ -19,7 +19,6 @@
   "entries": [
     {
       "no": 1,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ช้อปปี้"
@@ -27,7 +26,6 @@
     },
     {
       "no": 2,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ช้อปเบอร์รี"
@@ -35,7 +33,6 @@
     },
     {
       "no": 3,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ช้อปปี้มัม"
@@ -43,7 +40,6 @@
     },
     {
       "no": 4,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ลิฟฟี่มัม"
@@ -51,7 +47,6 @@
     },
     {
       "no": 5,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "สไลม์"
@@ -59,7 +54,6 @@
     },
     {
       "no": 6,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "สไลม์มืด"
@@ -67,7 +61,6 @@
     },
     {
       "no": 7,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ก็อบลิน ทหารฝึก"
@@ -75,7 +68,6 @@
     },
     {
       "no": 8,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ก็อบลิน ร้อยตรี"
@@ -83,7 +75,6 @@
     },
     {
       "no": 9,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ก็อบลิน พลทหาร"
@@ -91,7 +82,6 @@
     },
     {
       "no": 10,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ก็อบลิน สิบโท"
@@ -99,7 +89,6 @@
     },
     {
       "no": 11,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "หมาป่าขาว"
@@ -107,7 +96,6 @@
     },
     {
       "no": 12,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "หมาป่าดำ"
@@ -115,7 +103,6 @@
     },
     {
       "no": 13,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "เกล็ดน้ำค้างขาว"
@@ -123,7 +110,6 @@
     },
     {
       "no": 14,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "เกล็ดน้ำค้างแดง"
@@ -131,7 +117,6 @@
     },
     {
       "no": 15,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ฟอร์กมักเกอร์"
@@ -139,7 +124,6 @@
     },
     {
       "no": 16,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "สไลม์คิง"
@@ -147,7 +131,6 @@
     },
     {
       "no": 17,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ราชินีเพลิงโลกันตร์"
@@ -155,7 +138,6 @@
     },
     {
       "no": 18,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ทากรัก"
@@ -163,7 +145,6 @@
     },
     {
       "no": 19,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ก็อบลินพี่ใหญ่"
@@ -171,7 +152,6 @@
     },
     {
       "no": 20,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ฮาคา"
@@ -179,7 +159,6 @@
     },
     {
       "no": 21,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ฮาคาใต้เงาจันทรา"
@@ -187,7 +166,6 @@
     },
     {
       "no": 22,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "สไลม์ลิ่ง"
@@ -195,7 +173,6 @@
     },
     {
       "no": 23,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ช้อปปู้อังเคิล"
@@ -203,7 +180,6 @@
     },
     {
       "no": 24,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ช้อปป้าพี่ใหญ่"
@@ -211,7 +187,6 @@
     },
     {
       "no": 25,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ดูจิ"
@@ -219,7 +194,6 @@
     },
     {
       "no": 26,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ดูจิทอง"
@@ -227,7 +201,6 @@
     },
     {
       "no": 27,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ดอจิ"
@@ -235,7 +208,6 @@
     },
     {
       "no": 28,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ช้อปปู้"
@@ -243,7 +215,6 @@
     },
     {
       "no": 29,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ช้อปปูดร้า"
@@ -251,7 +222,6 @@
     },
     {
       "no": 30,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ช้อปป้า"
@@ -259,7 +229,6 @@
     },
     {
       "no": 31,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ช้อปออเร้นจ์"
@@ -267,7 +236,6 @@
     },
     {
       "no": 32,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "สไลม์สายฟ้า"
@@ -275,7 +243,6 @@
     },
     {
       "no": 33,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "สไลม์สายฟ้าทอง"
@@ -283,7 +250,6 @@
     },
     {
       "no": 34,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "สายฟ้าขาว"
@@ -291,7 +257,6 @@
     },
     {
       "no": 35,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "มอลลี่"
@@ -299,7 +264,6 @@
     },
     {
       "no": 36,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "มอลลี่จอมคลั่งรักเงิน"
@@ -307,7 +271,6 @@
     },
     {
       "no": 37,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ช้อปป้าแดดดี้"
@@ -315,7 +278,6 @@
     },
     {
       "no": 38,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "คุสโตส"
@@ -323,7 +285,6 @@
     },
     {
       "no": 39,
-      "region": "elendor",
       "slug": null,
       "name": {
         "th": "ผู้พิทักษ์แห่งนครทองคำ"
@@ -331,7 +292,6 @@
     },
     {
       "no": 40,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "กายหมัดหิน"
@@ -339,7 +299,6 @@
     },
     {
       "no": 41,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "กายหมัดทองคำ"
@@ -347,7 +306,6 @@
     },
     {
       "no": 42,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "ออร์ค นักรบ"
@@ -355,7 +313,6 @@
     },
     {
       "no": 43,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "กายออร์คพิ้งกี้"
@@ -363,7 +320,6 @@
     },
     {
       "no": 44,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "ออร์ค พลทหารจู่โจม"
@@ -371,7 +327,6 @@
     },
     {
       "no": 45,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "แอกโซลอเติลกระดองหิน"
@@ -379,7 +334,6 @@
     },
     {
       "no": 46,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "แอกโซลอเติลกระดองหินดิน"
@@ -387,7 +341,6 @@
     },
     {
       "no": 47,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "แอกโซลอเติลกระดองหินยักษ์"
@@ -395,7 +348,6 @@
     },
     {
       "no": 48,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "แอกโซลอเติลไวกิ้ง"
@@ -403,7 +355,6 @@
     },
     {
       "no": 49,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "โทรลล์"
@@ -411,7 +362,6 @@
     },
     {
       "no": 50,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "ไนท์โทรลล์"
@@ -419,7 +369,6 @@
     },
     {
       "no": 51,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "อูรกัช"
@@ -427,7 +376,6 @@
     },
     {
       "no": 52,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "หมาป่า"
@@ -435,7 +383,6 @@
     },
     {
       "no": 53,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "หมาป่าเผือก"
@@ -443,7 +390,6 @@
     },
     {
       "no": 54,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "หมาป่ายักษ์"
@@ -451,7 +397,6 @@
     },
     {
       "no": 55,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "สกา"
@@ -459,7 +404,6 @@
     },
     {
       "no": 56,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "ฟรอสต์ไบต์"
@@ -467,7 +411,6 @@
     },
     {
       "no": 57,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "แอกโซลอเติลหอยสังข์"
@@ -475,7 +418,6 @@
     },
     {
       "no": 58,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "แอกโซลอเติลหอยสังข์ทะเลลึก"
@@ -483,7 +425,6 @@
     },
     {
       "no": 59,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "แอกโซลอเติลหอยสังข์ยักษ์"
@@ -491,7 +432,6 @@
     },
     {
       "no": 60,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "ผู้เก็บเกี่ยว"
@@ -499,7 +439,6 @@
     },
     {
       "no": 61,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "ผู้ลงโทษ"
@@ -507,16 +446,13 @@
     },
     {
       "no": 62,
-      "region": "waren",
       "slug": null,
       "name": {
-        "th": "นักบวชแห่งความว่"
-      },
-      "nameTruncated": true
+        "th": "นักบวชแห่งความว่างเปล่า"
+      }
     },
     {
       "no": 63,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "เงาของนักบวช"
@@ -524,7 +460,6 @@
     },
     {
       "no": 64,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "เว็กตัส"
@@ -532,7 +467,6 @@
     },
     {
       "no": 65,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "มิโนต้าภูเขาสูง"
@@ -540,7 +474,6 @@
     },
     {
       "no": 66,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "มินอกต้า"
@@ -548,7 +481,6 @@
     },
     {
       "no": 67,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "อาม่อน"
@@ -556,7 +488,6 @@
     },
     {
       "no": 68,
-      "region": "waren",
       "slug": null,
       "name": {
         "th": "เงาของอาม่อน"
@@ -564,7 +495,6 @@
     },
     {
       "no": 69,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "โกลิค"
@@ -572,7 +502,6 @@
     },
     {
       "no": 70,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "สไลม์น้ำแข็ง"
@@ -580,7 +509,6 @@
     },
     {
       "no": 71,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "สไลม์หญ้า"
@@ -588,7 +516,6 @@
     },
     {
       "no": 72,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "สไลม์ไฟ"
@@ -596,7 +523,6 @@
     },
     {
       "no": 73,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "สไลม์ควีน"
@@ -604,7 +530,6 @@
     },
     {
       "no": 74,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "สไลม์รอยัลควีน"
@@ -612,7 +537,6 @@
     },
     {
       "no": 75,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "สปาเดอร์"
@@ -620,7 +544,6 @@
     },
     {
       "no": 76,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "สโปเดอร์"
@@ -628,7 +551,6 @@
     },
     {
       "no": 77,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "สปาดิก"
@@ -636,7 +558,6 @@
     },
     {
       "no": 78,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "สปูเดอร์"
@@ -644,7 +565,6 @@
     },
     {
       "no": 79,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "สปาดูป้า"
@@ -652,43 +572,34 @@
     },
     {
       "no": 80,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "กปาดูป้า"
-      },
-      "nameUncertain": true
+      }
     },
     {
       "no": 81,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "การ์กอย"
-      },
-      "nameUncertain": true
+      }
     },
     {
       "no": 82,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "การ์ก่อย"
-      },
-      "nameUncertain": true
+      }
     },
     {
       "no": 83,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "การ์ก้อย"
-      },
-      "nameUncertain": true
+      }
     },
     {
       "no": 84,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "ซิลฟี่"
@@ -696,7 +607,6 @@
     },
     {
       "no": 85,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "แวมปี้"
@@ -704,7 +614,6 @@
     },
     {
       "no": 86,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "ฟูลฟี่"
@@ -712,7 +621,6 @@
     },
     {
       "no": 87,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "ฮาล์ฟฟี่"
@@ -720,7 +628,6 @@
     },
     {
       "no": 88,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "หัวหน้าฟูลฟี่"
@@ -728,7 +635,6 @@
     },
     {
       "no": 89,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "แวมปี้เดอะฟูลมูน"
@@ -736,7 +642,6 @@
     },
     {
       "no": 90,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "กายหมัดน้ำแข็ง"
@@ -744,7 +649,6 @@
     },
     {
       "no": 91,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "มิโนต้าทุ่งหญ้า"
@@ -752,7 +656,6 @@
     },
     {
       "no": 92,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "สปูนมักเกอร์"
@@ -760,7 +663,6 @@
     },
     {
       "no": 93,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "ช็อปสติกมักเกอร์"
@@ -768,7 +670,6 @@
     },
     {
       "no": 94,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "อวาดัน"
@@ -776,7 +677,6 @@
     },
     {
       "no": 95,
-      "region": "serenia",
       "slug": null,
       "name": {
         "th": "มานาของอวาดัน"
@@ -784,7 +684,6 @@
     },
     {
       "no": 96,
-      "region": "zura",
       "slug": null,
       "name": {
         "th": "หุ่นฟางจิ๋ว"
@@ -792,7 +691,6 @@
     },
     {
       "no": 97,
-      "region": "zura",
       "slug": null,
       "name": {
         "th": "หุ่นฟางจิ๋วบรรลุธรรม"
@@ -800,7 +698,6 @@
     },
     {
       "no": 98,
-      "region": "zura",
       "slug": null,
       "name": {
         "th": "หุ่นฟาง"
@@ -808,7 +705,6 @@
     },
     {
       "no": 99,
-      "region": "zura",
       "slug": null,
       "name": {
         "th": "หุ่นฟางพุ่มไม้"
@@ -816,7 +712,6 @@
     },
     {
       "no": 100,
-      "region": "zura",
       "slug": null,
       "name": {
         "th": "แกบีฟ้า"
@@ -824,7 +719,6 @@
     },
     {
       "no": 101,
-      "region": "zura",
       "slug": null,
       "name": {
         "th": "แกบีเขียว"
@@ -832,7 +726,6 @@
     },
     {
       "no": 102,
-      "region": "zura",
       "slug": null,
       "name": {
         "th": "หัวหน้าแกบี"
@@ -840,7 +733,6 @@
     },
     {
       "no": 103,
-      "region": "zura",
       "slug": null,
       "name": {
         "th": "เมล็ดสน"
@@ -848,7 +740,6 @@
     },
     {
       "no": 104,
-      "region": "zura",
       "slug": null,
       "name": {
         "th": "ต้นสนผู้เฒ่าคิม"
@@ -856,7 +747,6 @@
     },
     {
       "no": 105,
-      "region": "zura",
       "slug": null,
       "name": {
         "th": "ต้นสนผู้เฒ่าพัด"
@@ -864,7 +754,6 @@
     },
     {
       "no": 106,
-      "region": "zura",
       "slug": null,
       "name": {
         "th": "ภูตต้นไม้"
@@ -872,7 +761,6 @@
     },
     {
       "no": 107,
-      "region": "zura",
       "slug": null,
       "name": {
         "th": "ปีศาจต้นไม้ขวานปัก"
@@ -880,25 +768,20 @@
     },
     {
       "no": 108,
-      "region": "zura",
       "slug": null,
       "name": {
         "th": "กระตุ่ย"
-      },
-      "nameUncertain": true
+      }
     },
     {
       "no": 109,
-      "region": "zura",
       "slug": null,
       "name": {
         "th": "กระตุ่ย หน้ากาก"
-      },
-      "nameUncertain": true
+      }
     },
     {
       "no": 110,
-      "region": "zura",
       "slug": null,
       "name": {
         "th": "แรคคูน"
@@ -906,10 +789,243 @@
     },
     {
       "no": 111,
-      "region": "zura",
       "slug": null,
       "name": {
         "th": "แรคคูน หน้ากาก"
+      }
+    },
+    {
+      "no": 112,
+      "slug": null,
+      "name": {
+        "th": "วิญญาณนักรบ"
+      }
+    },
+    {
+      "no": 113,
+      "slug": null,
+      "name": {
+        "th": "ซาตานสตะ"
+      }
+    },
+    {
+      "no": 114,
+      "slug": null,
+      "name": {
+        "th": "หน้ากากเงา"
+      }
+    },
+    {
+      "no": 115,
+      "slug": null,
+      "name": {
+        "th": "หน้ากากขี้เถ้า"
+      }
+    },
+    {
+      "no": 116,
+      "slug": null,
+      "name": {
+        "th": "เต่า"
+      }
+    },
+    {
+      "no": 117,
+      "slug": null,
+      "name": {
+        "th": "เต่าเงิน"
+      }
+    },
+    {
+      "no": 118,
+      "slug": null,
+      "name": {
+        "th": "ต้นสนผู้เฒ่าอี"
+      }
+    },
+    {
+      "no": 119,
+      "slug": null,
+      "name": {
+        "th": "ทูอ็อกชีนี"
+      }
+    },
+    {
+      "no": 120,
+      "slug": null,
+      "name": {
+        "th": "ซาตานเพลิง"
+      }
+    },
+    {
+      "no": 121,
+      "slug": null,
+      "name": {
+        "th": "หุ่นฟางดำ"
+      }
+    },
+    {
+      "no": 122,
+      "slug": null,
+      "name": {
+        "th": "กระตุ่ย พเนจร"
+      }
+    },
+    {
+      "no": 123,
+      "slug": null,
+      "name": {
+        "th": "กระตุ่ย ฟอกขาว"
+      }
+    },
+    {
+      "no": 124,
+      "slug": null,
+      "name": {
+        "th": "แรคคูน พเนจร"
+      }
+    },
+    {
+      "no": 125,
+      "slug": null,
+      "name": {
+        "th": "แรคคูน ฟอกขาว"
+      }
+    },
+    {
+      "no": 126,
+      "slug": null,
+      "name": {
+        "th": "เต่า พเนจร"
+      }
+    },
+    {
+      "no": 127,
+      "slug": null,
+      "name": {
+        "th": "อับเด้งดึ๋ง"
+      }
+    },
+    {
+      "no": 128,
+      "slug": null,
+      "name": {
+        "th": "อับแข็งโป๊ก"
+      }
+    },
+    {
+      "no": 129,
+      "slug": null,
+      "name": {
+        "th": "อับจอมโหด"
+      }
+    },
+    {
+      "no": 130,
+      "slug": null,
+      "name": {
+        "th": "โบร์โบก"
+      }
+    },
+    {
+      "no": 131,
+      "slug": null,
+      "name": {
+        "th": "จ้าวแห่งอับ"
+      }
+    },
+    {
+      "no": 132,
+      "slug": null,
+      "name": {
+        "th": "กาดน้อย"
+      }
+    },
+    {
+      "no": 133,
+      "slug": null,
+      "name": {
+        "th": "กาดน้อยที่ถูกดอง"
+      }
+    },
+    {
+      "no": 134,
+      "slug": null,
+      "name": {
+        "th": "โพดน้อย"
+      }
+    },
+    {
+      "no": 135,
+      "slug": null,
+      "name": {
+        "th": "โพดน้อยที่ถูกย่าง"
+      }
+    },
+    {
+      "no": 136,
+      "slug": null,
+      "name": {
+        "th": "ดอกไม้ฟื้นฟูกระดูก"
+      },
+      "nameTruncated": true
+    },
+    {
+      "no": 137,
+      "slug": null,
+      "name": {
+        "th": "ดอกไม้ฟื้นฟูเลือด"
+      },
+      "nameTruncated": true
+    },
+    {
+      "no": 138,
+      "slug": null,
+      "name": {
+        "th": "ดอกไม้ฟื้นฟูเลือด"
+      },
+      "nameTruncated": true
+    },
+    {
+      "no": 139,
+      "slug": null,
+      "name": {
+        "th": "มัลวอลลก"
+      }
+    },
+    {
+      "no": 140,
+      "slug": null,
+      "name": {
+        "th": "ปีศาจกวาง"
+      }
+    },
+    {
+      "no": 141,
+      "slug": null,
+      "name": {
+        "th": "ออนแซ"
+      }
+    },
+    {
+      "no": 142,
+      "slug": null,
+      "name": {
+        "th": "ปีศาจเพลิง"
+      }
+    },
+    {
+      "no": 143,
+      "slug": null,
+      "name": {
+        "th": "ฮันอุล"
+      }
+    },
+    {
+      "no": 144,
+      "slug": null,
+      "name": {
+        "th": "ปีศาจเสือบิดเบี้ยว"
       }
     }
   ]
