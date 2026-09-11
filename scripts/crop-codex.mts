@@ -5,6 +5,7 @@
  *   1. แคปหน้า Monster Codex เต็มจอ (ภาพไหนก็ได้ที่เห็น 2 แถวเต็ม = 8 ใบ)
  *   2. ตั้งชื่อไฟล์เป็น "เลขของใบแรกในภาพ" เช่น 40.png หมายถึงภาพนั้นเริ่มที่ No.40
  *      วางไว้ใน assets-src/codex/
+ *      สมุดเล่มอื่นใส่ชื่อเล่มนำหน้า เช่น event-1.png, legendary-1.png
  *   3. npm run crop:codex -- --preview    ตรวจว่ากรอบตรงไหม (ได้ไฟล์ใน assets-src/preview/)
  *   4. npm run crop:codex                 ตัดจริงลง public/images/monsterlings/
  *
@@ -14,7 +15,7 @@
  * ไฟล์นี้เป็น .mts เพราะ sharp เป็น ESM-only — ถ้าเปลี่ยนเป็น .ts จะรันไม่ได้
  */
 import { existsSync, mkdirSync, readdirSync, readFileSync } from "node:fs";
-import { basename, join } from "node:path";
+import { join } from "node:path";
 import sharp from "sharp";
 
 type CropConfig = {
@@ -38,8 +39,10 @@ const dex = readJson<{ entries: DexEntry[] }>(join(ROOT, "data", "meta", "monste
 const preview = process.argv.includes("--preview");
 const perSheet = config.columnsX.length * config.rowsY.length;
 
-const slugByNo = new Map<number, string>();
-for (const e of dex.entries) if (e.book === "field" && e.slug) slugByNo.set(e.no, e.slug);
+// คีย์เป็น book+no เพราะแต่ละเล่มเริ่มนับ No.1 ใหม่ เลขอย่างเดียวชี้ตัวไม่ได้
+const dexKey = (book: string, no: number) => `${book}:${no}`;
+const slugByKey = new Map<string, string | null>();
+for (const e of dex.entries) slugByKey.set(dexKey(e.book, e.no), e.slug);
 
 // assets-src/ ไม่ถูก commit (มีแต่ไฟล์ตั้งค่า) โฟลเดอร์นี้จึงไม่มีหลัง clone
 if (!existsSync(INPUT)) {
@@ -48,9 +51,11 @@ if (!existsSync(INPUT)) {
   process.exit(0);
 }
 
-const sheets = readdirSync(INPUT).filter((f) => /^\d+\.(png|jpg|jpeg)$/i.test(f));
+// 40.png = สมุดหลักเริ่มที่ No.40 · event-1.png = สมุดกิจกรรมเริ่มที่ No.1
+const SHEET_NAME = /^(?:(field|legendary|event)-)?(\d+)\.(?:png|jpe?g)$/i;
+const sheets = readdirSync(INPUT).filter((f) => SHEET_NAME.test(f));
 if (sheets.length === 0) {
-  console.error(`ไม่มีไฟล์ที่ตั้งชื่อเป็นตัวเลขใน ${INPUT} (เช่น 40.png)`);
+  console.error(`ไม่มีไฟล์ที่ตั้งชื่อถูกแบบใน ${INPUT} — ต้องเป็น 40.png หรือ event-1.png`);
   process.exit(1);
 }
 
@@ -72,8 +77,12 @@ async function looksGrey(buf: Buffer): Promise<boolean> {
   return Math.max(r, g, b) - Math.min(r, g, b) < GREY_THRESHOLD;
 }
 
-for (const file of sheets.sort((a, b) => parseInt(a, 10) - parseInt(b, 10))) {
-  const startNo = parseInt(basename(file), 10);
+const parsed = sheets.map((file) => {
+  const [, book, no] = SHEET_NAME.exec(file)!;
+  return { file, book: (book ?? "field").toLowerCase(), startNo: parseInt(no, 10) };
+});
+
+for (const { file, book, startNo } of parsed.sort((a, b) => a.book.localeCompare(b.book) || a.startNo - b.startNo)) {
   const path = join(INPUT, file);
   const meta = await sharp(path).metadata();
   const width = meta.width ?? config.referenceWidth;
@@ -86,9 +95,15 @@ for (const file of sheets.sort((a, b) => parseInt(a, 10) - parseInt(b, 10))) {
     for (const x of config.columnsX) {
       const no = startNo + i;
       i += 1;
-      const slug = slugByNo.get(no);
+      const key = dexKey(book, no);
+      // ช่องที่เลยท้ายเล่ม (เช่นภาพสุดท้ายของสมุดหลักที่มีแค่ 5 ใบ) ไม่ใช่ของเสีย ข้ามเงียบ ๆ ไม่ได้
+      if (!slugByKey.has(key)) {
+        skipped.push(`${book} No.${no} — ไม่มีในสมุด (ช่องว่างท้ายภาพ)`);
+        continue;
+      }
+      const slug = slugByKey.get(key);
       if (!slug) {
-        skipped.push(`No.${no} (ยังไม่มี slug — รอชื่ออังกฤษ)`);
+        skipped.push(`${book} No.${no} — ยังไม่มี slug (รอชื่ออังกฤษ)`);
         continue;
       }
       const pipeline = sharp(path)
@@ -104,7 +119,7 @@ for (const file of sheets.sort((a, b) => parseInt(a, 10) - parseInt(b, 10))) {
       written += 1;
     }
   }
-  console.log(`${file}: No.${startNo}–${startNo + perSheet - 1}`);
+  console.log(`${file}: ${book} No.${startNo}–${startNo + perSheet - 1}`);
 }
 
 console.log(`\nตัดแล้ว ${written} รูป -> ${preview ? PREVIEW : OUTPUT}`);
