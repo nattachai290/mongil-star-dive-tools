@@ -1,0 +1,28 @@
+{
+  "id": "gooey-crown",
+  "name": {
+    "en": "Gooey Crown"
+  },
+  "monsterlingId": "king-slime",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceCondition": {
+        "en": "Using a Special Skill"
+      },
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 40,
+        "cooldownSec": 15
+      },
+      "bonusEffect": {
+        "en": "30% Movement Speed Reduction (10s)"
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

@@ -196,6 +196,15 @@ for (const [id, doc] of Object.entries(parsed.monsterlings ?? {})) {
   }
 }
 
+for (const [id, doc] of Object.entries(parsed["link-chains"] ?? {})) {
+  const where = `data/link-chains/${id}.json`;
+  const ref = doc.monsterlingId as string;
+  // เทียบกับ slug ที่สมุดภาพมอนจองไว้ ไม่ใช่ไฟล์ใน data/monsterlings/ ซึ่งยังไม่มี
+  if (!dexSlugs.has(ref)) {
+    fail(where, `monsterlingId "${ref}" ไม่ตรงกับ slug ไหนในสมุดภาพมอน`);
+  }
+}
+
 for (const [id, doc] of Object.entries(parsed.artifacts ?? {})) {
   checkRefs(`data/artifacts/${id}.json`, doc.recommendedFor, "characters", "recommendedFor");
 }

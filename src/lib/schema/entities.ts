@@ -180,6 +180,47 @@ export const build = z.object({
 });
 
 /**
+ * Link Chain — ของที่คราฟต์แล้วผูกกับ Monsterling หนึ่งตัว
+ * พอใส่ Monsterling ตัวนั้น มันจะออกมาช่วยรบตามเงื่อนไขที่กำหนด
+ */
+export const linkChain = z.object({
+  id: slug,
+  name: text,
+  /** Monsterling ที่ผูกอยู่ — ต้องเป็น slug ที่สมุดภาพมอนจองไว้ */
+  monsterlingId: slug,
+  /** จำนวนเพชร ◆ บนการ์ด */
+  rarity: z.number().int().min(1).max(6).optional(),
+
+  /**
+   * เก็บเฉพาะเลเวลที่เห็นจริงในเกม
+   * เลเวลที่อัปข้ามไปแล้วย้อนกลับไปดูไม่ได้ = ไม่มีในลิสต์นี้ ไม่ใช่ค่าศูนย์
+   * ห้ามเดาค่าเลเวลที่ขาดด้วยการคำนวณจากเลเวลอื่น
+   */
+  levels: z
+    .array(
+      z.object({
+        level: z.number().int().positive(),
+        desc: text.optional(),
+        damageType: vocabEnum("damageType").optional(),
+        appearanceCondition: text,
+        appearanceInfo: z.object({
+          dmgPercentOfAtk: z.number().positive().optional(),
+          cooldownSec: z.number().positive().optional(),
+          note: text.optional(),
+        }),
+        bonusEffect: text.optional(),
+      }),
+    )
+    .min(1),
+
+  images: z.object({ icon: z.string().optional() }).optional(),
+  source,
+}).refine(
+  (c) => new Set(c.levels.map((l) => l.level)).size === c.levels.length,
+  { message: "มีเลเวลซ้ำกันใน levels" },
+);
+
+/**
  * หนึ่งแถวในสมุดภาพมอน — เก็บแค่เลขกับชื่อ ยังไม่ใช่ข้อมูลเต็มของ Monsterling
  * slug เป็น null ได้ เพราะยังไม่รู้ชื่ออังกฤษทางการ และ id ของเว็บห้ามเปลี่ยนทีหลัง
  */
@@ -203,6 +244,7 @@ export const SCHEMAS = {
   artifacts: artifact,
   equipment: equipment,
   monsterlings: monsterling,
+  "link-chains": linkChain,
   food: food,
   builds: build,
 } as const;

@@ -1,0 +1,30 @@
+{
+  "id": "queenshrooms-halo",
+  "name": {
+    "en": "Queenshroom's Halo"
+  },
+  "monsterlingId": "leafy-mama",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "desc": {
+        "en": "…cheer on nearby allies, and upon finishing the dance, it grants a Bonus Effect to allies."
+      },
+      "appearanceCondition": {
+        "en": "When HP is 50% or lower"
+      },
+      "appearanceInfo": {
+        "cooldownSec": 300
+      },
+      "bonusEffect": {
+        "en": "Heals 10% of Max HP"
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}
