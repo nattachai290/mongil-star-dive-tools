@@ -12,11 +12,12 @@
     {
       "kind": "buff",
       "stat": "dmgDealt",
+      "scope": "crit",
       "damageType": "ice",
       "value": 6.57,
       "unit": "percent",
       "target": "self",
-      "trigger": "onCrit"
+      "trigger": "always"
     }
   ],
   "effectsRank": "gold",
