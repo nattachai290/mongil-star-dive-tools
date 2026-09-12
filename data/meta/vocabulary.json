@@ -25,6 +25,7 @@
       "en": "Using a Switch Skill"
     },
     "useUltimate": {
+      "th": "เมื่อใช้สกิลอัลติเมต",
       "en": "Using an Ultimate Skill"
     },
     "landUltimate": {
@@ -76,6 +77,7 @@
       "en": "When all Stamina is consumed"
     },
     "landFireAttack": {
+      "th": "เมื่อโจมตีธาตุไฟโดน",
       "en": "Landing a Fire Attack"
     },
     "landIceAttack": {

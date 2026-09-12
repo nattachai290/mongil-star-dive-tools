@@ -1,6 +1,7 @@
 {
   "id": "autumn-branch",
   "name": {
+    "th": "กิ่งถักทอใบไม้เปลี่ยนสี",
     "en": "Autumn Branch"
   },
   "kind": "monsterling",
@@ -22,6 +23,7 @@
           "en": "10% Earth RES Reduction (5s)"
         },
         {
+          "th": "สถานะพันธนาการ (5 วินาที)",
           "en": "Shackle (5s)"
         }
       ]

@@ -1,6 +1,7 @@
 {
   "id": "thorny-shield",
   "name": {
+    "th": "โล่หนามพิฆาต",
     "en": "Thorny Shield"
   },
   "kind": "monsterling",
@@ -10,6 +11,7 @@
     {
       "level": 1,
       "desc": {
+        "th": "เมื่อติดตั้งมอนสเตอร์ลิงโบร์โบก จะมีโอกาสปรากฏตัวตามเงื่อนไข โดยจะหมุนตัวอย่างรวดเร็วใส่ศัตรูแล้วโจมตี สร้างดาเมจกายภาพ",
         "en": "If the Borborg Monsterling is equipped, it appears when its Appearance Condition is met. It rapidly spins toward the enemy while it attacks, dealing Physical DMG."
       },
       "damageType": "physical",
