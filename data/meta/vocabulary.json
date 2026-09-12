@@ -201,11 +201,11 @@
       "en": "HP"
     },
     "critRate": {
-      "th": "โอกาสคริติคอล",
+      "th": "อัตราคริติคอล",
       "en": "Crit Rate"
     },
     "critDmg": {
-      "th": "ความเสียหายคริติคอล",
+      "th": "ดาเมจคริติคอล",
       "en": "Crit DMG"
     },
     "spd": {
@@ -213,8 +213,8 @@
       "en": "SPD"
     },
     "dmgDealt": {
-      "th": "ความเสียหายที่ทำได้",
-      "en": "DMG Dealt"
+      "th": "ดาเมจ",
+      "en": "DMG"
     },
     "dmgTaken": {
       "th": "ความเสียหายที่ได้รับ",
@@ -277,12 +277,12 @@
       "en": "One ally"
     },
     "team": {
-      "th": "ทั้งทีม",
-      "en": "Whole team"
+      "th": "สมาชิกทีมทั้งหมด",
+      "en": "All teammates"
     },
     "enemy": {
-      "th": "ศัตรู 1 ตัว",
-      "en": "One enemy"
+      "th": "เป้าหมาย",
+      "en": "Target"
     },
     "allEnemies": {
       "th": "ศัตรูทุกตัว",
@@ -299,16 +299,16 @@
       "en": "Passive"
     },
     "onHit": {
-      "th": "เมื่อโจมตีโดน",
-      "en": "On hit"
+      "th": "เมื่อโจมตี",
+      "en": "upon attacking"
     },
     "onCrit": {
-      "th": "เมื่อเข้าคริติคอล",
-      "en": "On crit"
+      "th": "เมื่อโจมตีคริติคอลสำเร็จ",
+      "en": "upon landing a critical hit"
     },
     "onSwitch": {
-      "th": "เมื่อสลับตัวเข้าสนาม",
-      "en": "On switch-in"
+      "th": "เมื่อใช้สกิลสับเปลี่ยน",
+      "en": "upon using a Switch Skill"
     },
     "onSkill": {
       "th": "เมื่อใช้สกิล",
@@ -332,31 +332,31 @@
     },
     "onWeaknessHit": {
       "th": "เมื่อโจมตีด้วยธาตุจุดอ่อน",
-      "en": "On elemental weakness hit"
+      "en": "upon attacking with Elemental Weakness"
     },
     "onSpecialSkillHit": {
-      "th": "เมื่อโจมตีด้วยสกิลพิเศษโดน",
-      "en": "On special skill hit"
+      "th": "เมื่อโจมตีด้วยสกิลพิเศษ",
+      "en": "upon attacking with a Special Skill"
     },
     "onBasicAttackHit": {
       "th": "เมื่อโจมตีพื้นฐานโดน",
-      "en": "On basic attack hit"
+      "en": "upon landing Basic Attacks"
     },
     "onEvasionCounter": {
       "th": "เมื่อใช้หลบหลีกโต้กลับ",
-      "en": "On evasion counter"
+      "en": "upon using Evasion Counter"
     },
     "onTakeHit": {
       "th": "เมื่อถูกโจมตี",
-      "en": "On being hit"
+      "en": "upon being hit"
     },
     "onSwitchOut": {
       "th": "เมื่อเปลี่ยนเป็นตัวละครอื่น",
-      "en": "On switching to another character"
+      "en": "upon switching to another character"
     },
     "onUltimateCharged": {
       "th": "เมื่อเกจสกิลอัลติเมตชาร์จสูงสุด",
-      "en": "When the ultimate gauge is full"
+      "en": "when the Ultimate Gauge is at max charge"
     }
   },
   "effectKind": {

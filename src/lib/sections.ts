@@ -43,10 +43,19 @@ export const SECTIONS: Section[] = [
     slug: "monsterlings",
     title: { th: "Monsterling", en: "Monsterlings" },
     blurb: {
-      th: "สายพันธุ์ Trait ความสามารถ และสถานะว่าใส่ลิงก์ได้หรือไม่",
-      en: "Breeds, traits, abilities, and whether each one can be linked",
+      th: "มอนครบทั้งสมุดภาพ เอฟเฟกต์สายพันธุ์ และสถานะว่าใส่ลิงก์เชนได้หรือไม่",
+      en: "The full codex, rank effects, and whether each one takes a link chain",
     },
-    ready: false,
+    ready: true,
+  },
+  {
+    slug: "link-chains",
+    title: { th: "ลิงก์เชน", en: "Link Chains" },
+    blurb: {
+      th: "เงื่อนไขปรากฏตัว ดาเมจเทียบพลังโจมตี คูลดาวน์ และเอฟเฟกต์เพิ่มเติมของทุกใบ",
+      en: "Appearance conditions, damage as a share of ATK, cooldowns and bonus effects",
+    },
+    ready: true,
   },
   {
     slug: "food",
