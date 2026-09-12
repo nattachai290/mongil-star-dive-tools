@@ -626,5 +626,11 @@
       "th": "การสนับสนุน",
       "en": "Support"
     }
+  },
+  "enemyState": {
+    "downed": {
+      "th": "ล้มอยู่ตรงพื้น",
+      "en": "Downed"
+    }
   }
 }

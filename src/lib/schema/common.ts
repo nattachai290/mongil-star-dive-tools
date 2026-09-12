@@ -77,6 +77,8 @@ export const effect = z
          * คนละอันกับ triggerDamageType ซึ่งเป็นของการโจมตีฝั่งเรา
          */
         enemyType: vocabEnum("damageType").optional(),
+        /** สถานะของศัตรูที่ต้องเป็นก่อนถึงทำงาน เช่น "แก่เป้าหมายที่ล้มอยู่ตรงพื้น" */
+        enemyState: vocabEnum("enemyState").optional(),
         note: text.optional(),
       })
       .optional(),
