@@ -129,11 +129,6 @@ export const monsterling = z.object({
   name: text,
   /** ตำแหน่งในสมุดภาพมอน — ต้องมีคู่กัน เพราะแต่ละเล่มเริ่มนับ No.1 ใหม่ */
   dex: z.object({ book: vocabEnum("dexBook"), no: z.number().int().positive() }).optional(),
-  /**
-   * ใส่ลิงก์ได้หรือไม่ — ไม่ใส่ = "ยังไม่รู้" ไม่ใช่ "ไม่ได้"
-   * หน้าเว็บต้องแยกสามสถานะ ไม่งั้นตัวที่ยังไม่ได้เช็คจะถูกแสดงว่าใส่ลิงก์ไม่ได้
-   */
-  linkable: z.boolean().optional(),
   effects: z.array(effect).default([]),
   obtain: z.object({ method: vocabEnum("obtainMethod"), note: text.optional() }).optional(),
   images: z.object({ icon: z.string().optional() }).optional(),
@@ -226,7 +221,6 @@ export const linkChain = z.object({
     )
     .min(1),
 
-  images: z.object({ icon: z.string().optional() }).optional(),
   source,
 }).refine(
   (c) => new Set(c.levels.map((l) => l.level)).size === c.levels.length,
@@ -265,3 +259,5 @@ export const SCHEMAS = {
 export type Collection = keyof typeof SCHEMAS;
 export type Character = z.infer<typeof character>;
 export type Build = z.infer<typeof build>;
+export type LinkChain = z.infer<typeof linkChain>;
+export type Monsterling = z.infer<typeof monsterling>;

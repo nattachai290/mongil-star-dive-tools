@@ -238,7 +238,10 @@ for (const [id, doc] of Object.entries(parsed.builds ?? {})) {
 }
 
 // ---------- 4. รูปภาพ ----------
+/** ลิงก์เชนไม่มีไอคอนของตัวเอง — ใช้ป้ายบนการ์ดมอนแทน (PLAN §13.8) */
+const NO_IMAGES: ReadonlySet<string> = new Set(["link-chains"]);
 for (const collection of Object.keys(SCHEMAS) as Collection[]) {
+  if (NO_IMAGES.has(collection)) continue;
   for (const [id, doc] of Object.entries(parsed[collection] ?? {})) {
     const images = doc.images as Record<string, string> | undefined;
     if (!images) { warn(`data/${collection}/${id}.json`, "ยังไม่มีรูป"); continue; }

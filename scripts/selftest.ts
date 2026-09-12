@@ -6,6 +6,7 @@
  */
 import { character, food } from "../src/lib/schema/entities";
 import { computeDamage, missingConstants, sumBuffs } from "../src/lib/formula";
+import { LINK_CHAIN_LIST_IS_COMPLETE, linkableBadge, linkableIds, linkableOf } from "../src/lib/linkable";
 import type { Effect } from "../src/lib/schema/common";
 
 let failed = 0;
@@ -93,6 +94,20 @@ const blocked = computeDamage({ atkBase: 1300, buffs: [], skillPercent: 500, cri
 check("ใส่ป้องกันศัตรูขณะค่าคงที่ยังไม่ยืนยัน = คืน null ไม่ใช่เดา",
   blocked.average === null && blocked.steps.find((s) => s.id === "afterDefense")?.blockedBy === "defConstant");
 check("บอกได้ว่าค่าคงที่ไหนยังขาด", missingConstants().includes("defConstant"));
+
+// ---------- ป้าย "ใส่ลิงก์เชนได้" ----------
+const chainIds = linkableIds([
+  { monsterlingId: "spadupa" },
+  { monsterlingId: "greenpadupa" },
+  { monsterlingId: "spadupa" },
+]);
+check("มอนที่มีลิงก์เชนชี้มา = yes", linkableOf("spadupa", chainIds) === "yes");
+check("ลิงก์เชนสองใบชี้มอนเดียวกันไม่นับซ้ำ", chainIds.size === 2, `ได้ ${chainIds.size} ควรเป็น 2`);
+check("มอนที่ไม่มีลิงก์เชนชี้มา = unknown ไม่ใช่ no",
+  LINK_CHAIN_LIST_IS_COMPLETE || linkableOf("cappy", chainIds) === "unknown",
+  "ตราบใดที่ยังไม่ยืนยันว่ารายการลิงก์เชนในเกมครบ ห้ามสรุปว่าใส่ไม่ได้");
+check("unknown ไม่แปะป้าย", linkableBadge("unknown") === null);
+check("yes แปะป้ายสองภาษา", linkableBadge("yes")?.th === "ใส่ลิงก์เชนได้");
 
 console.log(failed === 0 ? "\nผ่านทั้งหมด\n" : `\nไม่ผ่าน ${failed} ข้อ\n`);
 if (failed > 0) process.exit(1);
