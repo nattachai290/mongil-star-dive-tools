@@ -1,0 +1,35 @@
+{
+  "id": "lizarcher",
+  "name": {
+    "th": "ลิซาร์ด มือธนู",
+    "en": "Lizarcher"
+  },
+  "dex": {
+    "book": "field",
+    "no": 152
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "def",
+      "value": 4.69,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onHit",
+      "durationSec": 5,
+      "condition": {
+        "hitCount": 10,
+        "enemyElement": "fire"
+      }
+    }
+  ],
+  "effectsGrade": "gold",
+  "images": {
+    "icon": "lizarcher-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

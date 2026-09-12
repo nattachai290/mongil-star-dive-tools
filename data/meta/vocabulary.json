@@ -161,6 +161,14 @@
     "dark": {
       "th": "มืด",
       "en": "Dark"
+    },
+    "ice": {
+      "th": "น้ำแข็ง",
+      "en": "Ice"
+    },
+    "lightning": {
+      "th": "สายฟ้า",
+      "en": "Lightning"
     }
   },
   "role": {
@@ -365,6 +373,10 @@
     "onBasicAttackHit": {
       "th": "เมื่อโจมตีพื้นฐานโดน",
       "en": "On basic attack hit"
+    },
+    "onEvasionCounter": {
+      "th": "เมื่อใช้หลบหลีกโต้กลับ",
+      "en": "On evasion counter"
     }
   },
   "effectKind": {

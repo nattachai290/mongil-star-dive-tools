@@ -59,6 +59,11 @@ export const effect = z
         triggerElement: vocabEnum("element").optional(),
         /** ต้องโจมตีโดนกี่ครั้งก่อนถึงทำงาน เช่น "โจมตีพื้นฐานโดน 10 ครั้ง" */
         hitCount: z.number().int().positive().optional(),
+        /**
+         * ธาตุของ "ศัตรูที่ถูกโจมตี" เช่น "เมื่อโจมตีมอนสเตอร์ธาตุไฟ 10 ครั้ง"
+         * คนละอันกับ triggerElement ซึ่งเป็นธาตุของการโจมตีฝั่งเรา
+         */
+        enemyElement: vocabEnum("element").optional(),
         note: text.optional(),
       })
       .optional(),
