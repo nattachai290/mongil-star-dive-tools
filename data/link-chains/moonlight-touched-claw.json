@@ -1,6 +1,7 @@
 {
   "id": "moonlight-touched-claw",
   "name": {
+    "th": "กรงเล็บย้อมเงาจันทรา",
     "en": "Moonlight-Touched Claw"
   },
   "kind": "monsterling",
@@ -18,7 +19,8 @@
       },
       "bonusEffects": [
         {
-          "en": "Freeze (5s)"
+          "th": "สถานะเยือกแข็ง (2 วินาที)",
+          "en": "Freeze (2s)"
         }
       ]
     }
@@ -26,6 +28,10 @@
   "source": {
     "verifiedAt": "2026-09-12",
     "gameVersion": "unknown",
-    "by": "in-game"
+    "by": "in-game",
+    "fieldsUnverified": [
+      "levels[0].bonusEffects[0]"
+    ],
+    "note": "ภาพไทย 2026-09-12 อ่านได้ว่า ขั้น 1 = สถานะเยือกแข็ง (2 วินาที); ข้อมูลที่บันทึกไว้ก่อนหน้าจากภาพอังกฤษคือ Freeze (5s) — ยังไม่ได้ยืนยันว่าอันไหนถูก"
   }
 }

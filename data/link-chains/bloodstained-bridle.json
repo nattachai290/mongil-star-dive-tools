@@ -1,6 +1,7 @@
 {
   "id": "bloodstained-bridle",
   "name": {
+    "th": "บังเหียนแปดเปื้อนเลือด",
     "en": "Bloodstained Bridle"
   },
   "kind": "monsterling",
@@ -18,6 +19,7 @@
       },
       "bonusEffects": [
         {
+          "th": "ลดต้านทานธาตุไฟ 5% (5 วินาที)",
           "en": "5% Fire RES Reduction (5s)"
         }
       ]

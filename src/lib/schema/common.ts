@@ -24,6 +24,8 @@ export const source = z.object({
   gameVersion: z.string().min(1),
   by: z.string().optional(),
   fieldsUnverified: z.array(z.string()).optional(),
+  /** บันทึกที่มา เช่น อ่านจากภาพไหน หรือมีสองแหล่งที่ขัดกัน — ไม่ใช่ข้อมูลเกม */
+  note: z.string().min(1).optional(),
 });
 
 /**
