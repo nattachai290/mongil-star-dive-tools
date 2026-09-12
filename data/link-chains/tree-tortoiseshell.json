@@ -1,0 +1,35 @@
+{
+  "id": "tree-tortoiseshell",
+  "name": {
+    "en": "Tree Tortoiseshell"
+  },
+  "monsterlingId": "treetoise",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 3,
+      "appearanceConditions": [
+        {
+          "en": "Landing an attack"
+        }
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 80,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "en": "Stunned (3s)"
+        },
+        {
+          "en": "15% Neutralization RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

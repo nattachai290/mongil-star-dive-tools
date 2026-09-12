@@ -1,0 +1,38 @@
+{
+  "id": "purple-gem",
+  "name": {
+    "en": "Purple Gem"
+  },
+  "monsterlingId": "blue-shadow",
+  "rarity": 5,
+  "levels": [
+    {
+      "level": 3,
+      "appearanceConditions": [
+        {
+          "en": "Using a Special Skill"
+        },
+        {
+          "en": "Landing an Ultimate Skill"
+        }
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 130,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "en": "10% Ice RES Reduction (5s)"
+        },
+        {
+          "en": "15% Elemental Weakness DMG Taken Boost (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}
