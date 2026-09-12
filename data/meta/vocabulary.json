@@ -247,6 +247,10 @@
     "elementRes": {
       "th": "ต้านทานธาตุ",
       "en": "Elemental RES"
+    },
+    "neutralizationDmg": {
+      "th": "ดาเมจหมดฤทธิ์",
+      "en": "Neutralization DMG"
     }
   },
   "unit": {

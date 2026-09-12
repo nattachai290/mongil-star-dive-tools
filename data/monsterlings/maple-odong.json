@@ -1,0 +1,31 @@
+{
+  "id": "maple-odong",
+  "name": {
+    "th": "ต้นสนผู้เฒ่าพัค",
+    "en": "Maple Odong"
+  },
+  "dex": {
+    "book": "field",
+    "no": 105
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "atk",
+      "scope": "switchSkill",
+      "value": 5.78,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always"
+    }
+  ],
+  "effectsGrade": "gold",
+  "images": {
+    "icon": "maple-odong-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}
