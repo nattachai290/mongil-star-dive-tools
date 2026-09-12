@@ -12,14 +12,14 @@
     {
       "kind": "debuff",
       "stat": "elementRes",
-      "element": "fire",
+      "damageType": "fire",
       "value": 11,
       "unit": "percent",
       "target": "enemy",
       "trigger": "onSpecialSkillHit",
       "durationSec": 10,
       "condition": {
-        "triggerElement": "fire"
+        "triggerDamageType": "fire"
       }
     }
   ],

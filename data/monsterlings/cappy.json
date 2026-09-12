@@ -1,28 +1,28 @@
 {
-  "id": "wolf",
+  "id": "cappy",
   "name": {
-    "th": "หมาป่า",
-    "en": "Wolf"
+    "th": "ช้อปปี้",
+    "en": "Cappy"
   },
   "dex": {
     "book": "field",
-    "no": 52
+    "no": 1
   },
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "dmgDealt",
-      "damageType": "physical",
+      "stat": "critRate",
+      "scope": "specialSkill",
       "value": 6.25,
       "unit": "percent",
       "target": "self",
-      "trigger": "onCrit",
-      "durationSec": 5
+      "trigger": "always",
+      "internalCooldownSec": 20
     }
   ],
   "effectsGrade": "gold",
   "images": {
-    "icon": "wolf-icon.webp"
+    "icon": "cappy-icon.webp"
   },
   "source": {
     "verifiedAt": "2026-09-12",

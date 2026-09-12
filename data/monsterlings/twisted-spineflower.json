@@ -11,15 +11,15 @@
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "elementDmg",
-      "element": "lightning",
+      "stat": "dmgDealt",
+      "damageType": "lightning",
       "value": 6.25,
       "unit": "percent",
       "target": "self",
       "trigger": "onHit",
       "condition": {
         "hitCount": 10,
-        "enemyElement": "lightning"
+        "enemyType": "lightning"
       }
     }
   ],

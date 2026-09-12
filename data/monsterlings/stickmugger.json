@@ -11,8 +11,8 @@
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "elementDmg",
-      "element": "lightning",
+      "stat": "dmgDealt",
+      "damageType": "lightning",
       "value": 11.55,
       "unit": "percent",
       "target": "self",

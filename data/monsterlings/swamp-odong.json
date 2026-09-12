@@ -12,7 +12,7 @@
     {
       "kind": "debuff",
       "stat": "elementRes",
-      "element": "earth",
+      "damageType": "earth",
       "value": 8,
       "unit": "percent",
       "target": "enemy",

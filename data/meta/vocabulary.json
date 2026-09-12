@@ -220,10 +220,6 @@
       "th": "ความเสียหายที่ได้รับ",
       "en": "DMG Taken"
     },
-    "elementDmg": {
-      "th": "ความเสียหายตามธาตุ",
-      "en": "Element DMG"
-    },
     "defShred": {
       "th": "ลดพลังป้องกันศัตรู",
       "en": "DEF Shred"
@@ -248,41 +244,9 @@
       "th": "ค่าสเตมินา",
       "en": "Stamina"
     },
-    "switchSkillDmg": {
-      "th": "ดาเมจสกิลสับเปลี่ยน",
-      "en": "Switch Skill DMG"
-    },
     "elementRes": {
       "th": "ต้านทานธาตุ",
       "en": "Elemental RES"
-    },
-    "weaknessCritRate": {
-      "th": "อัตราคริติคอลของโจมตีธาตุจุดอ่อน",
-      "en": "Elemental Weakness CRIT Rate"
-    },
-    "bossDmg": {
-      "th": "ดาเมจมอนสเตอร์บอส",
-      "en": "Boss DMG"
-    },
-    "specialSkillDmg": {
-      "th": "ดาเมจสกิลพิเศษ",
-      "en": "Special Skill DMG"
-    },
-    "physicalDmg": {
-      "th": "ดาเมจกายภาพ",
-      "en": "Physical DMG"
-    },
-    "ultimateDmg": {
-      "th": "ดาเมจสกิลอัลติเมต",
-      "en": "Ultimate Skill DMG"
-    },
-    "ultimateCritDmg": {
-      "th": "ดาเมจคริติคอลของสกิลอัลติเมต",
-      "en": "Ultimate Skill CRIT DMG"
-    },
-    "supportDmg": {
-      "th": "ดาเมจสนับสนุน",
-      "en": "Support DMG"
     }
   },
   "unit": {
@@ -627,6 +591,36 @@
     "gold": {
       "th": "สีทอง",
       "en": "Gold"
+    }
+  },
+  "scope": {
+    "basicAttack": {
+      "th": "โจมตีพื้นฐาน",
+      "en": "Basic Attack"
+    },
+    "specialSkill": {
+      "th": "สกิลพิเศษ",
+      "en": "Special Skill"
+    },
+    "switchSkill": {
+      "th": "สกิลสับเปลี่ยน",
+      "en": "Switch Skill"
+    },
+    "ultimate": {
+      "th": "สกิลอัลติเมต",
+      "en": "Ultimate Skill"
+    },
+    "weaknessHit": {
+      "th": "การโจมตีธาตุจุดอ่อน",
+      "en": "Elemental Weakness Attack"
+    },
+    "crit": {
+      "th": "การโจมตีคริติคอล",
+      "en": "Critical Hit"
+    },
+    "support": {
+      "th": "การสนับสนุน",
+      "en": "Support"
     }
   }
 }

@@ -11,7 +11,8 @@
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "switchSkillDmg",
+      "stat": "dmgDealt",
+      "scope": "switchSkill",
       "value": 11,
       "unit": "percent",
       "target": "team",

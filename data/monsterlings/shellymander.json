@@ -11,7 +11,8 @@
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "physicalDmg",
+      "stat": "dmgDealt",
+      "damageType": "physical",
       "value": 6.25,
       "unit": "percent",
       "target": "self",

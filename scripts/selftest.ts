@@ -101,6 +101,22 @@ const speciesEffect = {
   target: "team", trigger: "onWeaknessHit", durationSec: 10,
   internalCooldownSec: 20, condition: { vsBoss: true },
 };
+// "ดาเมจคริติคอลของสกิลอัลติเมต" = critDmg + scope ultimate ไม่ใช่ stat ใหม่
+const scoped = {
+  kind: "buff", stat: "critDmg", scope: "ultimate", value: 6.25, unit: "percent",
+  target: "self", trigger: "always",
+};
+check("ขอบเขต (scope) แยกจาก stat ได้",
+  monsterling.safeParse({ id: "bop-kkaebi", name: t("แกบีฟ้า"),
+    speciesEffects: [scoped], effectsGrade: "gold", source: src }).success);
+check("scope ที่ไม่มีในคำศัพท์ = ไม่ผ่าน",
+  !monsterling.safeParse({ id: "bop-kkaebi", name: t("แกบีฟ้า"),
+    speciesEffects: [{ ...scoped, scope: "ultimateSkill" }],
+    effectsGrade: "gold", source: src }).success);
+check("damageType รับ physical ได้ ต่างจาก element ที่มีแค่ 5 ธาตุ",
+  monsterling.safeParse({ id: "wolf", name: t("หมาป่า"),
+    speciesEffects: [{ ...scoped, scope: undefined, damageType: "physical" }],
+    effectsGrade: "gold", source: src }).success);
 check("เอฟเฟกต์สายพันธุ์แบบมีคูลดาวน์ในตัวและจำกัดเฉพาะบอส ผ่าน schema",
   monsterling.safeParse({
     id: "el-dorado-guardian", name: t("ผู้พิทักษ์แห่งนครทองคำ"),

@@ -11,8 +11,8 @@
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "elementDmg",
-      "element": "ice",
+      "stat": "dmgDealt",
+      "damageType": "ice",
       "value": 6.57,
       "unit": "percent",
       "target": "self",

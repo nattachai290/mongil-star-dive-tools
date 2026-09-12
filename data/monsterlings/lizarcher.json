@@ -19,7 +19,7 @@
       "durationSec": 5,
       "condition": {
         "hitCount": 10,
-        "enemyElement": "fire"
+        "enemyType": "fire"
       }
     }
   ],

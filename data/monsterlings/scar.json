@@ -11,12 +11,15 @@
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "bossDmg",
+      "stat": "dmgDealt",
       "value": 8,
       "unit": "percent",
       "target": "self",
       "trigger": "onCrit",
-      "durationSec": 5
+      "durationSec": 5,
+      "condition": {
+        "vsBoss": true
+      }
     }
   ],
   "effectsGrade": "gold",

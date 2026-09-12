@@ -18,7 +18,7 @@
       "trigger": "onCrit",
       "durationSec": 5,
       "condition": {
-        "triggerElement": "earth"
+        "triggerDamageType": "earth"
       }
     }
   ],

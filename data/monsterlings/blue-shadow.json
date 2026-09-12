@@ -11,14 +11,15 @@
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "specialSkillDmg",
-      "element": "ice",
+      "stat": "dmgDealt",
+      "scope": "specialSkill",
+      "damageType": "ice",
       "value": 11.55,
       "unit": "percent",
       "target": "self",
       "trigger": "onSpecialSkillHit",
       "condition": {
-        "triggerElement": "ice"
+        "triggerDamageType": "ice"
       }
     }
   ],

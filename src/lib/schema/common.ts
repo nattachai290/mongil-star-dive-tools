@@ -40,7 +40,16 @@ export const effect = z
     unit: vocabEnum("unit").optional(),
     target: vocabEnum("target"),
     trigger: vocabEnum("trigger"),
-    element: vocabEnum("element").optional(),
+    /** ชนิดดาเมจที่เอฟเฟกต์นี้พูดถึง เช่น "ดาเมจธาตุไฟ" หรือ "ดาเมจกายภาพ" */
+    damageType: vocabEnum("damageType").optional(),
+    /**
+     * เอฟเฟกต์มีผลกับการกระทำแบบไหน เช่น "ดาเมจคริติคอลของสกิลอัลติเมต"
+     * = stat critDmg + scope ultimate
+     *
+     * แยกจาก stat โดยตั้งใจ ไม่งั้นต้องมี stat เท่ากับ (ชนิดค่า × ชนิดการกระทำ)
+     * ซึ่งบานปลายเป็นหลายสิบคำและเทียบข้ามกันไม่ได้
+     */
+    scope: vocabEnum("scope").optional(),
     durationSec: z.number().positive().optional(),
     /** ติดคูลดาวน์ในตัว เช่น "ทำงาน 1 ครั้ง ทุก 20 วินาที" — ต่างจาก durationSec */
     internalCooldownSec: z.number().positive().optional(),
@@ -55,18 +64,19 @@ export const effect = z
          */
         vsBoss: z.boolean().optional(),
         /**
-         * ธาตุของ "การโจมตีที่ไปกระตุ้น" ไม่ใช่ธาตุของผลลัพธ์
-         * เช่น "เมื่อโจมตีธาตุไฟด้วยสกิลพิเศษ" → triggerElement: fire
-         * ส่วนธาตุของผลลัพธ์อยู่ที่ effect.element ซึ่งอาจคนละธาตุกัน
+         * ชนิดดาเมจของ "การโจมตีที่ไปกระตุ้น" ไม่ใช่ของผลลัพธ์
+         * เช่น "เมื่อโจมตีธาตุไฟด้วยสกิลพิเศษ" → triggerDamageType: fire
+         * ส่วนชนิดของผลลัพธ์อยู่ที่ effect.damageType ซึ่งอาจคนละอันกัน
          */
-        triggerElement: vocabEnum("element").optional(),
+        triggerDamageType: vocabEnum("damageType").optional(),
         /** ต้องโจมตีโดนกี่ครั้งก่อนถึงทำงาน เช่น "โจมตีพื้นฐานโดน 10 ครั้ง" */
         hitCount: z.number().int().positive().optional(),
         /**
-         * ธาตุของ "ศัตรูที่ถูกโจมตี" เช่น "เมื่อโจมตีมอนสเตอร์ธาตุไฟ 10 ครั้ง"
-         * คนละอันกับ triggerElement ซึ่งเป็นธาตุของการโจมตีฝั่งเรา
+         * ชนิดของ "ศัตรูที่ถูกโจมตี" เช่น "เมื่อโจมตีมอนสเตอร์ธาตุไฟ 10 ครั้ง"
+         * หรือ "แก่มอนสเตอร์กายภาพ" — จึงใช้ damageType ที่มี physical ด้วย
+         * คนละอันกับ triggerDamageType ซึ่งเป็นของการโจมตีฝั่งเรา
          */
-        enemyElement: vocabEnum("element").optional(),
+        enemyType: vocabEnum("damageType").optional(),
         note: text.optional(),
       })
       .optional(),

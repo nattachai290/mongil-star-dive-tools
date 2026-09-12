@@ -11,14 +11,15 @@
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "specialSkillDmg",
-      "element": "fire",
+      "stat": "dmgDealt",
+      "scope": "specialSkill",
+      "damageType": "fire",
       "value": 11.55,
       "unit": "percent",
       "target": "self",
       "trigger": "onSpecialSkillHit",
       "condition": {
-        "triggerElement": "fire"
+        "triggerDamageType": "fire"
       }
     }
   ],

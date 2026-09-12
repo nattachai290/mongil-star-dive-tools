@@ -11,7 +11,7 @@
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "elementDmg",
+      "stat": "dmgDealt",
       "value": 14,
       "unit": "percent",
       "target": "self",
@@ -20,7 +20,8 @@
     },
     {
       "kind": "buff",
-      "stat": "supportDmg",
+      "stat": "dmgDealt",
+      "scope": "support",
       "value": 14,
       "unit": "percent",
       "target": "self",
@@ -36,7 +37,8 @@
     },
     {
       "kind": "buff",
-      "stat": "ultimateDmg",
+      "stat": "dmgDealt",
+      "scope": "ultimate",
       "value": 14,
       "unit": "percent",
       "target": "self",

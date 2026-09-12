@@ -1,28 +1,30 @@
 {
-  "id": "wolf",
+  "id": "white-wraith",
   "name": {
-    "th": "หมาป่า",
-    "en": "Wolf"
+    "th": "ซาตานสตะ",
+    "en": "White Wraith"
   },
   "dex": {
     "book": "field",
-    "no": 52
+    "no": 113
   },
   "speciesEffects": [
     {
       "kind": "buff",
       "stat": "dmgDealt",
-      "damageType": "physical",
-      "value": 6.25,
+      "damageType": "fire",
+      "value": 6.57,
       "unit": "percent",
       "target": "self",
-      "trigger": "onCrit",
-      "durationSec": 5
+      "trigger": "always",
+      "condition": {
+        "vsBoss": true
+      }
     }
   ],
   "effectsGrade": "gold",
   "images": {
-    "icon": "wolf-icon.webp"
+    "icon": "white-wraith-icon.webp"
   },
   "source": {
     "verifiedAt": "2026-09-12",

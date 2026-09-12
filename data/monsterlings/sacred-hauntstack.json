@@ -1,28 +1,27 @@
 {
-  "id": "wolf",
+  "id": "sacred-hauntstack",
   "name": {
-    "th": "หมาป่า",
-    "en": "Wolf"
+    "th": "หุ่นฟางจิ๋วบรรลุธรรม",
+    "en": "Sacred Hauntstack"
   },
   "dex": {
     "book": "field",
-    "no": 52
+    "no": 97
   },
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "dmgDealt",
-      "damageType": "physical",
-      "value": 6.25,
+      "stat": "critDmg",
+      "scope": "switchSkill",
+      "value": 6.57,
       "unit": "percent",
       "target": "self",
-      "trigger": "onCrit",
-      "durationSec": 5
+      "trigger": "always"
     }
   ],
   "effectsGrade": "gold",
   "images": {
-    "icon": "wolf-icon.webp"
+    "icon": "sacred-hauntstack-icon.webp"
   },
   "source": {
     "verifiedAt": "2026-09-12",

@@ -11,8 +11,8 @@
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "elementDmg",
-      "element": "earth",
+      "stat": "dmgDealt",
+      "damageType": "earth",
       "value": 11,
       "unit": "percent",
       "target": "self",

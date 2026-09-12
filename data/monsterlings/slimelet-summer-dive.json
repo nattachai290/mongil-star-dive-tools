@@ -1,30 +1,29 @@
 {
-  "id": "red-shadow",
+  "id": "slimelet-summer-dive",
   "name": {
-    "th": "เงาแดง",
-    "en": "Red Shadow"
+    "th": "สไลม์ : ซัมเมอร์ ไดฟ์!",
+    "en": "Slimelet: Summer Dive!"
   },
   "dex": {
-    "book": "field",
-    "no": 164
+    "book": "event",
+    "no": 2
   },
   "speciesEffects": [
     {
       "kind": "buff",
       "stat": "critDmg",
-      "value": 11,
+      "value": 6.25,
       "unit": "percent",
       "target": "self",
-      "trigger": "onSpecialSkillHit",
-      "durationSec": 4,
+      "trigger": "always",
       "condition": {
-        "triggerDamageType": "ice"
+        "enemyType": "physical"
       }
     }
   ],
   "effectsGrade": "gold",
   "images": {
-    "icon": "red-shadow-icon.webp"
+    "icon": "slimelet-summer-dive-icon.webp"
   },
   "source": {
     "verifiedAt": "2026-09-12",
