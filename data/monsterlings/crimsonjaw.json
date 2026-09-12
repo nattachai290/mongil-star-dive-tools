@@ -1,27 +1,27 @@
 {
-  "id": "wolf",
+  "id": "crimsonjaw",
   "name": {
-    "th": "หมาป่า",
-    "en": "Wolf"
+    "th": "เกล็ดน้ำค้างแดง",
+    "en": "Crimsonjaw"
   },
   "dex": {
     "book": "field",
-    "no": 52
+    "no": 14
   },
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "physicalDmg",
-      "value": 6.25,
+      "stat": "elementDmg",
+      "element": "ice",
+      "value": 6.57,
       "unit": "percent",
       "target": "self",
-      "trigger": "onCrit",
-      "durationSec": 5
+      "trigger": "onCrit"
     }
   ],
   "effectsGrade": "gold",
   "images": {
-    "icon": "wolf-icon.webp"
+    "icon": "crimsonjaw-icon.webp"
   },
   "source": {
     "verifiedAt": "2026-09-12",

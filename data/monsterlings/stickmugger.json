@@ -1,27 +1,28 @@
 {
-  "id": "wolf",
+  "id": "stickmugger",
   "name": {
-    "th": "หมาป่า",
-    "en": "Wolf"
+    "th": "ช็อปสติกมักเกอร์",
+    "en": "Stickmugger"
   },
   "dex": {
     "book": "field",
-    "no": 52
+    "no": 93
   },
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "physicalDmg",
-      "value": 6.25,
+      "stat": "elementDmg",
+      "element": "lightning",
+      "value": 11.55,
       "unit": "percent",
       "target": "self",
-      "trigger": "onCrit",
-      "durationSec": 5
+      "trigger": "onWeaknessHit",
+      "durationSec": 10
     }
   ],
   "effectsGrade": "gold",
   "images": {
-    "icon": "wolf-icon.webp"
+    "icon": "stickmugger-icon.webp"
   },
   "source": {
     "verifiedAt": "2026-09-12",

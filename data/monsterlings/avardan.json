@@ -1,30 +1,30 @@
 {
-  "id": "orc-warrior",
+  "id": "avardan",
   "name": {
-    "th": "ออร์ค นักรบ",
-    "en": "Orc Warrior"
+    "th": "อวาดัน",
+    "en": "Avardan"
   },
   "dex": {
     "book": "field",
-    "no": 42
+    "no": 94
   },
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "physicalDmg",
-      "value": 6.25,
+      "stat": "ultimateDmg",
+      "value": 11,
       "unit": "percent",
-      "target": "self",
-      "trigger": "always",
-      "internalCooldownSec": 20,
+      "target": "team",
+      "trigger": "onTakeHit",
+      "durationSec": 10,
       "condition": {
-        "vsBoss": false
+        "vsBoss": true
       }
     }
   ],
   "effectsGrade": "gold",
   "images": {
-    "icon": "orc-warrior-icon.webp"
+    "icon": "avardan-icon.webp"
   },
   "source": {
     "verifiedAt": "2026-09-12",

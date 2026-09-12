@@ -1,27 +1,27 @@
 {
-  "id": "wolf",
+  "id": "amons-shadow",
   "name": {
-    "th": "หมาป่า",
-    "en": "Wolf"
+    "th": "เงาของอาม่อน",
+    "en": "Amon's Shadow"
   },
   "dex": {
     "book": "field",
-    "no": 52
+    "no": 68
   },
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "physicalDmg",
-      "value": 6.25,
+      "stat": "critRate",
+      "value": 11.55,
       "unit": "percent",
-      "target": "self",
-      "trigger": "onCrit",
-      "durationSec": 5
+      "target": "team",
+      "trigger": "onEvasionCounter",
+      "durationSec": 10
     }
   ],
   "effectsGrade": "gold",
   "images": {
-    "icon": "wolf-icon.webp"
+    "icon": "amons-shadow-icon.webp"
   },
   "source": {
     "verifiedAt": "2026-09-12",

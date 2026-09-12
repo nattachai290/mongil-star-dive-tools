@@ -12,17 +12,19 @@
     {
       "kind": "buff",
       "stat": "ultimateCritDmg",
+      "value": 6.25,
+      "unit": "percent",
       "target": "self",
       "trigger": "always"
     }
   ],
+  "effectsGrade": "gold",
   "images": {
     "icon": "bop-kkaebi-icon.webp"
   },
   "source": {
     "verifiedAt": "2026-09-12",
     "gameVersion": "unknown",
-    "by": "in-game",
-    "note": "อ่านค่าได้ 6.25% จากมอนเลเวล 1 แต่ยังไม่เก็บตัวเลข เพราะมอนแรงสีทองที่ยืนยันแล้ว (ก็อบลิน ร้อยตรี เลเวล 1 เหมือนกัน) ขึ้น 6.57% ไม่ใช่ 6.25% — ตัวนี้จึงน่าจะยังไม่ใช่สีทอง เก็บไว้เฉพาะรูปแบบซึ่งไม่ขึ้นกับแรง (ดู PLAN §13.9)"
+    "by": "in-game"
   }
 }
