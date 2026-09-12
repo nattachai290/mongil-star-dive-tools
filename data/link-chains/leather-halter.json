@@ -1,6 +1,7 @@
 {
   "id": "leather-halter",
   "name": {
+    "th": "สายหนังฝึกวัว",
     "en": "Leather Halter"
   },
   "kind": "monsterling",
@@ -18,6 +19,7 @@
       },
       "bonusEffects": [
         {
+          "th": "ลดต้านทานธาตุลม 5% (5 วินาที)",
           "en": "5% Wind RES Reduction (5s)"
         }
       ]

@@ -1,6 +1,7 @@
 {
   "id": "token-of-obedience",
   "name": {
+    "th": "ตราแห่งการจำนน",
     "en": "Token of Obedience"
   },
   "kind": "monsterling",
@@ -19,6 +20,7 @@
       },
       "bonusEffects": [
         {
+          "th": "เพิ่มดาเมจธาตุจุดอ่อน 15% (5 วินาที)",
           "en": "15% Elemental Weakness DMG Taken Boost (5s)"
         }
       ]

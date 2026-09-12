@@ -1,6 +1,7 @@
 {
   "id": "poisoned-claw",
   "name": {
+    "th": "กรงเล็บฝังพิษ",
     "en": "Poisoned Claw"
   },
   "kind": "monsterling",

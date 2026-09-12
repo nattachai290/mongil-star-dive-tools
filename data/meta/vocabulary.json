@@ -28,6 +28,7 @@
       "en": "Using an Ultimate Skill"
     },
     "landUltimate": {
+      "th": "เมื่อสกิลอัลติเมตโดน",
       "en": "Landing an Ultimate Skill"
     },
     "dodge": {
@@ -39,6 +40,7 @@
       "en": "Using Evasion Counter"
     },
     "airCounter": {
+      "th": "เมื่อใช้โจมตีฉับพลัน",
       "en": "Using Air Counter"
     },
     "landAttack": {
