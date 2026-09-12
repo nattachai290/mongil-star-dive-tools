@@ -129,10 +129,22 @@ export const monsterling = z.object({
   name: text,
   /** ตำแหน่งในสมุดภาพมอน — ต้องมีคู่กัน เพราะแต่ละเล่มเริ่มนับ No.1 ใหม่ */
   dex: z.object({ book: vocabEnum("dexBook"), no: z.number().int().positive() }).optional(),
-  effects: z.array(effect).default([]),
+  /**
+   * "เอฟเฟกต์สายพันธุ์" ในเกม — ผูกกับสายพันธุ์ ไม่ใช่ตัวที่จับมาแต่ละตัว
+   * (ต่างจาก "ลักษณะเฉพาะ" ที่สุ่มรายตัว จึงไม่เก็บ ดูหมายเหตุท้ายไฟล์)
+   */
+  speciesEffects: z.array(effect).default([]),
+  /**
+   * ค่าใน speciesEffects อ่านมาตอนมอนอยู่เลเวลนี้
+   * ต้องมีคู่กันเสมอ เพราะยังไม่ยืนยันว่าตัวเลขขึ้นกับเลเวลหรือไม่ (ดู PLAN §13.9)
+   * ถ้าไม่เก็บไว้ วันที่รู้ว่ามันสเกล จะไม่มีทางรู้ว่าตัวเลขเก่าอ่านมาจากเลเวลไหน
+   */
+  effectsAtLevel: z.number().int().positive().optional(),
   obtain: z.object({ method: vocabEnum("obtainMethod"), note: text.optional() }).optional(),
   images: z.object({ icon: z.string().optional() }).optional(),
   source,
+}).refine((m) => m.speciesEffects.length === 0 || m.effectsAtLevel !== undefined, {
+  message: "มี speciesEffects แล้วต้องบอก effectsAtLevel ว่าอ่านค่ามาตอนเลเวลไหน",
 });
 
 /*

@@ -255,6 +255,18 @@
     "stamina": {
       "th": "ค่าสเตมินา",
       "en": "Stamina"
+    },
+    "switchSkillDmg": {
+      "th": "ดาเมจสกิลสับเปลี่ยน",
+      "en": "Switch Skill DMG"
+    },
+    "elementRes": {
+      "th": "ต้านทานธาตุ",
+      "en": "Elemental RES"
+    },
+    "weaknessCritRate": {
+      "th": "อัตราคริติคอลของโจมตีธาตุจุดอ่อน",
+      "en": "Elemental Weakness CRIT Rate"
     }
   },
   "unit": {
@@ -333,6 +345,10 @@
     "teamHpBelow": {
       "th": "เมื่อเลือดเพื่อนต่ำกว่าที่กำหนด",
       "en": "When ally HP below threshold"
+    },
+    "onWeaknessHit": {
+      "th": "เมื่อโจมตีด้วยธาตุจุดอ่อน",
+      "en": "On elemental weakness hit"
     }
   },
   "effectKind": {

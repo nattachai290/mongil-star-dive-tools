@@ -42,11 +42,15 @@ export const effect = z
     trigger: vocabEnum("trigger"),
     element: vocabEnum("element").optional(),
     durationSec: z.number().positive().optional(),
+    /** ติดคูลดาวน์ในตัว เช่น "ทำงาน 1 ครั้ง ทุก 20 วินาที" — ต่างจาก durationSec */
+    internalCooldownSec: z.number().positive().optional(),
     maxStacks: z.number().int().positive().optional(),
     condition: z
       .object({
         hpBelowPercent: z.number().min(0).max(100).optional(),
         minStacks: z.number().int().positive().optional(),
+        /** ทำงานเฉพาะกับมอนสเตอร์บอส — ไม่ใส่ = ไม่จำกัด ไม่ใช่ "ไม่ใช่บอส" */
+        vsBoss: z.boolean().optional(),
         note: text.optional(),
       })
       .optional(),

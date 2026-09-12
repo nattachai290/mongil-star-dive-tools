@@ -4,7 +4,7 @@
  * มีไว้เพราะ data/ ยังว่างอยู่ — ถ้าไม่มีไฟล์นี้ validate:data จะผ่านตลอด
  * แม้ schema จะพังอยู่ ทำให้ไม่รู้ตัวจนวันที่เริ่มกรอกข้อมูลจริง
  */
-import { character, food } from "../src/lib/schema/entities";
+import { character, food, monsterling } from "../src/lib/schema/entities";
 import { computeDamage, missingConstants, sumBuffs } from "../src/lib/formula";
 import { LINK_CHAIN_LIST_IS_COMPLETE, linkableBadge, linkableIds, linkableOf } from "../src/lib/linkable";
 import type { Effect } from "../src/lib/schema/common";
@@ -94,6 +94,26 @@ const blocked = computeDamage({ atkBase: 1300, buffs: [], skillPercent: 500, cri
 check("ใส่ป้องกันศัตรูขณะค่าคงที่ยังไม่ยืนยัน = คืน null ไม่ใช่เดา",
   blocked.average === null && blocked.steps.find((s) => s.id === "afterDefense")?.blockedBy === "defConstant");
 check("บอกได้ว่าค่าคงที่ไหนยังขาด", missingConstants().includes("defConstant"));
+
+// ---------- เอฟเฟกต์สายพันธุ์ของมอนสเตอร์ลิง ----------
+const speciesEffect = {
+  kind: "buff", stat: "atk", value: 5.78, unit: "percent",
+  target: "team", trigger: "onWeaknessHit", durationSec: 10,
+  internalCooldownSec: 20, condition: { vsBoss: true },
+};
+check("เอฟเฟกต์สายพันธุ์แบบมีคูลดาวน์ในตัวและจำกัดเฉพาะบอส ผ่าน schema",
+  monsterling.safeParse({
+    id: "el-dorado-guardian", name: t("ผู้พิทักษ์แห่งนครทองคำ"),
+    speciesEffects: [speciesEffect], effectsAtLevel: 60, source: src,
+  }).success);
+check("มีเอฟเฟกต์สายพันธุ์แต่ไม่บอกเลเวลที่อ่านมา = ไม่ผ่าน",
+  !monsterling.safeParse({
+    id: "el-dorado-guardian", name: t("ผู้พิทักษ์แห่งนครทองคำ"),
+    speciesEffects: [speciesEffect], source: src,
+  }).success,
+  "ถ้าปล่อยผ่าน วันที่รู้ว่าตัวเลขสเกลตามเลเวลจะย้อนไม่ได้ว่าอ่านมาจากเลเวลไหน");
+check("มอนที่ยังไม่มีเอฟเฟกต์สายพันธุ์ ไม่ต้องมีเลเวล",
+  monsterling.safeParse({ id: "cappy", name: t("ช้อปปี้"), source: src }).success);
 
 // ---------- ป้าย "ใส่ลิงก์เชนได้" ----------
 const chainIds = linkableIds([

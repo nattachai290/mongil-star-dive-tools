@@ -124,7 +124,7 @@ const dexRaw = readJson(join(DATA, "meta", "monster-dex.json"), "data/meta/monst
   | undefined;
 
 const dexSlugs = new Map<string, string>();
-const dexByKey = new Map<string, { slug: string | null }>();
+const dexByKey = new Map<string, { slug: string | null; name: { th?: string; en?: string } }>();
 
 if (dexRaw) {
   const seen = new Map<string, Set<number>>();
@@ -141,7 +141,7 @@ if (dexRaw) {
     if (book.has(e.no)) fail(where, `สมุด "${e.book}" มีเลข no ${e.no} ซ้ำ`);
     book.add(e.no);
     seen.set(e.book, book);
-    dexByKey.set(`${e.book}:${e.no}`, { slug: e.slug });
+    dexByKey.set(`${e.book}:${e.no}`, { slug: e.slug, name: e.name });
 
     // slug คือ id ที่ "จอง" ไว้ ยังไม่ต้องมีไฟล์ Monsterling รองรับ
     // แต่ห้ามซ้ำกัน เพราะมันคือ URL ของเว็บ
@@ -200,6 +200,15 @@ for (const [id, doc] of Object.entries(parsed.monsterlings ?? {})) {
     fail(where, `dex ชี้ไปที่ ${dex.book} No.${dex.no} แต่ไม่มีรายการนั้นในสมุดภาพมอน`);
   } else if (entry.slug && entry.slug !== id) {
     fail(where, `สมุดภาพมอนจอง id "${entry.slug}" ไว้ให้ ${dex.book} No.${dex.no} แต่ไฟล์นี้ใช้ id "${id}"`);
+  } else {
+    // ชื่อต้องตรงกับสมุดภาพมอน ซึ่งเป็นแหล่งเดียวของชื่อมอน
+    const name = doc.name as Record<string, string>;
+    for (const lang of ["th", "en"] as const) {
+      const want = entry.name?.[lang];
+      if (want && name[lang] && name[lang] !== want) {
+        fail(where, `name.${lang} = "${name[lang]}" แต่สมุดภาพมอนเก็บไว้ว่า "${want}"`);
+      }
+    }
   }
 }
 
