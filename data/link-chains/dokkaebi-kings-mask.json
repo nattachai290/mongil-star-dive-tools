@@ -10,12 +10,8 @@
     {
       "level": 4,
       "appearanceConditions": [
-        {
-          "en": "Using a Switch Skill"
-        },
-        {
-          "en": "Using an Ultimate Skill"
-        }
+        "switchSkill",
+        "useUltimate"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 160,

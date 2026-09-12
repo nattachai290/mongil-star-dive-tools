@@ -15,9 +15,7 @@
       },
       "damageType": "earth",
       "appearanceConditions": [
-        {
-          "en": "Upon taking DMG"
-        }
+        "takeDamage"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 20,

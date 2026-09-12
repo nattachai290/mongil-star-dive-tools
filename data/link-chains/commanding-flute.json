@@ -14,9 +14,7 @@
       },
       "damageType": "physical",
       "appearanceConditions": [
-        {
-          "en": "Using a Switch Skill"
-        }
+        "switchSkill"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 60,

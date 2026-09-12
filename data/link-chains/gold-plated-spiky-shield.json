@@ -10,12 +10,8 @@
     {
       "level": 1,
       "appearanceConditions": [
-        {
-          "en": "Landing a Fire Attack"
-        },
-        {
-          "en": "Landing an Ice Attack"
-        }
+        "landFireAttack",
+        "landIceAttack"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 20,

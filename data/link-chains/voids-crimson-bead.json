@@ -14,9 +14,7 @@
       },
       "damageType": "dark",
       "appearanceConditions": [
-        {
-          "en": "Landing a critical hit"
-        }
+        "landCrit"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 100,

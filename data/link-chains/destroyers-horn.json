@@ -14,9 +14,7 @@
       },
       "damageType": "physical",
       "appearanceConditions": [
-        {
-          "en": "When Burst is triggered"
-        }
+        "burst"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 200,

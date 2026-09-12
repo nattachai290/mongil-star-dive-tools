@@ -11,9 +11,7 @@
       "level": 1,
       "damageType": "water",
       "appearanceConditions": [
-        {
-          "en": "Landing an attack"
-        }
+        "landAttack"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 20,

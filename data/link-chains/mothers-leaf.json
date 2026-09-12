@@ -15,9 +15,7 @@
       },
       "damageType": "physical",
       "appearanceConditions": [
-        {
-          "en": "Using a Special Skill"
-        }
+        "specialSkill"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 60,

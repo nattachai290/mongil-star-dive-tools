@@ -10,9 +10,7 @@
     {
       "level": 3,
       "appearanceConditions": [
-        {
-          "en": "Landing an attack"
-        }
+        "landAttack"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 80,

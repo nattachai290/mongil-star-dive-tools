@@ -15,9 +15,7 @@
       },
       "damageType": "fire",
       "appearanceConditions": [
-        {
-          "en": "Using Dodge"
-        }
+        "dodge"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 20,

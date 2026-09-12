@@ -14,9 +14,7 @@
       },
       "damageType": "fire",
       "appearanceConditions": [
-        {
-          "en": "Landing an attack"
-        }
+        "landAttack"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 20,

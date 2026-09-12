@@ -10,12 +10,8 @@
     {
       "level": 2,
       "appearanceConditions": [
-        {
-          "en": "Using a Special Skill"
-        },
-        {
-          "en": "Landing an Ultimate Skill"
-        }
+        "specialSkill",
+        "landUltimate"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 60,

@@ -14,9 +14,7 @@
       },
       "damageType": "ice",
       "appearanceConditions": [
-        {
-          "en": "Using a Special Skill"
-        }
+        "specialSkill"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 200,

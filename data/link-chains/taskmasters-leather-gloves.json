@@ -14,9 +14,7 @@
       },
       "damageType": "physical",
       "appearanceConditions": [
-        {
-          "en": "Landing an attack"
-        }
+        "landAttack"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 20,

@@ -14,9 +14,7 @@
       },
       "damageType": "physical",
       "appearanceConditions": [
-        {
-          "en": "Rendering the enemy Airborne"
-        }
+        "renderAirborne"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 20,

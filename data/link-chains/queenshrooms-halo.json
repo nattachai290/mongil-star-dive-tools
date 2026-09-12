@@ -1,6 +1,7 @@
 {
   "id": "queenshrooms-halo",
   "name": {
+    "th": "แหวนของราชาเห็ด",
     "en": "Queenshroom's Halo"
   },
   "kind": "monsterling",
@@ -13,15 +14,29 @@
         "en": "…cheer on nearby allies, and upon finishing the dance, it grants a Bonus Effect to allies."
       },
       "appearanceConditions": [
-        {
-          "en": "When HP is 50% or lower"
-        }
+        "hpBelow50"
       ],
       "appearanceInfo": {
         "cooldownSec": 300
       },
       "bonusEffects": [
         {
+          "th": "ฟื้นฟู 10% ของพลังชีวิตสูงสุด",
+          "en": "Heals 10% of Max HP"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "appearanceConditions": [
+        "hpBelow50"
+      ],
+      "appearanceInfo": {
+        "cooldownSec": 240
+      },
+      "bonusEffects": [
+        {
+          "th": "ฟื้นฟู 10% ของพลังชีวิตสูงสุด",
           "en": "Heals 10% of Max HP"
         }
       ]

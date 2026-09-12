@@ -10,9 +10,7 @@
     {
       "level": 1,
       "appearanceConditions": [
-        {
-          "en": "Landing an Ice Attack"
-        }
+        "landIceAttack"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 20,

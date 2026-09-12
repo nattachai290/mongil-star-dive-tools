@@ -10,9 +10,7 @@
     {
       "level": 2,
       "appearanceConditions": [
-        {
-          "en": "Attacking a Staggered target"
-        }
+        "attackStaggered"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 250,

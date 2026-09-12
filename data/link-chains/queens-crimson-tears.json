@@ -1,6 +1,7 @@
 {
   "id": "queens-crimson-tears",
   "name": {
+    "th": "น้ำตาโลหิตของราชินี",
     "en": "Queen's Crimson Tears"
   },
   "kind": "monsterling",
@@ -10,9 +11,7 @@
     {
       "level": 1,
       "appearanceConditions": [
-        {
-          "en": "Using a Special Skill"
-        }
+        "specialSkill"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 40,
@@ -20,6 +19,7 @@
       },
       "bonusEffects": [
         {
+          "th": "ลดความเร็วเคลื่อนที่ 50% (10 วินาที)",
           "en": "50% Movement Speed Reduction (10s)"
         }
       ]

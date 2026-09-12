@@ -11,10 +11,7 @@
     {
       "level": 2,
       "appearanceConditions": [
-        {
-          "th": "เมื่อเกิดเบิร์ส",
-          "en": "When Burst is triggered"
-        }
+        "burst"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 500

@@ -14,9 +14,7 @@
       },
       "damageType": "physical",
       "appearanceConditions": [
-        {
-          "en": "Using Evasion Counter"
-        }
+        "evasionCounter"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 100,

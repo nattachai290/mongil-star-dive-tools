@@ -10,12 +10,8 @@
     {
       "level": 1,
       "appearanceConditions": [
-        {
-          "en": "Using Air Counter"
-        },
-        {
-          "en": "Using Evasion Counter"
-        }
+        "airCounter",
+        "evasionCounter"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 100,
@@ -23,6 +19,7 @@
       },
       "bonusEffects": [
         {
+          "th": "ลดความเร็วเคลื่อนที่ 50% (10 วินาที)",
           "en": "50% Movement Speed Reduction (10s)"
         }
       ]

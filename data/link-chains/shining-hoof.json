@@ -10,9 +10,7 @@
     {
       "level": 1,
       "appearanceConditions": [
-        {
-          "en": "Landing a Wind Attack"
-        }
+        "landWindAttack"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 20,

@@ -10,9 +10,7 @@
     {
       "level": 1,
       "appearanceConditions": [
-        {
-          "en": "When all Stamina is consumed"
-        }
+        "staminaEmpty"
       ],
       "appearanceInfo": {
         "cooldownSec": 300

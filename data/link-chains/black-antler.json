@@ -14,9 +14,7 @@
       },
       "damageType": "wind",
       "appearanceConditions": [
-        {
-          "en": "Landing a Wind Attack"
-        }
+        "landWindAttack"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 100,

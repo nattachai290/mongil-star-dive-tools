@@ -11,9 +11,7 @@
       "level": 1,
       "damageType": "earth",
       "appearanceConditions": [
-        {
-          "en": "Using a Special Skill"
-        }
+        "specialSkill"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 40,

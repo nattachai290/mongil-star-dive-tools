@@ -11,12 +11,8 @@
       "level": 1,
       "damageType": "physical",
       "appearanceConditions": [
-        {
-          "en": "Using Air Counter"
-        },
-        {
-          "en": "Using Evasion Counter"
-        }
+        "airCounter",
+        "evasionCounter"
       ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 100,
