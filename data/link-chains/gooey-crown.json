@@ -3,6 +3,7 @@
   "name": {
     "en": "Gooey Crown"
   },
+  "kind": "monsterling",
   "monsterlingId": "king-slime",
   "rarity": 4,
   "levels": [

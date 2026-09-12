@@ -3,6 +3,7 @@
   "name": {
     "en": "Gourmet Chopsticks"
   },
+  "kind": "monsterling",
   "monsterlingId": "stickmugger",
   "rarity": 4,
   "levels": [

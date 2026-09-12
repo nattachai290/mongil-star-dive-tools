@@ -3,6 +3,7 @@
   "name": {
     "en": "Void's Seed"
   },
+  "kind": "monsterling",
   "monsterlingId": "amon",
   "rarity": 5,
   "levels": [

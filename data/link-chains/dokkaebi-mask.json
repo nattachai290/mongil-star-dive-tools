@@ -3,6 +3,7 @@
   "name": {
     "en": "Dokkaebi Mask"
   },
+  "kind": "monsterling",
   "monsterlingId": "shademask",
   "rarity": 3,
   "levels": [

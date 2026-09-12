@@ -3,6 +3,7 @@
   "name": {
     "en": "Void's Balance"
   },
+  "kind": "monsterling",
   "monsterlingId": "vectus",
   "rarity": 3,
   "levels": [

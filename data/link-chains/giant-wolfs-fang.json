@@ -3,6 +3,7 @@
   "name": {
     "en": "Giant Wolf's Fang"
   },
+  "kind": "monsterling",
   "monsterlingId": "behemo-wolf",
   "rarity": 3,
   "levels": [

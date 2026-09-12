@@ -3,6 +3,7 @@
   "name": {
     "en": "Dokkaebi King's Mask"
   },
+  "kind": "monsterling",
   "monsterlingId": "duoxini",
   "rarity": 5,
   "levels": [

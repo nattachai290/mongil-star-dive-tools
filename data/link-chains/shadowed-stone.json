@@ -3,6 +3,7 @@
   "name": {
     "en": "Shadowed Stone"
   },
+  "kind": "monsterling",
   "monsterlingId": "avardans-mana",
   "rarity": 5,
   "levels": [

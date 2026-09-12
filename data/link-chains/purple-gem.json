@@ -3,6 +3,7 @@
   "name": {
     "en": "Purple Gem"
   },
+  "kind": "monsterling",
   "monsterlingId": "blue-shadow",
   "rarity": 5,
   "levels": [

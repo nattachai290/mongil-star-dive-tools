@@ -3,6 +3,7 @@
   "name": {
     "en": "Flaming Fox Fur"
   },
+  "kind": "monsterling",
   "monsterlingId": "onsae",
   "rarity": 4,
   "levels": [

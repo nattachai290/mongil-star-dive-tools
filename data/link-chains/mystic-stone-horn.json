@@ -3,6 +3,7 @@
   "name": {
     "en": "Mystic Stone Horn"
   },
+  "kind": "monsterling",
   "monsterlingId": "phantom-stone-tiger",
   "rarity": 3,
   "levels": [

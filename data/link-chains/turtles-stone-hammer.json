@@ -3,6 +3,7 @@
   "name": {
     "en": "Turtle's Stone Hammer"
   },
+  "kind": "monsterling",
   "monsterlingId": "irontoise",
   "rarity": 3,
   "levels": [

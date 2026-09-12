@@ -1,8 +1,10 @@
 {
   "id": "wet-leaf",
   "name": {
+    "th": "ใบไม้เปียก",
     "en": "Wet Leaf"
   },
+  "kind": "monsterling",
   "monsterlingId": "ring-slime",
   "rarity": 3,
   "levels": [

@@ -3,6 +3,7 @@
   "name": {
     "en": "Red Gem"
   },
+  "kind": "monsterling",
   "monsterlingId": "red-shadow",
   "rarity": 5,
   "levels": [

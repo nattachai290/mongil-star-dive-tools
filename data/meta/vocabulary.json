@@ -11,6 +11,11 @@
     "event":     { "th": "กิจกรรม" }
   },
 
+  "linkChainKind": {
+    "monsterling": { "th": "มอนสเตอร์ลิ่ง",      "en": "Monsterling" },
+    "legendary":   { "th": "มอนสเตอร์ลิ่งตำนาน", "en": "Legendary Monsterling" }
+  },
+
   "damageType": {
     "physical": { "th": "กายภาพ", "en": "Physical" },
     "fire":     { "th": "ไฟ",    "en": "Fire" },

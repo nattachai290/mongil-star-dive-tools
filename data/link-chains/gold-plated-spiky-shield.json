@@ -3,6 +3,7 @@
   "name": {
     "en": "Gold-Plated Spiky Shield"
   },
+  "kind": "monsterling",
   "monsterlingId": "goald",
   "rarity": 3,
   "levels": [

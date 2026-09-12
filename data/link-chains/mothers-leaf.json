@@ -1,8 +1,10 @@
 {
   "id": "mothers-leaf",
   "name": {
+    "th": "ใบไม้ของแม่",
     "en": "Mother's Leaf"
   },
+  "kind": "monsterling",
   "monsterlingId": "cappy-mama",
   "rarity": 3,
   "levels": [

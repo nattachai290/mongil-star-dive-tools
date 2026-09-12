@@ -3,6 +3,7 @@
   "name": {
     "en": "Mysterious Branch"
   },
+  "kind": "monsterling",
   "monsterlingId": "odong",
   "rarity": 4,
   "levels": [

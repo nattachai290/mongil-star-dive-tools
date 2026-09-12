@@ -186,6 +186,12 @@ export const build = z.object({
 export const linkChain = z.object({
   id: slug,
   name: text,
+  /**
+   * เกมแยกเป็นสองแท็บ และสายตำนานใช้คำเรียกคนละชุด
+   * ([Specific Condition] / [Divine Beast Info] แทน [Appearance ...])
+   * ทั้งยังไม่มีคูลดาวน์ และบัฟอยู่ยาวจนจบเบิร์สแทนที่จะนับวินาที
+   */
+  kind: vocabEnum("linkChainKind").default("monsterling"),
   /** Monsterling ที่ผูกอยู่ — ต้องเป็น slug ที่สมุดภาพมอนจองไว้ */
   monsterlingId: slug,
   /** จำนวนเพชร ◆ บนการ์ด */

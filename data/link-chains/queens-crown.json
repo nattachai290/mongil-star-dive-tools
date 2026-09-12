@@ -3,6 +3,7 @@
   "name": {
     "en": "Queen's Crown"
   },
+  "kind": "monsterling",
   "monsterlingId": "queen-slime",
   "rarity": 3,
   "levels": [

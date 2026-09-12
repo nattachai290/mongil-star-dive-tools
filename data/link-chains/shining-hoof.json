@@ -3,6 +3,7 @@
   "name": {
     "en": "Shining Hoof"
   },
+  "kind": "monsterling",
   "monsterlingId": "manwol",
   "rarity": 4,
   "levels": [

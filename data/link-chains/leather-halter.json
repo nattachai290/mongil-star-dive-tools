@@ -3,6 +3,7 @@
   "name": {
     "en": "Leather Halter"
   },
+  "kind": "monsterling",
   "monsterlingId": "plains-minotaur",
   "rarity": 4,
   "levels": [

@@ -3,6 +3,7 @@
   "name": {
     "en": "Cursed Rosary"
   },
+  "kind": "monsterling",
   "monsterlingId": "gulgak",
   "rarity": 5,
   "levels": [

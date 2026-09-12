@@ -1,8 +1,10 @@
 {
   "id": "green-swaddle",
   "name": {
+    "th": "ผ้าห่อสีเขียว",
     "en": "Green Swaddle"
   },
+  "kind": "monsterling",
   "monsterlingId": "green-cappy-papa",
   "rarity": 3,
   "levels": [

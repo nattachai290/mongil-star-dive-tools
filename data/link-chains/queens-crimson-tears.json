@@ -3,6 +3,7 @@
   "name": {
     "en": "Queen's Crimson Tears"
   },
+  "kind": "monsterling",
   "monsterlingId": "scarlet-queen",
   "rarity": 4,
   "levels": [

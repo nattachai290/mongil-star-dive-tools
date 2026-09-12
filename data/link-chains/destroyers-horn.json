@@ -3,6 +3,7 @@
   "name": {
     "en": "Destroyer's Horn"
   },
+  "kind": "monsterling",
   "monsterlingId": "urgash",
   "rarity": 3,
   "levels": [

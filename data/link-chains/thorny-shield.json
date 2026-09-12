@@ -3,6 +3,7 @@
   "name": {
     "en": "Thorny Shield"
   },
+  "kind": "monsterling",
   "monsterlingId": "borborg",
   "rarity": 3,
   "levels": [

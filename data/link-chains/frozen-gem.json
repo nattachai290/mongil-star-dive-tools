@@ -3,6 +3,7 @@
   "name": {
     "en": "Frozen Gem"
   },
+  "kind": "monsterling",
   "monsterlingId": "ice-fist-dude",
   "rarity": 4,
   "levels": [

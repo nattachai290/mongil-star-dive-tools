@@ -3,6 +3,7 @@
   "name": {
     "en": "Queenshroom's Halo"
   },
+  "kind": "monsterling",
   "monsterlingId": "leafy-mama",
   "rarity": 3,
   "levels": [

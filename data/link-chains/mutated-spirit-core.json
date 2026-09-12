@@ -3,6 +3,7 @@
   "name": {
     "en": "Mutated Spirit Core"
   },
+  "kind": "monsterling",
   "monsterlingId": "el-dorado-guardian",
   "rarity": 5,
   "levels": [

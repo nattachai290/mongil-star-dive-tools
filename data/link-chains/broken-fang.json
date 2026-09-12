@@ -1,8 +1,10 @@
 {
   "id": "broken-fang",
   "name": {
+    "th": "เขี้ยวหัก",
     "en": "Broken Fang"
   },
+  "kind": "monsterling",
   "monsterlingId": "taglock",
   "rarity": 4,
   "levels": [

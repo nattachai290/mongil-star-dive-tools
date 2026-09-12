@@ -3,6 +3,7 @@
   "name": {
     "en": "Precious Spider Cocoon"
   },
+  "kind": "monsterling",
   "monsterlingId": "greenpadupa",
   "rarity": 3,
   "levels": [

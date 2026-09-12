@@ -3,6 +3,7 @@
   "name": {
     "en": "Black Antler"
   },
+  "kind": "monsterling",
   "monsterlingId": "nokjung",
   "rarity": 4,
   "levels": [

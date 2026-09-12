@@ -3,6 +3,7 @@
   "name": {
     "en": "Ornate Shield"
   },
+  "kind": "monsterling",
   "monsterlingId": "toad-alee",
   "rarity": 3,
   "levels": [

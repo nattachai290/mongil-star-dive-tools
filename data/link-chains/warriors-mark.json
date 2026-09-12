@@ -3,6 +3,7 @@
   "name": {
     "en": "Warrior's Mark"
   },
+  "kind": "monsterling",
   "monsterlingId": "lupe",
   "rarity": 4,
   "levels": [

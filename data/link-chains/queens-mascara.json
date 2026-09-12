@@ -3,6 +3,7 @@
   "name": {
     "en": "Queen's Mascara"
   },
+  "kind": "monsterling",
   "monsterlingId": "empress-slime",
   "rarity": 3,
   "levels": [

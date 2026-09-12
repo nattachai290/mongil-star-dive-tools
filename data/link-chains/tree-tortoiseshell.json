@@ -3,6 +3,7 @@
   "name": {
     "en": "Tree Tortoiseshell"
   },
+  "kind": "monsterling",
   "monsterlingId": "treetoise",
   "rarity": 3,
   "levels": [

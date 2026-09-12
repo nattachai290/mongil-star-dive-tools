@@ -3,6 +3,7 @@
   "name": {
     "en": "Shaman's Staff"
   },
+  "kind": "monsterling",
   "monsterlingId": "white-wolf-fulminator",
   "rarity": 3,
   "levels": [

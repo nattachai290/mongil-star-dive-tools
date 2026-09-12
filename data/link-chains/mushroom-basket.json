@@ -1,8 +1,10 @@
 {
   "id": "mushroom-basket",
   "name": {
+    "th": "ตะกร้าเห็ด",
     "en": "Mushroom Basket"
   },
+  "kind": "monsterling",
   "monsterlingId": "uncle-cappy",
   "rarity": 3,
   "levels": [

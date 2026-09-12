@@ -3,6 +3,7 @@
   "name": {
     "en": "Ancient Dokkaebi's White Mask"
   },
+  "kind": "monsterling",
   "monsterlingId": "ashen-mask",
   "rarity": 3,
   "levels": [

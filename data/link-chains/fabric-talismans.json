@@ -3,6 +3,7 @@
   "name": {
     "en": "Fabric Talismans"
   },
+  "kind": "monsterling",
   "monsterlingId": "swamp-odong",
   "rarity": 3,
   "levels": [

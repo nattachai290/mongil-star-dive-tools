@@ -3,6 +3,7 @@
   "name": {
     "en": "Token of Obedience"
   },
+  "kind": "monsterling",
   "monsterlingId": "amons-shadow",
   "rarity": 5,
   "levels": [

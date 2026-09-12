@@ -3,6 +3,7 @@
   "name": {
     "en": "Weathered Hoof"
   },
+  "kind": "monsterling",
   "monsterlingId": "tealtaur",
   "rarity": 4,
   "levels": [

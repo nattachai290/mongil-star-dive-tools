@@ -3,6 +3,7 @@
   "name": {
     "en": "Mushroom Man's Pouch"
   },
+  "kind": "monsterling",
   "monsterlingId": "green-cappy-bro",
   "rarity": 3,
   "levels": [

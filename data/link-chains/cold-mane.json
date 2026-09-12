@@ -3,6 +3,7 @@
   "name": {
     "en": "Cold Mane"
   },
+  "kind": "monsterling",
   "monsterlingId": "phantom-snow-tiger",
   "rarity": 3,
   "levels": [

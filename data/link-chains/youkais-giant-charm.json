@@ -3,6 +3,7 @@
   "name": {
     "en": "Youkai's Giant Charm"
   },
+  "kind": "monsterling",
   "monsterlingId": "black-hauntstack",
   "rarity": 3,
   "levels": [

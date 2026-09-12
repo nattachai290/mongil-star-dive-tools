@@ -1,8 +1,10 @@
 {
   "id": "moles-shovel",
   "name": {
+    "th": "พลั่วของตุ่น",
     "en": "Mole's Shovel"
   },
+  "kind": "monsterling",
   "monsterlingId": "moley-mole",
   "rarity": 3,
   "levels": [

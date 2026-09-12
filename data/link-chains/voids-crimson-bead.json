@@ -3,6 +3,7 @@
   "name": {
     "en": "Void's Crimson Bead"
   },
+  "kind": "monsterling",
   "monsterlingId": "scar",
   "rarity": 3,
   "levels": [

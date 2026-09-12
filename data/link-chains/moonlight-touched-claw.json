@@ -3,6 +3,7 @@
   "name": {
     "en": "Moonlight-Touched Claw"
   },
+  "kind": "monsterling",
   "monsterlingId": "moon-shadow-lupe",
   "rarity": 4,
   "levels": [

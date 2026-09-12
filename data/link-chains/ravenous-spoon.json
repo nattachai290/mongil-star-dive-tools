@@ -3,6 +3,7 @@
   "name": {
     "en": "Ravenous Spoon"
   },
+  "kind": "monsterling",
   "monsterlingId": "spoonmugger",
   "rarity": 4,
   "levels": [

@@ -3,6 +3,7 @@
   "name": {
     "en": "Warden's Core"
   },
+  "kind": "monsterling",
   "monsterlingId": "custos",
   "rarity": 5,
   "levels": [

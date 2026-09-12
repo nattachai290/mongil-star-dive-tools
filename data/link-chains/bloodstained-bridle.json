@@ -3,6 +3,7 @@
   "name": {
     "en": "Bloodstained Bridle"
   },
+  "kind": "monsterling",
   "monsterlingId": "mountaintaur",
   "rarity": 4,
   "levels": [

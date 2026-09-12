@@ -3,6 +3,7 @@
   "name": {
     "en": "Autumn Branch"
   },
+  "kind": "monsterling",
   "monsterlingId": "maple-odong",
   "rarity": 4,
   "levels": [

@@ -3,6 +3,7 @@
   "name": {
     "en": "Taskmaster's Leather Gloves"
   },
+  "kind": "monsterling",
   "monsterlingId": "gorrik",
   "rarity": 3,
   "levels": [

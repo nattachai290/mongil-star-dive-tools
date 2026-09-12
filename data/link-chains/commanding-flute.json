@@ -3,6 +3,7 @@
   "name": {
     "en": "Commanding Flute"
   },
+  "kind": "monsterling",
   "monsterlingId": "big-bro-goblin",
   "rarity": 4,
   "levels": [

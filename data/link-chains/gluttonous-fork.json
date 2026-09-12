@@ -3,6 +3,7 @@
   "name": {
     "en": "Gluttonous Fork"
   },
+  "kind": "monsterling",
   "monsterlingId": "forkmugger",
   "rarity": 4,
   "levels": [

@@ -3,6 +3,7 @@
   "name": {
     "en": "Giant Tiger's Claw"
   },
+  "kind": "monsterling",
   "monsterlingId": "hahnul",
   "rarity": 5,
   "levels": [

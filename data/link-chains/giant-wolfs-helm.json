@@ -3,6 +3,7 @@
   "name": {
     "en": "Giant Wolf's Helm"
   },
+  "kind": "monsterling",
   "monsterlingId": "frostbite",
   "rarity": 3,
   "levels": [

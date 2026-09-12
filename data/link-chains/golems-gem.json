@@ -3,6 +3,7 @@
   "name": {
     "en": "Golem's Gem"
   },
+  "kind": "monsterling",
   "monsterlingId": "avardan",
   "rarity": 5,
   "levels": [

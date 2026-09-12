@@ -3,6 +3,7 @@
   "name": {
     "en": "Mole's Treasure"
   },
+  "kind": "monsterling",
   "monsterlingId": "gold-digger-moley-mole",
   "rarity": 3,
   "levels": [

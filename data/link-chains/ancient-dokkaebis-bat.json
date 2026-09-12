@@ -3,6 +3,7 @@
   "name": {
     "en": "Ancient Dokkaebi's Bat"
   },
+  "kind": "monsterling",
   "monsterlingId": "fiend",
   "rarity": 5,
   "levels": [

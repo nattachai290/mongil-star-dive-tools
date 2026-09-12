@@ -3,6 +3,7 @@
   "name": {
     "en": "Poisoned Claw"
   },
+  "kind": "monsterling",
   "monsterlingId": "spadupa",
   "rarity": 3,
   "levels": [

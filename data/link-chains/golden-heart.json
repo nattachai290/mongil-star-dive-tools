@@ -3,6 +3,7 @@
   "name": {
     "en": "Golden Heart"
   },
+  "kind": "monsterling",
   "monsterlingId": "golden-fist-dude",
   "rarity": 4,
   "levels": [

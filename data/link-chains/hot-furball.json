@@ -3,6 +3,7 @@
   "name": {
     "en": "Hot Furball"
   },
+  "kind": "monsterling",
   "monsterlingId": "cinder",
   "rarity": 4,
   "levels": [
