@@ -19,10 +19,7 @@
       "durationSec": 5
     }
   ],
-  "effectsReadFrom": {
-    "level": 60,
-    "grade": "gold"
-  },
+  "effectsGrade": "gold",
   "images": {
     "icon": "scar-icon.webp"
   },

@@ -194,11 +194,13 @@ for (const [id, doc] of Object.entries(parsed.characters ?? {})) {
 for (const [id, doc] of Object.entries(parsed.monsterlings ?? {})) {
   const where = `data/monsterlings/${id}.json`;
   // ตัวเลขเอฟเฟกต์สายพันธุ์ขึ้นกับแรงของมอนแต่ละตัว เว็บจะโชว์เฉพาะค่าจากตัวสีทอง
-  const readFrom = doc.effectsReadFrom as { grade?: string } | undefined;
-  const hasEffects = ((doc.speciesEffects as unknown[]) ?? []).length > 0;
-  if (hasEffects && readFrom?.grade !== "gold") {
-    warn(where, `ค่าเอฟเฟกต์สายพันธุ์อ่านมาจากมอนแรง "${readFrom?.grade ?? "ไม่ระบุ"}" ไม่ใช่สีทอง — ยังใช้แสดงบนเว็บไม่ได้`);
+  const grade = doc.effectsGrade as string | undefined;
+  const effects = (doc.speciesEffects as Array<{ value?: number }> | undefined) ?? [];
+  if (effects.some((e) => e.value !== undefined) && grade !== "gold") {
+    warn(where, `ค่าเอฟเฟกต์สายพันธุ์อ่านมาจากมอนแรง "${grade ?? "ไม่ระบุ"}" ไม่ใช่สีทอง — ยังใช้แสดงบนเว็บไม่ได้`);
   }
+  const missing = effects.filter((e) => e.value === undefined).length;
+  if (missing) warn(where, `เอฟเฟกต์สายพันธุ์ ${missing} ข้อยังไม่มีตัวเลข — ต้องแคปจากมอนสีทอง`);
   const dex = doc.dex as { book: string; no: number } | undefined;
   if (!dex) continue;
   const entry = dexByKey.get(`${dex.book}:${dex.no}`);

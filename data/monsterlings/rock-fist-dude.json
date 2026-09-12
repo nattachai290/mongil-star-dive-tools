@@ -19,10 +19,7 @@
       "trigger": "onWeaknessHit"
     }
   ],
-  "effectsReadFrom": {
-    "level": 60,
-    "grade": "gold"
-  },
+  "effectsGrade": "gold",
   "images": {
     "icon": "rock-fist-dude-icon.webp"
   },

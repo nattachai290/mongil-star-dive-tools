@@ -12,8 +12,6 @@
     {
       "kind": "buff",
       "stat": "critDmg",
-      "value": 6.57,
-      "unit": "percent",
       "target": "self",
       "trigger": "onBasicAttackHit",
       "durationSec": 5,
@@ -23,9 +21,6 @@
       }
     }
   ],
-  "effectsReadFrom": {
-    "level": 1
-  },
   "images": {
     "icon": "2nd-lt-goblin-icon.webp"
   },
@@ -33,9 +28,6 @@
     "verifiedAt": "2026-09-12",
     "gameVersion": "unknown",
     "by": "in-game",
-    "note": "อ่านจากมอนเลเวล 1 ที่ยังไม่ได้บิ้ว ตัวเลขขึ้นกับแรงของมอนแต่ละตัว ค่านี้จึงไม่ใช่ค่าสูงสุดของสายพันธุ์ ต้องแคปใหม่จากตัวที่แรงสูงสุด (ดู PLAN §13.9)",
-    "fieldsUnverified": [
-      "speciesEffects[0].value"
-    ]
+    "note": "รูปแบบเอฟเฟกต์ยืนยันแล้วจากในเกม แต่ยังไม่เก็บตัวเลข เพราะอ่านมาจากมอนที่ไม่รู้แรง (อ่านได้ 6.57%) ตัวเลขขึ้นกับแรง เทา→เขียว→ฟ้า→ม่วง→ทอง ไม่ใช่เลเวล ต้องแคปใหม่จากตัวสีทอง (ดู PLAN §13.9)"
   }
 }

@@ -135,28 +135,24 @@ export const monsterling = z.object({
    */
   speciesEffects: z.array(effect).default([]),
   /**
-   * ค่าใน speciesEffects อ่านมาจากมอนตัวไหน — ต้องมีคู่กันเสมอ
+   * แรงของมอนที่อ่านค่า speciesEffects มา — ต้องมีคู่กันเสมอ
    *
-   * ตัวเลขขึ้นกับ "แรง" ของมอนแต่ละตัว ไม่ใช่ค่าคงที่ของสายพันธุ์ (ดู PLAN §13.9)
-   * เว็บจะแสดงเฉพาะค่าที่ maxPower = true และต้องบอกผู้ใช้ว่าเป็นค่าสูงสุด
-   * ไม่ใช่ค่าที่ทุกตัวจะได้
+   * ตัวเลขขึ้นกับ "แรง" เท่านั้น (เทา → เขียว → ฟ้า → ม่วง → ทอง)
+   * **เลเวลไม่เกี่ยว** — แรงเดียวกันได้ค่าเท่ากันทุกเลเวล จึงไม่เก็บเลเวลไว้ที่นี่
+   * เพราะจะทำให้เข้าใจผิดว่าต้องเลเวลเท่านั้นถึงได้ค่านี้ (ดู PLAN §13.9)
+   *
+   * ไม่ใส่ = ยังไม่รู้แรง ไม่ใช่ "แรงต่ำ" — เว็บแสดงเฉพาะค่าจากตัวสีทอง
    */
-  effectsReadFrom: z
-    .object({
-      level: z.number().int().positive(),
-      /**
-       * แรงของมอนตัวที่อ่านค่ามา: เทา → เขียว → ฟ้า → ม่วง → ทอง (ทองสูงสุด)
-       * ไม่ใส่ = ยังไม่รู้ ไม่ใช่ "แรงต่ำ" — เว็บจะแสดงเฉพาะค่าจากตัวสีทอง
-       */
-      grade: vocabEnum("monsterGrade").optional(),
-    })
-    .optional(),
+  effectsGrade: vocabEnum("monsterGrade").optional(),
   obtain: z.object({ method: vocabEnum("obtainMethod"), note: text.optional() }).optional(),
   images: z.object({ icon: z.string().optional() }).optional(),
   source,
-}).refine((m) => m.speciesEffects.length === 0 || m.effectsReadFrom !== undefined, {
-  message: "มี speciesEffects แล้วต้องบอก effectsReadFrom ว่าอ่านค่ามาจากมอนตัวไหน",
-});
+}).refine(
+  // แรงจำเป็นเฉพาะตอนมี "ตัวเลข" เพราะตัวเลขเท่านั้นที่ขึ้นกับแรง
+  // ส่วนรูปแบบเอฟเฟกต์ (กระตุ้นด้วยอะไร ให้ผลอะไร) เป็นของสายพันธุ์ ไม่ขึ้นกับแรง
+  (m) => !m.speciesEffects.some((e) => e.value !== undefined) || m.effectsGrade !== undefined,
+  { message: "speciesEffects มีตัวเลขแล้วต้องบอก effectsGrade ว่าอ่านมาจากมอนแรงอะไร" },
+);
 
 /*
  * ไม่มี rarity, สายพันธุ์ และ Trait ในนี้โดยตั้งใจ
