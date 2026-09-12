@@ -46,6 +46,7 @@
       "en": "Landing an attack"
     },
     "landCrit": {
+      "th": "เมื่อเกิดคริติคอล",
       "en": "Landing a critical hit"
     },
     "takeDamage": {

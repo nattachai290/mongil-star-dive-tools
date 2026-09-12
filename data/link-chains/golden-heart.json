@@ -1,6 +1,7 @@
 {
   "id": "golden-heart",
   "name": {
+    "th": "หัวใจทองคำ",
     "en": "Golden Heart"
   },
   "kind": "monsterling",
@@ -17,6 +18,7 @@
       },
       "bonusEffects": [
         {
+          "th": "มอบซูเปอร์อาร์เมอร์ให้กับตัวละคร (5 วินาที)",
           "en": "Grants character Super Armor (5s)"
         }
       ]

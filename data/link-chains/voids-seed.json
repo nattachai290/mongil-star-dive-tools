@@ -1,6 +1,7 @@
 {
   "id": "voids-seed",
   "name": {
+    "th": "เมล็ดพันธุ์แห่งความว่างเปล่า",
     "en": "Void's Seed"
   },
   "kind": "monsterling",
@@ -18,6 +19,7 @@
       },
       "bonusEffects": [
         {
+          "th": "เพิ่มดาเมจธาตุจุดอ่อน 5% (5 วินาที)",
           "en": "5% Elemental Weakness DMG Taken Boost (5s)"
         }
       ]

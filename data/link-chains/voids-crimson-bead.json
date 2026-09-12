@@ -1,6 +1,7 @@
 {
   "id": "voids-crimson-bead",
   "name": {
+    "th": "ลูกแก้วสีแดงแห่งความว่างเปล่า",
     "en": "Void's Crimson Bead"
   },
   "kind": "monsterling",
@@ -10,6 +11,7 @@
     {
       "level": 4,
       "desc": {
+        "th": "เมื่อติดตั้งมอนสเตอร์ลิงสกา จะมีโอกาสปรากฏตัวตามเงื่อนไข โดยจะพุ่งใส่ศัตรูต่อเนื่องอย่างรวดเร็วแล้วยิงวิญญาณหมาป่า สร้างดาเมจธาตุมืด",
         "en": "If the Scar Monsterling is equipped, it appears when its Appearance Condition is met. It rapidly charges toward the enemy in succession, then unleashes a Wolf's Soul, dealing Dark DMG."
       },
       "damageType": "dark",

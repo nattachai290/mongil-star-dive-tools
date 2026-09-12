@@ -1,6 +1,7 @@
 {
   "id": "giant-wolfs-helm",
   "name": {
+    "th": "หมวกของเสือยักษ์",
     "en": "Giant Wolf's Helm"
   },
   "kind": "monsterling",
@@ -22,6 +23,7 @@
   "source": {
     "verifiedAt": "2026-09-12",
     "gameVersion": "unknown",
-    "by": "in-game"
+    "by": "in-game",
+    "note": "ไคลเอนต์ไทยแปล \"Giant Wolf\" ในชื่อลิงก์เชนว่า \"เสือยักษ์\" (เสือ) ทั้งที่มอนสเตอร์ลิงคือหมาป่า — ยืนยันแล้วจากสองชิ้นคนละมอน (Giant Wolf's Fang / Giant Wolf's Helm) จึงเป็นคำแปลของเกมเอง ไม่ใช่การอ่านผิด"
   }
 }
