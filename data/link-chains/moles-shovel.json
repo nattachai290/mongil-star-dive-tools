@@ -1,0 +1,29 @@
+{
+  "id": "moles-shovel",
+  "name": {
+    "en": "Mole's Shovel"
+  },
+  "monsterlingId": "moley-mole",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "desc": {
+        "en": "If the Moley Mole Monsterling is equipped, it appears when its Appearance Condition is met. It charges toward the enemy while swinging its shovel, dealing Physical DMG."
+      },
+      "damageType": "physical",
+      "appearanceCondition": {
+        "en": "Rendering the enemy Airborne"
+      },
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 20,
+        "cooldownSec": 15
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}
