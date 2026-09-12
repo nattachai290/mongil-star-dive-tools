@@ -1,0 +1,41 @@
+{
+  "id": "ancient-dokkaebis-white-mask",
+  "name": {
+    "en": "Ancient Dokkaebi's White Mask"
+  },
+  "monsterlingId": "ashen-mask",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        {
+          "en": "Using a Special Skill"
+        }
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 40,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "en": "Elemental Zone Duration (5s)"
+        },
+        {
+          "en": "3% Fire RES Reduction"
+        },
+        {
+          "en": "3% Earth RES Reduction"
+        },
+        {
+          "en": "3% Ice RES Reduction"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

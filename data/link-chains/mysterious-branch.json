@@ -1,0 +1,33 @@
+{
+  "id": "mysterious-branch",
+  "name": {
+    "en": "Mysterious Branch"
+  },
+  "monsterlingId": "odong",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 1,
+      "damageType": "earth",
+      "appearanceConditions": [
+        {
+          "en": "Using a Special Skill"
+        }
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 40,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "en": "Shackle (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

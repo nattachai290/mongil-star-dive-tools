@@ -1,0 +1,32 @@
+{
+  "id": "queens-mascara",
+  "name": {
+    "en": "Queen's Mascara"
+  },
+  "monsterlingId": "empress-slime",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        {
+          "en": "Using Evasion Counter"
+        }
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 100,
+        "cooldownSec": 5
+      },
+      "bonusEffects": [
+        {
+          "en": "15% Neutralization RES Reduction (10s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "shadowed-stone",
+  "name": {
+    "en": "Shadowed Stone"
+  },
+  "monsterlingId": "avardans-mana",
+  "rarity": 5,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        {
+          "en": "Attacking a Staggered target"
+        }
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 200,
+        "cooldownSec": 5
+      },
+      "bonusEffects": [
+        {
+          "en": "30% Elemental Weakness DMG Taken Boost (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

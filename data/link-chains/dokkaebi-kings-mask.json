@@ -1,0 +1,38 @@
+{
+  "id": "dokkaebi-kings-mask",
+  "name": {
+    "en": "Dokkaebi King's Mask"
+  },
+  "monsterlingId": "duoxini",
+  "rarity": 5,
+  "levels": [
+    {
+      "level": 4,
+      "appearanceConditions": [
+        {
+          "en": "Using a Switch Skill"
+        },
+        {
+          "en": "Using an Ultimate Skill"
+        }
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 160,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "en": "10% Fire RES Reduction (5s)"
+        },
+        {
+          "en": "15% Neutralization RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}
