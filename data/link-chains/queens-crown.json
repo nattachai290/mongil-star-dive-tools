@@ -1,6 +1,7 @@
 {
   "id": "queens-crown",
   "name": {
+    "th": "มงกุฎของราชินี",
     "en": "Queen's Crown"
   },
   "kind": "monsterling",
@@ -10,6 +11,7 @@
     {
       "level": 1,
       "desc": {
+        "th": "เมื่อติดตั้งมอนสเตอร์ลิงสไลม์ควีน จะมีโอกาสปรากฏตัวตามเงื่อนไข โดยจะต่อยหมัดใส่ศัตรู สร้างดาเมจกายภาพ และทำให้ศัตรูลอยขึ้นไปบนอากาศ",
         "en": "If the Queen Slime Monsterling is equipped, it appears when its Appearance Condition is met. It punches the enemy, dealing Physical DMG and rendering the enemy Airborne."
       },
       "damageType": "physical",

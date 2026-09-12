@@ -1,6 +1,7 @@
 {
   "id": "gourmet-chopsticks",
   "name": {
+    "th": "ตะเกียบแห่งมื้อพิศวง",
     "en": "Gourmet Chopsticks"
   },
   "kind": "monsterling",
@@ -17,6 +18,7 @@
       },
       "bonusEffects": [
         {
+          "th": "ฟื้นฟูสเตมินา 80",
           "en": "Restores 80 Stamina"
         }
       ]

@@ -1,6 +1,7 @@
 {
   "id": "ravenous-spoon",
   "name": {
+    "th": "ช้อนแห่งการกินจุ",
     "en": "Ravenous Spoon"
   },
   "kind": "monsterling",
@@ -17,6 +18,7 @@
       },
       "bonusEffects": [
         {
+          "th": "ฟื้นฟูสเตมินา 40",
           "en": "Restores 40 Stamina"
         }
       ]

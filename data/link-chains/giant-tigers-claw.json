@@ -22,7 +22,6 @@
           "en": "10% Lightning RES Reduction (5s)"
         },
         {
-          "th": "ลดความต้านทานสถานะอ่อนแรง 15% (5 วินาที)",
           "en": "15% Neutralization RES Reduction (5s)"
         }
       ]
@@ -31,6 +30,10 @@
   "source": {
     "verifiedAt": "2026-09-12",
     "gameVersion": "unknown",
-    "by": "in-game"
+    "by": "in-game",
+    "fieldsUnverified": [
+      "levels[0].bonusEffects[1]"
+    ],
+    "note": "ไทยของ \"15% Neutralization RES Reduction (5s)\" ขัดกันเอง: Warden's Core แสดง \"ลดความต้านทานสถานะอ่อนแรง 15% (5 วินาที)\" แต่ Golem's Gem แสดง \"ลดพลังป้องกันมึนงง 15% (5 วินาที)\" — แปลว่าชื่ออังกฤษของสองชิ้นนี้น่าจะไม่เหมือนกันจริง และที่บันทึกไว้รวมเป็นข้อความเดียวน่าจะผิด จึงเก็บไทยไว้เฉพาะไฟล์ที่เห็นจากจอโดยตรง"
   }
 }

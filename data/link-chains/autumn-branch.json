@@ -18,6 +18,7 @@
       },
       "bonusEffects": [
         {
+          "th": "ลดต้านทานธาตุดิน 10% (5 วินาที)",
           "en": "10% Earth RES Reduction (5s)"
         },
         {
