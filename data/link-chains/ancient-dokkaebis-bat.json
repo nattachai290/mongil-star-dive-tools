@@ -1,0 +1,41 @@
+{
+  "id": "ancient-dokkaebis-bat",
+  "name": {
+    "en": "Ancient Dokkaebi's Bat"
+  },
+  "monsterlingId": "fiend",
+  "rarity": 5,
+  "levels": [
+    {
+      "level": 3,
+      "appearanceConditions": [
+        {
+          "en": "Using a Switch Skill"
+        },
+        {
+          "en": "Using an Ultimate Skill"
+        }
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 130,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "en": "Totem Duration (10s)"
+        },
+        {
+          "en": "Grants Character Super Armor"
+        },
+        {
+          "en": "15% Elemental Weakness DMG Taken Boost"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

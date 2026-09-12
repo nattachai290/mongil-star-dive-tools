@@ -1,0 +1,35 @@
+{
+  "id": "autumn-branch",
+  "name": {
+    "en": "Autumn Branch"
+  },
+  "monsterlingId": "maple-odong",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        {
+          "en": "Using a Special Skill"
+        }
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 40,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "en": "10% Earth RES Reduction (5s)"
+        },
+        {
+          "en": "Shackle (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

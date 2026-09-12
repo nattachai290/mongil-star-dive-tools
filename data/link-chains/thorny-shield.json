@@ -1,0 +1,31 @@
+{
+  "id": "thorny-shield",
+  "name": {
+    "en": "Thorny Shield"
+  },
+  "monsterlingId": "borborg",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "desc": {
+        "en": "If the Borborg Monsterling is equipped, it appears when its Appearance Condition is met. It rapidly spins toward the enemy while it attacks, dealing Physical DMG."
+      },
+      "damageType": "physical",
+      "appearanceConditions": [
+        {
+          "en": "Landing an attack"
+        }
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 20,
+        "cooldownSec": 15
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

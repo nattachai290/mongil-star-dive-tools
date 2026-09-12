@@ -1,0 +1,33 @@
+{
+  "id": "flaming-fox-fur",
+  "name": {
+    "en": "Flaming Fox Fur"
+  },
+  "monsterlingId": "onsae",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 1,
+      "damageType": "fire",
+      "appearanceConditions": [
+        {
+          "en": "Landing a Fire Attack"
+        }
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 20,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "en": "5% Fire RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "youkais-giant-charm",
+  "name": {
+    "en": "Youkai's Giant Charm"
+  },
+  "monsterlingId": "black-hauntstack",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "damageType": "water",
+      "appearanceConditions": [
+        {
+          "en": "Landing an attack"
+        }
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 20,
+        "cooldownSec": 15
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}
