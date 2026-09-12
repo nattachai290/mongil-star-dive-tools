@@ -43,10 +43,10 @@ function zodIssues(where: string, error: z.ZodError) {
   }
 }
 
-/** เก็บทุกช่องข้อความที่ยังไม่มีภาษาไทย เพื่อรายงานเป็นคำเตือน */
-function countMissingThai(value: unknown, where: string, path: string[] = []) {
+/** เก็บทุกช่องข้อความที่ยังขาดภาษาใดภาษาหนึ่ง เพื่อรายงานเป็นคำเตือน */
+function countMissingLocale(value: unknown, where: string, path: string[] = []) {
   if (Array.isArray(value)) {
-    value.forEach((v, i) => countMissingThai(v, where, [...path, String(i)]));
+    value.forEach((v, i) => countMissingLocale(v, where, [...path, String(i)]));
     return;
   }
   if (typeof value !== "object" || value === null) return;
@@ -56,7 +56,11 @@ function countMissingThai(value: unknown, where: string, path: string[] = []) {
     warn(where, `${path.join(".") || "(ราก)"} ยังไม่มีภาษาไทย`);
     return;
   }
-  for (const [k, v] of Object.entries(obj)) countMissingThai(v, where, [...path, k]);
+  if (looksLikeText && !obj.en) {
+    warn(where, `${path.join(".") || "(ราก)"} ยังไม่มีภาษาอังกฤษ`);
+    return;
+  }
+  for (const [k, v] of Object.entries(obj)) countMissingLocale(v, where, [...path, k]);
 }
 
 // ---------- 1–2. schema + id ----------
@@ -85,7 +89,7 @@ for (const collection of Object.keys(SCHEMAS) as Collection[]) {
 
     ids[collection].add(id);
     parsed[collection][id] = doc;
-    countMissingThai(raw, where);
+    countMissingLocale(raw, where);
 
     const src = doc.source as { fieldsUnverified?: string[] } | undefined;
     if (src?.fieldsUnverified?.length) {

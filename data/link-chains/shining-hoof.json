@@ -1,6 +1,7 @@
 {
   "id": "shining-hoof",
   "name": {
+    "th": "กรงเล็บส่องแสง",
     "en": "Shining Hoof"
   },
   "kind": "monsterling",
@@ -27,6 +28,7 @@
   "source": {
     "verifiedAt": "2026-09-12",
     "gameVersion": "unknown",
-    "by": "in-game"
+    "by": "in-game",
+    "note": "ชื่อไทย \"กรงเล็บส่องแสง\" แปลว่ากรงเล็บ แต่ชื่ออังกฤษคือ Shining Hoof (กีบเท้า) — อ่านจากจอไทยเมื่อ 2026-09-12 จึงเก็บตามที่เกมแสดง"
   }
 }

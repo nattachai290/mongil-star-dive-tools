@@ -1,6 +1,7 @@
 {
   "id": "ancient-dokkaebis-bat",
   "name": {
+    "th": "กระบองยักษ์โทแกบีโบราณ",
     "en": "Ancient Dokkaebi's Bat"
   },
   "kind": "monsterling",
@@ -19,12 +20,15 @@
       },
       "bonusEffects": [
         {
+          "th": "เวลาแสดงผลโทเท็ม (10 วินาที)",
           "en": "Totem Duration (10s)"
         },
         {
+          "th": "มอบซูเปอร์อาร์เมอร์ให้กับตัวละคร",
           "en": "Grants Character Super Armor"
         },
         {
+          "th": "เพิ่มดาเมจธาตุจุดอ่อน 15%",
           "en": "15% Elemental Weakness DMG Taken Boost"
         }
       ]
