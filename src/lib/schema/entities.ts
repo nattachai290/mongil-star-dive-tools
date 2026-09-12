@@ -10,6 +10,20 @@ const scaling16 = z
 const skill = z.object({
   name: text,
   desc: text,
+  /**
+   * ชนิดดาเมจของสกิลนี้ — ต้องเก็บรายสกิล ไม่ใช่รายตัวละคร
+   *
+   * "กายภาพ" คือการตีธรรมดา ตัวละครหลายตัวตีปกติเป็นกายภาพแต่สกิลเป็นธาตุ
+   * ถ้าไปยึดธาตุของตัวละครมาคิดดาเมจทุกท่า จะคิดได้เปรียบ/เสียเปรียบธาตุผิดทันที
+   *
+   * ไม่ใส่ = สกิลนี้ไม่สร้างดาเมจ (เช่น บัฟล้วน) ไม่ใช่ "ยังไม่รู้"
+   */
+  damageType: vocabEnum("damageType").optional(),
+  /**
+   * สกิลนี้เปลี่ยนชนิดดาเมจของ "การโจมตีปกติ" เป็นอะไรหลังใช้
+   * เช่น ใช้สกิลแล้วตีธรรมดากลายเป็นธาตุไฟ — ไม่ใส่ = ไม่เปลี่ยน
+   */
+  changesBasicAttackTo: vocabEnum("damageType").optional(),
   effects: z.array(effect).default([]),
   scaling: scaling16.optional(),
   cooldownSec: z.number().nonnegative().optional(),
@@ -20,6 +34,12 @@ export const character = z.object({
   id: slug,
   name: text,
   rarity: vocabEnum("rarity"),
+  /**
+   * ธาตุประจำตัวละคร ใช้สำหรับหมวดหมู่และตัวกรองเท่านั้น
+   *
+   * **ห้ามใช้คิดดาเมจ** — ชนิดดาเมจจริงอยู่ที่ `skills.*.damageType` รายสกิล
+   * เพราะตีปกติอาจเป็นกายภาพขณะที่สกิลเป็นธาตุ (ดู PLAN §13.10)
+   */
   element: vocabEnum("element"),
   role: vocabEnum("role"),
   tags: z.array(vocabEnum("tag")).default([]),

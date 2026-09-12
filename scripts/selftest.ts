@@ -95,6 +95,17 @@ check("ใส่ป้องกันศัตรูขณะค่าคงท�
   blocked.average === null && blocked.steps.find((s) => s.id === "afterDefense")?.blockedBy === "defConstant");
 check("บอกได้ว่าค่าคงที่ไหนยังขาด", missingConstants().includes("defConstant"));
 
+// ---------- ชนิดดาเมจอยู่ที่ท่า ไม่ใช่ที่ตัวละคร ----------
+const skillShape = { name: t("ท่า"), desc: t("คำอธิบาย") };
+check("สกิลเก็บชนิดดาเมจของตัวเองได้ และคนละอันกับธาตุตัวละคร",
+  character.shape.skills.shape.basic.safeParse(
+    { ...skillShape, damageType: "physical" }).success);
+check("สกิลที่เปลี่ยนธาตุการตีปกติ เก็บได้",
+  character.shape.skills.shape.special.safeParse(
+    { ...skillShape, damageType: "fire", changesBasicAttackTo: "fire" }).success);
+check("สกิลที่ไม่สร้างดาเมจ ไม่ต้องมี damageType",
+  character.shape.skills.shape.switch.safeParse(skillShape).success);
+
 // ---------- เอฟเฟกต์สายพันธุ์ของมอนสเตอร์ลิง ----------
 const speciesEffect = {
   kind: "buff", stat: "atk", value: 5.78, unit: "percent",
