@@ -1,0 +1,32 @@
+{
+  "id": "harvester",
+  "name": {
+    "th": "ผู้เก็บเกี่ยว",
+    "en": "Harvester"
+  },
+  "dex": {
+    "book": "field",
+    "no": 60
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critRate",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onTakeHit",
+      "durationSec": 5,
+      "internalCooldownSec": 20
+    }
+  ],
+  "effectsGrade": "gold",
+  "images": {
+    "icon": "harvester-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

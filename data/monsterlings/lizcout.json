@@ -1,0 +1,32 @@
+{
+  "id": "lizcout",
+  "name": {
+    "th": "ลิซาร์ด มือดาบ",
+    "en": "Lizcout"
+  },
+  "dex": {
+    "book": "field",
+    "no": 154
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "atk",
+      "damageType": "earth",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onTakeHit",
+      "internalCooldownSec": 20
+    }
+  ],
+  "effectsGrade": "gold",
+  "images": {
+    "icon": "lizcout-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

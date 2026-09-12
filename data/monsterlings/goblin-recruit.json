@@ -1,0 +1,35 @@
+{
+  "id": "goblin-recruit",
+  "name": {
+    "th": "ก็อบลิน ทหารฝึก",
+    "en": "Goblin Recruit"
+  },
+  "dex": {
+    "book": "field",
+    "no": 7
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critDmg",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onBasicAttackHit",
+      "durationSec": 5,
+      "internalCooldownSec": 20,
+      "condition": {
+        "hitCount": 10
+      }
+    }
+  ],
+  "effectsGrade": "gold",
+  "images": {
+    "icon": "goblin-recruit-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}
