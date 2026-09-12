@@ -1,6 +1,7 @@
 {
   "id": "warriors-mark",
   "name": {
+    "th": "ตราแห่งนักรบ",
     "en": "Warrior's Mark"
   },
   "kind": "monsterling",
@@ -18,6 +19,7 @@
       },
       "bonusEffects": [
         {
+          "th": "สถานะเยือกแข็ง (2 วินาที)",
           "en": "Freeze (2s)"
         }
       ]

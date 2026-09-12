@@ -13,11 +13,11 @@
 
   "appearanceCondition": {
     "specialSkill":    { "th": "เมื่อใช้สกิลพิเศษ", "en": "Using a Special Skill" },
-    "switchSkill":     { "en": "Using a Switch Skill" },
+    "switchSkill":     { "th": "เมื่อใช้สกิลสับเปลี่ยน", "en": "Using a Switch Skill" },
     "useUltimate":     { "en": "Using an Ultimate Skill" },
     "landUltimate":    { "en": "Landing an Ultimate Skill" },
     "dodge":           { "th": "เมื่อใช้หลบ", "en": "Using Dodge" },
-    "evasionCounter":  { "en": "Using Evasion Counter" },
+    "evasionCounter":  { "th": "เมื่อใช้หลบหลีกโต้กลับ", "en": "Using Evasion Counter" },
     "airCounter":      { "en": "Using Air Counter" },
     "landAttack":      { "th": "เมื่อโจมตีโดน", "en": "Landing an attack" },
     "landCrit":        { "en": "Landing a critical hit" },
@@ -28,7 +28,7 @@
     "hpBelow50":       { "th": "เมื่อ HP ต่ำกว่า 50%", "en": "When HP is 50% or lower" },
     "staminaEmpty":    { "en": "When all Stamina is consumed" },
     "landFireAttack":  { "en": "Landing a Fire Attack" },
-    "landIceAttack":   { "en": "Landing an Ice Attack" },
+    "landIceAttack":   { "th": "เมื่อโจมตีธาตุน้ำแข็งโดน", "en": "Landing an Ice Attack" },
     "landWindAttack":  { "en": "Landing a Wind Attack" }
   },
 

@@ -1,6 +1,7 @@
 {
   "id": "shamans-staff",
   "name": {
+    "th": "ไม้เท้าของนักเวท",
     "en": "Shaman's Staff"
   },
   "kind": "monsterling",
