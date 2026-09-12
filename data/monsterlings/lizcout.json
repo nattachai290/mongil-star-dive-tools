@@ -27,6 +27,10 @@
   "source": {
     "verifiedAt": "2026-09-12",
     "gameVersion": "unknown",
-    "by": "in-game"
+    "by": "in-game",
+    "fieldsUnverified": [
+      "speciesEffects[0].durationSec"
+    ],
+    "note": "อ่านจากจอไทยซึ่งไม่แสดงระยะเวลา — Master Lizcout ที่รูปแบบเดียวกันเป๊ะ จออังกฤษแสดงว่า \"for 10s\" ตัวนี้จึงน่าจะมีระยะเวลาด้วย แต่ยังไม่เห็นจออังกฤษของตัวนี้ จึงไม่เติมเอง"
   }
 }

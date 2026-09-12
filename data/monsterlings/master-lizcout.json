@@ -17,6 +17,7 @@
       "unit": "percent",
       "target": "self",
       "trigger": "onTakeHit",
+      "durationSec": 10,
       "internalCooldownSec": 20
     }
   ],
@@ -27,6 +28,7 @@
   "source": {
     "verifiedAt": "2026-09-12",
     "gameVersion": "unknown",
-    "by": "in-game"
+    "by": "in-game",
+    "note": "จอไทยไม่แสดงระยะเวลาของเอฟเฟกต์นี้ จออังกฤษแสดงว่า \"for 10s\" — เติมตามอังกฤษ (อ่านทั้งสองภาษาเมื่อ 2026-09-12)"
   }
 }
