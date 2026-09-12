@@ -1,0 +1,38 @@
+{
+  "id": "golems-gem",
+  "name": {
+    "en": "Golem's Gem"
+  },
+  "monsterlingId": "avardan",
+  "rarity": 5,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        {
+          "en": "Using a Special Skill"
+        },
+        {
+          "en": "Landing an Ultimate Skill"
+        }
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 40,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "en": "10% Earth RES Reduction (5s)"
+        },
+        {
+          "en": "15% Neutralization RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

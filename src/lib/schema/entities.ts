@@ -199,7 +199,8 @@ export const linkChain = z.object({
   levels: z
     .array(
       z.object({
-        level: z.number().int().positive(),
+        /** เพดานคือ 5 — ยืนยันจากในเกม (Lv5 ขึ้น "Max Enhancement Tier Reached!") */
+        level: z.number().int().min(1).max(5),
         desc: text.optional(),
         damageType: vocabEnum("damageType").optional(),
         /** บางชิ้นมีหลายเงื่อนไข เช่น Poisoned Claw ออกได้ทั้ง Air Counter และ Evasion Counter */

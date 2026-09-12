@@ -1,0 +1,31 @@
+{
+  "id": "queens-crown",
+  "name": {
+    "en": "Queen's Crown"
+  },
+  "monsterlingId": "queen-slime",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "desc": {
+        "en": "If the Queen Slime Monsterling is equipped, it appears when its Appearance Condition is met. It punches the enemy, dealing Physical DMG and rendering the enemy Airborne."
+      },
+      "damageType": "physical",
+      "appearanceConditions": [
+        {
+          "en": "Using Evasion Counter"
+        }
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 100,
+        "cooldownSec": 5
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}
