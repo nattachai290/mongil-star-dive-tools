@@ -1,6 +1,7 @@
 {
   "id": "queens-mascara",
   "name": {
+    "th": "มาสคาร่าของราชินี",
     "en": "Queen's Mascara"
   },
   "kind": "monsterling",
@@ -18,6 +19,7 @@
       },
       "bonusEffects": [
         {
+          "th": "ลดความต้านทานสถานะอ่อนแรง 15% (10 วินาที)",
           "en": "15% Neutralization RES Reduction (10s)"
         }
       ]

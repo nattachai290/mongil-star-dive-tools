@@ -1,6 +1,7 @@
 {
   "id": "mysterious-branch",
   "name": {
+    "th": "กิ่งไม้พิสดาร",
     "en": "Mysterious Branch"
   },
   "kind": "monsterling",
@@ -19,6 +20,7 @@
       },
       "bonusEffects": [
         {
+          "th": "สถานะพันธนาการ (5 วินาที)",
           "en": "Shackle (5s)"
         }
       ]

@@ -1,6 +1,7 @@
 {
   "id": "fabric-talismans",
   "name": {
+    "th": "ผ้าไหมห้าสี",
     "en": "Fabric Talismans"
   },
   "kind": "monsterling",
@@ -18,6 +19,7 @@
       },
       "bonusEffects": [
         {
+          "th": "ลดต้านทานธาตุดิน 3% (5 วินาที)",
           "en": "3% Earth RES Reduction (5s)"
         }
       ]
