@@ -1,6 +1,7 @@
 {
   "id": "frangible-pebble",
   "name": {
+    "th": "ก้อนหินนุ่มนิ่ม",
     "en": "Frangible Pebble"
   },
   "kind": "monsterling",
@@ -18,6 +19,7 @@
       },
       "bonusEffects": [
         {
+          "th": "ลดต้านทานธาตุดิน 5% (5 วินาที)",
           "en": "5% Earth RES Reduction (5s)"
         }
       ]

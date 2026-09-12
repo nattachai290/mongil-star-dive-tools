@@ -1,6 +1,7 @@
 {
   "id": "destroyers-horn",
   "name": {
+    "th": "เขาของจอมทำลาย",
     "en": "Destroyer's Horn"
   },
   "kind": "monsterling",
@@ -10,6 +11,7 @@
     {
       "level": 1,
       "desc": {
+        "th": "เมื่อติดตั้งมอนสเตอร์ลิงอูรกัช จะมีโอกาสปรากฏตัวตามเงื่อนไข โดยจะกระโดดใส่ศัตรูและฟาดลงหลายครั้ง สร้างดาเมจกายภาพ",
         "en": "If the Urgash Monsterling is equipped, it appears when its Appearance Condition is met. It leaps toward the enemy and strikes down multiple times, dealing Physical DMG."
       },
       "damageType": "physical",

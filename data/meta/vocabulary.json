@@ -4,189 +4,544 @@
     "updatedAt": "2026-09-11",
     "note": "คำศัพท์ทั้งหมดที่ใช้ได้ในไฟล์ข้อมูล — ห้ามใช้คำนอกไฟล์นี้ validate:data จะ fail. ป้าย th/en ใช้เป็นข้อความบนหน้าเว็บด้วย ไม่ต้องแปลซ้ำที่อื่น"
   },
-
   "dexBook": {
-    "field":     { "th": "สมุดภาพมอน" },
-    "legendary": { "th": "มอนสเตอร์ตำนาน" },
-    "event":     { "th": "กิจกรรม" }
+    "field": {
+      "th": "สมุดภาพมอน"
+    },
+    "legendary": {
+      "th": "มอนสเตอร์ตำนาน"
+    },
+    "event": {
+      "th": "กิจกรรม"
+    }
   },
-
   "appearanceCondition": {
-    "specialSkill":    { "th": "เมื่อใช้สกิลพิเศษ", "en": "Using a Special Skill" },
-    "switchSkill":     { "th": "เมื่อใช้สกิลสับเปลี่ยน", "en": "Using a Switch Skill" },
-    "useUltimate":     { "en": "Using an Ultimate Skill" },
-    "landUltimate":    { "en": "Landing an Ultimate Skill" },
-    "dodge":           { "th": "เมื่อใช้หลบ", "en": "Using Dodge" },
-    "evasionCounter":  { "th": "เมื่อใช้หลบหลีกโต้กลับ", "en": "Using Evasion Counter" },
-    "airCounter":      { "en": "Using Air Counter" },
-    "landAttack":      { "th": "เมื่อโจมตีโดน", "en": "Landing an attack" },
-    "landCrit":        { "en": "Landing a critical hit" },
-    "takeDamage":      { "th": "เมื่อเกิดดาเมจ", "en": "Upon taking DMG" },
-    "renderAirborne":  { "th": "เมื่อศัตรูลอยขึ้นไปบนอากาศ", "en": "Rendering the enemy Airborne" },
-    "attackStaggered": { "en": "Attacking a Staggered target" },
-    "burst":           { "th": "เมื่อเกิดเบิร์ส", "en": "When Burst is triggered" },
-    "hpBelow50":       { "th": "เมื่อ HP ต่ำกว่า 50%", "en": "When HP is 50% or lower" },
-    "staminaEmpty":    { "en": "When all Stamina is consumed" },
-    "landFireAttack":  { "en": "Landing a Fire Attack" },
-    "landIceAttack":   { "th": "เมื่อโจมตีธาตุน้ำแข็งโดน", "en": "Landing an Ice Attack" },
-    "landWindAttack":  { "en": "Landing a Wind Attack" }
+    "specialSkill": {
+      "th": "เมื่อใช้สกิลพิเศษ",
+      "en": "Using a Special Skill"
+    },
+    "switchSkill": {
+      "th": "เมื่อใช้สกิลสับเปลี่ยน",
+      "en": "Using a Switch Skill"
+    },
+    "useUltimate": {
+      "en": "Using an Ultimate Skill"
+    },
+    "landUltimate": {
+      "en": "Landing an Ultimate Skill"
+    },
+    "dodge": {
+      "th": "เมื่อใช้หลบ",
+      "en": "Using Dodge"
+    },
+    "evasionCounter": {
+      "th": "เมื่อใช้หลบหลีกโต้กลับ",
+      "en": "Using Evasion Counter"
+    },
+    "airCounter": {
+      "en": "Using Air Counter"
+    },
+    "landAttack": {
+      "th": "เมื่อโจมตีโดน",
+      "en": "Landing an attack"
+    },
+    "landCrit": {
+      "en": "Landing a critical hit"
+    },
+    "takeDamage": {
+      "th": "เมื่อเกิดดาเมจ",
+      "en": "Upon taking DMG"
+    },
+    "renderAirborne": {
+      "th": "เมื่อศัตรูลอยขึ้นไปบนอากาศ",
+      "en": "Rendering the enemy Airborne"
+    },
+    "attackStaggered": {
+      "th": "เมื่อโจมตีเป้าหมายที่ติดสถานะมึนงง",
+      "en": "Attacking a Staggered target"
+    },
+    "burst": {
+      "th": "เมื่อเกิดเบิร์ส",
+      "en": "When Burst is triggered"
+    },
+    "hpBelow50": {
+      "th": "เมื่อ HP ต่ำกว่า 50%",
+      "en": "When HP is 50% or lower"
+    },
+    "staminaEmpty": {
+      "en": "When all Stamina is consumed"
+    },
+    "landFireAttack": {
+      "en": "Landing a Fire Attack"
+    },
+    "landIceAttack": {
+      "th": "เมื่อโจมตีธาตุน้ำแข็งโดน",
+      "en": "Landing an Ice Attack"
+    },
+    "landWindAttack": {
+      "en": "Landing a Wind Attack"
+    }
   },
-
   "linkChainKind": {
-    "monsterling": { "th": "มอนสเตอร์ลิ่ง",      "en": "Monsterling" },
-    "legendary":   { "th": "มอนสเตอร์ลิ่งตำนาน", "en": "Legendary Monsterling" }
+    "monsterling": {
+      "th": "มอนสเตอร์ลิ่ง",
+      "en": "Monsterling"
+    },
+    "legendary": {
+      "th": "มอนสเตอร์ลิ่งตำนาน",
+      "en": "Legendary Monsterling"
+    }
   },
-
   "damageType": {
-    "physical": { "th": "กายภาพ", "en": "Physical" },
-    "fire":     { "th": "ไฟ",    "en": "Fire" },
-    "water":    { "th": "น้ำ",    "en": "Water" },
-    "wind":      { "th": "ลม",     "en": "Wind" },
-    "earth":     { "th": "ดิน",    "en": "Earth" },
-    "lightning": { "th": "สายฟ้า",   "en": "Lightning" },
-    "ice":       { "th": "น้ำแข็ง",  "en": "Ice" },
-    "light":    { "th": "แสง",   "en": "Light" },
-    "dark":     { "th": "มืด",   "en": "Dark" }
+    "physical": {
+      "th": "กายภาพ",
+      "en": "Physical"
+    },
+    "fire": {
+      "th": "ไฟ",
+      "en": "Fire"
+    },
+    "water": {
+      "th": "น้ำ",
+      "en": "Water"
+    },
+    "wind": {
+      "th": "ลม",
+      "en": "Wind"
+    },
+    "earth": {
+      "th": "ดิน",
+      "en": "Earth"
+    },
+    "lightning": {
+      "th": "สายฟ้า",
+      "en": "Lightning"
+    },
+    "ice": {
+      "th": "น้ำแข็ง",
+      "en": "Ice"
+    },
+    "light": {
+      "th": "แสง",
+      "en": "Light"
+    },
+    "dark": {
+      "th": "มืด",
+      "en": "Dark"
+    }
   },
-
   "element": {
-    "fire":  { "th": "ไฟ",  "en": "Fire"  },
-    "water": { "th": "น้ำ",  "en": "Water" },
-    "wind":  { "th": "ลม",  "en": "Wind"  },
-    "earth": { "th": "ดิน", "en": "Earth" },
-    "light": { "th": "แสง", "en": "Light" },
-    "dark":  { "th": "มืด", "en": "Dark"  }
+    "fire": {
+      "th": "ไฟ",
+      "en": "Fire"
+    },
+    "water": {
+      "th": "น้ำ",
+      "en": "Water"
+    },
+    "wind": {
+      "th": "ลม",
+      "en": "Wind"
+    },
+    "earth": {
+      "th": "ดิน",
+      "en": "Earth"
+    },
+    "light": {
+      "th": "แสง",
+      "en": "Light"
+    },
+    "dark": {
+      "th": "มืด",
+      "en": "Dark"
+    }
   },
-
   "role": {
-    "dps":     { "th": "ดาเมจ",    "en": "DPS"     },
-    "tank":    { "th": "แทงก์",    "en": "Tank"    },
-    "support": { "th": "ซัพพอร์ต", "en": "Support" },
-    "healer":  { "th": "ฮีล",      "en": "Healer"  }
+    "dps": {
+      "th": "ดาเมจ",
+      "en": "DPS"
+    },
+    "tank": {
+      "th": "แทงก์",
+      "en": "Tank"
+    },
+    "support": {
+      "th": "ซัพพอร์ต",
+      "en": "Support"
+    },
+    "healer": {
+      "th": "ฮีล",
+      "en": "Healer"
+    }
   },
-
   "rarity": {
-    "R":   { "th": "R",   "en": "R"   },
-    "SR":  { "th": "SR",  "en": "SR"  },
-    "SSR": { "th": "SSR", "en": "SSR" }
+    "R": {
+      "th": "R",
+      "en": "R"
+    },
+    "SR": {
+      "th": "SR",
+      "en": "SR"
+    },
+    "SSR": {
+      "th": "SSR",
+      "en": "SSR"
+    }
   },
-
   "stat": {
-    "atk":          { "th": "พลังโจมตี",           "en": "ATK" },
-    "def":          { "th": "พลังป้องกัน",          "en": "DEF" },
-    "hp":           { "th": "พลังชีวิต",            "en": "HP" },
-    "critRate":     { "th": "โอกาสคริติคอล",        "en": "Crit Rate" },
-    "critDmg":      { "th": "ความเสียหายคริติคอล",  "en": "Crit DMG" },
-    "spd":          { "th": "ความเร็ว",             "en": "SPD" },
-    "dmgDealt":     { "th": "ความเสียหายที่ทำได้",   "en": "DMG Dealt" },
-    "dmgTaken":     { "th": "ความเสียหายที่ได้รับ",  "en": "DMG Taken" },
-    "elementDmg":   { "th": "ความเสียหายตามธาตุ",    "en": "Element DMG" },
-    "defShred":     { "th": "ลดพลังป้องกันศัตรู",    "en": "DEF Shred" },
-    "healingDone":  { "th": "ประสิทธิภาพการฮีล",     "en": "Healing Done" },
-    "shieldPower":  { "th": "ความแข็งแรงของโล่",     "en": "Shield Power" },
-    "cooldown":     { "th": "คูลดาวน์",             "en": "Cooldown" },
-    "energyGain":   { "th": "การสะสมพลังอัลติเมต",   "en": "Energy Gain" },
-    "stamina":      { "th": "ค่าสเตมินา",           "en": "Stamina" }
+    "atk": {
+      "th": "พลังโจมตี",
+      "en": "ATK"
+    },
+    "def": {
+      "th": "พลังป้องกัน",
+      "en": "DEF"
+    },
+    "hp": {
+      "th": "พลังชีวิต",
+      "en": "HP"
+    },
+    "critRate": {
+      "th": "โอกาสคริติคอล",
+      "en": "Crit Rate"
+    },
+    "critDmg": {
+      "th": "ความเสียหายคริติคอล",
+      "en": "Crit DMG"
+    },
+    "spd": {
+      "th": "ความเร็ว",
+      "en": "SPD"
+    },
+    "dmgDealt": {
+      "th": "ความเสียหายที่ทำได้",
+      "en": "DMG Dealt"
+    },
+    "dmgTaken": {
+      "th": "ความเสียหายที่ได้รับ",
+      "en": "DMG Taken"
+    },
+    "elementDmg": {
+      "th": "ความเสียหายตามธาตุ",
+      "en": "Element DMG"
+    },
+    "defShred": {
+      "th": "ลดพลังป้องกันศัตรู",
+      "en": "DEF Shred"
+    },
+    "healingDone": {
+      "th": "ประสิทธิภาพการฮีล",
+      "en": "Healing Done"
+    },
+    "shieldPower": {
+      "th": "ความแข็งแรงของโล่",
+      "en": "Shield Power"
+    },
+    "cooldown": {
+      "th": "คูลดาวน์",
+      "en": "Cooldown"
+    },
+    "energyGain": {
+      "th": "การสะสมพลังอัลติเมต",
+      "en": "Energy Gain"
+    },
+    "stamina": {
+      "th": "ค่าสเตมินา",
+      "en": "Stamina"
+    }
   },
-
   "unit": {
-    "percent": { "th": "%",     "en": "%"       },
-    "flat":    { "th": "หน่วย", "en": "flat"    },
-    "seconds": { "th": "วินาที", "en": "seconds" }
+    "percent": {
+      "th": "%",
+      "en": "%"
+    },
+    "flat": {
+      "th": "หน่วย",
+      "en": "flat"
+    },
+    "seconds": {
+      "th": "วินาที",
+      "en": "seconds"
+    }
   },
-
   "target": {
-    "self":       { "th": "ตัวเอง",       "en": "Self" },
-    "ally":       { "th": "เพื่อน 1 คน",   "en": "One ally" },
-    "team":       { "th": "ทั้งทีม",       "en": "Whole team" },
-    "enemy":      { "th": "ศัตรู 1 ตัว",   "en": "One enemy" },
-    "allEnemies": { "th": "ศัตรูทุกตัว",   "en": "All enemies" }
+    "self": {
+      "th": "ตัวเอง",
+      "en": "Self"
+    },
+    "ally": {
+      "th": "เพื่อน 1 คน",
+      "en": "One ally"
+    },
+    "team": {
+      "th": "ทั้งทีม",
+      "en": "Whole team"
+    },
+    "enemy": {
+      "th": "ศัตรู 1 ตัว",
+      "en": "One enemy"
+    },
+    "allEnemies": {
+      "th": "ศัตรูทุกตัว",
+      "en": "All enemies"
+    }
   },
-
   "trigger": {
-    "always":      { "th": "ตลอดเวลา",          "en": "Always" },
-    "passive":     { "th": "ติดตัว",             "en": "Passive" },
-    "onHit":       { "th": "เมื่อโจมตีโดน",       "en": "On hit" },
-    "onCrit":      { "th": "เมื่อเข้าคริติคอล",    "en": "On crit" },
-    "onSwitch":    { "th": "เมื่อสลับตัวเข้าสนาม", "en": "On switch-in" },
-    "onSkill":     { "th": "เมื่อใช้สกิล",         "en": "On skill" },
-    "onUltimate":  { "th": "เมื่อใช้อัลติเมต",     "en": "On ultimate" },
-    "onKill":      { "th": "เมื่อสังหาร",          "en": "On kill" },
-    "hpBelow":     { "th": "เมื่อเลือดต่ำกว่าที่กำหนด", "en": "When HP below threshold" },
-    "teamHpBelow": { "th": "เมื่อเลือดเพื่อนต่ำกว่าที่กำหนด", "en": "When ally HP below threshold" }
+    "always": {
+      "th": "ตลอดเวลา",
+      "en": "Always"
+    },
+    "passive": {
+      "th": "ติดตัว",
+      "en": "Passive"
+    },
+    "onHit": {
+      "th": "เมื่อโจมตีโดน",
+      "en": "On hit"
+    },
+    "onCrit": {
+      "th": "เมื่อเข้าคริติคอล",
+      "en": "On crit"
+    },
+    "onSwitch": {
+      "th": "เมื่อสลับตัวเข้าสนาม",
+      "en": "On switch-in"
+    },
+    "onSkill": {
+      "th": "เมื่อใช้สกิล",
+      "en": "On skill"
+    },
+    "onUltimate": {
+      "th": "เมื่อใช้อัลติเมต",
+      "en": "On ultimate"
+    },
+    "onKill": {
+      "th": "เมื่อสังหาร",
+      "en": "On kill"
+    },
+    "hpBelow": {
+      "th": "เมื่อเลือดต่ำกว่าที่กำหนด",
+      "en": "When HP below threshold"
+    },
+    "teamHpBelow": {
+      "th": "เมื่อเลือดเพื่อนต่ำกว่าที่กำหนด",
+      "en": "When ally HP below threshold"
+    }
   },
-
   "effectKind": {
-    "damage":  { "th": "ความเสียหาย", "en": "Damage" },
-    "buff":    { "th": "บัฟ",         "en": "Buff" },
-    "debuff":  { "th": "ดีบัฟ",       "en": "Debuff" },
-    "heal":    { "th": "ฟื้นฟู",       "en": "Heal" },
-    "shield":  { "th": "โล่",         "en": "Shield" },
-    "utility": { "th": "อื่น ๆ",       "en": "Utility" }
+    "damage": {
+      "th": "ความเสียหาย",
+      "en": "Damage"
+    },
+    "buff": {
+      "th": "บัฟ",
+      "en": "Buff"
+    },
+    "debuff": {
+      "th": "ดีบัฟ",
+      "en": "Debuff"
+    },
+    "heal": {
+      "th": "ฟื้นฟู",
+      "en": "Heal"
+    },
+    "shield": {
+      "th": "โล่",
+      "en": "Shield"
+    },
+    "utility": {
+      "th": "อื่น ๆ",
+      "en": "Utility"
+    }
   },
-
   "tag": {
-    "burst":        { "th": "ระเบิดดาเมจรอบเดียว",  "en": "Burst" },
-    "sustainedDmg": { "th": "ดาเมจต่อเนื่อง",        "en": "Sustained damage" },
-    "aoe":          { "th": "โจมตีเป็นวง",          "en": "AoE" },
-    "singleTarget": { "th": "โจมตีเป้าหมายเดียว",    "en": "Single target" },
-    "frontload":    { "th": "ออกดาเมจทันที",        "en": "Frontloaded" },
-    "rampUp":       { "th": "ยิ่งตียิ่งแรง",          "en": "Ramps up" },
-    "offField":     { "th": "ทำงานตอนไม่ได้อยู่สนาม", "en": "Off-field" },
-    "buffer":       { "th": "เพิ่มพลังเพื่อน",        "en": "Buffer" },
-    "debuffer":     { "th": "ลดพลังศัตรู",           "en": "Debuffer" },
-    "shielder":     { "th": "กันดาเมจด้วยโล่",       "en": "Shielder" },
-    "cleanser":     { "th": "ล้างสถานะร้าย",         "en": "Cleanser" },
-    "taunt":        { "th": "ดึงเอเลี่ยน",           "en": "Taunt" },
-    "mobility":     { "th": "เคลื่อนที่ดี",           "en": "Mobility" },
-    "energyBattery":{ "th": "ปั่นพลังอัลติเมตให้ทีม",  "en": "Energy battery" }
+    "burst": {
+      "th": "ระเบิดดาเมจรอบเดียว",
+      "en": "Burst"
+    },
+    "sustainedDmg": {
+      "th": "ดาเมจต่อเนื่อง",
+      "en": "Sustained damage"
+    },
+    "aoe": {
+      "th": "โจมตีเป็นวง",
+      "en": "AoE"
+    },
+    "singleTarget": {
+      "th": "โจมตีเป้าหมายเดียว",
+      "en": "Single target"
+    },
+    "frontload": {
+      "th": "ออกดาเมจทันที",
+      "en": "Frontloaded"
+    },
+    "rampUp": {
+      "th": "ยิ่งตียิ่งแรง",
+      "en": "Ramps up"
+    },
+    "offField": {
+      "th": "ทำงานตอนไม่ได้อยู่สนาม",
+      "en": "Off-field"
+    },
+    "buffer": {
+      "th": "เพิ่มพลังเพื่อน",
+      "en": "Buffer"
+    },
+    "debuffer": {
+      "th": "ลดพลังศัตรู",
+      "en": "Debuffer"
+    },
+    "shielder": {
+      "th": "กันดาเมจด้วยโล่",
+      "en": "Shielder"
+    },
+    "cleanser": {
+      "th": "ล้างสถานะร้าย",
+      "en": "Cleanser"
+    },
+    "taunt": {
+      "th": "ดึงเอเลี่ยน",
+      "en": "Taunt"
+    },
+    "mobility": {
+      "th": "เคลื่อนที่ดี",
+      "en": "Mobility"
+    },
+    "energyBattery": {
+      "th": "ปั่นพลังอัลติเมตให้ทีม",
+      "en": "Energy battery"
+    }
   },
-
   "need": {
-    "atkBuff":      { "th": "คนเพิ่มพลังโจมตี",      "en": "ATK buffer" },
-    "critRateBuff": { "th": "คนเพิ่มโอกาสคริติคอล",  "en": "Crit rate buffer" },
-    "critDmgBuff":  { "th": "คนเพิ่มดาเมจคริติคอล",  "en": "Crit DMG buffer" },
-    "defShred":     { "th": "คนลดป้องกันศัตรู",      "en": "DEF shredder" },
-    "sustain":      { "th": "คนฮีลหรือดูดเลือด",     "en": "Sustain" },
-    "shield":       { "th": "คนกางโล่",             "en": "Shielder" },
-    "cleanse":      { "th": "คนล้างสถานะร้าย",       "en": "Cleanser" },
-    "energy":       { "th": "คนปั่นพลังอัลติเมต",     "en": "Energy support" },
-    "taunt":        { "th": "คนดึงเอเลี่ยน",          "en": "Taunt" }
+    "atkBuff": {
+      "th": "คนเพิ่มพลังโจมตี",
+      "en": "ATK buffer"
+    },
+    "critRateBuff": {
+      "th": "คนเพิ่มโอกาสคริติคอล",
+      "en": "Crit rate buffer"
+    },
+    "critDmgBuff": {
+      "th": "คนเพิ่มดาเมจคริติคอล",
+      "en": "Crit DMG buffer"
+    },
+    "defShred": {
+      "th": "คนลดป้องกันศัตรู",
+      "en": "DEF shredder"
+    },
+    "sustain": {
+      "th": "คนฮีลหรือดูดเลือด",
+      "en": "Sustain"
+    },
+    "shield": {
+      "th": "คนกางโล่",
+      "en": "Shielder"
+    },
+    "cleanse": {
+      "th": "คนล้างสถานะร้าย",
+      "en": "Cleanser"
+    },
+    "energy": {
+      "th": "คนปั่นพลังอัลติเมต",
+      "en": "Energy support"
+    },
+    "taunt": {
+      "th": "คนดึงเอเลี่ยน",
+      "en": "Taunt"
+    }
   },
-
   "slot": {
-    "helm":    { "th": "หมวก",         "en": "Helm" },
-    "armor":   { "th": "เกราะ",        "en": "Armor" },
-    "boots":   { "th": "รองเท้า",       "en": "Boots" },
-    "trinket": { "th": "เครื่องประดับ", "en": "Trinket" }
+    "helm": {
+      "th": "หมวก",
+      "en": "Helm"
+    },
+    "armor": {
+      "th": "เกราะ",
+      "en": "Armor"
+    },
+    "boots": {
+      "th": "รองเท้า",
+      "en": "Boots"
+    },
+    "trinket": {
+      "th": "เครื่องประดับ",
+      "en": "Trinket"
+    }
   },
-
   "foodCategory": {
-    "entree": { "th": "จานหลัก", "en": "Entree" },
-    "side":   { "th": "จานเคียง", "en": "Side" }
+    "entree": {
+      "th": "จานหลัก",
+      "en": "Entree"
+    },
+    "side": {
+      "th": "จานเคียง",
+      "en": "Side"
+    }
   },
-
   "obtainMethod": {
-    "gacha":   { "th": "สุ่มตัวละคร", "en": "Recruit" },
-    "capture": { "th": "จับมอนสเตอร์", "en": "Capture" },
-    "combine":  { "th": "ผสม",        "en": "Combine" },
-    "shop":    { "th": "ร้านค้า",     "en": "Shop" },
-    "event":   { "th": "อีเวนต์",     "en": "Event" },
-    "quest":   { "th": "เควส",       "en": "Quest" },
-    "craft":   { "th": "คราฟต์",      "en": "Craft" }
+    "gacha": {
+      "th": "สุ่มตัวละคร",
+      "en": "Recruit"
+    },
+    "capture": {
+      "th": "จับมอนสเตอร์",
+      "en": "Capture"
+    },
+    "combine": {
+      "th": "ผสม",
+      "en": "Combine"
+    },
+    "shop": {
+      "th": "ร้านค้า",
+      "en": "Shop"
+    },
+    "event": {
+      "th": "อีเวนต์",
+      "en": "Event"
+    },
+    "quest": {
+      "th": "เควส",
+      "en": "Quest"
+    },
+    "craft": {
+      "th": "คราฟต์",
+      "en": "Craft"
+    }
   },
-
   "contentType": {
-    "story":   { "th": "เนื้อเรื่อง",  "en": "Story" },
-    "boss":    { "th": "ตีบอส",      "en": "Boss" },
-    "pvp":     { "th": "PvP",       "en": "PvP" },
-    "farming": { "th": "ฟาร์มของ",    "en": "Farming" },
-    "guild":   { "th": "กิลด์",       "en": "Guild" }
+    "story": {
+      "th": "เนื้อเรื่อง",
+      "en": "Story"
+    },
+    "boss": {
+      "th": "ตีบอส",
+      "en": "Boss"
+    },
+    "pvp": {
+      "th": "PvP",
+      "en": "PvP"
+    },
+    "farming": {
+      "th": "ฟาร์มของ",
+      "en": "Farming"
+    },
+    "guild": {
+      "th": "กิลด์",
+      "en": "Guild"
+    }
   },
-
   "difficulty": {
-    "easy":   { "th": "เล่นง่าย",        "en": "Easy" },
-    "medium": { "th": "ปานกลาง",        "en": "Medium" },
-    "hard":   { "th": "ต้องเล่นเป็น",     "en": "Hard" }
+    "easy": {
+      "th": "เล่นง่าย",
+      "en": "Easy"
+    },
+    "medium": {
+      "th": "ปานกลาง",
+      "en": "Medium"
+    },
+    "hard": {
+      "th": "ต้องเล่นเป็น",
+      "en": "Hard"
+    }
   }
 }

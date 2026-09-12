@@ -19,6 +19,7 @@
       },
       "bonusEffects": [
         {
+          "th": "ลดต้านทานธาตุไฟ 10% (5 วินาที)",
           "en": "10% Fire RES Reduction (5s)"
         },
         {

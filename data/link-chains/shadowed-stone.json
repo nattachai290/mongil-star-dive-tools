@@ -18,6 +18,7 @@
       },
       "bonusEffects": [
         {
+          "th": "เพิ่มดาเมจธาตุจุดอ่อน 30% (5 วินาที)",
           "en": "30% Elemental Weakness DMG Taken Boost (5s)"
         }
       ]

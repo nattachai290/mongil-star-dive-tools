@@ -1,6 +1,7 @@
 {
   "id": "mutated-spirit-core",
   "name": {
+    "th": "แกนวิญญาณกลายพันธุ์",
     "en": "Mutated Spirit Core"
   },
   "kind": "monsterling",
@@ -18,6 +19,7 @@
       },
       "bonusEffects": [
         {
+          "th": "เพิ่มดาเมจธาตุจุดอ่อน 30% (5 วินาที)",
           "en": "30% Elemental Weakness DMG Taken Boost (5s)"
         }
       ]
