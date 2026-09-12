@@ -194,7 +194,7 @@ for (const [id, doc] of Object.entries(parsed.characters ?? {})) {
 for (const [id, doc] of Object.entries(parsed.monsterlings ?? {})) {
   const where = `data/monsterlings/${id}.json`;
   // ตัวเลขเอฟเฟกต์สายพันธุ์ขึ้นกับแรงของมอนแต่ละตัว เว็บจะโชว์เฉพาะค่าจากตัวสีทอง
-  const grade = doc.effectsGrade as string | undefined;
+  const grade = doc.effectsRank as string | undefined;
   const effects = (doc.speciesEffects as Array<{ value?: number }> | undefined) ?? [];
   if (effects.some((e) => e.value !== undefined) && grade !== "gold") {
     warn(where, `ค่าเอฟเฟกต์สายพันธุ์อ่านมาจากมอนแรง "${grade ?? "ไม่ระบุ"}" ไม่ใช่สีทอง — ยังใช้แสดงบนเว็บไม่ได้`);

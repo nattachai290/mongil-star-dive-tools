@@ -19,7 +19,7 @@
       "trigger": "onWeaknessHit"
     }
   ],
-  "effectsGrade": "gold",
+  "effectsRank": "gold",
   "images": {
     "icon": "golden-fist-dude-icon.webp"
   },

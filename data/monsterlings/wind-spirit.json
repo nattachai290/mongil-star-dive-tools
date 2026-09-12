@@ -1,31 +1,30 @@
 {
-  "id": "orc-warrior",
+  "id": "wind-spirit",
   "name": {
-    "th": "ออร์ค นักรบ",
-    "en": "Orc Warrior"
+    "th": "วิญญาณแห่งลมวายุ",
+    "en": "Wind Spirit"
   },
   "dex": {
     "book": "field",
-    "no": 42
+    "no": 147
   },
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "dmgDealt",
-      "damageType": "physical",
-      "value": 6.25,
+      "stat": "atk",
+      "value": 3.13,
       "unit": "percent",
       "target": "self",
-      "trigger": "always",
-      "internalCooldownSec": 20,
+      "trigger": "onHit",
       "condition": {
-        "vsBoss": false
+        "hitCount": 10,
+        "enemyType": "wind"
       }
     }
   ],
   "effectsRank": "gold",
   "images": {
-    "icon": "orc-warrior-icon.webp"
+    "icon": "wind-spirit-icon.webp"
   },
   "source": {
     "verifiedAt": "2026-09-12",

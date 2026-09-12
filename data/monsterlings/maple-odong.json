@@ -19,7 +19,7 @@
       "trigger": "always"
     }
   ],
-  "effectsGrade": "gold",
+  "effectsRank": "gold",
   "images": {
     "icon": "maple-odong-icon.webp"
   },

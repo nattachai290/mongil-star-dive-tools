@@ -19,7 +19,7 @@
       "trigger": "onCrit"
     }
   ],
-  "effectsGrade": "gold",
+  "effectsRank": "gold",
   "images": {
     "icon": "crimsonjaw-icon.webp"
   },

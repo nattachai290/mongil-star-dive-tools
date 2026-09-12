@@ -1,18 +1,17 @@
 {
-  "id": "orc-warrior",
+  "id": "cocorn",
   "name": {
-    "th": "ออร์ค นักรบ",
-    "en": "Orc Warrior"
+    "th": "โพดน้อย",
+    "en": "Cocorn"
   },
   "dex": {
     "book": "field",
-    "no": 42
+    "no": 134
   },
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "dmgDealt",
-      "damageType": "physical",
+      "stat": "critDmg",
       "value": 6.25,
       "unit": "percent",
       "target": "self",
@@ -25,7 +24,7 @@
   ],
   "effectsRank": "gold",
   "images": {
-    "icon": "orc-warrior-icon.webp"
+    "icon": "cocorn-icon.webp"
   },
   "source": {
     "verifiedAt": "2026-09-12",

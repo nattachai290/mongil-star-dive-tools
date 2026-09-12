@@ -575,28 +575,6 @@
       "en": "Hard"
     }
   },
-  "monsterGrade": {
-    "grey": {
-      "th": "สีเทา",
-      "en": "Grey"
-    },
-    "green": {
-      "th": "สีเขียว",
-      "en": "Green"
-    },
-    "blue": {
-      "th": "สีฟ้า",
-      "en": "Blue"
-    },
-    "purple": {
-      "th": "สีม่วง",
-      "en": "Purple"
-    },
-    "gold": {
-      "th": "สีทอง",
-      "en": "Gold"
-    }
-  },
   "scope": {
     "basicAttack": {
       "th": "โจมตีพื้นฐาน",
@@ -631,6 +609,28 @@
     "downed": {
       "th": "ล้มอยู่ตรงพื้น",
       "en": "Downed"
+    }
+  },
+  "monsterRank": {
+    "grey": {
+      "th": "สีเทา",
+      "en": "Grey"
+    },
+    "green": {
+      "th": "สีเขียว",
+      "en": "Green"
+    },
+    "blue": {
+      "th": "สีฟ้า",
+      "en": "Blue"
+    },
+    "purple": {
+      "th": "สีม่วง",
+      "en": "Purple"
+    },
+    "gold": {
+      "th": "สีทอง",
+      "en": "Gold"
     }
   }
 }

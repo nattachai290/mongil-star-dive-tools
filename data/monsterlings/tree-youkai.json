@@ -20,7 +20,7 @@
       "trigger": "always"
     }
   ],
-  "effectsGrade": "gold",
+  "effectsRank": "gold",
   "images": {
     "icon": "tree-youkai-icon.webp"
   },

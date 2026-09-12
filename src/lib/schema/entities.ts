@@ -163,15 +163,15 @@ export const monsterling = z.object({
    *
    * ไม่ใส่ = ยังไม่รู้แรง ไม่ใช่ "แรงต่ำ" — เว็บแสดงเฉพาะค่าจากตัวสีทอง
    */
-  effectsGrade: vocabEnum("monsterGrade").optional(),
+  effectsRank: vocabEnum("monsterRank").optional(),
   obtain: z.object({ method: vocabEnum("obtainMethod"), note: text.optional() }).optional(),
   images: z.object({ icon: z.string().optional() }).optional(),
   source,
 }).refine(
   // แรงจำเป็นเฉพาะตอนมี "ตัวเลข" เพราะตัวเลขเท่านั้นที่ขึ้นกับแรง
   // ส่วนรูปแบบเอฟเฟกต์ (กระตุ้นด้วยอะไร ให้ผลอะไร) เป็นของสายพันธุ์ ไม่ขึ้นกับแรง
-  (m) => !m.speciesEffects.some((e) => e.value !== undefined) || m.effectsGrade !== undefined,
-  { message: "speciesEffects มีตัวเลขแล้วต้องบอก effectsGrade ว่าอ่านมาจากมอนแรงอะไร" },
+  (m) => !m.speciesEffects.some((e) => e.value !== undefined) || m.effectsRank !== undefined,
+  { message: "speciesEffects มีตัวเลขแล้วต้องบอก effectsRank ว่าอ่านมาจากมอนแรงอะไร" },
 );
 
 /*

@@ -2,25 +2,23 @@
   "site.name": "MONGIL: STAR DIVE",
   "site.tagline": "ฐานข้อมูลภาษาไทย",
   "site.description": "ข้อมูลตัวละคร สกิลและ Awaken, Artifact, Equipment, Monsterling, อาหาร และ Build guide ของเกม MONGIL: STAR DIVE",
-
   "nav.label": "หมวดข้อมูล",
   "nav.comingSoon": "ยังไม่เปิด",
-
   "home.eyebrow": "ฐานข้อมูลภาษาไทย · กำลังพัฒนา",
   "home.title": "ข้อมูลตัวละคร สกิล และของสวมใส่ ครบในที่เดียว",
   "home.lede": "รวมข้อมูล MONGIL: STAR DIVE — ตัวละครพร้อมสกิลและ Awaken ทั้ง 6 ขั้น, Artifact, Equipment, Monsterling, อาหาร และ Build guide ค้นหาและกรองได้ไว เปิดบนมือถือได้สบาย",
   "home.sections": "หมวดข้อมูล",
   "home.status": "สถานะตอนนี้",
   "home.statusBody": "โครงเว็บ ระบบ deploy พจนานุกรมคำศัพท์ และสูตรคำนวณดาเมจพร้อมแล้ว ขั้นถัดไปคือเริ่มลงข้อมูลตัวละครจริง — รายละเอียดทั้งหมดอยู่ในไฟล์ docs/PLAN.md ของ repository",
-
   "theme.toDark": "ธีมมืด",
   "theme.toLight": "ธีมสว่าง",
   "theme.label": "สลับระหว่างธีมสว่างและธีมมืด",
-
   "locale.label": "เปลี่ยนภาษา",
   "locale.untranslated": "ยังไม่แปล",
   "locale.untranslatedTitle": "ข้อความนี้ยังไม่มีฉบับภาษาไทย กำลังแสดงต้นฉบับแทน",
-
   "footer.disclaimer": "เว็บนี้เป็น fan site ไม่ใช่เว็บทางการ — ชื่อ รูปภาพ และเนื้อหาในเกมทั้งหมดเป็นลิขสิทธิ์ของผู้พัฒนาและผู้จัดจำหน่ายเกม",
-  "footer.verify": "ตัวเลขทุกค่าต้องยืนยันในเกมก่อนเผยแพร่ และจะแสดงเวอร์ชันเกมที่อ้างอิงกำกับไว้เสมอ"
+  "footer.verify": "ตัวเลขทุกค่าต้องยืนยันในเกมก่อนเผยแพร่ และจะแสดงเวอร์ชันเกมที่อ้างอิงกำกับไว้เสมอ",
+  "monsterling.rankEffect": "เอฟเฟกต์สายพันธุ์",
+  "monsterling.rank": "แรง",
+  "monsterling.rankNote": "ค่าที่แสดงเป็นค่าของแรงสีทอง ซึ่งเป็นเพดานของสายพันธุ์นี้"
 }

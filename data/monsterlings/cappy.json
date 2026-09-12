@@ -20,7 +20,7 @@
       "internalCooldownSec": 20
     }
   ],
-  "effectsGrade": "gold",
+  "effectsRank": "gold",
   "images": {
     "icon": "cappy-icon.webp"
   },

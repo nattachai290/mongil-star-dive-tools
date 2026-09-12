@@ -20,7 +20,7 @@
       "internalCooldownSec": 20
     }
   ],
-  "effectsGrade": "gold",
+  "effectsRank": "gold",
   "images": {
     "icon": "harvester-icon.webp"
   },
