@@ -1,6 +1,7 @@
 {
   "id": "mystic-stone-horn",
   "name": {
+    "th": "เขาหินเยือกแข็งลึกลับ",
     "en": "Mystic Stone Horn"
   },
   "kind": "monsterling",
@@ -18,6 +19,7 @@
       },
       "bonusEffects": [
         {
+          "th": "สถานะกลายเป็นหิน (3 วินาที)",
           "en": "Petrification (3s)"
         },
         {

@@ -1,6 +1,7 @@
 {
   "id": "purple-gem",
   "name": {
+    "th": "อัญมณีสีม่วงก่ำ",
     "en": "Purple Gem"
   },
   "kind": "monsterling",
@@ -19,10 +20,11 @@
       },
       "bonusEffects": [
         {
+          "th": "ลดต้านทานธาตุน้ำแข็ง 10% (5 วินาที)",
           "en": "10% Ice RES Reduction (5s)"
         },
         {
-          "th": "เพิ่มดาเมจธาตุจุดอ่อน 15% (5 วินาที)",
+          "th": "เพิ่มดาเมจธาตุจุดอ่อนที่ได้รับ 15% (5 วินาที)",
           "en": "15% Elemental Weakness DMG Taken Boost (5s)"
         }
       ]
