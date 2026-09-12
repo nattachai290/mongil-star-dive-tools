@@ -1,0 +1,32 @@
+{
+  "id": "master-lizcout",
+  "name": {
+    "th": "ลิซาร์ด ท่านเซอร์",
+    "en": "Master Lizcout"
+  },
+  "dex": {
+    "book": "field",
+    "no": 155
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "atk",
+      "damageType": "earth",
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onTakeHit",
+      "internalCooldownSec": 20
+    }
+  ],
+  "effectsGrade": "gold",
+  "images": {
+    "icon": "master-lizcout-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

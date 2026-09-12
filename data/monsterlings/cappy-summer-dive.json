@@ -1,0 +1,32 @@
+{
+  "id": "cappy-summer-dive",
+  "name": {
+    "th": "ช้อปปี้ : ซัมเมอร์ ไดฟ์!",
+    "en": "Cappy: Summer Dive!"
+  },
+  "dex": {
+    "book": "event",
+    "no": 1
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critRate",
+      "scope": "specialSkill",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always",
+      "internalCooldownSec": 20
+    }
+  ],
+  "effectsGrade": "gold",
+  "images": {
+    "icon": "cappy-summer-dive-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}
