@@ -1,0 +1,28 @@
+{
+  "id": "bloodstained-bridle",
+  "name": {
+    "en": "Bloodstained Bridle"
+  },
+  "monsterlingId": "mountaintaur",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceCondition": {
+        "en": "Using a Switch Skill"
+      },
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 40,
+        "cooldownSec": 15
+      },
+      "bonusEffect": {
+        "en": "5% Fire RES Reduction (5s)"
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

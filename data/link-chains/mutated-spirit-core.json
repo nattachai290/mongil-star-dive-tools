@@ -1,0 +1,28 @@
+{
+  "id": "mutated-spirit-core",
+  "name": {
+    "en": "Mutated Spirit Core"
+  },
+  "monsterlingId": "el-dorado-guardian",
+  "rarity": 5,
+  "levels": [
+    {
+      "level": 2,
+      "appearanceCondition": {
+        "en": "Attacking a Staggered target"
+      },
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 250,
+        "cooldownSec": 5
+      },
+      "bonusEffect": {
+        "en": "30% Elemental Weakness DMG Taken Boost (5s)"
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}
