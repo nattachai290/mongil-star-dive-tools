@@ -135,16 +135,27 @@ export const monsterling = z.object({
    */
   speciesEffects: z.array(effect).default([]),
   /**
-   * ค่าใน speciesEffects อ่านมาตอนมอนอยู่เลเวลนี้
-   * ต้องมีคู่กันเสมอ เพราะยังไม่ยืนยันว่าตัวเลขขึ้นกับเลเวลหรือไม่ (ดู PLAN §13.9)
-   * ถ้าไม่เก็บไว้ วันที่รู้ว่ามันสเกล จะไม่มีทางรู้ว่าตัวเลขเก่าอ่านมาจากเลเวลไหน
+   * ค่าใน speciesEffects อ่านมาจากมอนตัวไหน — ต้องมีคู่กันเสมอ
+   *
+   * ตัวเลขขึ้นกับ "แรง" ของมอนแต่ละตัว ไม่ใช่ค่าคงที่ของสายพันธุ์ (ดู PLAN §13.9)
+   * เว็บจะแสดงเฉพาะค่าที่ maxPower = true และต้องบอกผู้ใช้ว่าเป็นค่าสูงสุด
+   * ไม่ใช่ค่าที่ทุกตัวจะได้
    */
-  effectsAtLevel: z.number().int().positive().optional(),
+  effectsReadFrom: z
+    .object({
+      level: z.number().int().positive(),
+      /**
+       * แรงของมอนตัวที่อ่านค่ามา: เทา → เขียว → ฟ้า → ม่วง → ทอง (ทองสูงสุด)
+       * ไม่ใส่ = ยังไม่รู้ ไม่ใช่ "แรงต่ำ" — เว็บจะแสดงเฉพาะค่าจากตัวสีทอง
+       */
+      grade: vocabEnum("monsterGrade").optional(),
+    })
+    .optional(),
   obtain: z.object({ method: vocabEnum("obtainMethod"), note: text.optional() }).optional(),
   images: z.object({ icon: z.string().optional() }).optional(),
   source,
-}).refine((m) => m.speciesEffects.length === 0 || m.effectsAtLevel !== undefined, {
-  message: "มี speciesEffects แล้วต้องบอก effectsAtLevel ว่าอ่านค่ามาตอนเลเวลไหน",
+}).refine((m) => m.speciesEffects.length === 0 || m.effectsReadFrom !== undefined, {
+  message: "มี speciesEffects แล้วต้องบอก effectsReadFrom ว่าอ่านค่ามาจากมอนตัวไหน",
 });
 
 /*

@@ -192,9 +192,15 @@ for (const [id, doc] of Object.entries(parsed.characters ?? {})) {
 }
 
 for (const [id, doc] of Object.entries(parsed.monsterlings ?? {})) {
+  const where = `data/monsterlings/${id}.json`;
+  // ตัวเลขเอฟเฟกต์สายพันธุ์ขึ้นกับแรงของมอนแต่ละตัว เว็บจะโชว์เฉพาะค่าจากตัวสีทอง
+  const readFrom = doc.effectsReadFrom as { grade?: string } | undefined;
+  const hasEffects = ((doc.speciesEffects as unknown[]) ?? []).length > 0;
+  if (hasEffects && readFrom?.grade !== "gold") {
+    warn(where, `ค่าเอฟเฟกต์สายพันธุ์อ่านมาจากมอนแรง "${readFrom?.grade ?? "ไม่ระบุ"}" ไม่ใช่สีทอง — ยังใช้แสดงบนเว็บไม่ได้`);
+  }
   const dex = doc.dex as { book: string; no: number } | undefined;
   if (!dex) continue;
-  const where = `data/monsterlings/${id}.json`;
   const entry = dexByKey.get(`${dex.book}:${dex.no}`);
   if (!entry) {
     fail(where, `dex ชี้ไปที่ ${dex.book} No.${dex.no} แต่ไม่มีรายการนั้นในสมุดภาพมอน`);

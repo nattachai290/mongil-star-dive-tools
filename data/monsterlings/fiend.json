@@ -22,7 +22,10 @@
       }
     }
   ],
-  "effectsAtLevel": 60,
+  "effectsReadFrom": {
+    "level": 60,
+    "grade": "gold"
+  },
   "images": {
     "icon": "fiend-icon.webp"
   },

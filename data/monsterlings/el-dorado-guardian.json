@@ -23,7 +23,10 @@
       }
     }
   ],
-  "effectsAtLevel": 60,
+  "effectsReadFrom": {
+    "level": 60,
+    "grade": "gold"
+  },
   "images": {
     "icon": "el-dorado-guardian-icon.webp"
   },

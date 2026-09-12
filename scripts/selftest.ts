@@ -104,15 +104,15 @@ const speciesEffect = {
 check("เอฟเฟกต์สายพันธุ์แบบมีคูลดาวน์ในตัวและจำกัดเฉพาะบอส ผ่าน schema",
   monsterling.safeParse({
     id: "el-dorado-guardian", name: t("ผู้พิทักษ์แห่งนครทองคำ"),
-    speciesEffects: [speciesEffect], effectsAtLevel: 60, source: src,
+    speciesEffects: [speciesEffect], effectsReadFrom: { level: 60, grade: "gold" }, source: src,
   }).success);
-check("มีเอฟเฟกต์สายพันธุ์แต่ไม่บอกเลเวลที่อ่านมา = ไม่ผ่าน",
+check("มีเอฟเฟกต์สายพันธุ์แต่ไม่บอกว่าอ่านมาจากมอนตัวไหน = ไม่ผ่าน",
   !monsterling.safeParse({
     id: "el-dorado-guardian", name: t("ผู้พิทักษ์แห่งนครทองคำ"),
     speciesEffects: [speciesEffect], source: src,
   }).success,
-  "ถ้าปล่อยผ่าน วันที่รู้ว่าตัวเลขสเกลตามเลเวลจะย้อนไม่ได้ว่าอ่านมาจากเลเวลไหน");
-check("มอนที่ยังไม่มีเอฟเฟกต์สายพันธุ์ ไม่ต้องมีเลเวล",
+  "ตัวเลขขึ้นกับแรงของมอนแต่ละตัว ถ้าไม่รู้ที่มาก็เทียบข้ามตัวไม่ได้");
+check("มอนที่ยังไม่มีเอฟเฟกต์สายพันธุ์ ไม่ต้องบอกที่มา",
   monsterling.safeParse({ id: "cappy", name: t("ช้อปปี้"), source: src }).success);
 
 // ---------- ป้าย "ใส่ลิงก์เชนได้" ----------

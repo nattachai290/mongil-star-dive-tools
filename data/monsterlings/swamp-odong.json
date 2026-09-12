@@ -20,7 +20,10 @@
       "durationSec": 10
     }
   ],
-  "effectsAtLevel": 60,
+  "effectsReadFrom": {
+    "level": 60,
+    "grade": "gold"
+  },
   "images": {
     "icon": "swamp-odong-icon.webp"
   },

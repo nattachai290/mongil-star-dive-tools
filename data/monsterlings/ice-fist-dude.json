@@ -18,7 +18,10 @@
       "trigger": "always"
     }
   ],
-  "effectsAtLevel": 60,
+  "effectsReadFrom": {
+    "level": 60,
+    "grade": "gold"
+  },
   "images": {
     "icon": "ice-fist-dude-icon.webp"
   },

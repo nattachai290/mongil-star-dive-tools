@@ -582,5 +582,27 @@
       "th": "ต้องเล่นเป็น",
       "en": "Hard"
     }
+  },
+  "monsterGrade": {
+    "grey": {
+      "th": "สีเทา",
+      "en": "Grey"
+    },
+    "green": {
+      "th": "สีเขียว",
+      "en": "Green"
+    },
+    "blue": {
+      "th": "สีฟ้า",
+      "en": "Blue"
+    },
+    "purple": {
+      "th": "สีม่วง",
+      "en": "Purple"
+    },
+    "gold": {
+      "th": "สีทอง",
+      "en": "Gold"
+    }
   }
 }
