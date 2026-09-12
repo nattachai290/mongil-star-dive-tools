@@ -1,0 +1,29 @@
+{
+  "id": "commanding-flute",
+  "name": {
+    "en": "Commanding Flute"
+  },
+  "monsterlingId": "big-bro-goblin",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 2,
+      "desc": {
+        "en": "If the Big Bro Goblin Monsterling is equipped, it appears when its Appearance Condition is met. It strikes its hammer down hard onto the enemy twice, dealing Physical DMG and rendering the enemy Airborne."
+      },
+      "damageType": "physical",
+      "appearanceCondition": {
+        "en": "Using a Switch Skill"
+      },
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 60,
+        "cooldownSec": 15
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

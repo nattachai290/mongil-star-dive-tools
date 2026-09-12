@@ -15,8 +15,9 @@
     "physical": { "th": "กายภาพ", "en": "Physical" },
     "fire":     { "th": "ไฟ",    "en": "Fire" },
     "water":    { "th": "น้ำ",    "en": "Water" },
-    "wind":     { "th": "ลม",    "en": "Wind" },
-    "earth":    { "th": "ดิน",   "en": "Earth" },
+    "wind":      { "th": "ลม",     "en": "Wind" },
+    "earth":     { "th": "ดิน",    "en": "Earth" },
+    "lightning": { "th": "สายฟ้า", "en": "Lightning" },
     "light":    { "th": "แสง",   "en": "Light" },
     "dark":     { "th": "มืด",   "en": "Dark" }
   },
