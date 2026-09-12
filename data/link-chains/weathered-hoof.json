@@ -1,0 +1,28 @@
+{
+  "id": "weathered-hoof",
+  "name": {
+    "en": "Weathered Hoof"
+  },
+  "monsterlingId": "tealtaur",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceCondition": {
+        "en": "Using a Switch Skill"
+      },
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 40,
+        "cooldownSec": 15
+      },
+      "bonusEffect": {
+        "en": "10% Fire RES Reduction (5s)"
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

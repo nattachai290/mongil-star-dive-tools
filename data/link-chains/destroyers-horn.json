@@ -1,0 +1,29 @@
+{
+  "id": "destroyers-horn",
+  "name": {
+    "en": "Destroyer's Horn"
+  },
+  "monsterlingId": "urgash",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "desc": {
+        "en": "If the Urgash Monsterling is equipped, it appears when its Appearance Condition is met. It leaps toward the enemy and strikes down multiple times, dealing Physical DMG."
+      },
+      "damageType": "physical",
+      "appearanceCondition": {
+        "en": "When Burst is triggered"
+      },
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 200,
+        "cooldownSec": 5
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

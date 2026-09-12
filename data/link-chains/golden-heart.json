@@ -1,0 +1,27 @@
+{
+  "id": "golden-heart",
+  "name": {
+    "en": "Golden Heart"
+  },
+  "monsterlingId": "golden-fist-dude",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceCondition": {
+        "en": "Using a Switch Skill"
+      },
+      "appearanceInfo": {
+        "cooldownSec": 15
+      },
+      "bonusEffect": {
+        "en": "Grants character Super Armor (5s)"
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "voids-balance",
+  "name": {
+    "en": "Void's Balance"
+  },
+  "monsterlingId": "vectus",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "desc": {
+        "en": "If the Vectus Monsterling is equipped, it appears when its Appearance Condition is met. It summons a crown of thorns imbued with Void Energy and detonates it, dealing Dark DMG and rendering the enemy Airborne."
+      },
+      "damageType": "dark",
+      "appearanceCondition": {
+        "en": "Landing a critical hit"
+      },
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 20,
+        "cooldownSec": 15
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}
