@@ -49,7 +49,10 @@ export const effect = z
       .object({
         hpBelowPercent: z.number().min(0).max(100).optional(),
         minStacks: z.number().int().positive().optional(),
-        /** ทำงานเฉพาะกับมอนสเตอร์บอส — ไม่ใส่ = ไม่จำกัด ไม่ใช่ "ไม่ใช่บอส" */
+        /**
+         * true = เฉพาะมอนสเตอร์บอส, false = เฉพาะมอนสเตอร์ทั่วไป
+         * ไม่ใส่ = ไม่จำกัด ต้องแยกจาก false ให้ชัด
+         */
         vsBoss: z.boolean().optional(),
         /**
          * ธาตุของ "การโจมตีที่ไปกระตุ้น" ไม่ใช่ธาตุของผลลัพธ์

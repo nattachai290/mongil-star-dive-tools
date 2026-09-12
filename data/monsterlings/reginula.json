@@ -1,0 +1,63 @@
+{
+  "id": "reginula",
+  "name": {
+    "th": "เรกีนูลา",
+    "en": "Reginula"
+  },
+  "dex": {
+    "book": "legendary",
+    "no": 1
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "elementDmg",
+      "value": 14,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onSwitch",
+      "durationSec": 10
+    },
+    {
+      "kind": "buff",
+      "stat": "supportDmg",
+      "value": 14,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onSwitchOut",
+      "durationSec": 7,
+      "internalCooldownSec": 4,
+      "condition": {
+        "note": {
+          "th": "เอฟเฟกต์จันทร์เสี้ยว",
+          "en": "Crescent Moon"
+        }
+      }
+    },
+    {
+      "kind": "buff",
+      "stat": "ultimateDmg",
+      "value": 14,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onUltimateCharged",
+      "durationSec": 7,
+      "internalCooldownSec": 7,
+      "condition": {
+        "note": {
+          "th": "พระจันทร์เต็มดวง",
+          "en": "Full Moon"
+        }
+      }
+    }
+  ],
+  "effectsGrade": "gold",
+  "images": {
+    "icon": "reginula-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

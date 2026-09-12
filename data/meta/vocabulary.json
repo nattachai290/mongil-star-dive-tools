@@ -128,10 +128,6 @@
       "th": "น้ำแข็ง",
       "en": "Ice"
     },
-    "light": {
-      "th": "แสง",
-      "en": "Light"
-    },
     "dark": {
       "th": "มืด",
       "en": "Dark"
@@ -142,29 +138,17 @@
       "th": "ไฟ",
       "en": "Fire"
     },
-    "water": {
-      "th": "น้ำ",
-      "en": "Water"
-    },
     "wind": {
       "th": "ลม",
       "en": "Wind"
     },
-    "earth": {
-      "th": "ดิน",
-      "en": "Earth"
-    },
-    "light": {
-      "th": "แสง",
-      "en": "Light"
-    },
-    "dark": {
-      "th": "มืด",
-      "en": "Dark"
-    },
     "ice": {
       "th": "น้ำแข็ง",
       "en": "Ice"
+    },
+    "earth": {
+      "th": "ดิน",
+      "en": "Earth"
     },
     "lightning": {
       "th": "สายฟ้า",
@@ -283,6 +267,22 @@
     "specialSkillDmg": {
       "th": "ดาเมจสกิลพิเศษ",
       "en": "Special Skill DMG"
+    },
+    "physicalDmg": {
+      "th": "ดาเมจกายภาพ",
+      "en": "Physical DMG"
+    },
+    "ultimateDmg": {
+      "th": "ดาเมจสกิลอัลติเมต",
+      "en": "Ultimate Skill DMG"
+    },
+    "ultimateCritDmg": {
+      "th": "ดาเมจคริติคอลของสกิลอัลติเมต",
+      "en": "Ultimate Skill CRIT DMG"
+    },
+    "supportDmg": {
+      "th": "ดาเมจสนับสนุน",
+      "en": "Support DMG"
     }
   },
   "unit": {
@@ -377,6 +377,18 @@
     "onEvasionCounter": {
       "th": "เมื่อใช้หลบหลีกโต้กลับ",
       "en": "On evasion counter"
+    },
+    "onTakeHit": {
+      "th": "เมื่อถูกโจมตี",
+      "en": "On being hit"
+    },
+    "onSwitchOut": {
+      "th": "เมื่อเปลี่ยนเป็นตัวละครอื่น",
+      "en": "On switching to another character"
+    },
+    "onUltimateCharged": {
+      "th": "เมื่อเกจสกิลอัลติเมตชาร์จสูงสุด",
+      "en": "When the ultimate gauge is full"
     }
   },
   "effectKind": {
