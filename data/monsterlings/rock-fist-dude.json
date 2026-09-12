@@ -1,0 +1,31 @@
+{
+  "id": "rock-fist-dude",
+  "name": {
+    "th": "กายหมัดหิน",
+    "en": "Rock Fist Dude"
+  },
+  "dex": {
+    "book": "field",
+    "no": 40
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "elementDmg",
+      "element": "earth",
+      "value": 11,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onWeaknessHit"
+    }
+  ],
+  "effectsAtLevel": 60,
+  "images": {
+    "icon": "rock-fist-dude-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

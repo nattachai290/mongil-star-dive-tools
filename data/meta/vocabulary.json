@@ -267,6 +267,14 @@
     "weaknessCritRate": {
       "th": "อัตราคริติคอลของโจมตีธาตุจุดอ่อน",
       "en": "Elemental Weakness CRIT Rate"
+    },
+    "bossDmg": {
+      "th": "ดาเมจมอนสเตอร์บอส",
+      "en": "Boss DMG"
+    },
+    "specialSkillDmg": {
+      "th": "ดาเมจสกิลพิเศษ",
+      "en": "Special Skill DMG"
     }
   },
   "unit": {
@@ -349,6 +357,14 @@
     "onWeaknessHit": {
       "th": "เมื่อโจมตีด้วยธาตุจุดอ่อน",
       "en": "On elemental weakness hit"
+    },
+    "onSpecialSkillHit": {
+      "th": "เมื่อโจมตีด้วยสกิลพิเศษโดน",
+      "en": "On special skill hit"
+    },
+    "onBasicAttackHit": {
+      "th": "เมื่อโจมตีพื้นฐานโดน",
+      "en": "On basic attack hit"
     }
   },
   "effectKind": {

@@ -1,0 +1,36 @@
+{
+  "id": "2nd-lt-goblin",
+  "name": {
+    "th": "ก็อบลิน ร้อยตรี",
+    "en": "2nd Lt. Goblin"
+  },
+  "dex": {
+    "book": "field",
+    "no": 8
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critDmg",
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onBasicAttackHit",
+      "durationSec": 5,
+      "internalCooldownSec": 20,
+      "condition": {
+        "hitCount": 10
+      }
+    }
+  ],
+  "effectsAtLevel": 1,
+  "images": {
+    "icon": "2nd-lt-goblin-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "อ่านค่าจากมอนตัวนี้ตอนเลเวล 1 (ตัวอื่นในชุดนี้เลเวล 60) — เก็บไว้เทียบว่าเอฟเฟกต์สายพันธุ์สเกลตามเลเวลหรือไม่ ดู PLAN §13.9"
+  }
+}

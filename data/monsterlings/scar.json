@@ -1,0 +1,31 @@
+{
+  "id": "scar",
+  "name": {
+    "th": "สกา",
+    "en": "Scar"
+  },
+  "dex": {
+    "book": "field",
+    "no": 55
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "bossDmg",
+      "value": 8,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onCrit",
+      "durationSec": 5
+    }
+  ],
+  "effectsAtLevel": 60,
+  "images": {
+    "icon": "scar-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

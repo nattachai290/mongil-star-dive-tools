@@ -51,6 +51,14 @@ export const effect = z
         minStacks: z.number().int().positive().optional(),
         /** ทำงานเฉพาะกับมอนสเตอร์บอส — ไม่ใส่ = ไม่จำกัด ไม่ใช่ "ไม่ใช่บอส" */
         vsBoss: z.boolean().optional(),
+        /**
+         * ธาตุของ "การโจมตีที่ไปกระตุ้น" ไม่ใช่ธาตุของผลลัพธ์
+         * เช่น "เมื่อโจมตีธาตุไฟด้วยสกิลพิเศษ" → triggerElement: fire
+         * ส่วนธาตุของผลลัพธ์อยู่ที่ effect.element ซึ่งอาจคนละธาตุกัน
+         */
+        triggerElement: vocabEnum("element").optional(),
+        /** ต้องโจมตีโดนกี่ครั้งก่อนถึงทำงาน เช่น "โจมตีพื้นฐานโดน 10 ครั้ง" */
+        hitCount: z.number().int().positive().optional(),
         note: text.optional(),
       })
       .optional(),
