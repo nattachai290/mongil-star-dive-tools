@@ -17,7 +17,8 @@
     "water":    { "th": "น้ำ",    "en": "Water" },
     "wind":      { "th": "ลม",     "en": "Wind" },
     "earth":     { "th": "ดิน",    "en": "Earth" },
-    "lightning": { "th": "สายฟ้า", "en": "Lightning" },
+    "lightning": { "th": "สายฟ้า",   "en": "Lightning" },
+    "ice":       { "th": "น้ำแข็ง",  "en": "Ice" },
     "light":    { "th": "แสง",   "en": "Light" },
     "dark":     { "th": "มืด",   "en": "Dark" }
   },

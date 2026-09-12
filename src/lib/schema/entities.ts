@@ -209,7 +209,8 @@ export const linkChain = z.object({
           cooldownSec: z.number().positive().optional(),
           note: text.optional(),
         }),
-        bonusEffect: text.optional(),
+        /** บางชิ้นติดหลายเอฟเฟกต์พร้อมกัน เช่น Frozen Gem ให้ทั้ง Ice Affliction และ Freeze */
+        bonusEffects: z.array(text).min(1).optional(),
       }),
     )
     .min(1),

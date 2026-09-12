@@ -17,9 +17,11 @@
         "dmgPercentOfAtk": 40,
         "cooldownSec": 15
       },
-      "bonusEffect": {
-        "en": "5% Fire RES Reduction (5s)"
-      }
+      "bonusEffects": [
+        {
+          "en": "5% Fire RES Reduction (5s)"
+        }
+      ]
     }
   ],
   "source": {

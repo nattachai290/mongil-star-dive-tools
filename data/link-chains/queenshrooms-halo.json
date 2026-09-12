@@ -19,9 +19,11 @@
       "appearanceInfo": {
         "cooldownSec": 300
       },
-      "bonusEffect": {
-        "en": "Heals 10% of Max HP"
-      }
+      "bonusEffects": [
+        {
+          "en": "Heals 10% of Max HP"
+        }
+      ]
     }
   ],
   "source": {

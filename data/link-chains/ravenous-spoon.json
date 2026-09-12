@@ -1,25 +1,24 @@
 {
-  "id": "moonlight-touched-claw",
+  "id": "ravenous-spoon",
   "name": {
-    "en": "Moonlight-Touched Claw"
+    "en": "Ravenous Spoon"
   },
-  "monsterlingId": "moon-shadow-lupe",
+  "monsterlingId": "spoonmugger",
   "rarity": 4,
   "levels": [
     {
       "level": 1,
       "appearanceConditions": [
         {
-          "en": "Using a Special Skill"
+          "en": "When all Stamina is consumed"
         }
       ],
       "appearanceInfo": {
-        "dmgPercentOfAtk": 40,
-        "cooldownSec": 15
+        "cooldownSec": 300
       },
       "bonusEffects": [
         {
-          "en": "Freeze (5s)"
+          "en": "Restores 40 Stamina"
         }
       ]
     }

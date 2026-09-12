@@ -1,9 +1,9 @@
 {
-  "id": "poisoned-claw",
+  "id": "precious-spider-cocoon",
   "name": {
-    "en": "Poisoned Claw"
+    "en": "Precious Spider Cocoon"
   },
-  "monsterlingId": "spadupa",
+  "monsterlingId": "greenpadupa",
   "rarity": 3,
   "levels": [
     {
@@ -22,7 +22,7 @@
       },
       "bonusEffects": [
         {
-          "en": "30% Movement Speed Reduction (10s)"
+          "en": "50% Movement Speed Reduction (10s)"
         }
       ]
     }

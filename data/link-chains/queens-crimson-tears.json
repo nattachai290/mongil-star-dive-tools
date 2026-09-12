@@ -17,9 +17,11 @@
         "dmgPercentOfAtk": 40,
         "cooldownSec": 15
       },
-      "bonusEffect": {
-        "en": "50% Movement Speed Reduction (10s)"
-      }
+      "bonusEffects": [
+        {
+          "en": "50% Movement Speed Reduction (10s)"
+        }
+      ]
     }
   ],
   "source": {

@@ -1,25 +1,25 @@
 {
-  "id": "moonlight-touched-claw",
+  "id": "leather-halter",
   "name": {
-    "en": "Moonlight-Touched Claw"
+    "en": "Leather Halter"
   },
-  "monsterlingId": "moon-shadow-lupe",
+  "monsterlingId": "plains-minotaur",
   "rarity": 4,
   "levels": [
     {
-      "level": 1,
+      "level": 3,
       "appearanceConditions": [
         {
-          "en": "Using a Special Skill"
+          "en": "Using a Switch Skill"
         }
       ],
       "appearanceInfo": {
-        "dmgPercentOfAtk": 40,
+        "dmgPercentOfAtk": 130,
         "cooldownSec": 15
       },
       "bonusEffects": [
         {
-          "en": "Freeze (5s)"
+          "en": "5% Wind RES Reduction (5s)"
         }
       ]
     }

@@ -17,9 +17,11 @@
         "dmgPercentOfAtk": 60,
         "cooldownSec": 15
       },
-      "bonusEffect": {
-        "en": "5% Elemental Weakness DMG Taken Boost (5s)"
-      }
+      "bonusEffects": [
+        {
+          "en": "5% Elemental Weakness DMG Taken Boost (5s)"
+        }
+      ]
     }
   ],
   "source": {

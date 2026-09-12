@@ -16,9 +16,11 @@
       "appearanceInfo": {
         "cooldownSec": 15
       },
-      "bonusEffect": {
-        "en": "Grants character Super Armor (5s)"
-      }
+      "bonusEffects": [
+        {
+          "en": "Grants character Super Armor (5s)"
+        }
+      ]
     }
   ],
   "source": {

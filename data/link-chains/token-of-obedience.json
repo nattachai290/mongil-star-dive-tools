@@ -1,25 +1,28 @@
 {
-  "id": "moonlight-touched-claw",
+  "id": "token-of-obedience",
   "name": {
-    "en": "Moonlight-Touched Claw"
+    "en": "Token of Obedience"
   },
-  "monsterlingId": "moon-shadow-lupe",
-  "rarity": 4,
+  "monsterlingId": "amons-shadow",
+  "rarity": 5,
   "levels": [
     {
-      "level": 1,
+      "level": 2,
       "appearanceConditions": [
         {
           "en": "Using a Special Skill"
+        },
+        {
+          "en": "Landing an Ultimate Skill"
         }
       ],
       "appearanceInfo": {
-        "dmgPercentOfAtk": 40,
+        "dmgPercentOfAtk": 60,
         "cooldownSec": 15
       },
       "bonusEffects": [
         {
-          "en": "Freeze (5s)"
+          "en": "15% Elemental Weakness DMG Taken Boost (5s)"
         }
       ]
     }

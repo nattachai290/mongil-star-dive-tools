@@ -1,0 +1,39 @@
+{
+  "id": "frozen-gem",
+  "name": {
+    "en": "Frozen Gem"
+  },
+  "monsterlingId": "ice-fist-dude",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 5,
+      "desc": {
+        "en": "If the Ice Fist Dude Monsterling is equipped, it appears when its Appearance Condition is met. It spins around and sends ice fragments flying multiple times, dealing Ice DMG and inflicting Bonus Effects."
+      },
+      "damageType": "ice",
+      "appearanceConditions": [
+        {
+          "en": "Using a Special Skill"
+        }
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 200,
+        "cooldownSec": 8
+      },
+      "bonusEffects": [
+        {
+          "en": "5% Ice Affliction (5s)"
+        },
+        {
+          "en": "Freeze (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}
