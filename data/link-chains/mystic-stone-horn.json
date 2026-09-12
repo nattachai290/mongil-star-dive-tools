@@ -1,0 +1,35 @@
+{
+  "id": "mystic-stone-horn",
+  "name": {
+    "en": "Mystic Stone Horn"
+  },
+  "monsterlingId": "phantom-stone-tiger",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        {
+          "en": "Using a Switch Skill"
+        }
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 40,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "en": "Petrification (3s)"
+        },
+        {
+          "en": "5% Earth RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "cold-mane",
+  "name": {
+    "en": "Cold Mane"
+  },
+  "monsterlingId": "phantom-snow-tiger",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        {
+          "en": "Using a Switch Skill"
+        }
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 40,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "en": "Freeze (2s)"
+        },
+        {
+          "en": "3% Ice RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

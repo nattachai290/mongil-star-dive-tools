@@ -1,0 +1,31 @@
+{
+  "id": "turtles-stone-hammer",
+  "name": {
+    "en": "Turtle's Stone Hammer"
+  },
+  "monsterlingId": "irontoise",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "desc": {
+        "en": "If the Irontoise Monsterling is equipped, it appears when its Appearance Condition is met. It quickly charges at the enemy and attacks several times with a mace, dealing Physical DMG and rendering the enemy Airborne."
+      },
+      "damageType": "physical",
+      "appearanceConditions": [
+        {
+          "en": "Landing an attack"
+        }
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 20,
+        "cooldownSec": 15
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

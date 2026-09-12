@@ -1,0 +1,31 @@
+{
+  "id": "ornate-shield",
+  "name": {
+    "en": "Ornate Shield"
+  },
+  "monsterlingId": "toad-alee",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "damageType": "physical",
+      "appearanceConditions": [
+        {
+          "en": "Using Air Counter"
+        },
+        {
+          "en": "Using Evasion Counter"
+        }
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 100,
+        "cooldownSec": 5
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

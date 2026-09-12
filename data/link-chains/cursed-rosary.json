@@ -1,0 +1,38 @@
+{
+  "id": "cursed-rosary",
+  "name": {
+    "en": "Cursed Rosary"
+  },
+  "monsterlingId": "gulgak",
+  "rarity": 5,
+  "levels": [
+    {
+      "level": 3,
+      "appearanceConditions": [
+        {
+          "en": "Using a Special Skill"
+        },
+        {
+          "en": "Landing an Ultimate Skill"
+        }
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 130,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "en": "5% Lightning RES Reduction (5s)"
+        },
+        {
+          "en": "15% Elemental Weakness DMG Taken Boost (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}
