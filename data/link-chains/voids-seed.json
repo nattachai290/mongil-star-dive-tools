@@ -1,24 +1,24 @@
 {
-  "id": "weathered-hoof",
+  "id": "voids-seed",
   "name": {
-    "en": "Weathered Hoof"
+    "en": "Void's Seed"
   },
-  "monsterlingId": "tealtaur",
-  "rarity": 4,
+  "monsterlingId": "amon",
+  "rarity": 5,
   "levels": [
     {
-      "level": 1,
+      "level": 2,
       "appearanceConditions": [
         {
-          "en": "Using a Switch Skill"
+          "en": "Using a Special Skill"
         }
       ],
       "appearanceInfo": {
-        "dmgPercentOfAtk": 40,
+        "dmgPercentOfAtk": 60,
         "cooldownSec": 15
       },
       "bonusEffect": {
-        "en": "10% Fire RES Reduction (5s)"
+        "en": "5% Elemental Weakness DMG Taken Boost (5s)"
       }
     }
   ],

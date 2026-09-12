@@ -12,9 +12,11 @@
         "en": "If the Taglock Monsterling is equipped, it appears when its Appearance Condition is met. It jumps toward the enemy and strikes its hammer down, dealing Physical DMG and rendering the enemy Airborne."
       },
       "damageType": "physical",
-      "appearanceCondition": {
-        "en": "Using a Switch Skill"
-      },
+      "appearanceConditions": [
+        {
+          "en": "Using a Switch Skill"
+        }
+      ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 130,
         "cooldownSec": 15

@@ -12,9 +12,11 @@
         "en": "If the Cappy Mama Monsterling is equipped, it appears when its Appearance Condition is met, jumping toward the enemy with a powerful butt slam that deals Physical DMG."
       },
       "damageType": "physical",
-      "appearanceCondition": {
-        "en": "Using a Special Skill"
-      },
+      "appearanceConditions": [
+        {
+          "en": "Using a Special Skill"
+        }
+      ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 60,
         "cooldownSec": 15

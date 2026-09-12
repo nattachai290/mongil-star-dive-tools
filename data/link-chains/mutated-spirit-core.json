@@ -8,9 +8,11 @@
   "levels": [
     {
       "level": 2,
-      "appearanceCondition": {
-        "en": "Attacking a Staggered target"
-      },
+      "appearanceConditions": [
+        {
+          "en": "Attacking a Staggered target"
+        }
+      ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 250,
         "cooldownSec": 5

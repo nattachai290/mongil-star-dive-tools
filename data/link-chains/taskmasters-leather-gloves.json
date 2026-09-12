@@ -1,20 +1,20 @@
 {
-  "id": "moles-shovel",
+  "id": "taskmasters-leather-gloves",
   "name": {
-    "en": "Mole's Shovel"
+    "en": "Taskmaster's Leather Gloves"
   },
-  "monsterlingId": "moley-mole",
+  "monsterlingId": "gorrik",
   "rarity": 3,
   "levels": [
     {
       "level": 1,
       "desc": {
-        "en": "If the Moley Mole Monsterling is equipped, it appears when its Appearance Condition is met. It charges toward the enemy while swinging its shovel, dealing Physical DMG."
+        "en": "If the Gorrik Monsterling is equipped, it appears when its Appearance Condition is met. It leaps toward the enemy and attacks, then strikes down with its sword twice, dealing Physical DMG."
       },
       "damageType": "physical",
       "appearanceConditions": [
         {
-          "en": "Rendering the enemy Airborne"
+          "en": "Landing an attack"
         }
       ],
       "appearanceInfo": {

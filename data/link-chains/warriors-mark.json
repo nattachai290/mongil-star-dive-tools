@@ -8,9 +8,11 @@
   "levels": [
     {
       "level": 1,
-      "appearanceCondition": {
-        "en": "Landing an Ice Attack"
-      },
+      "appearanceConditions": [
+        {
+          "en": "Landing an Ice Attack"
+        }
+      ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 20,
         "cooldownSec": 15

@@ -202,7 +202,8 @@ export const linkChain = z.object({
         level: z.number().int().positive(),
         desc: text.optional(),
         damageType: vocabEnum("damageType").optional(),
-        appearanceCondition: text,
+        /** บางชิ้นมีหลายเงื่อนไข เช่น Poisoned Claw ออกได้ทั้ง Air Counter และ Evasion Counter */
+        appearanceConditions: z.array(text).min(1),
         appearanceInfo: z.object({
           dmgPercentOfAtk: z.number().positive().optional(),
           cooldownSec: z.number().positive().optional(),

@@ -11,9 +11,11 @@
       "desc": {
         "en": "…cheer on nearby allies, and upon finishing the dance, it grants a Bonus Effect to allies."
       },
-      "appearanceCondition": {
-        "en": "When HP is 50% or lower"
-      },
+      "appearanceConditions": [
+        {
+          "en": "When HP is 50% or lower"
+        }
+      ],
       "appearanceInfo": {
         "cooldownSec": 300
       },

@@ -8,9 +8,11 @@
   "levels": [
     {
       "level": 1,
-      "appearanceCondition": {
-        "en": "Using a Special Skill"
-      },
+      "appearanceConditions": [
+        {
+          "en": "Using a Special Skill"
+        }
+      ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 40,
         "cooldownSec": 15

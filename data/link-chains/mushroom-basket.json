@@ -12,9 +12,11 @@
         "en": "If the Uncle Cappy Monsterling is equipped, it appears when its Appearance Condition is met. It kicks a Bombshroom toward the enemy, dealing Fire DMG."
       },
       "damageType": "fire",
-      "appearanceCondition": {
-        "en": "Using Dodge"
-      },
+      "appearanceConditions": [
+        {
+          "en": "Using Dodge"
+        }
+      ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 20,
         "cooldownSec": 15

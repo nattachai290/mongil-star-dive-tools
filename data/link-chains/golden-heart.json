@@ -8,9 +8,11 @@
   "levels": [
     {
       "level": 1,
-      "appearanceCondition": {
-        "en": "Using a Switch Skill"
-      },
+      "appearanceConditions": [
+        {
+          "en": "Using a Switch Skill"
+        }
+      ],
       "appearanceInfo": {
         "cooldownSec": 15
       },

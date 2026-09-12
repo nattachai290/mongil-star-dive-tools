@@ -1,24 +1,22 @@
 {
-  "id": "weathered-hoof",
+  "id": "giant-wolfs-helm",
   "name": {
-    "en": "Weathered Hoof"
+    "en": "Giant Wolf's Helm"
   },
-  "monsterlingId": "tealtaur",
-  "rarity": 4,
+  "monsterlingId": "frostbite",
+  "rarity": 3,
   "levels": [
     {
       "level": 1,
+      "damageType": "dark",
       "appearanceConditions": [
         {
-          "en": "Using a Switch Skill"
+          "en": "Landing a critical hit"
         }
       ],
       "appearanceInfo": {
-        "dmgPercentOfAtk": 40,
+        "dmgPercentOfAtk": 20,
         "cooldownSec": 15
-      },
-      "bonusEffect": {
-        "en": "10% Fire RES Reduction (5s)"
       }
     }
   ],

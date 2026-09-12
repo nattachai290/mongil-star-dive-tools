@@ -1,21 +1,24 @@
 {
-  "id": "gooey-crown",
+  "id": "poisoned-claw",
   "name": {
-    "en": "Gooey Crown"
+    "en": "Poisoned Claw"
   },
-  "monsterlingId": "king-slime",
-  "rarity": 4,
+  "monsterlingId": "spadupa",
+  "rarity": 3,
   "levels": [
     {
       "level": 1,
       "appearanceConditions": [
         {
-          "en": "Using a Special Skill"
+          "en": "Using Air Counter"
+        },
+        {
+          "en": "Using Evasion Counter"
         }
       ],
       "appearanceInfo": {
-        "dmgPercentOfAtk": 40,
-        "cooldownSec": 15
+        "dmgPercentOfAtk": 100,
+        "cooldownSec": 5
       },
       "bonusEffect": {
         "en": "30% Movement Speed Reduction (10s)"

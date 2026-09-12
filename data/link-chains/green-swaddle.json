@@ -12,9 +12,11 @@
         "en": "If the Green Cappy Papa Monsterling is equipped, it appears when its Appearance Condition is met. It spins once, causing a mushroom spore explosion and dealing Earth DMG."
       },
       "damageType": "earth",
-      "appearanceCondition": {
-        "en": "Upon taking DMG"
-      },
+      "appearanceConditions": [
+        {
+          "en": "Upon taking DMG"
+        }
+      ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 20,
         "cooldownSec": 15

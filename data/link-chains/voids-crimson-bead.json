@@ -1,15 +1,15 @@
 {
-  "id": "voids-balance",
+  "id": "voids-crimson-bead",
   "name": {
-    "en": "Void's Balance"
+    "en": "Void's Crimson Bead"
   },
-  "monsterlingId": "vectus",
+  "monsterlingId": "scar",
   "rarity": 3,
   "levels": [
     {
-      "level": 1,
+      "level": 4,
       "desc": {
-        "en": "If the Vectus Monsterling is equipped, it appears when its Appearance Condition is met. It summons a crown of thorns imbued with Void Energy and detonates it, dealing Dark DMG and rendering the enemy Airborne."
+        "en": "If the Scar Monsterling is equipped, it appears when its Appearance Condition is met. It rapidly charges toward the enemy in succession, then unleashes a Wolf's Soul, dealing Dark DMG."
       },
       "damageType": "dark",
       "appearanceConditions": [
@@ -18,7 +18,7 @@
         }
       ],
       "appearanceInfo": {
-        "dmgPercentOfAtk": 20,
+        "dmgPercentOfAtk": 100,
         "cooldownSec": 15
       }
     }

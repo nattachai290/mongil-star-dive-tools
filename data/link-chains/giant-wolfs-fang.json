@@ -12,9 +12,11 @@
         "en": "If the Behemo-wolf Monsterling is equipped, it appears when its Appearance Condition is met. It leaps toward the enemy and roars, dealing Physical DMG to nearby targets."
       },
       "damageType": "physical",
-      "appearanceCondition": {
-        "en": "Landing an attack"
-      },
+      "appearanceConditions": [
+        {
+          "en": "Landing an attack"
+        }
+      ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 20,
         "cooldownSec": 15

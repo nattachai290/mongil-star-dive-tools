@@ -12,9 +12,11 @@
         "en": "If the Big Bro Goblin Monsterling is equipped, it appears when its Appearance Condition is met. It strikes its hammer down hard onto the enemy twice, dealing Physical DMG and rendering the enemy Airborne."
       },
       "damageType": "physical",
-      "appearanceCondition": {
-        "en": "Using a Switch Skill"
-      },
+      "appearanceConditions": [
+        {
+          "en": "Using a Switch Skill"
+        }
+      ],
       "appearanceInfo": {
         "dmgPercentOfAtk": 60,
         "cooldownSec": 15
