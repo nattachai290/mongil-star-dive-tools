@@ -1390,12 +1390,9 @@
       "no": 153,
       "slug": "sun-lizarcher",
       "name": {
-        "th": "ลิซาร์ด มือธนูทอง",
+        "th": "ลิซาร์ด มือธนูทองพินาศ",
         "en": "Sun Lizarcher"
-      },
-      "truncated": [
-        "th"
-      ]
+      }
     },
     {
       "book": "field",
