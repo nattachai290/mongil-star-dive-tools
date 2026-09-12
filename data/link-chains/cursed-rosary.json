@@ -1,6 +1,7 @@
 {
   "id": "cursed-rosary",
   "name": {
+    "th": "สายประคำต้องสาป",
     "en": "Cursed Rosary"
   },
   "kind": "monsterling",
@@ -19,6 +20,7 @@
       },
       "bonusEffects": [
         {
+          "th": "ลดต้านทานธาตุสายฟ้า 5% (5 วินาที)",
           "en": "5% Lightning RES Reduction (5s)"
         },
         {

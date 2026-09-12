@@ -24,6 +24,7 @@
           "en": "5% Fire RES Reduction (5s)"
         },
         {
+          "th": "ลดต้านทานธาตุน้ำแข็ง 5% (5 วินาที)",
           "en": "5% Ice RES Reduction (5s)"
         }
       ]
@@ -32,10 +33,6 @@
   "source": {
     "verifiedAt": "2026-09-12",
     "gameVersion": "unknown",
-    "by": "in-game",
-    "fieldsUnverified": [
-      "levels[0].bonusEffects[1]"
-    ],
-    "note": "จอไทย 2026-09-12 แสดงเอฟเฟกต์เพิ่มเติมบรรทัดเดียวคือ \"ลดต้านทานธาตุไฟ 5% (5 วินาที)\" แต่ที่บันทึกไว้จากภาพอังกฤษมีสองรายการ (เพิ่ม 5% Ice RES Reduction (5s)) — ยังไม่รู้ว่าอังกฤษเกินมา หรือไทยแสดงไม่ครบ"
+    "by": "in-game"
   }
 }

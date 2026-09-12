@@ -1,6 +1,7 @@
 {
   "id": "ornate-shield",
   "name": {
+    "th": "โล่ลวดลาย",
     "en": "Ornate Shield"
   },
   "kind": "monsterling",
