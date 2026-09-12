@@ -1,0 +1,36 @@
+{
+  "id": "black-antler",
+  "name": {
+    "en": "Black Antler"
+  },
+  "monsterlingId": "nokjung",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 5,
+      "desc": {
+        "en": "If the Nokjung Monsterling is equipped, it appears when its Appearance Condition is met. It attacks the enemy by flinging feathers forward twice, then charges toward the enemy, dealing Wind DMG, inflicting a Bonus Effect, and rendering the enemy Airborne."
+      },
+      "damageType": "wind",
+      "appearanceConditions": [
+        {
+          "en": "Landing a Wind Attack"
+        }
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 100,
+        "cooldownSec": 8
+      },
+      "bonusEffects": [
+        {
+          "en": "10% Wind RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

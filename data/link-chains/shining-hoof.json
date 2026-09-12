@@ -1,0 +1,32 @@
+{
+  "id": "shining-hoof",
+  "name": {
+    "en": "Shining Hoof"
+  },
+  "monsterlingId": "manwol",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        {
+          "en": "Landing a Wind Attack"
+        }
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 20,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "en": "5% Wind RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "hot-furball",
+  "name": {
+    "en": "Hot Furball"
+  },
+  "monsterlingId": "cinder",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 3,
+      "damageType": "fire",
+      "appearanceConditions": [
+        {
+          "en": "Landing a Fire Attack"
+        }
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 80,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "en": "10% Fire RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

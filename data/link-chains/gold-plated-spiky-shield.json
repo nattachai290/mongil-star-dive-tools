@@ -1,0 +1,38 @@
+{
+  "id": "gold-plated-spiky-shield",
+  "name": {
+    "en": "Gold-Plated Spiky Shield"
+  },
+  "monsterlingId": "goald",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        {
+          "en": "Landing a Fire Attack"
+        },
+        {
+          "en": "Landing an Ice Attack"
+        }
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 20,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "en": "5% Fire RES Reduction (5s)"
+        },
+        {
+          "en": "5% Ice RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}
