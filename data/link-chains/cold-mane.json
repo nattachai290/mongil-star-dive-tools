@@ -1,6 +1,7 @@
 {
   "id": "cold-mane",
   "name": {
+    "th": "แผงคอเยือกเย็น",
     "en": "Cold Mane"
   },
   "kind": "monsterling",
@@ -22,6 +23,7 @@
           "en": "Freeze (2s)"
         },
         {
+          "th": "ลดต้านทานธาตุน้ำแข็ง 3% (5 วินาที)",
           "en": "3% Ice RES Reduction (5s)"
         }
       ]
