@@ -624,7 +624,7 @@
   "enemyState": {
     "downed": {
       "th": "ล้มอยู่ตรงพื้น",
-      "en": "Downed"
+      "en": "Knocked-Down"
     },
     "airborne": {
       "th": "ลอยขึ้นไปบนอากาศ",
