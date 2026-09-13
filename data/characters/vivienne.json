@@ -7,11 +7,76 @@
   "element": "fire",
   "role": "support",
   "range": "melee",
+  "stats": {
+    "atLevel": 60,
+    "hp": 10243,
+    "atk": 1943,
+    "def": 638,
+    "critRate": 5,
+    "critDmg": 50
+  },
+  "otherStats": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": ["support"],
+      "value": 12.18,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": ["weaknessHit"],
+      "value": 125,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "fire",
+      "value": 3.04,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "energyGain",
+      "value": 100,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "stamina",
+      "value": 100,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "supportPower",
+      "value": 1078,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
   "awaken": [],
   "source": {
     "verifiedAt": "2026-09-13",
     "gameVersion": "unknown",
     "by": "in-game",
-    "note": "ตัวละครตัวแรก อ่านได้จากจอข้อมูลตัวละครเท่านั้น ยังไม่มีสกิลและค่าพลัง — ค่าพลังบนจอ (ATK 1943 / DEF 638 / HP 10243 ที่เลเวล 60 สูงสุด) ยัง**ไม่เก็บ** เพราะน่าจะรวมของที่ติดอยู่แล้ว: อัตราคริติคอล 5% กับดาเมจคริติคอล 50% เป็นค่าฐานเปล่า ๆ ของเกม แสดงว่าไม่ได้ใส่อุปกรณ์หรือ Artifact แต่กลับมี \"เพิ่มดาเมจสนับสนุน 12.18%\" และ \"เพิ่มดาเมจธาตุไฟ 3.04%\" ซึ่งเป็นค่าแบบที่มาจากลักษณะเฉพาะของมอนสเตอร์ลิง (เช่น 1.5% 3% 4.5%) รอยืนยันว่าถอดมอนสเตอร์ลิงออกหมดแล้วหรือยัง"
+    "fieldsUnverified": [
+      "stats.atBreakthrough",
+      "otherStats[5]"
+    ],
+    "note": "ค่าพลังเปล่า อ่านจากจอ \"ข้อมูลรายละเอียดค่าพลัง\" ตอนถอดอุปกรณ์ออกหมดแล้ว ที่เลเวล 60 ซึ่งจอบอกว่าสูงสุด — จอไม่ได้บอกขั้นทะลุจำกัด จึงไม่ใส่ ส่วน \"ซัพพอร์ตเตอร์ 1,078\" ยังไม่รู้ว่าคืออะไร เก็บตามที่จอเขียน (ชื่อเดียวกับบทบาทของตัวละครพอดี อาจเป็นค่าเฉพาะบทบาท) ยังไม่ได้อ่านคำอังกฤษของ stat นี้ ยังไม่มีสกิลทั้งสี่ท่า"
   }
 }

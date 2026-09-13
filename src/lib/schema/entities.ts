@@ -59,7 +59,8 @@ export const character = z.object({
   stats: z
     .object({
       atLevel: z.number().int().positive(),
-      atBreakthrough: z.number().int().min(0).max(6),
+      /** ไม่ใส่ = จอไม่ได้บอกขั้นทะลุจำกัด ไม่ใช่ขั้น 0 */
+      atBreakthrough: z.number().int().min(0).max(6).optional(),
       hp: z.number().positive(),
       atk: z.number().positive(),
       def: z.number().positive(),
@@ -69,6 +70,16 @@ export const character = z.object({
       critDmg: z.number().min(0),
     })
     .optional(),
+
+  /**
+   * บรรทัดที่เหลือของจอ "ข้อมูลรายละเอียดค่าพลัง" ที่ไม่ใช่ห้าค่าหลักข้างบน
+   *
+   * เก็บเป็น effect ไม่ใช่ช่องใหม่ในก้อน stats เพราะหลายบรรทัดต้องใช้ scope
+   * หรือ damageType ถึงจะพูดได้ถูก เช่น "เพิ่มดาเมจสนับสนุน" คือ
+   * stat dmgDealt + scopes ["support"] ไม่ใช่ stat ใหม่ชื่อ supportSkillDmg
+   * (ดู DATA-FOR-AI "stat กับ scopes แยกกัน")
+   */
+  otherStats: z.array(effect).default([]),
 
   /** ข้อมูลมาทีละจอ ตัวละครที่ยังอ่านสกิลไม่ครบก็ต้องเก็บชื่อกับธาตุไว้ก่อนได้ */
   skills: z
