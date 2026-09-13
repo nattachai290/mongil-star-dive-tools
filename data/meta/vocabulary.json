@@ -171,7 +171,8 @@
       "th": "สเลเยอร์"
     },
     "supporter": {
-      "th": "ซัพพอร์ตเตอร์"
+      "th": "ซัพพอร์ตเตอร์",
+      "en": "Support"
     }
   },
   "rarity": {
@@ -239,14 +240,15 @@
     },
     "energyGain": {
       "th": "อัตราชาร์จสกิลอัลติเมต",
-      "en": "Energy Gain"
+      "en": "Ultimate Gauge Charge"
     },
     "stamina": {
       "th": "สเตมินาสูงสุด",
-      "en": "Stamina"
+      "en": "Max Stamina"
     },
     "supportPower": {
-      "th": "ค่าพลังสนับสนุน"
+      "th": "ค่าพลังสนับสนุน",
+      "en": "Support"
     },
     "supportDmg": {
       "th": "ดาเมจสนับสนุน",
@@ -617,7 +619,7 @@
     },
     "weaknessHit": {
       "th": "การโจมตีธาตุจุดอ่อน",
-      "en": "Elemental Weakness Attack"
+      "en": "Elemental Weakness"
     },
     "crit": {
       "th": "การโจมตีคริติคอล",
