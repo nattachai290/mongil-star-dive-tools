@@ -1,0 +1,34 @@
+{
+  "id": "rococorn",
+  "name": {
+    "th": "โพดน้อยที่ถูกย่าง",
+    "en": "Rococorn"
+  },
+  "dex": {
+    "book": "field",
+    "no": 135
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critDmg",
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always",
+      "internalCooldownSec": 20,
+      "condition": {
+        "vsBoss": false
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "rococorn-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

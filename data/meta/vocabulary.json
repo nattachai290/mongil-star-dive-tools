@@ -357,6 +357,10 @@
     "onUltimateCharged": {
       "th": "เมื่อเกจสกิลอัลติเมตชาร์จสูงสุด",
       "en": "when the Ultimate Gauge is at max charge"
+    },
+    "onAirCounter": {
+      "th": "เมื่อโจมตีฉับพลัน",
+      "en": "upon using Air Counter"
     }
   },
   "effectKind": {
