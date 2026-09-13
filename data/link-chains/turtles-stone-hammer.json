@@ -10,10 +10,6 @@
   "levels": [
     {
       "level": 1,
-      "desc": {
-        "th": "เมื่อติดตั้งมอนสเตอร์ลิงบูกิ เกราะเหล็ก จะมีโอกาสปรากฏตัวตามเงื่อนไข โดยจะพุ่งเข้าใส่ศัตรู จากนั้นโจมตีศัตรูด้วยกระบองเหล็กหลายครั้ง สร้างดาเมจกายภาพ และทำให้ศัตรูลอยขึ้นไปบนอากาศ",
-        "en": "If the Irontoise Monsterling is equipped, it appears when its Appearance Condition is met. It quickly charges at the enemy and attacks several times with a mace, dealing Physical DMG and rendering the enemy Airborne."
-      },
       "damageType": "physical",
       "appearanceConditions": [
         "landAttack"

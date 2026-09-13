@@ -4,7 +4,7 @@
  * มีไว้เพราะ data/ ยังว่างอยู่ — ถ้าไม่มีไฟล์นี้ validate:data จะผ่านตลอด
  * แม้ schema จะพังอยู่ ทำให้ไม่รู้ตัวจนวันที่เริ่มกรอกข้อมูลจริง
  */
-import { character, food, monsterling } from "../src/lib/schema/entities";
+import { character, food, linkChain, monsterling } from "../src/lib/schema/entities";
 import { computeDamage, missingConstants, sumBuffs } from "../src/lib/formula";
 import { LINK_CHAIN_LIST_IS_COMPLETE, linkableBadge, linkableIds, linkableOf } from "../src/lib/linkable";
 import type { Effect } from "../src/lib/schema/common";
@@ -156,6 +156,21 @@ check("มีเอฟเฟกต์สายพันธุ์แต่ไม�
   "ตัวเลขขึ้นกับแรง ถ้าไม่รู้แรงก็ไม่รู้ว่าเป็นค่าเพดานหรือค่าของตัวอ่อน ๆ");
 check("มอนที่ยังไม่มีเอฟเฟกต์สายพันธุ์ ไม่ต้องบอกแรง",
   monsterling.safeParse({ id: "cappy", name: t("ช้อปปี้"), source: src }).success);
+
+// ---------- ลิงก์เชนไม่เก็บข้อความบรรยายท่า ----------
+// ถ้าใครใส่ desc กลับมา schema ต้องทิ้งทันที ไม่ปล่อยให้ไหลไปโผล่บนหน้าเว็บ
+const chainWithDesc = linkChain.safeParse({
+  id: "commanding-flute", name: t("ขลุ่ยแห่งการบัญชา"), kind: "monsterling",
+  monsterlingId: "big-bro-goblin", rarity: 4,
+  levels: [{
+    level: 2, desc: t("ข้อความบรรยายท่า"), damageType: "physical",
+    appearanceConditions: ["switchSkill"],
+    appearanceInfo: { dmgPercentOfAtk: 60, cooldownSec: 15 },
+  }],
+  source: src,
+});
+check("ลิงก์เชนที่มี desc ยังผ่าน schema ได้ แต่ desc ต้องหายไป",
+  chainWithDesc.success && !("desc" in chainWithDesc.data.levels[0]));
 
 // ---------- ป้าย "ใส่ลิงก์เชนได้" ----------
 const chainIds = linkableIds([

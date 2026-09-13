@@ -10,10 +10,6 @@
   "levels": [
     {
       "level": 1,
-      "desc": {
-        "th": "เมื่อติดตั้งมอนสเตอร์ลิงหมาป่ายักษ์ จะมีโอกาสปรากฏตัวตามเงื่อนไข โดยจะพุ่งใส่ศัตรูแล้วคำราม สร้างดาเมจกายภาพแก่เป้าหมายรอบข้าง",
-        "en": "If the Behemo-wolf Monsterling is equipped, it appears when its Appearance Condition is met. It leaps toward the enemy and roars, dealing Physical DMG to nearby targets."
-      },
       "damageType": "physical",
       "appearanceConditions": [
         "landAttack"

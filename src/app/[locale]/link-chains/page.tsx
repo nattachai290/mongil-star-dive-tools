@@ -84,12 +84,6 @@ export default async function LinkChainsPage({
                       {t("linkChains.level")} {level.level}
                     </p>
 
-                    {level.desc && (
-                      <p className="mt-1.5 text-sm leading-relaxed text-ink-2">
-                        <Text value={level.desc} locale={locale} />
-                      </p>
-                    )}
-
                     <dl className="mt-2 grid gap-x-6 gap-y-1.5 text-sm sm:grid-cols-2">
                       <div>
                         <dt className="text-xs text-muted">{t("linkChains.condition")}</dt>

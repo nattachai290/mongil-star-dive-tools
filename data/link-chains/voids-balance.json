@@ -10,10 +10,6 @@
   "levels": [
     {
       "level": 1,
-      "desc": {
-        "th": "เมื่อติดตั้งมอนสเตอร์ลิงเว็กตัส จะมีโอกาสปรากฏตัวตามเงื่อนไข โดยจะเรียกมงกุฎหนามที่เต็มไปด้วยพลังแห่งความว่างเปล่าออกมาทำให้ระเบิด สร้างดาเมจธาตุมืด และทำให้ศัตรูลอยขึ้นไปบนอากาศ",
-        "en": "If the Vectus Monsterling is equipped, it appears when its Appearance Condition is met. It summons a crown of thorns imbued with Void Energy and detonates it, dealing Dark DMG and rendering the enemy Airborne."
-      },
       "damageType": "dark",
       "appearanceConditions": [
         "landCrit"

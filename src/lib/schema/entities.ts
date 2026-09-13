@@ -241,7 +241,10 @@ export const linkChain = z.object({
       z.object({
         /** เพดานคือ 5 — ยืนยันจากในเกม (Lv5 ขึ้น "Max Enhancement Tier Reached!") */
         level: z.number().int().min(1).max(5),
-        desc: text.optional(),
+        /**
+         * ไม่มีช่อง desc — ข้อความบรรยายท่าอยู่นอกขอบเขต (PLAN §13.7)
+         * ตัดออกจาก schema ไปเลย ไม่ใช่แค่ลบข้อมูล ไม่งั้นเดี๋ยวมีคนใส่กลับมาอีก
+         */
         damageType: vocabEnum("damageType").optional(),
         /**
          * เงื่อนไขเป็นคำในพจนานุกรม ไม่ใช่ข้อความอิสระ — ชิ้นที่ออกด้วยเงื่อนไขเดียวกัน

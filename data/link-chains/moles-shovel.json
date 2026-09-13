@@ -10,9 +10,6 @@
   "levels": [
     {
       "level": 1,
-      "desc": {
-        "en": "If the Moley Mole Monsterling is equipped, it appears when its Appearance Condition is met. It charges toward the enemy while swinging its shovel, dealing Physical DMG."
-      },
       "damageType": "physical",
       "appearanceConditions": [
         "renderAirborne"

@@ -10,10 +10,6 @@
   "levels": [
     {
       "level": 5,
-      "desc": {
-        "th": "เมื่อติดตั้งมอนสเตอร์ลิงกายหมัดน้ำแข็ง จะมีโอกาสปรากฏตัวตามเงื่อนไข โดยจะหมุนตัวและขว้างชิ้นส่วนน้ำแข็งหลายครั้ง สร้างดาเมจธาตุน้ำแข็ง และมอบเอฟเฟกต์เพิ่มเติม",
-        "en": "If the Ice Fist Dude Monsterling is equipped, it appears when its Appearance Condition is met. It spins around and sends ice fragments flying multiple times, dealing Ice DMG and inflicting Bonus Effects."
-      },
       "damageType": "ice",
       "appearanceConditions": [
         "specialSkill"
