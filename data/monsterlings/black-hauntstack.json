@@ -1,0 +1,36 @@
+{
+  "id": "black-hauntstack",
+  "name": {
+    "th": "หุ่นฟางดำ",
+    "en": "Black Hauntstack"
+  },
+  "dex": {
+    "book": "field",
+    "no": 121
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "ice",
+      "value": 8,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always",
+      "condition": {
+        "vsBoss": true,
+        "enemyState": "staggered"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "black-hauntstack-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "เงื่อนไขเดียวกับมิโนต้าทุ่งหญ้า (field 91) คือบอสที่ติดสถานะมึนงง แต่คนละธาตุคนละตัวเลข ตัวนั้นธาตุลม 11% ตัวนี้ธาตุน้ำแข็ง 8%"
+  }
+}

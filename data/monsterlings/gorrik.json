@@ -1,0 +1,34 @@
+{
+  "id": "gorrik",
+  "name": {
+    "th": "โกลิค",
+    "en": "Gorrik"
+  },
+  "dex": {
+    "book": "field",
+    "no": 69
+  },
+  "speciesEffects": [
+    {
+      "kind": "heal",
+      "stat": "hp",
+      "value": 2.4,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onBasicAttackHit",
+      "condition": {
+        "hitCount": 10
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "gorrik-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "ฟื้นฟูตัวที่สองต่อจากช้อปปี้มัม (field 3) ได้ 2.4% ของพลังชีวิตสูงสุดเท่ากัน แต่คนละเงื่อนไข ตัวนั้นเมื่อสกิลพิเศษโดน ตัวนี้เมื่อโจมตีพื้นฐานโดนครบ 10 ครั้ง"
+  }
+}

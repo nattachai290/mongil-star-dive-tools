@@ -1,0 +1,32 @@
+{
+  "id": "bunnie",
+  "name": {
+    "th": "กระตุ่ย",
+    "en": "Bunnie"
+  },
+  "dex": {
+    "book": "field",
+    "no": 108
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "physical",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onEvasionCounter",
+      "durationSec": 5
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "bunnie-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

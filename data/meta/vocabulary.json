@@ -323,8 +323,8 @@
       "en": "On skill"
     },
     "onUltimate": {
-      "th": "เมื่อใช้อัลติเมต",
-      "en": "On ultimate"
+      "th": "เมื่อใช้สกิลอัลติเมต",
+      "en": "upon using an Ultimate Skill"
     },
     "onKill": {
       "th": "เมื่อกำจัดมอนสเตอร์",
@@ -610,7 +610,7 @@
     },
     "crit": {
       "th": "การโจมตีคริติคอล",
-      "en": "Critical Hit"
+      "en": "Critical"
     },
     "support": {
       "th": "สกิลสนับสนุน",

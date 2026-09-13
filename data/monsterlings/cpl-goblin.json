@@ -1,0 +1,35 @@
+{
+  "id": "cpl-goblin",
+  "name": {
+    "th": "ก็อบลิน สิบโท",
+    "en": "Cpl. Goblin"
+  },
+  "dex": {
+    "book": "field",
+    "no": 10
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "suppressionDmg",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onBasicAttackHit",
+      "durationSec": 5,
+      "internalCooldownSec": 20,
+      "condition": {
+        "hitCount": 10
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "cpl-goblin-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

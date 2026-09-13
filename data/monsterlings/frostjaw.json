@@ -1,0 +1,33 @@
+{
+  "id": "frostjaw",
+  "name": {
+    "th": "เกล็ดน้ำค้างขาว",
+    "en": "Frostjaw"
+  },
+  "dex": {
+    "book": "field",
+    "no": 13
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": ["crit"],
+      "damageType": "ice",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always"
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "frostjaw-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "โครงเดียวกับเกล็ดน้ำค้างแดง (field 14) แต่ได้ 6.25% ส่วนตัวนั้นได้ 6.57% อ่านจากจอของแต่ละตัว"
+  }
+}

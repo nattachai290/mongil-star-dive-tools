@@ -1,0 +1,33 @@
+{
+  "id": "bleacher-bunnie",
+  "name": {
+    "th": "กระตุ่ย ฟอกขาว",
+    "en": "Bleacher Bunnie"
+  },
+  "dex": {
+    "book": "field",
+    "no": 123
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "wind",
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onEvasionCounter",
+      "durationSec": 5
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "bleacher-bunnie-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "โครงเดียวกับกระตุ่ย พเนจร (field 122) แต่ได้ 6.57% ส่วนตัวนั้นได้ 6.25% อ่านจากจอของแต่ละตัว"
+  }
+}
