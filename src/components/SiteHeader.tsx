@@ -10,8 +10,8 @@ export function SiteHeader({ locale }: { locale: Locale }) {
   const t = createTranslate(locale);
 
   return (
-    <header className="border-b border-line">
-      <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-6 gap-y-3 px-5 py-4">
+    <header className="sticky top-0 z-20 border-b border-line bg-bg">
+      <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-6 gap-y-2 px-5 py-3 sm:py-4">
         <Link
           href={`/${locale}`}
           className="font-display text-sm font-semibold tracking-wide focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
@@ -19,7 +19,14 @@ export function SiteHeader({ locale }: { locale: Locale }) {
           MONGIL<span className="text-gold">:</span> STAR DIVE
         </Link>
 
-        <nav aria-label={t("nav.label")} className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+        {/*
+          แถบนี้ค้างอยู่บนจอตลอด บนมือถือจึงต้องเตี้ยที่สุดเท่าที่ทำได้
+          เมนูไปอยู่บรรทัดล่างและเลื่อนแนวนอนแทนที่จะตัดขึ้นบรรทัดใหม่หลายแถว
+        */}
+        <nav
+          aria-label={t("nav.label")}
+          className="order-last -mx-5 flex w-[calc(100%+2.5rem)] gap-x-4 overflow-x-auto px-5 text-sm whitespace-nowrap sm:order-none sm:mx-0 sm:w-auto sm:overflow-visible sm:px-0"
+        >
           {SECTIONS.map((section) =>
             section.ready ? (
               <Link

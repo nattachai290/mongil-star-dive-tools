@@ -37,5 +37,8 @@
   "data.unverifiedTitle": "This field has not been confirmed in game",
   "book.field": "Field Codex",
   "book.legendary": "Legendary Codex",
-  "book.event": "Event Codex"
+  "book.event": "Event Codex",
+  "monsterlings.search": "Search by name, number or effect text",
+  "monsterlings.matches": "matches",
+  "monsterlings.noMatch": "No monsterling matches that search"
 }

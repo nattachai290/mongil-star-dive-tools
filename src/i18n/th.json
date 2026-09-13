@@ -37,5 +37,8 @@
   "data.unverifiedTitle": "ฟิลด์นี้ยังไม่ได้ยืนยันจากในเกม",
   "book.field": "สมุดภาคสนาม",
   "book.legendary": "สมุดตำนาน",
-  "book.event": "สมุดอีเวนต์"
+  "book.event": "สมุดอีเวนต์",
+  "monsterlings.search": "ค้นหามอน · ชื่อ เลข หรือข้อความเอฟเฟกต์",
+  "monsterlings.matches": "ตัวที่ตรง",
+  "monsterlings.noMatch": "ไม่พบมอนที่ตรงกับคำค้น"
 }
