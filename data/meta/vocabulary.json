@@ -257,7 +257,8 @@
       "en": "Suppression DMG"
     },
     "brawlDmg": {
-      "th": "ดาเมจปะทะ"
+      "th": "ดาเมจปะทะ",
+      "en": "Brawl DMG"
     }
   },
   "unit": {
@@ -612,8 +613,8 @@
       "en": "Critical Hit"
     },
     "support": {
-      "th": "การสนับสนุน",
-      "en": "Support"
+      "th": "สกิลสนับสนุน",
+      "en": "Support Skill"
     },
     "airCounter": {
       "th": "โจมตีฉับพลัน",

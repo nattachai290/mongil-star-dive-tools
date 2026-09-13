@@ -1,0 +1,32 @@
+{
+  "id": "salt-alee",
+  "name": {
+    "th": "อับแข็งโป๊ก",
+    "en": "Salt-alee"
+  },
+  "dex": {
+    "book": "field",
+    "no": 128
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critRate",
+      "scopes": ["airCounter"],
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always"
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "salt-alee-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "อ่านจากจออังกฤษ \"Air Counter Crit Rate +6.57%\" ยังไม่ได้อ่านจอไทยของตัวนี้ จึงยังไม่รู้ว่าชื่อไทยขึ้นต้นด้วย อับ หรือ อ๊บ เหมือน field 127 และ 159 ที่แก้ไปแล้ว"
+  }
+}
