@@ -1,0 +1,37 @@
+{
+  "id": "moonlight-touched-claw",
+  "name": {
+    "th": "กรงเล็บย้อมเงาจันทรา",
+    "en": "Moonlight-Touched Claw"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "moon-shadow-lupe",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        "specialSkill"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 40,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "สถานะเยือกแข็ง (2 วินาที)",
+          "en": "Freeze (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "fieldsUnverified": [
+      "levels[0].bonusEffects[0]"
+    ],
+    "note": "ไคลเอนต์สองภาษาให้ตัวเลขไม่ตรงกันที่ขั้น 1: อังกฤษเขียน Freeze (5s) ไทยเขียน \"สถานะเยือกแข็ง (2 วินาที)\" — อ่านจากจอทั้งคู่เมื่อ 2026-09-12 จึงเก็บไว้ตามที่แต่ละภาษาแสดง ยังไม่รู้ว่าค่าจริงในเกมคือเท่าไร (อนึ่ง Cold Mane ที่อังกฤษเขียน Freeze (2s) ไทยก็เขียน 2 วินาที ตรงกัน แสดงว่าเกมแปลคำนี้ตรงตัวเลขตามปกติ ปัญหาจึงอยู่ที่ชิ้นนี้ชิ้นเดียว)"
+  }
+}

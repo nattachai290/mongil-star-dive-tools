@@ -1,0 +1,32 @@
+{
+  "id": "taskmasters-leather-gloves",
+  "name": {
+    "th": "ถุงมือหนังของหัวหน้าปฏิบัติการ",
+    "en": "Taskmaster's Leather Gloves"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "gorrik",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "desc": {
+        "th": "เมื่อติดตั้งมอนสเตอร์ลิงโกลิค จะมีโอกาสปรากฏตัวตามเงื่อนไข โดยจะกระโดดใส่ศัตรูและโจมตี จากนั้นฟันด้วยดาบสองครั้ง สร้างดาเมจกายภาพ",
+        "en": "If the Gorrik Monsterling is equipped, it appears when its Appearance Condition is met. It leaps toward the enemy and attacks, then strikes down with its sword twice, dealing Physical DMG."
+      },
+      "damageType": "physical",
+      "appearanceConditions": [
+        "landAttack"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 20,
+        "cooldownSec": 15
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

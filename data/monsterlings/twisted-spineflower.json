@@ -1,0 +1,35 @@
+{
+  "id": "twisted-spineflower",
+  "name": {
+    "th": "ดอกไม้ฟื้นฟูกระดูกที่บิดเบี้ยว",
+    "en": "Twisted Spineflower"
+  },
+  "dex": {
+    "book": "field",
+    "no": 136
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "lightning",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onHit",
+      "condition": {
+        "hitCount": 10,
+        "enemyType": "lightning"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "twisted-spineflower-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

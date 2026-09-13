@@ -1,0 +1,35 @@
+{
+  "id": "shellymander",
+  "name": {
+    "th": "แอกโซลอเติลหอยสังข์",
+    "en": "Shellymander"
+  },
+  "dex": {
+    "book": "field",
+    "no": 57
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "physical",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onTakeHit",
+      "durationSec": 5,
+      "condition": {
+        "hitCount": 10
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "shellymander-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

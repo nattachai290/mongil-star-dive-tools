@@ -1,0 +1,32 @@
+{
+  "id": "ravenous-spoon",
+  "name": {
+    "th": "ช้อนแห่งการกินจุ",
+    "en": "Ravenous Spoon"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "spoonmugger",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        "staminaEmpty"
+      ],
+      "appearanceInfo": {
+        "cooldownSec": 300
+      },
+      "bonusEffects": [
+        {
+          "th": "ฟื้นฟูสเตมินา 40",
+          "en": "Restores 40 Stamina"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

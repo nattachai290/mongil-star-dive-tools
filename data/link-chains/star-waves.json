@@ -1,0 +1,32 @@
+{
+  "id": "star-waves",
+  "name": {
+    "th": "คลื่นดวงดาว",
+    "en": "Star Waves"
+  },
+  "kind": "legendary",
+  "monsterlingId": "reginula",
+  "rarity": 5,
+  "levels": [
+    {
+      "level": 2,
+      "appearanceConditions": [
+        "burst"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 500
+      },
+      "bonusEffects": [
+        {
+          "th": "ลดต้านทานธาตุทั้งหมด 15% (จนกว่าเบิร์สจะสิ้นสุด)",
+          "en": "15% All Elemental RES Reduction (Until end of Burst)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

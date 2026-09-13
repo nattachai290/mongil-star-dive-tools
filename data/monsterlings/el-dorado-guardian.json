@@ -1,0 +1,35 @@
+{
+  "id": "el-dorado-guardian",
+  "name": {
+    "th": "ผู้พิทักษ์แห่งนครทองคำ",
+    "en": "El Dorado Guardian"
+  },
+  "dex": {
+    "book": "field",
+    "no": 39
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "atk",
+      "value": 5.78,
+      "unit": "percent",
+      "target": "team",
+      "trigger": "onWeaknessHit",
+      "durationSec": 10,
+      "internalCooldownSec": 20,
+      "condition": {
+        "vsBoss": true
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "el-dorado-guardian-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

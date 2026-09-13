@@ -1,0 +1,31 @@
+{
+  "id": "sacred-hauntstack",
+  "name": {
+    "th": "หุ่นฟางจิ๋วบรรลุธรรม",
+    "en": "Sacred Hauntstack"
+  },
+  "dex": {
+    "book": "field",
+    "no": 97
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critDmg",
+      "scope": "switchSkill",
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always"
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "sacred-hauntstack-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

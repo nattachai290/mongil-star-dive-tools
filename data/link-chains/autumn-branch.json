@@ -1,0 +1,37 @@
+{
+  "id": "autumn-branch",
+  "name": {
+    "th": "กิ่งถักทอใบไม้เปลี่ยนสี",
+    "en": "Autumn Branch"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "maple-odong",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        "specialSkill"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 40,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "ลดต้านทานธาตุดิน 10% (5 วินาที)",
+          "en": "10% Earth RES Reduction (5s)"
+        },
+        {
+          "th": "สถานะพันธนาการ (5 วินาที)",
+          "en": "Shackle (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "2nd-lt-goblin",
+  "name": {
+    "th": "ก็อบลิน ร้อยตรี",
+    "en": "2nd Lt. Goblin"
+  },
+  "dex": {
+    "book": "field",
+    "no": 8
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critDmg",
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onBasicAttackHit",
+      "durationSec": 5,
+      "internalCooldownSec": 20,
+      "condition": {
+        "hitCount": 10
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "2nd-lt-goblin-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "อ่านจากมอนแรงสีทองที่ยังเลเวล 1 — เป็นหลักฐานว่าตัวเลขไม่ขึ้นกับเลเวล แรงเดียวกันได้ค่าเท่ากันทุกเลเวล (ดู PLAN §13.9)"
+  }
+}

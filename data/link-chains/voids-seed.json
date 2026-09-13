@@ -1,0 +1,33 @@
+{
+  "id": "voids-seed",
+  "name": {
+    "th": "เมล็ดพันธุ์แห่งความว่างเปล่า",
+    "en": "Void's Seed"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "amon",
+  "rarity": 5,
+  "levels": [
+    {
+      "level": 2,
+      "appearanceConditions": [
+        "specialSkill"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 60,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "เพิ่มดาเมจธาตุจุดอ่อน 5% (5 วินาที)",
+          "en": "5% Elemental Weakness DMG Taken Boost (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

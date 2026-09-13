@@ -1,0 +1,34 @@
+{
+  "id": "flaming-fox-fur",
+  "name": {
+    "th": "ขนจิ้งจอกเพลิง",
+    "en": "Flaming Fox Fur"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "onsae",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 1,
+      "damageType": "fire",
+      "appearanceConditions": [
+        "landFireAttack"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 20,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "ลดต้านทานธาตุไฟ 5% (5 วินาที)",
+          "en": "5% Fire RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

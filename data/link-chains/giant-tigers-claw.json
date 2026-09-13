@@ -1,0 +1,39 @@
+{
+  "id": "giant-tigers-claw",
+  "name": {
+    "th": "กรงเล็บของเสือยักษ์",
+    "en": "Giant Tiger's Claw"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "hahnul",
+  "rarity": 5,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        "specialSkill",
+        "landUltimate"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 40,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "ลดต้านทานธาตุสายฟ้า 10% (5 วินาที)",
+          "en": "10% Lightning RES Reduction (5s)"
+        },
+        {
+          "th": "ลดพลังป้องกันมึนงง 15% (5 วินาที)",
+          "en": "15% Neutralization RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "เกมแปลข้อความอังกฤษ \"15% Neutralization RES Reduction (5s)\" เป็นไทยสามแบบ (ยืนยันแล้วว่าอังกฤษของทุกชิ้นเหมือนกันจริง) อ่านครบทั้งหกชิ้นเมื่อ 2026-09-12: wardens-core = ลดความต้านทานสถานะอ่อนแรง 15% (5 วินาที) / golems-gem = ลดพลังป้องกันมึนงง 15% (5 วินาที) / dokkaebi-kings-mask = ลดพลังป้องกันมึนงง 15% (5 วินาที) / giant-tigers-claw = ลดพลังป้องกันมึนงง 15% (5 วินาที) / red-gem = ลดต้านทานหมดฤทธิ์ 15% (5 วินาที) / tree-tortoiseshell = ลดต้านทานหมดฤทธิ์ 15% (5 วินาที) — ห้ามคัดลอกไทยของเอฟเฟกต์นี้ข้ามไฟล์ตามข้อความอังกฤษ ต้องอ่านจากจอทีละชิ้น"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "precious-spider-cocoon",
+  "name": {
+    "th": "รังแมงมุมล้ำค่า",
+    "en": "Precious Spider Cocoon"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "greenpadupa",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        "airCounter",
+        "evasionCounter"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 100,
+        "cooldownSec": 5
+      },
+      "bonusEffects": [
+        {
+          "th": "ลดความเร็วเคลื่อนที่ 50% (10 วินาที)",
+          "en": "50% Movement Speed Reduction (10s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

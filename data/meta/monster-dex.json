@@ -1,0 +1,1542 @@
+{
+  "_meta": {
+    "version": 12,
+    "updatedAt": "2026-09-11",
+    "note": "ดัชนีจากหน้า 'สมุดภาพมอน' ในเกม เก็บแค่สมุด เลขประจำตัว และชื่อไทย ยังไม่ใช่ข้อมูลเต็มของ Monsterling (ยังไม่มีความสามารถและสถานะลิงก์) พอได้ข้อมูลครบค่อยสร้างไฟล์ใน data/monsterlings/ แล้วอ้างกลับมาที่ book+no",
+    "source": {
+      "by": "in-game",
+      "gameVersion": "unknown",
+      "capturedAt": "2026-09-11",
+      "screen": "สมุดภาพมอน"
+    },
+    "slugNote": "slug = ชื่ออังกฤษทางการแปลงเป็น kebab-case และเป็น id ถาวรของเว็บ ตั้งแล้วห้ามเปลี่ยน (PLAN.md §13.1) · ตัวที่ยังเป็น null คือยังไม่ได้ชื่ออังกฤษ",
+    "coverage": "field 1-165 ครบไม่ขาด · legendary No.1 (No.2-3 ในเกมยังเป็น ??? ยังไม่ถูกค้นพบ) · event 1-3",
+    "flags": {
+      "truncated": "รายชื่อภาษาที่ชื่อยังถูก UI ของเกมตัดท้าย ต้องแคปใหม่"
+    },
+    "bookNote": "เกมมีสมุดแยกกันและ 'แต่ละเล่มเริ่มนับ No.1 ใหม่' เลขจึงไม่ซ้ำกันเฉพาะภายในเล่มเดียวกัน ต้องใช้ book คู่กับ no เสมอ"
+  },
+  "entries": [
+    {
+      "book": "field",
+      "no": 1,
+      "slug": "cappy",
+      "name": {
+        "th": "ช้อปปี้",
+        "en": "Cappy"
+      }
+    },
+    {
+      "book": "field",
+      "no": 2,
+      "slug": "cappyberry",
+      "name": {
+        "th": "ช้อปเบอร์รี",
+        "en": "Cappyberry"
+      }
+    },
+    {
+      "book": "field",
+      "no": 3,
+      "slug": "cappy-mama",
+      "name": {
+        "th": "ช้อปปี้มัม",
+        "en": "Cappy Mama"
+      }
+    },
+    {
+      "book": "field",
+      "no": 4,
+      "slug": "leafy-mama",
+      "name": {
+        "th": "ลิฟฟี่มัม",
+        "en": "Leafy Mama"
+      }
+    },
+    {
+      "book": "field",
+      "no": 5,
+      "slug": "slimelet",
+      "name": {
+        "th": "สไลม์",
+        "en": "Slimelet"
+      }
+    },
+    {
+      "book": "field",
+      "no": 6,
+      "slug": "inklet",
+      "name": {
+        "th": "สไลม์มืด",
+        "en": "Inklet"
+      }
+    },
+    {
+      "book": "field",
+      "no": 7,
+      "slug": "goblin-recruit",
+      "name": {
+        "th": "ก็อบลิน ทหารฝึก",
+        "en": "Goblin Recruit"
+      }
+    },
+    {
+      "book": "field",
+      "no": 8,
+      "slug": "2nd-lt-goblin",
+      "name": {
+        "th": "ก็อบลิน ร้อยตรี",
+        "en": "2nd Lt. Goblin"
+      }
+    },
+    {
+      "book": "field",
+      "no": 9,
+      "slug": "pvt-goblin",
+      "name": {
+        "th": "ก็อบลิน พลทหาร",
+        "en": "Pvt. Goblin"
+      }
+    },
+    {
+      "book": "field",
+      "no": 10,
+      "slug": "cpl-goblin",
+      "name": {
+        "th": "ก็อบลิน สิบโท",
+        "en": "Cpl. Goblin"
+      }
+    },
+    {
+      "book": "field",
+      "no": 11,
+      "slug": "white-wolf-warrior",
+      "name": {
+        "th": "หมาป่าขาว",
+        "en": "White Wolf Warrior"
+      }
+    },
+    {
+      "book": "field",
+      "no": 12,
+      "slug": "black-wolf",
+      "name": {
+        "th": "หมาป่าดำ",
+        "en": "Black Wolf"
+      }
+    },
+    {
+      "book": "field",
+      "no": 13,
+      "slug": "frostjaw",
+      "name": {
+        "th": "เกล็ดน้ำค้างขาว",
+        "en": "Frostjaw"
+      }
+    },
+    {
+      "book": "field",
+      "no": 14,
+      "slug": "crimsonjaw",
+      "name": {
+        "th": "เกล็ดน้ำค้างแดง",
+        "en": "Crimsonjaw"
+      }
+    },
+    {
+      "book": "field",
+      "no": 15,
+      "slug": "forkmugger",
+      "name": {
+        "th": "ฟอร์กมักเกอร์",
+        "en": "Forkmugger"
+      }
+    },
+    {
+      "book": "field",
+      "no": 16,
+      "slug": "king-slime",
+      "name": {
+        "th": "สไลม์คิง",
+        "en": "King Slime"
+      }
+    },
+    {
+      "book": "field",
+      "no": 17,
+      "slug": "scarlet-queen",
+      "name": {
+        "th": "ราชินีเพลิงโลกันตร์",
+        "en": "Scarlet Queen"
+      }
+    },
+    {
+      "book": "field",
+      "no": 18,
+      "slug": "taglock",
+      "name": {
+        "th": "ทากรัก",
+        "en": "Taglock"
+      }
+    },
+    {
+      "book": "field",
+      "no": 19,
+      "slug": "big-bro-goblin",
+      "name": {
+        "th": "ก็อบลินพี่ใหญ่",
+        "en": "Big Bro Goblin"
+      }
+    },
+    {
+      "book": "field",
+      "no": 20,
+      "slug": "lupe",
+      "name": {
+        "th": "ฮาคา",
+        "en": "Lupe"
+      }
+    },
+    {
+      "book": "field",
+      "no": 21,
+      "slug": "moon-shadow-lupe",
+      "name": {
+        "th": "ฮาคาใต้เงาจันทรา",
+        "en": "Moon Shadow Lupe"
+      }
+    },
+    {
+      "book": "field",
+      "no": 22,
+      "slug": "ring-slime",
+      "name": {
+        "th": "สไลม์ลิ่ง",
+        "en": "Ring Slime"
+      }
+    },
+    {
+      "book": "field",
+      "no": 23,
+      "slug": "uncle-cappy",
+      "name": {
+        "th": "ช้อปปู้อังเคิล",
+        "en": "Uncle Cappy"
+      }
+    },
+    {
+      "book": "field",
+      "no": 24,
+      "slug": "green-cappy-bro",
+      "name": {
+        "th": "ช้อปป้าพี่ใหญ่",
+        "en": "Green Cappy Bro"
+      }
+    },
+    {
+      "book": "field",
+      "no": 25,
+      "slug": "digger-mole",
+      "name": {
+        "th": "ดูจิ",
+        "en": "Digger Mole"
+      }
+    },
+    {
+      "book": "field",
+      "no": 26,
+      "slug": "gold-digger-mole",
+      "name": {
+        "th": "ดูจิทอง",
+        "en": "Gold Digger Mole"
+      }
+    },
+    {
+      "book": "field",
+      "no": 27,
+      "slug": "tunneler-mole",
+      "name": {
+        "th": "ดอจิ",
+        "en": "Tunneler Mole"
+      }
+    },
+    {
+      "book": "field",
+      "no": 28,
+      "slug": "brown-cappy",
+      "name": {
+        "th": "ช้อปปู้",
+        "en": "Brown Cappy"
+      }
+    },
+    {
+      "book": "field",
+      "no": 29,
+      "slug": "teal-cappy",
+      "name": {
+        "th": "ช้อปปูดร้า",
+        "en": "Teal Cappy"
+      }
+    },
+    {
+      "book": "field",
+      "no": 30,
+      "slug": "green-cappy",
+      "name": {
+        "th": "ช้อปป้า",
+        "en": "Green Cappy"
+      }
+    },
+    {
+      "book": "field",
+      "no": 31,
+      "slug": "orange-cappy",
+      "name": {
+        "th": "ช้อปออเร้นจ์",
+        "en": "Orange Cappy"
+      }
+    },
+    {
+      "book": "field",
+      "no": 32,
+      "slug": "spark-slime",
+      "name": {
+        "th": "สไลม์สายฟ้า",
+        "en": "Spark Slime"
+      }
+    },
+    {
+      "book": "field",
+      "no": 33,
+      "slug": "golden-spark-slime",
+      "name": {
+        "th": "สไลม์สายฟ้าทอง",
+        "en": "Golden Spark Slime"
+      }
+    },
+    {
+      "book": "field",
+      "no": 34,
+      "slug": "white-wolf-fulminator",
+      "name": {
+        "th": "สายฟ้าขาว",
+        "en": "White Wolf Fulminator"
+      }
+    },
+    {
+      "book": "field",
+      "no": 35,
+      "slug": "moley-mole",
+      "name": {
+        "th": "มอลลี่",
+        "en": "Moley Mole"
+      }
+    },
+    {
+      "book": "field",
+      "no": 36,
+      "slug": "gold-digger-moley-mole",
+      "name": {
+        "th": "มอลลี่จอมคลั่งรักเงิน",
+        "en": "Gold Digger Moley Mole"
+      }
+    },
+    {
+      "book": "field",
+      "no": 37,
+      "slug": "green-cappy-papa",
+      "name": {
+        "th": "ช้อปป้าแดดดี้",
+        "en": "Green Cappy Papa"
+      }
+    },
+    {
+      "book": "field",
+      "no": 38,
+      "slug": "custos",
+      "name": {
+        "th": "คุสโตส",
+        "en": "Custos"
+      }
+    },
+    {
+      "book": "field",
+      "no": 39,
+      "slug": "el-dorado-guardian",
+      "name": {
+        "th": "ผู้พิทักษ์แห่งนครทองคำ",
+        "en": "El Dorado Guardian"
+      }
+    },
+    {
+      "book": "field",
+      "no": 40,
+      "slug": "rock-fist-dude",
+      "name": {
+        "th": "กายหมัดหิน",
+        "en": "Rock Fist Dude"
+      }
+    },
+    {
+      "book": "field",
+      "no": 41,
+      "slug": "golden-fist-dude",
+      "name": {
+        "th": "กายหมัดทองคำ",
+        "en": "Golden Fist Dude"
+      }
+    },
+    {
+      "book": "field",
+      "no": 42,
+      "slug": "orc-warrior",
+      "name": {
+        "th": "ออร์ค นักรบ",
+        "en": "Orc Warrior"
+      }
+    },
+    {
+      "book": "field",
+      "no": 43,
+      "slug": "pink-orc-dude",
+      "name": {
+        "th": "กายออร์คพิ้งกี้",
+        "en": "Pink Orc Dude"
+      }
+    },
+    {
+      "book": "field",
+      "no": 44,
+      "slug": "orc-raider",
+      "name": {
+        "th": "ออร์ค พลทหารจู่โจม",
+        "en": "Orc Raider"
+      }
+    },
+    {
+      "book": "field",
+      "no": 45,
+      "slug": "rockymander",
+      "name": {
+        "th": "แอกโซลอเติลกระดองหิน",
+        "en": "Rockymander"
+      }
+    },
+    {
+      "book": "field",
+      "no": 46,
+      "slug": "leafymander",
+      "name": {
+        "th": "แอกโซลอเติลกระดองหินดิน",
+        "en": "Leafymander"
+      }
+    },
+    {
+      "book": "field",
+      "no": 47,
+      "slug": "bouldermander",
+      "name": {
+        "th": "แอกโซลอเติลกระดองหินยักษ์",
+        "en": "Bouldermander"
+      }
+    },
+    {
+      "book": "field",
+      "no": 48,
+      "slug": "vikkymander",
+      "name": {
+        "th": "แอกโซลอเติลไวกิ้ง",
+        "en": "Vikkymander"
+      }
+    },
+    {
+      "book": "field",
+      "no": 49,
+      "slug": "troll",
+      "name": {
+        "th": "โทรลล์",
+        "en": "Troll"
+      }
+    },
+    {
+      "book": "field",
+      "no": 50,
+      "slug": "noxtroll",
+      "name": {
+        "th": "ไนท์โทรลล์",
+        "en": "Noxtroll"
+      }
+    },
+    {
+      "book": "field",
+      "no": 51,
+      "slug": "urgash",
+      "name": {
+        "th": "อูรกัช",
+        "en": "Urgash"
+      }
+    },
+    {
+      "book": "field",
+      "no": 52,
+      "slug": "wolf",
+      "name": {
+        "th": "หมาป่า",
+        "en": "Wolf"
+      }
+    },
+    {
+      "book": "field",
+      "no": 53,
+      "slug": "albino-wolf",
+      "name": {
+        "th": "หมาป่าเผือก",
+        "en": "Albino Wolf"
+      }
+    },
+    {
+      "book": "field",
+      "no": 54,
+      "slug": "behemo-wolf",
+      "name": {
+        "th": "หมาป่ายักษ์",
+        "en": "Behemo-wolf"
+      }
+    },
+    {
+      "book": "field",
+      "no": 55,
+      "slug": "scar",
+      "name": {
+        "th": "สกา",
+        "en": "Scar"
+      }
+    },
+    {
+      "book": "field",
+      "no": 56,
+      "slug": "frostbite",
+      "name": {
+        "th": "ฟรอสต์ไบต์",
+        "en": "Frostbite"
+      }
+    },
+    {
+      "book": "field",
+      "no": 57,
+      "slug": "shellymander",
+      "name": {
+        "th": "แอกโซลอเติลหอยสังข์",
+        "en": "Shellymander"
+      }
+    },
+    {
+      "book": "field",
+      "no": 58,
+      "slug": "mollumander",
+      "name": {
+        "th": "แอกโซลอเติลหอยสังข์ทะเลลึก",
+        "en": "Mollumander"
+      }
+    },
+    {
+      "book": "field",
+      "no": 59,
+      "slug": "swellymander",
+      "name": {
+        "th": "แอกโซลอเติลหอยสังข์ยักษ์",
+        "en": "Swellymander"
+      }
+    },
+    {
+      "book": "field",
+      "no": 60,
+      "slug": "harvester",
+      "name": {
+        "th": "ผู้เก็บเกี่ยว",
+        "en": "Harvester"
+      }
+    },
+    {
+      "book": "field",
+      "no": 61,
+      "slug": "enforcer",
+      "name": {
+        "th": "ผู้ลงโทษ",
+        "en": "Enforcer"
+      }
+    },
+    {
+      "book": "field",
+      "no": 62,
+      "slug": "void-friar",
+      "name": {
+        "th": "นักบวชแห่งความว่างเปล่า",
+        "en": "Void Friar"
+      }
+    },
+    {
+      "book": "field",
+      "no": 63,
+      "slug": "monks-shadow",
+      "name": {
+        "th": "เงาของนักบวช",
+        "en": "Monk's Shadow"
+      }
+    },
+    {
+      "book": "field",
+      "no": 64,
+      "slug": "vectus",
+      "name": {
+        "th": "เว็กตัส",
+        "en": "Vectus"
+      }
+    },
+    {
+      "book": "field",
+      "no": 65,
+      "slug": "mountaintaur",
+      "name": {
+        "th": "มิโนต้าภูเขาสูง",
+        "en": "Mountaintaur"
+      }
+    },
+    {
+      "book": "field",
+      "no": 66,
+      "slug": "tealtaur",
+      "name": {
+        "th": "มินอกต้า",
+        "en": "Tealtaur"
+      }
+    },
+    {
+      "book": "field",
+      "no": 67,
+      "slug": "amon",
+      "name": {
+        "th": "อาม่อน",
+        "en": "Amon"
+      }
+    },
+    {
+      "book": "field",
+      "no": 68,
+      "slug": "amons-shadow",
+      "name": {
+        "th": "เงาของอาม่อน",
+        "en": "Amon's Shadow"
+      }
+    },
+    {
+      "book": "field",
+      "no": 69,
+      "slug": "gorrik",
+      "name": {
+        "th": "โกลิค",
+        "en": "Gorrik"
+      }
+    },
+    {
+      "book": "field",
+      "no": 70,
+      "slug": "ice-slime",
+      "name": {
+        "th": "สไลม์น้ำแข็ง",
+        "en": "Ice Slime"
+      }
+    },
+    {
+      "book": "field",
+      "no": 71,
+      "slug": "slimeboo",
+      "name": {
+        "th": "สไลม์หญ้า",
+        "en": "Slimeboo"
+      }
+    },
+    {
+      "book": "field",
+      "no": 72,
+      "slug": "fire-slime",
+      "name": {
+        "th": "สไลม์ไฟ",
+        "en": "Fire Slime"
+      }
+    },
+    {
+      "book": "field",
+      "no": 73,
+      "slug": "queen-slime",
+      "name": {
+        "th": "สไลม์ควีน",
+        "en": "Queen Slime"
+      }
+    },
+    {
+      "book": "field",
+      "no": 74,
+      "slug": "empress-slime",
+      "name": {
+        "th": "สไลม์รอยัลควีน",
+        "en": "Empress Slime"
+      }
+    },
+    {
+      "book": "field",
+      "no": 75,
+      "slug": "spaider",
+      "name": {
+        "th": "สปาเดอร์",
+        "en": "Spaider"
+      }
+    },
+    {
+      "book": "field",
+      "no": 76,
+      "slug": "sparder",
+      "name": {
+        "th": "สโปเดอร์",
+        "en": "Sparder"
+      }
+    },
+    {
+      "book": "field",
+      "no": 77,
+      "slug": "spardig",
+      "name": {
+        "th": "สปาดิก",
+        "en": "Spardig"
+      }
+    },
+    {
+      "book": "field",
+      "no": 78,
+      "slug": "spooder",
+      "name": {
+        "th": "สปูเดอร์",
+        "en": "Spooder"
+      }
+    },
+    {
+      "book": "field",
+      "no": 79,
+      "slug": "spadupa",
+      "name": {
+        "th": "สปาดูป้า",
+        "en": "Spadupa"
+      }
+    },
+    {
+      "book": "field",
+      "no": 80,
+      "slug": "greenpadupa",
+      "name": {
+        "th": "กปาดูป้า",
+        "en": "Greenpadupa"
+      }
+    },
+    {
+      "book": "field",
+      "no": 81,
+      "slug": "gargoyle",
+      "name": {
+        "th": "การ์กอย",
+        "en": "Gargoyle"
+      }
+    },
+    {
+      "book": "field",
+      "no": 82,
+      "slug": "grassgoyle",
+      "name": {
+        "th": "การ์ก่อย",
+        "en": "Grassgoyle"
+      }
+    },
+    {
+      "book": "field",
+      "no": 83,
+      "slug": "soilgoyle",
+      "name": {
+        "th": "การ์ก้อย",
+        "en": "Soilgoyle"
+      }
+    },
+    {
+      "book": "field",
+      "no": 84,
+      "slug": "sylphid",
+      "name": {
+        "th": "ซิลฟี่",
+        "en": "Sylphid"
+      }
+    },
+    {
+      "book": "field",
+      "no": 85,
+      "slug": "vamphid",
+      "name": {
+        "th": "แวมปี้",
+        "en": "Vamphid"
+      }
+    },
+    {
+      "book": "field",
+      "no": 86,
+      "slug": "stickphid",
+      "name": {
+        "th": "ฟูลฟี่",
+        "en": "Stickphid"
+      }
+    },
+    {
+      "book": "field",
+      "no": 87,
+      "slug": "healphid",
+      "name": {
+        "th": "ฮาล์ฟฟี่",
+        "en": "Healphid"
+      }
+    },
+    {
+      "book": "field",
+      "no": 88,
+      "slug": "head-stickphid",
+      "name": {
+        "th": "หัวหน้าฟูลฟี่",
+        "en": "Head Stickphid"
+      }
+    },
+    {
+      "book": "field",
+      "no": 89,
+      "slug": "full-moon-vamphid",
+      "name": {
+        "th": "แวมปี้เดอะฟูลมูน",
+        "en": "Full Moon Vamphid"
+      }
+    },
+    {
+      "book": "field",
+      "no": 90,
+      "slug": "ice-fist-dude",
+      "name": {
+        "th": "กายหมัดน้ำแข็ง",
+        "en": "Ice Fist Dude"
+      }
+    },
+    {
+      "book": "field",
+      "no": 91,
+      "slug": "plains-minotaur",
+      "name": {
+        "th": "มิโนต้าทุ่งหญ้า",
+        "en": "Plains Minotaur"
+      }
+    },
+    {
+      "book": "field",
+      "no": 92,
+      "slug": "spoonmugger",
+      "name": {
+        "th": "สปูนมักเกอร์",
+        "en": "Spoonmugger"
+      }
+    },
+    {
+      "book": "field",
+      "no": 93,
+      "slug": "stickmugger",
+      "name": {
+        "th": "ช็อปสติกมักเกอร์",
+        "en": "Stickmugger"
+      }
+    },
+    {
+      "book": "field",
+      "no": 94,
+      "slug": "avardan",
+      "name": {
+        "th": "อวาดัน",
+        "en": "Avardan"
+      }
+    },
+    {
+      "book": "field",
+      "no": 95,
+      "slug": "avardans-mana",
+      "name": {
+        "th": "มานาของอวาดัน",
+        "en": "Avardan's Mana"
+      }
+    },
+    {
+      "book": "field",
+      "no": 96,
+      "slug": "lil-hauntstack",
+      "name": {
+        "th": "หุ่นฟางจิ๋ว",
+        "en": "Lil' Hauntstack"
+      }
+    },
+    {
+      "book": "field",
+      "no": 97,
+      "slug": "sacred-hauntstack",
+      "name": {
+        "th": "หุ่นฟางจิ๋วบรรลุธรรม",
+        "en": "Sacred Hauntstack"
+      }
+    },
+    {
+      "book": "field",
+      "no": 98,
+      "slug": "hauntstack",
+      "name": {
+        "th": "หุ่นฟาง",
+        "en": "Hauntstack"
+      }
+    },
+    {
+      "book": "field",
+      "no": 99,
+      "slug": "brush-hauntstack",
+      "name": {
+        "th": "หุ่นฟางพุ่มไม้",
+        "en": "Brush Hauntstack"
+      }
+    },
+    {
+      "book": "field",
+      "no": 100,
+      "slug": "bop-kkaebi",
+      "name": {
+        "th": "แกบีฟ้า",
+        "en": "Bop-kkaebi"
+      }
+    },
+    {
+      "book": "field",
+      "no": 101,
+      "slug": "pew-kkaebi",
+      "name": {
+        "th": "แกบีเขียว",
+        "en": "Pew-kkaebi"
+      }
+    },
+    {
+      "book": "field",
+      "no": 102,
+      "slug": "kkaebi-herder",
+      "name": {
+        "th": "หัวหน้าแกบี",
+        "en": "Kkaebi Herder"
+      }
+    },
+    {
+      "book": "field",
+      "no": 103,
+      "slug": "odong-seed",
+      "name": {
+        "th": "เมล็ดสน",
+        "en": "Odong Seed"
+      }
+    },
+    {
+      "book": "field",
+      "no": 104,
+      "slug": "odong",
+      "name": {
+        "th": "ต้นสนผู้เฒ่าคิม",
+        "en": "Odong"
+      }
+    },
+    {
+      "book": "field",
+      "no": 105,
+      "slug": "maple-odong",
+      "name": {
+        "th": "ต้นสนผู้เฒ่าพัค",
+        "en": "Maple Odong"
+      }
+    },
+    {
+      "book": "field",
+      "no": 106,
+      "slug": "tree-youkai",
+      "name": {
+        "th": "ภูตต้นไม้",
+        "en": "Tree Youkai"
+      }
+    },
+    {
+      "book": "field",
+      "no": 107,
+      "slug": "stumpster",
+      "name": {
+        "th": "ปีศาจต้นไม้ขวานปัก",
+        "en": "Stumpster"
+      }
+    },
+    {
+      "book": "field",
+      "no": 108,
+      "slug": "bunnie",
+      "name": {
+        "th": "กระตุ่ย",
+        "en": "Bunnie"
+      }
+    },
+    {
+      "book": "field",
+      "no": 109,
+      "slug": "masked-bunnie",
+      "name": {
+        "th": "กระตุ่ย หน้ากาก",
+        "en": "Masked Bunnie"
+      }
+    },
+    {
+      "book": "field",
+      "no": 110,
+      "slug": "raccoonie",
+      "name": {
+        "th": "แรคคูน",
+        "en": "Raccoonie"
+      }
+    },
+    {
+      "book": "field",
+      "no": 111,
+      "slug": "masked-raccoonie",
+      "name": {
+        "th": "แรคคูน หน้ากาก",
+        "en": "Masked Raccoonie"
+      }
+    },
+    {
+      "book": "field",
+      "no": 112,
+      "slug": "battle-spirit",
+      "name": {
+        "th": "วิญญาณนักรบ",
+        "en": "Battle Spirit"
+      }
+    },
+    {
+      "book": "field",
+      "no": 113,
+      "slug": "white-wraith",
+      "name": {
+        "th": "ซาตานสตะ",
+        "en": "White Wraith"
+      }
+    },
+    {
+      "book": "field",
+      "no": 114,
+      "slug": "shademask",
+      "name": {
+        "th": "หน้ากากเงา",
+        "en": "Shademask"
+      }
+    },
+    {
+      "book": "field",
+      "no": 115,
+      "slug": "ashen-mask",
+      "name": {
+        "th": "หน้ากากขี้เถ้า",
+        "en": "Ashen Mask"
+      }
+    },
+    {
+      "book": "field",
+      "no": 116,
+      "slug": "turtlie",
+      "name": {
+        "th": "เต่า",
+        "en": "Turtlie"
+      }
+    },
+    {
+      "book": "field",
+      "no": 117,
+      "slug": "silvershell",
+      "name": {
+        "th": "เต่าเงิน",
+        "en": "Silvershell"
+      }
+    },
+    {
+      "book": "field",
+      "no": 118,
+      "slug": "swamp-odong",
+      "name": {
+        "th": "ต้นสนผู้เฒ่าอี",
+        "en": "Swamp Odong"
+      }
+    },
+    {
+      "book": "field",
+      "no": 119,
+      "slug": "duoxini",
+      "name": {
+        "th": "ทูอ็อกชีนี",
+        "en": "Duoxini"
+      }
+    },
+    {
+      "book": "field",
+      "no": 120,
+      "slug": "fiend",
+      "name": {
+        "th": "ซาตานเพลิง",
+        "en": "Fiend"
+      }
+    },
+    {
+      "book": "field",
+      "no": 121,
+      "slug": "black-hauntstack",
+      "name": {
+        "th": "หุ่นฟางดำ",
+        "en": "Black Hauntstack"
+      }
+    },
+    {
+      "book": "field",
+      "no": 122,
+      "slug": "ronin-bunnie",
+      "name": {
+        "th": "กระตุ่ย พเนจร",
+        "en": "Ronin Bunnie"
+      }
+    },
+    {
+      "book": "field",
+      "no": 123,
+      "slug": "bleacher-bunnie",
+      "name": {
+        "th": "กระตุ่ย ฟอกขาว",
+        "en": "Bleacher Bunnie"
+      }
+    },
+    {
+      "book": "field",
+      "no": 124,
+      "slug": "ronin-raccoonie",
+      "name": {
+        "th": "แรคคูน พเนจร",
+        "en": "Ronin Raccoonie"
+      }
+    },
+    {
+      "book": "field",
+      "no": 125,
+      "slug": "bleacher-raccoonie",
+      "name": {
+        "th": "แรคคูน ฟอกขาว",
+        "en": "Bleacher Raccoonie"
+      }
+    },
+    {
+      "book": "field",
+      "no": 126,
+      "slug": "ronin-turtlie",
+      "name": {
+        "th": "เต่า พเนจร",
+        "en": "Ronin Turtlie"
+      }
+    },
+    {
+      "book": "field",
+      "no": 127,
+      "slug": "hop-alee",
+      "name": {
+        "th": "อับเด้งดึ๋ง",
+        "en": "Hop-alee"
+      }
+    },
+    {
+      "book": "field",
+      "no": 128,
+      "slug": "salt-alee",
+      "name": {
+        "th": "อับแข็งโป๊ก",
+        "en": "Salt-alee"
+      }
+    },
+    {
+      "book": "field",
+      "no": 129,
+      "slug": "brute-alee",
+      "name": {
+        "th": "อับจอมโหด",
+        "en": "Brute-alee"
+      }
+    },
+    {
+      "book": "field",
+      "no": 130,
+      "slug": "borborg",
+      "name": {
+        "th": "โบร์โบก",
+        "en": "Borborg"
+      }
+    },
+    {
+      "book": "field",
+      "no": 131,
+      "slug": "goald",
+      "name": {
+        "th": "จ้าวแห่งอับ",
+        "en": "Goald"
+      }
+    },
+    {
+      "book": "field",
+      "no": 132,
+      "slug": "cacabagge",
+      "name": {
+        "th": "กาดน้อย",
+        "en": "Cacabagge"
+      }
+    },
+    {
+      "book": "field",
+      "no": 133,
+      "slug": "kimkimchi",
+      "name": {
+        "th": "กาดน้อยที่ถูกดอง",
+        "en": "Kimkimchi"
+      }
+    },
+    {
+      "book": "field",
+      "no": 134,
+      "slug": "cocorn",
+      "name": {
+        "th": "โพดน้อย",
+        "en": "Cocorn"
+      }
+    },
+    {
+      "book": "field",
+      "no": 135,
+      "slug": "rococorn",
+      "name": {
+        "th": "โพดน้อยที่ถูกย่าง",
+        "en": "Rococorn"
+      }
+    },
+    {
+      "book": "field",
+      "no": 136,
+      "slug": "twisted-spineflower",
+      "name": {
+        "th": "ดอกไม้ฟื้นฟูกระดูกที่บิดเบี้ยว",
+        "en": "Twisted Spineflower"
+      }
+    },
+    {
+      "book": "field",
+      "no": 137,
+      "slug": "twisted-bloodflower",
+      "name": {
+        "th": "ดอกไม้ฟื้นฟูเลือดที่บิดเบี้ยว",
+        "en": "Twisted Bloodflower"
+      }
+    },
+    {
+      "book": "field",
+      "no": 138,
+      "slug": "bruised-bloodflower",
+      "name": {
+        "th": "ดอกไม้ฟื้นฟูเลือดที่ฟกช้ำ",
+        "en": "Bruised Bloodflower"
+      }
+    },
+    {
+      "book": "field",
+      "no": 139,
+      "slug": "manwol",
+      "name": {
+        "th": "มัลวอลลก",
+        "en": "Manwol"
+      }
+    },
+    {
+      "book": "field",
+      "no": 140,
+      "slug": "nokjung",
+      "name": {
+        "th": "ปีศาจกวาง",
+        "en": "Nokjung"
+      }
+    },
+    {
+      "book": "field",
+      "no": 141,
+      "slug": "onsae",
+      "name": {
+        "th": "ออนแซ",
+        "en": "Onsae"
+      }
+    },
+    {
+      "book": "field",
+      "no": 142,
+      "slug": "cinder",
+      "name": {
+        "th": "ปีศาจเพลิง",
+        "en": "Cinder"
+      }
+    },
+    {
+      "book": "field",
+      "no": 143,
+      "slug": "hahnul",
+      "name": {
+        "th": "ฮันอุล",
+        "en": "Hahnul"
+      }
+    },
+    {
+      "book": "field",
+      "no": 144,
+      "slug": "gulgak",
+      "name": {
+        "th": "ปีศาจเสือบิดเบี้ยว",
+        "en": "Gulgak"
+      }
+    },
+    {
+      "book": "field",
+      "no": 145,
+      "slug": "baby-spirit",
+      "name": {
+        "th": "วิญญาณเด็ก",
+        "en": "Baby Spirit"
+      }
+    },
+    {
+      "book": "field",
+      "no": 146,
+      "slug": "chipmunk-spirit",
+      "name": {
+        "th": "วิญญาณกระรอก",
+        "en": "Chipmunk Spirit"
+      }
+    },
+    {
+      "book": "field",
+      "no": 147,
+      "slug": "wind-spirit",
+      "name": {
+        "th": "วิญญาณแห่งลมวายุ",
+        "en": "Wind Spirit"
+      }
+    },
+    {
+      "book": "field",
+      "no": 148,
+      "slug": "grudge-spirit",
+      "name": {
+        "th": "วิญญาณแห่งการทำนาย",
+        "en": "Grudge Spirit"
+      }
+    },
+    {
+      "book": "field",
+      "no": 149,
+      "slug": "grudge-revenant",
+      "name": {
+        "th": "วิญญาณแห่งความสิ้นหวัง",
+        "en": "Grudge Revenant"
+      }
+    },
+    {
+      "book": "field",
+      "no": 150,
+      "slug": "phantom-snow-tiger",
+      "name": {
+        "th": "ปีศาจเสือหิมะ",
+        "en": "Phantom Snow Tiger"
+      }
+    },
+    {
+      "book": "field",
+      "no": 151,
+      "slug": "phantom-stone-tiger",
+      "name": {
+        "th": "ปีศาจเสือลาวา",
+        "en": "Phantom Stone Tiger"
+      }
+    },
+    {
+      "book": "field",
+      "no": 152,
+      "slug": "lizarcher",
+      "name": {
+        "th": "ลิซาร์ด มือธนู",
+        "en": "Lizarcher"
+      }
+    },
+    {
+      "book": "field",
+      "no": 153,
+      "slug": "sun-lizarcher",
+      "name": {
+        "th": "ลิซาร์ด มือธนูทองพินาศ",
+        "en": "Sun Lizarcher"
+      }
+    },
+    {
+      "book": "field",
+      "no": 154,
+      "slug": "lizcout",
+      "name": {
+        "th": "ลิซาร์ด มือดาบ",
+        "en": "Lizcout"
+      }
+    },
+    {
+      "book": "field",
+      "no": 155,
+      "slug": "master-lizcout",
+      "name": {
+        "th": "ลิซาร์ด ท่านเซอร์",
+        "en": "Master Lizcout"
+      }
+    },
+    {
+      "book": "field",
+      "no": 156,
+      "slug": "kroko",
+      "name": {
+        "th": "อาโก",
+        "en": "Kroko"
+      }
+    },
+    {
+      "book": "field",
+      "no": 157,
+      "slug": "krokomander",
+      "name": {
+        "th": "อาโกกระดองหิน",
+        "en": "Krokomander"
+      }
+    },
+    {
+      "book": "field",
+      "no": 158,
+      "slug": "bunnie-swordsman",
+      "name": {
+        "th": "กระตุ่ย นักรบ",
+        "en": "Bunnie Swordsman"
+      }
+    },
+    {
+      "book": "field",
+      "no": 159,
+      "slug": "toad-alee",
+      "name": {
+        "th": "อับเกราะหนา",
+        "en": "Toad-alee"
+      }
+    },
+    {
+      "book": "field",
+      "no": 160,
+      "slug": "irontoise",
+      "name": {
+        "th": "บูกิ เกราะเหล็ก",
+        "en": "Irontoise"
+      }
+    },
+    {
+      "book": "field",
+      "no": 161,
+      "slug": "treetoise",
+      "name": {
+        "th": "บูกิ ไม้ยักษ์",
+        "en": "Treetoise"
+      }
+    },
+    {
+      "book": "field",
+      "no": 162,
+      "slug": "sunek",
+      "name": {
+        "th": "นาควีรณ์",
+        "en": "Sunek"
+      }
+    },
+    {
+      "book": "field",
+      "no": 163,
+      "slug": "suhwa",
+      "name": {
+        "th": "นาคบุปผา",
+        "en": "Suhwa"
+      }
+    },
+    {
+      "book": "field",
+      "no": 164,
+      "slug": "red-shadow",
+      "name": {
+        "th": "เงาแดง",
+        "en": "Red Shadow"
+      }
+    },
+    {
+      "book": "field",
+      "no": 165,
+      "slug": "blue-shadow",
+      "name": {
+        "th": "เงาคราม",
+        "en": "Blue Shadow"
+      }
+    },
+    {
+      "book": "legendary",
+      "no": 1,
+      "slug": "reginula",
+      "name": {
+        "th": "เรกีนูลา",
+        "en": "Reginula"
+      }
+    },
+    {
+      "book": "event",
+      "no": 1,
+      "slug": "cappy-summer-dive",
+      "name": {
+        "th": "ช้อปปี้ : ซัมเมอร์ ไดฟ์!",
+        "en": "Cappy: Summer Dive!"
+      }
+    },
+    {
+      "book": "event",
+      "no": 2,
+      "slug": "slimelet-summer-dive",
+      "name": {
+        "th": "สไลม์ : ซัมเมอร์ ไดฟ์!",
+        "en": "Slimelet: Summer Dive!"
+      }
+    },
+    {
+      "book": "event",
+      "no": 3,
+      "slug": "shellymander-summer-dive",
+      "name": {
+        "th": "แอกโซลอเติลหอยสังข์ : ซัมเมอร์ ไดฟ์!",
+        "en": "Shellymander: Summer Dive!"
+      }
+    }
+  ]
+}

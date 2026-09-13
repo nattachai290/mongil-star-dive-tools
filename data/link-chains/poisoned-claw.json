@@ -1,0 +1,34 @@
+{
+  "id": "poisoned-claw",
+  "name": {
+    "th": "กรงเล็บฝังพิษ",
+    "en": "Poisoned Claw"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "spadupa",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        "airCounter",
+        "evasionCounter"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 100,
+        "cooldownSec": 5
+      },
+      "bonusEffects": [
+        {
+          "th": "ลดความเร็วเคลื่อนที่ 30% (10 วินาที)",
+          "en": "30% Movement Speed Reduction (10s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

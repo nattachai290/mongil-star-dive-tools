@@ -1,0 +1,33 @@
+{
+  "id": "slimelet-summer-dive",
+  "name": {
+    "th": "สไลม์ : ซัมเมอร์ ไดฟ์!",
+    "en": "Slimelet: Summer Dive!"
+  },
+  "dex": {
+    "book": "event",
+    "no": 2
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critDmg",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always",
+      "condition": {
+        "enemyType": "physical"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "slimelet-summer-dive-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

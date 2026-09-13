@@ -1,0 +1,32 @@
+{
+  "id": "gourmet-chopsticks",
+  "name": {
+    "th": "ตะเกียบแห่งมื้อพิศวง",
+    "en": "Gourmet Chopsticks"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "stickmugger",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        "staminaEmpty"
+      ],
+      "appearanceInfo": {
+        "cooldownSec": 300
+      },
+      "bonusEffects": [
+        {
+          "th": "ฟื้นฟูสเตมินา 80",
+          "en": "Restores 80 Stamina"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "gold-plated-spiky-shield",
+  "name": {
+    "th": "โล่ทองประดับหนาม",
+    "en": "Gold-Plated Spiky Shield"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "goald",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        "landFireAttack",
+        "landIceAttack"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 20,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "ลดต้านทานธาตุไฟ 5% (5 วินาที)",
+          "en": "5% Fire RES Reduction (5s)"
+        },
+        {
+          "th": "ลดต้านทานธาตุน้ำแข็ง 5% (5 วินาที)",
+          "en": "5% Ice RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "commanding-flute",
+  "name": {
+    "th": "ขลุ่ยแห่งการบัญชา",
+    "en": "Commanding Flute"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "big-bro-goblin",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 2,
+      "desc": {
+        "th": "เมื่อติดตั้งมอนสเตอร์ลิงก็อบลินพี่ใหญ่ จะมีโอกาสปรากฏตัวตามเงื่อนไข โดยจะกระโดดเข้าใส่ศัตรูจากนั้นใช้ค้อนฟาดลงสองครั้ง สร้างดาเมจกายภาพ และทำให้ศัตรูลอยขึ้นไปบนอากาศ",
+        "en": "If the Big Bro Goblin Monsterling is equipped, it appears when its Appearance Condition is met. It strikes its hammer down hard onto the enemy twice, dealing Physical DMG and rendering the enemy Airborne."
+      },
+      "damageType": "physical",
+      "appearanceConditions": [
+        "switchSkill"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 60,
+        "cooldownSec": 15
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

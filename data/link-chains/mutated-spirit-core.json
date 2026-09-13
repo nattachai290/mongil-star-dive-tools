@@ -1,0 +1,33 @@
+{
+  "id": "mutated-spirit-core",
+  "name": {
+    "th": "แกนวิญญาณกลายพันธุ์",
+    "en": "Mutated Spirit Core"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "el-dorado-guardian",
+  "rarity": 5,
+  "levels": [
+    {
+      "level": 2,
+      "appearanceConditions": [
+        "attackStaggered"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 250,
+        "cooldownSec": 5
+      },
+      "bonusEffects": [
+        {
+          "th": "เพิ่มดาเมจธาตุจุดอ่อน 30% (5 วินาที)",
+          "en": "30% Elemental Weakness DMG Taken Boost (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

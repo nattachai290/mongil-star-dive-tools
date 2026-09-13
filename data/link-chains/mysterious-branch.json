@@ -1,0 +1,34 @@
+{
+  "id": "mysterious-branch",
+  "name": {
+    "th": "กิ่งไม้พิสดาร",
+    "en": "Mysterious Branch"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "odong",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 1,
+      "damageType": "earth",
+      "appearanceConditions": [
+        "specialSkill"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 40,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "สถานะพันธนาการ (5 วินาที)",
+          "en": "Shackle (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

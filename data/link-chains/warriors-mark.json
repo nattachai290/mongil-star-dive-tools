@@ -1,0 +1,33 @@
+{
+  "id": "warriors-mark",
+  "name": {
+    "th": "ตราแห่งนักรบ",
+    "en": "Warrior's Mark"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "lupe",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        "landIceAttack"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 20,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "สถานะเยือกแข็ง (2 วินาที)",
+          "en": "Freeze (2s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "ancient-dokkaebis-white-mask",
+  "name": {
+    "th": "ขนสีขาวของยักษ์โทแกบีโบราณ",
+    "en": "Ancient Dokkaebi's White Mask"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "ashen-mask",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        "specialSkill"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 40,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "เวลาแสดงผลเขตธาตุ (5 วินาที)",
+          "en": "Elemental Zone Duration (5s)"
+        },
+        {
+          "th": "ลดต้านทานธาตุไฟ 3%",
+          "en": "3% Fire RES Reduction"
+        },
+        {
+          "th": "ลดต้านทานธาตุดิน 3%",
+          "en": "3% Earth RES Reduction"
+        },
+        {
+          "th": "ลดต้านทานธาตุน้ำแข็ง 3%",
+          "en": "3% Ice RES Reduction"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "ชื่อไทย \"ขนสีขาวของยักษ์โทแกบีโบราณ\" แปลว่าขน แต่ชื่ออังกฤษคือ Ancient Dokkaebi's White Mask (หน้ากาก) และมอนสเตอร์ลิงคือหน้ากากขี้เถ้า — อ่านจากจอไทยเมื่อ 2026-09-12 จึงเก็บตามที่เกมแสดง"
+  }
+}

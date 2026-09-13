@@ -1,0 +1,33 @@
+{
+  "id": "giant-wolfs-fang",
+  "name": {
+    "th": "เขี้ยวของเสือยักษ์",
+    "en": "Giant Wolf's Fang"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "behemo-wolf",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "desc": {
+        "th": "เมื่อติดตั้งมอนสเตอร์ลิงหมาป่ายักษ์ จะมีโอกาสปรากฏตัวตามเงื่อนไข โดยจะพุ่งใส่ศัตรูแล้วคำราม สร้างดาเมจกายภาพแก่เป้าหมายรอบข้าง",
+        "en": "If the Behemo-wolf Monsterling is equipped, it appears when its Appearance Condition is met. It leaps toward the enemy and roars, dealing Physical DMG to nearby targets."
+      },
+      "damageType": "physical",
+      "appearanceConditions": [
+        "landAttack"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 20,
+        "cooldownSec": 15
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "ไคลเอนต์ไทยแปล \"Giant Wolf\" ในชื่อลิงก์เชนว่า \"เสือยักษ์\" (เสือ) ทั้งที่มอนสเตอร์ลิงคือหมาป่า — ยืนยันแล้วจากสองชิ้นคนละมอน (Giant Wolf's Fang / Giant Wolf's Helm) จึงเป็นคำแปลของเกมเอง ไม่ใช่การอ่านผิด"
+  }
+}

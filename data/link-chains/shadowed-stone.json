@@ -1,0 +1,34 @@
+{
+  "id": "shadowed-stone",
+  "name": {
+    "th": "หินเยือกแข็ง",
+    "en": "Shadowed Stone"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "avardans-mana",
+  "rarity": 5,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        "attackStaggered"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 200,
+        "cooldownSec": 5
+      },
+      "bonusEffects": [
+        {
+          "th": "เพิ่มดาเมจธาตุจุดอ่อน 30% (5 วินาที)",
+          "en": "30% Elemental Weakness DMG Taken Boost (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "ชื่อไทย \"หินเยือกแข็ง\" แปลว่าเยือกแข็ง แต่ชื่ออังกฤษคือ Shadowed Stone และลิงก์เชนนี้เป็นธาตุดิน — อ่านจากจอไทยเมื่อ 2026-09-12 จึงเก็บตามที่เกมแสดง"
+  }
+}

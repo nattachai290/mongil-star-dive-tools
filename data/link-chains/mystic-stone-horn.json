@@ -1,0 +1,37 @@
+{
+  "id": "mystic-stone-horn",
+  "name": {
+    "th": "เขาหินเยือกแข็งลึกลับ",
+    "en": "Mystic Stone Horn"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "phantom-stone-tiger",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        "switchSkill"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 40,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "สถานะกลายเป็นหิน (3 วินาที)",
+          "en": "Petrification (3s)"
+        },
+        {
+          "th": "ลดต้านทานธาตุดิน 5% (5 วินาที)",
+          "en": "5% Earth RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

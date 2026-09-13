@@ -1,0 +1,32 @@
+{
+  "id": "cappy",
+  "name": {
+    "th": "ช้อปปี้",
+    "en": "Cappy"
+  },
+  "dex": {
+    "book": "field",
+    "no": 1
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critRate",
+      "scope": "specialSkill",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always",
+      "internalCooldownSec": 20
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "cappy-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

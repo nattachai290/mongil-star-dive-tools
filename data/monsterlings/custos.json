@@ -1,0 +1,34 @@
+{
+  "id": "custos",
+  "name": {
+    "th": "คุสโตส",
+    "en": "Custos"
+  },
+  "dex": {
+    "book": "field",
+    "no": 38
+  },
+  "speciesEffects": [
+    {
+      "kind": "debuff",
+      "stat": "def",
+      "value": 8.25,
+      "unit": "percent",
+      "target": "enemy",
+      "trigger": "onCrit",
+      "durationSec": 5,
+      "condition": {
+        "triggerDamageType": "earth"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "custos-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

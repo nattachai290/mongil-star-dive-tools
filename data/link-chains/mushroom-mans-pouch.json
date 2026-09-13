@@ -1,0 +1,31 @@
+{
+  "id": "mushroom-mans-pouch",
+  "name": {
+    "th": "ถุงของลุงเห็ด",
+    "en": "Mushroom Man's Pouch"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "green-cappy-bro",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "desc": {
+        "en": "If the Green Cappy Bro Monsterling is equipped, it appears when its Appearance Condition is met. It generates deadly poisonous mushrooms near the enemy, dealing Earth DMG."
+      },
+      "damageType": "earth",
+      "appearanceConditions": [
+        "specialSkill"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 40,
+        "cooldownSec": 15
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

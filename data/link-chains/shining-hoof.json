@@ -1,0 +1,34 @@
+{
+  "id": "shining-hoof",
+  "name": {
+    "th": "กรงเล็บส่องแสง",
+    "en": "Shining Hoof"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "manwol",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        "landWindAttack"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 20,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "ลดต้านทานธาตุลม 5% (5 วินาที)",
+          "en": "5% Wind RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "ชื่อไทย \"กรงเล็บส่องแสง\" แปลว่ากรงเล็บ แต่ชื่ออังกฤษคือ Shining Hoof (กีบเท้า) — อ่านจากจอไทยเมื่อ 2026-09-12 จึงเก็บตามที่เกมแสดง"
+  }
+}

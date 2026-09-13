@@ -1,0 +1,33 @@
+{
+  "id": "bloodstained-bridle",
+  "name": {
+    "th": "บังเหียนแปดเปื้อนเลือด",
+    "en": "Bloodstained Bridle"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "mountaintaur",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        "switchSkill"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 40,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "ลดต้านทานธาตุไฟ 5% (5 วินาที)",
+          "en": "5% Fire RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

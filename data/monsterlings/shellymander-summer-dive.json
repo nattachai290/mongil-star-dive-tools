@@ -1,0 +1,35 @@
+{
+  "id": "shellymander-summer-dive",
+  "name": {
+    "th": "แอกโซลอเติลหอยสังข์ : ซัมเมอร์ ไดฟ์!",
+    "en": "Shellymander: Summer Dive!"
+  },
+  "dex": {
+    "book": "event",
+    "no": 3
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "physical",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onTakeHit",
+      "durationSec": 5,
+      "condition": {
+        "hitCount": 10
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "shellymander-summer-dive-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

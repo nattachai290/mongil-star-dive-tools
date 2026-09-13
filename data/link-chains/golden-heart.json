@@ -1,0 +1,32 @@
+{
+  "id": "golden-heart",
+  "name": {
+    "th": "หัวใจทองคำ",
+    "en": "Golden Heart"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "golden-fist-dude",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        "switchSkill"
+      ],
+      "appearanceInfo": {
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "มอบซูเปอร์อาร์เมอร์ให้กับตัวละคร (5 วินาที)",
+          "en": "Grants character Super Armor (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

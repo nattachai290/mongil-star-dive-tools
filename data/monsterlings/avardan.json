@@ -1,0 +1,35 @@
+{
+  "id": "avardan",
+  "name": {
+    "th": "อวาดัน",
+    "en": "Avardan"
+  },
+  "dex": {
+    "book": "field",
+    "no": 94
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scope": "ultimate",
+      "value": 11,
+      "unit": "percent",
+      "target": "team",
+      "trigger": "onTakeHit",
+      "durationSec": 10,
+      "condition": {
+        "vsBoss": true
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "avardan-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

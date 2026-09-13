@@ -1,0 +1,35 @@
+{
+  "id": "cacabagge",
+  "name": {
+    "th": "กาดน้อย",
+    "en": "Cacabagge"
+  },
+  "dex": {
+    "book": "field",
+    "no": 132
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "earth",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always",
+      "internalCooldownSec": 20,
+      "condition": {
+        "vsBoss": false
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "cacabagge-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

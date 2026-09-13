@@ -1,0 +1,33 @@
+{
+  "id": "frangible-pebble",
+  "name": {
+    "th": "ก้อนหินนุ่มนิ่ม",
+    "en": "Frangible Pebble"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "rock-fist-dude",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        "switchSkill"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 40,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "ลดต้านทานธาตุดิน 5% (5 วินาที)",
+          "en": "5% Earth RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

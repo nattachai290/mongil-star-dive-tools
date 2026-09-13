@@ -1,0 +1,33 @@
+{
+  "id": "queens-mascara",
+  "name": {
+    "th": "มาสคาร่าของราชินี",
+    "en": "Queen's Mascara"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "empress-slime",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        "evasionCounter"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 100,
+        "cooldownSec": 5
+      },
+      "bonusEffects": [
+        {
+          "th": "ลดความต้านทานสถานะอ่อนแรง 15% (10 วินาที)",
+          "en": "15% Neutralization RES Reduction (10s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "green-swaddle",
+  "name": {
+    "th": "ผ้าห่อสีเขียว",
+    "en": "Green Swaddle"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "green-cappy-papa",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "desc": {
+        "en": "If the Green Cappy Papa Monsterling is equipped, it appears when its Appearance Condition is met. It spins once, causing a mushroom spore explosion and dealing Earth DMG."
+      },
+      "damageType": "earth",
+      "appearanceConditions": [
+        "takeDamage"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 20,
+        "cooldownSec": 15
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

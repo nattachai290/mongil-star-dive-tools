@@ -1,0 +1,31 @@
+{
+  "id": "mushroom-basket",
+  "name": {
+    "th": "ตะกร้าเห็ด",
+    "en": "Mushroom Basket"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "uncle-cappy",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "desc": {
+        "en": "If the Uncle Cappy Monsterling is equipped, it appears when its Appearance Condition is met. It kicks a Bombshroom toward the enemy, dealing Fire DMG."
+      },
+      "damageType": "fire",
+      "appearanceConditions": [
+        "dodge"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 20,
+        "cooldownSec": 15
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "krokomander",
+  "name": {
+    "th": "อาโกกระดองหิน",
+    "en": "Krokomander"
+  },
+  "dex": {
+    "book": "field",
+    "no": 157
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "def",
+      "value": 4.93,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onHit",
+      "durationSec": 5,
+      "condition": {
+        "hitCount": 10,
+        "vsBoss": false
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "krokomander-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

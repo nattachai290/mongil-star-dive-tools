@@ -1,0 +1,34 @@
+{
+  "id": "token-of-obedience",
+  "name": {
+    "th": "ตราแห่งการจำนน",
+    "en": "Token of Obedience"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "amons-shadow",
+  "rarity": 5,
+  "levels": [
+    {
+      "level": 2,
+      "appearanceConditions": [
+        "specialSkill",
+        "landUltimate"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 60,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "เพิ่มดาเมจธาตุจุดอ่อน 15% (5 วินาที)",
+          "en": "15% Elemental Weakness DMG Taken Boost (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

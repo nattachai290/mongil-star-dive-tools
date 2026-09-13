@@ -1,0 +1,32 @@
+{
+  "id": "moles-treasure",
+  "name": {
+    "th": "ขุมสมบัติของตุ่น",
+    "en": "Mole's Treasure"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "gold-digger-moley-mole",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "desc": {
+        "th": "เมื่อติดตั้งมอนสเตอร์ลิงมอลลี่จอมคลั่งรักเงิน จะมีโอกาสปรากฏตัวตามเงื่อนไข โดยจะพุ่งเข้าใส่ศัตรูสองครั้งอย่างรวดเร็ว สร้างดาเมจกายภาพ และทำให้ศัตรูลอยขึ้นไปบนอากาศ",
+        "en": "If the Gold Digger Moley Mole Monsterling is equipped, it appears when its Appearance Condition is met. It quickly charges at the enemy twice, dealing Physical DMG and rendering the enemy Airborne."
+      },
+      "damageType": "physical",
+      "appearanceConditions": [
+        "renderAirborne"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 20,
+        "cooldownSec": 15
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

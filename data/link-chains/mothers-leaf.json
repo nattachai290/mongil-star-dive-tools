@@ -1,0 +1,31 @@
+{
+  "id": "mothers-leaf",
+  "name": {
+    "th": "ใบไม้ของแม่",
+    "en": "Mother's Leaf"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "cappy-mama",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 2,
+      "desc": {
+        "en": "If the Cappy Mama Monsterling is equipped, it appears when its Appearance Condition is met, jumping toward the enemy with a powerful butt slam that deals Physical DMG."
+      },
+      "damageType": "physical",
+      "appearanceConditions": [
+        "specialSkill"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 60,
+        "cooldownSec": 15
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

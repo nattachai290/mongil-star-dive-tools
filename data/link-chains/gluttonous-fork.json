@@ -1,0 +1,31 @@
+{
+  "id": "gluttonous-fork",
+  "name": {
+    "th": "ส้อมแห่งความตะกละ",
+    "en": "Gluttonous Fork"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "forkmugger",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 1,
+      "desc": {
+        "en": "If the Forkmugger Monsterling is equipped, it appears when its Appearance Condition is met. It strikes the enemy with the potato stuck on its fork, dealing Physical DMG."
+      },
+      "damageType": "physical",
+      "appearanceConditions": [
+        "evasionCounter"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 100,
+        "cooldownSec": 5
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

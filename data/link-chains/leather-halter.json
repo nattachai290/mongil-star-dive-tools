@@ -1,0 +1,33 @@
+{
+  "id": "leather-halter",
+  "name": {
+    "th": "สายหนังฝึกวัว",
+    "en": "Leather Halter"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "plains-minotaur",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 3,
+      "appearanceConditions": [
+        "switchSkill"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 130,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "ลดต้านทานธาตุลม 5% (5 วินาที)",
+          "en": "5% Wind RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

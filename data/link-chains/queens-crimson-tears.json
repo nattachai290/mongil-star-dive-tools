@@ -1,0 +1,33 @@
+{
+  "id": "queens-crimson-tears",
+  "name": {
+    "th": "น้ำตาโลหิตของราชินี",
+    "en": "Queen's Crimson Tears"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "scarlet-queen",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        "specialSkill"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 40,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "ลดความเร็วเคลื่อนที่ 50% (10 วินาที)",
+          "en": "50% Movement Speed Reduction (10s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "cold-mane",
+  "name": {
+    "th": "แผงคอเยือกเย็น",
+    "en": "Cold Mane"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "phantom-snow-tiger",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        "switchSkill"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 40,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "สถานะเยือกแข็ง (2 วินาที)",
+          "en": "Freeze (2s)"
+        },
+        {
+          "th": "ลดต้านทานธาตุน้ำแข็ง 3% (5 วินาที)",
+          "en": "3% Ice RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

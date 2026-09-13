@@ -1,0 +1,35 @@
+{
+  "id": "hahnul",
+  "name": {
+    "th": "ฮันอุล",
+    "en": "Hahnul"
+  },
+  "dex": {
+    "book": "field",
+    "no": 143
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scope": "switchSkill",
+      "value": 11,
+      "unit": "percent",
+      "target": "team",
+      "trigger": "onCrit",
+      "durationSec": 10,
+      "condition": {
+        "vsBoss": true
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "hahnul-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

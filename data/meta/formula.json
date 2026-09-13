@@ -1,0 +1,33 @@
+{
+  "_meta": {
+    "version": 1,
+    "updatedAt": "2026-09-11",
+    "note": "สูตรดาเมจชุดเดียวที่ทั้งเว็บและการวิเคราะห์ใช้ร่วมกัน — ค่าคงที่ที่ยังเป็น null คือค่าที่ยังไม่ได้ยืนยันในเกม โค้ดจะหยุดคำนวณขั้นนั้นแทนการเดา"
+  },
+
+  "gameVersion": "1.4.0",
+  "model": "v1-additive",
+  "verified": false,
+
+  "pipeline": ["atkTotal", "rawDamage", "afterDefense", "afterElement", "average", "onCrit"],
+
+  "constants": {
+    "defConstant": null,
+    "elementAdvantage": null,
+    "elementNeutral": 1,
+    "elementDisadvantage": null
+  },
+
+  "constantNotes": {
+    "defConstant": "ตัวหารในสูตรลดดาเมจจากป้องกัน — ยืนยันโดยตีศัตรูตัวเดิมด้วย ATK สองค่าที่ต่างกัน แล้วแก้สมการหาค่านี้",
+    "elementAdvantage": "ตัวคูณเมื่อธาตุได้เปรียบ — ยืนยันโดยตีศัตรูธาตุเดียวกันด้วยตัวละครต่างธาตุ แล้วหารดาเมจเทียบกัน",
+    "elementDisadvantage": "ตัวคูณเมื่อธาตุเสียเปรียบ — ยืนยันวิธีเดียวกับ elementAdvantage"
+  },
+
+  "notYetModeled": [
+    "บัฟจากเพื่อนร่วมทีมที่ไม่ได้อยู่ในสนาม",
+    "ดาเมจต่อเนื่อง เช่น สถานะไหม้",
+    "ค่าต้านทานเฉพาะของบอสบางตัว",
+    "ดาเมจที่คิดจาก HP หรือ DEF แทน ATK"
+  ]
+}

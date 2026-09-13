@@ -1,0 +1,74 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    # ตรวจช่องโหว่ทุกเช้าวันจันทร์ 09:00 เวลาไทย แม้ไม่มีใคร push
+    - cron: "0 2 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Typecheck · Lint · Data · Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: ทดสอบ schema และสูตรดาเมจ
+        run: npm run selftest
+
+      - name: ตรวจไฟล์ข้อมูล
+        run: npm run validate:data
+
+      - name: Build
+        run: npm run build
+
+  audit:
+    name: npm audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # ทำให้ job แดงเมื่อเจอช่องโหว่ระดับ high ขึ้นไป
+      - name: npm audit (high ขึ้นไป = fail)
+        run: npm audit --audit-level=high
+
+      # รายงานทุกระดับไว้ดูใน summary โดยไม่ทำให้ job แดง
+      - name: สรุปช่องโหว่ทุกระดับ
+        if: always()
+        run: |
+          {
+            echo "### npm audit"
+            echo '```'
+            npm audit || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

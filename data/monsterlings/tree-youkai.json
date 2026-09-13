@@ -1,0 +1,32 @@
+{
+  "id": "tree-youkai",
+  "name": {
+    "th": "ภูตต้นไม้",
+    "en": "Tree Youkai"
+  },
+  "dex": {
+    "book": "field",
+    "no": 106
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scope": "switchSkill",
+      "damageType": "fire",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always"
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "tree-youkai-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

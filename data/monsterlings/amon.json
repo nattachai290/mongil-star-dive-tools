@@ -1,0 +1,35 @@
+{
+  "id": "amon",
+  "name": {
+    "th": "อาม่อน",
+    "en": "Amon"
+  },
+  "dex": {
+    "book": "field",
+    "no": 67
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critRate",
+      "value": 11,
+      "unit": "percent",
+      "target": "team",
+      "trigger": "onHit",
+      "durationSec": 10,
+      "condition": {
+        "hitCount": 10,
+        "vsBoss": true
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "amon-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

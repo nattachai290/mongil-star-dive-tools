@@ -1,0 +1,31 @@
+{
+  "id": "ice-fist-dude",
+  "name": {
+    "th": "กายหมัดน้ำแข็ง",
+    "en": "Ice Fist Dude"
+  },
+  "dex": {
+    "book": "field",
+    "no": 90
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critRate",
+      "scope": "weaknessHit",
+      "value": 11,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always"
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "ice-fist-dude-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

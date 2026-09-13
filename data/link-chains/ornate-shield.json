@@ -1,0 +1,29 @@
+{
+  "id": "ornate-shield",
+  "name": {
+    "th": "โล่ลวดลาย",
+    "en": "Ornate Shield"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "toad-alee",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "damageType": "physical",
+      "appearanceConditions": [
+        "airCounter",
+        "evasionCounter"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 100,
+        "cooldownSec": 5
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

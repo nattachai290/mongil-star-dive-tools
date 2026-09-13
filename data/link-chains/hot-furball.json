@@ -1,0 +1,34 @@
+{
+  "id": "hot-furball",
+  "name": {
+    "th": "ก้อนขนอบอุ่น",
+    "en": "Hot Furball"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "cinder",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 3,
+      "damageType": "fire",
+      "appearanceConditions": [
+        "landFireAttack"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 80,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "ลดต้านทานธาตุไฟ 10% (5 วินาที)",
+          "en": "10% Fire RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

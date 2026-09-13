@@ -1,0 +1,35 @@
+{
+  "id": "orc-warrior",
+  "name": {
+    "th": "ออร์ค นักรบ",
+    "en": "Orc Warrior"
+  },
+  "dex": {
+    "book": "field",
+    "no": 42
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "physical",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always",
+      "internalCooldownSec": 20,
+      "condition": {
+        "vsBoss": false
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "orc-warrior-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

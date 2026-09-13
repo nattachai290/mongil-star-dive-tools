@@ -1,0 +1,31 @@
+{
+  "id": "amons-shadow",
+  "name": {
+    "th": "เงาของอาม่อน",
+    "en": "Amon's Shadow"
+  },
+  "dex": {
+    "book": "field",
+    "no": 68
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critRate",
+      "value": 11.55,
+      "unit": "percent",
+      "target": "team",
+      "trigger": "onEvasionCounter",
+      "durationSec": 10
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "amons-shadow-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

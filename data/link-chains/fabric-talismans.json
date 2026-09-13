@@ -1,0 +1,33 @@
+{
+  "id": "fabric-talismans",
+  "name": {
+    "th": "ผ้าไหมห้าสี",
+    "en": "Fabric Talismans"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "swamp-odong",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        "specialSkill"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 40,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "ลดต้านทานธาตุดิน 3% (5 วินาที)",
+          "en": "3% Earth RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

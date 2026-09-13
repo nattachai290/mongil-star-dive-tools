@@ -1,0 +1,31 @@
+{
+  "id": "nokjung",
+  "name": {
+    "th": "ปีศาจกวาง",
+    "en": "Nokjung"
+  },
+  "dex": {
+    "book": "field",
+    "no": 140
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critRate",
+      "value": 11.55,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onEvasionCounter",
+      "durationSec": 5
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "nokjung-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

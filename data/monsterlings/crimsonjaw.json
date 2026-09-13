@@ -1,0 +1,32 @@
+{
+  "id": "crimsonjaw",
+  "name": {
+    "th": "เกล็ดน้ำค้างแดง",
+    "en": "Crimsonjaw"
+  },
+  "dex": {
+    "book": "field",
+    "no": 14
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scope": "crit",
+      "damageType": "ice",
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always"
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "crimsonjaw-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "wet-leaf",
+  "name": {
+    "th": "ใบไม้เปียก",
+    "en": "Wet Leaf"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "ring-slime",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "desc": {
+        "en": "If the Ring Slime Monsterling is equipped, it appears when its Appearance Condition is met. It charges toward the enemy twice and strikes them hard, dealing Water DMG."
+      },
+      "damageType": "water",
+      "appearanceConditions": [
+        "landAttack"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 20,
+        "cooldownSec": 15
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

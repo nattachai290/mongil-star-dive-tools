@@ -1,0 +1,31 @@
+{
+  "id": "golden-fist-dude",
+  "name": {
+    "th": "กายหมัดทองคำ",
+    "en": "Golden Fist Dude"
+  },
+  "dex": {
+    "book": "field",
+    "no": 41
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "neutralizationDmg",
+      "scope": "weaknessHit",
+      "value": 11.55,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onWeaknessHit"
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "golden-fist-dude-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-12",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}
