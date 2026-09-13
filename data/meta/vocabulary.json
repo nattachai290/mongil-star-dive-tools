@@ -161,21 +161,17 @@
     }
   },
   "role": {
-    "dps": {
-      "th": "ดาเมจ",
-      "en": "DPS"
+    "brawler": {
+      "th": "บรอว์เลอร์"
     },
-    "tank": {
-      "th": "แทงก์",
-      "en": "Tank"
+    "destroyer": {
+      "th": "เดสทรอยเยอร์"
     },
-    "support": {
-      "th": "ซัพพอร์ต",
-      "en": "Support"
+    "slayer": {
+      "th": "สเลเยอร์"
     },
-    "healer": {
-      "th": "ฮีล",
-      "en": "Healer"
+    "supporter": {
+      "th": "ซัพพอร์ตเตอร์"
     }
   },
   "rarity": {
@@ -250,7 +246,11 @@
       "en": "Stamina"
     },
     "supportPower": {
-      "th": "ซัพพอร์ตเตอร์"
+      "th": "ค่าพลังสนับสนุน"
+    },
+    "supportDmg": {
+      "th": "ดาเมจสนับสนุน",
+      "en": "Support Skill DMG"
     },
     "res": {
       "th": "ต้านทาน",
@@ -619,10 +619,6 @@
     "crit": {
       "th": "การโจมตีคริติคอล",
       "en": "Critical"
-    },
-    "support": {
-      "th": "สกิลสนับสนุน",
-      "en": "Support Skill"
     },
     "airCounter": {
       "th": "โจมตีฉับพลัน",

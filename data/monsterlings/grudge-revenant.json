@@ -11,8 +11,7 @@
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "dmgDealt",
-      "scopes": ["support"],
+      "stat": "supportDmg",
       "value": 6.57,
       "unit": "percent",
       "target": "team",

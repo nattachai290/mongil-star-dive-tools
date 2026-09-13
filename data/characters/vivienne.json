@@ -5,7 +5,7 @@
   },
   "rarity": 4,
   "element": "fire",
-  "role": "support",
+  "role": "supporter",
   "range": "melee",
   "stats": {
     "atLevel": 60,
@@ -18,8 +18,7 @@
   "otherStats": [
     {
       "kind": "buff",
-      "stat": "dmgDealt",
-      "scopes": ["support"],
+      "stat": "supportDmg",
       "value": 12.18,
       "unit": "percent",
       "target": "self",
@@ -28,7 +27,9 @@
     {
       "kind": "buff",
       "stat": "dmgDealt",
-      "scopes": ["weaknessHit"],
+      "scopes": [
+        "weaknessHit"
+      ],
       "value": 125,
       "unit": "percent",
       "target": "self",

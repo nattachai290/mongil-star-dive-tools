@@ -24,7 +24,7 @@ function sampleCharacter(patch: Record<string, unknown> = {}) {
   return {
     id: "test-char",
     name: t("ทดสอบ"),
-    rarity: 4, element: "fire", role: "dps", tags: ["burst"],
+    rarity: 4, element: "fire", role: "slayer", tags: ["burst"],
     stats: { atLevel: 80, atBreakthrough: 4, hp: 12000, atk: 1300, def: 600, critRate: 5, critDmg: 50 },
     skills: { basic: skill, switch: skill, special: skill, ultimate: skill },
     awaken: [{ stage: 3, desc: t("+2 เลเวลสกิล"), skillLevelBonus: 2 }],
@@ -108,13 +108,13 @@ check("สกิลที่ไม่สร้างดาเมจ ไม่ต
 // จอแรกของตัวละครให้แค่ชื่อ ธาตุ บทบาท ดาว — สกิลกับค่าพลังเปล่ามาทีหลัง
 check("ตัวละครที่ยังไม่มีสกิลและค่าพลัง ผ่าน schema ได้",
   character.safeParse({ id: "vivienne", name: t("วิเวียน"), rarity: 4,
-    element: "fire", role: "support", range: "melee", awaken: [], source: src }).success);
+    element: "fire", role: "supporter", range: "melee", awaken: [], source: src }).success);
 check("ความหายากของตัวละครเป็นจำนวนดาว ไม่ใช่ SSR",
   !character.safeParse({ id: "vivienne", name: t("วิเวียน"), rarity: "SSR",
-    element: "fire", role: "support", awaken: [], source: src }).success);
+    element: "fire", role: "supporter", awaken: [], source: src }).success);
 check("ดาเมจคริติคอลฐาน 50 ผ่านได้ (เก็บเป็นส่วนที่บวกเพิ่ม ไม่ใช่ตัวคูณ 150)",
   character.safeParse({ id: "vivienne", name: t("วิเวียน"), rarity: 4,
-    element: "fire", role: "support", awaken: [], source: src,
+    element: "fire", role: "supporter", awaken: [], source: src,
     stats: { atLevel: 60, atBreakthrough: 0, hp: 10243, atk: 1943, def: 638,
       critRate: 5, critDmg: 50 } }).success);
 
