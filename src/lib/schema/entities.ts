@@ -7,6 +7,18 @@ const scaling16 = z
   .array(z.number().nullable())
   .length(16, "ต้องมี 16 ช่อง (เลเวล 1–16) ช่องที่ยังไม่รู้ค่าให้ใส่ null");
 
+/**
+ * ตัวเลขหนึ่งบรรทัดบนจอสกิล
+ *
+ * label เก็บตามที่จอเขียน ยังไม่ทำเป็นคำศัพท์เพราะเห็นตัวละครเดียว
+ * ถ้าตัวที่สองใช้ชื่อบรรทัดชุดเดียวกัน ค่อยย้ายเข้าพจนานุกรม
+ */
+const skillValue = z.object({
+  label: text,
+  unit: vocabEnum("unit"),
+  scaling: scaling16,
+});
+
 export const skill = z.object({
   name: text,
   desc: text,
@@ -25,7 +37,14 @@ export const skill = z.object({
    */
   changesBasicAttackTo: vocabEnum("damageType").optional(),
   effects: z.array(effect).default([]),
-  scaling: scaling16.optional(),
+  /**
+   * ตัวเลขทุกบรรทัดที่จอสกิลแสดง ทีละบรรทัด
+   *
+   * ไม่ใช่ค่าเดียวต่อสกิล เพราะท่าเดียวมีได้หลายบรรทัด เช่น โจมตีพื้นฐาน
+   * ของวิเวียนมีหกบรรทัด (ขั้น 1–4 · ฉับพลัน · หลบหลีกโต้กลับ) และแพสซีฟ
+   * มีทั้งหน่วยวินาทีและเปอร์เซ็นต์ปนกัน
+   */
+  values: z.array(skillValue).default([]),
   cooldownSec: z.number().nonnegative().optional(),
   energyCost: z.number().nonnegative().optional(),
 });
@@ -91,7 +110,10 @@ export const character = z.object({
       switch: skill,
       special: skill,
       ultimate: skill,
+      /** ช่องที่ห้าบนจอสกิล ไม่ได้กดใช้เอง ทำงานเองตลอด */
+      passive: skill.optional(),
     })
+    .partial()
     .optional(),
 
   awaken: z

@@ -44,15 +44,23 @@ check("verifiedAt ผิดรูปแบบถูกปฏิเสธ",
 check("ข้อความที่ไม่มีทั้ง th และ en ถูกปฏิเสธ", !character.safeParse(sampleCharacter({ name: {} })).success);
 
 const scaling = (n: number) => Array.from({ length: n }, () => 100);
-check("scaling ต้องมี 16 ช่อง", !character.safeParse(sampleCharacter({
-  skills: { ...sampleCharacter().skills as object, basic: { name: t("a"), desc: t("b"), effects: [], scaling: scaling(12) } },
-})).success);
-check("scaling 16 ช่องที่มี null ผ่าน", character.safeParse(sampleCharacter({
+const withBasicValues = (values: unknown) => sampleCharacter({
   skills: {
     ...(sampleCharacter().skills as Record<string, unknown>),
-    basic: { name: t("a"), desc: t("b"), effects: [], scaling: [...scaling(12), null, null, null, null] },
+    basic: { name: t("a"), desc: t("b"), effects: [], values },
   },
-})).success);
+});
+check("scaling ต้องมี 16 ช่อง", !character.safeParse(
+  withBasicValues([{ label: t("ขั้น 1"), unit: "percent", scaling: scaling(12) }])).success);
+check("scaling 16 ช่องที่มี null ผ่าน", character.safeParse(
+  withBasicValues([{ label: t("ขั้น 1"), unit: "percent",
+    scaling: [...scaling(12), null, null, null, null] }])).success);
+// จอสกิลเดียวมีได้หลายบรรทัด และหน่วยคนละแบบกันในสกิลเดียว
+check("สกิลเดียวเก็บได้หลายบรรทัดและคนละหน่วย", character.safeParse(
+  withBasicValues([
+    { label: t("ขั้น 1"), unit: "percent", scaling: [...scaling(1), ...Array(15).fill(null)] },
+    { label: t("นานขึ้น"), unit: "seconds", scaling: [...scaling(1), ...Array(15).fill(null)] },
+  ])).success);
 
 console.log("\nเอฟเฟกต์");
 const foodBase = { id: "f", name: t("อาหาร"), category: "entree", durationSec: 1800, source: src };

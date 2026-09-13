@@ -78,6 +78,295 @@
       "stats.atBreakthrough",
       "otherStats[5]"
     ],
-    "note": "ค่าพลังเปล่า อ่านจากจอ \"ข้อมูลรายละเอียดค่าพลัง\" ตอนถอดอุปกรณ์ออกหมดแล้ว ที่เลเวล 60 ซึ่งจอบอกว่าสูงสุด — จอไม่ได้บอกขั้นทะลุจำกัด จึงไม่ใส่ ส่วน \"ซัพพอร์ตเตอร์ 1,078\" ยังไม่รู้ว่าคืออะไร เก็บตามที่จอเขียน (ชื่อเดียวกับบทบาทของตัวละครพอดี อาจเป็นค่าเฉพาะบทบาท) ยังไม่ได้อ่านคำอังกฤษของ stat นี้ ยังไม่มีสกิลทั้งสี่ท่า"
+    "note": "ค่าพลังเปล่า อ่านจากจอ \"ข้อมูลรายละเอียดค่าพลัง\" ตอนถอดอุปกรณ์ออกหมดแล้ว ที่เลเวล 60 ซึ่งจอบอกว่าสูงสุด — จอไม่ได้บอกขั้นทะลุจำกัด จึงไม่ใส่ ส่วน \"ค่าพลังสนับสนุน 1,078\" ยังไม่ได้อ่านคำอังกฤษ | สกิล: อ่านได้สองท่าจากจอสกิล โจมตีพื้นฐานที่เลเวล 9 และแพสซีฟที่เลเวล 1 จึงเติม scaling แค่ช่องนั้น ช่องอื่นเป็น null ยังไม่ได้อ่านสกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมต (จอบอกว่าทั้งสามอยู่เลเวล 9) | แพสซีฟแปลงค่าจาก stat ของตัวเองไปเป็นบัฟให้ทีม (ดาเมจสนับสนุน→ดาเมจธาตุไฟของเพื่อนระยะใกล้ 25% เพดาน 15% / ดาเมจกดขี่→พลังโจมตีทีม 18% เพดาน 9%) ซึ่งโครง effect ยังไม่มีวิธีเก็บ \"แปลงจาก stat อื่น\" จึงเก็บไว้ในบรรทัด values ตามที่จอเขียนก่อน | \"เอฟเฟกต์อ่อนแอต่อไฟ\" ที่แพสซีฟพูดถึง จออธิบายว่า \"ได้รับดาเมจต่อเนื่องธาตุไฟและลดพลังต้านทานธาตุไฟ 15%\""
+  },
+  "skills": {
+    "basic": {
+      "name": {
+        "th": "ซ้อมใหญ่ก่อนแสดง"
+      },
+      "desc": {
+        "th": "ปาไฟใส่ศัตรูและเต้นโพลแดนซ์สุดแสนเย้ายวน สร้างดาเมจธาตุไฟ"
+      },
+      "damageType": "fire",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "th": "ดาเมจโจมตี ขั้น 1"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            27.8,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "th": "ดาเมจโจมตี ขั้น 2"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            69.5,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "th": "ดาเมจโจมตี ขั้น 3"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            49.6,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "th": "ดาเมจโจมตี ขั้น 4"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            65.5,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "th": "ดาเมจโจมตีฉับพลัน"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            85.4,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "th": "ดาเมจหลบหลีกโต้กลับ"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            194.8,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "passive": {
+      "name": {
+        "th": "หางอันเย้ายวน"
+      },
+      "desc": {
+        "th": "เพิ่มเวลาแสดงผลของเอฟเฟกต์อ่อนแอต่อไฟที่ตนเองมอบให้ / เมื่อวิเวียนอยู่ในทีม จะเพิ่มดาเมจธาตุไฟของสมาชิกทีมระยะใกล้ทั้งหมดตามอัตราที่กำหนดของค่าดาเมจสนับสนุนที่เพิ่มขึ้นของวิเวียน และจะไม่เพิ่มเกินค่าสูงสุด / อีกทั้งเพิ่มพลังโจมตีของสมาชิกทีมทั้งหมดตามอัตราที่กำหนดของค่าดาเมจกดขี่ที่เพิ่มขึ้นของตนเอง และจะไม่เพิ่มเกินค่าสูงสุด"
+      },
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "th": "เพิ่มเวลาแสดงผลเอฟเฟกต์อ่อนแอต่อไฟ"
+          },
+          "unit": "seconds",
+          "scaling": [
+            5,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "th": "อัตราแปลงตามการเพิ่มดาเมจสนับสนุน"
+          },
+          "unit": "percent",
+          "scaling": [
+            25,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "th": "ค่าสูงสุดของการเพิ่มดาเมจธาตุไฟสมาชิกทีมระยะใกล้"
+          },
+          "unit": "percent",
+          "scaling": [
+            15,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "th": "อัตราแปลงตามการเพิ่มดาเมจกดขี่"
+          },
+          "unit": "percent",
+          "scaling": [
+            18,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "th": "ค่าสูงสุดของการเพิ่มพลังโจมตี"
+          },
+          "unit": "percent",
+          "scaling": [
+            9,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    }
   }
 }
