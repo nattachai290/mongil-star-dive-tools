@@ -1,0 +1,34 @@
+{
+  "id": "stickphid",
+  "name": {
+    "th": "ฟูลฟี่",
+    "en": "Stickphid"
+  },
+  "dex": {
+    "book": "field",
+    "no": 86
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critDmg",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always",
+      "condition": {
+        "enemyState": "airborne"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "stickphid-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "หัวหน้าฟูลฟี่ (field 88) ให้อัตราคริติคอลกับเป้าหมายที่ลอยอยู่ 6.25% ส่วนตัวนี้ให้ดาเมจคริติคอลเท่ากัน อ่านจากจอของแต่ละตัว"
+  }
+}
