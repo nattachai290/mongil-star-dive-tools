@@ -44,12 +44,16 @@ export const effect = z
     damageType: vocabEnum("damageType").optional(),
     /**
      * เอฟเฟกต์มีผลกับการกระทำแบบไหน เช่น "ดาเมจคริติคอลของสกิลอัลติเมต"
-     * = stat critDmg + scope ultimate
+     * = stat critDmg + scopes ["ultimate"]
      *
      * แยกจาก stat โดยตั้งใจ ไม่งั้นต้องมี stat เท่ากับ (ชนิดค่า × ชนิดการกระทำ)
      * ซึ่งบานปลายเป็นหลายสิบคำและเทียบข้ามกันไม่ได้
+     *
+     * เป็น array เพราะเกมซ้อนขอบเขตได้มากกว่าหนึ่งชั้น เช่น
+     * "Ultimate Skill Elemental Weakness DMG" = ["ultimate", "weaknessHit"]
+     * เรียงจากกว้างไปแคบตามที่เกมเขียนในภาษาอังกฤษ
      */
-    scope: vocabEnum("scope").optional(),
+    scopes: z.array(vocabEnum("scope")).nonempty().optional(),
     durationSec: z.number().positive().optional(),
     /** ติดคูลดาวน์ในตัว เช่น "ทำงาน 1 ครั้ง ทุก 20 วินาที" — ต่างจาก durationSec */
     internalCooldownSec: z.number().positive().optional(),

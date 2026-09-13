@@ -12,7 +12,7 @@
     {
       "kind": "buff",
       "stat": "critDmg",
-      "scope": "switchSkill",
+      "scopes": ["switchSkill"],
       "value": 6.57,
       "unit": "percent",
       "target": "self",

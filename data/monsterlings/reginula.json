@@ -21,7 +21,7 @@
     {
       "kind": "buff",
       "stat": "dmgDealt",
-      "scope": "support",
+      "scopes": ["support"],
       "value": 14,
       "unit": "percent",
       "target": "self",
@@ -38,7 +38,7 @@
     {
       "kind": "buff",
       "stat": "dmgDealt",
-      "scope": "ultimate",
+      "scopes": ["ultimate"],
       "value": 14,
       "unit": "percent",
       "target": "self",

@@ -1,0 +1,32 @@
+{
+  "id": "phantom-stone-tiger",
+  "name": {
+    "th": "ปีศาจเสือลาวา",
+    "en": "Phantom Stone Tiger"
+  },
+  "dex": {
+    "book": "field",
+    "no": 151
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "suppressionDmg",
+      "value": 8.4,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onSwitch",
+      "durationSec": 5
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "phantom-stone-tiger-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "จอภาษาอังกฤษเขียน \"Suppression DMG\" ซึ่งเป็นคนละคำกับ \"Neutralization DMG\" ที่ไคลเอนต์เดียวกันใช้ที่อื่น (golden-fist-dude, lupe, บัฟลิงก์เชนหลายใบ) จึงเก็บเป็น stat แยก ยังไม่ได้อ่านคำไทยของ stat นี้ — พจนานุกรมจึงมีแต่ en และหน้าไทยจะตกลงมาแสดงอังกฤษไปก่อน"
+  }
+}

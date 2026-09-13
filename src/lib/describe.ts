@@ -54,16 +54,20 @@ function statPhrase(e: Effect, locale: Locale): string {
   if (!e.stat) return "";
   const stat = label("stat", e.stat, locale);
   const dt = e.damageType;
-  const scope = e.scope;
+  const scopes = e.scopes ?? [];
 
   if (locale === "th") {
     const core = dt ? `${stat}${thDamageType(dt)}` : stat;
-    return scope ? `${core}ของ${label("scope", scope, "th")}` : core;
+    if (scopes.length === 0) return core;
+    // ไทยเรียงจากแคบไปกว้าง สลับกับอังกฤษ เพราะ "ของ" ชี้จากผลย้อนไปหาต้นทาง
+    // ["ultimate", "weaknessHit"] → "ดาเมจของการโจมตีธาตุจุดอ่อนของสกิลอัลติเมต"
+    const chain = [...scopes].reverse().map((s) => label("scope", s, "th")).join("ของ");
+    return `${core}ของ${chain}`;
   }
 
   // อังกฤษเรียงหน้าไปหลังเหมือนที่เกมเขียน: "Switch Skill Fire DMG", "Physical RES"
   const parts = [
-    scope ? label("scope", scope, "en") : "",
+    ...scopes.map((s) => label("scope", s, "en")),
     dt ? label("damageType", dt, "en") : "",
     stat,
   ];
@@ -133,7 +137,9 @@ export function describeEffect(e: Effect, locale: Locale): EffectDescription {
     // บัฟใช้ "ให้" ดีบัฟใช้ "ของ" ไม่งั้นอ่านแล้วสลับฝั่งกัน
     const preposition = e.kind === "debuff" || e.kind === "damage" ? "ของ" : "ให้";
     const who = target === "self" ? "" : `${preposition}${label("target", target, "th")}`;
-    headline = `${VERB_TH[e.kind] ?? ""}${stat}${who} ${value}`.trim();
+    // ค่าที่ยังไม่มีคำไทยจะตกมาเป็นอังกฤษ ต้องเว้นวรรคให้ ไม่งั้นได้ "เพิ่มSuppression DMG"
+    const gap = /^[A-Za-z]/.test(stat) ? " " : "";
+    headline = `${VERB_TH[e.kind] ?? ""}${gap}${stat}${who} ${value}`.trim();
   } else {
     const who = target === "self" ? "" : `${possessive(label("target", target, "en"))} `;
     headline = `${who}${stat} ${value}`.trim();

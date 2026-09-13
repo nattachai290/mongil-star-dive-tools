@@ -12,7 +12,7 @@
     {
       "kind": "buff",
       "stat": "critDmg",
-      "scope": "specialSkill",
+      "scopes": ["specialSkill"],
       "value": 6.25,
       "unit": "percent",
       "target": "self",

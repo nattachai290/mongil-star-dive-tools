@@ -12,7 +12,7 @@
     {
       "kind": "buff",
       "stat": "dmgDealt",
-      "scope": "airCounter",
+      "scopes": ["airCounter"],
       "damageType": "physical",
       "value": 6.25,
       "unit": "percent",

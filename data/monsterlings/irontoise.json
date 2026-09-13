@@ -1,30 +1,30 @@
 {
-  "id": "fire-slime",
+  "id": "irontoise",
   "name": {
-    "th": "สไลม์ไฟ",
-    "en": "Fire Slime"
+    "th": "บูกิ เกราะเหล็ก",
+    "en": "Irontoise"
   },
   "dex": {
     "book": "field",
-    "no": 72
+    "no": 160
   },
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "dmgDealt",
-      "scopes": ["weaknessHit"],
-      "value": 6.25,
+      "stat": "def",
+      "value": 6,
       "unit": "percent",
-      "target": "self",
-      "trigger": "always",
+      "target": "team",
+      "trigger": "onCrit",
+      "durationSec": 10,
       "condition": {
-        "enemyType": "fire"
+        "vsBoss": true
       }
     }
   ],
   "effectsRank": "gold",
   "images": {
-    "icon": "fire-slime-icon.webp"
+    "icon": "irontoise-icon.webp"
   },
   "source": {
     "verifiedAt": "2026-09-13",
