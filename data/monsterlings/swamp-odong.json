@@ -11,7 +11,7 @@
   "speciesEffects": [
     {
       "kind": "debuff",
-      "stat": "elementRes",
+      "stat": "res",
       "damageType": "earth",
       "value": 8,
       "unit": "percent",

@@ -1,31 +1,32 @@
 {
-  "id": "spoonmugger",
+  "id": "forkmugger",
   "name": {
-    "th": "สปูนมักเกอร์",
-    "en": "Spoonmugger"
+    "th": "ฟอร์กมักเกอร์",
+    "en": "Forkmugger"
   },
   "dex": {
     "book": "field",
-    "no": 92
+    "no": 15
   },
   "speciesEffects": [
     {
       "kind": "debuff",
       "stat": "res",
-      "damageType": "lightning",
+      "damageType": "physical",
       "value": 11,
       "unit": "percent",
       "target": "enemy",
       "trigger": "onWeaknessHit",
-      "durationSec": 5
+      "durationSec": 5,
+      "internalCooldownSec": 15
     }
   ],
   "effectsRank": "gold",
   "images": {
-    "icon": "spoonmugger-icon.webp"
+    "icon": "forkmugger-icon.webp"
   },
   "source": {
-    "verifiedAt": "2026-09-12",
+    "verifiedAt": "2026-09-13",
     "gameVersion": "unknown",
     "by": "in-game"
   }

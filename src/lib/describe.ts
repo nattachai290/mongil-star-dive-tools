@@ -57,17 +57,15 @@ function statPhrase(e: Effect, locale: Locale): string {
   const scope = e.scope;
 
   if (locale === "th") {
-    // "ต้านทานธาตุ" + "ไฟ" ต่อกันตรง ๆ ส่วน stat อื่นเติมชนิดดาเมจต่อท้าย
-    let core = stat;
-    if (dt) core = e.stat === "elementRes" ? `${stat}${label("damageType", dt, "th")}` : `${stat}${thDamageType(dt)}`;
+    const core = dt ? `${stat}${thDamageType(dt)}` : stat;
     return scope ? `${core}ของ${label("scope", scope, "th")}` : core;
   }
 
-  // อังกฤษเรียงหน้าไปหลังเหมือนที่เกมเขียน: "Switch Skill Fire DMG"
+  // อังกฤษเรียงหน้าไปหลังเหมือนที่เกมเขียน: "Switch Skill Fire DMG", "Physical RES"
   const parts = [
     scope ? label("scope", scope, "en") : "",
     dt ? label("damageType", dt, "en") : "",
-    e.stat === "elementRes" && dt ? "RES" : stat,
+    stat,
   ];
   return parts.filter(Boolean).join(" ");
 }

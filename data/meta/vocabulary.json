@@ -244,9 +244,9 @@
       "th": "ค่าสเตมินา",
       "en": "Stamina"
     },
-    "elementRes": {
-      "th": "ต้านทานธาตุ",
-      "en": "Elemental RES"
+    "res": {
+      "th": "ต้านทาน",
+      "en": "RES"
     },
     "neutralizationDmg": {
       "th": "ดาเมจหมดฤทธิ์",
