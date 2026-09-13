@@ -1,0 +1,32 @@
+{
+  "id": "moon-shadow-lupe",
+  "name": {
+    "th": "ฮาคาใต้เงาจันทรา",
+    "en": "Moon Shadow Lupe"
+  },
+  "dex": {
+    "book": "field",
+    "no": 21
+  },
+  "speciesEffects": [
+    {
+      "kind": "debuff",
+      "stat": "res",
+      "damageType": "ice",
+      "value": 11.55,
+      "unit": "percent",
+      "target": "enemy",
+      "trigger": "onCrit",
+      "durationSec": 10
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "moon-shadow-lupe-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "scarlet-queen",
+  "name": {
+    "th": "ราชินีเพลิงโลกันตร์",
+    "en": "Scarlet Queen"
+  },
+  "dex": {
+    "book": "field",
+    "no": 17
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "atk",
+      "value": 5.78,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onHit",
+      "durationSec": 10,
+      "internalCooldownSec": 20,
+      "condition": {
+        "enemyType": "water"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "scarlet-queen-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}
