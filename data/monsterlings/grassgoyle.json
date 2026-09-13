@@ -1,0 +1,32 @@
+{
+  "id": "grassgoyle",
+  "name": {
+    "th": "การ์ก่อย",
+    "en": "Grassgoyle"
+  },
+  "dex": {
+    "book": "field",
+    "no": 82
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scope": "airCounter",
+      "damageType": "physical",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always"
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "grassgoyle-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

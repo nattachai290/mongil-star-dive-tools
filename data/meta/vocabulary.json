@@ -607,6 +607,10 @@
     "support": {
       "th": "การสนับสนุน",
       "en": "Support"
+    },
+    "airCounter": {
+      "th": "โจมตีฉับพลัน",
+      "en": "Air Counter"
     }
   },
   "enemyState": {
