@@ -7,7 +7,7 @@ const scaling16 = z
   .array(z.number().nullable())
   .length(16, "ต้องมี 16 ช่อง (เลเวล 1–16) ช่องที่ยังไม่รู้ค่าให้ใส่ null");
 
-const skill = z.object({
+export const skill = z.object({
   name: text,
   desc: text,
   /**
@@ -33,7 +33,14 @@ const skill = z.object({
 export const character = z.object({
   id: slug,
   name: text,
-  rarity: vocabEnum("rarity"),
+  /**
+   * ความหายากเป็น "จำนวนดาว" ตามที่จอตัวละครแสดง ไม่ใช่ R/SR/SSR
+   * (คำพวกนั้นเป็นของที่ร่างไว้ก่อนเห็นเกมจริง เกมนี้ไม่มีใช้เลย)
+   * ใช้รูปเดียวกับลิงก์เชนซึ่งเก็บเป็นตัวเลขอยู่แล้ว
+   */
+  rarity: z.number().int().min(1).max(6),
+  /** ระยะการโจมตี เช่น ระยะใกล้ — เพิ่มคำใหม่เมื่อเห็นจากจอเท่านั้น */
+  range: vocabEnum("range").optional(),
   /**
    * ธาตุประจำตัวละคร ใช้สำหรับหมวดหมู่และตัวกรองเท่านั้น
    *
@@ -44,22 +51,34 @@ export const character = z.object({
   role: vocabEnum("role"),
   tags: z.array(vocabEnum("tag")).default([]),
 
-  stats: z.object({
-    atLevel: z.number().int().positive(),
-    atBreakthrough: z.number().int().min(0).max(6),
-    hp: z.number().positive(),
-    atk: z.number().positive(),
-    def: z.number().positive(),
-    critRate: z.number().min(0).max(100),
-    critDmg: z.number().min(100),
-  }),
+  /**
+   * ค่าพลัง "เปล่า" ของตัวละคร — ห้ามใส่ตัวเลขจากจอที่ติดอุปกรณ์
+   * หรือมอนสเตอร์ลิงอยู่ เพราะลักษณะเฉพาะของมอนบวก HP/ATK/DEF เข้าไปด้วย
+   * ไม่ใส่ = ยังไม่ได้อ่านค่าเปล่า ไม่ใช่ศูนย์
+   */
+  stats: z
+    .object({
+      atLevel: z.number().int().positive(),
+      atBreakthrough: z.number().int().min(0).max(6),
+      hp: z.number().positive(),
+      atk: z.number().positive(),
+      def: z.number().positive(),
+      /** ฐานของเกมคือ 5 */
+      critRate: z.number().min(0).max(100),
+      /** เก็บเป็น "ส่วนที่บวกเพิ่ม" ฐานของเกมคือ 50 ไม่ใช่ตัวคูณ 150 */
+      critDmg: z.number().min(0),
+    })
+    .optional(),
 
-  skills: z.object({
-    basic: skill,
-    switch: skill,
-    special: skill,
-    ultimate: skill,
-  }),
+  /** ข้อมูลมาทีละจอ ตัวละครที่ยังอ่านสกิลไม่ครบก็ต้องเก็บชื่อกับธาตุไว้ก่อนได้ */
+  skills: z
+    .object({
+      basic: skill,
+      switch: skill,
+      special: skill,
+      ultimate: skill,
+    })
+    .optional(),
 
   awaken: z
     .array(

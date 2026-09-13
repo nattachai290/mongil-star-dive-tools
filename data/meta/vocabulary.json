@@ -155,6 +155,11 @@
       "en": "Lightning"
     }
   },
+  "range": {
+    "melee": {
+      "th": "ระยะใกล้"
+    }
+  },
   "role": {
     "dps": {
       "th": "ดาเมจ",
