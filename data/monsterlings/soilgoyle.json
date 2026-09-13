@@ -1,0 +1,33 @@
+{
+  "id": "soilgoyle",
+  "name": {
+    "th": "การ์ก้อย",
+    "en": "Soilgoyle"
+  },
+  "dex": {
+    "book": "field",
+    "no": 83
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": ["airCounter"],
+      "damageType": "physical",
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always"
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "soilgoyle-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "โครงเดียวกับการ์ก่อย (field 82) แต่ได้ 6.57% ส่วนตัวนั้นได้ 6.25% ชื่อไทยต่างกันแค่วรรณยุกต์ (ก้อย กับ ก่อย) จึงต้องระวังสลับกัน อ่านจากจอของแต่ละตัว"
+  }
+}

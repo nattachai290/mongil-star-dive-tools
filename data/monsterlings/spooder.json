@@ -1,0 +1,34 @@
+{
+  "id": "spooder",
+  "name": {
+    "th": "สปูเดอร์",
+    "en": "Spooder"
+  },
+  "dex": {
+    "book": "field",
+    "no": 78
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critDmg",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onKill",
+      "durationSec": 5,
+      "condition": {
+        "killCount": 10
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "spooder-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}
