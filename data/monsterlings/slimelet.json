@@ -1,0 +1,33 @@
+{
+  "id": "slimelet",
+  "name": {
+    "th": "สไลม์",
+    "en": "Slimelet"
+  },
+  "dex": {
+    "book": "field",
+    "no": 5
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critDmg",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always",
+      "condition": {
+        "enemyType": "physical"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "slimelet-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}
