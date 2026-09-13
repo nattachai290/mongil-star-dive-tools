@@ -57,17 +57,15 @@ function statPhrase(e: Effect, locale: Locale): string {
   const scope = e.scope;
 
   if (locale === "th") {
-    // "ต้านทานธาตุ" + "ไฟ" ต่อกันตรง ๆ ส่วน stat อื่นเติมชนิดดาเมจต่อท้าย
-    let core = stat;
-    if (dt) core = e.stat === "elementRes" ? `${stat}${label("damageType", dt, "th")}` : `${stat}${thDamageType(dt)}`;
+    const core = dt ? `${stat}${thDamageType(dt)}` : stat;
     return scope ? `${core}ของ${label("scope", scope, "th")}` : core;
   }
 
-  // อังกฤษเรียงหน้าไปหลังเหมือนที่เกมเขียน: "Switch Skill Fire DMG"
+  // อังกฤษเรียงหน้าไปหลังเหมือนที่เกมเขียน: "Switch Skill Fire DMG", "Physical RES"
   const parts = [
     scope ? label("scope", scope, "en") : "",
     dt ? label("damageType", dt, "en") : "",
-    e.stat === "elementRes" && dt ? "RES" : stat,
+    stat,
   ];
   return parts.filter(Boolean).join(" ");
 }
@@ -77,12 +75,19 @@ function qualifiers(e: Effect, locale: Locale): string[] {
   const out: string[] = [];
 
   // ตัวกระตุ้น — always/passive ไม่ต้องบอก เพราะคือค่าเริ่มต้นอยู่แล้ว
+  // จำนวนครั้ง/จำนวนตัวรวมอยู่ในประโยคเดียวกับตัวกระตุ้น ไม่แยกชิป
+  // ไม่งั้นจะอ่านได้ว่า "เมื่อกำจัดมอนสเตอร์ · กำจัดศัตรู 10 ตัว" ซึ่งซ้ำตัวเอง
+  const kills = e.condition?.killCount;
+  const hits = e.condition?.hitCount;
   if (e.trigger !== "always" && e.trigger !== "passive") {
     const trigger = label("trigger", e.trigger, locale);
-    const n = e.condition?.hitCount;
-    out.push(n ? (th ? `${trigger} ${n} ครั้ง` : `${trigger} ${n} times`) : trigger);
-  } else if (e.condition?.hitCount) {
-    out.push(th ? `ครบ ${e.condition.hitCount} ครั้ง` : `after ${e.condition.hitCount} times`);
+    if (kills) out.push(th ? `${trigger} ${kills} ตัว` : `upon defeating ${kills} enemies`);
+    else if (hits) out.push(th ? `${trigger} ${hits} ครั้ง` : `${trigger} ${hits} times`);
+    else out.push(trigger);
+  } else if (hits) {
+    out.push(th ? `ครบ ${hits} ครั้ง` : `after ${hits} times`);
+  } else if (kills) {
+    out.push(th ? `กำจัดศัตรูครบ ${kills} ตัว` : `after ${kills} kills`);
   }
 
   if (e.durationSec) out.push(th ? `นาน ${e.durationSec} วินาที` : `for ${e.durationSec}s`);

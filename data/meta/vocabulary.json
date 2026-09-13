@@ -244,9 +244,9 @@
       "th": "ค่าสเตมินา",
       "en": "Stamina"
     },
-    "elementRes": {
-      "th": "ต้านทานธาตุ",
-      "en": "Elemental RES"
+    "res": {
+      "th": "ต้านทาน",
+      "en": "RES"
     },
     "neutralizationDmg": {
       "th": "ดาเมจหมดฤทธิ์",
@@ -319,8 +319,8 @@
       "en": "On ultimate"
     },
     "onKill": {
-      "th": "เมื่อสังหาร",
-      "en": "On kill"
+      "th": "เมื่อกำจัดมอนสเตอร์",
+      "en": "upon defeating monsters"
     },
     "hpBelow": {
       "th": "เมื่อเลือดต่ำกว่าที่กำหนด",
@@ -357,6 +357,10 @@
     "onUltimateCharged": {
       "th": "เมื่อเกจสกิลอัลติเมตชาร์จสูงสุด",
       "en": "when the Ultimate Gauge is at max charge"
+    },
+    "onAirCounter": {
+      "th": "เมื่อโจมตีฉับพลัน",
+      "en": "upon using Air Counter"
     }
   },
   "effectKind": {
@@ -603,12 +607,20 @@
     "support": {
       "th": "การสนับสนุน",
       "en": "Support"
+    },
+    "airCounter": {
+      "th": "โจมตีฉับพลัน",
+      "en": "Air Counter"
     }
   },
   "enemyState": {
     "downed": {
       "th": "ล้มอยู่ตรงพื้น",
       "en": "Downed"
+    },
+    "airborne": {
+      "th": "ลอยขึ้นไปบนอากาศ",
+      "en": "Airborne"
     }
   },
   "monsterRank": {

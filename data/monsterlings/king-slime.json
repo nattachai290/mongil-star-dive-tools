@@ -1,0 +1,35 @@
+{
+  "id": "king-slime",
+  "name": {
+    "th": "สไลม์คิง",
+    "en": "King Slime"
+  },
+  "dex": {
+    "book": "field",
+    "no": 16
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "def",
+      "value": 8.25,
+      "unit": "percent",
+      "target": "team",
+      "trigger": "onHit",
+      "durationSec": 5,
+      "internalCooldownSec": 10,
+      "condition": {
+        "enemyType": "water"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "king-slime-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

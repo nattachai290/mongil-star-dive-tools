@@ -1,0 +1,33 @@
+{
+  "id": "head-stickphid",
+  "name": {
+    "th": "หัวหน้าฟูลฟี่",
+    "en": "Head Stickphid"
+  },
+  "dex": {
+    "book": "field",
+    "no": 88
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critRate",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always",
+      "condition": {
+        "enemyState": "airborne"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "head-stickphid-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "green-cappy-papa",
+  "name": {
+    "th": "ช้อปป้าแดดดี้",
+    "en": "Green Cappy Papa"
+  },
+  "dex": {
+    "book": "field",
+    "no": 37
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "atk",
+      "scope": "specialSkill",
+      "value": 4,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always",
+      "internalCooldownSec": 15
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "green-cappy-papa-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}
