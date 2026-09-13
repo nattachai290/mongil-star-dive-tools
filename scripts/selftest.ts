@@ -115,13 +115,20 @@ check("สกิลที่ไม่สร้างดาเมจ ไม่ต
 // ---------- ตัวละครเก็บแบบยังอ่านไม่ครบได้ ----------
 // จอแรกของตัวละครให้แค่ชื่อ ธาตุ บทบาท ดาว — สกิลกับค่าพลังเปล่ามาทีหลัง
 check("ตัวละครที่ยังไม่มีสกิลและค่าพลัง ผ่าน schema ได้",
-  character.safeParse({ id: "vivienne", name: t("วิเวียน"), rarity: 4,
+  character.safeParse({ id: "vivian", name: t("วิเวียน"), rarity: 4,
     element: "fire", role: "supporter", range: "melee", awaken: [], source: src }).success);
 check("ความหายากของตัวละครเป็นจำนวนดาว ไม่ใช่ SSR",
-  !character.safeParse({ id: "vivienne", name: t("วิเวียน"), rarity: "SSR",
+  !character.safeParse({ id: "vivian", name: t("วิเวียน"), rarity: "SSR",
+    element: "fire", role: "supporter", awaken: [], source: src }).success);
+// เกมมีแค่ 4 ดาวกับ 5 ดาว เลข 3 คืออ่านจอผิด ไม่ใช่ตัวละครหายาก
+check("ตัวละคร 3 ดาวไม่มีในเกม = ไม่ผ่าน",
+  !character.safeParse({ id: "vivian", name: t("วิเวียน"), rarity: 3,
+    element: "fire", role: "supporter", awaken: [], source: src }).success);
+check("ตัวละคร 5 ดาวผ่าน",
+  character.safeParse({ id: "vivian", name: t("วิเวียน"), rarity: 5,
     element: "fire", role: "supporter", awaken: [], source: src }).success);
 check("ดาเมจคริติคอลฐาน 50 ผ่านได้ (เก็บเป็นส่วนที่บวกเพิ่ม ไม่ใช่ตัวคูณ 150)",
-  character.safeParse({ id: "vivienne", name: t("วิเวียน"), rarity: 4,
+  character.safeParse({ id: "vivian", name: t("วิเวียน"), rarity: 4,
     element: "fire", role: "supporter", awaken: [], source: src,
     stats: { atLevel: 60, atBreakthrough: 0, hp: 10243, atk: 1943, def: 638,
       critRate: 5, critDmg: 50 } }).success);
