@@ -45,8 +45,6 @@ export const skill = z.object({
    * มีทั้งหน่วยวินาทีและเปอร์เซ็นต์ปนกัน
    */
   values: z.array(skillValue).default([]),
-  cooldownSec: z.number().nonnegative().optional(),
-  energyCost: z.number().nonnegative().optional(),
 });
 
 export const character = z.object({
@@ -102,6 +100,15 @@ export const character = z.object({
    * (ดู DATA-FOR-AI "stat กับ scopes แยกกัน")
    */
   otherStats: z.array(effect).default([]),
+
+  /**
+   * สถานะที่ตัวละครนี้มอบให้ พร้อมคำอธิบายจากหน้าต่าง "รายละเอียดเอฟเฟกต์"
+   *
+   * เก็บที่ตัวละครไม่ใช่ในสกิล เพราะสกิลหลายท่าอ้างถึงสถานะเดียวกัน
+   * (อ่อนแอต่อไฟ ถูกใช้โดยสกิลสับเปลี่ยนและสกิลอัลติเมต)
+   * ถ้าเจอตัวละครตัวอื่นมอบสถานะชื่อเดียวกัน ค่อยย้ายไปเป็นหมวดของตัวเอง
+   */
+  statuses: z.array(z.object({ name: text, desc: text })).default([]),
 
   /** ข้อมูลมาทีละจอ ตัวละครที่ยังอ่านสกิลไม่ครบก็ต้องเก็บชื่อกับธาตุไว้ก่อนได้ */
   skills: z
