@@ -5,15 +5,8 @@ import { Text } from "@/components/Text";
 import { EffectLine } from "@/components/EffectLine";
 import { createTranslate } from "@/i18n";
 import { LOCALES, isLocale, type Locale } from "@/lib/i18n";
-import {
-  CHAINS_BY_MONSTERLING,
-  DEX,
-  MONSTERLINGS,
-  monsterlingImage,
-} from "@/lib/data";
+import { DEX, LINK_CHAINS, MONSTERLINGS, monsterlingImage } from "@/lib/data";
 import { linkableIds, linkableOf, linkableBadge } from "@/lib/linkable";
-import { LINK_CHAINS } from "@/lib/data";
-import { label } from "@/lib/vocabulary";
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
@@ -80,9 +73,6 @@ export default async function MonsterlingsPage({
                 const slug = entry.slug;
                 const mon = slug ? MONSTERLINGS.get(slug) : undefined;
                 const image = slug ? monsterlingImage(slug) : null;
-                const chains = slug
-                  ? (CHAINS_BY_MONSTERLING.get(slug) ?? [])
-                  : [];
                 const badge = slug
                   ? linkableBadge(linkableOf(slug, CHAIN_IDS))
                   : null;
@@ -107,7 +97,9 @@ export default async function MonsterlingsPage({
                     <div className="min-w-0 flex-1">
                       <div className="flex flex-wrap items-baseline gap-x-2">
                         {/* หัวข้อบอกชื่อสมุดแล้ว ตรงนี้เหลือแค่เลขพอ */}
-                        <span className="font-mono text-xs text-muted">No.{entry.no}</span>
+                        <span className="font-mono text-xs text-muted">
+                          No.{entry.no}
+                        </span>
                         {badge && (
                           <span className="rounded bg-gold-bg px-1.5 py-0.5 text-[11px] text-gold">
                             {badge[locale]}
@@ -132,31 +124,6 @@ export default async function MonsterlingsPage({
                       ) : (
                         <p className="mt-2 text-xs text-muted">
                           {t("monsterlings.noEffect")}
-                        </p>
-                      )}
-
-                      {chains.length > 0 && (
-                        <p className="mt-2 text-xs text-ink-2">
-                          <span className="text-muted">
-                            {t("monsterlings.chains")}:{" "}
-                          </span>
-                          {chains.map((c, i) => (
-                            <span key={c.id}>
-                              {i > 0 && " · "}
-                              <Text
-                                value={c.name}
-                                locale={locale}
-                                showFallbackBadge={false}
-                              />
-                            </span>
-                          ))}
-                        </p>
-                      )}
-
-                      {mon?.effectsRank && (
-                        <p className="mt-1 font-mono text-[11px] text-muted">
-                          {t("monsterling.rank")}:{" "}
-                          {label("monsterRank", mon.effectsRank, locale)}
                         </p>
                       )}
                     </div>

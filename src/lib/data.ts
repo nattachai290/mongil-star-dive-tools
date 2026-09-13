@@ -49,17 +49,6 @@ export function chainsSorted(locale: "th" | "en"): LinkChain[] {
   return [...LINK_CHAINS].sort((a, b) => key(a).localeCompare(key(b), locale));
 }
 
-/** ลิงก์เชนที่ชี้มาที่มอนตัวนี้ — ใช้ทั้งป้ายบนการ์ดและหน้ารายละเอียด */
-export const CHAINS_BY_MONSTERLING: Map<string, LinkChain[]> = (() => {
-  const map = new Map<string, LinkChain[]>();
-  for (const chain of LINK_CHAINS) {
-    const list = map.get(chain.monsterlingId) ?? [];
-    list.push(chain);
-    map.set(chain.monsterlingId, list);
-  }
-  return map;
-})();
-
 export function monsterlingImage(slug: string): string | null {
   const file = `${slug}-icon.webp`;
   return existsSync(join(process.cwd(), "public", "images", "monsterlings", file))
