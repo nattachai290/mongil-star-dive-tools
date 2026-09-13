@@ -183,10 +183,15 @@ public/llms.txt             อธิบายว่าแต่ละไฟล�
 }
 ```
 
-### stat กับ scope แยกกัน
+### stat กับ scopes แยกกัน
 
 "ดาเมจคริติคอลของสกิลอัลติเมต" ไม่ได้เก็บเป็น stat ชื่อ `ultimateCritDmg`
-แต่เก็บเป็น `stat: critDmg` + `scope: ultimate`
+แต่เก็บเป็น `stat: critDmg` + `scopes: ["ultimate"]`
+
+`scopes` เป็น array เพราะเกมซ้อนขอบเขตได้มากกว่าหนึ่งชั้น เช่น
+"Ultimate Skill Elemental Weakness DMG" ของอูรกัช = `scopes: ["ultimate", "weaknessHit"]`
+เรียงจากกว้างไปแคบตามที่จอภาษาอังกฤษเขียน (หน้าไทยจะสลับให้เองตอนแสดงผล)
+ถ้าไม่มีขอบเขต **ไม่ต้องใส่ฟิลด์** ห้ามใส่เป็น array ว่าง
 
 เพราะถ้ารวมเป็นคำเดียว จำนวน stat จะเท่ากับ (ชนิดค่า × ชนิดการกระทำ) คือ
 critRate/critDmg/dmgDealt × พื้นฐาน/พิเศษ/สับเปลี่ยน/อัลติเมต/จุดอ่อน/สนับสนุน

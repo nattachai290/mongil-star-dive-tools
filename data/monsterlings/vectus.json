@@ -1,31 +1,31 @@
 {
-  "id": "cappy",
+  "id": "vectus",
   "name": {
-    "th": "ช้อปปี้",
-    "en": "Cappy"
+    "th": "เว็กตัส",
+    "en": "Vectus"
   },
   "dex": {
     "book": "field",
-    "no": 1
+    "no": 64
   },
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "critRate",
-      "scopes": ["specialSkill"],
-      "value": 6.25,
+      "stat": "atk",
+      "value": 4,
       "unit": "percent",
       "target": "self",
-      "trigger": "always",
+      "trigger": "onTakeHit",
+      "durationSec": 10,
       "internalCooldownSec": 20
     }
   ],
   "effectsRank": "gold",
   "images": {
-    "icon": "cappy-icon.webp"
+    "icon": "vectus-icon.webp"
   },
   "source": {
-    "verifiedAt": "2026-09-12",
+    "verifiedAt": "2026-09-13",
     "gameVersion": "unknown",
     "by": "in-game"
   }

@@ -12,7 +12,7 @@
     {
       "kind": "buff",
       "stat": "neutralizationDmg",
-      "scope": "weaknessHit",
+      "scopes": ["weaknessHit"],
       "value": 11.55,
       "unit": "percent",
       "target": "self",

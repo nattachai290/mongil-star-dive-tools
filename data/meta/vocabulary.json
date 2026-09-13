@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": 1,
-    "updatedAt": "2026-09-11",
+    "updatedAt": "2026-09-13",
     "note": "คำศัพท์ทั้งหมดที่ใช้ได้ในไฟล์ข้อมูล — ห้ามใช้คำนอกไฟล์นี้ validate:data จะ fail. ป้าย th/en ใช้เป็นข้อความบนหน้าเว็บด้วย ไม่ต้องแปลซ้ำที่อื่น"
   },
   "dexBook": {
@@ -251,6 +251,10 @@
     "neutralizationDmg": {
       "th": "ดาเมจหมดฤทธิ์",
       "en": "Neutralization DMG"
+    },
+    "suppressionDmg": {
+      "th": "ดาเมจกดขี่",
+      "en": "Suppression DMG"
     }
   },
   "unit": {
@@ -621,6 +625,10 @@
     "airborne": {
       "th": "ลอยขึ้นไปบนอากาศ",
       "en": "Airborne"
+    },
+    "staggered": {
+      "th": "ติดสถานะมึนงง",
+      "en": "Staggered"
     }
   },
   "monsterRank": {

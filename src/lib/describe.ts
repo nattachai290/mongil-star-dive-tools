@@ -54,16 +54,20 @@ function statPhrase(e: Effect, locale: Locale): string {
   if (!e.stat) return "";
   const stat = label("stat", e.stat, locale);
   const dt = e.damageType;
-  const scope = e.scope;
+  const scopes = e.scopes ?? [];
 
   if (locale === "th") {
     const core = dt ? `${stat}${thDamageType(dt)}` : stat;
-    return scope ? `${core}ของ${label("scope", scope, "th")}` : core;
+    if (scopes.length === 0) return core;
+    // ไทยเรียงจากแคบไปกว้าง สลับกับอังกฤษ เพราะ "ของ" ชี้จากผลย้อนไปหาต้นทาง
+    // ["ultimate", "weaknessHit"] → "ดาเมจของการโจมตีธาตุจุดอ่อนของสกิลอัลติเมต"
+    const chain = [...scopes].reverse().map((s) => label("scope", s, "th")).join("ของ");
+    return `${core}ของ${chain}`;
   }
 
   // อังกฤษเรียงหน้าไปหลังเหมือนที่เกมเขียน: "Switch Skill Fire DMG", "Physical RES"
   const parts = [
-    scope ? label("scope", scope, "en") : "",
+    ...scopes.map((s) => label("scope", s, "en")),
     dt ? label("damageType", dt, "en") : "",
     stat,
   ];
@@ -122,7 +126,30 @@ function qualifiers(e: Effect, locale: Locale): string[] {
   return out;
 }
 
+/**
+ * การฟื้นฟูอ่านคนละแบบกับบัฟ "+2.4% HP" ของบัฟคือเพิ่มค่าพลังชีวิตสูงสุด
+ * ส่วนของการฟื้นฟูคือคืนเลือดเท่ากับ 2.4% ของพลังชีวิตสูงสุด คนละเรื่องกัน
+ * ตัวแยกคือ kind ไม่ใช่ stat จึงต้องแยกประโยคตรงนี้ด้วย
+ *
+ * เกมบอกการฟื้นฟูเป็นสัดส่วนของพลังชีวิตสูงสุดเสมอ ถ้าเจอที่อิงค่าอื่น
+ * (เช่น % ของพลังโจมตี) ต้องเพิ่มฟิลด์บอกฐานในข้อมูล ไม่ใช่มาเดาตรงนี้
+ */
+function healHeadline(e: Effect, locale: Locale): string | null {
+  if (e.kind !== "heal" || e.stat !== "hp" || e.unit !== "percent" || e.value === undefined) {
+    return null;
+  }
+  if (locale === "th") {
+    const who = e.target === "self" ? "" : `ให้${label("target", e.target, "th")}`;
+    return `ฟื้นฟู${who} ${e.value}% ของพลังชีวิตสูงสุด`;
+  }
+  const whose = e.target === "self" ? "" : `${possessive(label("target", e.target, "en"))} `;
+  return `Recovers ${e.value}% of ${whose}Max HP`;
+}
+
 export function describeEffect(e: Effect, locale: Locale): EffectDescription {
+  const heal = healHeadline(e, locale);
+  if (heal) return { headline: heal, qualifiers: qualifiers(e, locale) };
+
   const stat = statPhrase(e, locale);
   const value = formatValue(e);
   const target = e.target;
@@ -133,7 +160,9 @@ export function describeEffect(e: Effect, locale: Locale): EffectDescription {
     // บัฟใช้ "ให้" ดีบัฟใช้ "ของ" ไม่งั้นอ่านแล้วสลับฝั่งกัน
     const preposition = e.kind === "debuff" || e.kind === "damage" ? "ของ" : "ให้";
     const who = target === "self" ? "" : `${preposition}${label("target", target, "th")}`;
-    headline = `${VERB_TH[e.kind] ?? ""}${stat}${who} ${value}`.trim();
+    // ค่าที่ยังไม่มีคำไทยจะตกมาเป็นอังกฤษ ต้องเว้นวรรคให้ ไม่งั้นได้ "เพิ่มSuppression DMG"
+    const gap = /^[A-Za-z]/.test(stat) ? " " : "";
+    headline = `${VERB_TH[e.kind] ?? ""}${gap}${stat}${who} ${value}`.trim();
   } else {
     const who = target === "self" ? "" : `${possessive(label("target", target, "en"))} `;
     headline = `${who}${stat} ${value}`.trim();

@@ -1,28 +1,31 @@
 {
-  "id": "green-cappy-papa",
+  "id": "borborg",
   "name": {
-    "th": "ช้อปป้าแดดดี้",
-    "en": "Green Cappy Papa"
+    "th": "โบร์โบก",
+    "en": "Borborg"
   },
   "dex": {
     "book": "field",
-    "no": 37
+    "no": 130
   },
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "atk",
-      "scopes": ["specialSkill"],
-      "value": 4,
+      "stat": "def",
+      "value": 6,
       "unit": "percent",
       "target": "self",
-      "trigger": "always",
-      "internalCooldownSec": 15
+      "trigger": "onHit",
+      "durationSec": 5,
+      "condition": {
+        "hitCount": 10,
+        "vsBoss": true
+      }
     }
   ],
   "effectsRank": "gold",
   "images": {
-    "icon": "green-cappy-papa-icon.webp"
+    "icon": "borborg-icon.webp"
   },
   "source": {
     "verifiedAt": "2026-09-13",

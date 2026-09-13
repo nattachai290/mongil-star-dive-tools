@@ -10,6 +10,7 @@
   "levels": [
     {
       "level": 1,
+      "damageType": "earth",
       "appearanceConditions": [
         "switchSkill"
       ],
@@ -30,7 +31,7 @@
     }
   ],
   "source": {
-    "verifiedAt": "2026-09-12",
+    "verifiedAt": "2026-09-13",
     "gameVersion": "unknown",
     "by": "in-game"
   }

@@ -12,7 +12,7 @@
     {
       "kind": "buff",
       "stat": "atk",
-      "scope": "switchSkill",
+      "scopes": ["switchSkill"],
       "value": 5.78,
       "unit": "percent",
       "target": "self",

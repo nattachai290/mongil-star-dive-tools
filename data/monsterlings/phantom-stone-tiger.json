@@ -1,0 +1,32 @@
+{
+  "id": "phantom-stone-tiger",
+  "name": {
+    "th": "ปีศาจเสือลาวา",
+    "en": "Phantom Stone Tiger"
+  },
+  "dex": {
+    "book": "field",
+    "no": 151
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "suppressionDmg",
+      "value": 8.4,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onSwitch",
+      "durationSec": 5
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "phantom-stone-tiger-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "จอภาษาอังกฤษเขียน \"Suppression DMG\" ซึ่งเป็นคนละคำกับ \"Neutralization DMG\" ที่ไคลเอนต์เดียวกันใช้ที่อื่น จึงเก็บเป็น stat แยก ยืนยันแล้วว่าถูก: จอไทยเขียน \"ดาเมจกดขี่\" ส่วน \"ดาเมจหมดฤทธิ์\" (Neutralization) โผล่บนจอเดียวกันในช่องลักษณะเฉพาะของบูกิ เกราะเหล็ก — ไทยแยกสองคำนี้เหมือนกัน"
+  }
+}

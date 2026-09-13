@@ -1,31 +1,32 @@
 {
-  "id": "cappy",
+  "id": "ring-slime",
   "name": {
-    "th": "ช้อปปี้",
-    "en": "Cappy"
+    "th": "สไลม์ลิ่ง",
+    "en": "Ring Slime"
   },
   "dex": {
     "book": "field",
-    "no": 1
+    "no": 22
   },
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "critRate",
-      "scopes": ["specialSkill"],
-      "value": 6.25,
+      "stat": "atk",
+      "value": 4,
       "unit": "percent",
       "target": "self",
       "trigger": "always",
-      "internalCooldownSec": 20
+      "condition": {
+        "enemyType": "physical"
+      }
     }
   ],
   "effectsRank": "gold",
   "images": {
-    "icon": "cappy-icon.webp"
+    "icon": "ring-slime-icon.webp"
   },
   "source": {
-    "verifiedAt": "2026-09-12",
+    "verifiedAt": "2026-09-13",
     "gameVersion": "unknown",
     "by": "in-game"
   }

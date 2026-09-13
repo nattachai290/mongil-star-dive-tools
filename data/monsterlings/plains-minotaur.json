@@ -1,28 +1,31 @@
 {
-  "id": "green-cappy-papa",
+  "id": "plains-minotaur",
   "name": {
-    "th": "ช้อปป้าแดดดี้",
-    "en": "Green Cappy Papa"
+    "th": "มิโนต้าทุ่งหญ้า",
+    "en": "Plains Minotaur"
   },
   "dex": {
     "book": "field",
-    "no": 37
+    "no": 91
   },
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "atk",
-      "scopes": ["specialSkill"],
-      "value": 4,
+      "stat": "dmgDealt",
+      "damageType": "wind",
+      "value": 11,
       "unit": "percent",
       "target": "self",
       "trigger": "always",
-      "internalCooldownSec": 15
+      "condition": {
+        "vsBoss": true,
+        "enemyState": "staggered"
+      }
     }
   ],
   "effectsRank": "gold",
   "images": {
-    "icon": "green-cappy-papa-icon.webp"
+    "icon": "plains-minotaur-icon.webp"
   },
   "source": {
     "verifiedAt": "2026-09-13",

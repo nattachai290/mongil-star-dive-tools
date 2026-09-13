@@ -12,7 +12,7 @@
     {
       "kind": "buff",
       "stat": "critRate",
-      "scope": "weaknessHit",
+      "scopes": ["weaknessHit"],
       "value": 11,
       "unit": "percent",
       "target": "self",

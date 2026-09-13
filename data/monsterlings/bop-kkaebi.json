@@ -12,7 +12,7 @@
     {
       "kind": "buff",
       "stat": "critDmg",
-      "scope": "ultimate",
+      "scopes": ["ultimate"],
       "value": 6.25,
       "unit": "percent",
       "target": "self",

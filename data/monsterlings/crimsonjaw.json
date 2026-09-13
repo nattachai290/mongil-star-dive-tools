@@ -12,7 +12,7 @@
     {
       "kind": "buff",
       "stat": "dmgDealt",
-      "scope": "crit",
+      "scopes": ["crit"],
       "damageType": "ice",
       "value": 6.57,
       "unit": "percent",

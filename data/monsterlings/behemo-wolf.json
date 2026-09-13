@@ -1,28 +1,27 @@
 {
-  "id": "green-cappy-papa",
+  "id": "behemo-wolf",
   "name": {
-    "th": "ช้อปป้าแดดดี้",
-    "en": "Green Cappy Papa"
+    "th": "หมาป่ายักษ์",
+    "en": "Behemo-wolf"
   },
   "dex": {
     "book": "field",
-    "no": 37
+    "no": 54
   },
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "atk",
-      "scopes": ["specialSkill"],
-      "value": 4,
+      "stat": "suppressionDmg",
+      "value": 8,
       "unit": "percent",
       "target": "self",
-      "trigger": "always",
-      "internalCooldownSec": 15
+      "trigger": "onCrit",
+      "durationSec": 10
     }
   ],
   "effectsRank": "gold",
   "images": {
-    "icon": "green-cappy-papa-icon.webp"
+    "icon": "behemo-wolf-icon.webp"
   },
   "source": {
     "verifiedAt": "2026-09-13",
