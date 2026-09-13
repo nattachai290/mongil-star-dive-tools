@@ -83,7 +83,7 @@ function qualifiers(e: Effect, locale: Locale): string[] {
   const hits = e.condition?.hitCount;
   if (e.trigger !== "always" && e.trigger !== "passive") {
     const trigger = label("trigger", e.trigger, locale);
-    if (kills) out.push(th ? `${trigger} ${kills} ตัว` : `upon defeating ${kills} monsters`);
+    if (kills) out.push(th ? `${trigger} ${kills} ตัว` : `upon defeating ${kills} enemies`);
     else if (hits) out.push(th ? `${trigger} ${hits} ครั้ง` : `${trigger} ${hits} times`);
     else out.push(trigger);
   } else if (hits) {
