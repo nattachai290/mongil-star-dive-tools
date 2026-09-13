@@ -140,7 +140,7 @@ function healHeadline(e: Effect, locale: Locale): string | null {
   }
   if (locale === "th") {
     const who = e.target === "self" ? "" : `ให้${label("target", e.target, "th")}`;
-    return `ฟื้นฟูพลังชีวิต${who} ${e.value}% ของค่าสูงสุด`;
+    return `ฟื้นฟู${who} ${e.value}% ของพลังชีวิตสูงสุด`;
   }
   const whose = e.target === "self" ? "" : `${possessive(label("target", e.target, "en"))} `;
   return `Recovers ${e.value}% of ${whose}Max HP`;
