@@ -319,8 +319,8 @@
       "en": "On ultimate"
     },
     "onKill": {
-      "th": "เมื่อสังหาร",
-      "en": "On kill"
+      "th": "เมื่อกำจัดมอนสเตอร์",
+      "en": "upon defeating monsters"
     },
     "hpBelow": {
       "th": "เมื่อเลือดต่ำกว่าที่กำหนด",
@@ -609,6 +609,10 @@
     "downed": {
       "th": "ล้มอยู่ตรงพื้น",
       "en": "Downed"
+    },
+    "airborne": {
+      "th": "ลอยขึ้นไปบนอากาศ",
+      "en": "Airborne"
     }
   },
   "monsterRank": {

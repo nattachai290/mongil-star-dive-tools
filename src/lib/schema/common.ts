@@ -71,6 +71,8 @@ export const effect = z
         triggerDamageType: vocabEnum("damageType").optional(),
         /** ต้องโจมตีโดนกี่ครั้งก่อนถึงทำงาน เช่น "โจมตีพื้นฐานโดน 10 ครั้ง" */
         hitCount: z.number().int().positive().optional(),
+        /** ต้องกำจัดศัตรูกี่ตัวก่อนถึงทำงาน — คนละอย่างกับ hitCount */
+        killCount: z.number().int().positive().optional(),
         /**
          * ชนิดของ "ศัตรูที่ถูกโจมตี" เช่น "เมื่อโจมตีมอนสเตอร์ธาตุไฟ 10 ครั้ง"
          * หรือ "แก่มอนสเตอร์กายภาพ" — จึงใช้ damageType ที่มี physical ด้วย

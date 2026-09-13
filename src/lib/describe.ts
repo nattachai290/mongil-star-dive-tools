@@ -77,12 +77,19 @@ function qualifiers(e: Effect, locale: Locale): string[] {
   const out: string[] = [];
 
   // ตัวกระตุ้น — always/passive ไม่ต้องบอก เพราะคือค่าเริ่มต้นอยู่แล้ว
+  // จำนวนครั้ง/จำนวนตัวรวมอยู่ในประโยคเดียวกับตัวกระตุ้น ไม่แยกชิป
+  // ไม่งั้นจะอ่านได้ว่า "เมื่อกำจัดมอนสเตอร์ · กำจัดศัตรู 10 ตัว" ซึ่งซ้ำตัวเอง
+  const kills = e.condition?.killCount;
+  const hits = e.condition?.hitCount;
   if (e.trigger !== "always" && e.trigger !== "passive") {
     const trigger = label("trigger", e.trigger, locale);
-    const n = e.condition?.hitCount;
-    out.push(n ? (th ? `${trigger} ${n} ครั้ง` : `${trigger} ${n} times`) : trigger);
-  } else if (e.condition?.hitCount) {
-    out.push(th ? `ครบ ${e.condition.hitCount} ครั้ง` : `after ${e.condition.hitCount} times`);
+    if (kills) out.push(th ? `${trigger} ${kills} ตัว` : `upon defeating ${kills} monsters`);
+    else if (hits) out.push(th ? `${trigger} ${hits} ครั้ง` : `${trigger} ${hits} times`);
+    else out.push(trigger);
+  } else if (hits) {
+    out.push(th ? `ครบ ${hits} ครั้ง` : `after ${hits} times`);
+  } else if (kills) {
+    out.push(th ? `กำจัดศัตรูครบ ${kills} ตัว` : `after ${kills} kills`);
   }
 
   if (e.durationSec) out.push(th ? `นาน ${e.durationSec} วินาที` : `for ${e.durationSec}s`);
