@@ -1,0 +1,32 @@
+{
+  "id": "hauntstack",
+  "name": {
+    "th": "หุ่นฟาง",
+    "en": "Hauntstack"
+  },
+  "dex": {
+    "book": "field",
+    "no": 98
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critRate",
+      "scopes": ["switchSkill"],
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always"
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "hauntstack-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "คู่กับหุ่นฟางจิ๋ว (field 96) ที่ให้ดาเมจคริติคอลของสกิลสับเปลี่ยน 6.25% เท่ากัน ต่างกันที่ตัวนี้ให้อัตราคริติคอล อ่านจากจอของแต่ละตัว"
+  }
+}

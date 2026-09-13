@@ -1,0 +1,31 @@
+{
+  "id": "lil-hauntstack",
+  "name": {
+    "th": "หุ่นฟางจิ๋ว",
+    "en": "Lil' Hauntstack"
+  },
+  "dex": {
+    "book": "field",
+    "no": 96
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critDmg",
+      "scopes": ["switchSkill"],
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always"
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "lil-hauntstack-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}
