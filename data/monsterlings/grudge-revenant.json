@@ -1,0 +1,32 @@
+{
+  "id": "grudge-revenant",
+  "name": {
+    "th": "วิญญาณแห่งความสิ้นหวัง",
+    "en": "Grudge Revenant"
+  },
+  "dex": {
+    "book": "field",
+    "no": 149
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": ["support"],
+      "value": 6.57,
+      "unit": "percent",
+      "target": "team",
+      "trigger": "onSwitch",
+      "durationSec": 5
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "grudge-revenant-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

@@ -13,10 +13,10 @@ import type { LinkChain } from "./schema/entities";
 /**
  * รายการลิงก์เชนในเกมแสดงครบทุกใบหรือไม่ (รวมใบที่ผู้เล่นยังไม่ได้คราฟต์)
  *
- * ยังไม่ยืนยัน — ตราบใดที่ยังเป็น false มอนที่ไม่มีลิงก์เชนชี้มาจะได้สถานะ
- * "unknown" ไม่ใช่ "no" เปลี่ยนเป็น true ได้เมื่อยืนยันจากในเกมแล้วเท่านั้น
+ * ยืนยันแล้วเมื่อ 2026-09-13 ว่ารายการที่ส่งมาครบทั้งหมด และมอนไม่ได้มีลิงก์เชน
+ * กันทุกตัว ตั้งแต่นี้มอนที่ไม่มีลิงก์เชนชี้มาจึงได้สถานะ "no" ไม่ใช่ "unknown"
  */
-export const LINK_CHAIN_LIST_IS_COMPLETE = false;
+export const LINK_CHAIN_LIST_IS_COMPLETE = true;
 
 export type Linkable = "yes" | "no" | "unknown";
 

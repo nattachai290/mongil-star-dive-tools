@@ -1,0 +1,33 @@
+{
+  "id": "black-wolf",
+  "name": {
+    "th": "หมาป่าดำ",
+    "en": "Black Wolf"
+  },
+  "dex": {
+    "book": "field",
+    "no": 12
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "brawlDmg",
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onCrit",
+      "durationSec": 5,
+      "internalCooldownSec": 20
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "black-wolf-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "stat ใหม่ \"ดาเมจปะทะ\" อ่านจากจอไทย ยังไม่ได้อ่านคำอังกฤษของ stat นี้จากจอที่แสดงมันจริง ๆ — ในช่องลักษณะเฉพาะจอไทยมี \"เพิ่มดาเมจปะทะ 4.5%\" และจออังกฤษของมอนอีกตัวมี \"Brawl DMG +4.5%\" ซึ่งน่าจะเป็นคำเดียวกัน แต่คนละตัวกันจึงยังไม่ยืนยัน พจนานุกรมเลยมีแต่ th ไปก่อน"
+  }
+}

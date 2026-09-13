@@ -1,0 +1,33 @@
+{
+  "id": "golden-spark-slime",
+  "name": {
+    "th": "สไลม์สายฟ้าทอง",
+    "en": "Golden Spark Slime"
+  },
+  "dex": {
+    "book": "field",
+    "no": 33
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critRate",
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always",
+      "condition": {
+        "enemyType": "lightning"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "golden-spark-slime-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

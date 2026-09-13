@@ -165,9 +165,9 @@ const chainIds = linkableIds([
 ]);
 check("มอนที่มีลิงก์เชนชี้มา = yes", linkableOf("spadupa", chainIds) === "yes");
 check("ลิงก์เชนสองใบชี้มอนเดียวกันไม่นับซ้ำ", chainIds.size === 2, `ได้ ${chainIds.size} ควรเป็น 2`);
-check("มอนที่ไม่มีลิงก์เชนชี้มา = unknown ไม่ใช่ no",
-  LINK_CHAIN_LIST_IS_COMPLETE || linkableOf("cappy", chainIds) === "unknown",
-  "ตราบใดที่ยังไม่ยืนยันว่ารายการลิงก์เชนในเกมครบ ห้ามสรุปว่าใส่ไม่ได้");
+check("มอนที่ไม่มีลิงก์เชนชี้มา ตอบตามธงว่ารายการในเกมครบหรือยัง",
+  linkableOf("cappy", chainIds) === (LINK_CHAIN_LIST_IS_COMPLETE ? "no" : "unknown"),
+  "ถ้ายังไม่ยืนยันว่ารายการลิงก์เชนในเกมครบ ห้ามสรุปว่าใส่ไม่ได้");
 check("unknown ไม่แปะป้าย", linkableBadge("unknown") === null);
 check("yes แปะป้ายสองภาษา", linkableBadge("yes")?.th === "ใส่ลิงก์เชนได้");
 

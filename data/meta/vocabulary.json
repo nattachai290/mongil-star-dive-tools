@@ -255,6 +255,9 @@
     "suppressionDmg": {
       "th": "ดาเมจกดขี่",
       "en": "Suppression DMG"
+    },
+    "brawlDmg": {
+      "th": "ดาเมจปะทะ"
     }
   },
   "unit": {
