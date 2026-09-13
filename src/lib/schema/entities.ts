@@ -78,8 +78,6 @@ export const character = z.object({
   stats: z
     .object({
       atLevel: z.number().int().positive(),
-      /** ไม่ใส่ = จอไม่ได้บอกขั้นทะลุจำกัด ไม่ใช่ขั้น 0 */
-      atBreakthrough: z.number().int().min(0).max(6).optional(),
       hp: z.number().positive(),
       atk: z.number().positive(),
       def: z.number().positive(),
@@ -140,6 +138,12 @@ export const character = z.object({
     .partial()
     .optional(),
 
+  /**
+   * ปลุกพลัง — ระบบเสริมพลังตัวละครด้วย "ตัวซ้ำ" หกขั้น
+   *
+   * เกมนี้ไม่มีระบบทะลุจำกัดแยกต่างหาก ตอนแรกมีช่อง breakthrough อยู่ด้วย
+   * แต่เป็นของที่ร่างไว้ก่อนเห็นเกมจริง ชุดเดียวกับ R/SR/SSR — ถอดออกแล้ว
+   */
   awaken: z
     .array(
       z.object({
@@ -151,10 +155,6 @@ export const character = z.object({
       }),
     )
     .max(6),
-
-  breakthrough: z
-    .array(z.object({ stage: z.number().int().min(1).max(6), unlocks: z.array(z.string()) }))
-    .default([]),
 
   /** บัฟหรือดีบัฟที่ตัวนี้ยื่นให้ทีม — ใช้จับคู่กับ needs ของคนอื่นตอนจัดทีม */
   provides: z.array(effect).default([]),

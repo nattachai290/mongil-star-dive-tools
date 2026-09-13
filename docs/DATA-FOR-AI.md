@@ -256,7 +256,7 @@ critRate/critDmg/dmgDealt × พื้นฐาน/พิเศษ/สับเ�
 | "เข้ากับใครได้" | `needs` ของโนวา จับกับ `provides` ของตัวอื่น |
 | "จัดทีม 3 ตัว" | `team-rules.json` + `provides`/`needs`/`role`/`element` ของทุกตัว |
 | "ใส่อุปกรณ์อะไร" | รวม `effects` ของ Artifact/Equipment/เซ็ต เข้า `formula.json` แล้วเทียบดาเมจ |
-| "Monsterling ตัวไหน" | `effects` + `linkable` + ช่องที่ปลดล็อกตาม `breakthrough` |
+| "Monsterling ตัวไหน" | `effects` + `linkable` |
 | "กินอาหารอะไร" | `effects` ของ entree + side ที่ไม่ชนกัน เทียบผลผ่าน `formula.json` |
 
 ทุกข้อในตารางนี้ตอบด้วย **การคำนวณจากข้อมูล** ไม่ใช่ความเห็นลอย ๆ

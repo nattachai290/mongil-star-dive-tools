@@ -30,7 +30,6 @@
   ทำให้สกิลทะลุเพดานปกติ 12 ไปถึง **16** ได้
 - **Skill** — มี 4 ประเภท: Basic Attack, Switch Skill, Special Skill, Ultimate Skill
   อัปได้ถึง 12 ต่อสกิล (ทะลุถึง 16 ด้วยโบนัส Awaken ข้างบน)
-- **Breakthrough** — ปลดล็อกช่อง Monsterling เพิ่มที่ BT ขั้น **2** และ **4** (เริ่มต้น 1 ช่อง → สูงสุด 3 ช่อง)
 - **Artifact** — เป็นอาวุธ มีค่าสเตตัสตายตัว + เอฟเฟกต์ประจำชิ้น
 - **Monsterling** — ได้จากการ Capture มอนสเตอร์ หรือ Combine ให้สเตตัสพื้นฐาน + ความสามารถ
   ตามสายพันธุ์ (breed) และ Trait
@@ -84,13 +83,13 @@ mongil-star-dive-tools/
 {
   "id": "jiwon",
   "name": { "th": "จีวอน", "en": "Jiwon" },
-  "rarity": "SSR",
+  "rarity": 5,                    // จำนวนดาว เกมมีแค่ 4 กับ 5
   "element": "fire",              // อ้าง meta/elements.json
-  "role": "dps",                  // dps | tank | support | healer
+  "role": "supporter",            // fighter | destroyer | assassin | supporter
   "releaseVersion": "1.0",
-  "stats": {                      // ค่าที่เลเวลสูงสุด + ระบุว่าวัดที่ breakthrough ไหน
-    "atLevel": 80, "atBreakthrough": 4,
-    "hp": 12345, "atk": 1234, "def": 567, "critRate": 5, "critDmg": 150
+  "stats": {                      // ค่าเปล่าตอนถอดอุปกรณ์หมด + ระบุว่าวัดที่เลเวลไหน
+    "atLevel": 60,
+    "hp": 12345, "atk": 1234, "def": 567, "critRate": 5, "critDmg": 50
   },
   "skills": {
     "basic":    { "name": {...}, "desc": {...}, "scaling": ["120%", "...16 ค่า"], "tags": ["aoe"] },
@@ -98,14 +97,12 @@ mongil-star-dive-tools/
     "special":  { "name": {...}, "desc": {...}, "cooldown": 20, "scaling": [...] },
     "ultimate": { "name": {...}, "desc": {...}, "cost": 100, "scaling": [...] }
   },
-  "awaken": [                     // 6 ขั้น เรียงจาก 1 → 6
+  "awaken": [                     // ปลุกพลังด้วยตัวซ้ำ 6 ขั้น เรียงจาก 1 → 6
     { "stage": 1, "name": {...}, "desc": {...}, "type": "stat" },
     { "stage": 3, "name": {...}, "desc": {...}, "type": "skillLevel", "skillLevelBonus": 2 },
     { "stage": 5, "name": {...}, "desc": {...}, "type": "skillLevel", "skillLevelBonus": 2 }
   ],
   "awakenPriority": { "recommended": 3, "note": { "th": "คุ้มสุดที่ A3 ...", "en": "..." } },
-  "breakthrough": [ { "stage": 2, "unlocks": ["monsterlingSlot2"] },
-                    { "stage": 4, "unlocks": ["monsterlingSlot3"] } ],
   "recommended": {                // ทั้งหมดเป็น id ที่ต้องมีอยู่จริง → validate ตอน build
     "artifacts": ["blazing-edge"], "monsterlings": ["flare-pup"], "food": ["spicy-stew"],
     "teammates": ["ariel"], "builds": ["jiwon-boss-dps"]
@@ -159,11 +156,10 @@ teamComps[{name, members[characterId], note}], pros[], cons[], notes{}`
 3. **Skills** — 4 แท็บ (Basic / Switch / Special / Ultimate)
    แต่ละอันมี **สไลเดอร์เลเวล 1–16** เลื่อนแล้วตัวเลขในคำอธิบายเปลี่ยนตาม
    ช่วง 13–16 ขึ้นป้าย "ต้อง Awaken 3 / 5"
-4. **Awaken** — ไทม์ไลน์ 6 ขั้น ไฮไลต์ขั้น 3 กับ 5 (+2 skill level) + คำแนะนำว่าหยุดที่ขั้นไหนคุ้ม
-5. **Breakthrough** — แสดงช่อง Monsterling ที่ปลดล็อกที่ BT 2 / 4
-6. **Recommended** — การ์ด Artifact / Monsterling / อาหาร / เพื่อนร่วมทีม (คลิกข้ามหน้าได้)
-7. **Builds** — ลิสต์ build ของตัวนี้
-8. **Footer** — `verifiedAt` + เวอร์ชันเกม
+4. **ปลุกพลัง (Awaken)** — ไทม์ไลน์ 6 ขั้นจากตัวซ้ำ ไฮไลต์ขั้น 3 กับ 5 (+2 skill level) + คำแนะนำว่าหยุดที่ขั้นไหนคุ้ม
+5. **Recommended** — การ์ด Artifact / Monsterling / อาหาร / เพื่อนร่วมทีม (คลิกข้ามหน้าได้)
+6. **Builds** — ลิสต์ build ของตัวนี้
+7. **Footer** — `verifiedAt` + เวอร์ชันเกม
 
 ### ฟีเจอร์ที่ใช้ร่วมกันทุกหน้า
 

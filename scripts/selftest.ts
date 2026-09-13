@@ -25,10 +25,10 @@ function sampleCharacter(patch: Record<string, unknown> = {}) {
     id: "test-char",
     name: t("ทดสอบ"),
     rarity: 4, element: "fire", role: "assassin", tags: ["burst"],
-    stats: { atLevel: 80, atBreakthrough: 4, hp: 12000, atk: 1300, def: 600, critRate: 5, critDmg: 50 },
+    stats: { atLevel: 80, hp: 12000, atk: 1300, def: 600, critRate: 5, critDmg: 50 },
     skills: { basic: skill, switch: skill, special: skill, ultimate: skill },
     awaken: [{ stage: 3, desc: t("+2 เลเวลสกิล"), skillLevelBonus: 2 }],
-    breakthrough: [], provides: [], needs: ["critDmgBuff"],
+    provides: [], needs: ["critDmgBuff"],
     source: src,
     ...patch,
   };
@@ -130,7 +130,7 @@ check("ตัวละคร 5 ดาวผ่าน",
 check("ดาเมจคริติคอลฐาน 50 ผ่านได้ (เก็บเป็นส่วนที่บวกเพิ่ม ไม่ใช่ตัวคูณ 150)",
   character.safeParse({ id: "vivian", name: t("วิเวียน"), rarity: 4,
     element: "fire", role: "supporter", awaken: [], source: src,
-    stats: { atLevel: 60, atBreakthrough: 0, hp: 10243, atk: 1943, def: 638,
+    stats: { atLevel: 60, hp: 10243, atk: 1943, def: 638,
       critRate: 5, critDmg: 50 } }).success);
 
 // ---------- เอฟเฟกต์สายพันธุ์ของมอนสเตอร์ลิง ----------
