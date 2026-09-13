@@ -1,0 +1,35 @@
+{
+  "id": "turtlie",
+  "name": {
+    "th": "เต่า",
+    "en": "Turtlie"
+  },
+  "dex": {
+    "book": "field",
+    "no": 116
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": ["support"],
+      "value": 6.25,
+      "unit": "percent",
+      "target": "team",
+      "trigger": "onTakeHit",
+      "durationSec": 5,
+      "condition": {
+        "vsBoss": true
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "turtlie-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

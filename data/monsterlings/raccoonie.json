@@ -1,0 +1,32 @@
+{
+  "id": "raccoonie",
+  "name": {
+    "th": "แรคคูน",
+    "en": "Raccoonie"
+  },
+  "dex": {
+    "book": "field",
+    "no": 110
+  },
+  "speciesEffects": [
+    {
+      "kind": "debuff",
+      "stat": "res",
+      "damageType": "physical",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "enemy",
+      "trigger": "onEvasionCounter",
+      "durationSec": 5
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "raccoonie-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}
