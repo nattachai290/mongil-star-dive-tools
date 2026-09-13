@@ -24,7 +24,7 @@ function sampleCharacter(patch: Record<string, unknown> = {}) {
   return {
     id: "test-char",
     name: t("ทดสอบ"),
-    rarity: 4, element: "fire", role: "slayer", tags: ["burst"],
+    rarity: 4, element: "fire", role: "assassin", tags: ["burst"],
     stats: { atLevel: 80, atBreakthrough: 4, hp: 12000, atk: 1300, def: 600, critRate: 5, critDmg: 50 },
     skills: { basic: skill, switch: skill, special: skill, ultimate: skill },
     awaken: [{ stage: 3, desc: t("+2 เลเวลสกิล"), skillLevelBonus: 2 }],

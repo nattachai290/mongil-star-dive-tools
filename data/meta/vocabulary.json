@@ -162,14 +162,17 @@
     }
   },
   "role": {
-    "brawler": {
-      "th": "บรอว์เลอร์"
+    "fighter": {
+      "th": "บรอว์เลอร์",
+      "en": "Fighter"
     },
     "destroyer": {
-      "th": "เดสทรอยเยอร์"
+      "th": "เดสทรอยเยอร์",
+      "en": "Destroyer"
     },
-    "slayer": {
-      "th": "สเลเยอร์"
+    "assassin": {
+      "th": "สเลเยอร์",
+      "en": "Assassin"
     },
     "supporter": {
       "th": "ซัพพอร์ตเตอร์",
