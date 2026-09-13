@@ -281,6 +281,9 @@
     "seconds": {
       "th": "วินาที",
       "en": "seconds"
+    },
+    "times": {
+      "th": "ครั้ง"
     }
   },
   "target": {
