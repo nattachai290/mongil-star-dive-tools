@@ -255,6 +255,10 @@
     "suppressionDmg": {
       "th": "ดาเมจกดขี่",
       "en": "Suppression DMG"
+    },
+    "brawlDmg": {
+      "th": "ดาเมจปะทะ",
+      "en": "Brawl DMG"
     }
   },
   "unit": {
@@ -609,8 +613,8 @@
       "en": "Critical Hit"
     },
     "support": {
-      "th": "การสนับสนุน",
-      "en": "Support"
+      "th": "สกิลสนับสนุน",
+      "en": "Support Skill"
     },
     "airCounter": {
       "th": "โจมตีฉับพลัน",
@@ -620,7 +624,7 @@
   "enemyState": {
     "downed": {
       "th": "ล้มอยู่ตรงพื้น",
-      "en": "Downed"
+      "en": "Knocked-Down"
     },
     "airborne": {
       "th": "ลอยขึ้นไปบนอากาศ",

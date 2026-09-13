@@ -10,10 +10,6 @@
   "levels": [
     {
       "level": 1,
-      "desc": {
-        "th": "เมื่อติดตั้งมอนสเตอร์ลิงหน้ากากเงา จะมีโอกาสปรากฏตัวตามเงื่อนไข โดยจะกระโดดใส่ศัตรูและโจมตีหลายครั้ง สร้างดาเมจธาตุไฟ",
-        "en": "If the Shademask Monsterling is equipped, it appears when its Appearance Condition is met. It leaps toward the enemy, then attacks multiple times, dealing Fire DMG."
-      },
       "damageType": "fire",
       "appearanceConditions": [
         "landAttack"

@@ -1,0 +1,32 @@
+{
+  "id": "odong-seed",
+  "name": {
+    "th": "เมล็ดสน",
+    "en": "Odong Seed"
+  },
+  "dex": {
+    "book": "field",
+    "no": 103
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "earth",
+      "scopes": ["switchSkill"],
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always"
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "odong-seed-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

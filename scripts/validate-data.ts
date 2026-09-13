@@ -51,9 +51,6 @@ function countMissingLocale(value: unknown, where: string, path: string[] = []) 
   }
   if (typeof value !== "object" || value === null) return;
   const obj = value as Record<string, unknown>;
-  // desc คือข้อความบรรยายท่าเหนือ [เงื่อนไขปรากฏตัว] — ตัดออกจากขอบเขตแล้ว
-  // (ดู PLAN §13.7) มีภาษาเดียวหรือไม่มีเลยก็ได้ ไม่ต้องเตือน
-  if (path[path.length - 1] === "desc") return;
   const looksLikeText = ("en" in obj || "th" in obj) && Object.keys(obj).every((k) => k === "en" || k === "th");
   if (looksLikeText && !obj.th) {
     warn(where, `${path.join(".") || "(ราก)"} ยังไม่มีภาษาไทย`);

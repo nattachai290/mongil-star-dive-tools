@@ -1,0 +1,35 @@
+{
+  "id": "pink-orc-dude",
+  "name": {
+    "th": "กายออร์คพิ้งกี้",
+    "en": "Pink Orc Dude"
+  },
+  "dex": {
+    "book": "field",
+    "no": 43
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "physical",
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always",
+      "internalCooldownSec": 20,
+      "condition": {
+        "vsBoss": false
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "pink-orc-dude-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

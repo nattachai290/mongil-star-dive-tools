@@ -10,9 +10,6 @@
   "levels": [
     {
       "level": 1,
-      "desc": {
-        "en": "If the Ring Slime Monsterling is equipped, it appears when its Appearance Condition is met. It charges toward the enemy twice and strikes them hard, dealing Water DMG."
-      },
       "damageType": "water",
       "appearanceConditions": [
         "landAttack"

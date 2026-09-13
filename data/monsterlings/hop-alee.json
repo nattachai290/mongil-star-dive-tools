@@ -1,0 +1,32 @@
+{
+  "id": "hop-alee",
+  "name": {
+    "th": "อ๊บเด้งดึ๋ง",
+    "en": "Hop-alee"
+  },
+  "dex": {
+    "book": "field",
+    "no": 127
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critRate",
+      "scopes": ["airCounter"],
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always"
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "hop-alee-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "โครงเดียวกับอ๊บแข็งโป๊ก (field 128) แต่ได้ 6.25% ส่วนตัวนั้นได้ 6.57% อ่านจากจอของแต่ละตัว"
+  }
+}

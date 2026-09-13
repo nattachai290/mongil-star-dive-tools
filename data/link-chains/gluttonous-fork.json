@@ -10,9 +10,6 @@
   "levels": [
     {
       "level": 1,
-      "desc": {
-        "en": "If the Forkmugger Monsterling is equipped, it appears when its Appearance Condition is met. It strikes the enemy with the potato stuck on its fork, dealing Physical DMG."
-      },
       "damageType": "physical",
       "appearanceConditions": [
         "evasionCounter"

@@ -44,7 +44,11 @@ function buildRows(locale: Locale, bookLabel: (book: string) => string): Monster
         name: picked?.value ?? slug ?? "",
         nameIsFallback: picked?.isFallback ?? false,
         image: slug ? monsterlingImage(slug) : null,
-        badge: slug ? (linkableBadge(linkableOf(slug, CHAIN_IDS))?.[locale] ?? null) : null,
+        // แปะป้ายเฉพาะตัวที่ใส่ได้ ไม่แปะ "ใส่ไม่ได้" ให้อีกร้อยกว่าใบจนรก
+        // การไม่มีป้ายอ่านได้ว่า "ใส่ไม่ได้" เพราะยืนยันแล้วว่ารายการลิงก์เชนในเกมครบ
+        badge: slug && linkableOf(slug, CHAIN_IDS) === "yes"
+          ? (linkableBadge("yes")?.[locale] ?? null)
+          : null,
         effects,
         // ค้นได้ทั้งสองภาษาและค้นจากข้อความเอฟเฟกต์ด้วย เช่นพิมพ์ "คริ" หรือ "boss"
         haystack: [
@@ -75,6 +79,7 @@ export default async function MonsterlingsPage({
 
   const rows = buildRows(locale, (book) => t(`book.${book}` as "book.field"));
   const withEffects = rows.filter((r) => r.effects.length > 0).length;
+  const linkable = rows.filter((r) => r.badge !== null).length;
 
   return (
     <div className="mx-auto max-w-5xl px-5 py-8">
@@ -84,7 +89,8 @@ export default async function MonsterlingsPage({
         <strong className="text-ink">
           {withEffects} / {rows.length}
         </strong>{" "}
-        {t("monsterlings.coverage")} · {t("monsterling.rankNote")}
+        {t("monsterlings.coverage")} · <strong className="text-ink">{linkable}</strong>{" "}
+        {t("monsterlings.linkable")} · {t("monsterling.rankNote")}
       </p>
 
       <MonsterlingList

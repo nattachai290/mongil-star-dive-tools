@@ -10,9 +10,6 @@
   "levels": [
     {
       "level": 1,
-      "desc": {
-        "en": "If the White Wolf Fulminator Monsterling is equipped, it appears when its Appearance Condition is met. It jumps toward the enemy and strikes down with its staff, causing an explosion and dealing Lightning DMG."
-      },
       "damageType": "lightning",
       "appearanceConditions": [
         "evasionCounter"

@@ -1,0 +1,32 @@
+{
+  "id": "salt-alee",
+  "name": {
+    "th": "อ๊บแข็งโป๊ก",
+    "en": "Salt-alee"
+  },
+  "dex": {
+    "book": "field",
+    "no": 128
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critRate",
+      "scopes": ["airCounter"],
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always"
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "salt-alee-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "อ่านครบสองภาษาเมื่อ 2026-09-13 อังกฤษ \"Air Counter Crit Rate +6.57%\" ไทย \"เพิ่มอัตราคริติคอลของโจมตีฉับพลัน 6.57%\" ตรงกัน และจอไทยยืนยันว่าชื่อขึ้นต้นด้วย อ๊บ เหมือน field 127 กับ 159"
+  }
+}

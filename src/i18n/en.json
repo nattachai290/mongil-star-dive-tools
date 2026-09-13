@@ -22,6 +22,7 @@
   "monsterlings.title": "Monsterlings",
   "monsterlings.lede": "Every monsterling in the codex, with its rank effect and link-chain status",
   "monsterlings.coverage": "with effects recorded",
+  "monsterlings.linkable": "can take a Link Chain",
   "monsterlings.noEffect": "No effect recorded yet",
   "linkChains.title": "Link Chains",
   "linkChains.lede": "The moves monsterlings come out to perform, with appearance conditions and bonus effects",

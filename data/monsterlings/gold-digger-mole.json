@@ -1,0 +1,34 @@
+{
+  "id": "gold-digger-mole",
+  "name": {
+    "th": "ดูจิทอง",
+    "en": "Gold Digger Mole"
+  },
+  "dex": {
+    "book": "field",
+    "no": 26
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critRate",
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always",
+      "condition": {
+        "enemyState": "downed"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "gold-digger-mole-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "ดูจิ (field 25) ให้อัตราคริติคอลกับเป้าหมายที่ล้มอยู่เหมือนกันแต่ได้ 6.25% — ตัวทองตัวนี้ได้ 6.57% อ่านจากจอทั้งสองตัว ไม่ได้คัดลอกข้ามกัน"
+  }
+}

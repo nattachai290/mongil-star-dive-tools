@@ -10,9 +10,6 @@
   "levels": [
     {
       "level": 1,
-      "desc": {
-        "en": "…cheer on nearby allies, and upon finishing the dance, it grants a Bonus Effect to allies."
-      },
       "appearanceConditions": [
         "hpBelow50"
       ],

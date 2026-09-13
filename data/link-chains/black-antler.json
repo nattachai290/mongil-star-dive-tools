@@ -10,10 +10,6 @@
   "levels": [
     {
       "level": 5,
-      "desc": {
-        "th": "เมื่อติดตั้งมอนสเตอร์ลิงปีศาจกวาง จะมีโอกาสปรากฏตัวตามเงื่อนไข โดยจะขว้างขนนกสองครั้งใส่ศัตรูแล้วพุ่งใส่ศัตรู สร้างดาเมจธาตุลม และมอบเอฟเฟกต์เพิ่มเติม และทำให้ศัตรูลอยขึ้นไปบนอากาศ",
-        "en": "If the Nokjung Monsterling is equipped, it appears when its Appearance Condition is met. It attacks the enemy by flinging feathers forward twice, then charges toward the enemy, dealing Wind DMG, inflicting a Bonus Effect, and rendering the enemy Airborne."
-      },
       "damageType": "wind",
       "appearanceConditions": [
         "landWindAttack"

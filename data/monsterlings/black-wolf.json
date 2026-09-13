@@ -1,0 +1,33 @@
+{
+  "id": "black-wolf",
+  "name": {
+    "th": "หมาป่าดำ",
+    "en": "Black Wolf"
+  },
+  "dex": {
+    "book": "field",
+    "no": 12
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "brawlDmg",
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onCrit",
+      "durationSec": 5,
+      "internalCooldownSec": 20
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "black-wolf-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "จอไทยเขียน \"ดาเมจปะทะ\" จออังกฤษของตัวเดียวกันเขียน \"Brawl DMG\" อ่านทั้งสองภาษาเมื่อ 2026-09-13 จึงยืนยันคู่คำได้จากมอนตัวเดียวกัน ไม่ใช่เดาจากช่องลักษณะเฉพาะของตัวอื่น"
+  }
+}

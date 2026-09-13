@@ -10,9 +10,6 @@
   "levels": [
     {
       "level": 1,
-      "desc": {
-        "en": "If the Green Cappy Bro Monsterling is equipped, it appears when its Appearance Condition is met. It generates deadly poisonous mushrooms near the enemy, dealing Earth DMG."
-      },
       "damageType": "earth",
       "appearanceConditions": [
         "specialSkill"

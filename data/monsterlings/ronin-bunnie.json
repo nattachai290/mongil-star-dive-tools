@@ -1,0 +1,32 @@
+{
+  "id": "ronin-bunnie",
+  "name": {
+    "th": "กระตุ่ย พเนจร",
+    "en": "Ronin Bunnie"
+  },
+  "dex": {
+    "book": "field",
+    "no": 122
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "wind",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onEvasionCounter",
+      "durationSec": 5
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "ronin-bunnie-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}
