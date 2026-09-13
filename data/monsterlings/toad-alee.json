@@ -1,0 +1,35 @@
+{
+  "id": "toad-alee",
+  "name": {
+    "th": "อับเกราะหนา",
+    "en": "Toad-alee"
+  },
+  "dex": {
+    "book": "field",
+    "no": 159
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "def",
+      "value": 6,
+      "unit": "percent",
+      "target": "team",
+      "trigger": "onTakeHit",
+      "durationSec": 5,
+      "internalCooldownSec": 20,
+      "condition": {
+        "vsBoss": true
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "toad-alee-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

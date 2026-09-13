@@ -1,0 +1,32 @@
+{
+  "id": "cappy-mama",
+  "name": {
+    "th": "ช้อปปี้มัม",
+    "en": "Cappy Mama"
+  },
+  "dex": {
+    "book": "field",
+    "no": 3
+  },
+  "speciesEffects": [
+    {
+      "kind": "heal",
+      "stat": "hp",
+      "value": 2.4,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onSpecialSkillHit",
+      "internalCooldownSec": 15
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "cappy-mama-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "เอฟเฟกต์ฟื้นฟูตัวแรกในชุดข้อมูล จอเขียน \"Recovers 2.4% of Max HP\" — kind heal แยกความหมายจาก kind buff ที่ stat hp + percent ซึ่งแปลว่าเพิ่มพลังชีวิตสูงสุด ไม่ใช่ฟื้นฟู"
+  }
+}

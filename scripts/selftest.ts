@@ -133,6 +133,12 @@ check("scopes ว่าง = ไม่ผ่าน ต้องไม่ใส�
   !monsterling.safeParse({ id: "urgash", name: t("อูรกัช"),
     speciesEffects: [{ ...scoped, scopes: [] }],
     effectsRank: "gold", source: src }).success);
+// "ฟื้นฟู 2.4% ของพลังชีวิตสูงสุด" ต่างจาก "เพิ่มพลังชีวิตสูงสุด 2.4%" — ตัวแยกคือ kind
+check("เอฟเฟกต์ฟื้นฟูเก็บเป็น kind heal ได้",
+  monsterling.safeParse({ id: "cappy-mama", name: t("ช้อปปี้มัม"),
+    speciesEffects: [{ kind: "heal", stat: "hp", value: 2.4, unit: "percent",
+      target: "self", trigger: "onSpecialSkillHit", internalCooldownSec: 15 }],
+    effectsRank: "gold", source: src }).success);
 check("damageType รับ physical ได้ ต่างจาก element ที่มีแค่ 5 ธาตุ",
   monsterling.safeParse({ id: "wolf", name: t("หมาป่า"),
     speciesEffects: [{ ...scoped, scopes: undefined, damageType: "physical" }],

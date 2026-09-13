@@ -1,0 +1,33 @@
+{
+  "id": "ring-slime",
+  "name": {
+    "th": "สไลม์ลิ่ง",
+    "en": "Ring Slime"
+  },
+  "dex": {
+    "book": "field",
+    "no": 22
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "atk",
+      "value": 4,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always",
+      "condition": {
+        "enemyType": "physical"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "ring-slime-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}

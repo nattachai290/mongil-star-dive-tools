@@ -126,7 +126,30 @@ function qualifiers(e: Effect, locale: Locale): string[] {
   return out;
 }
 
+/**
+ * การฟื้นฟูอ่านคนละแบบกับบัฟ "+2.4% HP" ของบัฟคือเพิ่มค่าพลังชีวิตสูงสุด
+ * ส่วนของการฟื้นฟูคือคืนเลือดเท่ากับ 2.4% ของพลังชีวิตสูงสุด คนละเรื่องกัน
+ * ตัวแยกคือ kind ไม่ใช่ stat จึงต้องแยกประโยคตรงนี้ด้วย
+ *
+ * เกมบอกการฟื้นฟูเป็นสัดส่วนของพลังชีวิตสูงสุดเสมอ ถ้าเจอที่อิงค่าอื่น
+ * (เช่น % ของพลังโจมตี) ต้องเพิ่มฟิลด์บอกฐานในข้อมูล ไม่ใช่มาเดาตรงนี้
+ */
+function healHeadline(e: Effect, locale: Locale): string | null {
+  if (e.kind !== "heal" || e.stat !== "hp" || e.unit !== "percent" || e.value === undefined) {
+    return null;
+  }
+  if (locale === "th") {
+    const who = e.target === "self" ? "" : `ให้${label("target", e.target, "th")}`;
+    return `ฟื้นฟูพลังชีวิต${who} ${e.value}% ของค่าสูงสุด`;
+  }
+  const whose = e.target === "self" ? "" : `${possessive(label("target", e.target, "en"))} `;
+  return `Recovers ${e.value}% of ${whose}Max HP`;
+}
+
 export function describeEffect(e: Effect, locale: Locale): EffectDescription {
+  const heal = healHeadline(e, locale);
+  if (heal) return { headline: heal, qualifiers: qualifiers(e, locale) };
+
   const stat = statPhrase(e, locale);
   const value = formatValue(e);
   const target = e.target;
