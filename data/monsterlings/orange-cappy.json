@@ -1,0 +1,33 @@
+{
+  "id": "orange-cappy",
+  "name": {
+    "th": "ช้อปออเร้นจ์",
+    "en": "Orange Cappy"
+  },
+  "dex": {
+    "book": "field",
+    "no": 31
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "neutralizationDmg",
+      "scopes": ["specialSkill"],
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always",
+      "internalCooldownSec": 15
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "orange-cappy-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-14",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "โครงเดียวกับช้อปป้า (field 30) แต่ได้ 6.57% ส่วนตัวนั้นได้ 6.25%"
+  }
+}
