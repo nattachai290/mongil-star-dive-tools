@@ -1,0 +1,30 @@
+{
+  "id": "baby-spirit",
+  "name": { "th": "วิญญาณเด็ก", "en": "Baby Spirit" },
+  "dex": { "book": "field", "no": 145 },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onHit",
+      "durationSec": 5,
+      "condition": {
+        "hitCount": 10,
+        "enemyType": "wind",
+        "vsBoss": false
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": { "icon": "baby-spirit-icon.webp" },
+  "source": {
+    "verifiedAt": "2026-09-14",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": ["en"],
+    "note": "จอเขียน \"DMG +6.25% against normal enemies for 5s upon attacking Wind enemy 10 times\" — เงื่อนไขสองก้อนคนละหน้าที่กัน: \"ตีมอนธาตุลม 10 ครั้ง\" คือตัวกระตุ้น ส่วน \"ใส่มอนทั่วไป\" คือขอบเขตของผล โครง condition ปัจจุบันเก็บรวมกันหมดจึงแยกสองอย่างนี้ไม่ออก (ปัญหาเดียวกับที่ทำให้ต้องเพิ่ม triggerScope ให้ออนแซ) ยังไม่เพิ่มช่องใหม่เพราะเห็นตัวเดียว รอตัวที่สอง"
+  }
+}

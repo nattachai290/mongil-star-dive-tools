@@ -1,0 +1,26 @@
+{
+  "id": "pew-kkaebi",
+  "name": { "th": "แกบีเขียว", "en": "Pew-kkaebi" },
+  "dex": { "book": "field", "no": 101 },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "fire",
+      "scopes": ["ultimate"],
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always"
+    }
+  ],
+  "effectsRank": "gold",
+  "images": { "icon": "pew-kkaebi-icon.webp" },
+  "source": {
+    "verifiedAt": "2026-09-14",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": ["th", "en"],
+    "note": "ตระกูลแกบีทั้งสามตัวผูกกับสกิลอัลติเมตหมด แต่คนละแบบ: แกบีฟ้า (100) ดาเมจคริติคอลของอัลติเมต / ตัวนี้ (101) ดาเมจธาตุไฟของอัลติเมต / หัวหน้าแกบี (102) ทำงานตอนใช้อัลติเมต"
+  }
+}
