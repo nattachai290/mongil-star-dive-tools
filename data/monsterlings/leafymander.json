@@ -1,7 +1,13 @@
 {
   "id": "leafymander",
-  "name": { "th": "แอกโซลอเติลกระดองหินดิน", "en": "Leafymander" },
-  "dex": { "book": "field", "no": 46 },
+  "name": {
+    "th": "แอกโซลอเติลกระดองหินดิน",
+    "en": "Leafymander"
+  },
+  "dex": {
+    "book": "field",
+    "no": 46
+  },
   "speciesEffects": [
     {
       "kind": "buff",
@@ -11,16 +17,23 @@
       "target": "self",
       "trigger": "onTakeHit",
       "durationSec": 5,
-      "condition": { "hitCount": 10 }
+      "condition": {
+        "hitCount": 10
+      }
     }
   ],
   "effectsRank": "gold",
-  "images": { "icon": "leafymander-icon.webp" },
+  "images": {
+    "icon": "leafymander-icon.webp"
+  },
   "source": {
     "verifiedAt": "2026-09-14",
     "gameVersion": "unknown",
     "by": "in-game",
-    "readIn": ["en"],
+    "readIn": [
+      "th",
+      "en"
+    ],
     "note": "โครงเดียวกับแอกโซลอเติลกระดองหิน (field 45) แต่ได้ 6.57% ส่วนตัวนั้นได้ 6.25%"
   }
 }

@@ -1,12 +1,20 @@
 {
   "id": "cappyberry",
-  "name": { "th": "ช้อปเบอร์รี", "en": "Cappyberry" },
-  "dex": { "book": "field", "no": 2 },
+  "name": {
+    "th": "ช้อปเบอร์รี",
+    "en": "Cappyberry"
+  },
+  "dex": {
+    "book": "field",
+    "no": 2
+  },
   "speciesEffects": [
     {
       "kind": "buff",
       "stat": "critRate",
-      "scopes": ["specialSkill"],
+      "scopes": [
+        "specialSkill"
+      ],
       "value": 6.57,
       "unit": "percent",
       "target": "self",
@@ -15,12 +23,17 @@
     }
   ],
   "effectsRank": "gold",
-  "images": { "icon": "cappyberry-icon.webp" },
+  "images": {
+    "icon": "cappyberry-icon.webp"
+  },
   "source": {
     "verifiedAt": "2026-09-14",
     "gameVersion": "unknown",
     "by": "in-game",
-    "readIn": ["en"],
+    "readIn": [
+      "th",
+      "en"
+    ],
     "note": "โครงเดียวกับช้อปปี้ (field 1) แต่ได้ 6.57% ส่วนตัวนั้นได้ 6.25%"
   }
 }
