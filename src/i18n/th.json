@@ -41,5 +41,17 @@
   "book.event": "สมุดอีเวนต์",
   "monsterlings.search": "ค้นหามอน · ชื่อ เลข หรือข้อความเอฟเฟกต์",
   "monsterlings.matches": "ตัวที่ตรง",
-  "monsterlings.noMatch": "ไม่พบมอนที่ตรงกับคำค้น"
+  "monsterlings.noMatch": "ไม่พบมอนที่ตรงกับคำค้น",
+  "filters.legend": "กรอง",
+  "filters.any": "ทั้งหมด",
+  "filters.stat": "เพิ่มอะไร",
+  "filters.damageType": "ชนิดดาเมจ",
+  "filters.target": "ผลไปลงที่ใคร",
+  "filters.enemy": "ศัตรูแบบไหน",
+  "filters.alwaysOn": "ติดตลอด ไม่ต้องกระตุ้น",
+  "filters.linkable": "ใส่ลิงก์เชนได้",
+  "filters.noData": "ยังไม่มีข้อมูล",
+  "filters.clear": "ล้างตัวกรอง",
+  "filters.boss": "มอนสเตอร์บอส",
+  "filters.normal": "มอนสเตอร์ทั่วไป"
 }

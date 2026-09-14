@@ -4,7 +4,9 @@ import { MonsterlingList, type MonsterlingRow } from "@/components/MonsterlingLi
 import { createTranslate } from "@/i18n";
 import { LOCALES, isLocale, pickText, type Locale } from "@/lib/i18n";
 import { DEX, LINK_CHAINS, MONSTERLINGS, monsterlingImage } from "@/lib/data";
+import type { Monsterling } from "@/lib/schema/entities";
 import { describeEffect } from "@/lib/describe";
+import { label } from "@/lib/vocabulary";
 import { linkableIds, linkableOf, linkableBadge } from "@/lib/linkable";
 
 export function generateStaticParams() {
@@ -25,6 +27,62 @@ export async function generateMetadata({
 const CHAIN_IDS = linkableIds(LINK_CHAINS);
 const BOOKS = ["field", "legendary", "event"] as const;
 
+/**
+ * ค่าที่ใช้กรอง — คิดฝั่งเซิร์ฟเวอร์เหมือน haystack ด้วยเหตุผลเดียวกัน
+ * เบราว์เซอร์จะได้ไม่ต้องรับพจนานุกรมทั้งก้อนไปเพียงเพื่อกรอง
+ *
+ * เป็นลิสต์เพราะมอนหนึ่งตัวมีได้หลายเอฟเฟกต์ และแต่ละเอฟเฟกต์ก็มีได้หลายค่า
+ */
+type Facets = {
+  stat: string[];
+  damageType: string[];
+  target: string[];
+  enemy: string[];
+  /** ไม่มีเอฟเฟกต์ไหนต้องกระตุ้นเลย — ตัวที่ค้นด้วยข้อความไม่เจอ เพราะ always ไม่ขึ้นชิป */
+  alwaysOn: boolean;
+};
+
+function facetsOf(effects: Monsterling["speciesEffects"]): Facets {
+  const stat = new Set<string>();
+  const damageType = new Set<string>();
+  const target = new Set<string>();
+  const enemy = new Set<string>();
+
+  for (const e of effects) {
+    if (e.stat) stat.add(e.stat);
+    if (e.damageType) damageType.add(e.damageType);
+    if (e.target) target.add(e.target);
+    const c = e.condition;
+    // ฝั่งกระตุ้นกับฝั่งผลรวมเป็นค่าเดียวกันตรงนี้ เพราะคำถามของคนเล่นคือ
+    // "ตัวนี้เกี่ยวกับบอสไหม" ไม่ใช่ "บอสอยู่ข้างไหนของประโยค"
+    if (c?.vsBoss !== undefined) enemy.add(c.vsBoss ? "boss" : "normal");
+    if (c?.triggerVsBoss !== undefined) enemy.add(c.triggerVsBoss ? "boss" : "normal");
+    if (c?.enemyState) enemy.add(c.enemyState);
+  }
+
+  return {
+    stat: [...stat],
+    damageType: [...damageType],
+    target: [...target],
+    enemy: [...enemy],
+    alwaysOn:
+      effects.length > 0 && effects.every((e) => e.trigger === "always" || e.trigger === "passive"),
+  };
+}
+
+/** ตัวเลือกในดรอปดาวน์มาจากค่าที่มีจริงในข้อมูล ไม่ใช่จากพจนานุกรมทั้งกลุ่ม */
+function optionsFrom(rows: MonsterlingRow[], key: keyof Facets, toLabel: (v: string) => string) {
+  const count = new Map<string, number>();
+  for (const row of rows) {
+    const values = row.facets[key];
+    if (!Array.isArray(values)) continue;
+    for (const v of values) count.set(v, (count.get(v) ?? 0) + 1);
+  }
+  return [...count.entries()]
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .map(([value, n]) => ({ value, label: toLabel(value), count: n }));
+}
+
 /** แปลงข้อมูลเป็นแถวที่พร้อมแสดง — ทำฝั่งเซิร์ฟเวอร์ เบราว์เซอร์จะได้ไม่ต้องรู้จักพจนานุกรม */
 function buildRows(locale: Locale, bookLabel: (book: string) => string): MonsterlingRow[] {
   const rows: MonsterlingRow[] = [];
@@ -42,6 +100,7 @@ function buildRows(locale: Locale, bookLabel: (book: string) => string): Monster
 
       rows.push({
         key: `${entry.book}-${entry.no}`,
+        facets: facetsOf(mon?.speciesEffects ?? []),
         book,
         bookLabel: bookLabel(book),
         no: entry.no,
@@ -86,6 +145,21 @@ export default async function MonsterlingsPage({
   const withEffects = rows.filter((r) => r.effects.length > 0).length;
   const linkable = rows.filter((r) => r.badge !== null).length;
 
+  // "มอนสเตอร์บอส/ทั่วไป" ไม่ได้อยู่ในพจนานุกรมเป็นคำเดี่ยว เพราะในข้อมูลมันคือ boolean
+  const enemyLabel = (v: string) =>
+    v === "boss" ? t("filters.boss") : v === "normal" ? t("filters.normal") : label("enemyState", v, locale);
+
+  const facets = [
+    { key: "stat" as const, param: "stat", legend: t("filters.stat"),
+      options: optionsFrom(rows, "stat", (v) => label("stat", v, locale)) },
+    { key: "damageType" as const, param: "dmg", legend: t("filters.damageType"),
+      options: optionsFrom(rows, "damageType", (v) => label("damageType", v, locale)) },
+    { key: "target" as const, param: "for", legend: t("filters.target"),
+      options: optionsFrom(rows, "target", (v) => label("target", v, locale)) },
+    { key: "enemy" as const, param: "enemy", legend: t("filters.enemy"),
+      options: optionsFrom(rows, "enemy", enemyLabel) },
+  ];
+
   return (
     <div className="mx-auto max-w-5xl px-5 py-8">
       <h1 className="font-display text-2xl font-semibold">{t("monsterlings.title")}</h1>
@@ -101,6 +175,7 @@ export default async function MonsterlingsPage({
       <MonsterlingList
         rows={rows}
         locale={locale}
+        facets={facets}
         labels={{
           search: t("monsterlings.search"),
           matches: t("monsterlings.matches"),
@@ -108,6 +183,12 @@ export default async function MonsterlingsPage({
           noEffect: t("monsterlings.noEffect"),
           untranslated: t("locale.untranslated"),
           untranslatedTitle: t("locale.untranslatedTitle"),
+          filters: t("filters.legend"),
+          any: t("filters.any"),
+          alwaysOn: t("filters.alwaysOn"),
+          linkable: t("filters.linkable"),
+          noData: t("filters.noData"),
+          clear: t("filters.clear"),
         }}
       />
     </div>

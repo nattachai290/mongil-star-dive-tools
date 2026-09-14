@@ -41,5 +41,17 @@
   "book.event": "Event Codex",
   "monsterlings.search": "Search by name, number or effect text",
   "monsterlings.matches": "matches",
-  "monsterlings.noMatch": "No monsterling matches that search"
+  "monsterlings.noMatch": "No monsterling matches that search",
+  "filters.legend": "Filter",
+  "filters.any": "All",
+  "filters.stat": "Boosts",
+  "filters.damageType": "Damage type",
+  "filters.target": "Applies to",
+  "filters.enemy": "Enemy",
+  "filters.alwaysOn": "Always on, no trigger",
+  "filters.linkable": "Has a Link Chain",
+  "filters.noData": "No data yet",
+  "filters.clear": "Clear filters",
+  "filters.boss": "Boss enemies",
+  "filters.normal": "Normal enemies"
 }
