@@ -74,10 +74,19 @@ export const effect = z
         hpBelowPercent: z.number().min(0).max(100).optional(),
         minStacks: z.number().int().positive().optional(),
         /**
+         * ขอบเขต "ฝั่งผลลัพธ์" — ผลไปลงที่ศัตรูแบบไหน
          * true = เฉพาะมอนสเตอร์บอส, false = เฉพาะมอนสเตอร์ทั่วไป
          * ไม่ใส่ = ไม่จำกัด ต้องแยกจาก false ให้ชัด
+         *
+         * ถ้าประโยคมีทั้งศัตรูที่ต้องไปตีและศัตรูที่ผลไปลง ให้แยกไปที่
+         * triggerVsBoss / triggerEnemyType ดูตัวอย่างที่วิญญาณเด็ก (145)
          */
         vsBoss: z.boolean().optional(),
+        /**
+         * ศัตรูที่ต้อง "ไปตี" ถึงจะติดเงื่อนไข ไม่ใช่ศัตรูที่ผลไปลง
+         * เช่น "เมื่อโจมตีมอนสเตอร์บอส 10 ครั้ง" → triggerVsBoss: true
+         */
+        triggerVsBoss: z.boolean().optional(),
         /**
          * ชนิดดาเมจของ "การโจมตีที่ไปกระตุ้น" ไม่ใช่ของผลลัพธ์
          * เช่น "เมื่อโจมตีธาตุไฟด้วยสกิลพิเศษ" → triggerDamageType: fire
@@ -96,11 +105,22 @@ export const effect = z
         /** ต้องกำจัดศัตรูกี่ตัวก่อนถึงทำงาน — คนละอย่างกับ hitCount */
         killCount: z.number().int().positive().optional(),
         /**
-         * ชนิดของ "ศัตรูที่ถูกโจมตี" เช่น "เมื่อโจมตีมอนสเตอร์ธาตุไฟ 10 ครั้ง"
-         * หรือ "แก่มอนสเตอร์กายภาพ" — จึงใช้ damageType ที่มี physical ด้วย
-         * คนละอันกับ triggerDamageType ซึ่งเป็นของการโจมตีฝั่งเรา
+         * ชนิดของศัตรูที่ "ผลไปลง" เช่น "เพิ่มดาเมจแก่มอนสเตอร์กายภาพ"
+         * ใช้ damageType เพราะรวม physical ด้วย
+         * คนละอันกับ triggerDamageType ซึ่งเป็นชนิดของการโจมตีฝั่งเรา
          */
         enemyType: vocabEnum("damageType").optional(),
+        /**
+         * ชนิดของศัตรูที่ต้อง "ไปตี" ถึงจะติดเงื่อนไข
+         * เช่น "เมื่อโจมตีมอนสเตอร์ธาตุลม 10 ครั้ง" → triggerEnemyType: wind
+         *
+         * เกมมีสองช่องนี้จริง และใส่คำบอกชนิดศัตรูได้ทั้งคู่ในประโยคเดียว
+         * เช่น วิญญาณกระรอก (146) "DMG +6.57% against normal enemies
+         * for 5s upon attacking Wind enemy 10 times"
+         * → triggerEnemyType: wind + hitCount: 10 (ฝั่งกระตุ้น)
+         *   กับ vsBoss: false (ฝั่งผล)
+         */
+        triggerEnemyType: vocabEnum("damageType").optional(),
         /** สถานะของศัตรูที่ต้องเป็นก่อนถึงทำงาน เช่น "แก่เป้าหมายที่ล้มอยู่ตรงพื้น" */
         enemyState: vocabEnum("enemyState").optional(),
         note: text.optional(),

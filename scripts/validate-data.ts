@@ -198,6 +198,20 @@ for (const [id, doc] of Object.entries(parsed.monsterlings ?? {})) {
   }
   const missing = effects.filter((e) => e.value === undefined).length;
   if (missing) warn(where, `เอฟเฟกต์สายพันธุ์ ${missing} ข้อยังไม่มีตัวเลข — ต้องแคปจากมอนสีทอง`);
+  // ตอนบันทึกครั้งแรก condition มีช่องเดียวสำหรับ "ศัตรู" จึงแยกไม่ออกว่า
+  // ศัตรูที่เขียนไว้คือ "ตัวที่ต้องไปตี" หรือ "ตัวที่ผลไปลง"
+  // เอฟเฟกต์ที่นับจำนวนครั้ง/จำนวนตัวคือกลุ่มที่คำตอบต่างกันจริง — ต้องดูจอซ้ำ
+  const unsplit = (doc.speciesEffects as Array<{ condition?: Record<string, unknown> }>).filter((e) => {
+    const c = e.condition;
+    if (!c) return false;
+    const counts = c.hitCount !== undefined || c.killCount !== undefined;
+    const scopeSide = c.enemyType !== undefined || c.vsBoss !== undefined;
+    const triggerSide = c.triggerEnemyType !== undefined || c.triggerVsBoss !== undefined;
+    return counts && scopeSide && !triggerSide;
+  }).length;
+  if (unsplit) {
+    warn(where, `${unsplit} ข้อยังไม่ได้แยกว่าเงื่อนไขศัตรูอยู่ฝั่งกระตุ้นหรือฝั่งผล — ต้องดูจอซ้ำแล้วย้ายไป triggerEnemyType/triggerVsBoss ถ้าเป็นฝั่งกระตุ้น`);
+  }
   const dex = doc.dex as { book: string; no: number } | undefined;
   if (!dex) continue;
   const entry = dexByKey.get(`${dex.book}:${dex.no}`);
