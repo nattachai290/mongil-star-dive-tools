@@ -1,0 +1,24 @@
+{
+  "id": "leafy-mama",
+  "name": { "th": "ลิฟฟี่มัม", "en": "Leafy Mama" },
+  "dex": { "book": "field", "no": 4 },
+  "speciesEffects": [
+    {
+      "kind": "heal",
+      "stat": "hp",
+      "value": 2.52,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onSpecialSkill",
+      "internalCooldownSec": 15
+    }
+  ],
+  "effectsRank": "gold",
+  "images": { "icon": "leafy-mama-icon.webp" },
+  "source": {
+    "verifiedAt": "2026-09-14",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "ฟื้นฟูตัวที่สาม จอเขียน \"เมื่อใช้สกิลพิเศษ\" คือตอนกดใช้ ต่างจากช้อปปี้มัม (field 3) ที่เขียน \"เมื่อสกิลพิเศษโดนเป้าหมาย\" จึงต้องเพิ่มตัวกระตุ้น onSpecialSkill แยกจาก onSpecialSkillHit ที่มีอยู่แล้ว"
+  }
+}

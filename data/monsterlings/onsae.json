@@ -1,0 +1,35 @@
+{
+  "id": "onsae",
+  "name": {
+    "th": "ออนแซ",
+    "en": "Onsae"
+  },
+  "dex": {
+    "book": "field",
+    "no": 141
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critDmg",
+      "value": 11,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onCrit",
+      "durationSec": 5,
+      "condition": {
+        "triggerScope": "ultimate"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "onsae-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-14",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "ตัวแรกที่ \"ท่าที่ไปกระตุ้น\" ถูกจำกัด — คริติคอลต้องมาจากสกิลอัลติเมต แต่ผลที่ได้คือดาเมจคริติคอลของทุกท่า จึงเป็น condition.triggerScope ไม่ใช่ effect.scopes"
+  }
+}

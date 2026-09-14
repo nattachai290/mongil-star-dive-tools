@@ -1,0 +1,21 @@
+{
+  "id": "vikkymander",
+  "name": { "th": "แอกโซลอเติลไวกิ้ง", "en": "Vikkymander" },
+  "dex": { "book": "field", "no": 48 },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": ["specialSkill"],
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onTakeHit",
+      "durationSec": 5,
+      "condition": { "hitCount": 10 }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": { "icon": "vikkymander-icon.webp" },
+  "source": { "verifiedAt": "2026-09-14", "gameVersion": "unknown", "by": "in-game" }
+}
