@@ -1,0 +1,33 @@
+{
+  "id": "teal-cappy",
+  "name": {
+    "th": "ช้อปปูดร้า",
+    "en": "Teal Cappy"
+  },
+  "dex": {
+    "book": "field",
+    "no": 29
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critDmg",
+      "scopes": ["specialSkill"],
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always",
+      "internalCooldownSec": 20
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "teal-cappy-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-14",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "โครงเดียวกับช้อปปู้ (field 28) แต่ได้ 6.57% ส่วนตัวนั้นได้ 6.25% | ชื่อไทยบนจออ่านได้คล้าย \"ช้อปปูด้ร้า\" ต่างจากสมุดภาพที่เก็บไว้ว่า \"ช้อปปูดร้า\" หนึ่งวรรณยุกต์ ยังไม่แก้เพราะอ่านจากจอไม่ชัดพอ"
+  }
+}
