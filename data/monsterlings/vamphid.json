@@ -1,0 +1,36 @@
+{
+  "id": "vamphid",
+  "name": {
+    "th": "แวมปี้",
+    "en": "Vamphid"
+  },
+  "dex": {
+    "book": "field",
+    "no": 85
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "earth",
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always",
+      "condition": {
+        "enemyState": "airborne"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "vamphid-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-14",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": ["th", "en"],
+    "note": "โครงเดียวกับซิลฟี่ (field 84) แต่ได้ 6.57% ส่วนตัวนั้นได้ 6.25%"
+  }
+}
