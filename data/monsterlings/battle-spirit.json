@@ -1,0 +1,36 @@
+{
+  "id": "battle-spirit",
+  "name": {
+    "th": "วิญญาณนักรบ",
+    "en": "Battle Spirit"
+  },
+  "dex": {
+    "book": "field",
+    "no": 112
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "fire",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always",
+      "condition": {
+        "vsBoss": true
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "battle-spirit-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-14",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": ["th", "en"],
+    "note": "เป็นฐาน 6.25 ของซาตานสตะ (field 113) ที่ได้ 6.57 — โครงเดียวกันทั้งธาตุไฟและเงื่อนไขบอส"
+  }
+}
