@@ -1,0 +1,25 @@
+{
+  "id": "noxtroll",
+  "name": { "th": "ไนท์โทรลล์", "en": "Noxtroll" },
+  "dex": { "book": "field", "no": 50 },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "neutralizationDmg",
+      "scopes": ["ultimate"],
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always"
+    }
+  ],
+  "effectsRank": "gold",
+  "images": { "icon": "noxtroll-icon.webp" },
+  "source": {
+    "verifiedAt": "2026-09-14",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": ["th"],
+    "note": "โครงเดียวกับโทรลล์ (field 49) แต่ได้ 6.57% ส่วนตัวนั้นได้ 6.25%"
+  }
+}
