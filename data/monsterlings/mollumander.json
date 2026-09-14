@@ -1,0 +1,36 @@
+{
+  "id": "mollumander",
+  "name": {
+    "th": "แอกโซลอเติลหอยสังข์ทะเลลึก",
+    "en": "Mollumander"
+  },
+  "dex": {
+    "book": "field",
+    "no": 58
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "physical",
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onTakeHit",
+      "durationSec": 5,
+      "condition": {
+        "hitCount": 10
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "mollumander-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-14",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "โครงเดียวกับแอกโซลอเติลหอยสังข์ (field 57) แต่ได้ 6.57% ส่วนตัวนั้นได้ 6.25% — และตัวอีเวนต์ แอกโซลอเติลหอยสังข์ : ซัมเมอร์ ไดฟ์! (event 3) ใช้ค่าเดียวกับ field 57 คือ 6.25% ไม่ใช่ค่าของตัวนี้"
+  }
+}
