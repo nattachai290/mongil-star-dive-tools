@@ -291,4 +291,23 @@ if (errors.length) {
   for (const e of errors) console.error(`  ✗ ${e}`);
   process.exit(1);
 }
+// ---------- สรุปว่าอ่านมาจากจอภาษาอะไรบ้าง ----------
+// ไม่ใช่ error และไม่ใช่คำเตือน เป็นแค่ตัวเลขให้เห็นว่ายังเหลือของที่ยืนยันข้างเดียวเท่าไร
+{
+  const counts = { both: 0, th: 0, en: 0, unknown: 0 };
+  for (const collection of Object.keys(parsed)) {
+    for (const doc of Object.values(parsed[collection])) {
+      const read = (doc.source as { readIn?: string[] } | undefined)?.readIn;
+      if (!read) counts.unknown += 1;
+      else if (read.includes("th") && read.includes("en")) counts.both += 1;
+      else if (read.includes("th")) counts.th += 1;
+      else counts.en += 1;
+    }
+  }
+  console.log(
+    `อ่านจากจอ: สองภาษา ${counts.both} · ไทยอย่างเดียว ${counts.th} · ` +
+      `อังกฤษอย่างเดียว ${counts.en} · ยังไม่ได้บันทึก ${counts.unknown}`,
+  );
+}
+
 console.log(`ข้อมูลผ่านการตรวจทั้งหมด (${fileCount} ไฟล์, ${setIds.size} เซ็ต)`);

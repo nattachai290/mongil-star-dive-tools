@@ -197,6 +197,15 @@ check("มีเอฟเฟกต์สายพันธุ์แต่ไม�
 check("มอนที่ยังไม่มีเอฟเฟกต์สายพันธุ์ ไม่ต้องบอกแรง",
   monsterling.safeParse({ id: "cappy", name: t("ช้อปปี้"), source: src }).success);
 
+// ---------- บันทึกว่าอ่านจากจอภาษาอะไร ----------
+const readIn = (v: unknown) => monsterling.safeParse({
+  id: "cappy", name: t("ช้อปปี้"), speciesEffects: [], source: { ...src, readIn: v },
+}).success;
+check("readIn รับสองภาษาได้", readIn(["th", "en"]));
+check("readIn รับภาษาเดียวได้", readIn(["en"]));
+check("readIn ว่าง = ไม่ผ่าน ไม่ใส่ฟิลด์ไปเลยถ้ายังไม่รู้", !readIn([]));
+check("readIn ที่ไม่ใช่ภาษาของเว็บ = ไม่ผ่าน", !readIn(["kr"]));
+
 // ---------- ลิงก์เชนไม่เก็บข้อความบรรยายท่า ----------
 // ถ้าใครใส่ desc กลับมา schema ต้องทิ้งทันที ไม่ปล่อยให้ไหลไปโผล่บนหน้าเว็บ
 const chainWithDesc = linkChain.safeParse({
