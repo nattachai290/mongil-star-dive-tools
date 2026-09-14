@@ -1,0 +1,40 @@
+{
+  "id": "kroko",
+  "name": {
+    "th": "อาโก",
+    "en": "Kroko"
+  },
+  "dex": {
+    "book": "field",
+    "no": 156
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "def",
+      "value": 4.69,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onHit",
+      "durationSec": 5,
+      "condition": {
+        "hitCount": 10,
+        "triggerVsBoss": false
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "kroko-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-14",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "โครงเดียวกับนาควีรณ์ (field 162) เป๊ะ ต่างกันแค่ชนิดศัตรูที่กระตุ้น — ตัวนี้ \"มอนสเตอร์ทั่วไป\" ตัวนั้น \"มอนสเตอร์ธาตุลม\" ทั้งคู่ได้ 4.69% เท่ากัน จึงไม่ใช่คู่ 6.25/6.57"
+  }
+}

@@ -1,7 +1,13 @@
 {
   "id": "slimeboo",
-  "name": { "th": "สไลม์หงึก", "en": "Slimeboo" },
-  "dex": { "book": "field", "no": 71 },
+  "name": {
+    "th": "สไลม์หงึก",
+    "en": "Slimeboo"
+  },
+  "dex": {
+    "book": "field",
+    "no": 71
+  },
   "speciesEffects": [
     {
       "kind": "buff",
@@ -10,15 +16,23 @@
       "unit": "percent",
       "target": "self",
       "trigger": "always",
-      "condition": { "enemyType": "physical" }
+      "condition": {
+        "enemyType": "physical"
+      }
     }
   ],
   "effectsRank": "gold",
-  "images": { "icon": "slimeboo-icon.webp" },
+  "images": {
+    "icon": "slimeboo-icon.webp"
+  },
   "source": {
     "verifiedAt": "2026-09-14",
     "gameVersion": "unknown",
     "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
     "note": "เอฟเฟกต์และค่าเท่ากับสไลม์มืด (field 6) เป๊ะ ๆ คือ 6.57% ไม่ใช่คู่ 6.25/6.57 แบบตัวอื่น — สไลม์ (field 5) ได้ 6.25% ส่วนอีกสองตัวได้ 6.57% เท่ากัน อ่านจากจอของแต่ละตัว"
   }
 }

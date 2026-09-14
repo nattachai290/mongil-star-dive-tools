@@ -1,0 +1,37 @@
+{
+  "id": "brush-hauntstack",
+  "name": {
+    "th": "หุ่นฟางพุ่มไม้",
+    "en": "Brush Hauntstack"
+  },
+  "dex": {
+    "book": "field",
+    "no": 99
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "ice",
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always",
+      "condition": {
+        "vsBoss": true,
+        "enemyState": "staggered"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "brush-hauntstack-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-14",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": ["th", "en"],
+    "note": "โครงเดียวกับหุ่นฟางดำ (field 121) เป๊ะ ทั้งธาตุน้ำแข็ง บอส และสถานะมึนงง แต่คนละฐาน — ตัวนี้ 6.57 (ขั้นบนของฐาน 6.25) ตัวนั้น 8 (ฐาน 8) จึงไม่ใช่คู่กัน ดู PLAN §13.9.2"
+  }
+}

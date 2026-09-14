@@ -1,0 +1,40 @@
+{
+  "id": "sunek",
+  "name": {
+    "th": "นาควีรณ์",
+    "en": "Sunek"
+  },
+  "dex": {
+    "book": "field",
+    "no": 162
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "def",
+      "value": 4.69,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onHit",
+      "durationSec": 5,
+      "condition": {
+        "hitCount": 10,
+        "triggerEnemyType": "wind"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "sunek-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-14",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "\"เมื่อโจมตีมอนสเตอร์ธาตุลม 10 ครั้ง\" อยู่ในช่องตัวกระตุ้นแบบเดียวกับที่อาโก (field 156) ใช้ \"มอนสเตอร์ทั่วไป\" — ยืนยันว่าเกมใช้คำบอกชนิดศัตรูเป็นตัวกระตุ้นได้ทั้งสองแบบ ดูหมายเหตุของวิญญาณเด็ก (145)"
+  }
+}

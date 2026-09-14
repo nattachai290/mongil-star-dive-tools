@@ -30,6 +30,10 @@
     "verifiedAt": "2026-09-13",
     "gameVersion": "unknown",
     "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
     "fieldsUnverified": [
       "levels[0].bonusEffects[0]"
     ],

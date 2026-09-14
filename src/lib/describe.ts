@@ -83,11 +83,26 @@ function qualifiers(e: Effect, locale: Locale): string[] {
   // ไม่งั้นจะอ่านได้ว่า "เมื่อกำจัดมอนสเตอร์ · กำจัดศัตรู 10 ตัว" ซึ่งซ้ำตัวเอง
   const kills = e.condition?.killCount;
   const hits = e.condition?.hitCount;
+  // ศัตรูฝั่งกระตุ้นต้องอยู่ใน "ประโยคเดียวกับตัวกระตุ้น" ตามที่เกมเขียน
+  // ("เมื่อโจมตีมอนสเตอร์ธาตุลม 10 ครั้ง") ไม่ใช่ชิปแยกท้ายประโยค
+  // ไม่งั้นจะอ่านไม่ออกว่าต่างจากศัตรูฝั่งผล (ใส่มอนสเตอร์ทั่วไป) ตรงไหน
+  const triggerEnemy = ((): string => {
+    const c = e.condition;
+    if (c?.triggerEnemyType) {
+      const dt = c.triggerEnemyType;
+      return th ? `มอนสเตอร์${thDamageType(dt)}` : ` ${label("damageType", dt, "en")} enemies`;
+    }
+    if (c?.triggerVsBoss === true) return th ? "มอนสเตอร์บอส" : " boss enemies";
+    if (c?.triggerVsBoss === false) return th ? "มอนสเตอร์ทั่วไป" : " normal enemies";
+    return "";
+  })();
   if (e.trigger !== "always" && e.trigger !== "passive") {
-    const trigger = label("trigger", e.trigger, locale);
-    if (kills) out.push(th ? `${trigger} ${kills} ตัว` : `upon defeating ${kills} enemies`);
-    else if (hits) out.push(th ? `${trigger} ${hits} ครั้ง` : `${trigger} ${hits} times`);
-    else out.push(trigger);
+    const bare = label("trigger", e.trigger, locale);
+    // "เมื่อกำจัดมอนสเตอร์" มีคำว่ามอนสเตอร์อยู่แล้ว ต่อท้ายจะซ้ำ
+    // ยังไม่มีมอนตัวไหนนับจำนวนที่กำจัดพร้อมระบุชนิดศัตรู ไว้เจอค่อยแก้
+    if (kills) out.push(th ? `${bare} ${kills} ตัว` : `upon defeating ${kills} enemies`);
+    else if (hits) out.push(th ? `${bare}${triggerEnemy} ${hits} ครั้ง` : `${bare}${triggerEnemy} ${hits} times`);
+    else out.push(bare + triggerEnemy);
   } else if (hits) {
     out.push(th ? `ครบ ${hits} ครั้ง` : `after ${hits} times`);
   } else if (kills) {

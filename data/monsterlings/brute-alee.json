@@ -1,0 +1,33 @@
+{
+  "id": "brute-alee",
+  "name": {
+    "th": "อ๊บจอมโหด",
+    "en": "Brute-alee"
+  },
+  "dex": {
+    "book": "field",
+    "no": 129
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critDmg",
+      "scopes": ["airCounter"],
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always"
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "brute-alee-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-14",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": ["th", "en"],
+    "note": "ตระกูลอ๊บทำโจมตีฉับพลันสองชุด: อ๊บเด้งดึ๋ง (127) กับอ๊บแข็งโป๊ก (128) ให้อัตราคริติคอล 6.25/6.57 ส่วนตัวนี้เปลี่ยนเป็นดาเมจคริติคอลที่ฐาน 6.25 — ขั้นบน 6.57 ของชุดนี้ยังไม่เจอ"
+  }
+}

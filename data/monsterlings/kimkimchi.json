@@ -1,0 +1,37 @@
+{
+  "id": "kimkimchi",
+  "name": {
+    "th": "กาดน้อยที่ถูกดอง",
+    "en": "Kimkimchi"
+  },
+  "dex": {
+    "book": "field",
+    "no": 133
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "earth",
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always",
+      "internalCooldownSec": 20,
+      "condition": {
+        "vsBoss": false
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "kimkimchi-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-14",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": ["th", "en"],
+    "note": "โครงเดียวกับกาดน้อย (field 132) แต่ได้ 6.57% ส่วนตัวนั้นได้ 6.25% | ไม่มีช่วงเวลาบนจอทั้งสองภาษา มีแต่คูลดาวน์ 20 วินาที เหมือนกาดน้อยเป๊ะ จึงไม่ใช่การอ่านตก"
+  }
+}

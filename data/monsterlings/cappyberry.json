@@ -1,33 +1,30 @@
 {
-  "id": "vikkymander",
+  "id": "cappyberry",
   "name": {
-    "th": "แอกโซลอเติลไวกิ้ง",
-    "en": "Vikkymander"
+    "th": "ช้อปเบอร์รี",
+    "en": "Cappyberry"
   },
   "dex": {
     "book": "field",
-    "no": 48
+    "no": 2
   },
   "speciesEffects": [
     {
       "kind": "buff",
-      "stat": "dmgDealt",
+      "stat": "critRate",
       "scopes": [
         "specialSkill"
       ],
       "value": 6.57,
       "unit": "percent",
       "target": "self",
-      "trigger": "onTakeHit",
-      "durationSec": 5,
-      "condition": {
-        "hitCount": 10
-      }
+      "trigger": "always",
+      "internalCooldownSec": 20
     }
   ],
   "effectsRank": "gold",
   "images": {
-    "icon": "vikkymander-icon.webp"
+    "icon": "cappyberry-icon.webp"
   },
   "source": {
     "verifiedAt": "2026-09-14",
@@ -36,6 +33,7 @@
     "readIn": [
       "th",
       "en"
-    ]
+    ],
+    "note": "โครงเดียวกับช้อปปี้ (field 1) แต่ได้ 6.57% ส่วนตัวนั้นได้ 6.25%"
   }
 }

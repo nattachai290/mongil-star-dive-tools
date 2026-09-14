@@ -23,6 +23,17 @@ export const source = z.object({
   verifiedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "ต้องเป็นรูปแบบ YYYY-MM-DD"),
   gameVersion: z.string().min(1),
   by: z.string().optional(),
+  /**
+   * อ่านจากจอภาษาอะไรมาบ้าง
+   *
+   * ความหมายคือ "บันทึกไว้ว่าเคยอ่านภาษานี้" ไม่ใช่ "อ่านแค่ภาษานี้" —
+   * ภาษาที่ไม่อยู่ในลิสต์แปลว่ายังไม่ได้บันทึก ไม่ได้แปลว่ายืนยันแล้วว่าไม่เคยอ่าน
+   * ไม่ใส่เลย = ยังไม่รู้ (ของเก่าที่เก็บก่อนมีช่องนี้)
+   *
+   * มีไว้เพราะการอ่านอีกภาษาจับผิดได้จริงมาแล้วหลายครั้ง เช่น Freeze 2s/5s
+   * ของกรงเล็บย้อมเงาจันทรา และคูลดาวน์ที่ต่างกันของดอกไม้ฟื้นฟูเลือดสองตัว
+   */
+  readIn: z.array(z.enum(["th", "en"])).nonempty().optional(),
   fieldsUnverified: z.array(z.string()).optional(),
   /** บันทึกที่มา เช่น อ่านจากภาพไหน หรือมีสองแหล่งที่ขัดกัน — ไม่ใช่ข้อมูลเกม */
   note: z.string().min(1).optional(),
@@ -63,10 +74,19 @@ export const effect = z
         hpBelowPercent: z.number().min(0).max(100).optional(),
         minStacks: z.number().int().positive().optional(),
         /**
+         * ขอบเขต "ฝั่งผลลัพธ์" — ผลไปลงที่ศัตรูแบบไหน
          * true = เฉพาะมอนสเตอร์บอส, false = เฉพาะมอนสเตอร์ทั่วไป
          * ไม่ใส่ = ไม่จำกัด ต้องแยกจาก false ให้ชัด
+         *
+         * ถ้าประโยคมีทั้งศัตรูที่ต้องไปตีและศัตรูที่ผลไปลง ให้แยกไปที่
+         * triggerVsBoss / triggerEnemyType ดูตัวอย่างที่วิญญาณเด็ก (145)
          */
         vsBoss: z.boolean().optional(),
+        /**
+         * ศัตรูที่ต้อง "ไปตี" ถึงจะติดเงื่อนไข ไม่ใช่ศัตรูที่ผลไปลง
+         * เช่น "เมื่อโจมตีมอนสเตอร์บอส 10 ครั้ง" → triggerVsBoss: true
+         */
+        triggerVsBoss: z.boolean().optional(),
         /**
          * ชนิดดาเมจของ "การโจมตีที่ไปกระตุ้น" ไม่ใช่ของผลลัพธ์
          * เช่น "เมื่อโจมตีธาตุไฟด้วยสกิลพิเศษ" → triggerDamageType: fire
@@ -85,11 +105,22 @@ export const effect = z
         /** ต้องกำจัดศัตรูกี่ตัวก่อนถึงทำงาน — คนละอย่างกับ hitCount */
         killCount: z.number().int().positive().optional(),
         /**
-         * ชนิดของ "ศัตรูที่ถูกโจมตี" เช่น "เมื่อโจมตีมอนสเตอร์ธาตุไฟ 10 ครั้ง"
-         * หรือ "แก่มอนสเตอร์กายภาพ" — จึงใช้ damageType ที่มี physical ด้วย
-         * คนละอันกับ triggerDamageType ซึ่งเป็นของการโจมตีฝั่งเรา
+         * ชนิดของศัตรูที่ "ผลไปลง" เช่น "เพิ่มดาเมจแก่มอนสเตอร์กายภาพ"
+         * ใช้ damageType เพราะรวม physical ด้วย
+         * คนละอันกับ triggerDamageType ซึ่งเป็นชนิดของการโจมตีฝั่งเรา
          */
         enemyType: vocabEnum("damageType").optional(),
+        /**
+         * ชนิดของศัตรูที่ต้อง "ไปตี" ถึงจะติดเงื่อนไข
+         * เช่น "เมื่อโจมตีมอนสเตอร์ธาตุลม 10 ครั้ง" → triggerEnemyType: wind
+         *
+         * เกมมีสองช่องนี้จริง และใส่คำบอกชนิดศัตรูได้ทั้งคู่ในประโยคเดียว
+         * เช่น วิญญาณกระรอก (146) "DMG +6.57% against normal enemies
+         * for 5s upon attacking Wind enemy 10 times"
+         * → triggerEnemyType: wind + hitCount: 10 (ฝั่งกระตุ้น)
+         *   กับ vsBoss: false (ฝั่งผล)
+         */
+        triggerEnemyType: vocabEnum("damageType").optional(),
         /** สถานะของศัตรูที่ต้องเป็นก่อนถึงทำงาน เช่น "แก่เป้าหมายที่ล้มอยู่ตรงพื้น" */
         enemyState: vocabEnum("enemyState").optional(),
         note: text.optional(),

@@ -1,0 +1,41 @@
+{
+  "id": "baby-spirit",
+  "name": {
+    "th": "วิญญาณเด็ก",
+    "en": "Baby Spirit"
+  },
+  "dex": {
+    "book": "field",
+    "no": 145
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onHit",
+      "durationSec": 5,
+      "condition": {
+        "hitCount": 10,
+        "triggerEnemyType": "wind",
+        "vsBoss": false
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "baby-spirit-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-14",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "จอเขียน \"DMG +6.25% against normal enemies for 5s upon attacking Wind enemy 10 times\" — เงื่อนไขสองก้อนคนละหน้าที่กัน: \"ตีมอนธาตุลม 10 ครั้ง\" คือตัวกระตุ้น ส่วน \"ใส่มอนทั่วไป\" คือขอบเขตของผล จอไทยเขียนโครงเดียวกัน จึงไม่ใช่เรื่องการแปล แต่เป็นรูปของเกมเอง | 2026-09-14 อาโก (156) เอา \"มอนสเตอร์ทั่วไป\" ไปไว้ในกรอบ \"upon attacking ... 10 times\" ยืนยันว่าเป็นคนละช่องจริง จากนั้นวิญญาณกระรอก (146) ขึ้นประโยคเดียวกันนี้ที่ 6.57% เป็นตัวที่สอง จึงเพิ่ม triggerEnemyType แล้วย้ายก้อนกระตุ้นมาไว้ที่นั่น"
+  }
+}

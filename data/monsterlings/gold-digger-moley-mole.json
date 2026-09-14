@@ -1,7 +1,13 @@
 {
   "id": "gold-digger-moley-mole",
-  "name": { "th": "มอลลี่จอมคลั่งรักเงิน", "en": "Gold Digger Moley Mole" },
-  "dex": { "book": "field", "no": 36 },
+  "name": {
+    "th": "มอลลี่จอมคลั่งรักเงิน",
+    "en": "Gold Digger Moley Mole"
+  },
+  "dex": {
+    "book": "field",
+    "no": 36
+  },
   "speciesEffects": [
     {
       "kind": "buff",
@@ -10,15 +16,23 @@
       "unit": "percent",
       "target": "self",
       "trigger": "always",
-      "condition": { "enemyState": "downed" }
+      "condition": {
+        "enemyState": "downed"
+      }
     }
   ],
   "effectsRank": "gold",
-  "images": { "icon": "gold-digger-moley-mole-icon.webp" },
+  "images": {
+    "icon": "gold-digger-moley-mole-icon.webp"
+  },
   "source": {
     "verifiedAt": "2026-09-14",
     "gameVersion": "unknown",
     "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
     "note": "โครงเดียวกับมอลลี่ (field 35) แต่ได้ 8.4% ส่วนตัวนั้นได้ 8%"
   }
 }

@@ -1,0 +1,27 @@
+{
+  "id": "monks-shadow",
+  "name": { "th": "เงาของนักบวช", "en": "Monk's Shadow" },
+  "dex": { "book": "field", "no": 63 },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": ["weaknessHit"],
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onTakeHit",
+      "durationSec": 5,
+      "internalCooldownSec": 20
+    }
+  ],
+  "effectsRank": "gold",
+  "images": { "icon": "monks-shadow-icon.webp" },
+  "source": {
+    "verifiedAt": "2026-09-14",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": ["th", "en"],
+    "note": "โครงเดียวกับนักบวชแห่งความว่างเปล่า (field 62) แต่ได้ 6.57% ส่วนตัวนั้นได้ 6.25%"
+  }
+}

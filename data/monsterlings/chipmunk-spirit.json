@@ -1,0 +1,38 @@
+{
+  "id": "chipmunk-spirit",
+  "name": {
+    "th": "วิญญาณกระรอก",
+    "en": "Chipmunk Spirit"
+  },
+  "dex": {
+    "book": "field",
+    "no": 146
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onHit",
+      "durationSec": 5,
+      "condition": {
+        "hitCount": 10,
+        "triggerEnemyType": "wind",
+        "vsBoss": false
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "chipmunk-spirit-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-14",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": ["th", "en"],
+    "note": "โครงเดียวกับวิญญาณเด็ก (field 145) แต่ได้ 6.57% ส่วนตัวนั้นได้ 6.25% | ตัวที่สองที่มีเงื่อนไขศัตรูสองก้อนในประโยคเดียว จึงเป็นเหตุให้แยก triggerEnemyType ออกจาก enemyType/vsBoss ได้จริง"
+  }
+}

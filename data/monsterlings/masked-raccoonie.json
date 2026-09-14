@@ -1,0 +1,34 @@
+{
+  "id": "masked-raccoonie",
+  "name": {
+    "th": "แรคคูน หน้ากาก",
+    "en": "Masked Raccoonie"
+  },
+  "dex": {
+    "book": "field",
+    "no": 111
+  },
+  "speciesEffects": [
+    {
+      "kind": "debuff",
+      "stat": "res",
+      "damageType": "physical",
+      "value": 6.57,
+      "unit": "percent",
+      "target": "enemy",
+      "trigger": "onEvasionCounter",
+      "durationSec": 5
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "masked-raccoonie-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-14",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": ["th", "en"],
+    "note": "โครงเดียวกับแรคคูน (field 110) เป๊ะ เป็นขั้นบนของฐาน 6.25 (ดู PLAN §13.9.2)"
+  }
+}
