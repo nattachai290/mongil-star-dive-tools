@@ -1,0 +1,36 @@
+{
+  "id": "spardig",
+  "name": {
+    "th": "สปาดิก",
+    "en": "Spardig"
+  },
+  "dex": {
+    "book": "field",
+    "no": 77
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onKill",
+      "durationSec": 5,
+      "condition": {
+        "killCount": 10,
+        "vsBoss": false
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "spardig-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-14",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "โครงเดียวกับสโปเดอร์ (field 76) แต่ได้ 6.57% ส่วนตัวนั้นได้ 6.25% — ตระกูลแมงมุมชื่อไทยใกล้กันมาก (สปาเดอร์ 75 / สโปเดอร์ 76 / สปาดิก 77 / สปูเดอร์ 78 / สปาดูป้า 79) อ่านจากจอของแต่ละตัว"
+  }
+}
