@@ -73,6 +73,13 @@ export const effect = z
          * ส่วนชนิดของผลลัพธ์อยู่ที่ effect.damageType ซึ่งอาจคนละอันกัน
          */
         triggerDamageType: vocabEnum("damageType").optional(),
+        /**
+         * "การกระทำที่ไปกระตุ้น" ไม่ใช่ขอบเขตของผลลัพธ์
+         * เช่น "เมื่อโจมตีคริติคอลของสกิลอัลติเมตสำเร็จ จะเพิ่มดาเมจคริติคอล"
+         * → trigger onCrit + triggerScope ultimate ส่วนผลลัพธ์เป็นดาเมจคริทุกท่า
+         * คนละอันกับ effect.scopes ซึ่งจำกัดว่าผลไปลงที่ท่าไหน
+         */
+        triggerScope: vocabEnum("scope").optional(),
         /** ต้องโจมตีโดนกี่ครั้งก่อนถึงทำงาน เช่น "โจมตีพื้นฐานโดน 10 ครั้ง" */
         hitCount: z.number().int().positive().optional(),
         /** ต้องกำจัดศัตรูกี่ตัวก่อนถึงทำงาน — คนละอย่างกับ hitCount */

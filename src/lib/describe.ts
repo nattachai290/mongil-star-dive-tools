@@ -102,6 +102,10 @@ function qualifiers(e: Effect, locale: Locale): string[] {
     const en = label("damageType", dt, "en");
     out.push(th ? `ด้วยการโจมตี${thDamageType(dt)}` : `with ${article(en)} ${en} attack`);
   }
+  if (c?.triggerScope) {
+    const en = label("scope", c.triggerScope, "en");
+    out.push(th ? `ด้วย${label("scope", c.triggerScope, "th")}` : `with ${article(en)} ${en}`);
+  }
   if (c?.enemyType) {
     const dt = c.enemyType;
     out.push(th ? `ใส่มอนสเตอร์${thDamageType(dt)}` : `against ${label("damageType", dt, "en")} enemies`);

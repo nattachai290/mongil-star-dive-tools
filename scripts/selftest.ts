@@ -151,6 +151,19 @@ check("scopes ที่ไม่มีในคำศัพท์ = ไม่ผ
   !monsterling.safeParse({ id: "bop-kkaebi", name: t("แกบีฟ้า"),
     speciesEffects: [{ ...scoped, scopes: ["ultimateSkill"] }],
     effectsRank: "gold", source: src }).success);
+// "ท่าที่ไปกระตุ้น" คนละอันกับ "ท่าที่ผลไปลง" — ออนแซคริด้วยอัลติเมต แต่ได้ดาเมจคริทุกท่า
+check("triggerScope จำกัดท่าที่กระตุ้น ไม่ใช่ขอบเขตของผล",
+  monsterling.safeParse({ id: "onsae", name: t("ออนแซ"),
+    speciesEffects: [{ kind: "buff", stat: "critDmg", value: 11, unit: "percent",
+      target: "self", trigger: "onCrit", durationSec: 5,
+      condition: { triggerScope: "ultimate" } }],
+    effectsRank: "gold", source: src }).success);
+check("triggerScope นอกพจนานุกรม = ไม่ผ่าน",
+  !monsterling.safeParse({ id: "onsae", name: t("ออนแซ"),
+    speciesEffects: [{ kind: "buff", stat: "critDmg", value: 11, unit: "percent",
+      target: "self", trigger: "onCrit",
+      condition: { triggerScope: "ultimateSkill" } }],
+    effectsRank: "gold", source: src }).success);
 // เกมซ้อนขอบเขตได้ เช่น "Ultimate Skill Elemental Weakness DMG" ของอูรกัช
 check("scopes ซ้อนกันสองชั้นได้",
   monsterling.safeParse({ id: "urgash", name: t("อูรกัช"),

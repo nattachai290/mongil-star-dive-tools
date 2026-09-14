@@ -1,0 +1,33 @@
+{
+  "id": "moley-mole",
+  "name": {
+    "th": "มอลลี่",
+    "en": "Moley Mole"
+  },
+  "dex": {
+    "book": "field",
+    "no": 35
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "suppressionDmg",
+      "value": 8,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always",
+      "condition": {
+        "enemyState": "downed"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "moley-mole-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-14",
+    "gameVersion": "unknown",
+    "by": "in-game"
+  }
+}
