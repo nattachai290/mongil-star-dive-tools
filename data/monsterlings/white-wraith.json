@@ -27,8 +27,12 @@
     "icon": "white-wraith-icon.webp"
   },
   "source": {
-    "verifiedAt": "2026-09-12",
+    "verifiedAt": "2026-09-14",
     "gameVersion": "unknown",
-    "by": "in-game"
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ]
   }
 }
