@@ -48,10 +48,16 @@
   "filters.damageType": "ชนิดดาเมจ",
   "filters.target": "ผลไปลงที่ใคร",
   "filters.enemy": "ศัตรูแบบไหน",
-  "filters.alwaysOn": "ติดตลอด ไม่ต้องกระตุ้น",
-  "filters.linkable": "ใส่ลิงก์เชนได้",
-  "filters.noData": "ยังไม่มีข้อมูล",
   "filters.clear": "ล้างตัวกรอง",
   "filters.boss": "มอนสเตอร์บอส",
-  "filters.normal": "มอนสเตอร์ทั่วไป"
+  "filters.normal": "มอนสเตอร์ทั่วไป",
+  "filters.trigger": "ตัวกระตุ้น",
+  "filters.alwaysYes": "ติดตลอด",
+  "filters.alwaysNo": "ต้องกระตุ้น",
+  "filters.linkChain": "ลิงก์เชน",
+  "filters.linkYes": "ใส่ได้",
+  "filters.linkNo": "ใส่ไม่ได้",
+  "filters.data": "ข้อมูล",
+  "filters.dataYes": "มีแล้ว",
+  "filters.dataNo": "ยังไม่มี"
 }

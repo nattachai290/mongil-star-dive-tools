@@ -12,9 +12,6 @@ import type { Locale } from "@/lib/i18n";
  * และก็อปลิงก์ส่งให้คนอื่นได้ด้วย
  */
 const QUERY_KEY = "q";
-const ALWAYS_KEY = "always";
-const LINK_KEY = "link";
-const TODO_KEY = "todo";
 
 const listeners = new Set<() => void>();
 
@@ -61,11 +58,13 @@ export type RowFacets = {
   damageType: string[];
   target: string[];
   enemy: string[];
-  alwaysOn: boolean;
+  always: string[];
+  link: string[];
+  data: string[];
 };
 
 export type FacetGroup = {
-  key: "stat" | "damageType" | "target" | "enemy";
+  key: keyof RowFacets;
   /** ชื่อพารามิเตอร์ใน URL — สั้นกว่า key เพื่อให้ลิงก์ที่ก็อปไปอ่านง่าย */
   param: string;
   legend: string;
@@ -112,9 +111,6 @@ export function MonsterlingList({
     untranslatedTitle: string;
     filters: string;
     any: string;
-    alwaysOn: string;
-    linkable: string;
-    noData: string;
     clear: string;
   };
 }) {
@@ -124,14 +120,7 @@ export function MonsterlingList({
   const params = useMemo(() => new URLSearchParams(search), [search]);
 
   const query = params.get(QUERY_KEY) ?? "";
-  const toggles = [
-    { key: ALWAYS_KEY, label: labels.alwaysOn, on: params.get(ALWAYS_KEY) === "1" },
-    { key: LINK_KEY, label: labels.linkable, on: params.get(LINK_KEY) === "1" },
-    { key: TODO_KEY, label: labels.noData, on: params.get(TODO_KEY) === "1" },
-  ];
-  const activeCount =
-    facets.filter((f) => (params.get(f.param) ?? "") !== "").length +
-    toggles.filter((tg) => tg.on).length;
+  const activeCount = facets.filter((f) => (params.get(f.param) ?? "") !== "").length;
 
   const shown = useMemo(() => {
     const p = new URLSearchParams(search);
@@ -143,10 +132,6 @@ export function MonsterlingList({
         const value = p.get(f.param);
         if (value && !r.facets[f.key].includes(value)) return false;
       }
-      if (p.get(ALWAYS_KEY) === "1" && !r.facets.alwaysOn) return false;
-      if (p.get(LINK_KEY) === "1" && r.badge === null) return false;
-      // "ยังไม่มีข้อมูล" คือฝั่งตรงข้ามของทุกตัวกรองข้างบน จึงอยู่ท้ายสุด
-      if (p.get(TODO_KEY) === "1" && r.effects.length > 0) return false;
       return true;
     });
   }, [rows, facets, search]);
@@ -181,11 +166,11 @@ export function MonsterlingList({
         <fieldset className="mt-4">
           <legend className="sr-only">{labels.filters}</legend>
 
-          <div className="flex flex-wrap gap-2">
+          <div className="grid grid-cols-2 gap-x-3 gap-y-2 sm:grid-cols-4">
             {facets.map((facet) => {
               const value = params.get(facet.param) ?? "";
               return (
-                <span key={facet.param} className="inline-flex flex-col gap-1">
+                <span key={facet.param} className="flex min-w-0 flex-col gap-1">
                   <label
                     htmlFor={`facet-${facet.param}`}
                     className="text-[11px] font-medium uppercase tracking-wide text-muted"
@@ -196,7 +181,7 @@ export function MonsterlingList({
                     id={`facet-${facet.param}`}
                     value={value}
                     onChange={(e) => writeParam(facet.param, e.target.value)}
-                    className={`rounded-lg border bg-surface px-2 py-1.5 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold ${
+                    className={`w-full min-w-0 rounded-lg border bg-surface px-2 py-1.5 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold ${
                       value ? "border-gold text-ink" : "border-line text-ink-2"
                     }`}
                   >
@@ -212,34 +197,15 @@ export function MonsterlingList({
             })}
           </div>
 
-          <div className="mt-3 flex flex-wrap items-center gap-2">
-            {toggles.map((toggle) => (
-              <label
-                key={toggle.key}
-                className={`inline-flex cursor-pointer items-center gap-1.5 rounded-lg border px-2 py-1 text-xs ${
-                  toggle.on ? "border-gold bg-gold-bg text-gold" : "border-line bg-surface text-ink-2"
-                }`}
-              >
-                <input
-                  type="checkbox"
-                  checked={toggle.on}
-                  onChange={(e) => writeParam(toggle.key, e.target.checked ? "1" : "")}
-                  className="size-3.5 accent-gold"
-                />
-                {toggle.label}
-              </label>
-            ))}
-
-            {activeCount > 0 && (
-              <button
-                type="button"
-                onClick={() => clearAll([...facets.map((f) => f.param), ALWAYS_KEY, LINK_KEY, TODO_KEY])}
-                className="rounded-lg px-2 py-1 text-xs text-muted underline underline-offset-2 hover:text-ink"
-              >
-                {labels.clear} ({activeCount})
-              </button>
-            )}
-          </div>
+          {activeCount > 0 && (
+            <button
+              type="button"
+              onClick={() => clearAll(facets.map((f) => f.param))}
+              className="mt-3 rounded-lg px-1 py-1 text-xs text-muted underline underline-offset-2 hover:text-ink"
+            >
+              {labels.clear} ({activeCount})
+            </button>
+          )}
         </fieldset>
 
         {(query.trim() !== "" || activeCount > 0) && (

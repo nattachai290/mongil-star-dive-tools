@@ -48,10 +48,16 @@
   "filters.damageType": "Damage type",
   "filters.target": "Applies to",
   "filters.enemy": "Enemy",
-  "filters.alwaysOn": "Always on, no trigger",
-  "filters.linkable": "Has a Link Chain",
-  "filters.noData": "No data yet",
   "filters.clear": "Clear filters",
   "filters.boss": "Boss enemies",
-  "filters.normal": "Normal enemies"
+  "filters.normal": "Normal enemies",
+  "filters.trigger": "Trigger",
+  "filters.alwaysYes": "Always on",
+  "filters.alwaysNo": "Needs a trigger",
+  "filters.linkChain": "Link Chain",
+  "filters.linkYes": "Has one",
+  "filters.linkNo": "None",
+  "filters.data": "Data",
+  "filters.dataYes": "Recorded",
+  "filters.dataNo": "Not yet"
 }
