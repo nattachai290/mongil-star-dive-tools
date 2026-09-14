@@ -1,0 +1,19 @@
+{
+  "id": "troll",
+  "name": { "th": "โทรลล์", "en": "Troll" },
+  "dex": { "book": "field", "no": 49 },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "neutralizationDmg",
+      "scopes": ["ultimate"],
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always"
+    }
+  ],
+  "effectsRank": "gold",
+  "images": { "icon": "troll-icon.webp" },
+  "source": { "verifiedAt": "2026-09-14", "gameVersion": "unknown", "by": "in-game" }
+}

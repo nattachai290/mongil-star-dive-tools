@@ -359,6 +359,10 @@
       "th": "เมื่อโจมตีด้วยธาตุจุดอ่อน",
       "en": "upon attacking with Elemental Weakness"
     },
+    "onSpecialSkill": {
+      "th": "เมื่อใช้สกิลพิเศษ",
+      "en": "upon using a Special Skill"
+    },
     "onSpecialSkillHit": {
       "th": "เมื่อโจมตีด้วยสกิลพิเศษ",
       "en": "upon attacking with a Special Skill"
