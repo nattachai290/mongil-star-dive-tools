@@ -4,7 +4,7 @@
  * มีไว้เพราะ data/ ยังว่างอยู่ — ถ้าไม่มีไฟล์นี้ validate:data จะผ่านตลอด
  * แม้ schema จะพังอยู่ ทำให้ไม่รู้ตัวจนวันที่เริ่มกรอกข้อมูลจริง
  */
-import { character, food, linkChain, monsterling } from "../src/lib/schema/entities";
+import { character, food, linkChain, monsterling, skill } from "../src/lib/schema/entities";
 import { computeDamage, missingConstants, sumBuffs } from "../src/lib/formula";
 import { LINK_CHAIN_LIST_IS_COMPLETE, linkableBadge, linkableIds, linkableOf } from "../src/lib/linkable";
 import type { Effect } from "../src/lib/schema/common";
@@ -24,11 +24,11 @@ function sampleCharacter(patch: Record<string, unknown> = {}) {
   return {
     id: "test-char",
     name: t("ทดสอบ"),
-    rarity: "SSR", element: "fire", role: "dps", tags: ["burst"],
-    stats: { atLevel: 80, atBreakthrough: 4, hp: 12000, atk: 1300, def: 600, critRate: 5, critDmg: 150 },
+    rarity: 4, element: "fire", role: "assassin", tags: ["burst"],
+    stats: { atLevel: 80, hp: 12000, atk: 1300, def: 600, critRate: 5, critDmg: 50 },
     skills: { basic: skill, switch: skill, special: skill, ultimate: skill },
     awaken: [{ stage: 3, desc: t("+2 เลเวลสกิล"), skillLevelBonus: 2 }],
-    breakthrough: [], provides: [], needs: ["critDmgBuff"],
+    provides: [], needs: ["critDmgBuff"],
     source: src,
     ...patch,
   };
@@ -44,15 +44,23 @@ check("verifiedAt ผิดรูปแบบถูกปฏิเสธ",
 check("ข้อความที่ไม่มีทั้ง th และ en ถูกปฏิเสธ", !character.safeParse(sampleCharacter({ name: {} })).success);
 
 const scaling = (n: number) => Array.from({ length: n }, () => 100);
-check("scaling ต้องมี 16 ช่อง", !character.safeParse(sampleCharacter({
-  skills: { ...sampleCharacter().skills as object, basic: { name: t("a"), desc: t("b"), effects: [], scaling: scaling(12) } },
-})).success);
-check("scaling 16 ช่องที่มี null ผ่าน", character.safeParse(sampleCharacter({
+const withBasicValues = (values: unknown) => sampleCharacter({
   skills: {
     ...(sampleCharacter().skills as Record<string, unknown>),
-    basic: { name: t("a"), desc: t("b"), effects: [], scaling: [...scaling(12), null, null, null, null] },
+    basic: { name: t("a"), desc: t("b"), effects: [], values },
   },
-})).success);
+});
+check("scaling ต้องมี 16 ช่อง", !character.safeParse(
+  withBasicValues([{ label: t("ขั้น 1"), unit: "percent", scaling: scaling(12) }])).success);
+check("scaling 16 ช่องที่มี null ผ่าน", character.safeParse(
+  withBasicValues([{ label: t("ขั้น 1"), unit: "percent",
+    scaling: [...scaling(12), null, null, null, null] }])).success);
+// จอสกิลเดียวมีได้หลายบรรทัด และหน่วยคนละแบบกันในสกิลเดียว
+check("สกิลเดียวเก็บได้หลายบรรทัดและคนละหน่วย", character.safeParse(
+  withBasicValues([
+    { label: t("ขั้น 1"), unit: "percent", scaling: [...scaling(1), ...Array(15).fill(null)] },
+    { label: t("นานขึ้น"), unit: "seconds", scaling: [...scaling(1), ...Array(15).fill(null)] },
+  ])).success);
 
 console.log("\nเอฟเฟกต์");
 const foodBase = { id: "f", name: t("อาหาร"), category: "entree", durationSec: 1800, source: src };
@@ -98,13 +106,32 @@ check("บอกได้ว่าค่าคงที่ไหนยังข�
 // ---------- ชนิดดาเมจอยู่ที่ท่า ไม่ใช่ที่ตัวละคร ----------
 const skillShape = { name: t("ท่า"), desc: t("คำอธิบาย") };
 check("สกิลเก็บชนิดดาเมจของตัวเองได้ และคนละอันกับธาตุตัวละคร",
-  character.shape.skills.shape.basic.safeParse(
-    { ...skillShape, damageType: "physical" }).success);
+  skill.safeParse({ ...skillShape, damageType: "physical" }).success);
 check("สกิลที่เปลี่ยนธาตุการตีปกติ เก็บได้",
-  character.shape.skills.shape.special.safeParse(
-    { ...skillShape, damageType: "fire", changesBasicAttackTo: "fire" }).success);
+  skill.safeParse({ ...skillShape, damageType: "fire", changesBasicAttackTo: "fire" }).success);
 check("สกิลที่ไม่สร้างดาเมจ ไม่ต้องมี damageType",
-  character.shape.skills.shape.switch.safeParse(skillShape).success);
+  skill.safeParse(skillShape).success);
+
+// ---------- ตัวละครเก็บแบบยังอ่านไม่ครบได้ ----------
+// จอแรกของตัวละครให้แค่ชื่อ ธาตุ บทบาท ดาว — สกิลกับค่าพลังเปล่ามาทีหลัง
+check("ตัวละครที่ยังไม่มีสกิลและค่าพลัง ผ่าน schema ได้",
+  character.safeParse({ id: "vivian", name: t("วิเวียน"), rarity: 4,
+    element: "fire", role: "supporter", range: "melee", awaken: [], source: src }).success);
+check("ความหายากของตัวละครเป็นจำนวนดาว ไม่ใช่ SSR",
+  !character.safeParse({ id: "vivian", name: t("วิเวียน"), rarity: "SSR",
+    element: "fire", role: "supporter", awaken: [], source: src }).success);
+// เกมมีแค่ 4 ดาวกับ 5 ดาว เลข 3 คืออ่านจอผิด ไม่ใช่ตัวละครหายาก
+check("ตัวละคร 3 ดาวไม่มีในเกม = ไม่ผ่าน",
+  !character.safeParse({ id: "vivian", name: t("วิเวียน"), rarity: 3,
+    element: "fire", role: "supporter", awaken: [], source: src }).success);
+check("ตัวละคร 5 ดาวผ่าน",
+  character.safeParse({ id: "vivian", name: t("วิเวียน"), rarity: 5,
+    element: "fire", role: "supporter", awaken: [], source: src }).success);
+check("ดาเมจคริติคอลฐาน 50 ผ่านได้ (เก็บเป็นส่วนที่บวกเพิ่ม ไม่ใช่ตัวคูณ 150)",
+  character.safeParse({ id: "vivian", name: t("วิเวียน"), rarity: 4,
+    element: "fire", role: "supporter", awaken: [], source: src,
+    stats: { atLevel: 60, hp: 10243, atk: 1943, def: 638,
+      critRate: 5, critDmg: 50 } }).success);
 
 // ---------- เอฟเฟกต์สายพันธุ์ของมอนสเตอร์ลิง ----------
 const speciesEffect = {

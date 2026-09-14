@@ -7,7 +7,19 @@ const scaling16 = z
   .array(z.number().nullable())
   .length(16, "ต้องมี 16 ช่อง (เลเวล 1–16) ช่องที่ยังไม่รู้ค่าให้ใส่ null");
 
-const skill = z.object({
+/**
+ * ตัวเลขหนึ่งบรรทัดบนจอสกิล
+ *
+ * label เก็บตามที่จอเขียน ยังไม่ทำเป็นคำศัพท์เพราะเห็นตัวละครเดียว
+ * ถ้าตัวที่สองใช้ชื่อบรรทัดชุดเดียวกัน ค่อยย้ายเข้าพจนานุกรม
+ */
+const skillValue = z.object({
+  label: text,
+  unit: vocabEnum("unit"),
+  scaling: scaling16,
+});
+
+export const skill = z.object({
   name: text,
   desc: text,
   /**
@@ -25,15 +37,29 @@ const skill = z.object({
    */
   changesBasicAttackTo: vocabEnum("damageType").optional(),
   effects: z.array(effect).default([]),
-  scaling: scaling16.optional(),
-  cooldownSec: z.number().nonnegative().optional(),
-  energyCost: z.number().nonnegative().optional(),
+  /**
+   * ตัวเลขทุกบรรทัดที่จอสกิลแสดง ทีละบรรทัด
+   *
+   * ไม่ใช่ค่าเดียวต่อสกิล เพราะท่าเดียวมีได้หลายบรรทัด เช่น โจมตีพื้นฐาน
+   * ของวิเวียนมีหกบรรทัด (ขั้น 1–4 · ฉับพลัน · หลบหลีกโต้กลับ) และแพสซีฟ
+   * มีทั้งหน่วยวินาทีและเปอร์เซ็นต์ปนกัน
+   */
+  values: z.array(skillValue).default([]),
 });
 
 export const character = z.object({
   id: slug,
   name: text,
-  rarity: vocabEnum("rarity"),
+  /**
+   * ความหายากเป็น "จำนวนดาว" ตามที่จอตัวละครแสดง ไม่ใช่ R/SR/SSR
+   * (คำพวกนั้นเป็นของที่ร่างไว้ก่อนเห็นเกมจริง เกมนี้ไม่มีใช้เลย)
+   *
+   * เกมมีตัวละคร 4 ดาวกับ 5 ดาวเท่านั้น — ค่าอื่นคืออ่านจอผิด
+   * (ลิงก์เชนใช้ช่วงคนละแบบ ของนั้นเจอตั้งแต่ 3 ดาว)
+   */
+  rarity: z.number().int().min(4).max(5),
+  /** ระยะการโจมตี เช่น ระยะใกล้ — เพิ่มคำใหม่เมื่อเห็นจากจอเท่านั้น */
+  range: vocabEnum("range").optional(),
   /**
    * ธาตุประจำตัวละคร ใช้สำหรับหมวดหมู่และตัวกรองเท่านั้น
    *
@@ -44,23 +70,80 @@ export const character = z.object({
   role: vocabEnum("role"),
   tags: z.array(vocabEnum("tag")).default([]),
 
-  stats: z.object({
-    atLevel: z.number().int().positive(),
-    atBreakthrough: z.number().int().min(0).max(6),
-    hp: z.number().positive(),
-    atk: z.number().positive(),
-    def: z.number().positive(),
-    critRate: z.number().min(0).max(100),
-    critDmg: z.number().min(100),
-  }),
+  /**
+   * ค่าพลัง "เปล่า" ของตัวละคร — ห้ามใส่ตัวเลขจากจอที่ติดอุปกรณ์
+   * หรือมอนสเตอร์ลิงอยู่ เพราะลักษณะเฉพาะของมอนบวก HP/ATK/DEF เข้าไปด้วย
+   * ไม่ใส่ = ยังไม่ได้อ่านค่าเปล่า ไม่ใช่ศูนย์
+   */
+  stats: z
+    .object({
+      atLevel: z.number().int().positive(),
+      hp: z.number().positive(),
+      atk: z.number().positive(),
+      def: z.number().positive(),
+      /** ฐานของเกมคือ 5 เพดาน 100 (ทูลทิปในเกมบอกไว้) */
+      critRate: z.number().min(0).max(100),
+      /**
+       * เก็บเป็น "ส่วนที่บวกเพิ่ม" ฐานของเกมคือ 50 ไม่ใช่ตัวคูณ 150
+       * เพดาน 300 ตามทูลทิป "เมื่อเกิดคริติคอล อัตราเพิ่มปริมาณดาเมจ สูงสุด 300%"
+       */
+      critDmg: z.number().min(0).max(300),
+    })
+    .optional(),
 
-  skills: z.object({
-    basic: skill,
-    switch: skill,
-    special: skill,
-    ultimate: skill,
-  }),
+  /**
+   * บรรทัดที่เหลือของจอ "ข้อมูลรายละเอียดค่าพลัง" ที่ไม่ใช่ห้าค่าหลักข้างบน
+   *
+   * เก็บเป็น effect ไม่ใช่ช่องใหม่ในก้อน stats เพราะหลายบรรทัดต้องใช้ scope
+   * หรือ damageType ถึงจะพูดได้ถูก เช่น "เพิ่มดาเมจสนับสนุน" คือ
+   * stat dmgDealt + scopes ["support"] ไม่ใช่ stat ใหม่ชื่อ supportSkillDmg
+   * (ดู DATA-FOR-AI "stat กับ scopes แยกกัน")
+   */
+  otherStats: z.array(effect).default([]),
 
+  /**
+   * สถานะที่ตัวละครนี้มอบให้ พร้อมคำอธิบายจากหน้าต่าง "รายละเอียดเอฟเฟกต์"
+   *
+   * เก็บที่ตัวละครไม่ใช่ในสกิล เพราะสกิลหลายท่าอ้างถึงสถานะเดียวกัน
+   * (อ่อนแอต่อไฟ ถูกใช้โดยสกิลสับเปลี่ยนและสกิลอัลติเมต)
+   * ถ้าเจอตัวละครตัวอื่นมอบสถานะชื่อเดียวกัน ค่อยย้ายไปเป็นหมวดของตัวเอง
+   */
+  statuses: z
+    .array(
+      z.object({
+        name: text,
+        desc: text,
+        /**
+         * เติมได้ก็ต่อเมื่อ effects ครอบคำอธิบายได้ "ทั้งหมด" เท่านั้น
+         * ถ้าเติมได้แค่บางส่วน ให้ปล่อยว่างแล้วอ่านจาก desc แทน
+         * ไม่งั้นจะดูเหมือนเก็บครบทั้งที่ยังขาด
+         *
+         * target self หมายถึงตัวที่กำลังติดสถานะนี้ ไม่ใช่คนที่มอบให้
+         */
+        effects: z.array(effect).default([]),
+      }),
+    )
+    .default([]),
+
+  /** ข้อมูลมาทีละจอ ตัวละครที่ยังอ่านสกิลไม่ครบก็ต้องเก็บชื่อกับธาตุไว้ก่อนได้ */
+  skills: z
+    .object({
+      basic: skill,
+      switch: skill,
+      special: skill,
+      ultimate: skill,
+      /** ช่องที่ห้าบนจอสกิล ไม่ได้กดใช้เอง ทำงานเองตลอด */
+      passive: skill.optional(),
+    })
+    .partial()
+    .optional(),
+
+  /**
+   * ปลุกพลัง — ระบบเสริมพลังตัวละครด้วย "ตัวซ้ำ" หกขั้น
+   *
+   * เกมนี้ไม่มีระบบทะลุจำกัดแยกต่างหาก ตอนแรกมีช่อง breakthrough อยู่ด้วย
+   * แต่เป็นของที่ร่างไว้ก่อนเห็นเกมจริง ชุดเดียวกับ R/SR/SSR — ถอดออกแล้ว
+   */
   awaken: z
     .array(
       z.object({
@@ -72,10 +155,6 @@ export const character = z.object({
       }),
     )
     .max(6),
-
-  breakthrough: z
-    .array(z.object({ stage: z.number().int().min(1).max(6), unlocks: z.array(z.string()) }))
-    .default([]),
 
   /** บัฟหรือดีบัฟที่ตัวนี้ยื่นให้ทีม — ใช้จับคู่กับ needs ของคนอื่นตอนจัดทีม */
   provides: z.array(effect).default([]),

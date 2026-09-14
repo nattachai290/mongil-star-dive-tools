@@ -155,22 +155,28 @@
       "en": "Lightning"
     }
   },
+  "range": {
+    "melee": {
+      "th": "ระยะใกล้",
+      "en": "Melee"
+    }
+  },
   "role": {
-    "dps": {
-      "th": "ดาเมจ",
-      "en": "DPS"
+    "fighter": {
+      "th": "บรอว์เลอร์",
+      "en": "Fighter"
     },
-    "tank": {
-      "th": "แทงก์",
-      "en": "Tank"
+    "destroyer": {
+      "th": "เดสทรอยเยอร์",
+      "en": "Destroyer"
     },
-    "support": {
-      "th": "ซัพพอร์ต",
+    "assassin": {
+      "th": "สเลเยอร์",
+      "en": "Assassin"
+    },
+    "supporter": {
+      "th": "ซัพพอร์ตเตอร์",
       "en": "Support"
-    },
-    "healer": {
-      "th": "ฮีล",
-      "en": "Healer"
     }
   },
   "rarity": {
@@ -237,12 +243,20 @@
       "en": "Cooldown"
     },
     "energyGain": {
-      "th": "การสะสมพลังอัลติเมต",
-      "en": "Energy Gain"
+      "th": "อัตราชาร์จสกิลอัลติเมต",
+      "en": "Ultimate Gauge Charge"
     },
     "stamina": {
-      "th": "ค่าสเตมินา",
-      "en": "Stamina"
+      "th": "สเตมินาสูงสุด",
+      "en": "Max Stamina"
+    },
+    "supportPower": {
+      "th": "ค่าพลังสนับสนุน",
+      "en": "Support"
+    },
+    "supportDmg": {
+      "th": "ดาเมจสนับสนุน",
+      "en": "Support Skill DMG"
     },
     "res": {
       "th": "ต้านทาน",
@@ -273,6 +287,9 @@
     "seconds": {
       "th": "วินาที",
       "en": "seconds"
+    },
+    "times": {
+      "th": "ครั้ง"
     }
   },
   "target": {
@@ -606,15 +623,11 @@
     },
     "weaknessHit": {
       "th": "การโจมตีธาตุจุดอ่อน",
-      "en": "Elemental Weakness Attack"
+      "en": "Elemental Weakness"
     },
     "crit": {
       "th": "การโจมตีคริติคอล",
       "en": "Critical"
-    },
-    "support": {
-      "th": "สกิลสนับสนุน",
-      "en": "Support Skill"
     },
     "airCounter": {
       "th": "โจมตีฉับพลัน",
