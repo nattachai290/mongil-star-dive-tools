@@ -35,6 +35,10 @@ function buildRows(locale: Locale, bookLabel: (book: string) => string): Monster
       const mon = slug ? MONSTERLINGS.get(slug) : undefined;
       const picked = pickText(entry.name, locale);
       const effects = (mon?.speciesEffects ?? []).map((e) => describeEffect(e, locale));
+      // ข้อความเอฟเฟกต์ของ "อีกภาษา" ไม่ได้แสดงบนหน้า แต่ต้องค้นเจอ
+      // ไม่งั้นพิมพ์ "คริ" ค้างไว้แล้วสลับเป็นอังกฤษ คำค้นจะรอดข้ามหน้าไปแต่หาอะไรไม่เจอเลย
+      const other = locale === "th" ? "en" : "th";
+      const effectsOther = (mon?.speciesEffects ?? []).map((e) => describeEffect(e, other));
 
       rows.push({
         key: `${entry.book}-${entry.no}`,
@@ -57,6 +61,7 @@ function buildRows(locale: Locale, bookLabel: (book: string) => string): Monster
           slug,
           `no.${entry.no}`,
           ...effects.flatMap((e) => [e.headline, ...e.qualifiers]),
+          ...effectsOther.flatMap((e) => [e.headline, ...e.qualifiers]),
         ]
           .filter(Boolean)
           .join(" ")

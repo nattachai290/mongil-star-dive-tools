@@ -1,8 +1,43 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useMemo, useSyncExternalStore } from "react";
 import type { Locale } from "@/lib/i18n";
+
+/**
+ * เก็บคำค้นไว้ใน URL (?q=) ไม่ใช่ใน state อย่างเดียว
+ *
+ * เพราะสลับภาษาคือการเปลี่ยนหน้า (/th/... -> /en/...) คอมโพเนนต์จะถูกสร้างใหม่
+ * state ที่พิมพ์ค้างไว้จึงหายหมด ถ้าคำค้นอยู่ใน URL มันจะข้ามหน้าไปด้วยได้
+ * และก็อปลิงก์ส่งให้คนอื่นได้ด้วย
+ */
+const QUERY_KEY = "q";
+
+const listeners = new Set<() => void>();
+
+/** replaceState ไม่ยิง popstate จึงต้องบอกคนที่ subscribe เอง */
+function subscribe(onChange: () => void) {
+  listeners.add(onChange);
+  window.addEventListener("popstate", onChange);
+  return () => {
+    listeners.delete(onChange);
+    window.removeEventListener("popstate", onChange);
+  };
+}
+
+function readQuery(): string {
+  return new URLSearchParams(window.location.search).get(QUERY_KEY) ?? "";
+}
+
+function writeQuery(query: string) {
+  const params = new URLSearchParams(window.location.search);
+  if (query.trim() === "") params.delete(QUERY_KEY);
+  else params.set(QUERY_KEY, query);
+  const search = params.toString();
+  // replaceState ไม่ใช่ push เพราะทุกตัวอักษรที่พิมพ์ไม่ควรกลายเป็นประวัติย้อนกลับหนึ่งขั้น
+  window.history.replaceState(null, "", `${window.location.pathname}${search ? `?${search}` : ""}`);
+  for (const onChange of listeners) onChange();
+}
 
 /**
  * รายการมอนพร้อมช่องค้นหา
@@ -41,7 +76,9 @@ export function MonsterlingList({
     untranslatedTitle: string;
   };
 }) {
-  const [query, setQuery] = useState("");
+  // URL คือแหล่งความจริงเดียวของคำค้น ไม่ได้เก็บซ้ำไว้ใน state
+  // ฝั่งเซิร์ฟเวอร์คืนค่าว่างเสมอ React จึงเรนเดอร์ใหม่ให้เองหลัง hydrate โดยไม่ฟ้อง mismatch
+  const query = useSyncExternalStore(subscribe, readQuery, () => "");
 
   const shown = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -70,7 +107,7 @@ export function MonsterlingList({
           id="monsterling-search"
           type="search"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) => writeQuery(e.target.value)}
           placeholder={labels.search}
           autoComplete="off"
           className="w-full rounded-lg border border-line bg-surface px-3 py-2 text-sm text-ink placeholder:text-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold sm:max-w-sm"
