@@ -67,7 +67,6 @@
   "character.stars": "ดาว",
   "character.baseStats": "ค่าพลังเปล่า",
   "character.atLevel": "ที่เลเวล",
-  "character.baseStatsNote": "อ่านตอนถอดอุปกรณ์และมอนสเตอร์ลิงออกหมดแล้ว",
   "character.otherStats": "ค่าพลังอื่น",
   "character.skills": "สกิล",
   "character.statuses": "สถานะที่มอบให้",
@@ -78,9 +77,6 @@
   "character.noValues": "ยังไม่มีตัวเลขจากจอ",
   "character.skillLevelBonus": "เพิ่มเลเวลสกิล",
   "character.noImage": "ยังไม่มีรูป",
-  "character.source": "ที่มาข้อมูล",
-  "character.verifiedAt": "ยืนยันเมื่อ",
-  "character.readIn": "อ่านจากจอภาษา",
   "character.back": "กลับไปรายชื่อตัวละคร",
   "skill.basic": "สกิลโจมตีพื้นฐาน",
   "skill.switch": "สกิลสับเปลี่ยน",
@@ -90,7 +86,6 @@
   "view.legend": "รูปแบบที่แสดง",
   "view.summary": "สรุป",
   "view.full": "เต็ม",
-  "character.summaryNote": "บรรทัดแรกของคำอธิบายตามที่เกมเขียน ชนิดดาเมจ และตัวเลขทุกบรรทัด — กด \"เต็ม\" เพื่อดูคำอธิบายครบทุกบรรทัดและตารางตามเลเวล",
-  "character.moreLines": "บรรทัด",
+  "character.moreLines": "บรรทัด · กดดูทั้งหมด",
   "character.descLines": "บรรทัด"
 }

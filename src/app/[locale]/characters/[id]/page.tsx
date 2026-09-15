@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Text } from "@/components/Text";
+import { ShowFullButton } from "@/components/ShowFullButton";
 import { ViewSwitch } from "@/components/ViewSwitch";
 import { createTranslate, type MessageKey } from "@/i18n";
 import { LOCALES, LOCALE_TAG, isLocale, pickText, type Locale } from "@/lib/i18n";
@@ -199,9 +200,7 @@ function SkillSummary({
           </span>
           {/* บอกตรง ๆ ว่ายังมีอีกกี่บรรทัด ดีกว่าตัดทิ้งเงียบ ๆ แล้วคนอ่านไม่รู้ */}
           {lines.length > 1 && (
-            <span className="ms-1.5 whitespace-nowrap rounded border border-line bg-surface-2 px-1.5 py-0.5 align-middle font-mono text-[11px] text-muted">
-              +{lines.length - 1} {t("character.moreLines")}
-            </span>
+            <ShowFullButton count={lines.length - 1} label={t("character.moreLines")} />
           )}
         </p>
       )}
@@ -369,7 +368,6 @@ export default async function CharacterPage({
               {t("character.atLevel")} {stats.atLevel}
             </span>
           </h2>
-          <p className="mt-1 text-xs text-muted">{t("character.baseStatsNote")}</p>
           <dl className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-5">
             {statRows.map(([name, value]) => (
               <div key={name} className="rounded-lg border border-line bg-surface p-3">
@@ -411,8 +409,7 @@ export default async function CharacterPage({
             }}
             summary={
               <>
-                <p className="text-xs text-muted">{t("character.summaryNote")}</p>
-                <div className="mt-3 space-y-2">
+                <div className="space-y-2">
                   {SKILL_SLOTS.map(([slot, slotKey]) => {
                     const skill = character.skills?.[slot];
                     if (!skill) return null;
@@ -532,21 +529,12 @@ export default async function CharacterPage({
         </section>
       )}
 
-      <section className="mt-8 rounded-lg border border-line bg-surface-2 p-4 text-xs text-muted">
-        <h2 className="font-display font-semibold text-ink-2">{t("character.source")}</h2>
-        <p className="mt-1">
-          {t("character.verifiedAt")} {character.source.verifiedAt}
-          {character.source.readIn && (
-            <>
-              {" · "}
-              {t("character.readIn")} {character.source.readIn.join(", ")}
-            </>
-          )}
-        </p>
-        {character.source.note && (
-          <p className="mt-2 leading-relaxed">{character.source.note}</p>
-        )}
-      </section>
+      {/*
+        บล็อก "ที่มาข้อมูล" ถูกถอดออกจากหน้าเว็บตามที่เจ้าของเว็บสั่ง (2026-09-15)
+        ข้อมูลยังอยู่ครบใน data/characters/*.json ช่อง source
+        ทั้ง verifiedAt, gameVersion, readIn และ note — validate:data ยังบังคับให้มีเหมือนเดิม
+        เป็นของหลังบ้านสำหรับคนลงข้อมูล ไม่ใช่ของที่คนเล่นต้องอ่าน
+      */}
     </div>
   );
 }
