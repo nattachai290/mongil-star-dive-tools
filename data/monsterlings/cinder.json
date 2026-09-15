@@ -1,0 +1,36 @@
+{
+  "id": "cinder",
+  "name": {
+    "th": "ปีศาจเพลิง",
+    "en": "Cinder"
+  },
+  "dex": {
+    "book": "field",
+    "no": 142
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critDmg",
+      "value": 11.55,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onCrit",
+      "durationSec": 5,
+      "condition": {
+        "triggerScope": "ultimate"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "cinder-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-15",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": ["th", "en"],
+    "note": "เป็นขั้นบนของออนแซ (field 141) ที่ได้ 11 (11 x 1.05 = 11.55) | ตัวที่สองที่ใช้ triggerScope — คริติคอลต้องมาจากสกิลอัลติเมต แต่ผลคือดาเมจคริติคอลของทุกท่า ยืนยันว่าช่องนี้ไม่ได้มีไว้สำหรับมอนตัวเดียว"
+  }
+}
