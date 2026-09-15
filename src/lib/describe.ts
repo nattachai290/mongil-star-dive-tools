@@ -27,6 +27,15 @@ const VERB_TH: Record<string, string> = {
   utility: "",
 };
 
+/**
+ * ต่อคำไทยเข้ากับคำข้างหน้า — ไทยไม่เว้นวรรคระหว่างคำ
+ * แต่ถ้าคำข้างหน้าจบด้วยอักษรละติน (เช่นคำศัพท์ที่ยังไม่มีคำแปลไทย)
+ * ต้องเว้นวรรค ไม่งั้นได้ "Stagger DMGธาตุสายฟ้า" ซึ่งอ่านไม่ออก
+ */
+function joinTh(before: string, after: string): string {
+  return /[A-Za-z0-9)%]$/.test(before) ? `${before} ${after}` : `${before}${after}`;
+}
+
 /** "ไฟ" -> "ธาตุไฟ" แต่ "กายภาพ" ไม่ใช่ธาตุ จึงไม่เติมคำนำหน้า */
 function thDamageType(dt: string): string {
   const name = label("damageType", dt, "th");
@@ -57,12 +66,12 @@ function statPhrase(e: Effect, locale: Locale): string {
   const scopes = e.scopes ?? [];
 
   if (locale === "th") {
-    const core = dt ? `${stat}${thDamageType(dt)}` : stat;
+    const core = dt ? joinTh(stat, thDamageType(dt)) : stat;
     if (scopes.length === 0) return core;
     // ไทยเรียงจากแคบไปกว้าง สลับกับอังกฤษ เพราะ "ของ" ชี้จากผลย้อนไปหาต้นทาง
     // ["ultimate", "weaknessHit"] → "ดาเมจของการโจมตีธาตุจุดอ่อนของสกิลอัลติเมต"
     const chain = [...scopes].reverse().map((s) => label("scope", s, "th")).join("ของ");
-    return `${core}ของ${chain}`;
+    return joinTh(core, `ของ${chain}`);
   }
 
   // อังกฤษเรียงหน้าไปหลังเหมือนที่เกมเขียน: "Switch Skill Fire DMG", "Physical RES"
