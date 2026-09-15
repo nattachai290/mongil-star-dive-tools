@@ -259,6 +259,9 @@
     "brawlDmg": {
       "th": "ดาเมจปะทะ",
       "en": "Brawl DMG"
+    },
+    "staggerDmg": {
+      "en": "Stagger DMG"
     }
   },
   "unit": {

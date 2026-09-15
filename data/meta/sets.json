@@ -284,7 +284,44 @@
       "readIn": [
         "en"
       ],
-      "note": "เซ็ตสี่ชิ้น เห็นชื่อแล้วชิ้นเดียว (หมวก Mountain Peak Helm) | \"Tag-out Skill\" เป็นคำที่เพิ่งเจอครั้งแรก ยังไม่รู้ว่าเป็นคำเดียวกับ Switch Skill หรือคนละอย่าง จึงเก็บเป็นตัวกระตุ้นแยก onTagOutSkillHit ตามคำที่จอเขียน ถ้าเจอจอที่ยืนยันว่าเหมือนกัน ค่อยยุบรวม | [4 Set] ไม่มีระยะเวลาบนจอ มีแต่เงื่อนไข ต่างจาก [4 Set] ของอีกสองเซ็ตที่ระบุ 5 วินาที | ใช้ triggerEnemyAffliction เป็นเซ็ตที่สาม ต่อจากฝันร้ายเขียวกับหมาป่าขาวคลุ้มคลั่ง"
+      "note": "เซ็ตสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Mountain Peak Helm / เกราะอก Mountain Peak Iron Armor / ถุงมือ Mountain Peak Gloves / รองเท้า Mountain Peak Marching Boots) | \"Tag-out Skill\" เป็นคำที่เพิ่งเจอครั้งแรก ยังไม่รู้ว่าเป็นคำเดียวกับ Switch Skill หรือคนละอย่าง จึงเก็บเป็นตัวกระตุ้นแยก onTagOutSkillHit ตามคำที่จอเขียน ถ้าเจอจอที่ยืนยันว่าเหมือนกัน ค่อยยุบรวม | [4 Set] ไม่มีระยะเวลาบนจอ มีแต่เงื่อนไข ต่างจาก [4 Set] ของอีกสองเซ็ตที่ระบุ 5 วินาที | ใช้ triggerEnemyAffliction เป็นเซ็ตที่สาม ต่อจากฝันร้ายเขียวกับหมาป่าขาวคลุ้มคลั่ง"
+    }
+  },
+  {
+    "id": "ice-heart",
+    "name": {
+      "en": "Ice Heart"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Lightning attack Stagger DMG +3%"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "staggerDmg",
+            "damageType": "lightning",
+            "value": 3,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "always"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสองชิ้น (หมวก Frozen Crown / ถุงมือ Touch of Frost) | ชื่อเซ็ตคือ Ice Heart และของทั้งสองชิ้นเป็นน้ำแข็ง แต่โบนัสเป็น \"Lightning attack\" ไม่ใช่ธาตุน้ำแข็ง — เก็บตามที่จอเขียน ไม่แก้ให้เข้ากับชื่อ (เคยเจอชื่อกับเนื้อหาไม่ตรงกันมาแล้วในลิงก์เชน เช่น หินเยือกแข็ง/Shadowed Stone ที่เป็นธาตุดิน) | \"Stagger DMG\" เป็น stat ใหม่ อยู่ตระกูลเดียวกับดาเมจกดขี่/หมดฤทธิ์/ปะทะ ยังไม่มีคำไทยเพราะยังไม่เคยเห็นบนจอไทย"
     }
   }
 ]

@@ -1,0 +1,23 @@
+{
+  "id": "touch-of-frost",
+  "name": {
+    "en": "Touch of Frost"
+  },
+  "grade": "purple",
+  "stars": 4,
+  "slot": "gloves",
+  "setId": "ice-heart",
+  "effects": [],
+  "desc": {
+    "en": "Gloves adorned with a jewel that emits an endless chill. Prolonged wear is not recommended for those with cold hands and feet."
+  },
+  "source": {
+    "verifiedAt": "2026-09-15",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอคราฟต์ (Sets) ภาษาอังกฤษเมื่อ 2026-09-15 ยังไม่เคยเปิดจอนี้ภาษาไทย จึงยังไม่มีชื่อไทย ห้ามแปลเอง | ไม่เก็บค่าหลักและค่ารอง เพราะจอเขียนว่าสุ่มตอนได้ของมา"
+  }
+}
