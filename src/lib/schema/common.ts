@@ -45,6 +45,13 @@ export const source = z.object({
  */
 export const effect = z
   .object({
+    /**
+     * kind บอก "ตัวเลขขึ้นหรือลง" ไม่ได้บอก "ดีกับใคร"
+     *
+     * buff = ค่าขึ้น, debuff = ค่าลง ตามเครื่องหมายที่จอเกมพิมพ์
+     * ส่วนใครได้ประโยชน์ดูจาก target — เช่น "เพิ่มดาเมจที่เป้าหมายได้รับ +2%"
+     * เป็น buff ใส่ enemy ไม่ใช่ debuff ถึงจะเป็นผลดีกับผู้เล่นก็ตาม
+     */
     kind: vocabEnum("effectKind"),
     stat: vocabEnum("stat").optional(),
     value: z.number().optional(),
@@ -121,6 +128,16 @@ export const effect = z
          *   กับ vsBoss: false (ฝั่งผล)
          */
         triggerEnemyType: vocabEnum("damageType").optional(),
+        /**
+         * ศัตรูต้องติด "สถานะอ่อนแอต่อธาตุ" (Affliction) นี้อยู่ ถึงจะติดเงื่อนไข
+         * เช่น "upon attacking an enemy with Earth Affliction" -> earth
+         *
+         * คนละอันกับ triggerEnemyType ซึ่งเป็น "ธาตุของตัวศัตรู" ไม่ใช่สถานะที่ติดอยู่
+         * มอนธาตุดินกับมอนที่โดนใส่สถานะอ่อนแอต่อธาตุดิน เป็นคนละเรื่องกันคนละตัวได้
+         *
+         * และคนละอันกับ enemyState ซึ่งเก็บท่าทาง (ล้ม / ลอย / มึนงง) ไม่ใช่ธาตุ
+         */
+        triggerEnemyAffliction: vocabEnum("damageType").optional(),
         /** สถานะของศัตรูที่ต้องเป็นก่อนถึงทำงาน เช่น "แก่เป้าหมายที่ล้มอยู่ตรงพื้น" */
         enemyState: vocabEnum("enemyState").optional(),
         note: text.optional(),

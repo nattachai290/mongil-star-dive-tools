@@ -133,6 +133,14 @@ function qualifiers(e: Effect, locale: Locale): string[] {
     const en = label("damageType", dt, "en");
     out.push(th ? `ด้วยการโจมตี${thDamageType(dt)}` : `with ${article(en)} ${en} attack`);
   }
+  if (c?.triggerEnemyAffliction) {
+    const dt = c.triggerEnemyAffliction;
+    out.push(
+      th
+        ? `ใส่ศัตรูที่ติดสถานะอ่อนแอต่อ${thDamageType(dt)}`
+        : `on enemies with ${label("damageType", dt, "en")} Affliction`,
+    );
+  }
   if (c?.triggerScope) {
     const en = label("scope", c.triggerScope, "en");
     out.push(th ? `ด้วย${label("scope", c.triggerScope, "th")}` : `with ${article(en)} ${en}`);

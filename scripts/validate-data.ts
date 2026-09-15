@@ -100,6 +100,7 @@ for (const collection of Object.keys(SCHEMAS) as Collection[]) {
 
 // ---------- เซ็ตอุปกรณ์ (อยู่ใน meta) ----------
 const setIds = new Set<string>();
+const setDocs: Record<string, unknown>[] = [];
 const setsRaw = readJson(join(DATA, "meta", "sets.json"), "data/meta/sets.json");
 if (Array.isArray(setsRaw)) {
   setsRaw.forEach((s, i) => {
@@ -109,6 +110,14 @@ if (Array.isArray(setsRaw)) {
     else {
       if (setIds.has(r.data.id)) fail(where, `id เซ็ต "${r.data.id}" ซ้ำ`);
       setIds.add(r.data.id);
+      // เซ็ตอยู่นอกลูปหมวด จึงต้องเรียกตรวจภาษาและเก็บไปนับ readIn เอง
+      // ไม่งั้นเซ็ตที่มีภาษาเดียวจะผ่านไปเงียบ ๆ ทั้งที่ไฟล์หมวดอื่นโดนเตือน
+      countMissingLocale(s, `${where} (${r.data.id})`);
+      setDocs.push(r.data as Record<string, unknown>);
+      const src = r.data.source as { fieldsUnverified?: string[] } | undefined;
+      if (src?.fieldsUnverified?.length) {
+        warn(`${where} (${r.data.id})`, `ยังไม่ยืนยัน ${src.fieldsUnverified.length} ฟิลด์: ${src.fieldsUnverified.join(", ")}`);
+      }
     }
   });
 } else if (setsRaw !== undefined) {
@@ -345,8 +354,9 @@ if (errors.length) {
 // ไม่ใช่ error และไม่ใช่คำเตือน เป็นแค่ตัวเลขให้เห็นว่ายังเหลือของที่ยืนยันข้างเดียวเท่าไร
 {
   const counts = { both: 0, th: 0, en: 0, unknown: 0 };
-  for (const collection of Object.keys(parsed)) {
-    for (const doc of Object.values(parsed[collection])) {
+  const everything = [...Object.values(parsed).flatMap((c) => Object.values(c)), ...setDocs];
+  {
+    for (const doc of everything) {
       const read = (doc.source as { readIn?: string[] } | undefined)?.readIn;
       if (!read) counts.unknown += 1;
       else if (read.includes("th") && read.includes("en")) counts.both += 1;

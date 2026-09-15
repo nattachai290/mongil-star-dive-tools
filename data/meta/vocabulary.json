@@ -179,20 +179,6 @@
       "en": "Support"
     }
   },
-  "rarity": {
-    "R": {
-      "th": "R",
-      "en": "R"
-    },
-    "SR": {
-      "th": "SR",
-      "en": "SR"
-    },
-    "SSR": {
-      "th": "SSR",
-      "en": "SSR"
-    }
-  },
   "stat": {
     "atk": {
       "th": "พลังโจมตี",
@@ -364,6 +350,9 @@
       "th": "เมื่อใช้สกิลพิเศษ",
       "en": "upon using a Special Skill"
     },
+    "onSupportSkill": {
+      "en": "upon using a Support Skill"
+    },
     "onSpecialSkillHit": {
       "th": "เมื่อโจมตีด้วยสกิลพิเศษ",
       "en": "upon attacking with a Special Skill"
@@ -371,6 +360,9 @@
     "onBasicAttackHit": {
       "th": "เมื่อโจมตีพื้นฐานโดน",
       "en": "upon landing Basic Attacks"
+    },
+    "onBasicAttack": {
+      "en": "upon using a Basic Attack"
     },
     "onEvasionCounter": {
       "th": "เมื่อใช้หลบหลีกโต้กลับ",
@@ -516,21 +508,17 @@
     }
   },
   "slot": {
-    "helm": {
-      "th": "หมวก",
-      "en": "Helm"
+    "headgear": {
+      "en": "Headgear"
     },
-    "armor": {
-      "th": "เกราะ",
-      "en": "Armor"
+    "chestpiece": {
+      "en": "Chestpieces"
     },
-    "boots": {
-      "th": "รองเท้า",
-      "en": "Boots"
+    "gloves": {
+      "en": "Gloves"
     },
-    "trinket": {
-      "th": "เครื่องประดับ",
-      "en": "Trinket"
+    "footwear": {
+      "en": "Footwear"
     }
   },
   "foodCategory": {
@@ -666,6 +654,16 @@
       "th": "สีฟ้า",
       "en": "Blue"
     },
+    "purple": {
+      "th": "สีม่วง",
+      "en": "Purple"
+    },
+    "gold": {
+      "th": "สีทอง",
+      "en": "Gold"
+    }
+  },
+  "gearGrade": {
     "purple": {
       "th": "สีม่วง",
       "en": "Purple"

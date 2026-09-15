@@ -1,1 +1,196 @@
-[]
+[
+  {
+    "id": "gluttons-visage",
+    "name": {
+      "en": "Glutton's Visage"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Basic Attack's Fire DMG +3%"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "fire",
+            "scopes": [
+              "basicAttack"
+            ],
+            "value": 3,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "always"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "จอคราฟต์แสดงเซ็ตนี้สองชิ้นพอดี (หมวกกับเกราะอก) และมีโบนัสแค่ [2 Set] จึงเป็นเซ็ตสองชิ้น ไม่ใช่สี่ชิ้นที่ยังเห็นไม่ครบ"
+    }
+  },
+  {
+    "id": "sticky-gorger",
+    "name": {
+      "en": "Sticky Gorger"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "ATK +3%"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "atk",
+            "value": 3,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "always"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสองชิ้น (ถุงมือกับรองเท้า) มีโบนัสแค่ [2 Set]"
+    }
+  },
+  {
+    "id": "green-nightmare",
+    "name": {
+      "en": "Green Nightmare"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Ice DMG +3% for 2s upon using a Basic Attack"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "ice",
+            "value": 3,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onBasicAttack",
+            "durationSec": 2
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Crit DMG +3% for 5s upon using a Switch Skill on enemies with Ice Affliction"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "critDmg",
+            "value": 3,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onSwitch",
+            "durationSec": 5,
+            "condition": {
+              "triggerEnemyAffliction": "ice"
+            }
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสี่ชิ้นครบแล้ว: หมวก เกราะอก ถุงมือ รองเท้า | [4 Set] เติม effects ได้แล้วเมื่อ 2026-09-15 หลังเจอเซ็ตหมาป่าขาวคลุ้มคลั่งที่ใช้โครงเดียวกัน (\"upon attacking an enemy with Earth Affliction\") จึงเพิ่มช่อง condition.triggerEnemyAffliction — ก่อนหน้านั้นเห็นแค่เซ็ตเดียวเลยยังไม่เพิ่ม"
+    }
+  },
+  {
+    "id": "frenzied-white-wolf",
+    "name": {
+      "en": "Frenzied White Wolf"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "All teammates' DEF +3% for 5s upon using a Support Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "def",
+            "value": 3,
+            "unit": "percent",
+            "target": "team",
+            "trigger": "onSupportSkill",
+            "durationSec": 5
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Target's Elemental Weakness DMG taken +2% for 5s upon attacking an enemy with Earth Affliction"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgTaken",
+            "scopes": [
+              "weaknessHit"
+            ],
+            "value": 2,
+            "unit": "percent",
+            "target": "enemy",
+            "trigger": "onHit",
+            "durationSec": 5,
+            "condition": {
+              "triggerEnemyAffliction": "earth"
+            }
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสี่ชิ้น เห็นชื่อแล้วสองชิ้น (ถุงมือ Frenzied Wolf's Claws / รองเท้า Frenzied Wolf's Sprinters) อีกสองชิ้น (หมวกกับเกราะอก) ยังไม่ได้เปิดดูชื่อ | [4 Set] เป็นดีบัฟใส่ศัตรู ไม่ใช่บัฟตัวเอง — เพิ่มดาเมจธาตุจุดอ่อนที่ \"เป้าหมาย\" ได้รับ จึงเป็น stat dmgTaken + target enemy | [4 Set] ใช้ kind buff ไม่ใช่ debuff ทั้งที่ผลดีกับผู้เล่น เพราะ kind บอก \"ตัวเลขขึ้นหรือลง\" ไม่ได้บอก \"ดีกับใคร\" — จอเขียน +2% และดาเมจที่เป้าหมายได้รับเพิ่มขึ้นจริง ส่วนใครได้ประโยชน์ดูจาก target"
+    }
+  }
+]

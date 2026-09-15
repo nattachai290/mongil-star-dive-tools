@@ -198,7 +198,12 @@ export const character = z.object({
 export const artifact = z.object({
   id: slug,
   name: text,
-  rarity: vocabEnum("rarity"),
+  /**
+   * ยังไม่เคยเปิดจอ Artifact จริง จึงยังไม่รู้ว่าเกมแบ่งระดับยังไง
+   * ยืมคำของอุปกรณ์มาใช้ไปก่อนเพราะยังไม่มีข้อมูล Artifact สักชิ้น
+   * ถ้าจอจริงใช้คนละระบบ ให้เปลี่ยนตรงนี้ก่อนลงข้อมูล
+   */
+  grade: vocabEnum("gearGrade"),
   mainStat: statValue,
   effects: z.array(effect).default([]),
   desc: text.optional(),
@@ -211,12 +216,22 @@ export const artifact = z.object({
 export const equipment = z.object({
   id: slug,
   name: text,
-  rarity: vocabEnum("rarity"),
+  /** สองสีเท่านั้น ม่วงกับทอง ทองดีกว่า — ไม่ใช่ R/SR/SSR ที่เคยร่างไว้ก่อนเห็นเกม */
+  grade: vocabEnum("gearGrade"),
+  /** จำนวนดาวบนการ์ด เท่าที่เห็นคือ 4 ดาวทั้งหมดในเซ็ตสีม่วง */
+  stars: z.number().int().min(1).max(5).optional(),
   slot: vocabEnum("slot"),
   setId: slug.optional(),
-  mainStat: statValue,
-  subStats: z.array(statValue).default([]),
+  /**
+   * ไม่มี mainStat / subStats โดยตั้งใจ
+   *
+   * จอคราฟต์เขียนไว้ตรง ๆ ว่า "Main Stat determined upon acquisition" และ
+   * "Substats determined upon acquisition" — ค่าพวกนี้สุ่มตอนได้ของมา
+   * ไม่ได้ผูกกับชิ้นอุปกรณ์ เก็บไว้ที่นี่เมื่อไหร่ก็กลายเป็นข้อมูลผิดทันที
+   * เหตุผลเดียวกับ Trait ของมอนสเตอร์ลิง (ดูหมายเหตุท้าย monsterling)
+   */
   effects: z.array(effect).default([]),
+  desc: text.optional(),
   images: z.object({ icon: z.string().optional() }).optional(),
   source,
 });
@@ -225,6 +240,13 @@ export const equipment = z.object({
 export const equipmentSet = z.object({
   id: slug,
   name: text,
+  grade: vocabEnum("gearGrade"),
+  stars: z.number().int().min(1).max(5).optional(),
+  /**
+   * เซ็ตมีกี่ชิ้นทั้งหมด — บางเซ็ตมี 2 ชิ้น บางเซ็ตมี 4
+   * เซ็ต 2 ชิ้นจึงมีโบนัสแค่ [2 Set] ส่วนเซ็ต 4 ชิ้นมีทั้ง [2 Set] และ [4 Set]
+   */
+  pieceCount: z.number().int().min(2).max(6).optional(),
   bonuses: z.array(
     z.object({
       pieces: z.number().int().min(2).max(6),
