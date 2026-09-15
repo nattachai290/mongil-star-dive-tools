@@ -1,0 +1,37 @@
+{
+  "id": "sun-lizarcher",
+  "name": {
+    "th": "ลิซาร์ด มือธนูทองพินาศ",
+    "en": "Sun Lizarcher"
+  },
+  "dex": {
+    "book": "field",
+    "no": 153
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "def",
+      "value": 4.93,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onHit",
+      "durationSec": 5,
+      "condition": {
+        "hitCount": 10,
+        "triggerEnemyType": "fire"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "sun-lizarcher-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-15",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": ["th", "en"],
+    "note": "เป็นขั้นบนของลิซาร์ด มือธนู (field 152) ที่ได้ 4.69 (4.69 x 1.05 = 4.93 ดู PLAN §13.9.2) | จอทั้งสองภาษาวาง \"มอนสเตอร์ธาตุไฟ\" ไว้ในกรอบ \"เมื่อโจมตี ... 10 ครั้ง\" จึงเป็นเงื่อนไขฝั่งกระตุ้น"
+  }
+}

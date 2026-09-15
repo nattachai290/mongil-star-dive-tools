@@ -83,19 +83,31 @@ function qualifiers(e: Effect, locale: Locale): string[] {
   // ไม่งั้นจะอ่านได้ว่า "เมื่อกำจัดมอนสเตอร์ · กำจัดศัตรู 10 ตัว" ซึ่งซ้ำตัวเอง
   const kills = e.condition?.killCount;
   const hits = e.condition?.hitCount;
-  // ศัตรูฝั่งกระตุ้นต้องอยู่ใน "ประโยคเดียวกับตัวกระตุ้น" ตามที่เกมเขียน
-  // ("เมื่อโจมตีมอนสเตอร์ธาตุลม 10 ครั้ง") ไม่ใช่ชิปแยกท้ายประโยค
-  // ไม่งั้นจะอ่านไม่ออกว่าต่างจากศัตรูฝั่งผล (ใส่มอนสเตอร์ทั่วไป) ตรงไหน
-  const triggerEnemy = ((): string => {
+  /**
+   * ชื่อศัตรูฝั่งกระตุ้น เช่น "มอนสเตอร์ธาตุลม" / "Wind enemies"
+   * ยังไม่ผูกกับตำแหน่งในประโยค เพราะวางได้สองแบบแล้วแต่ตัวกระตุ้น
+   */
+  const triggerEnemyNoun = ((): string => {
     const c = e.condition;
     if (c?.triggerEnemyType) {
       const dt = c.triggerEnemyType;
-      return th ? `มอนสเตอร์${thDamageType(dt)}` : ` ${label("damageType", dt, "en")} enemies`;
+      return th ? `มอนสเตอร์${thDamageType(dt)}` : `${label("damageType", dt, "en")} enemies`;
     }
-    if (c?.triggerVsBoss === true) return th ? "มอนสเตอร์บอส" : " boss enemies";
-    if (c?.triggerVsBoss === false) return th ? "มอนสเตอร์ทั่วไป" : " normal enemies";
+    if (c?.triggerVsBoss === true) return th ? "มอนสเตอร์บอส" : "boss enemies";
+    if (c?.triggerVsBoss === false) return th ? "มอนสเตอร์ทั่วไป" : "normal enemies";
     return "";
   })();
+
+  /**
+   * ต่อท้าย "เมื่อโจมตี" ได้พอดีตามที่เกมเขียน ("เมื่อโจมตีมอนสเตอร์ธาตุลม 10 ครั้ง")
+   * แต่ต่อท้ายตัวกระตุ้นอื่นไม่ได้ เพราะคำของมันจบประโยคไปแล้ว
+   * "เมื่อโจมตีคริติคอลสำเร็จ" + "มอนสเตอร์บอส" จะได้ประโยคที่อ่านไม่รู้เรื่อง
+   * ตัวกระตุ้นอื่นจึงแยกเป็นชิปของตัวเอง โดยใช้คำที่ยังบอกว่าเป็นฝั่ง "ไปตี"
+   * ไม่ใช่ฝั่ง "ผลไปลง" ซึ่งใช้คำว่า "ใส่..." / "against ..."
+   */
+  const inlineTriggerEnemy = e.trigger === "onHit";
+  const triggerEnemy =
+    triggerEnemyNoun && inlineTriggerEnemy ? (th ? triggerEnemyNoun : ` ${triggerEnemyNoun}`) : "";
   if (e.trigger !== "always" && e.trigger !== "passive") {
     const bare = label("trigger", e.trigger, locale);
     // "เมื่อกำจัดมอนสเตอร์" มีคำว่ามอนสเตอร์อยู่แล้ว ต่อท้ายจะซ้ำ
@@ -107,6 +119,10 @@ function qualifiers(e: Effect, locale: Locale): string[] {
     out.push(th ? `ครบ ${hits} ครั้ง` : `after ${hits} times`);
   } else if (kills) {
     out.push(th ? `กำจัดศัตรูครบ ${kills} ตัว` : `after ${kills} kills`);
+  }
+
+  if (triggerEnemyNoun && !inlineTriggerEnemy) {
+    out.push(th ? `แก่${triggerEnemyNoun}` : `on ${triggerEnemyNoun}`);
   }
 
   if (e.durationSec) out.push(th ? `นาน ${e.durationSec} วินาที` : `for ${e.durationSec}s`);

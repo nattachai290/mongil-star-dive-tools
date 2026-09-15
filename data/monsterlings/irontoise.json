@@ -18,7 +18,7 @@
       "trigger": "onCrit",
       "durationSec": 10,
       "condition": {
-        "vsBoss": true
+        "triggerVsBoss": true
       }
     }
   ],
@@ -29,6 +29,7 @@
   "source": {
     "verifiedAt": "2026-09-13",
     "gameVersion": "unknown",
-    "by": "in-game"
+    "by": "in-game",
+    "note": "ย้าย vsBoss -> triggerVsBoss เมื่อ 2026-09-15 พร้อมกับบูกิ ไม้ยักษ์ (field 161) ซึ่งเป็นขั้นบนของตัวนี้และจอเขียนว่า \"เมื่อโจมตีคริติคอลแก่มอนสเตอร์บอสสำเร็จ\" / \"upon landing a critical hit on a boss enemy\" — บอสคือสิ่งที่ต้องไปตีให้คริติคอล ส่วนผลคือเพิ่มพลังป้องกันให้ทีม จะตีความว่า \"เฉพาะตอนเจอบอส\" แบบฝั่งผลไม่ได้ เพราะพลังป้องกันของทีมไม่ได้ไปลงที่ศัตรู"
   }
 }
