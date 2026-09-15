@@ -564,5 +564,43 @@
       ],
       "note": "เซ็ตสองชิ้น มีแต่ถุงมือกับรองเท้า (Mad Fox's Fur Gloves / Mad Fox's Paws) ไม่มีหมวกกับเกราะอก | \"Perfect Dodge\" เป็นตัวกระตุ้นแบบใหม่ คนละอันกับ Evasion Counter ที่มีอยู่แล้ว — อันนั้นคือโต้กลับหลังหลบ อันนี้คือหลบได้พอดีจังหวะ จอเขียนคนละคำจึงเก็บคนละคำ | ชื่อเซ็ตคือ Onsae ซึ่งตรงกับชื่อมอนสเตอร์ลิงออนแซ (field 141) แต่ของในเซ็ตเป็นธีมจิ้งจอก ยังไม่มีอะไรบอกว่าเกี่ยวกันหรือแค่ชื่อพ้อง"
     }
+  },
+  {
+    "id": "gisaengs-glow-up",
+    "name": {
+      "en": "Gisaeng's Glow Up"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Ice DMG +5% for 5s upon using a Special Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "ice",
+            "value": 5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onSpecialSkill",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสองชิ้น หมวกกับรองเท้า (Undefeated Gisaeng's Headband / Undefeated Gisaeng's Flower Slippers) | เซ็ตสองชิ้นแต่ละเซ็ตจับคู่ช่องไม่เหมือนกัน — บางเซ็ตหมวก+เกราะอก บางเซ็ตถุงมือ+รองเท้า อันนี้หมวก+รองเท้า จึงไม่มีกฎว่าเซ็ตสองชิ้นต้องเป็นช่องไหน | ใช้ onSpecialSkill ซึ่งมีอยู่แล้วในพจนานุกรม ไม่ต้องเพิ่มคำใหม่ เป็นเซ็ตแรกที่ไม่ต้องเพิ่มอะไรเลย"
+    }
   }
 ]
