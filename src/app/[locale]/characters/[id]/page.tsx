@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Text } from "@/components/Text";
+import { ViewSwitch } from "@/components/ViewSwitch";
 import { createTranslate, type MessageKey } from "@/i18n";
 import { LOCALES, isLocale, pickText, type Locale } from "@/lib/i18n";
 import { CHARACTERS, characterById, characterImage } from "@/lib/data";
@@ -72,6 +73,83 @@ function EffectList({ effects, locale }: { effects: Effect[]; locale: Locale }) 
  * ถ้าวาดครบ 16 คอลัมน์จะได้ตารางที่ว่าง 15 ช่อง และดูเหมือนข้อมูลหาย
  * จึงวาดเฉพาะเลเวลที่อ่านมาแล้ว และบอกตรง ๆ ว่าที่เหลือคือยังไม่ได้อ่าน
  */
+/**
+ * เลเวลสูงสุดที่อ่านค่ามาแล้วของสกิลนี้ — null = ยังไม่มีตัวเลขสักบรรทัด
+ *
+ * มุมมองสรุปโชว์เลเวลเดียว จึงต้องเลือกให้ชัดว่าเลเวลไหน แทนที่จะหยิบมามั่ว
+ * เลือกเลเวลสูงสุดเพราะเป็นค่าที่ใกล้เพดานที่สุดเท่าที่อ่านมา
+ */
+function topLevel(skill: Skill): number | null {
+  let top: number | null = null;
+  for (const value of skill.values) {
+    for (const [i, n] of value.scaling.entries()) {
+      if (n !== null && (top === null || i + 1 > top)) top = i + 1;
+    }
+  }
+  return top;
+}
+
+/** มุมมองสรุป — ชื่อท่า ชนิดดาเมจ และตัวเลขเป็นชิป ไม่มีย่อหน้าคำอธิบาย */
+function SkillSummary({
+  skill,
+  slotLabel,
+  locale,
+  t,
+}: {
+  skill: Skill;
+  slotLabel: string;
+  locale: Locale;
+  t: (k: MessageKey) => string;
+}) {
+  const lv = topLevel(skill);
+  const chips =
+    lv === null
+      ? []
+      : skill.values.flatMap((value) => {
+          const n = value.scaling[lv - 1];
+          if (n === null) return [];
+          const unit = label("unit", value.unit, locale);
+          return [{ label: value.label, text: `${n}${unit === "%" ? unit : ` ${unit}`}` }];
+        });
+
+  return (
+    <article className="rounded-lg border border-line bg-surface p-3">
+      <div className="flex flex-wrap items-baseline gap-x-2">
+        <span className="text-xs text-muted">{slotLabel}</span>
+        {lv !== null && (
+          <span className="font-mono text-[11px] text-muted">
+            {t("character.level")} {lv}
+          </span>
+        )}
+      </div>
+      <h3 className="font-display text-sm font-semibold">
+        <Text value={skill.name} locale={locale} />
+        {skill.damageType && (
+          <span className="ms-2 rounded bg-gold-bg px-1.5 py-0.5 align-middle text-[11px] font-normal text-gold">
+            {label("damageType", skill.damageType, locale)}
+          </span>
+        )}
+      </h3>
+
+      {chips.length > 0 ? (
+        <ul className="mt-2 flex flex-wrap gap-1.5">
+          {chips.map((chip, i) => (
+            <li
+              key={i}
+              className="rounded border border-line bg-surface-2 px-1.5 py-0.5 text-[11px] leading-tight text-ink-2"
+            >
+              <Text value={chip.label} locale={locale} showFallbackBadge={false} />{" "}
+              <span className="font-mono text-ink">{chip.text}</span>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="mt-2 text-xs text-muted">{t("character.noValues")}</p>
+      )}
+    </article>
+  );
+}
+
 function SkillValues({ skill, locale, t }: { skill: Skill; locale: Locale; t: (k: MessageKey) => string }) {
   if (skill.values.length === 0) return null;
 
@@ -245,35 +323,71 @@ export default async function CharacterPage({
       {character.skills && (
         <section className="mt-8">
           <h2 className="font-display text-sm font-semibold text-ink-2">{t("character.skills")}</h2>
-          <p className="mt-1 text-xs text-muted">{t("character.skillValuesNote")}</p>
-          <div className="mt-3 space-y-3">
-            {SKILL_SLOTS.map(([slot, slotKey]) => {
-              const skill = character.skills?.[slot];
-              if (!skill) return null;
-              return (
-                <article key={slot} className="rounded-lg border border-line bg-surface p-4">
-                  <p className="text-xs text-muted">{t(slotKey)}</p>
-                  <h3 className="font-display text-sm font-semibold">
-                    <Text value={skill.name} locale={locale} />
-                    {skill.damageType && (
-                      <span className="ms-2 rounded bg-gold-bg px-1.5 py-0.5 align-middle text-[11px] font-normal text-gold">
-                        {label("damageType", skill.damageType, locale)}
-                      </span>
-                    )}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-2">
-                    <Text value={skill.desc} locale={locale} />
-                  </p>
-                  {skill.effects.length > 0 && (
-                    <div className="mt-3 border-t border-line pt-3">
-                      <EffectList effects={skill.effects} locale={locale} />
-                    </div>
-                  )}
-                  <SkillValues skill={skill} locale={locale} t={t} />
-                </article>
-              );
-            })}
-          </div>
+
+          {/*
+            เรนเดอร์ทั้งสองมุมมองจากฝั่งเซิร์ฟเวอร์แล้วให้ ViewSwitch เลือกโชว์
+            เพราะทั้งคู่ต้องใช้พจนานุกรม ซึ่งไม่ควรส่งไปทั้งก้อนให้เบราว์เซอร์
+          */}
+          <ViewSwitch
+            labels={{
+              legend: t("view.legend"),
+              summary: t("view.summary"),
+              full: t("view.full"),
+            }}
+            summary={
+              <>
+                <p className="text-xs text-muted">{t("character.summaryNote")}</p>
+                <div className="mt-3 space-y-2">
+                  {SKILL_SLOTS.map(([slot, slotKey]) => {
+                    const skill = character.skills?.[slot];
+                    if (!skill) return null;
+                    return (
+                      <SkillSummary
+                        key={slot}
+                        skill={skill}
+                        slotLabel={t(slotKey)}
+                        locale={locale}
+                        t={t}
+                      />
+                    );
+                  })}
+                </div>
+              </>
+            }
+            full={
+              <>
+                <p className="text-xs text-muted">{t("character.skillValuesNote")}</p>
+                <div className="mt-3 space-y-3">
+                  {SKILL_SLOTS.map(([slot, slotKey]) => {
+                    const skill = character.skills?.[slot];
+                    if (!skill) return null;
+                    return (
+                      <article key={slot} className="rounded-lg border border-line bg-surface p-4">
+                        <p className="text-xs text-muted">{t(slotKey)}</p>
+                        <h3 className="font-display text-sm font-semibold">
+                          <Text value={skill.name} locale={locale} />
+                          {skill.damageType && (
+                            <span className="ms-2 rounded bg-gold-bg px-1.5 py-0.5 align-middle text-[11px] font-normal text-gold">
+                              {label("damageType", skill.damageType, locale)}
+                            </span>
+                          )}
+                        </h3>
+                        <p className="mt-2 text-sm leading-relaxed text-ink-2">
+                          <Text value={skill.desc} locale={locale} />
+                        </p>
+                        {skill.effects.length > 0 && (
+                          <div className="mt-3 border-t border-line pt-3">
+                            <EffectList effects={skill.effects} locale={locale} />
+                          </div>
+                        )}
+                        <SkillValues skill={skill} locale={locale} t={t} />
+                      </article>
+                    );
+                  })}
+                </div>
+              </>
+            }
+          />
         </section>
       )}
 

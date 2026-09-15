@@ -1,56 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo, useSyncExternalStore } from "react";
+import { useMemo } from "react";
 import type { Locale } from "@/lib/i18n";
+import { clearParams, useSearchParamsFromUrl, useSearchString, writeParam } from "./url-state";
 
-/**
- * เก็บคำค้นไว้ใน URL (?q=) ไม่ใช่ใน state อย่างเดียว
- *
- * เพราะสลับภาษาคือการเปลี่ยนหน้า (/th/... -> /en/...) คอมโพเนนต์จะถูกสร้างใหม่
- * state ที่พิมพ์ค้างไว้จึงหายหมด ถ้าคำค้นอยู่ใน URL มันจะข้ามหน้าไปด้วยได้
- * และก็อปลิงก์ส่งให้คนอื่นได้ด้วย
- */
 const QUERY_KEY = "q";
-
-const listeners = new Set<() => void>();
-
-/** replaceState ไม่ยิง popstate จึงต้องบอกคนที่ subscribe เอง */
-function subscribe(onChange: () => void) {
-  listeners.add(onChange);
-  window.addEventListener("popstate", onChange);
-  return () => {
-    listeners.delete(onChange);
-    window.removeEventListener("popstate", onChange);
-  };
-}
-
-/**
- * snapshot เป็น "สตริง search ทั้งก้อน" ไม่ใช่อ็อบเจกต์ที่แกะแล้ว
- * useSyncExternalStore เทียบ snapshot ด้วย Object.is ถ้าคืนอ็อบเจกต์ใหม่ทุกครั้งจะวนไม่จบ
- * สตริงเทียบได้ตรง ๆ ส่วนการแกะไปทำใน useMemo ข้างล่างแทน
- */
-function readSearch(): string {
-  return window.location.search;
-}
-
-function writeParam(key: string, value: string) {
-  const params = new URLSearchParams(window.location.search);
-  if (value.trim() === "") params.delete(key);
-  else params.set(key, value);
-  const search = params.toString();
-  // replaceState ไม่ใช่ push เพราะทุกตัวอักษรที่พิมพ์ไม่ควรกลายเป็นประวัติย้อนกลับหนึ่งขั้น
-  window.history.replaceState(null, "", `${window.location.pathname}${search ? `?${search}` : ""}`);
-  for (const onChange of listeners) onChange();
-}
-
-function clearAll(keys: string[]) {
-  const params = new URLSearchParams(window.location.search);
-  for (const key of keys) params.delete(key);
-  const search = params.toString();
-  window.history.replaceState(null, "", `${window.location.pathname}${search ? `?${search}` : ""}`);
-  for (const onChange of listeners) onChange();
-}
 
 /** ค่าที่ใช้กรอง คิดมาจากฝั่งเซิร์ฟเวอร์แล้ว ที่นี่เทียบสตริงล้วน */
 export type RowFacets = {
@@ -115,9 +70,8 @@ export function MonsterlingList({
   };
 }) {
   // URL คือแหล่งความจริงเดียวของคำค้นและตัวกรอง ไม่ได้เก็บซ้ำไว้ใน state
-  // ฝั่งเซิร์ฟเวอร์คืนค่าว่างเสมอ React จึงเรนเดอร์ใหม่ให้เองหลัง hydrate โดยไม่ฟ้อง mismatch
-  const search = useSyncExternalStore(subscribe, readSearch, () => "");
-  const params = useMemo(() => new URLSearchParams(search), [search]);
+  const params = useSearchParamsFromUrl();
+  const search = useSearchString();
 
   const query = params.get(QUERY_KEY) ?? "";
   const activeCount = facets.filter((f) => (params.get(f.param) ?? "") !== "").length;
@@ -200,7 +154,7 @@ export function MonsterlingList({
           {activeCount > 0 && (
             <button
               type="button"
-              onClick={() => clearAll(facets.map((f) => f.param))}
+              onClick={() => clearParams(facets.map((f) => f.param))}
               className="mt-3 rounded-lg px-1 py-1 text-xs text-muted underline underline-offset-2 hover:text-ink"
             >
               {labels.clear} ({activeCount})

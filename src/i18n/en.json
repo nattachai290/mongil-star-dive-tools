@@ -86,5 +86,9 @@
   "skill.switch": "Switch Skill",
   "skill.special": "Special Skill",
   "skill.ultimate": "Ultimate Skill",
-  "skill.passive": "Passive Skill"
+  "skill.passive": "Passive Skill",
+  "view.legend": "View",
+  "view.summary": "Summary",
+  "view.full": "Full",
+  "character.summaryNote": "Skill name, damage type and every printed value — switch to Full for the description and the per-level table"
 }

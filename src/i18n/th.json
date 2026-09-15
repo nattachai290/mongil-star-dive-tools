@@ -86,5 +86,9 @@
   "skill.switch": "สกิลสับเปลี่ยน",
   "skill.special": "สกิลพิเศษ",
   "skill.ultimate": "สกิลอัลติเมต",
-  "skill.passive": "สกิลติดตัว"
+  "skill.passive": "สกิลติดตัว",
+  "view.legend": "รูปแบบที่แสดง",
+  "view.summary": "สรุป",
+  "view.full": "เต็ม",
+  "character.summaryNote": "ชื่อท่า ชนิดดาเมจ และตัวเลขทุกบรรทัด — กด \"เต็ม\" เพื่อดูคำอธิบายและตารางตามเลเวล"
 }
