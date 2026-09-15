@@ -323,5 +323,116 @@
       ],
       "note": "เซ็ตสองชิ้น (หมวก Frozen Crown / ถุงมือ Touch of Frost) | ชื่อเซ็ตคือ Ice Heart และของทั้งสองชิ้นเป็นน้ำแข็ง แต่โบนัสเป็น \"Lightning attack\" ไม่ใช่ธาตุน้ำแข็ง — เก็บตามที่จอเขียน ไม่แก้ให้เข้ากับชื่อ (เคยเจอชื่อกับเนื้อหาไม่ตรงกันมาแล้วในลิงก์เชน เช่น หินเยือกแข็ง/Shadowed Stone ที่เป็นธาตุดิน) | \"Stagger DMG\" เป็น stat ใหม่ อยู่ตระกูลเดียวกับดาเมจกดขี่/หมดฤทธิ์/ปะทะ ยังไม่มีคำไทยเพราะยังไม่เคยเห็นบนจอไทย"
     }
+  },
+  {
+    "id": "assault-squad-leader",
+    "name": {
+      "en": "Assault Squad Leader"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "ATK +5% for 5s upon using a Support Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "atk",
+            "value": 5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onSupportSkill",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสองชิ้น (เกราะอก Assault Squad Buff Coat / รองเท้า Assault Squad Leather Boots)"
+    }
+  },
+  {
+    "id": "devourer-stance",
+    "name": {
+      "en": "Devourer Stance"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Wind DMG +5% upon attacking an enemy with Wind Affliction"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "wind",
+            "value": 5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onHit",
+            "condition": {
+              "triggerEnemyAffliction": "wind"
+            }
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "All teammates' Crit Rate +3% for 5s upon using a Support Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "critRate",
+            "value": 3,
+            "unit": "percent",
+            "target": "team",
+            "trigger": "onSupportSkill",
+            "durationSec": 5
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Crit DMG +10% for 5s upon using a Tag-out Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "critDmg",
+            "value": 10,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onTagOutSkillHit",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสี่ชิ้น เห็นชื่อแล้วสามชิ้น (หมวก Devourer's Hat / เกราะอก Devourer's Apron / ถุงมือ Devourer's Gloves) รองเท้ายังไม่ได้เปิดดูชื่อ | เซ็ตแรกที่มีโบนัส [4 Set] สองบรรทัด — เซ็ตอื่นมีบรรทัดเดียว | บรรทัด [4 Set] อันที่สองไม่มีสัญลักษณ์หกเหลี่ยมนำหน้าเหมือนอีกสองบรรทัด เห็นแบบนี้ตรงกันทั้งสามจอที่เปิดของเซ็ตนี้ ยังไม่รู้ว่าเป็นคนละโบนัสหรือเป็นส่วนต่อของอันเดียวกัน จึงเก็บเป็นสองรายการตามที่จอพิมพ์ | [2 Set] ใช้ triggerEnemyAffliction เป็นเซ็ตที่สี่ ธาตุลม ต่อจากน้ำแข็ง ดิน ไฟ | \"Tag-out Skill\" โผล่เป็นครั้งที่สอง ต่อจาก Mountain Peak Majesty ยังไม่มีอะไรยืนยันว่าเป็นคำเดียวกับ Switch Skill"
+    }
   }
 ]

@@ -1,0 +1,23 @@
+{
+  "id": "assault-squad-leather-boots",
+  "name": {
+    "en": "Assault Squad Leather Boots"
+  },
+  "grade": "purple",
+  "stars": 4,
+  "slot": "footwear",
+  "setId": "assault-squad-leader",
+  "effects": [],
+  "desc": {
+    "en": "These boots provide a sense of grounded stability, making even the roughest paths easy to charge through."
+  },
+  "source": {
+    "verifiedAt": "2026-09-15",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอคราฟต์ (Sets) ภาษาอังกฤษเมื่อ 2026-09-15 ยังไม่เคยเปิดจอนี้ภาษาไทย จึงยังไม่มีชื่อไทย ห้ามแปลเอง | ไม่เก็บค่าหลักและค่ารอง เพราะจอเขียนว่าสุ่มตอนได้ของมา"
+  }
+}
