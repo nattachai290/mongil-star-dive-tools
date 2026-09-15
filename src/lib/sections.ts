@@ -16,10 +16,10 @@ export const SECTIONS: Section[] = [
     slug: "characters",
     title: { th: "ตัวละคร", en: "Characters" },
     blurb: {
-      th: "สเตตัส สกิลทั้ง 4 พร้อมค่าสเกลเลเวล 1–16 และไทม์ไลน์ Awaken ทั้ง 6 ขั้น",
-      en: "Stats, all four skills with level 1–16 scaling, and the six Awaken stages",
+      th: "ค่าพลังเปล่า สกิลทั้ง 5 ท่าพร้อมตัวเลขทุกบรรทัด สถานะที่มอบให้ และปลุกพลังทั้ง 6 ขั้น",
+      en: "Base stats, all five skills with every printed value, statuses granted, and the six Awaken stages",
     },
-    ready: false,
+    ready: true,
   },
   {
     slug: "artifacts",
