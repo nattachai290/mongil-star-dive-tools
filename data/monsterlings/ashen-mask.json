@@ -1,0 +1,37 @@
+{
+  "id": "ashen-mask",
+  "name": {
+    "th": "หน้ากากขี้เถ้า",
+    "en": "Ashen Mask"
+  },
+  "dex": {
+    "book": "field",
+    "no": 115
+  },
+  "speciesEffects": [
+    {
+      "kind": "debuff",
+      "stat": "atk",
+      "value": 4,
+      "unit": "percent",
+      "target": "enemy",
+      "trigger": "onHit",
+      "durationSec": 10,
+      "internalCooldownSec": 20,
+      "condition": {
+        "triggerVsBoss": true
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "ashen-mask-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-15",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": ["th", "en"],
+    "note": "ตัวแรกของชั้น 4 ที่เป็นดีบัฟ อีกสามตัว (สไลม์ห่วง 22 / ปะป๊าช้อปปู้เขียว 37 / เว็คตัส 64) เป็นบัฟพลังโจมตีให้ตัวเอง ขั้นบน 4.2 ที่มีอยู่ (กรีนปาดูปา 80) ก็เป็นบัฟ จึงยังไม่ใช่คู่ของตัวนี้ | บอสอยู่ฝั่งกระตุ้น จอทั้งสองภาษาวางไว้ในกรอบ \"เมื่อโจมตีมอนสเตอร์บอส\" ส่วนที่ผลไปลงคือ \"เป้าหมาย\" ซึ่ง target enemy รับไว้แล้ว | หน้ากากเงา (field 114) ที่อยู่ติดกันยังไม่มีข้อมูล"
+  }
+}
