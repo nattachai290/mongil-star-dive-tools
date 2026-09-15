@@ -602,5 +602,101 @@
       ],
       "note": "เซ็ตสองชิ้น หมวกกับรองเท้า (Undefeated Gisaeng's Headband / Undefeated Gisaeng's Flower Slippers) | เซ็ตสองชิ้นแต่ละเซ็ตจับคู่ช่องไม่เหมือนกัน — บางเซ็ตหมวก+เกราะอก บางเซ็ตถุงมือ+รองเท้า อันนี้หมวก+รองเท้า จึงไม่มีกฎว่าเซ็ตสองชิ้นต้องเป็นช่องไหน | ใช้ onSpecialSkill ซึ่งมีอยู่แล้วในพจนานุกรม ไม่ต้องเพิ่มคำใหม่ เป็นเซ็ตแรกที่ไม่ต้องเพิ่มอะไรเลย"
     }
+  },
+  {
+    "id": "arbiter",
+    "name": {
+      "en": "Arbiter"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Ice DMG +10% for 5s upon using a Switch Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "ice",
+            "value": 10,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onSwitch",
+            "durationSec": 5
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Ice DMG +10% upon attacking an enemy with Ice Affliction"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "ice",
+            "value": 10,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onHit",
+            "condition": {
+              "triggerEnemyAffliction": "ice"
+            }
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสีทองชุดแรกที่ลงข้อมูล สี่ชิ้นครบ (Warden Helmet / Arbiter of Nature / Magic Vine Gloves / Root's Footprints) | ทองเป็น 5 ดาว ส่วนม่วงเป็น 4 ดาว — อ่านจำนวนดาวจากช่องในตาราง การ์ดไม่ได้พิมพ์ดาวไว้ วิธีเดียวกับที่อ่านของม่วงมาตลอด | [4 Set] โครงเดียวกับ Mountain Peak Majesty (ม่วง) เป๊ะ ต่างแค่ธาตุกับตัวเลข 5% -> 10% ดู PLAN §13.9.3 | [2 Set] ยังไม่มีเซ็ตม่วงที่โครงตรงกัน (ธาตุน้ำแข็ง + สกิลสับเปลี่ยน) จึงเทียบไม่ได้"
+    }
+  },
+  {
+    "id": "gourmands-grand-banquet",
+    "name": {
+      "en": "Gourmand's Grand Banquet"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Target's Fire RES −6% for 5s upon landing a Tag-out Skill"
+        },
+        "effects": [
+          {
+            "kind": "debuff",
+            "stat": "res",
+            "damageType": "fire",
+            "value": 6,
+            "unit": "percent",
+            "target": "enemy",
+            "trigger": "onTagOutSkillHit",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสีทองสองชิ้น เห็นชื่อแล้วชิ้นเดียว (หมวก Grand Banquet Chapeau) เกราะอกยังไม่ได้เปิดดูชื่อ | [2 Set] เขียนตรงกับ Mountain Peak Majesty (ม่วง) ทุกตัวอักษร ต่างแค่ 3% -> 6% เป็นคู่ที่พิสูจน์ว่าทองคือม่วงคูณสอง ดู PLAN §13.9.3"
+    }
   }
 ]
