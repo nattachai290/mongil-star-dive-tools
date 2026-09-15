@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
-import { monsterDexEntry, linkChain, monsterling } from "./schema/entities";
-import type { LinkChain, Monsterling } from "./schema/entities";
+import { monsterDexEntry, linkChain, monsterling, character } from "./schema/entities";
+import type { Character, LinkChain, Monsterling } from "./schema/entities";
 
 /**
  * อ่านข้อมูลจาก data/ ตอน build — ไม่มี API ไม่มีฐานข้อมูล
@@ -47,6 +47,33 @@ export const LINK_CHAINS: LinkChain[] = readCollection("link-chains", (raw) =>
 export function chainsSorted(locale: "th" | "en"): LinkChain[] {
   const key = (c: LinkChain) => c.name[locale] ?? c.name.en ?? c.name.th ?? c.id;
   return [...LINK_CHAINS].sort((a, b) => key(a).localeCompare(key(b), locale));
+}
+
+/** ตัวละครที่ลงข้อมูลแล้ว — เรียงตามชื่อของภาษาที่แสดง เหมือนลิงก์เชน */
+export const CHARACTERS: Character[] = readCollection("characters", (raw) =>
+  character.parse(raw),
+);
+
+export function charactersSorted(locale: "th" | "en"): Character[] {
+  const key = (c: Character) => c.name[locale] ?? c.name.en ?? c.name.th ?? c.id;
+  return [...CHARACTERS].sort((a, b) => key(a).localeCompare(key(b), locale));
+}
+
+export function characterById(id: string): Character | undefined {
+  return CHARACTERS.find((c) => c.id === id);
+}
+
+/**
+ * รูปตัวละคร — ยังไม่มีสักตัว ฟังก์ชันจึงคืน null ได้และหน้าเว็บต้องรับได้
+ * เช็คไฟล์จริงแทนที่จะเชื่อ images.icon ในข้อมูล เพราะไฟล์อาจยังไม่ถูกวาง
+ */
+export function characterImage(id: string): string | null {
+  for (const file of [`${id}-portrait.webp`, `${id}-icon.webp`]) {
+    if (existsSync(join(process.cwd(), "public", "images", "characters", file))) {
+      return `/images/characters/${file}`;
+    }
+  }
+  return null;
 }
 
 export function monsterlingImage(slug: string): string | null {

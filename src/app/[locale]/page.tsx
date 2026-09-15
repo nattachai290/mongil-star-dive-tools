@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { Text } from "@/components/Text";
 import { createTranslate } from "@/i18n";
 import { isLocale } from "@/lib/i18n";
@@ -22,23 +23,43 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <section className="py-12">
         <h2 className="font-display text-lg font-semibold">{t("home.sections")}</h2>
         <ul className="mt-5 grid gap-4 sm:grid-cols-2">
-          {SECTIONS.map((section) => (
-            <li key={section.slug} className="flex flex-col gap-2 rounded border border-line bg-surface p-5">
-              <div className="flex items-baseline justify-between gap-3">
-                <h3 className="font-display text-base font-semibold">
-                  <Text value={section.title} locale={locale} />
-                </h3>
-                {!section.ready && (
-                  <span className="shrink-0 rounded-full bg-gold-bg px-2.5 py-0.5 font-mono text-[11px] text-gold">
-                    {t("nav.comingSoon")}
-                  </span>
+          {SECTIONS.map((section) => {
+            const card = (
+              <>
+                <div className="flex items-baseline justify-between gap-3">
+                  <h3 className="font-display text-base font-semibold">
+                    <Text value={section.title} locale={locale} />
+                  </h3>
+                  {!section.ready && (
+                    <span className="shrink-0 rounded-full bg-gold-bg px-2.5 py-0.5 font-mono text-[11px] text-gold">
+                      {t("nav.comingSoon")}
+                    </span>
+                  )}
+                </div>
+                <p className="text-sm leading-relaxed text-ink-2">
+                  <Text value={section.blurb} locale={locale} />
+                </p>
+              </>
+            );
+
+            // หมวดที่เปิดแล้วต้องกดที่การ์ดได้ ไม่ใช่ต้องไปหาเมนูด้านบนอย่างเดียว
+            return (
+              <li key={section.slug} className="contents">
+                {section.ready ? (
+                  <Link
+                    href={`/${locale}/${section.slug}`}
+                    className="flex flex-col gap-2 rounded border border-line bg-surface p-5 transition-colors hover:border-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                  >
+                    {card}
+                  </Link>
+                ) : (
+                  <div className="flex flex-col gap-2 rounded border border-line bg-surface p-5">
+                    {card}
+                  </div>
                 )}
-              </div>
-              <p className="text-sm leading-relaxed text-ink-2">
-                <Text value={section.blurb} locale={locale} />
-              </p>
-            </li>
-          ))}
+              </li>
+            );
+          })}
         </ul>
       </section>
 

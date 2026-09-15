@@ -382,3 +382,4 @@ export type Character = z.infer<typeof character>;
 export type Build = z.infer<typeof build>;
 export type LinkChain = z.infer<typeof linkChain>;
 export type Monsterling = z.infer<typeof monsterling>;
+export type Skill = z.infer<typeof skill>;
