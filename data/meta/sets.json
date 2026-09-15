@@ -1,1 +1,702 @@
-[]
+[
+  {
+    "id": "gluttons-visage",
+    "name": {
+      "en": "Glutton's Visage"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Basic Attack's Fire DMG +3%"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "fire",
+            "scopes": [
+              "basicAttack"
+            ],
+            "value": 3,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "always"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "จอคราฟต์แสดงเซ็ตนี้สองชิ้นพอดี (หมวกกับเกราะอก) และมีโบนัสแค่ [2 Set] จึงเป็นเซ็ตสองชิ้น ไม่ใช่สี่ชิ้นที่ยังเห็นไม่ครบ"
+    }
+  },
+  {
+    "id": "sticky-gorger",
+    "name": {
+      "en": "Sticky Gorger"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "ATK +3%"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "atk",
+            "value": 3,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "always"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสองชิ้น (ถุงมือกับรองเท้า) มีโบนัสแค่ [2 Set]"
+    }
+  },
+  {
+    "id": "green-nightmare",
+    "name": {
+      "en": "Green Nightmare"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Ice DMG +3% for 2s upon using a Basic Attack"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "ice",
+            "value": 3,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onBasicAttack",
+            "durationSec": 2
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Crit DMG +3% for 5s upon using a Switch Skill on enemies with Ice Affliction"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "critDmg",
+            "value": 3,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onSwitch",
+            "durationSec": 5,
+            "condition": {
+              "triggerEnemyAffliction": "ice"
+            }
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสี่ชิ้นครบแล้ว: หมวก เกราะอก ถุงมือ รองเท้า | [4 Set] เติม effects ได้แล้วเมื่อ 2026-09-15 หลังเจอเซ็ตหมาป่าขาวคลุ้มคลั่งที่ใช้โครงเดียวกัน (\"upon attacking an enemy with Earth Affliction\") จึงเพิ่มช่อง condition.triggerEnemyAffliction — ก่อนหน้านั้นเห็นแค่เซ็ตเดียวเลยยังไม่เพิ่ม"
+    }
+  },
+  {
+    "id": "frenzied-white-wolf",
+    "name": {
+      "en": "Frenzied White Wolf"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "All teammates' DEF +3% for 5s upon using a Support Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "def",
+            "value": 3,
+            "unit": "percent",
+            "target": "team",
+            "trigger": "onSupportSkill",
+            "durationSec": 5
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Target's Elemental Weakness DMG taken +2% for 5s upon attacking an enemy with Earth Affliction"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgTaken",
+            "scopes": [
+              "weaknessHit"
+            ],
+            "value": 2,
+            "unit": "percent",
+            "target": "enemy",
+            "trigger": "onHit",
+            "durationSec": 5,
+            "condition": {
+              "triggerEnemyAffliction": "earth"
+            }
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้วเมื่อ 2026-09-15 (หมวก Frenzied Wolf's Mask / เกราะอก Frenzied Wolf's Restraints / ถุงมือ Frenzied Wolf's Claws / รองเท้า Frenzied Wolf's Sprinters) | [4 Set] เป็นดีบัฟใส่ศัตรู ไม่ใช่บัฟตัวเอง — เพิ่มดาเมจธาตุจุดอ่อนที่ \"เป้าหมาย\" ได้รับ จึงเป็น stat dmgTaken + target enemy | [4 Set] ใช้ kind buff ไม่ใช่ debuff ทั้งที่ผลดีกับผู้เล่น เพราะ kind บอก \"ตัวเลขขึ้นหรือลง\" ไม่ได้บอก \"ดีกับใคร\" — จอเขียน +2% และดาเมจที่เป้าหมายได้รับเพิ่มขึ้นจริง ส่วนใครได้ประโยชน์ดูจาก target"
+    }
+  },
+  {
+    "id": "stone-heart",
+    "name": {
+      "en": "Stone Heart"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "DEF +3%"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "def",
+            "value": 3,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "always"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสองชิ้น (หมวก Stone Mask / รองเท้า Stone Sandals) มีโบนัสแค่ [2 Set]"
+    }
+  },
+  {
+    "id": "mountain-peak-majesty",
+    "name": {
+      "en": "Mountain Peak Majesty"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Target's Fire RES −3% for 5s upon landing a Tag-out Skill"
+        },
+        "effects": [
+          {
+            "kind": "debuff",
+            "stat": "res",
+            "damageType": "fire",
+            "value": 3,
+            "unit": "percent",
+            "target": "enemy",
+            "trigger": "onTagOutSkillHit",
+            "durationSec": 5
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Fire DMG +5% upon attacking an enemy with Fire Affliction"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "fire",
+            "value": 5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onHit",
+            "condition": {
+              "triggerEnemyAffliction": "fire"
+            }
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Mountain Peak Helm / เกราะอก Mountain Peak Iron Armor / ถุงมือ Mountain Peak Gloves / รองเท้า Mountain Peak Marching Boots) | \"Tag-out Skill\" เป็นคำที่เพิ่งเจอครั้งแรก ยังไม่รู้ว่าเป็นคำเดียวกับ Switch Skill หรือคนละอย่าง จึงเก็บเป็นตัวกระตุ้นแยก onTagOutSkillHit ตามคำที่จอเขียน ถ้าเจอจอที่ยืนยันว่าเหมือนกัน ค่อยยุบรวม | [4 Set] ไม่มีระยะเวลาบนจอ มีแต่เงื่อนไข ต่างจาก [4 Set] ของอีกสองเซ็ตที่ระบุ 5 วินาที | ใช้ triggerEnemyAffliction เป็นเซ็ตที่สาม ต่อจากฝันร้ายเขียวกับหมาป่าขาวคลุ้มคลั่ง"
+    }
+  },
+  {
+    "id": "ice-heart",
+    "name": {
+      "en": "Ice Heart"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Lightning attack Stagger DMG +3%"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "staggerDmg",
+            "damageType": "lightning",
+            "value": 3,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "always"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสองชิ้น (หมวก Frozen Crown / ถุงมือ Touch of Frost) | ชื่อเซ็ตคือ Ice Heart และของทั้งสองชิ้นเป็นน้ำแข็ง แต่โบนัสเป็น \"Lightning attack\" ไม่ใช่ธาตุน้ำแข็ง — เก็บตามที่จอเขียน ไม่แก้ให้เข้ากับชื่อ (เคยเจอชื่อกับเนื้อหาไม่ตรงกันมาแล้วในลิงก์เชน เช่น หินเยือกแข็ง/Shadowed Stone ที่เป็นธาตุดิน) | \"Stagger DMG\" เป็น stat ใหม่ อยู่ตระกูลเดียวกับดาเมจกดขี่/หมดฤทธิ์/ปะทะ ยังไม่มีคำไทยเพราะยังไม่เคยเห็นบนจอไทย"
+    }
+  },
+  {
+    "id": "assault-squad-leader",
+    "name": {
+      "en": "Assault Squad Leader"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "ATK +5% for 5s upon using a Support Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "atk",
+            "value": 5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onSupportSkill",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสองชิ้น (เกราะอก Assault Squad Buff Coat / รองเท้า Assault Squad Leather Boots)"
+    }
+  },
+  {
+    "id": "devourer-stance",
+    "name": {
+      "en": "Devourer Stance"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Wind DMG +5% upon attacking an enemy with Wind Affliction"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "wind",
+            "value": 5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onHit",
+            "condition": {
+              "triggerEnemyAffliction": "wind"
+            }
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "All teammates' Crit Rate +3% for 5s upon using a Support Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "critRate",
+            "value": 3,
+            "unit": "percent",
+            "target": "team",
+            "trigger": "onSupportSkill",
+            "durationSec": 5
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Crit DMG +10% for 5s upon using a Tag-out Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "critDmg",
+            "value": 10,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onTagOutSkillHit",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Devourer's Hat / เกราะอก Devourer's Apron / ถุงมือ Devourer's Gloves / รองเท้า Devourer's Sandals) | เซ็ตแรกที่มีโบนัส [4 Set] สองบรรทัด — เซ็ตอื่นมีบรรทัดเดียว | บรรทัด [4 Set] อันที่สองไม่มีสัญลักษณ์หกเหลี่ยมนำหน้าเหมือนอีกสองบรรทัด เห็นแบบนี้ตรงกันทั้งสามจอที่เปิดของเซ็ตนี้ ยังไม่รู้ว่าเป็นคนละโบนัสหรือเป็นส่วนต่อของอันเดียวกัน จึงเก็บเป็นสองรายการตามที่จอพิมพ์ | [2 Set] ใช้ triggerEnemyAffliction เป็นเซ็ตที่สี่ ธาตุลม ต่อจากน้ำแข็ง ดิน ไฟ | \"Tag-out Skill\" โผล่เป็นครั้งที่สอง ต่อจาก Mountain Peak Majesty ยังไม่มีอะไรยืนยันว่าเป็นคำเดียวกับ Switch Skill"
+    }
+  },
+  {
+    "id": "mystical-jade-odong",
+    "name": {
+      "en": "Mystical Jade Odong"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Max HP +3%"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "hp",
+            "value": 3,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "always"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสองชิ้น (หมวก Jade Odong Hat / เกราะอก Jade Odong Brigandine) | เซ็ตแรกที่โบนัสเป็นพลังชีวิต เซ็ตอื่นเป็นดาเมจ พลังโจมตี หรือพลังป้องกัน"
+    }
+  },
+  {
+    "id": "moonshadow",
+    "name": {
+      "en": "Moonshadow"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Crit DMG +5% upon attacking an enemy with Fire Affliction"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "critDmg",
+            "value": 5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onHit",
+            "condition": {
+              "triggerEnemyAffliction": "fire"
+            }
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Fire DMG +5% for 5s when a minion is summoned"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "fire",
+            "value": 5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onMinionSummoned",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Eunwol's Antlers / เกราะอก Moonlight Clothes / ถุงมือ Sage's Touch / รองเท้า Shadow Hooves) | \"when a minion is summoned\" เป็นตัวกระตุ้นแบบใหม่ ยังไม่รู้ว่า minion หมายถึงลิงก์เชนที่ออกมาช่วย หรือมอนสเตอร์ลิงหรืออย่างอื่น จึงเก็บเป็น onMinionSummoned ตามคำที่จอเขียน ไม่ผูกกับระบบใดระบบหนึ่ง | [2 Set] ใช้ triggerEnemyAffliction ธาตุไฟ เป็นเซ็ตที่ห้า และเป็นธาตุไฟครั้งที่สองต่อจาก Mountain Peak Majesty"
+    }
+  },
+  {
+    "id": "onsaes-dance",
+    "name": {
+      "en": "Onsae's Dance"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Crit Rate +5% for 5s upon triggering a Perfect Dodge"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "critRate",
+            "value": 5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onPerfectDodge",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสองชิ้น มีแต่ถุงมือกับรองเท้า (Mad Fox's Fur Gloves / Mad Fox's Paws) ไม่มีหมวกกับเกราะอก | \"Perfect Dodge\" เป็นตัวกระตุ้นแบบใหม่ คนละอันกับ Evasion Counter ที่มีอยู่แล้ว — อันนั้นคือโต้กลับหลังหลบ อันนี้คือหลบได้พอดีจังหวะ จอเขียนคนละคำจึงเก็บคนละคำ | ชื่อเซ็ตคือ Onsae ซึ่งตรงกับชื่อมอนสเตอร์ลิงออนแซ (field 141) แต่ของในเซ็ตเป็นธีมจิ้งจอก ยังไม่มีอะไรบอกว่าเกี่ยวกันหรือแค่ชื่อพ้อง"
+    }
+  },
+  {
+    "id": "gisaengs-glow-up",
+    "name": {
+      "en": "Gisaeng's Glow Up"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Ice DMG +5% for 5s upon using a Special Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "ice",
+            "value": 5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onSpecialSkill",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสองชิ้น หมวกกับรองเท้า (Undefeated Gisaeng's Headband / Undefeated Gisaeng's Flower Slippers) | เซ็ตสองชิ้นแต่ละเซ็ตจับคู่ช่องไม่เหมือนกัน — บางเซ็ตหมวก+เกราะอก บางเซ็ตถุงมือ+รองเท้า อันนี้หมวก+รองเท้า จึงไม่มีกฎว่าเซ็ตสองชิ้นต้องเป็นช่องไหน | ใช้ onSpecialSkill ซึ่งมีอยู่แล้วในพจนานุกรม ไม่ต้องเพิ่มคำใหม่ เป็นเซ็ตแรกที่ไม่ต้องเพิ่มอะไรเลย"
+    }
+  },
+  {
+    "id": "arbiter",
+    "name": {
+      "en": "Arbiter"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Ice DMG +10% for 5s upon using a Switch Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "ice",
+            "value": 10,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onSwitch",
+            "durationSec": 5
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Ice DMG +10% upon attacking an enemy with Ice Affliction"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "ice",
+            "value": 10,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onHit",
+            "condition": {
+              "triggerEnemyAffliction": "ice"
+            }
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสีทองชุดแรกที่ลงข้อมูล สี่ชิ้นครบ (Warden Helmet / Arbiter of Nature / Magic Vine Gloves / Root's Footprints) | ทองเป็น 5 ดาว ส่วนม่วงเป็น 4 ดาว — อ่านจำนวนดาวจากช่องในตาราง การ์ดไม่ได้พิมพ์ดาวไว้ วิธีเดียวกับที่อ่านของม่วงมาตลอด | [4 Set] โครงเดียวกับ Mountain Peak Majesty (ม่วง) เป๊ะ ต่างแค่ธาตุกับตัวเลข 5% -> 10% ดู PLAN §13.9.3 | [2 Set] ยังไม่มีเซ็ตม่วงที่โครงตรงกัน (ธาตุน้ำแข็ง + สกิลสับเปลี่ยน) จึงเทียบไม่ได้"
+    }
+  },
+  {
+    "id": "gourmands-grand-banquet",
+    "name": {
+      "en": "Gourmand's Grand Banquet"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Target's Fire RES −6% for 5s upon landing a Tag-out Skill"
+        },
+        "effects": [
+          {
+            "kind": "debuff",
+            "stat": "res",
+            "damageType": "fire",
+            "value": 6,
+            "unit": "percent",
+            "target": "enemy",
+            "trigger": "onTagOutSkillHit",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสีทองสองชิ้น เห็นชื่อแล้วชิ้นเดียว (หมวก Grand Banquet Chapeau) เกราะอกยังไม่ได้เปิดดูชื่อ | [2 Set] เขียนตรงกับ Mountain Peak Majesty (ม่วง) ทุกตัวอักษร ต่างแค่ 3% -> 6% เป็นคู่ที่พิสูจน์ว่าทองคือม่วงคูณสอง ดู PLAN §13.9.3"
+    }
+  }
+]

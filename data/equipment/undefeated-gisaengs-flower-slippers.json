@@ -1,0 +1,23 @@
+{
+  "id": "undefeated-gisaengs-flower-slippers",
+  "name": {
+    "en": "Undefeated Gisaeng's Flower Slippers"
+  },
+  "grade": "purple",
+  "stars": 4,
+  "slot": "footwear",
+  "setId": "gisaengs-glow-up",
+  "effects": [],
+  "desc": {
+    "en": "Delicately embroidered slippers that complete the confident stride of Baek-Ah's greatest gisaeng. With these on your feet, you can endure even the toughest training."
+  },
+  "source": {
+    "verifiedAt": "2026-09-15",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอคราฟต์ (Sets) ภาษาอังกฤษเมื่อ 2026-09-15 ยังไม่เคยเปิดจอนี้ภาษาไทย จึงยังไม่มีชื่อไทย ห้ามแปลเอง | ไม่เก็บค่าหลักและค่ารอง เพราะจอเขียนว่าสุ่มตอนได้ของมา"
+  }
+}

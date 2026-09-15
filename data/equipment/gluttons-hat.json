@@ -1,0 +1,23 @@
+{
+  "id": "gluttons-hat",
+  "name": {
+    "en": "Glutton's Hat"
+  },
+  "grade": "purple",
+  "stars": 4,
+  "slot": "headgear",
+  "setId": "gluttons-visage",
+  "effects": [],
+  "desc": {
+    "en": "A hat representing endless hunger. It has an odd lingering odor."
+  },
+  "source": {
+    "verifiedAt": "2026-09-15",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอคราฟต์ (Sets) ภาษาอังกฤษเมื่อ 2026-09-15 ยังไม่เคยเปิดจอนี้ภาษาไทย จึงยังไม่มีชื่อไทย ห้ามแปลเอง | ไม่เก็บค่าหลักและค่ารอง เพราะจอเขียนว่าสุ่มตอนได้ของมา"
+  }
+}

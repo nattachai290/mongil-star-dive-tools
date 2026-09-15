@@ -100,6 +100,7 @@ for (const collection of Object.keys(SCHEMAS) as Collection[]) {
 
 // ---------- เซ็ตอุปกรณ์ (อยู่ใน meta) ----------
 const setIds = new Set<string>();
+const setDocs: Record<string, unknown>[] = [];
 const setsRaw = readJson(join(DATA, "meta", "sets.json"), "data/meta/sets.json");
 if (Array.isArray(setsRaw)) {
   setsRaw.forEach((s, i) => {
@@ -109,6 +110,14 @@ if (Array.isArray(setsRaw)) {
     else {
       if (setIds.has(r.data.id)) fail(where, `id เซ็ต "${r.data.id}" ซ้ำ`);
       setIds.add(r.data.id);
+      // เซ็ตอยู่นอกลูปหมวด จึงต้องเรียกตรวจภาษาและเก็บไปนับ readIn เอง
+      // ไม่งั้นเซ็ตที่มีภาษาเดียวจะผ่านไปเงียบ ๆ ทั้งที่ไฟล์หมวดอื่นโดนเตือน
+      countMissingLocale(s, `${where} (${r.data.id})`);
+      setDocs.push(r.data as Record<string, unknown>);
+      const src = r.data.source as { fieldsUnverified?: string[] } | undefined;
+      if (src?.fieldsUnverified?.length) {
+        warn(`${where} (${r.data.id})`, `ยังไม่ยืนยัน ${src.fieldsUnverified.length} ฟิลด์: ${src.fieldsUnverified.join(", ")}`);
+      }
     }
   });
 } else if (setsRaw !== undefined) {
@@ -176,6 +185,17 @@ function checkRefs(where: string, refs: unknown, target: Collection | "sets", fi
   }
 }
 
+type SkillShape = {
+  desc?: { th?: string; en?: string };
+  values?: { line?: number }[];
+};
+
+/** นับท่อนของคำอธิบายแบบเดียวกับที่หน้าเว็บตัด — ต้องเป็นกฎเดียวกันเป๊ะ */
+function splitDesc(desc: string | undefined): number {
+  if (!desc) return 0;
+  return desc.split("/").map((s) => s.trim()).filter((s) => s !== "").length;
+}
+
 for (const [id, doc] of Object.entries(parsed.characters ?? {})) {
   const where = `data/characters/${id}.json`;
   const rec = doc.recommended as Record<string, unknown> | undefined;
@@ -185,6 +205,31 @@ for (const [id, doc] of Object.entries(parsed.characters ?? {})) {
     checkRefs(where, rec.monsterlings, "monsterlings", "recommended.monsterlings");
     checkRefs(where, rec.teammates, "characters", "recommended.teammates");
     checkRefs(where, rec.builds, "builds", "recommended.builds");
+  }
+
+  // คำอธิบายสกิลถูกคั่นด้วย "/" และหน้าเว็บใช้ตัวคั่นนั้นแยกเป็นกลไกทีละท่อน
+  // ถ้าสองภาษาคั่นไม่เท่ากัน แปลว่าอ่านมาตกไปท่อนหนึ่ง หรือตัวคั่นไม่ใช่โครงของเกมจริง
+  // ทั้งสองกรณีต้องรู้ตัวตรงนี้ ไม่ใช่ไปเจอตอนหน้าเว็บจับคู่ตัวเลขผิดท่อน
+  const skills = (doc.skills ?? {}) as Record<string, SkillShape | undefined>;
+  for (const [slot, skill] of Object.entries(skills)) {
+    if (!skill) continue;
+    const counts = (["th", "en"] as const).map((lang) => ({
+      lang,
+      n: splitDesc(skill.desc?.[lang]),
+    }));
+    const [th, en] = counts;
+    if (th.n > 0 && en.n > 0 && th.n !== en.n) {
+      fail(where, `skills.${slot}.desc คั่นด้วย "/" ไม่เท่ากัน: ไทย ${th.n} ท่อน อังกฤษ ${en.n} ท่อน`);
+    }
+    const lines = Math.max(th.n, en.n);
+    for (const [i, value] of (skill.values ?? []).entries()) {
+      if (value.line !== undefined && value.line > lines) {
+        fail(
+          where,
+          `skills.${slot}.values[${i}].line = ${value.line} แต่คำอธิบายมีแค่ ${lines} ท่อน`,
+        );
+      }
+    }
   }
 }
 
@@ -309,8 +354,9 @@ if (errors.length) {
 // ไม่ใช่ error และไม่ใช่คำเตือน เป็นแค่ตัวเลขให้เห็นว่ายังเหลือของที่ยืนยันข้างเดียวเท่าไร
 {
   const counts = { both: 0, th: 0, en: 0, unknown: 0 };
-  for (const collection of Object.keys(parsed)) {
-    for (const doc of Object.values(parsed[collection])) {
+  const everything = [...Object.values(parsed).flatMap((c) => Object.values(c)), ...setDocs];
+  {
+    for (const doc of everything) {
       const read = (doc.source as { readIn?: string[] } | undefined)?.readIn;
       if (!read) counts.unknown += 1;
       else if (read.includes("th") && read.includes("en")) counts.both += 1;

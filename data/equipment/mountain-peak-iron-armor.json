@@ -1,0 +1,23 @@
+{
+  "id": "mountain-peak-iron-armor",
+  "name": {
+    "en": "Mountain Peak Iron Armor"
+  },
+  "grade": "purple",
+  "stars": 4,
+  "slot": "chestpiece",
+  "setId": "mountain-peak-majesty",
+  "effects": [],
+  "desc": {
+    "en": "Rock-solid armor. It offers supreme defense against the rugged dangers of mountainous terrain."
+  },
+  "source": {
+    "verifiedAt": "2026-09-15",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอคราฟต์ (Sets) ภาษาอังกฤษเมื่อ 2026-09-15 ยังไม่เคยเปิดจอนี้ภาษาไทย จึงยังไม่มีชื่อไทย ห้ามแปลเอง | ไม่เก็บค่าหลักและค่ารอง เพราะจอเขียนว่าสุ่มตอนได้ของมา"
+  }
+}

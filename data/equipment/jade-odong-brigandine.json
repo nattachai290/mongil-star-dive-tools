@@ -1,0 +1,23 @@
+{
+  "id": "jade-odong-brigandine",
+  "name": {
+    "en": "Jade Odong Brigandine"
+  },
+  "grade": "purple",
+  "stars": 4,
+  "slot": "chestpiece",
+  "setId": "mystical-jade-odong",
+  "effects": [],
+  "desc": {
+    "en": "This piece of armor is decorated with protective Jade Odong charms meant to safeguard you in battle. Surprisingly, the charms seem to actually work!"
+  },
+  "source": {
+    "verifiedAt": "2026-09-15",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอคราฟต์ (Sets) ภาษาอังกฤษเมื่อ 2026-09-15 ยังไม่เคยเปิดจอนี้ภาษาไทย จึงยังไม่มีชื่อไทย ห้ามแปลเอง | ไม่เก็บค่าหลักและค่ารอง เพราะจอเขียนว่าสุ่มตอนได้ของมา"
+  }
+}

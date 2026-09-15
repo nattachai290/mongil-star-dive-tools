@@ -1,0 +1,23 @@
+{
+  "id": "mountain-peak-marching-boots",
+  "name": {
+    "en": "Mountain Peak Marching Boots"
+  },
+  "grade": "purple",
+  "stars": 4,
+  "slot": "footwear",
+  "setId": "mountain-peak-majesty",
+  "effects": [],
+  "desc": {
+    "en": "Perfect for treacherous terrains, these boots offer steady footing. Their heavy steps echo like a mountain's roar."
+  },
+  "source": {
+    "verifiedAt": "2026-09-15",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอคราฟต์ (Sets) ภาษาอังกฤษเมื่อ 2026-09-15 ยังไม่เคยเปิดจอนี้ภาษาไทย จึงยังไม่มีชื่อไทย ห้ามแปลเอง | ไม่เก็บค่าหลักและค่ารอง เพราะจอเขียนว่าสุ่มตอนได้ของมา"
+  }
+}

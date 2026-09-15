@@ -1,0 +1,35 @@
+{
+  "id": "spark-slime",
+  "name": {
+    "th": "สไลม์สายฟ้า",
+    "en": "Spark Slime"
+  },
+  "dex": {
+    "book": "field",
+    "no": 32
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critRate",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always",
+      "condition": {
+        "enemyType": "lightning"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "spark-slime-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-15",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": ["th", "en"],
+    "note": "เป็นฐาน 6.25 ของสไลม์สายฟ้าทอง (field 33) ที่ได้ 6.57 | ธาตุสายฟ้าอยู่ฝั่งผล ไม่ใช่ฝั่งกระตุ้น เพราะไม่มีการนับครั้ง ประโยคบอกแค่ว่าอัตราคริติคอลนี้ใช้กับมอนธาตุสายฟ้า"
+  }
+}

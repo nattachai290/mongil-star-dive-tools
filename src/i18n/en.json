@@ -67,7 +67,6 @@
   "character.stars": "star",
   "character.baseStats": "Base stats",
   "character.atLevel": "at level",
-  "character.baseStatsNote": "Read with all equipment and monsterlings removed",
   "character.otherStats": "Other stats",
   "character.skills": "Skills",
   "character.statuses": "Statuses granted",
@@ -78,9 +77,6 @@
   "character.noValues": "No values read yet",
   "character.skillLevelBonus": "Skill level",
   "character.noImage": "No image yet",
-  "character.source": "Source",
-  "character.verifiedAt": "Verified",
-  "character.readIn": "Read in",
   "character.back": "Back to characters",
   "skill.basic": "Basic Skill",
   "skill.switch": "Switch Skill",
@@ -90,7 +86,6 @@
   "view.legend": "View",
   "view.summary": "Summary",
   "view.full": "Full",
-  "character.summaryNote": "The first line of the description as the game writes it, the damage type, and every printed value — switch to Full for the whole description and the per-level table",
-  "character.moreLines": "lines",
-  "character.descLines": "lines"
+  "character.descLines": "lines",
+  "character.ungrouped": "Whole skill"
 }

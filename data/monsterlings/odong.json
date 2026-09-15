@@ -1,0 +1,33 @@
+{
+  "id": "odong",
+  "name": {
+    "th": "ต้นสนผู้เฒ่าคิม",
+    "en": "Odong"
+  },
+  "dex": {
+    "book": "field",
+    "no": 104
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "atk",
+      "scopes": ["switchSkill"],
+      "value": 5.5,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always"
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "odong-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-15",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": ["th", "en"],
+    "note": "เป็นฐาน 5.5 ของต้นสนผู้เฒ่าพัค (field 105) ที่ได้ 5.78 — คู่ 5.5/5.78 ครบแล้วและอยู่ติดกันในสมุดภาพ ดู PLAN §13.9.2 | ตัวที่สองที่ขึ้น 5.5 ต่อจากทากรัก (field 18) ซึ่งเจอเมื่อวาน"
+  }
+}

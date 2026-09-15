@@ -16,7 +16,7 @@ export const SECTIONS: Section[] = [
     slug: "characters",
     title: { th: "ตัวละคร", en: "Characters" },
     blurb: {
-      th: "ค่าพลังเปล่า สกิลทั้ง 5 ท่าพร้อมตัวเลขทุกบรรทัด สถานะที่มอบให้ และปลุกพลังทั้ง 6 ขั้น",
+      th: "ค่าพลังพื้นฐาน สกิลทั้ง 5 ท่าพร้อมตัวเลขทุกบรรทัด สถานะที่มอบให้ และปลุกพลังทั้ง 6 ขั้น",
       en: "Base stats, all five skills with every printed value, statuses granted, and the six Awaken stages",
     },
     ready: true,

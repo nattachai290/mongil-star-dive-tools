@@ -1,0 +1,37 @@
+{
+  "id": "suhwa",
+  "name": {
+    "th": "นาคบุปผา",
+    "en": "Suhwa"
+  },
+  "dex": {
+    "book": "field",
+    "no": 163
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "def",
+      "value": 4.93,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onHit",
+      "durationSec": 5,
+      "condition": {
+        "hitCount": 10,
+        "triggerEnemyType": "wind"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "suhwa-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-15",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "note": "เป็นขั้นบนของนาควีรณ์ (field 162) ที่ได้ 4.69 (4.69 x 1.05 = 4.93) | จอทั้งสองภาษาวาง \"มอนสเตอร์ธาตุลม\" ไว้ในกรอบ \"เมื่อโจมตี ... 10 ครั้ง\" จึงเป็นเงื่อนไขฝั่งกระตุ้น",
+    "readIn": ["th", "en"]
+  }
+}

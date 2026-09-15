@@ -1,0 +1,37 @@
+{
+  "id": "taglock",
+  "name": {
+    "th": "ทากรัก",
+    "en": "Taglock"
+  },
+  "dex": {
+    "book": "field",
+    "no": 18
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "atk",
+      "value": 5.5,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onHit",
+      "durationSec": 10,
+      "internalCooldownSec": 20,
+      "condition": {
+        "hitCount": 20
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "taglock-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-15",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": ["th", "en"],
+    "note": "5.5 คือฐานที่หายไปของ 5.78 ซึ่ง PLAN §13.9.2 ทำนายไว้ตั้งแต่ยังไม่เจอ (5.5 x 1.05 = 5.775 ปัดขึ้นเป็น 5.78) ตอนนี้เจอตัวจริงแล้ว | นับ 20 ครั้งซึ่งมากที่สุดเท่าที่เจอ ตัวอื่นนับ 5 หรือ 10"
+  }
+}

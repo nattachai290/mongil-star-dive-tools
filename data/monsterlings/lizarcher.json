@@ -19,7 +19,7 @@
       "durationSec": 5,
       "condition": {
         "hitCount": 10,
-        "enemyType": "fire"
+        "triggerEnemyType": "fire"
       }
     }
   ],
@@ -30,6 +30,7 @@
   "source": {
     "verifiedAt": "2026-09-12",
     "gameVersion": "unknown",
-    "by": "in-game"
+    "by": "in-game",
+    "note": "ย้าย enemyType -> triggerEnemyType เมื่อ 2026-09-15 โดยอาศัยจอของคู่ขั้นบน ลิซาร์ด มือธนูทองพินาศ (field 153) ที่เขียนว่า \"เมื่อโจมตีมอนสเตอร์ธาตุไฟ 10 ครั้ง\" / \"upon attacking Fire enemy 10 times\" ซึ่งเป็นเอฟเฟกต์เดียวกันทุกช่องต่างแค่ตัวเลข — ยังไม่ได้เปิดจอของตัวนี้เองซ้ำ ถ้าใครไม่เห็นด้วยให้ย้ายกลับแล้วรอจอตรง"
   }
 }

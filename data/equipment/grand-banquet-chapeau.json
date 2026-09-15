@@ -1,0 +1,23 @@
+{
+  "id": "grand-banquet-chapeau",
+  "name": {
+    "en": "Grand Banquet Chapeau"
+  },
+  "grade": "gold",
+  "stars": 5,
+  "slot": "headgear",
+  "setId": "gourmands-grand-banquet",
+  "effects": [],
+  "desc": {
+    "en": "A hat with an insatiable appetite that is shared with all who wear it. So if you're watching your diet, maybe... think twice, before you try it on."
+  },
+  "source": {
+    "verifiedAt": "2026-09-15",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอคราฟต์ (Sets) ภาษาอังกฤษเมื่อ 2026-09-15 ยังไม่เคยเปิดจอนี้ภาษาไทย จึงยังไม่มีชื่อไทย ห้ามแปลเอง | ไม่เก็บค่าหลักและค่ารอง เพราะจอเขียนว่าสุ่มตอนได้ของมา"
+  }
+}

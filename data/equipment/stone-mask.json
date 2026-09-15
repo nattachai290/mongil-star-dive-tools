@@ -1,0 +1,23 @@
+{
+  "id": "stone-mask",
+  "name": {
+    "en": "Stone Mask"
+  },
+  "grade": "purple",
+  "stars": 4,
+  "slot": "headgear",
+  "setId": "stone-heart",
+  "effects": [],
+  "desc": {
+    "en": "A mask harboring a stone spirit. Wearing it for too long may make you feel like you're becoming someone else."
+  },
+  "source": {
+    "verifiedAt": "2026-09-15",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอคราฟต์ (Sets) ภาษาอังกฤษเมื่อ 2026-09-15 ยังไม่เคยเปิดจอนี้ภาษาไทย จึงยังไม่มีชื่อไทย ห้ามแปลเอง | ไม่เก็บค่าหลักและค่ารอง เพราะจอเขียนว่าสุ่มตอนได้ของมา"
+  }
+}
