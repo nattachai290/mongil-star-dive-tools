@@ -1,0 +1,20 @@
+{
+  "id": "frenzied-wolfs-mask",
+  "name": {
+    "en": "Frenzied Wolf's Mask"
+  },
+  "grade": "purple",
+  "stars": 4,
+  "slot": "headgear",
+  "setId": "frenzied-white-wolf",
+  "effects": [],
+  "source": {
+    "verifiedAt": "2026-09-15",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอคราฟต์ (Sets) ภาษาอังกฤษเมื่อ 2026-09-15 ยังไม่เคยเปิดจอนี้ภาษาไทย จึงยังไม่มีชื่อไทย ห้ามแปลเอง | ไม่เก็บค่าหลักและค่ารอง เพราะจอเขียนว่าสุ่มตอนได้ของมา | คำบรรยายชิ้นนี้ถูกตัดท้ายบนจอ จึงยังไม่เก็บ"
+  }
+}

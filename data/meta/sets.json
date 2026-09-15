@@ -190,7 +190,101 @@
       "readIn": [
         "en"
       ],
-      "note": "เซ็ตสี่ชิ้น เห็นชื่อแล้วสองชิ้น (ถุงมือ Frenzied Wolf's Claws / รองเท้า Frenzied Wolf's Sprinters) อีกสองชิ้น (หมวกกับเกราะอก) ยังไม่ได้เปิดดูชื่อ | [4 Set] เป็นดีบัฟใส่ศัตรู ไม่ใช่บัฟตัวเอง — เพิ่มดาเมจธาตุจุดอ่อนที่ \"เป้าหมาย\" ได้รับ จึงเป็น stat dmgTaken + target enemy | [4 Set] ใช้ kind buff ไม่ใช่ debuff ทั้งที่ผลดีกับผู้เล่น เพราะ kind บอก \"ตัวเลขขึ้นหรือลง\" ไม่ได้บอก \"ดีกับใคร\" — จอเขียน +2% และดาเมจที่เป้าหมายได้รับเพิ่มขึ้นจริง ส่วนใครได้ประโยชน์ดูจาก target"
+      "note": "เซ็ตสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้วเมื่อ 2026-09-15 (หมวก Frenzied Wolf's Mask / เกราะอก Frenzied Wolf's Restraints / ถุงมือ Frenzied Wolf's Claws / รองเท้า Frenzied Wolf's Sprinters) | [4 Set] เป็นดีบัฟใส่ศัตรู ไม่ใช่บัฟตัวเอง — เพิ่มดาเมจธาตุจุดอ่อนที่ \"เป้าหมาย\" ได้รับ จึงเป็น stat dmgTaken + target enemy | [4 Set] ใช้ kind buff ไม่ใช่ debuff ทั้งที่ผลดีกับผู้เล่น เพราะ kind บอก \"ตัวเลขขึ้นหรือลง\" ไม่ได้บอก \"ดีกับใคร\" — จอเขียน +2% และดาเมจที่เป้าหมายได้รับเพิ่มขึ้นจริง ส่วนใครได้ประโยชน์ดูจาก target"
+    }
+  },
+  {
+    "id": "stone-heart",
+    "name": {
+      "en": "Stone Heart"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "DEF +3%"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "def",
+            "value": 3,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "always"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสองชิ้น (หมวก Stone Mask / รองเท้า Stone Sandals) มีโบนัสแค่ [2 Set]"
+    }
+  },
+  {
+    "id": "mountain-peak-majesty",
+    "name": {
+      "en": "Mountain Peak Majesty"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Target's Fire RES −3% for 5s upon landing a Tag-out Skill"
+        },
+        "effects": [
+          {
+            "kind": "debuff",
+            "stat": "res",
+            "damageType": "fire",
+            "value": 3,
+            "unit": "percent",
+            "target": "enemy",
+            "trigger": "onTagOutSkillHit",
+            "durationSec": 5
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Fire DMG +5% upon attacking an enemy with Fire Affliction"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "fire",
+            "value": 5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onHit",
+            "condition": {
+              "triggerEnemyAffliction": "fire"
+            }
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสี่ชิ้น เห็นชื่อแล้วชิ้นเดียว (หมวก Mountain Peak Helm) | \"Tag-out Skill\" เป็นคำที่เพิ่งเจอครั้งแรก ยังไม่รู้ว่าเป็นคำเดียวกับ Switch Skill หรือคนละอย่าง จึงเก็บเป็นตัวกระตุ้นแยก onTagOutSkillHit ตามคำที่จอเขียน ถ้าเจอจอที่ยืนยันว่าเหมือนกัน ค่อยยุบรวม | [4 Set] ไม่มีระยะเวลาบนจอ มีแต่เงื่อนไข ต่างจาก [4 Set] ของอีกสองเซ็ตที่ระบุ 5 วินาที | ใช้ triggerEnemyAffliction เป็นเซ็ตที่สาม ต่อจากฝันร้ายเขียวกับหมาป่าขาวคลุ้มคลั่ง"
     }
   }
 ]

@@ -376,6 +376,9 @@
       "th": "เมื่อเปลี่ยนเป็นตัวละครอื่น",
       "en": "upon switching to another character"
     },
+    "onTagOutSkillHit": {
+      "en": "upon landing a Tag-out Skill"
+    },
     "onUltimateCharged": {
       "th": "เมื่อเกจสกิลอัลติเมตชาร์จสูงสุด",
       "en": "when the Ultimate Gauge is at max charge"
