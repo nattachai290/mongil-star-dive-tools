@@ -432,7 +432,100 @@
       "readIn": [
         "en"
       ],
-      "note": "เซ็ตสี่ชิ้น เห็นชื่อแล้วสามชิ้น (หมวก Devourer's Hat / เกราะอก Devourer's Apron / ถุงมือ Devourer's Gloves) รองเท้ายังไม่ได้เปิดดูชื่อ | เซ็ตแรกที่มีโบนัส [4 Set] สองบรรทัด — เซ็ตอื่นมีบรรทัดเดียว | บรรทัด [4 Set] อันที่สองไม่มีสัญลักษณ์หกเหลี่ยมนำหน้าเหมือนอีกสองบรรทัด เห็นแบบนี้ตรงกันทั้งสามจอที่เปิดของเซ็ตนี้ ยังไม่รู้ว่าเป็นคนละโบนัสหรือเป็นส่วนต่อของอันเดียวกัน จึงเก็บเป็นสองรายการตามที่จอพิมพ์ | [2 Set] ใช้ triggerEnemyAffliction เป็นเซ็ตที่สี่ ธาตุลม ต่อจากน้ำแข็ง ดิน ไฟ | \"Tag-out Skill\" โผล่เป็นครั้งที่สอง ต่อจาก Mountain Peak Majesty ยังไม่มีอะไรยืนยันว่าเป็นคำเดียวกับ Switch Skill"
+      "note": "เซ็ตสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Devourer's Hat / เกราะอก Devourer's Apron / ถุงมือ Devourer's Gloves / รองเท้า Devourer's Sandals) | เซ็ตแรกที่มีโบนัส [4 Set] สองบรรทัด — เซ็ตอื่นมีบรรทัดเดียว | บรรทัด [4 Set] อันที่สองไม่มีสัญลักษณ์หกเหลี่ยมนำหน้าเหมือนอีกสองบรรทัด เห็นแบบนี้ตรงกันทั้งสามจอที่เปิดของเซ็ตนี้ ยังไม่รู้ว่าเป็นคนละโบนัสหรือเป็นส่วนต่อของอันเดียวกัน จึงเก็บเป็นสองรายการตามที่จอพิมพ์ | [2 Set] ใช้ triggerEnemyAffliction เป็นเซ็ตที่สี่ ธาตุลม ต่อจากน้ำแข็ง ดิน ไฟ | \"Tag-out Skill\" โผล่เป็นครั้งที่สอง ต่อจาก Mountain Peak Majesty ยังไม่มีอะไรยืนยันว่าเป็นคำเดียวกับ Switch Skill"
+    }
+  },
+  {
+    "id": "mystical-jade-odong",
+    "name": {
+      "en": "Mystical Jade Odong"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Max HP +3%"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "hp",
+            "value": 3,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "always"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสองชิ้น (หมวก Jade Odong Hat / เกราะอก Jade Odong Brigandine) | เซ็ตแรกที่โบนัสเป็นพลังชีวิต เซ็ตอื่นเป็นดาเมจ พลังโจมตี หรือพลังป้องกัน"
+    }
+  },
+  {
+    "id": "moonshadow",
+    "name": {
+      "en": "Moonshadow"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Crit DMG +5% upon attacking an enemy with Fire Affliction"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "critDmg",
+            "value": 5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onHit",
+            "condition": {
+              "triggerEnemyAffliction": "fire"
+            }
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Fire DMG +5% for 5s when a minion is summoned"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "fire",
+            "value": 5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onMinionSummoned",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสี่ชิ้น เห็นชื่อแล้วสองชิ้น (หมวก Eunwol's Antlers / เกราะอก Moonlight Clothes) ถุงมือกับรองเท้ายังไม่ได้เปิดดูชื่อ | \"when a minion is summoned\" เป็นตัวกระตุ้นแบบใหม่ ยังไม่รู้ว่า minion หมายถึงลิงก์เชนที่ออกมาช่วย หรือมอนสเตอร์ลิงหรืออย่างอื่น จึงเก็บเป็น onMinionSummoned ตามคำที่จอเขียน ไม่ผูกกับระบบใดระบบหนึ่ง | [2 Set] ใช้ triggerEnemyAffliction ธาตุไฟ เป็นเซ็ตที่ห้า และเป็นธาตุไฟครั้งที่สองต่อจาก Mountain Peak Majesty"
     }
   }
 ]

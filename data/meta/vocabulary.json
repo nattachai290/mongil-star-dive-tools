@@ -382,6 +382,9 @@
     "onTagOutSkillHit": {
       "en": "upon landing a Tag-out Skill"
     },
+    "onMinionSummoned": {
+      "en": "when a minion is summoned"
+    },
     "onUltimateCharged": {
       "th": "เมื่อเกจสกิลอัลติเมตชาร์จสูงสุด",
       "en": "when the Ultimate Gauge is at max charge"
