@@ -90,5 +90,7 @@
   "view.legend": "View",
   "view.summary": "Summary",
   "view.full": "Full",
-  "character.summaryNote": "Skill name, damage type and every printed value — switch to Full for the description and the per-level table"
+  "character.summaryNote": "The first line of the description as the game writes it, the damage type, and every printed value — switch to Full for the whole description and the per-level table",
+  "character.moreLines": "lines",
+  "character.descLines": "lines"
 }

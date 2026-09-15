@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { Text } from "@/components/Text";
 import { ViewSwitch } from "@/components/ViewSwitch";
 import { createTranslate, type MessageKey } from "@/i18n";
-import { LOCALES, isLocale, pickText, type Locale } from "@/lib/i18n";
+import { LOCALES, LOCALE_TAG, isLocale, pickText, type Locale } from "@/lib/i18n";
 import { CHARACTERS, characterById, characterImage } from "@/lib/data";
 import { describeEffect } from "@/lib/describe";
 import { label } from "@/lib/vocabulary";
@@ -74,6 +74,22 @@ function EffectList({ effects, locale }: { effects: Effect[]; locale: Locale }) 
  * จึงวาดเฉพาะเลเวลที่อ่านมาแล้ว และบอกตรง ๆ ว่าที่เหลือคือยังไม่ได้อ่าน
  */
 /**
+ * ตัดคำอธิบายเป็นบรรทัดตาม "/" ที่เกมใส่มาเอง
+ *
+ * ไม่ใช่การย่อความ — เป็นการใช้ตัวคั่นที่มีอยู่แล้วในข้อความ
+ * จำนวนท่อนตรงกันทั้งไทยและอังกฤษทุกสกิล จึงเชื่อได้ว่าเป็นโครงของเกม
+ * ไม่ใช่นิสัยการเว้นวรรคของคนแปล
+ *
+ * ห้ามเขียนประโยคย่อขึ้นมาเอง ข้อความสกิลต้องเป็นคำของเกมเท่านั้น
+ */
+function descLines(desc: string): string[] {
+  return desc
+    .split("/")
+    .map((line) => line.trim())
+    .filter((line) => line !== "");
+}
+
+/**
  * เลเวลสูงสุดที่อ่านค่ามาแล้วของสกิลนี้ — null = ยังไม่มีตัวเลขสักบรรทัด
  *
  * มุมมองสรุปโชว์เลเวลเดียว จึงต้องเลือกให้ชัดว่าเลเวลไหน แทนที่จะหยิบมามั่ว
@@ -89,7 +105,49 @@ function topLevel(skill: Skill): number | null {
   return top;
 }
 
-/** มุมมองสรุป — ชื่อท่า ชนิดดาเมจ และตัวเลขเป็นชิป ไม่มีย่อหน้าคำอธิบาย */
+/** คำอธิบายแบบเต็ม — แยกเป็นบรรทัดตามที่เกมคั่นไว้ อ่านง่ายกว่าย่อหน้าก้อนเดียว */
+function SkillDesc({
+  skill,
+  locale,
+  t,
+}: {
+  skill: Skill;
+  locale: Locale;
+  t: (k: MessageKey) => string;
+}) {
+  const picked = pickText(skill.desc, locale);
+  if (!picked) return null;
+  const lines = descLines(picked.value);
+  const lang = picked.isFallback ? LOCALE_TAG[picked.usedLocale] : undefined;
+
+  if (lines.length <= 1) {
+    return (
+      <p className="mt-2 text-sm leading-relaxed text-ink-2" lang={lang}>
+        {lines[0] ?? picked.value}
+      </p>
+    );
+  }
+
+  return (
+    <>
+      <p className="mt-2 font-mono text-[11px] text-muted">
+        {lines.length} {t("character.descLines")}
+      </p>
+      <ul className="mt-1 space-y-1.5">
+        {lines.map((line, i) => (
+          <li key={i} className="flex gap-2 text-sm leading-relaxed text-ink-2">
+            <span aria-hidden className="select-none text-muted">
+              ·
+            </span>
+            <span lang={lang}>{line}</span>
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+}
+
+/** มุมมองสรุป — บรรทัดแรกของคำอธิบายตามที่เกมเขียน บวกตัวเลขทุกบรรทัดเป็นชิป */
 function SkillSummary({
   skill,
   slotLabel,
@@ -112,6 +170,9 @@ function SkillSummary({
           return [{ label: value.label, text: `${n}${unit === "%" ? unit : ` ${unit}`}` }];
         });
 
+  const picked = pickText(skill.desc, locale);
+  const lines = picked ? descLines(picked.value) : [];
+
   return (
     <article className="rounded-lg border border-line bg-surface p-3">
       <div className="flex flex-wrap items-baseline gap-x-2">
@@ -130,6 +191,20 @@ function SkillSummary({
           </span>
         )}
       </h3>
+
+      {lines.length > 0 && (
+        <p className="mt-1.5 text-sm leading-relaxed text-ink-2">
+          <span lang={picked?.isFallback ? LOCALE_TAG[picked.usedLocale] : undefined}>
+            {lines[0]}
+          </span>
+          {/* บอกตรง ๆ ว่ายังมีอีกกี่บรรทัด ดีกว่าตัดทิ้งเงียบ ๆ แล้วคนอ่านไม่รู้ */}
+          {lines.length > 1 && (
+            <span className="ms-1.5 whitespace-nowrap rounded border border-line bg-surface-2 px-1.5 py-0.5 align-middle font-mono text-[11px] text-muted">
+              +{lines.length - 1} {t("character.moreLines")}
+            </span>
+          )}
+        </p>
+      )}
 
       {chips.length > 0 ? (
         <ul className="mt-2 flex flex-wrap gap-1.5">
@@ -372,9 +447,7 @@ export default async function CharacterPage({
                             </span>
                           )}
                         </h3>
-                        <p className="mt-2 text-sm leading-relaxed text-ink-2">
-                          <Text value={skill.desc} locale={locale} />
-                        </p>
+                        <SkillDesc skill={skill} locale={locale} t={t} />
                         {skill.effects.length > 0 && (
                           <div className="mt-3 border-t border-line pt-3">
                             <EffectList effects={skill.effects} locale={locale} />
