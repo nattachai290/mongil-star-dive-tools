@@ -417,3 +417,5 @@ export type Build = z.infer<typeof build>;
 export type LinkChain = z.infer<typeof linkChain>;
 export type Monsterling = z.infer<typeof monsterling>;
 export type Skill = z.infer<typeof skill>;
+export type Equipment = z.infer<typeof equipment>;
+export type EquipmentSet = z.infer<typeof equipmentSet>;

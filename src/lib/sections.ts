@@ -34,10 +34,10 @@ export const SECTIONS: Section[] = [
     slug: "equipment",
     title: { th: "Equipment", en: "Equipment" },
     blurb: {
-      th: "ของสวมใส่ 4 ช่อง ค่าหลัก ค่ารอง และโบนัสเมื่อใส่ครบเซ็ต",
-      en: "Four gear slots, main and sub stats, and set bonuses",
+      th: "เซ็ตอุปกรณ์ทั้งหมด โบนัสเมื่อใส่ครบ 2 และ 4 ชิ้น และชิ้นที่อยู่ในแต่ละเซ็ต",
+      en: "Every gear set, its 2- and 4-piece bonuses, and the pieces in each",
     },
-    ready: false,
+    ready: true,
   },
   {
     slug: "monsterlings",

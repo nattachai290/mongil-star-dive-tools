@@ -87,5 +87,14 @@
   "view.summary": "สรุป",
   "view.full": "เต็ม",
   "character.descLines": "บรรทัด",
-  "character.ungrouped": "ของทั้งสกิล"
+  "character.ungrouped": "ของทั้งสกิล",
+  "equipment.title": "อุปกรณ์",
+  "equipment.lede": "เซ็ตอุปกรณ์ทั้งหมด พร้อมโบนัสเมื่อใส่ครบและชิ้นที่อยู่ในเซ็ต",
+  "equipment.sets": "เซ็ต",
+  "equipment.pieces": "ชิ้น",
+  "equipment.setBonus": "ใส่ครบ",
+  "equipment.piecesInSet": "ชิ้นในเซ็ต",
+  "equipment.rolledNote": "ค่าหลักและค่ารองสุ่มตอนได้ของมา จึงไม่ผูกกับชิ้นอุปกรณ์และไม่เก็บไว้ที่นี่",
+  "equipment.empty": "ยังไม่มีเซ็ตอุปกรณ์ในฐานข้อมูล",
+  "equipment.enOnlyNote": "ชื่อเซ็ตและชื่อชิ้นบนหน้านี้ยังมีแต่ภาษาอังกฤษ เพราะยังไม่เคยเปิดจอคราฟต์ด้วยไคลเอนต์ไทย และจะไม่แปลเอง"
 }

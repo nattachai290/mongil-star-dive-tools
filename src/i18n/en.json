@@ -87,5 +87,14 @@
   "view.summary": "Summary",
   "view.full": "Full",
   "character.descLines": "lines",
-  "character.ungrouped": "Whole skill"
+  "character.ungrouped": "Whole skill",
+  "equipment.title": "Equipment",
+  "equipment.lede": "Every gear set, with its set bonuses and the pieces that make it up",
+  "equipment.sets": "sets",
+  "equipment.pieces": "pieces",
+  "equipment.setBonus": "Set",
+  "equipment.piecesInSet": "Pieces",
+  "equipment.rolledNote": "Main stat and substats are rolled when the item drops, so they belong to no item definition and are not stored here",
+  "equipment.empty": "No gear sets in the database yet",
+  "equipment.enOnlyNote": "Set and piece names here are English only — the crafting screen has not been opened in the Thai client, and nothing is translated by hand"
 }
