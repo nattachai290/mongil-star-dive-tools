@@ -1,0 +1,36 @@
+{
+  "id": "big-bro-goblin",
+  "name": {
+    "th": "ก็อบลินพี่ใหญ่",
+    "en": "Big Bro Goblin"
+  },
+  "dex": {
+    "book": "field",
+    "no": 19
+  },
+  "speciesEffects": [
+    {
+      "kind": "heal",
+      "stat": "hp",
+      "value": 3.47,
+      "unit": "percent",
+      "target": "team",
+      "trigger": "onBasicAttackHit",
+      "internalCooldownSec": 20,
+      "condition": {
+        "hitCount": 10
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "big-bro-goblin-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-15",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": ["th", "en"],
+    "note": "ฟื้นฟูตัวที่สองที่ฮีลให้ทั้งทีม ต่อจากมานาของอวาดัน (field 95) และได้ 3.47% เท่ากันเป๊ะ แต่คนละทริกเกอร์ — ตัวนั้นตีบอสที่มึนงง ตัวนี้นับโจมตีพื้นฐานโดน 10 ครั้ง"
+  }
+}
