@@ -86,6 +86,6 @@
   "view.legend": "รูปแบบที่แสดง",
   "view.summary": "สรุป",
   "view.full": "เต็ม",
-  "character.moreLines": "บรรทัด · กดดูทั้งหมด",
-  "character.descLines": "บรรทัด"
+  "character.descLines": "บรรทัด",
+  "character.ungrouped": "ของทั้งสกิล"
 }

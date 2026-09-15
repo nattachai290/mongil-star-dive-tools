@@ -86,6 +86,6 @@
   "view.legend": "View",
   "view.summary": "Summary",
   "view.full": "Full",
-  "character.moreLines": "more lines · show all",
-  "character.descLines": "lines"
+  "character.descLines": "lines",
+  "character.ungrouped": "Whole skill"
 }

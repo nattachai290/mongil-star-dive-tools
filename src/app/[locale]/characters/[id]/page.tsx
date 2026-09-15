@@ -3,14 +3,13 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Text } from "@/components/Text";
-import { ShowFullButton } from "@/components/ShowFullButton";
 import { ViewSwitch } from "@/components/ViewSwitch";
 import { createTranslate, type MessageKey } from "@/i18n";
 import { LOCALES, LOCALE_TAG, isLocale, pickText, type Locale } from "@/lib/i18n";
 import { CHARACTERS, characterById, characterImage } from "@/lib/data";
 import { describeEffect } from "@/lib/describe";
 import { label } from "@/lib/vocabulary";
-import type { Effect } from "@/lib/schema/common";
+import type { Effect, LocalizedText } from "@/lib/schema/common";
 import type { Skill } from "@/lib/schema/entities";
 
 export function generateStaticParams() {
@@ -148,7 +147,34 @@ function SkillDesc({
   );
 }
 
-/** มุมมองสรุป — บรรทัดแรกของคำอธิบายตามที่เกมเขียน บวกตัวเลขทุกบรรทัดเป็นชิป */
+type Chip = { label: LocalizedText; text: string };
+
+/** ตัวเลขหนึ่งชุดเป็นชิป — อยู่นอกคอมโพเนนต์แม่ ไม่งั้น React สร้างชนิดใหม่ทุกเรนเดอร์ */
+function Chips({ chips, locale }: { chips: Chip[]; locale: Locale }) {
+  if (chips.length === 0) return null;
+  return (
+    <ul className="mt-1.5 flex flex-wrap gap-1.5">
+      {chips.map((chip, i) => (
+        <li
+          key={i}
+          className="rounded border border-line bg-surface-2 px-1.5 py-0.5 text-[11px] leading-tight text-ink-2"
+        >
+          <Text value={chip.label} locale={locale} showFallbackBadge={false} />{" "}
+          <span className="font-mono text-ink">{chip.text}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/**
+ * มุมมองสรุป — กลไกทีละท่อน พร้อมตัวเลขของท่อนนั้นอยู่ใต้ท่อนนั้น
+ *
+ * ไม่ได้ตัดข้อความทิ้ง ทุกท่อนยังอยู่ครบ สิ่งที่ตัดคือตารางค่ารายเลเวล
+ * ของเดิมโชว์ท่อนแรกท่อนเดียวแล้วเทชิปตัวเลขสิบชิ้นรวมกันไว้ข้างล่าง
+ * ซึ่งอ่านแล้วไม่รู้ว่าชิปไหนเป็นของกลไกไหน — เช่น "มายากลไฟ" อยู่ฝั่งมีบอส
+ * ส่วน "โพลแดนซ์" อยู่ฝั่งไม่มีบอส ทั้งที่วางติดกัน
+ */
 function SkillSummary({
   skill,
   slotLabel,
@@ -161,18 +187,22 @@ function SkillSummary({
   t: (k: MessageKey) => string;
 }) {
   const lv = topLevel(skill);
-  const chips =
-    lv === null
-      ? []
-      : skill.values.flatMap((value) => {
-          const n = value.scaling[lv - 1];
-          if (n === null) return [];
-          const unit = label("unit", value.unit, locale);
-          return [{ label: value.label, text: `${n}${unit === "%" ? unit : ` ${unit}`}` }];
-        });
-
   const picked = pickText(skill.desc, locale);
   const lines = picked ? descLines(picked.value) : [];
+  const lang = picked?.isFallback ? LOCALE_TAG[picked.usedLocale] : undefined;
+
+  const chipOf = (value: Skill["values"][number]) => {
+    const n = lv === null ? null : value.scaling[lv - 1];
+    if (n === null || n === undefined) return null;
+    const unit = label("unit", value.unit, locale);
+    return { label: value.label, text: `${n}${unit === "%" ? unit : ` ${unit}`}` };
+  };
+
+  const chipsFor = (line: number | undefined) =>
+    skill.values.filter((v) => v.line === line).map(chipOf).flatMap((c) => (c ? [c] : []));
+
+  // ไม่มี line = เป็นค่าของทั้งสกิล เช่นคูลดาวน์ — แยกไว้ท้ายสุด ไม่ใช่ทิ้ง
+  const loose = chipsFor(undefined);
 
   return (
     <article className="rounded-lg border border-line bg-surface p-3">
@@ -193,32 +223,22 @@ function SkillSummary({
         )}
       </h3>
 
-      {lines.length > 0 && (
-        <p className="mt-1.5 text-sm leading-relaxed text-ink-2">
-          <span lang={picked?.isFallback ? LOCALE_TAG[picked.usedLocale] : undefined}>
-            {lines[0]}
-          </span>
-          {/* บอกตรง ๆ ว่ายังมีอีกกี่บรรทัด ดีกว่าตัดทิ้งเงียบ ๆ แล้วคนอ่านไม่รู้ */}
-          {lines.length > 1 && (
-            <ShowFullButton count={lines.length - 1} label={t("character.moreLines")} />
-          )}
-        </p>
-      )}
+      <ol className="mt-2 space-y-2.5">
+        {lines.map((line, i) => (
+          <li key={i} className="border-s-2 border-line ps-2.5">
+            <p className="text-sm leading-relaxed text-ink-2" lang={lang}>
+              {line}
+            </p>
+            <Chips chips={chipsFor(i + 1)} locale={locale} />
+          </li>
+        ))}
+      </ol>
 
-      {chips.length > 0 ? (
-        <ul className="mt-2 flex flex-wrap gap-1.5">
-          {chips.map((chip, i) => (
-            <li
-              key={i}
-              className="rounded border border-line bg-surface-2 px-1.5 py-0.5 text-[11px] leading-tight text-ink-2"
-            >
-              <Text value={chip.label} locale={locale} showFallbackBadge={false} />{" "}
-              <span className="font-mono text-ink">{chip.text}</span>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p className="mt-2 text-xs text-muted">{t("character.noValues")}</p>
+      {loose.length > 0 && (
+        <div className="mt-2.5 border-t border-line pt-2">
+          <p className="text-[11px] text-muted">{t("character.ungrouped")}</p>
+          <Chips chips={loose} locale={locale} />
+        </div>
       )}
     </article>
   );
