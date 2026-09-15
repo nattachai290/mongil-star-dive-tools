@@ -371,6 +371,9 @@
       "th": "เมื่อใช้หลบหลีกโต้กลับ",
       "en": "upon using Evasion Counter"
     },
+    "onPerfectDodge": {
+      "en": "upon triggering a Perfect Dodge"
+    },
     "onTakeHit": {
       "th": "เมื่อถูกโจมตี",
       "en": "upon being hit"

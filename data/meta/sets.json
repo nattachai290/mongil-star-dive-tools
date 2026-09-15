@@ -525,7 +525,44 @@
       "readIn": [
         "en"
       ],
-      "note": "เซ็ตสี่ชิ้น เห็นชื่อแล้วสองชิ้น (หมวก Eunwol's Antlers / เกราะอก Moonlight Clothes) ถุงมือกับรองเท้ายังไม่ได้เปิดดูชื่อ | \"when a minion is summoned\" เป็นตัวกระตุ้นแบบใหม่ ยังไม่รู้ว่า minion หมายถึงลิงก์เชนที่ออกมาช่วย หรือมอนสเตอร์ลิงหรืออย่างอื่น จึงเก็บเป็น onMinionSummoned ตามคำที่จอเขียน ไม่ผูกกับระบบใดระบบหนึ่ง | [2 Set] ใช้ triggerEnemyAffliction ธาตุไฟ เป็นเซ็ตที่ห้า และเป็นธาตุไฟครั้งที่สองต่อจาก Mountain Peak Majesty"
+      "note": "เซ็ตสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Eunwol's Antlers / เกราะอก Moonlight Clothes / ถุงมือ Sage's Touch / รองเท้า Shadow Hooves) | \"when a minion is summoned\" เป็นตัวกระตุ้นแบบใหม่ ยังไม่รู้ว่า minion หมายถึงลิงก์เชนที่ออกมาช่วย หรือมอนสเตอร์ลิงหรืออย่างอื่น จึงเก็บเป็น onMinionSummoned ตามคำที่จอเขียน ไม่ผูกกับระบบใดระบบหนึ่ง | [2 Set] ใช้ triggerEnemyAffliction ธาตุไฟ เป็นเซ็ตที่ห้า และเป็นธาตุไฟครั้งที่สองต่อจาก Mountain Peak Majesty"
+    }
+  },
+  {
+    "id": "onsaes-dance",
+    "name": {
+      "en": "Onsae's Dance"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Crit Rate +5% for 5s upon triggering a Perfect Dodge"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "critRate",
+            "value": 5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onPerfectDodge",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-15",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตสองชิ้น มีแต่ถุงมือกับรองเท้า (Mad Fox's Fur Gloves / Mad Fox's Paws) ไม่มีหมวกกับเกราะอก | \"Perfect Dodge\" เป็นตัวกระตุ้นแบบใหม่ คนละอันกับ Evasion Counter ที่มีอยู่แล้ว — อันนั้นคือโต้กลับหลังหลบ อันนี้คือหลบได้พอดีจังหวะ จอเขียนคนละคำจึงเก็บคนละคำ | ชื่อเซ็ตคือ Onsae ซึ่งตรงกับชื่อมอนสเตอร์ลิงออนแซ (field 141) แต่ของในเซ็ตเป็นธีมจิ้งจอก ยังไม่มีอะไรบอกว่าเกี่ยวกันหรือแค่ชื่อพ้อง"
     }
   }
 ]
