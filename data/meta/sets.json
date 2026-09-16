@@ -658,7 +658,7 @@
       "readIn": [
         "en"
       ],
-      "note": "เซ็ตสีทองชุดแรกที่ลงข้อมูล สี่ชิ้นครบ (Warden Helmet / Arbiter of Nature / Magic Vine Gloves / Root's Footprints) | ทองเป็น 5 ดาว ส่วนม่วงเป็น 4 ดาว — อ่านจำนวนดาวจากช่องในตาราง การ์ดไม่ได้พิมพ์ดาวไว้ วิธีเดียวกับที่อ่านของม่วงมาตลอด | [4 Set] โครงเดียวกับ Mountain Peak Majesty (ม่วง) เป๊ะ ต่างแค่ธาตุกับตัวเลข 5% -> 10% ดู PLAN §13.9.3 | [2 Set] ยังไม่มีเซ็ตม่วงที่โครงตรงกัน (ธาตุน้ำแข็ง + สกิลสับเปลี่ยน) จึงเทียบไม่ได้"
+      "note": "เซ็ตสีทองชุดแรกที่ลงข้อมูล สี่ชิ้นครบ (Warden Helmet / Arbiter of Nature / Magic Vine Gloves / Root's Footprints) | ทองเป็น 5 ดาว ส่วนม่วงเป็น 4 ดาว — อ่านจำนวนดาวจากช่องในตาราง การ์ดไม่ได้พิมพ์ดาวไว้ วิธีเดียวกับที่อ่านของม่วงมาตลอด | [4 Set] โครงเดียวกับ Mountain Peak Majesty (ม่วง) เป๊ะ ต่างแค่ธาตุกับตัวเลข 5% -> 10% (สองเท่า) แต่คู่อื่นไม่ได้เป็นสองเท่าเสมอไป ดู PLAN §13.9.3 ที่แก้แล้ว | [2 Set] ยังไม่มีเซ็ตม่วงที่โครงตรงกัน (ธาตุน้ำแข็ง + สกิลสับเปลี่ยน) จึงเทียบไม่ได้"
     }
   },
   {
@@ -696,7 +696,102 @@
       "readIn": [
         "en"
       ],
-      "note": "เซ็ตสีทองสองชิ้น เห็นชื่อแล้วชิ้นเดียว (หมวก Grand Banquet Chapeau) เกราะอกยังไม่ได้เปิดดูชื่อ | [2 Set] เขียนตรงกับ Mountain Peak Majesty (ม่วง) ทุกตัวอักษร ต่างแค่ 3% -> 6% เป็นคู่ที่พิสูจน์ว่าทองคือม่วงคูณสอง ดู PLAN §13.9.3"
+      "note": "เซ็ตสีทองสองชิ้น เห็นชื่อครบสองชิ้นแล้ว (หมวก Grand Banquet Chapeau / เกราะอก Apron of the Grand Feast) | [2 Set] เขียนตรงกับ Mountain Peak Majesty (ม่วง) ทุกตัวอักษร ต่างแค่ 3% -> 6% (สองเท่า) — เคยใช้คู่นี้สรุปว่าทองคือม่วงคูณสอง แต่ Forest Tyrant หักข้อสรุปนั้นแล้ว ดู PLAN §13.9.3 ที่แก้แล้ว"
+    }
+  },
+  {
+    "id": "devourer-of-the-abyss",
+    "name": {
+      "en": "Devourer of the Abyss"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Ice Attack Neutralization DMG +7.5%"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "neutralizationDmg",
+            "damageType": "ice",
+            "value": 7.5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "always"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-16",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสองชิ้น (ถุงมือ Devourer's Sticky Gloves / รองเท้า Devourer's Sticky Footwear) | ชื่อคล้าย Devourer Stance (ม่วง สี่ชิ้น) แต่คนละเซ็ตคนละโบนัส ของม่วงเป็นธีมหมู ของทองเป็นสไลม์ | โครงประโยคเหมือน Ice Heart (ม่วง) คือ \"<ธาตุ> attack <stat> DMG\" แต่คนละ stat คนละธาตุ — ม่วง 3% ทอง 7.5% ซึ่งเป็น 2.5 เท่า ไม่ใช่สองเท่า ดู PLAN §13.9.3"
+    }
+  },
+  {
+    "id": "forest-tyrant",
+    "name": {
+      "en": "Forest Tyrant"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Ice DMG +7.5% for 3s upon using a Basic Attack"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "ice",
+            "value": 7.5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onBasicAttack",
+            "durationSec": 3
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Crit Rate +5% for 5s upon attacking an enemy with Ice Affliction"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "critRate",
+            "value": 5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onHit",
+            "durationSec": 5,
+            "condition": {
+              "triggerEnemyAffliction": "ice"
+            }
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-16",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อแล้วสองชิ้น (หมวก Tyrant's Helmet / เกราะอก Tyrant's Armor) ถุงมือกับรองเท้ายังไม่ได้เปิดดูชื่อ | [2 Set] เป็นคู่ที่หักกฎ \"ทองคือม่วงคูณสอง\" — ฝันร้ายเขียว (ม่วง) เขียนว่า \"Ice DMG +3% for 2s upon using a Basic Attack\" ส่วนอันนี้ \"+7.5% for 3s\" ตัวเลขเป็น 2.5 เท่า ไม่ใช่ 2 เท่า และระยะเวลาก็เปลี่ยนจาก 2 เป็น 3 วินาที ทั้งที่คู่อื่นระยะเวลาเท่ากัน ดู PLAN §13.9.3 ที่แก้แล้ว"
     }
   }
 ]

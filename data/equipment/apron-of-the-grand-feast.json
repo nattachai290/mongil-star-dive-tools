@@ -1,0 +1,23 @@
+{
+  "id": "apron-of-the-grand-feast",
+  "name": {
+    "en": "Apron of the Grand Feast"
+  },
+  "grade": "gold",
+  "stars": 5,
+  "slot": "chestpiece",
+  "setId": "gourmands-grand-banquet",
+  "effects": [],
+  "desc": {
+    "en": "A great apron to wear while preparing a grand feast. It fills you with the confidence that you can make any dish. The taste, of course, is not guaranteed."
+  },
+  "source": {
+    "verifiedAt": "2026-09-16",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอคราฟต์ (Sets) ภาษาอังกฤษเมื่อ 2026-09-16 ยังไม่เคยเปิดจอนี้ภาษาไทย จึงยังไม่มีชื่อไทย ห้ามแปลเอง | ไม่เก็บค่าหลักและค่ารอง เพราะจอเขียนว่าสุ่มตอนได้ของมา"
+  }
+}
