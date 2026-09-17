@@ -1,0 +1,39 @@
+{
+  "id": "shademask",
+  "name": {
+    "th": "หน้ากากเงา",
+    "en": "Shademask"
+  },
+  "dex": {
+    "book": "field",
+    "no": 114
+  },
+  "speciesEffects": [
+    {
+      "kind": "debuff",
+      "stat": "atk",
+      "value": 4,
+      "unit": "percent",
+      "target": "enemy",
+      "trigger": "onHit",
+      "durationSec": 10,
+      "internalCooldownSec": 20,
+      "condition": {
+        "triggerVsBoss": true
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "shademask-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-17",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "เหมือนหน้ากากขี้เถ้า (field 115) ทุกช่องรวมทั้งตัวเลข 4% เท่ากันเป๊ะ — ไม่ใช่คู่ฐาน/ขั้นบน เพราะคู่แบบนั้นต้องต่างกันที่ตัวเลข อันนี้คือมอนสองตัวติดกันที่ได้เอฟเฟกต์เดียวกันทั้งดุ้น"
+  }
+}

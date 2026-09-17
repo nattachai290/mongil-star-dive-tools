@@ -1,0 +1,38 @@
+{
+  "id": "mountaintaur",
+  "name": {
+    "th": "มิโนต้าภูเขาสูง",
+    "en": "Mountaintaur"
+  },
+  "dex": {
+    "book": "field",
+    "no": 65
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critDmg",
+      "value": 11,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "always",
+      "condition": {
+        "vsBoss": true,
+        "enemyState": "staggered"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "mountaintaur-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-17",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "เงื่อนไขบอส+มึนงง ชุดเดียวกับมิโนต้าทุ่งหญ้า (91) หุ่นฟางดำ (121) หุ่นฟางพุ่มไม้ (99) และมานาของอวาดัน (95) แต่ตัวนี้ให้ดาเมจคริติคอล ไม่ใช่ดาเมจธาตุหรือฮีล"
+  }
+}
