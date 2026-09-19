@@ -385,6 +385,9 @@
     "onTagOutSkillHit": {
       "en": "upon landing a Tag-out Skill"
     },
+    "onTagOutSkill": {
+      "en": "upon using a Tag-out Skill"
+    },
     "onMinionSummoned": {
       "en": "when a minion is summoned"
     },

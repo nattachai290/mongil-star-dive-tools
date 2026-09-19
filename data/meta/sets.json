@@ -419,7 +419,7 @@
             "value": 10,
             "unit": "percent",
             "target": "self",
-            "trigger": "onTagOutSkillHit",
+            "trigger": "onTagOutSkill",
             "durationSec": 5
           }
         ]
@@ -432,7 +432,7 @@
       "readIn": [
         "en"
       ],
-      "note": "เซ็ตสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Devourer's Hat / เกราะอก Devourer's Apron / ถุงมือ Devourer's Gloves / รองเท้า Devourer's Sandals) | เซ็ตแรกที่มีโบนัส [4 Set] สองบรรทัด — เซ็ตอื่นมีบรรทัดเดียว | บรรทัด [4 Set] อันที่สองไม่มีสัญลักษณ์หกเหลี่ยมนำหน้าเหมือนอีกสองบรรทัด เห็นแบบนี้ตรงกันทั้งสามจอที่เปิดของเซ็ตนี้ ยังไม่รู้ว่าเป็นคนละโบนัสหรือเป็นส่วนต่อของอันเดียวกัน จึงเก็บเป็นสองรายการตามที่จอพิมพ์ | [2 Set] ใช้ triggerEnemyAffliction เป็นเซ็ตที่สี่ ธาตุลม ต่อจากน้ำแข็ง ดิน ไฟ | \"Tag-out Skill\" โผล่เป็นครั้งที่สอง ต่อจาก Mountain Peak Majesty ยังไม่มีอะไรยืนยันว่าเป็นคำเดียวกับ Switch Skill"
+      "note": "เซ็ตสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Devourer's Hat / เกราะอก Devourer's Apron / ถุงมือ Devourer's Gloves / รองเท้า Devourer's Sandals) | เซ็ตแรกที่มีโบนัส [4 Set] สองบรรทัด — เซ็ตอื่นมีบรรทัดเดียว | บรรทัด [4 Set] อันที่สองไม่มีสัญลักษณ์หกเหลี่ยมนำหน้าเหมือนอีกสองบรรทัด เห็นแบบนี้ตรงกันทั้งสามจอที่เปิดของเซ็ตนี้ ยังไม่รู้ว่าเป็นคนละโบนัสหรือเป็นส่วนต่อของอันเดียวกัน จึงเก็บเป็นสองรายการตามที่จอพิมพ์ | [2 Set] ใช้ triggerEnemyAffliction เป็นเซ็ตที่สี่ ธาตุลม ต่อจากน้ำแข็ง ดิน ไฟ | \"Tag-out Skill\" โผล่เป็นครั้งที่สอง ต่อจาก Mountain Peak Majesty ยังไม่มีอะไรยืนยันว่าเป็นคำเดียวกับ Switch Skill | แก้เมื่อ 2026-09-19: [4 Set] ที่จอเขียน \"upon using a Tag-out Skill\" เคยเก็บเป็น onTagOutSkillHit (\"upon landing\") ซึ่งเป็นคนละจังหวะกัน หลักฐานคือ desc ของตัวเองที่อ่านมาจากจอ ตอนนี้มีคำ onTagOutSkill แล้ว (เจอซ้ำที่ Gourmand Level [4 Set]) จึงย้ายให้ตรงกับข้อความ"
     }
   },
   {
@@ -1053,6 +1053,141 @@
         "en"
       ],
       "note": "เซ็ตทองสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นตั้งแต่รอบแรก (หมวก Spirit King's Coronet / เกราะอก Spirit Barrier / ถุงมือ Sacred Grasp / รองเท้า Spirit Rock Boots) ชื่อชิ้นไม่ได้ขึ้นต้นด้วยชื่อเซ็ตเหมือนเซ็ตอื่น มีแค่สองชิ้นที่มีคำว่า Spirit | [2 Set] เป็นแม่พิมพ์เดียวกับ Forest Tyrant [2 Set] เป๊ะ (\"<ธาตุ> DMG +N% for 3s upon using a Basic Attack\") ทองทั้งคู่ ระยะเวลาเท่ากัน แต่ **7.5% กับ 8%** — เซ็ตทองสองเซ็ตบนแม่พิมพ์เดียวกันยังพิมพ์เลขไม่เท่ากัน อันนี้ปิดประตูการคำนวณตัวคูณทุกแบบ ดู PLAN §13.9.3 | [4 Set] เป็นแม่พิมพ์เดียวกับ Arbiter [4 Set] ต่างแค่ธาตุ (น้ำแข็ง กับ สายฟ้า) และ **10% เท่ากัน** ส่วนของม่วงบนแม่พิมพ์นี้คือ Mountain Peak Majesty [4] ธาตุไฟ 5% จึงเป็น 5 -> 10 สองครั้งแล้ว | ทั้งสองข้อไม่มีคำว่า All teammates' จึงเป็น target self"
+    }
+  },
+  {
+    "id": "heart-of-eternal-frost",
+    "name": {
+      "en": "Heart of Eternal Frost"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Lightning attack Stagger DMG +7.5%"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "staggerDmg",
+            "damageType": "lightning",
+            "value": 7.5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "always"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสองชิ้น (หมวก Crown of Eternal Frost / ถุงมือ Touch of Eternal Frost) มีโบนัสแค่ [2 Set] | **นี่คือคู่ทองตัวจริงของ Ice Heart (ม่วง)** ไม่ใช่ Devourer of the Abyss ที่เคยเดาไว้ — ข้อความตรงกันทุกตัวอักษรยกเว้นตัวเลข (\"Lightning attack Stagger DMG\") stat เดียวกัน ธาตุเดียวกัน ช่องของชิ้นเดียวกัน (หมวก+ถุงมือ) และชื่อชิ้นก็เป็นแบบเดียวกัน (Frozen Crown/Touch of Frost กับ Crown of Eternal Frost/Touch of Eternal Frost) 3% -> 7.5% คือ x2.5 เป็นคู่เต็มคู่ที่สอง ดู PLAN §13.9.3 | ชื่อเซ็ตทั้งสองพูดถึงน้ำแข็ง แต่โบนัสเป็นธาตุสายฟ้าทั้งคู่ — ความไม่ตรงกันนี้ยกมาจากม่วงครบถ้วน"
+    }
+  },
+  {
+    "id": "vanguard-of-victory",
+    "name": {
+      "en": "Vanguard of Victory"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Target's Elemental Weakness DMG taken +10% for 5s upon attacking an enemy with Earth Affliction"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgTaken",
+            "scopes": [
+              "weaknessHit"
+            ],
+            "value": 10,
+            "unit": "percent",
+            "target": "enemy",
+            "trigger": "onHit",
+            "durationSec": 5,
+            "condition": {
+              "triggerEnemyAffliction": "earth"
+            }
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสองชิ้น (เกราะอก Vanguard Buff Coat / รองเท้า Vanguard Leather Boots) มีโบนัสแค่ [2 Set] | ข้อความตรงกับ Frenzied White Wolf [4 Set] (ม่วง) ทุกตัวอักษรยกเว้นตัวเลข 2% -> 10% แต่**คนละช่องโบนัส** ม่วงเป็น [4 Set] ของเซ็ตสี่ชิ้น ทองเป็น [2 Set] ของเซ็ตสองชิ้น จึงเทียบระดับกันตรง ๆ ไม่ได้ และห้ามเอา x5 ไปใช้เป็นตัวคูณ | ใช้ kind buff กับ target enemy ตามเหตุผลเดียวกับของม่วง — จอเขียน + และดาเมจที่เป้าหมายรับเพิ่มขึ้นจริง"
+    }
+  },
+  {
+    "id": "gourmand-level",
+    "name": {
+      "en": "Gourmand Level"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Target's Wind RES −6% for 5s upon landing a Special Skill"
+        },
+        "effects": [
+          {
+            "kind": "debuff",
+            "stat": "res",
+            "damageType": "wind",
+            "value": 6,
+            "unit": "percent",
+            "target": "enemy",
+            "trigger": "onSpecialSkillHit",
+            "durationSec": 5
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "All teammates' Crit Rate +6% for 5s upon using a Tag-out Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "critRate",
+            "value": 6,
+            "unit": "percent",
+            "target": "team",
+            "trigger": "onTagOutSkill",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อแล้วชิ้นเดียว (หมวก Gourmand's Hat) อีกสามชิ้นยังไม่ได้เปิด | คนละเซ็ตกับ Gourmand's Grand Banquet (ทอง สองชิ้น) ถึงจะธีมนักกินเหมือนกันทั้งคู่ | [2 Set] แม่พิมพ์เดียวกับ Gourmand's Grand Banquet [2 Set] และ 6% เท่ากัน ต่างที่ธาตุ (ไฟ -> ลม) และตัวกระตุ้น (Tag-out -> Special Skill) | [2 Set] จอเขียน \"upon landing a Special Skill\" ส่วนพจนานุกรมเก็บ onSpecialSkillHit ไว้ด้วยคำว่า \"upon attacking with a Special Skill\" — ถือเป็นตัวกระตุ้นเดียวกันเพราะทั้งคู่เป็นฝั่ง \"โดน\" ไม่ใช่ฝั่ง \"ใช้\" แต่เป็นคนละสำนวน ถ้าเจอจอที่แยกสองอันนี้จริง ค่อยแตกออก | [4 Set] จอเขียน \"upon using a Tag-out Skill\" ซึ่งเป็นคนละอันกับ \"upon landing a Tag-out Skill\" จึงเพิ่มคำใหม่ onTagOutSkill เข้าพจนานุกรม คู่เดียวกับที่แยก onBasicAttack/onBasicAttackHit ไว้แล้ว"
     }
   }
 ]
