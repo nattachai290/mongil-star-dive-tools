@@ -1,0 +1,20 @@
+{
+  "id": "fierce-tigers-valor",
+  "name": {
+    "en": "Fierce Tiger's Valor"
+  },
+  "grade": "gold",
+  "stars": 5,
+  "slot": "headgear",
+  "setId": "hahnuls-roar",
+  "effects": [],
+  "source": {
+    "verifiedAt": "2026-09-19",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอคราฟต์ (Sets) ภาษาอังกฤษเมื่อ 2026-09-19 ยังไม่เคยเปิดจอนี้ภาษาไทย จึงยังไม่มีชื่อไทย ห้ามแปลเอง | ไม่เก็บค่าหลักและค่ารอง เพราะจอเขียนว่าสุ่มตอนได้ของมา"
+  }
+}
