@@ -1,0 +1,40 @@
+{
+  "id": "spadupa",
+  "name": {
+    "th": "สปาดูป้า",
+    "en": "Spadupa"
+  },
+  "dex": {
+    "book": "field",
+    "no": 79
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "earth",
+      "value": 8,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onKill",
+      "durationSec": 10,
+      "condition": {
+        "killCount": 10
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "spadupa-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-17",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "นับจำนวนที่กำจัด ไม่ใช่จำนวนครั้งที่ตี — ตระกูลเดียวกับสปาร์เดอร์ (76) สปาร์ดิก (77) และกรีนปาดูปา (80) | จอภาษาไทย 2026-09-19 ตรงกับที่อ่านจากจออังกฤษทุกช่อง (\"เมื่อกำจัดมอนสเตอร์ 10 ตัว จะเพิ่มดาเมจธาตุดิน 8% นาน 10 วินาที\")"
+  }
+}

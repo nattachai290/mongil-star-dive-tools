@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
-import { monsterDexEntry, linkChain, monsterling, character } from "./schema/entities";
-import type { Character, LinkChain, Monsterling } from "./schema/entities";
+import { monsterDexEntry, linkChain, monsterling, character, equipment, equipmentSet } from "./schema/entities";
+import type { Character, Equipment, EquipmentSet, LinkChain, Monsterling } from "./schema/entities";
 
 /**
  * อ่านข้อมูลจาก data/ ตอน build — ไม่มี API ไม่มีฐานข้อมูล
@@ -74,6 +74,27 @@ export function characterImage(id: string): string | null {
     }
   }
   return null;
+}
+
+/** ชิ้นอุปกรณ์ทั้งหมด — ผูกกับเซ็ตด้วย setId */
+export const EQUIPMENT: Equipment[] = readCollection("equipment", (raw) => equipment.parse(raw));
+
+/**
+ * เซ็ตอุปกรณ์อยู่ใน meta/sets.json ไม่ใช่โฟลเดอร์ของตัวเอง
+ * เพราะเป็นของกลางที่อุปกรณ์หลายชิ้นอ้างถึง ไม่ใช่ของที่มีไฟล์ละชิ้น
+ *
+ * เรียงตามลำดับในไฟล์ ซึ่งคือลำดับที่จอคราฟต์ในเกมเรียงไว้
+ */
+export const EQUIPMENT_SETS: EquipmentSet[] = (
+  readJson(join(DATA, "meta", "sets.json")) as unknown[]
+).map((raw) => equipmentSet.parse(raw));
+
+/** ชิ้นของเซ็ตหนึ่ง เรียงตามลำดับช่องบนตัวละคร ไม่ใช่ตามชื่อไฟล์ */
+const SLOT_ORDER = ["headgear", "chestpiece", "gloves", "footwear"];
+export function piecesOfSet(setId: string): Equipment[] {
+  return EQUIPMENT.filter((e) => e.setId === setId).sort(
+    (a, b) => SLOT_ORDER.indexOf(a.slot) - SLOT_ORDER.indexOf(b.slot),
+  );
 }
 
 export function monsterlingImage(slug: string): string | null {

@@ -1,0 +1,37 @@
+{
+  "id": "goald",
+  "name": {
+    "th": "จ้าวแห่งอ๊บ",
+    "en": "Goald"
+  },
+  "dex": {
+    "book": "field",
+    "no": 131
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "def",
+      "value": 6.3,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onHit",
+      "durationSec": 5,
+      "condition": {
+        "hitCount": 10,
+        "triggerVsBoss": true
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "goald-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-19",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": ["th", "en"],
+    "note": "คู่ฐาน/ขั้นบนเต็มรูปแบบกับโบร์โบก (field 130) ที่อยู่ติดกัน — 6 -> 6.3 คือขั้น x1.05 พอดี และเหมือนกันทุกช่องที่เหลือ (พลังป้องกัน · ตัวเอง · 5 วินาที · โจมตีบอส 10 ครั้ง) ต่างจากคู่ 65/66 ที่ก้าวขั้นแต่คนละ stat และคู่ 114/115 ที่เอฟเฟกต์เหมือนกันแต่ไม่ก้าวขั้น | จอ en เขียน \"upon attacking a boss enemy 10 times\" บอสอยู่ในท่อนกระตุ้น ส่วนผลลัพธ์เป็นพลังป้องกันของตัวเองซึ่งไม่เกี่ยวกับศัตรู จึงเป็น triggerVsBoss ไม่ใช่ vsBoss"
+  }
+}

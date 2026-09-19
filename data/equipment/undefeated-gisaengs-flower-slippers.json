@@ -3,21 +3,21 @@
   "name": {
     "en": "Undefeated Gisaeng's Flower Slippers"
   },
-  "grade": "purple",
-  "stars": 4,
+  "grade": "gold",
+  "stars": 5,
   "slot": "footwear",
-  "setId": "gisaengs-glow-up",
+  "setId": "blossoms-in-full-bloom",
   "effects": [],
   "desc": {
     "en": "Delicately embroidered slippers that complete the confident stride of Baek-Ah's greatest gisaeng. With these on your feet, you can endure even the toughest training."
   },
   "source": {
-    "verifiedAt": "2026-09-15",
+    "verifiedAt": "2026-09-19",
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอคราฟต์ (Sets) ภาษาอังกฤษเมื่อ 2026-09-15 ยังไม่เคยเปิดจอนี้ภาษาไทย จึงยังไม่มีชื่อไทย ห้ามแปลเอง | ไม่เก็บค่าหลักและค่ารอง เพราะจอเขียนว่าสุ่มตอนได้ของมา"
+    "note": "อ่านจากจอคราฟต์ (Sets) ภาษาอังกฤษเมื่อ 2026-09-19 ยังไม่เคยเปิดจอนี้ภาษาไทย จึงยังไม่มีชื่อไทย ห้ามแปลเอง | ไม่เก็บค่าหลักและค่ารอง เพราะจอเขียนว่าสุ่มตอนได้ของมา | แก้เมื่อ 2026-09-19: เคยผูกไว้กับ Gisaeng's Glow Up (ม่วง 4 ดาว) ตั้งแต่ 2026-09-15 ซึ่งผิด จอวันนี้กดดูทั้งสองชิ้นแล้ว ทั้งคู่ขึ้น Set Effect ว่า Blossoms in Full Bloom และการ์ดเป็นทอง 5 ดาว ย้ายเซ็ตและเปลี่ยนระดับแล้ว — ชื่อชิ้นของ Gisaeng's Glow Up จึงกลับไปเป็นยังไม่รู้"
   }
 }

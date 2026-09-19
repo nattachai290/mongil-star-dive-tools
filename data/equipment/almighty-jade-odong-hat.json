@@ -1,0 +1,20 @@
+{
+  "id": "almighty-jade-odong-hat",
+  "name": {
+    "en": "Almighty Jade Odong Hat"
+  },
+  "grade": "gold",
+  "stars": 5,
+  "slot": "headgear",
+  "setId": "thousand-year-old-tree",
+  "effects": [],
+  "source": {
+    "verifiedAt": "2026-09-19",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอคราฟต์ (Sets) ภาษาอังกฤษเมื่อ 2026-09-19 ยังไม่เคยเปิดจอนี้ภาษาไทย จึงยังไม่มีชื่อไทย ห้ามแปลเอง | ไม่เก็บค่าหลักและค่ารอง เพราะจอเขียนว่าสุ่มตอนได้ของมา"
+  }
+}

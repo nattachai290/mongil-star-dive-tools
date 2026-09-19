@@ -1,0 +1,20 @@
+{
+  "id": "great-sages-touch",
+  "name": {
+    "en": "Great Sage's Touch"
+  },
+  "grade": "gold",
+  "stars": 5,
+  "slot": "gloves",
+  "setId": "night-of-a-full-moon",
+  "effects": [],
+  "source": {
+    "verifiedAt": "2026-09-19",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอคราฟต์ (Sets) ภาษาอังกฤษเมื่อ 2026-09-19 ยังไม่เคยเปิดจอนี้ภาษาไทย จึงยังไม่มีชื่อไทย ห้ามแปลเอง | ไม่เก็บค่าหลักและค่ารอง เพราะจอเขียนว่าสุ่มตอนได้ของมา"
+  }
+}

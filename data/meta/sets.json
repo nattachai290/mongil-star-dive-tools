@@ -419,7 +419,7 @@
             "value": 10,
             "unit": "percent",
             "target": "self",
-            "trigger": "onTagOutSkillHit",
+            "trigger": "onTagOutSkill",
             "durationSec": 5
           }
         ]
@@ -432,7 +432,7 @@
       "readIn": [
         "en"
       ],
-      "note": "เซ็ตสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Devourer's Hat / เกราะอก Devourer's Apron / ถุงมือ Devourer's Gloves / รองเท้า Devourer's Sandals) | เซ็ตแรกที่มีโบนัส [4 Set] สองบรรทัด — เซ็ตอื่นมีบรรทัดเดียว | บรรทัด [4 Set] อันที่สองไม่มีสัญลักษณ์หกเหลี่ยมนำหน้าเหมือนอีกสองบรรทัด เห็นแบบนี้ตรงกันทั้งสามจอที่เปิดของเซ็ตนี้ ยังไม่รู้ว่าเป็นคนละโบนัสหรือเป็นส่วนต่อของอันเดียวกัน จึงเก็บเป็นสองรายการตามที่จอพิมพ์ | [2 Set] ใช้ triggerEnemyAffliction เป็นเซ็ตที่สี่ ธาตุลม ต่อจากน้ำแข็ง ดิน ไฟ | \"Tag-out Skill\" โผล่เป็นครั้งที่สอง ต่อจาก Mountain Peak Majesty ยังไม่มีอะไรยืนยันว่าเป็นคำเดียวกับ Switch Skill"
+      "note": "เซ็ตสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Devourer's Hat / เกราะอก Devourer's Apron / ถุงมือ Devourer's Gloves / รองเท้า Devourer's Sandals) | เซ็ตแรกที่มีโบนัส [4 Set] สองบรรทัด — เซ็ตอื่นมีบรรทัดเดียว | บรรทัด [4 Set] อันที่สองไม่มีสัญลักษณ์หกเหลี่ยมนำหน้าเหมือนอีกสองบรรทัด เห็นแบบนี้ตรงกันทั้งสามจอที่เปิดของเซ็ตนี้ ยังไม่รู้ว่าเป็นคนละโบนัสหรือเป็นส่วนต่อของอันเดียวกัน จึงเก็บเป็นสองรายการตามที่จอพิมพ์ | [2 Set] ใช้ triggerEnemyAffliction เป็นเซ็ตที่สี่ ธาตุลม ต่อจากน้ำแข็ง ดิน ไฟ | \"Tag-out Skill\" โผล่เป็นครั้งที่สอง ต่อจาก Mountain Peak Majesty ยังไม่มีอะไรยืนยันว่าเป็นคำเดียวกับ Switch Skill | แก้เมื่อ 2026-09-19: [4 Set] ที่จอเขียน \"upon using a Tag-out Skill\" เคยเก็บเป็น onTagOutSkillHit (\"upon landing\") ซึ่งเป็นคนละจังหวะกัน หลักฐานคือ desc ของตัวเองที่อ่านมาจากจอ ตอนนี้มีคำ onTagOutSkill แล้ว (เจอซ้ำที่ Gourmand Level [4 Set]) จึงย้ายให้ตรงกับข้อความ"
     }
   },
   {
@@ -600,7 +600,10 @@
       "readIn": [
         "en"
       ],
-      "note": "เซ็ตสองชิ้น หมวกกับรองเท้า (Undefeated Gisaeng's Headband / Undefeated Gisaeng's Flower Slippers) | เซ็ตสองชิ้นแต่ละเซ็ตจับคู่ช่องไม่เหมือนกัน — บางเซ็ตหมวก+เกราะอก บางเซ็ตถุงมือ+รองเท้า อันนี้หมวก+รองเท้า จึงไม่มีกฎว่าเซ็ตสองชิ้นต้องเป็นช่องไหน | ใช้ onSpecialSkill ซึ่งมีอยู่แล้วในพจนานุกรม ไม่ต้องเพิ่มคำใหม่ เป็นเซ็ตแรกที่ไม่ต้องเพิ่มอะไรเลย"
+      "note": "เซ็ตม่วงสองชิ้น | **ยังไม่รู้ชื่อชิ้น** — เคยเขียนไว้ว่าเป็น Undefeated Gisaeng's Headband กับ Undefeated Gisaeng's Flower Slippers ตั้งแต่ 2026-09-15 แต่จอวันที่ 2026-09-19 กดดูทั้งสองชิ้นแล้ว ทั้งคู่เป็นของ Blossoms in Full Bloom (ทอง 5 ดาว) ไม่ใช่ของเซ็ตนี้ จึงย้ายออกไปและช่องนี้กลับเป็นว่าง | ใช้ onSpecialSkill ซึ่งมีอยู่แล้วในพจนานุกรม ไม่ต้องเพิ่มคำใหม่ | [2 Set] เป็นคู่เต็มกับ Blossoms in Full Bloom [2 Set] (ทอง) 5% -> 7.5% คือ x1.5 ดู PLAN §13.9.3",
+      "fieldsUnverified": [
+        "pieces"
+      ]
     }
   },
   {
@@ -658,7 +661,7 @@
       "readIn": [
         "en"
       ],
-      "note": "เซ็ตสีทองชุดแรกที่ลงข้อมูล สี่ชิ้นครบ (Warden Helmet / Arbiter of Nature / Magic Vine Gloves / Root's Footprints) | ทองเป็น 5 ดาว ส่วนม่วงเป็น 4 ดาว — อ่านจำนวนดาวจากช่องในตาราง การ์ดไม่ได้พิมพ์ดาวไว้ วิธีเดียวกับที่อ่านของม่วงมาตลอด | [4 Set] โครงเดียวกับ Mountain Peak Majesty (ม่วง) เป๊ะ ต่างแค่ธาตุกับตัวเลข 5% -> 10% ดู PLAN §13.9.3 | [2 Set] ยังไม่มีเซ็ตม่วงที่โครงตรงกัน (ธาตุน้ำแข็ง + สกิลสับเปลี่ยน) จึงเทียบไม่ได้"
+      "note": "เซ็ตสีทองชุดแรกที่ลงข้อมูล สี่ชิ้นครบ (Warden Helmet / Arbiter of Nature / Magic Vine Gloves / Root's Footprints) | ทองเป็น 5 ดาว ส่วนม่วงเป็น 4 ดาว — อ่านจำนวนดาวจากช่องในตาราง การ์ดไม่ได้พิมพ์ดาวไว้ วิธีเดียวกับที่อ่านของม่วงมาตลอด | [4 Set] โครงเดียวกับ Mountain Peak Majesty (ม่วง) เป๊ะ ต่างแค่ธาตุกับตัวเลข 5% -> 10% (สองเท่า) แต่คู่อื่นไม่ได้เป็นสองเท่าเสมอไป ดู PLAN §13.9.3 ที่แก้แล้ว | [2 Set] ยังไม่มีเซ็ตม่วงที่โครงตรงกัน (ธาตุน้ำแข็ง + สกิลสับเปลี่ยน) จึงเทียบไม่ได้"
     }
   },
   {
@@ -696,7 +699,928 @@
       "readIn": [
         "en"
       ],
-      "note": "เซ็ตสีทองสองชิ้น เห็นชื่อแล้วชิ้นเดียว (หมวก Grand Banquet Chapeau) เกราะอกยังไม่ได้เปิดดูชื่อ | [2 Set] เขียนตรงกับ Mountain Peak Majesty (ม่วง) ทุกตัวอักษร ต่างแค่ 3% -> 6% เป็นคู่ที่พิสูจน์ว่าทองคือม่วงคูณสอง ดู PLAN §13.9.3"
+      "note": "เซ็ตสีทองสองชิ้น เห็นชื่อครบสองชิ้นแล้ว (หมวก Grand Banquet Chapeau / เกราะอก Apron of the Grand Feast) | [2 Set] เขียนตรงกับ Mountain Peak Majesty (ม่วง) ทุกตัวอักษร ต่างแค่ 3% -> 6% (สองเท่า) — เคยใช้คู่นี้สรุปว่าทองคือม่วงคูณสอง แต่ Forest Tyrant หักข้อสรุปนั้นแล้ว ดู PLAN §13.9.3 ที่แก้แล้ว"
+    }
+  },
+  {
+    "id": "devourer-of-the-abyss",
+    "name": {
+      "en": "Devourer of the Abyss"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Ice Attack Neutralization DMG +7.5%"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "neutralizationDmg",
+            "damageType": "ice",
+            "value": 7.5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "always"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-16",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสองชิ้น (ถุงมือ Devourer's Sticky Gloves / รองเท้า Devourer's Sticky Footwear) | ชื่อคล้าย Devourer Stance (ม่วง สี่ชิ้น) แต่คนละเซ็ตคนละโบนัส ของม่วงเป็นธีมหมู ของทองเป็นสไลม์ | โครงประโยคเหมือน Ice Heart (ม่วง) คือ \"<ธาตุ> attack <stat> DMG\" แต่คนละ stat คนละธาตุ — ม่วง 3% ทอง 7.5% ซึ่งเป็น 2.5 เท่า ไม่ใช่สองเท่า ดู PLAN §13.9.3"
+    }
+  },
+  {
+    "id": "forest-tyrant",
+    "name": {
+      "en": "Forest Tyrant"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Ice DMG +7.5% for 3s upon using a Basic Attack"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "ice",
+            "value": 7.5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onBasicAttack",
+            "durationSec": 3
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Crit Rate +5% for 5s upon attacking an enemy with Ice Affliction"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "critRate",
+            "value": 5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onHit",
+            "durationSec": 5,
+            "condition": {
+              "triggerEnemyAffliction": "ice"
+            }
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-16",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้วเมื่อ 2026-09-19 (หมวก Tyrant's Helmet / เกราะอก Tyrant's Armor / ถุงมือ Tyrant's Gauntlets / รองเท้า Tyrant's Boots) | [2 Set] เป็นคู่ที่หักกฎ \"ทองคือม่วงคูณสอง\" — ฝันร้ายเขียว (ม่วง) เขียนว่า \"Ice DMG +3% for 2s upon using a Basic Attack\" ส่วนอันนี้ \"+7.5% for 3s\" ตัวเลขเป็น 2.5 เท่า ไม่ใช่ 2 เท่า และระยะเวลาก็เปลี่ยนจาก 2 เป็น 3 วินาที ทั้งที่คู่อื่นระยะเวลาเท่ากัน ดู PLAN §13.9.3 ที่แก้แล้ว"
+    }
+  },
+  {
+    "id": "sirius",
+    "name": {
+      "en": "Sirius"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "All teammates' Earth DMG +7.5% for 5s upon using a Support Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "earth",
+            "value": 7.5,
+            "unit": "percent",
+            "target": "team",
+            "trigger": "onSupportSkill",
+            "durationSec": 5
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Support DMG +7.5% for 5s upon using a Switch Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "supportDmg",
+            "value": 7.5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onSwitch",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Ascendant White Wolf's Mask / เกราะอก Ascendant White Wolf's Restraints / ถุงมือ Ascendant White Wolf's Grasp / รองเท้า Ascendant White Wolf's Claw) ชื่อชิ้นตรงกับหมาป่าขาวคลั่ง (ม่วง) สองชิ้นคือ Mask กับ Restraints | [2 Set] โครงประโยคตรงกับหมาป่าขาวคลั่ง (ม่วง) ทุกคำ — \"All teammates' X +N% for 5s upon using a Support Skill\" ทั้งทริกเกอร์ ระยะเวลา และเป้าหมายเหมือนกันหมด แต่ stat คนละอัน (ม่วงเป็นพลังป้องกัน ทองเป็นดาเมจธาตุดิน) จึงไม่ใช่เอฟเฟกต์เดียวกันคนละระดับ ถึงตัวเลขจะเป็น 3 -> 7.5 เท่ากับคู่ Green Nightmare/Forest Tyrant ก็ตาม ดู PLAN §13.9.3 | [4 Set] \"Support DMG\" เก็บเป็น stat supportDmg ตามที่ใช้อยู่แล้วกับวิเวียนและมอนอีกห้าตัว และไม่มีคำว่า All teammates' นำหน้าเหมือน [2 Set] จึงเป็น target self"
+    }
+  },
+  {
+    "id": "abyss",
+    "name": {
+      "en": "Abyss"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Wind DMG +10% for 5s upon using a Special Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "wind",
+            "value": 10,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onSpecialSkill",
+            "durationSec": 5
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Wind DMG +10% for 5s upon landing a critical hit"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "wind",
+            "value": 10,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onCrit",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นตั้งแต่รอบแรก (หมวก Corrupted Soul Helmet / เกราะอก Ominous Sculpture / ถุงมือ Abyssal Touch / รองเท้า Lord of the Void's Greaves) | เซ็ตแรกที่ [2 Set] กับ [4 Set] เป็นเอฟเฟกต์เดียวกันทั้งดุ้น — ดาเมจธาตุลม +10% นาน 5 วินาที เท่ากันทุกช่อง ต่างกันแค่สิ่งที่ไปกระตุ้น (สกิลพิเศษ กับ คริติคอล) อีกสามเซ็ตที่ตัวเลข [2] กับ [4] เท่ากัน (Green Nightmare 3 · Moonshadow 5 · Arbiter 10 · Sirius 7.5) ล้วนต่างกันที่ stat หรือระยะเวลาหรือเงื่อนไขด้วย | คนละเซ็ตกับ Devourer of the Abyss (ทอง สองชิ้น) ถึงชื่อจะมีคำว่า Abyss เหมือนกัน"
+    }
+  },
+  {
+    "id": "ancient-stone",
+    "name": {
+      "en": "Ancient Stone"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Wind Attack Neutralization DMG +7.5%"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "neutralizationDmg",
+            "damageType": "wind",
+            "value": 7.5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "always"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสองชิ้น (หมวก Ancient Stone Mask / รองเท้า Ancient Stone Sandals) มีโบนัสแค่ [2 Set] | โบนัสเป็นแม่พิมพ์เดียวกับ Devourer of the Abyss (ทอง สองชิ้นเหมือนกัน) เป๊ะ — \"<ธาตุ> Attack Neutralization DMG +7.5%\" ต่างกันแค่ธาตุ (น้ำแข็ง กับ ลม) เป็นครั้งแรกที่เห็นเซ็ตทองสองเซ็ตใช้แม่พิมพ์เดียวกันคนละธาตุ ตัวเลขเท่ากันด้วย | ช่องของชิ้นตรงกับ Stone Heart (ม่วง สองชิ้น หมวก Stone Mask / รองเท้า Stone Sandals) ทั้งธีมหินและรูปแบบชื่อ และโบนัสก็ไม่มีทริกเกอร์ไม่มีระยะเวลาเหมือนกัน แต่คนละ stat (ม่วงเป็นพลังป้องกัน 3% ทองเป็นดาเมจหมดฤทธิ์ 7.5%) จึงเป็นเกือบคู่ ไม่ใช่คู่ ดู PLAN §13.9.3"
+    }
+  },
+  {
+    "id": "mount-tais-towering-might",
+    "name": {
+      "en": "Mount Tai's Towering Might"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Crit Rate +5% for 5s upon using Switch Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "critRate",
+            "value": 5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onSwitch",
+            "durationSec": 5
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Lightning DMG +7.5% for 5s upon using a Special Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "lightning",
+            "value": 7.5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onSpecialSkill",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Towering Mount Tai's Helmet / เกราะอก Towering Mount Tai's Iron Armor / ถุงมือ Towering Mount Tai's Gloves / รองเท้า Towering Mount Tai's Boots) ชื่อรองเท้าไม่ได้ตาม Mountain Peak Marching Boots ของม่วง ตัดคำว่า Marching ออก | ชื่อชิ้นเดินตาม Mountain Peak Majesty (ม่วง) ช่องต่อช่อง — Helm/Helmet · Iron Armor คำเดียวกันเป๊ะ · Gloves · และเป็นธีมภูเขาเหมือนกัน แต่โบนัส**ไม่เกี่ยวกันเลยสักข้อ** ม่วงเป็นลดต้านทานธาตุไฟ (Tag-out) กับดาเมจธาตุไฟใส่ศัตรูติดสถานะไฟ ทองเป็นอัตราคริติคอล (สกิลสับเปลี่ยน) กับดาเมจธาตุสายฟ้า (สกิลพิเศษ) ส่วนคู่ทองของม่วงชุดนั้นตามผลคือ Gourmand's Grand Banquet กับ Arbiter ซึ่งชื่อไม่เหมือนกันเลย ดู PLAN §13.9.3 | [4 Set] ทริกเกอร์กับระยะเวลาตรงกับ [2 Set] ของ Abyss (สกิลพิเศษ 5 วินาที) แต่ 7.5% กับ 10% แปลว่าเลขของเซ็ตทองไม่ได้คงที่ต่อทริกเกอร์ | จอเขียน \"upon using Switch Skill\" ไม่มี a เก็บตามจอ"
+    }
+  },
+  {
+    "id": "spirit-king",
+    "name": {
+      "en": "Spirit King"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Lightning DMG +8% for 3s upon using a Basic Attack"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "lightning",
+            "value": 8,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onBasicAttack",
+            "durationSec": 3
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Lightning DMG +10% upon attacking an enemy with Lightning Affliction"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "lightning",
+            "value": 10,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onHit",
+            "condition": {
+              "triggerEnemyAffliction": "lightning"
+            }
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นตั้งแต่รอบแรก (หมวก Spirit King's Coronet / เกราะอก Spirit Barrier / ถุงมือ Sacred Grasp / รองเท้า Spirit Rock Boots) ชื่อชิ้นไม่ได้ขึ้นต้นด้วยชื่อเซ็ตเหมือนเซ็ตอื่น มีแค่สองชิ้นที่มีคำว่า Spirit | [2 Set] เป็นแม่พิมพ์เดียวกับ Forest Tyrant [2 Set] เป๊ะ (\"<ธาตุ> DMG +N% for 3s upon using a Basic Attack\") ทองทั้งคู่ ระยะเวลาเท่ากัน แต่ **7.5% กับ 8%** — เซ็ตทองสองเซ็ตบนแม่พิมพ์เดียวกันยังพิมพ์เลขไม่เท่ากัน อันนี้ปิดประตูการคำนวณตัวคูณทุกแบบ ดู PLAN §13.9.3 | [4 Set] เป็นแม่พิมพ์เดียวกับ Arbiter [4 Set] ต่างแค่ธาตุ (น้ำแข็ง กับ สายฟ้า) และ **10% เท่ากัน** ส่วนของม่วงบนแม่พิมพ์นี้คือ Mountain Peak Majesty [4] ธาตุไฟ 5% จึงเป็น 5 -> 10 สองครั้งแล้ว | ทั้งสองข้อไม่มีคำว่า All teammates' จึงเป็น target self"
+    }
+  },
+  {
+    "id": "heart-of-eternal-frost",
+    "name": {
+      "en": "Heart of Eternal Frost"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Lightning attack Stagger DMG +7.5%"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "staggerDmg",
+            "damageType": "lightning",
+            "value": 7.5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "always"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสองชิ้น (หมวก Crown of Eternal Frost / ถุงมือ Touch of Eternal Frost) มีโบนัสแค่ [2 Set] | **นี่คือคู่ทองตัวจริงของ Ice Heart (ม่วง)** ไม่ใช่ Devourer of the Abyss ที่เคยเดาไว้ — ข้อความตรงกันทุกตัวอักษรยกเว้นตัวเลข (\"Lightning attack Stagger DMG\") stat เดียวกัน ธาตุเดียวกัน ช่องของชิ้นเดียวกัน (หมวก+ถุงมือ) และชื่อชิ้นก็เป็นแบบเดียวกัน (Frozen Crown/Touch of Frost กับ Crown of Eternal Frost/Touch of Eternal Frost) 3% -> 7.5% คือ x2.5 เป็นคู่เต็มคู่ที่สอง ดู PLAN §13.9.3 | ชื่อเซ็ตทั้งสองพูดถึงน้ำแข็ง แต่โบนัสเป็นธาตุสายฟ้าทั้งคู่ — ความไม่ตรงกันนี้ยกมาจากม่วงครบถ้วน"
+    }
+  },
+  {
+    "id": "vanguard-of-victory",
+    "name": {
+      "en": "Vanguard of Victory"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Target's Elemental Weakness DMG taken +10% for 5s upon attacking an enemy with Earth Affliction"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgTaken",
+            "scopes": [
+              "weaknessHit"
+            ],
+            "value": 10,
+            "unit": "percent",
+            "target": "enemy",
+            "trigger": "onHit",
+            "durationSec": 5,
+            "condition": {
+              "triggerEnemyAffliction": "earth"
+            }
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสองชิ้น (เกราะอก Vanguard Buff Coat / รองเท้า Vanguard Leather Boots) มีโบนัสแค่ [2 Set] | ข้อความตรงกับ Frenzied White Wolf [4 Set] (ม่วง) ทุกตัวอักษรยกเว้นตัวเลข 2% -> 10% แต่**คนละช่องโบนัส** ม่วงเป็น [4 Set] ของเซ็ตสี่ชิ้น ทองเป็น [2 Set] ของเซ็ตสองชิ้น จึงเทียบระดับกันตรง ๆ ไม่ได้ และห้ามเอา x5 ไปใช้เป็นตัวคูณ | ใช้ kind buff กับ target enemy ตามเหตุผลเดียวกับของม่วง — จอเขียน + และดาเมจที่เป้าหมายรับเพิ่มขึ้นจริง"
+    }
+  },
+  {
+    "id": "gourmand-level",
+    "name": {
+      "en": "Gourmand Level"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Target's Wind RES −6% for 5s upon landing a Special Skill"
+        },
+        "effects": [
+          {
+            "kind": "debuff",
+            "stat": "res",
+            "damageType": "wind",
+            "value": 6,
+            "unit": "percent",
+            "target": "enemy",
+            "trigger": "onSpecialSkillHit",
+            "durationSec": 5
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "All teammates' Crit Rate +6% for 5s upon using a Tag-out Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "critRate",
+            "value": 6,
+            "unit": "percent",
+            "target": "team",
+            "trigger": "onTagOutSkill",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Gourmand's Hat / เกราะอก Gourmand's Apron / ถุงมือ Gourmand's Gloves / รองเท้า Gourmand's Slippers) | คนละเซ็ตกับ Gourmand's Grand Banquet (ทอง สองชิ้น) ถึงจะธีมนักกินเหมือนกันทั้งคู่ | [2 Set] แม่พิมพ์เดียวกับ Gourmand's Grand Banquet [2 Set] และ 6% เท่ากัน ต่างที่ธาตุ (ไฟ -> ลม) และตัวกระตุ้น (Tag-out -> Special Skill) | [2 Set] จอเขียน \"upon landing a Special Skill\" ส่วนพจนานุกรมเก็บ onSpecialSkillHit ไว้ด้วยคำว่า \"upon attacking with a Special Skill\" — ถือเป็นตัวกระตุ้นเดียวกันเพราะทั้งคู่เป็นฝั่ง \"โดน\" ไม่ใช่ฝั่ง \"ใช้\" แต่เป็นคนละสำนวน ถ้าเจอจอที่แยกสองอันนี้จริง ค่อยแตกออก | [4 Set] จอเขียน \"upon using a Tag-out Skill\" ซึ่งเป็นคนละอันกับ \"upon landing a Tag-out Skill\" จึงเพิ่มคำใหม่ onTagOutSkill เข้าพจนานุกรม คู่เดียวกับที่แยก onBasicAttack/onBasicAttackHit ไว้แล้ว"
+    }
+  },
+  {
+    "id": "west-wind",
+    "name": {
+      "en": "West Wind"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Earth DMG +8% for 3s upon using a Basic Attack"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "earth",
+            "value": 8,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onBasicAttack",
+            "durationSec": 3
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Earth DMG +10% for 5s upon using a Switch Skill on an enemy with Earth Affliction"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "earth",
+            "value": 10,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onSwitch",
+            "durationSec": 5,
+            "condition": {
+              "triggerEnemyAffliction": "earth"
+            }
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Eerie Horned Helmet / เกราะอก Avenger's Prayer Beads / ถุงมือ Avenger's Gauntlet / รองเท้า Breeze Walkers) ไม่มีชิ้นไหนอ้างถึงชื่อเซ็ตเลย เหมือน Spirit King และชื่อก็แบ่งเป็นสองตระกูลในเซ็ตเดียว (Avenger's กับอีกสองชิ้นที่ไม่เข้าพวก) | [2 Set] เป็นแม่พิมพ์เดียวกับ Forest Tyrant [2] และ Spirit King [2] — ทองทั้งสาม 3 วินาทีเท่ากัน แต่ธาตุน้ำแข็งได้ 7.5% ส่วนธาตุสายฟ้ากับธาตุดินได้ 8% **เลขอาจผูกกับธาตุ** ซึ่งเป็นข้อสังเกตใหม่ ยังไม่ยืนยัน ถ้าเจอเซ็ตทองแม่พิมพ์นี้ธาตุไฟหรือธาตุลม จะรู้ทันทีว่าใช่หรือไม่ ดู PLAN §13.9.3 | [4 Set] เป็นแม่พิมพ์ของ Green Nightmare [4] (ม่วง) คือ \"...for 5s upon using a Switch Skill on enem<y|ies> with <ธาตุ> Affliction\" แต่คนละ stat (ม่วงเป็นดาเมจคริติคอล ทองเป็นดาเมจธาตุดิน) จึงเป็นเกือบคู่"
+    }
+  },
+  {
+    "id": "military-officers-courtesy",
+    "name": {
+      "en": "Military Officer's Courtesy"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Earth DMG +3% upon landing a critical hit with an Earth attack"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "earth",
+            "value": 3,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onCrit",
+            "condition": {
+              "triggerDamageType": "earth"
+            }
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตม่วงสองชิ้น (ถุงมือ Gilded Armguards / รองเท้า Gilded Greaves) | เซ็ตม่วงชุดแรกที่เก็บมาตั้งแต่เริ่มทำของทอง — จอมันแทรกอยู่ระหว่างเซ็ตทอง ไม่ได้เรียงตามระดับ | ธาตุดินโผล่สองที่ในประโยคเดียว: ฝั่งกระตุ้นคือ \"critical hit with an Earth attack\" (triggerDamageType) ส่วนผลคือดาเมจธาตุดิน (effect.damageType) โครงเดียวกับคุสโตส (มอน 38)"
+    }
+  },
+  {
+    "id": "victorious-generals-rites",
+    "name": {
+      "en": "Victorious General's Rites"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Earth Attack Neutralization DMG +7.5%"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "neutralizationDmg",
+            "damageType": "earth",
+            "value": 7.5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "always"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสองชิ้น (ถุงมือ Victorious General's Gilded Armguards / รองเท้า Victorious General's Gilded Greaves) | สมาชิกที่สามของแม่พิมพ์ \"<ธาตุ> Attack Neutralization DMG +7.5%\" ต่อจาก Devourer of the Abyss (น้ำแข็ง) และ Ancient Stone (ลม) — ทองสามเซ็ต 7.5% เท่ากันหมด เปลี่ยนแค่ธาตุ แม่พิมพ์นี้นิ่งที่สุดเท่าที่เจอมา | ชื่อชิ้นคือชื่อของ Military Officer's Courtesy (ม่วง) เติมคำนำหน้า — Gilded Armguards/Greaves -> Victorious General's Gilded Armguards/Greaves ช่องก็ตรงกันทั้งสองช่อง แต่โบนัสคนละเรื่อง (ม่วงเป็นดาเมจธาตุดินตอนคริติคอล ทองเป็นดาเมจหมดฤทธิ์) เป็นคู่ชื่อ ไม่ใช่คู่ผล แบบเดียวกับ Mountain Peak Majesty / Mount Tai's Towering Might ดู PLAN §13.9.3"
+    }
+  },
+  {
+    "id": "blossoms-in-full-bloom",
+    "name": {
+      "en": "Blossoms in Full Bloom"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Ice DMG +7.5% for 5s upon using a Special Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "ice",
+            "value": 7.5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onSpecialSkill",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสองชิ้น (หมวก Undefeated Gisaeng's Headband / รองเท้า Undefeated Gisaeng's Flower Slippers) | ชื่อชนกันที่เจอเมื่อวาน**ปิดเคสแล้ว** — จอ 2026-09-19 กดดูทั้งสองชิ้น ทั้งคู่ขึ้น Set Effect เป็นเซ็ตนี้ และการ์ดเป็นทอง 5 ดาว ของที่เคยผูกไว้กับ Gisaeng's Glow Up (ม่วง) เมื่อ 2026-09-15 เป็นการผูกผิดเซ็ต ย้ายมาแล้วทั้งสองชิ้น เซ็ตม่วงจึงกลับไปเป็นไม่รู้ชื่อชิ้น | **เป็นข้อยกเว้นของกฎตั้งชื่อ** เซ็ตทองอื่นเติมคำนำหน้าให้ชื่อของม่วงเสมอ แต่คู่นี้ชื่อเซ็ตคนละเรื่องกันเลย (Gisaeng's Glow Up / Blossoms in Full Bloom) ทั้งที่โบนัสเป็นคู่เต็มกัน | [2 Set] เป็นคู่เต็มกับ Gisaeng's Glow Up [2 Set] (ม่วง) — \"Ice DMG +N% for 5s upon using a Special Skill\" ตรงกันทุกตัวอักษร 5% -> 7.5% คือ **x1.5** ดู PLAN §13.9.3"
+    }
+  },
+  {
+    "id": "swamp-lord",
+    "name": {
+      "en": "Swamp Lord"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "All teammates' Ice DMG +5% for 5s upon granting a Shield"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "ice",
+            "value": 5,
+            "unit": "percent",
+            "target": "team",
+            "trigger": "onGrantShield",
+            "durationSec": 5
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Elemental Weakness DMG taken by target +10% for 5s upon attacking an enemy inflicted with Ice Affliction and Stagger"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgTaken",
+            "scopes": [
+              "weaknessHit"
+            ],
+            "value": 10,
+            "unit": "percent",
+            "target": "enemy",
+            "trigger": "onHit",
+            "durationSec": 5,
+            "condition": {
+              "triggerEnemyAffliction": "ice",
+              "enemyState": "staggered"
+            }
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นตั้งแต่รอบแรก (หมวก Dark Soloist's Helm / เกราะอก Crimson Chestplate of Disaster / ถุงมือ Crimson Gloves of Disaster / รองเท้า Dark Soloist's Boots) ชื่อชิ้นแบ่งเป็นสองตระกูลในเซ็ตเดียว (Dark Soloist's กับ ...of Disaster) และไม่มีชิ้นไหนอ้างถึงชื่อเซ็ตเลย | [2 Set] \"upon granting a Shield\" เป็นตัวกระตุ้นที่ไม่เคยเจอ เพิ่มคำใหม่ onGrantShield | [4 Set] เป็นครั้งแรกที่เงื่อนไขต้องการ **สถานะธาตุ + ท่าทางของศัตรูพร้อมกัน** (ติดสถานะอ่อนแอต่อน้ำแข็ง และ มึนงง) จึงใส่ทั้ง triggerEnemyAffliction กับ enemyState ในข้อเดียว | [4 Set] แม่พิมพ์เดียวกับ Vanguard of Victory [2 Set] และ Frenzied White Wolf [4 Set] แต่จอสลับรูปประโยค (\"Elemental Weakness DMG taken by target\" แทน \"Target's Elemental Weakness DMG taken\") ความหมายเดียวกัน เก็บตามที่จอเขียน | ได้ 10% เท่ากับ Vanguard ทั้งที่เงื่อนไขหินกว่าและต้องใส่สี่ชิ้น อีกหนึ่งข้อที่บอกว่าเลขไม่ได้เดินตามความยากของเงื่อนไข"
+    }
+  },
+  {
+    "id": "night-of-a-full-moon",
+    "name": {
+      "en": "Night of a Full Moon"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Fire DMG +7.5% for 5s upon using a Special Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "fire",
+            "value": 7.5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onSpecialSkill",
+            "durationSec": 5
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Fire DMG +7.5% upon attacking an enemy with Fire Affliction"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "fire",
+            "value": 7.5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onHit",
+            "condition": {
+              "triggerEnemyAffliction": "fire"
+            }
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Manwol's Antlers / เกราะอก Radiant Garb / ถุงมือ Great Sage's Touch / รองเท้า Moonlight Hooves) | ชื่อชิ้นเดินตาม Moonshadow (ม่วง) ช่องต่อช่อง — Eunwol's Antlers -> Manwol's Antlers (ชื่อพระจันทร์ทั้งคู่) · Sage's Touch -> Great Sage's Touch · Shadow Hooves -> Moonlight Hooves **แต่คู่ตามผลของ Moonshadow กลับเป็น Hahnul's Roar** (ธีมเสือ ชื่อไม่เหมือนเลย) ซึ่งรับ [2 Set] ดาเมจคริติคอลใส่ศัตรูติดสถานะไฟของม่วงไปเต็ม ๆ — ชื่อกับผลแยกสายกันอีกครั้ง แบบเดียวกับ Mountain Peak Majesty | **เซ็ตนี้พลิกข้อสรุปของเมื่อวาน** — [2 Set] เป็นแม่พิมพ์สกิลพิเศษ ช่องโบนัสเดียวกัน ขนาดเซ็ตเดียวกัน (สี่ชิ้น) และระยะเวลาเดียวกันกับ Abyss ทุกอย่าง แต่ธาตุไฟได้ 7.5% ส่วนธาตุลมได้ 10% ต่างกันที่ธาตุอย่างเดียว \"ขนาดเซ็ต x ช่องโบนัส\" จึงอธิบายไม่ได้ | [4 Set] เป็นแม่พิมพ์ศัตรูติดสถานะธาตุ เหมือน Arbiter (น้ำแข็ง 10%) และ Spirit King (สายฟ้า 10%) ทุกอย่าง แต่ธาตุไฟได้ 7.5% — ตัวแปรเดียวที่ต่างคือธาตุอีกครั้ง | แต่ธาตุอย่างเดียวก็ไม่พอ เพราะธาตุน้ำแข็งได้ 7.5 บนแม่พิมพ์สกิลพิเศษ แต่ได้ 10 บนแม่พิมพ์สถานะธาตุ สรุปเท่าที่รู้คือเลขขึ้นกับ (แม่พิมพ์ x ธาตุ) ดูตารางใน PLAN §13.9.3"
+    }
+  },
+  {
+    "id": "fox-youkais-fighting-spirit",
+    "name": {
+      "en": "Fox Youkai's Fighting Spirit"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Lightning RES −6% for 5s upon using a Tag-out Skill"
+        },
+        "effects": [
+          {
+            "kind": "debuff",
+            "stat": "res",
+            "damageType": "lightning",
+            "value": 6,
+            "unit": "percent",
+            "target": "enemy",
+            "trigger": "onTagOutSkill",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "fieldsUnverified": [
+        "bonuses.0.effects.0.target"
+      ],
+      "note": "เซ็ตทองสองชิ้น (ถุงมือ Fox Youkai's Fur Gloves / รองเท้า Fox Youkai's Paws) | **จอไม่มีคำว่า Target's นำหน้า** ต่างจากอีกสองเซ็ตที่ลดต้านทานเหมือนกัน (Gourmand's Grand Banquet / Gourmand Level เขียน \"Target's <ธาตุ> RES -6%\") เก็บเป็น target enemy เพราะเป็นอ่านเดียวที่สมเหตุสมผล — ถ้าเป็นตัวเองแปลว่าเซ็ตนี้มีแต่โทษล้วน แต่ติดธง fieldsUnverified ไว้ เพราะเป็นการตีความ ไม่ใช่สิ่งที่จอเขียน ถ้าเจอจอไทยหรือจอเดียวกันชัดกว่านี้ให้ยืนยันซ้ำ | ใช้ onTagOutSkill (\"upon using\") เป็นการเจอครั้งที่สอง ต่อจาก Gourmand Level [4 Set] ยืนยันว่าแยกจาก onTagOutSkillHit (\"upon landing\") ถูกแล้ว | ชื่อชิ้นเดินตาม Onsae's Dance (ม่วง สองชิ้น Mad Fox's Fur Gloves / Mad Fox's Paws) ช่องต่อช่อง แต่โบนัสคนละเรื่อง (ม่วงเป็นอัตราคริติคอลตอนหลบสมบูรณ์แบบ) เป็นคู่ชื่อ ไม่ใช่คู่ผล อีกคู่หนึ่ง"
+    }
+  },
+  {
+    "id": "hahnuls-roar",
+    "name": {
+      "en": "Hahnul's Roar"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Fire DMG +10% for 5s upon using an Ultimate Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "fire",
+            "value": 10,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onUltimate",
+            "durationSec": 5
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Crit DMG +10% upon attacking an enemy with Fire Affliction"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "critDmg",
+            "value": 10,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onHit",
+            "condition": {
+              "triggerEnemyAffliction": "fire"
+            }
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Fierce Tiger's Valor / เกราะอก Tiger Stripe Armor / ถุงมือ Beast Claws / รองเท้า Beastly Footprints) | [2 Set] เป็นแม่พิมพ์ใหม่ — สกิลอัลติเมต 5 วินาที ยังไม่เคยเจอเซ็ตไหนใช้ | [4 Set] เป็นคู่กับ Moonshadow [2 Set] (ม่วง) — \"Crit DMG +N% upon attacking an enemy with Fire Affliction\" ตรงกันทุกตัวอักษร stat เดียวกัน สถานะธาตุเดียวกัน 5% -> 10% คือ x2 แต่**ข้ามช่องโบนัส** (ม่วงเป็น [2] ทองเป็น [4] ทั้งที่เป็นเซ็ตสี่ชิ้นทั้งคู่) จึงไม่ใช่การเทียบตรง ๆ | [4 Set] อยู่แม่พิมพ์สถานะธาตุเดียวกับ Night of a Full Moon [4] และเป็นธาตุไฟเหมือนกัน แต่ stat ต่างกัน (ดาเมจคริติคอล 10% กับ ดาเมจธาตุไฟ 7.5%) ยืนยันว่า stat ก็เป็นตัวแปรของเลขด้วย ไม่ใช่แค่ (แม่พิมพ์ x ธาตุ) ดู PLAN §13.9.3"
+    }
+  },
+  {
+    "id": "thousand-year-old-tree",
+    "name": {
+      "en": "Thousand-Year-Old Tree"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "All teammates' Fire DMG +7.5% for 5s upon using a Support Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "fire",
+            "value": 7.5,
+            "unit": "percent",
+            "target": "team",
+            "trigger": "onSupportSkill",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสองชิ้น (หมวก Almighty Jade Odong Hat / เกราะอก Almighty Jade Odong Armor) มีโบนัสแค่ [2 Set] | แม่พิมพ์เดียวกับ Sirius [2 Set] เป๊ะ (\"All teammates' <ธาตุ> DMG +7.5% for 5s upon using a Support Skill\") ทองทั้งคู่ **และได้ 7.5% เท่ากันทั้งที่คนละธาตุ** (ไฟ กับ ดิน) — แม่พิมพ์นี้จึงนิ่งข้ามธาตุ ต่างจากแม่พิมพ์สกิลพิเศษที่ธาตุลมกระโดดไป 10 ดู PLAN §13.9.3 | ชื่อชิ้นเดินตาม Mystical Jade Odong (ม่วง สองชิ้น หมวก Jade Odong Hat / เกราะอก Jade Odong Brigandine) ด้วยการเติมคำว่า Almighty และช่องตรงกันทั้งสองช่อง แต่โบนัสคนละเรื่องสุดขั้ว (ม่วงเป็นพลังชีวิตสูงสุด +3% ไม่มีทริกเกอร์เลย) เป็นคู่ชื่อ ไม่ใช่คู่ผล อีกคู่หนึ่ง"
     }
   }
 ]
