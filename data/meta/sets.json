@@ -791,7 +791,62 @@
       "readIn": [
         "en"
       ],
-      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อแล้วสองชิ้น (หมวก Tyrant's Helmet / เกราะอก Tyrant's Armor) ถุงมือกับรองเท้ายังไม่ได้เปิดดูชื่อ | [2 Set] เป็นคู่ที่หักกฎ \"ทองคือม่วงคูณสอง\" — ฝันร้ายเขียว (ม่วง) เขียนว่า \"Ice DMG +3% for 2s upon using a Basic Attack\" ส่วนอันนี้ \"+7.5% for 3s\" ตัวเลขเป็น 2.5 เท่า ไม่ใช่ 2 เท่า และระยะเวลาก็เปลี่ยนจาก 2 เป็น 3 วินาที ทั้งที่คู่อื่นระยะเวลาเท่ากัน ดู PLAN §13.9.3 ที่แก้แล้ว"
+      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้วเมื่อ 2026-09-19 (หมวก Tyrant's Helmet / เกราะอก Tyrant's Armor / ถุงมือ Tyrant's Gauntlets / รองเท้า Tyrant's Boots) | [2 Set] เป็นคู่ที่หักกฎ \"ทองคือม่วงคูณสอง\" — ฝันร้ายเขียว (ม่วง) เขียนว่า \"Ice DMG +3% for 2s upon using a Basic Attack\" ส่วนอันนี้ \"+7.5% for 3s\" ตัวเลขเป็น 2.5 เท่า ไม่ใช่ 2 เท่า และระยะเวลาก็เปลี่ยนจาก 2 เป็น 3 วินาที ทั้งที่คู่อื่นระยะเวลาเท่ากัน ดู PLAN §13.9.3 ที่แก้แล้ว"
+    }
+  },
+  {
+    "id": "sirius",
+    "name": {
+      "en": "Sirius"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "All teammates' Earth DMG +7.5% for 5s upon using a Support Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "earth",
+            "value": 7.5,
+            "unit": "percent",
+            "target": "team",
+            "trigger": "onSupportSkill",
+            "durationSec": 5
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Support DMG +7.5% for 5s upon using a Switch Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "supportDmg",
+            "value": 7.5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onSwitch",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อแล้วสามชิ้น (เกราะอก Ascendant White Wolf's Restraints / ถุงมือ Ascendant White Wolf's Grasp / รองเท้า Ascendant White Wolf's Claw) หมวกยังไม่ได้เปิด | [2 Set] โครงประโยคตรงกับหมาป่าขาวคลั่ง (ม่วง) ทุกคำ — \"All teammates' X +N% for 5s upon using a Support Skill\" ทั้งทริกเกอร์ ระยะเวลา และเป้าหมายเหมือนกันหมด แต่ stat คนละอัน (ม่วงเป็นพลังป้องกัน ทองเป็นดาเมจธาตุดิน) จึงไม่ใช่เอฟเฟกต์เดียวกันคนละระดับ ถึงตัวเลขจะเป็น 3 -> 7.5 เท่ากับคู่ Green Nightmare/Forest Tyrant ก็ตาม ดู PLAN §13.9.3 | [4 Set] \"Support DMG\" เก็บเป็น stat supportDmg ตามที่ใช้อยู่แล้วกับวิเวียนและมอนอีกห้าตัว และไม่มีคำว่า All teammates' นำหน้าเหมือน [2 Set] จึงเป็น target self"
     }
   }
 ]
