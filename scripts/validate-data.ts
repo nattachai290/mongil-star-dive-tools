@@ -252,6 +252,8 @@ for (const [id, doc] of Object.entries(parsed.monsterlings ?? {})) {
     const counts = c.hitCount !== undefined || c.killCount !== undefined;
     const scopeSide = c.enemyType !== undefined || c.vsBoss !== undefined;
     const triggerSide = c.triggerEnemyType !== undefined || c.triggerVsBoss !== undefined;
+    // ดูจอแล้วและคำนั้นอยู่ฝั่งผลจริง — ไม่ต้องเตือนอีก (ดูคอมเมนต์ที่ enemyScopeVerified)
+    if (c.enemyScopeVerified === true) return false;
     return counts && scopeSide && !triggerSide;
   }).length;
   if (unsplit) {

@@ -19,7 +19,7 @@
       "durationSec": 10,
       "condition": {
         "hitCount": 10,
-        "vsBoss": true
+        "triggerVsBoss": true
       }
     }
   ],
@@ -28,8 +28,13 @@
     "icon": "amon-icon.webp"
   },
   "source": {
-    "verifiedAt": "2026-09-12",
+    "verifiedAt": "2026-09-19",
     "gameVersion": "unknown",
-    "by": "in-game"
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "จอทั้งสองภาษา 2026-09-19 วางบอสไว้ในท่อนกระตุ้น (en \"All teammates' Crit Rate +11% for 10s upon attacking a boss enemy 10 times\" · th \"เมื่อโจมตีมอนสเตอร์บอส 10 ครั้ง จะเพิ่มอัตราคริติคอลของสมาชิกทีมทั้งหมด 11% นาน 10 วินาที\") เคยเก็บเป็น vsBoss ย้ายเป็น triggerVsBoss แล้ว — ผลลงทั้งทีม ไม่ได้จำกัดว่าตีบอสถึงได้ผล"
   }
 }

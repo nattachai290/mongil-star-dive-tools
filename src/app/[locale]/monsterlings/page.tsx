@@ -44,7 +44,6 @@ type Facets = {
    */
   always: string[];
   link: string[];
-  data: string[];
 };
 
 function facetsOf(
@@ -81,7 +80,6 @@ function facetsOf(
     // ตัวที่ยังไม่มีข้อมูลไม่ตอบทั้ง yes และ no เรื่องตัวกระตุ้น เพราะยังไม่รู้
     always: effects.length === 0 ? [] : [alwaysOn ? "yes" : "no"],
     link: [linkable ? "yes" : "no"],
-    data: [effects.length > 0 ? "yes" : "no"],
   };
 }
 
@@ -180,8 +178,6 @@ export default async function MonsterlingsPage({
       options: optionsFrom(rows, "always", yesNo(t("filters.alwaysYes"), t("filters.alwaysNo"))) },
     { key: "link" as const, param: "link", legend: t("filters.linkChain"),
       options: optionsFrom(rows, "link", yesNo(t("filters.linkYes"), t("filters.linkNo"))) },
-    { key: "data" as const, param: "data", legend: t("filters.data"),
-      options: optionsFrom(rows, "data", yesNo(t("filters.dataYes"), t("filters.dataNo"))) },
   ];
 
   return (
