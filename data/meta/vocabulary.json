@@ -356,6 +356,9 @@
     "onSupportSkill": {
       "en": "upon using a Support Skill"
     },
+    "onGrantShield": {
+      "en": "upon granting a Shield"
+    },
     "onSpecialSkillHit": {
       "th": "เมื่อโจมตีด้วยสกิลพิเศษ",
       "en": "upon attacking with a Special Skill"

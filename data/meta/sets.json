@@ -600,7 +600,10 @@
       "readIn": [
         "en"
       ],
-      "note": "เซ็ตสองชิ้น หมวกกับรองเท้า (Undefeated Gisaeng's Headband / Undefeated Gisaeng's Flower Slippers) | เซ็ตสองชิ้นแต่ละเซ็ตจับคู่ช่องไม่เหมือนกัน — บางเซ็ตหมวก+เกราะอก บางเซ็ตถุงมือ+รองเท้า อันนี้หมวก+รองเท้า จึงไม่มีกฎว่าเซ็ตสองชิ้นต้องเป็นช่องไหน | ใช้ onSpecialSkill ซึ่งมีอยู่แล้วในพจนานุกรม ไม่ต้องเพิ่มคำใหม่ เป็นเซ็ตแรกที่ไม่ต้องเพิ่มอะไรเลย"
+      "note": "เซ็ตม่วงสองชิ้น | **ยังไม่รู้ชื่อชิ้น** — เคยเขียนไว้ว่าเป็น Undefeated Gisaeng's Headband กับ Undefeated Gisaeng's Flower Slippers ตั้งแต่ 2026-09-15 แต่จอวันที่ 2026-09-19 กดดูทั้งสองชิ้นแล้ว ทั้งคู่เป็นของ Blossoms in Full Bloom (ทอง 5 ดาว) ไม่ใช่ของเซ็ตนี้ จึงย้ายออกไปและช่องนี้กลับเป็นว่าง | ใช้ onSpecialSkill ซึ่งมีอยู่แล้วในพจนานุกรม ไม่ต้องเพิ่มคำใหม่ | [2 Set] เป็นคู่เต็มกับ Blossoms in Full Bloom [2 Set] (ทอง) 5% -> 7.5% คือ x1.5 ดู PLAN §13.9.3",
+      "fieldsUnverified": [
+        "pieces"
+      ]
     }
   },
   {
@@ -1361,10 +1364,69 @@
       "readIn": [
         "en"
       ],
-      "fieldsUnverified": [
-        "pieces"
+      "note": "เซ็ตทองสองชิ้น (หมวก Undefeated Gisaeng's Headband / รองเท้า Undefeated Gisaeng's Flower Slippers) | ชื่อชนกันที่เจอเมื่อวาน**ปิดเคสแล้ว** — จอ 2026-09-19 กดดูทั้งสองชิ้น ทั้งคู่ขึ้น Set Effect เป็นเซ็ตนี้ และการ์ดเป็นทอง 5 ดาว ของที่เคยผูกไว้กับ Gisaeng's Glow Up (ม่วง) เมื่อ 2026-09-15 เป็นการผูกผิดเซ็ต ย้ายมาแล้วทั้งสองชิ้น เซ็ตม่วงจึงกลับไปเป็นไม่รู้ชื่อชิ้น | **เป็นข้อยกเว้นของกฎตั้งชื่อ** เซ็ตทองอื่นเติมคำนำหน้าให้ชื่อของม่วงเสมอ แต่คู่นี้ชื่อเซ็ตคนละเรื่องกันเลย (Gisaeng's Glow Up / Blossoms in Full Bloom) ทั้งที่โบนัสเป็นคู่เต็มกัน | [2 Set] เป็นคู่เต็มกับ Gisaeng's Glow Up [2 Set] (ม่วง) — \"Ice DMG +N% for 5s upon using a Special Skill\" ตรงกันทุกตัวอักษร 5% -> 7.5% คือ **x1.5** ดู PLAN §13.9.3"
+    }
+  },
+  {
+    "id": "swamp-lord",
+    "name": {
+      "en": "Swamp Lord"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "All teammates' Ice DMG +5% for 5s upon granting a Shield"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "ice",
+            "value": 5,
+            "unit": "percent",
+            "target": "team",
+            "trigger": "onGrantShield",
+            "durationSec": 5
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Elemental Weakness DMG taken by target +10% for 5s upon attacking an enemy inflicted with Ice Affliction and Stagger"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgTaken",
+            "scopes": [
+              "weaknessHit"
+            ],
+            "value": 10,
+            "unit": "percent",
+            "target": "enemy",
+            "trigger": "onHit",
+            "durationSec": 5,
+            "condition": {
+              "triggerEnemyAffliction": "ice",
+              "enemyState": "staggered"
+            }
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
       ],
-      "note": "เซ็ตทองสองชิ้น | **ยังไม่ลงไฟล์ชิ้นของเซ็ตนี้ เพราะชื่อชนกับของม่วง** — จอวันนี้ขึ้นว่า \"Undefeated Gisaeng's Flower Slippers\" (Footwear) อยู่ในเซ็ตนี้ และการ์ดเป็นทอง 5 ดาว แต่ชื่อเดียวกันเป๊ะถูกเก็บไว้แล้วตั้งแต่ 2026-09-15 ว่าเป็นของ Gisaeng's Glow Up (ม่วง 4 ดาว) เซ็ตทองอื่นทุกเซ็ตที่เจอมาใช้วิธี**เติมคำนำหน้า**ให้ชื่อของม่วง (Stone Mask -> Ancient Stone Mask, Gilded Armguards -> Victorious General's Gilded Armguards) ไม่เคยใช้ชื่อซ้ำกันเป๊ะ จึงน่าจะมีฝั่งหนึ่งอ่านผิด ต้องเปิดจอของ Gisaeng's Glow Up (ม่วง) ซ้ำเพื่อชี้ขาด — ยังไม่แก้ของเดิม | [2 Set] เป็นคู่เต็มกับ Gisaeng's Glow Up [2 Set] (ม่วง) — \"Ice DMG +N% for 5s upon using a Special Skill\" ตรงกันทุกตัวอักษร stat เดียวกัน ธาตุเดียวกัน 5% -> 7.5% คือ **x1.5** ซึ่งเป็นตัวคูณใหม่ ดู PLAN §13.9.3"
+      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นตั้งแต่รอบแรก (หมวก Dark Soloist's Helm / เกราะอก Crimson Chestplate of Disaster / ถุงมือ Crimson Gloves of Disaster / รองเท้า Dark Soloist's Boots) ชื่อชิ้นแบ่งเป็นสองตระกูลในเซ็ตเดียว (Dark Soloist's กับ ...of Disaster) และไม่มีชิ้นไหนอ้างถึงชื่อเซ็ตเลย | [2 Set] \"upon granting a Shield\" เป็นตัวกระตุ้นที่ไม่เคยเจอ เพิ่มคำใหม่ onGrantShield | [4 Set] เป็นครั้งแรกที่เงื่อนไขต้องการ **สถานะธาตุ + ท่าทางของศัตรูพร้อมกัน** (ติดสถานะอ่อนแอต่อน้ำแข็ง และ มึนงง) จึงใส่ทั้ง triggerEnemyAffliction กับ enemyState ในข้อเดียว | [4 Set] แม่พิมพ์เดียวกับ Vanguard of Victory [2 Set] และ Frenzied White Wolf [4 Set] แต่จอสลับรูปประโยค (\"Elemental Weakness DMG taken by target\" แทน \"Target's Elemental Weakness DMG taken\") ความหมายเดียวกัน เก็บตามที่จอเขียน | ได้ 10% เท่ากับ Vanguard ทั้งที่เงื่อนไขหินกว่าและต้องใส่สี่ชิ้น อีกหนึ่งข้อที่บอกว่าเลขไม่ได้เดินตามความยากของเงื่อนไข"
     }
   }
 ]
