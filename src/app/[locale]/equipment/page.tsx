@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { EquipmentList, type EquipmentRow } from "@/components/EquipmentList";
 import { Text } from "@/components/Text";
 import { createTranslate } from "@/i18n";
 import { LOCALES, isLocale, type Locale } from "@/lib/i18n";
@@ -7,6 +8,54 @@ import { EQUIPMENT, EQUIPMENT_SETS, piecesOfSet } from "@/lib/data";
 import { describeEffect } from "@/lib/describe";
 import { label } from "@/lib/vocabulary";
 import type { EquipmentSet } from "@/lib/schema/entities";
+
+/**
+ * ค่าที่ใช้กรอง — คิดฝั่งเซิร์ฟเวอร์เหมือน haystack ด้วยเหตุผลเดียวกัน
+ *
+ * เป็นลิสต์ทุกช่องเพราะเซ็ตหนึ่งมีได้สองโบนัส แต่ละโบนัสมีได้หลายเอฟเฟกต์
+ * และเซ็ตสี่ชิ้นก็ครอบสี่ช่องอุปกรณ์ การกรองจึงเป็น "มีอย่างน้อยหนึ่งอันที่ตรง"
+ */
+function facetsOfSet(set: EquipmentSet, slots: string[]): Record<string, string[]> {
+  const stat = new Set<string>();
+  const damageType = new Set<string>();
+  const trigger = new Set<string>();
+  const target = new Set<string>();
+
+  for (const bonus of set.bonuses) {
+    for (const e of bonus.effects) {
+      if (e.stat) stat.add(e.stat);
+      if (e.damageType) damageType.add(e.damageType);
+      if (e.trigger) trigger.add(e.trigger);
+      if (e.target) target.add(e.target);
+      // ธาตุของสถานะที่ศัตรูต้องติด นับเป็นธาตุของเซ็ตด้วย เพราะคนเล่นที่ถามหา
+      // "เซ็ตธาตุไฟ" ย่อมอยากเจอเซ็ตที่ต้องให้ศัตรูติดสถานะอ่อนแอต่อไฟเหมือนกัน
+      const c = e.condition;
+      if (c?.triggerEnemyAffliction) damageType.add(c.triggerEnemyAffliction);
+      if (c?.triggerDamageType) damageType.add(c.triggerDamageType);
+    }
+  }
+
+  return {
+    grade: [set.grade],
+    pieces: [String(set.pieceCount)],
+    slot: slots,
+    stat: [...stat],
+    damageType: [...damageType],
+    trigger: [...trigger],
+    target: [...target],
+  };
+}
+
+/** ตัวเลือกในดรอปดาวน์มาจากค่าที่มีจริงในข้อมูล ไม่ใช่จากพจนานุกรมทั้งกลุ่ม */
+function optionsFrom(rows: EquipmentRow[], key: string, toLabel: (v: string) => string) {
+  const count = new Map<string, number>();
+  for (const row of rows) {
+    for (const v of row.facets[key] ?? []) count.set(v, (count.get(v) ?? 0) + 1);
+  }
+  return [...count.entries()]
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .map(([value, n]) => ({ value, label: toLabel(value), count: n }));
+}
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
@@ -107,6 +156,54 @@ export default async function EquipmentPage({
   const missingThai =
     EQUIPMENT_SETS.some((s) => !s.name.th) || EQUIPMENT.some((e) => !e.name.th);
 
+  const other = locale === "th" ? "en" : "th";
+  const rows: EquipmentRow[] = [];
+  for (const grade of GRADES) {
+    for (const set of EQUIPMENT_SETS.filter((s) => s.grade === grade)) {
+      const pieces = piecesOfSet(set.id);
+      const said = set.bonuses.flatMap((b) => b.effects.map((e) => describeEffect(e, locale)));
+      // ข้อความของ "อีกภาษา" ไม่ได้แสดงบนหน้า แต่ต้องค้นเจอ ไม่งั้นพิมพ์ค้างไว้แล้วสลับภาษา
+      // คำค้นจะรอดข้ามหน้าไปแต่หาอะไรไม่เจอเลย — เหตุผลเดียวกับหน้ามอน
+      const saidOther = set.bonuses.flatMap((b) => b.effects.map((e) => describeEffect(e, other)));
+      rows.push({
+        key: set.id,
+        grade,
+        gradeLabel: label("gearGrade", grade, locale),
+        facets: facetsOfSet(set, pieces.map((p) => p.slot)),
+        haystack: [
+          set.name.th,
+          set.name.en,
+          set.id,
+          ...pieces.flatMap((p) => [p.name.th, p.name.en]),
+          ...set.bonuses.flatMap((b) => [b.desc?.th, b.desc?.en]),
+          ...said.flatMap((s) => [s.headline, ...s.qualifiers]),
+          ...saidOther.flatMap((s) => [s.headline, ...s.qualifiers]),
+        ]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase(),
+        card: <SetCard key={set.id} set={set} locale={locale} t={t} />,
+      });
+    }
+  }
+
+  const facets = [
+    { key: "grade", param: "g", legend: t("filters.grade"),
+      options: optionsFrom(rows, "grade", (v) => label("gearGrade", v, locale)) },
+    { key: "pieces", param: "n", legend: t("filters.pieces"),
+      options: optionsFrom(rows, "pieces", (v) => `${v} ${t("equipment.pieces")}`) },
+    { key: "slot", param: "slot", legend: t("filters.slot"),
+      options: optionsFrom(rows, "slot", (v) => label("slot", v, locale)) },
+    { key: "stat", param: "stat", legend: t("filters.stat"),
+      options: optionsFrom(rows, "stat", (v) => label("stat", v, locale)) },
+    { key: "damageType", param: "dmg", legend: t("filters.damageType"),
+      options: optionsFrom(rows, "damageType", (v) => label("damageType", v, locale)) },
+    { key: "trigger", param: "trig", legend: t("filters.trigger"),
+      options: optionsFrom(rows, "trigger", (v) => label("trigger", v, locale)) },
+    { key: "target", param: "for", legend: t("filters.target"),
+      options: optionsFrom(rows, "target", (v) => label("target", v, locale)) },
+  ];
+
   return (
     <div className="mx-auto max-w-5xl px-5 py-8">
       <h1 className="font-display text-2xl font-semibold">{t("equipment.title")}</h1>
@@ -124,26 +221,21 @@ export default async function EquipmentPage({
         <p className="mt-1 max-w-2xl text-xs text-muted">{t("equipment.enOnlyNote")}</p>
       )}
 
-      {EQUIPMENT_SETS.length === 0 ? (
+      {rows.length === 0 ? (
         <p className="mt-8 text-sm text-muted">{t("equipment.empty")}</p>
       ) : (
-        GRADES.map((grade) => {
-          const sets = EQUIPMENT_SETS.filter((s) => s.grade === grade);
-          if (sets.length === 0) return null;
-          return (
-            <section key={grade} className="mt-8">
-              <h2 className="font-display text-sm font-semibold text-ink-2">
-                {label("gearGrade", grade, locale)}{" "}
-                <span className="font-mono text-xs font-normal text-muted">{sets.length}</span>
-              </h2>
-              <ul className="mt-3 grid gap-3 sm:grid-cols-2">
-                {sets.map((set) => (
-                  <SetCard key={set.id} set={set} locale={locale} t={t} />
-                ))}
-              </ul>
-            </section>
-          );
-        })
+        <EquipmentList
+          rows={rows}
+          facets={facets}
+          labels={{
+            search: t("equipment.search"),
+            matches: t("equipment.matches"),
+            noMatch: t("equipment.noMatch"),
+            filters: t("filters.legend"),
+            any: t("filters.any"),
+            clear: t("filters.clear"),
+          }}
+        />
       )}
     </div>
   );

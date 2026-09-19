@@ -43,6 +43,9 @@
   "monsterlings.matches": "matches",
   "monsterlings.noMatch": "No monsterling matches that search",
   "filters.legend": "Filter",
+  "filters.grade": "Grade",
+  "filters.pieces": "Set size",
+  "filters.slot": "Has slot",
   "filters.any": "All",
   "filters.stat": "Boosts",
   "filters.damageType": "Damage type",
@@ -57,9 +60,6 @@
   "filters.linkChain": "Link Chain",
   "filters.linkYes": "Has one",
   "filters.linkNo": "None",
-  "filters.data": "Data",
-  "filters.dataYes": "Recorded",
-  "filters.dataNo": "Not yet",
   "characters.title": "Characters",
   "characters.lede": "Base stats, all five skills with every printed value, the statuses they grant, and all six Awaken stages",
   "characters.count": "recorded",
@@ -96,5 +96,8 @@
   "equipment.piecesInSet": "Pieces",
   "equipment.rolledNote": "Main stat and substats are rolled when the item drops, so they belong to no item definition and are not stored here",
   "equipment.empty": "No gear sets in the database yet",
+  "equipment.search": "Search by set name, piece name or bonus text",
+  "equipment.matches": "sets",
+  "equipment.noMatch": "No gear set matches that search",
   "equipment.enOnlyNote": "Set and piece names here are English only — the crafting screen has not been opened in the Thai client, and nothing is translated by hand"
 }

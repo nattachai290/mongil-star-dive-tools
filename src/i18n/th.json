@@ -43,6 +43,9 @@
   "monsterlings.matches": "ตัวที่ตรง",
   "monsterlings.noMatch": "ไม่พบมอนที่ตรงกับคำค้น",
   "filters.legend": "กรอง",
+  "filters.grade": "ระดับ",
+  "filters.pieces": "ขนาดเซ็ต",
+  "filters.slot": "มีช่อง",
   "filters.any": "ทั้งหมด",
   "filters.stat": "เพิ่มอะไร",
   "filters.damageType": "ชนิดดาเมจ",
@@ -57,9 +60,6 @@
   "filters.linkChain": "ลิงก์เชน",
   "filters.linkYes": "ใส่ได้",
   "filters.linkNo": "ใส่ไม่ได้",
-  "filters.data": "ข้อมูล",
-  "filters.dataYes": "มีแล้ว",
-  "filters.dataNo": "ยังไม่มี",
   "characters.title": "ตัวละคร",
   "characters.lede": "ค่าพลังพื้นฐาน สกิลทั้งห้าท่าพร้อมตัวเลขทุกบรรทัด สถานะที่มอบให้ และปลุกพลังทั้งหกขั้น",
   "characters.count": "ตัวที่ลงข้อมูลแล้ว",
@@ -96,5 +96,8 @@
   "equipment.piecesInSet": "ชิ้นในเซ็ต",
   "equipment.rolledNote": "ค่าหลักและค่ารองสุ่มตอนได้ของมา จึงไม่ผูกกับชิ้นอุปกรณ์และไม่เก็บไว้ที่นี่",
   "equipment.empty": "ยังไม่มีเซ็ตอุปกรณ์ในฐานข้อมูล",
+  "equipment.search": "ค้นหาเซ็ต · ชื่อเซ็ต ชื่อชิ้น หรือข้อความโบนัส",
+  "equipment.matches": "เซ็ตที่ตรง",
+  "equipment.noMatch": "ไม่พบเซ็ตที่ตรงกับคำค้น",
   "equipment.enOnlyNote": "ชื่อเซ็ตและชื่อชิ้นบนหน้านี้ยังมีแต่ภาษาอังกฤษ เพราะยังไม่เคยเปิดจอคราฟต์ด้วยไคลเอนต์ไทย และจะไม่แปลเอง"
 }
