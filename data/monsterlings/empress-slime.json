@@ -1,0 +1,37 @@
+{
+  "id": "empress-slime",
+  "name": {
+    "th": "สไลม์รอยัลควีน",
+    "en": "Empress Slime"
+  },
+  "dex": {
+    "book": "field",
+    "no": 74
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "atk",
+      "value": 4.2,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onHit",
+      "durationSec": 10,
+      "internalCooldownSec": 20,
+      "condition": {
+        "triggerEnemyType": "physical"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "empress-slime-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-19",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": ["th", "en"],
+    "note": "ตัวสุดท้ายของสมุดภาพทุ่ง ครบ 169 ตัว | ติดกับสไลม์ควีน (field 73) และใช้เงื่อนไขกระตุ้นเดียวกันคือโจมตีมอนกายภาพ แต่ไม่ใช่คู่ฐาน/ขั้นบน — ตัวนั้นเพิ่มดาเมจกายภาพ 8% 5 วินาที ไม่มีคูลดาวน์ ตัวนี้เพิ่มพลังโจมตี 4.2% 10 วินาที ติดคูลดาวน์ 20 วินาที คนละ stat คนละเวลา | 4.2 เป็นขั้นบนของฐาน 4 แต่ยังไม่เจอตัวที่เป็นฐานของเอฟเฟกต์ชุดนี้"
+  }
+}
