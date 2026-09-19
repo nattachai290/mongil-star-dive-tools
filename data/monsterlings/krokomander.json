@@ -19,7 +19,7 @@
       "durationSec": 5,
       "condition": {
         "hitCount": 10,
-        "vsBoss": false
+        "triggerVsBoss": false
       }
     }
   ],
@@ -28,8 +28,13 @@
     "icon": "krokomander-icon.webp"
   },
   "source": {
-    "verifiedAt": "2026-09-12",
+    "verifiedAt": "2026-09-19",
     "gameVersion": "unknown",
-    "by": "in-game"
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "จอทั้งสองภาษา 2026-09-19 วางมอนทั่วไปไว้ในท่อนกระตุ้น (en \"DEF +4.93% for 5s upon attacking normal enemy 10 times\" · th \"เมื่อโจมตีมอนสเตอร์ทั่วไป 10 ครั้ง จะเพิ่มพลังป้องกัน 4.93% นาน 5 วินาที\") เคยเก็บเป็น vsBoss ย้ายเป็น triggerVsBoss แล้ว ตรงกับอาโก (156) ซึ่งเป็นฐาน x1.05 ของตัวนี้ (4.69 -> 4.93) | เทียบกับสโปเดอร์ (76) ที่ใช้คำว่า \"มอนสเตอร์ทั่วไป\" เหมือนกันแต่คนละฝั่ง — ตัวนั้นเขียน \"DMG +6.25% against normal enemies ... upon defeating 10 enemies\" คำเกาะกับตัวเลขผล ตัวนี้เขียน \"upon attacking normal enemy 10 times\" คำอยู่ในท่อน upon คำเดียวกันจึงบอกฝั่งไม่ได้ ต้องดูว่ามันเกาะอยู่กับอะไร"
   }
 }
