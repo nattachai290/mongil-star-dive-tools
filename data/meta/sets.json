@@ -994,7 +994,65 @@
       "readIn": [
         "en"
       ],
-      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อแล้วสามชิ้น (หมวก Towering Mount Tai's Helmet / เกราะอก Towering Mount Tai's Iron Armor / ถุงมือ Towering Mount Tai's Gloves) รองเท้ายังไม่ได้เปิด | ชื่อชิ้นเดินตาม Mountain Peak Majesty (ม่วง) ช่องต่อช่อง — Helm/Helmet · Iron Armor คำเดียวกันเป๊ะ · Gloves · และเป็นธีมภูเขาเหมือนกัน แต่โบนัส**ไม่เกี่ยวกันเลยสักข้อ** ม่วงเป็นลดต้านทานธาตุไฟ (Tag-out) กับดาเมจธาตุไฟใส่ศัตรูติดสถานะไฟ ทองเป็นอัตราคริติคอล (สกิลสับเปลี่ยน) กับดาเมจธาตุสายฟ้า (สกิลพิเศษ) ส่วนคู่ทองของม่วงชุดนั้นตามผลคือ Gourmand's Grand Banquet กับ Arbiter ซึ่งชื่อไม่เหมือนกันเลย ดู PLAN §13.9.3 | [4 Set] ทริกเกอร์กับระยะเวลาตรงกับ [2 Set] ของ Abyss (สกิลพิเศษ 5 วินาที) แต่ 7.5% กับ 10% แปลว่าเลขของเซ็ตทองไม่ได้คงที่ต่อทริกเกอร์ | จอเขียน \"upon using Switch Skill\" ไม่มี a เก็บตามจอ"
+      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Towering Mount Tai's Helmet / เกราะอก Towering Mount Tai's Iron Armor / ถุงมือ Towering Mount Tai's Gloves / รองเท้า Towering Mount Tai's Boots) ชื่อรองเท้าไม่ได้ตาม Mountain Peak Marching Boots ของม่วง ตัดคำว่า Marching ออก | ชื่อชิ้นเดินตาม Mountain Peak Majesty (ม่วง) ช่องต่อช่อง — Helm/Helmet · Iron Armor คำเดียวกันเป๊ะ · Gloves · และเป็นธีมภูเขาเหมือนกัน แต่โบนัส**ไม่เกี่ยวกันเลยสักข้อ** ม่วงเป็นลดต้านทานธาตุไฟ (Tag-out) กับดาเมจธาตุไฟใส่ศัตรูติดสถานะไฟ ทองเป็นอัตราคริติคอล (สกิลสับเปลี่ยน) กับดาเมจธาตุสายฟ้า (สกิลพิเศษ) ส่วนคู่ทองของม่วงชุดนั้นตามผลคือ Gourmand's Grand Banquet กับ Arbiter ซึ่งชื่อไม่เหมือนกันเลย ดู PLAN §13.9.3 | [4 Set] ทริกเกอร์กับระยะเวลาตรงกับ [2 Set] ของ Abyss (สกิลพิเศษ 5 วินาที) แต่ 7.5% กับ 10% แปลว่าเลขของเซ็ตทองไม่ได้คงที่ต่อทริกเกอร์ | จอเขียน \"upon using Switch Skill\" ไม่มี a เก็บตามจอ"
+    }
+  },
+  {
+    "id": "spirit-king",
+    "name": {
+      "en": "Spirit King"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Lightning DMG +8% for 3s upon using a Basic Attack"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "lightning",
+            "value": 8,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onBasicAttack",
+            "durationSec": 3
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Lightning DMG +10% upon attacking an enemy with Lightning Affliction"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "lightning",
+            "value": 10,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onHit",
+            "condition": {
+              "triggerEnemyAffliction": "lightning"
+            }
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นตั้งแต่รอบแรก (หมวก Spirit King's Coronet / เกราะอก Spirit Barrier / ถุงมือ Sacred Grasp / รองเท้า Spirit Rock Boots) ชื่อชิ้นไม่ได้ขึ้นต้นด้วยชื่อเซ็ตเหมือนเซ็ตอื่น มีแค่สองชิ้นที่มีคำว่า Spirit | [2 Set] เป็นแม่พิมพ์เดียวกับ Forest Tyrant [2 Set] เป๊ะ (\"<ธาตุ> DMG +N% for 3s upon using a Basic Attack\") ทองทั้งคู่ ระยะเวลาเท่ากัน แต่ **7.5% กับ 8%** — เซ็ตทองสองเซ็ตบนแม่พิมพ์เดียวกันยังพิมพ์เลขไม่เท่ากัน อันนี้ปิดประตูการคำนวณตัวคูณทุกแบบ ดู PLAN §13.9.3 | [4 Set] เป็นแม่พิมพ์เดียวกับ Arbiter [4 Set] ต่างแค่ธาตุ (น้ำแข็ง กับ สายฟ้า) และ **10% เท่ากัน** ส่วนของม่วงบนแม่พิมพ์นี้คือ Mountain Peak Majesty [4] ธาตุไฟ 5% จึงเป็น 5 -> 10 สองครั้งแล้ว | ทั้งสองข้อไม่มีคำว่า All teammates' จึงเป็น target self"
     }
   }
 ]
