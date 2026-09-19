@@ -140,6 +140,18 @@ export const effect = z
         triggerEnemyAffliction: vocabEnum("damageType").optional(),
         /** สถานะของศัตรูที่ต้องเป็นก่อนถึงทำงาน เช่น "แก่เป้าหมายที่ล้มอยู่ตรงพื้น" */
         enemyState: vocabEnum("enemyState").optional(),
+        /**
+         * ยืนยันแล้วว่าคำบอกชนิดศัตรูอยู่ "ฝั่งผล" จริง ไม่ใช่ฝั่งกระตุ้น
+         *
+         * มีไว้เพื่อปิดคำเตือนของ validate:data ที่เตือนทุกครั้งที่เจอ
+         * enemyType/vsBoss มาคู่กับ hitCount/killCount เพราะตอนกรอกครั้งแรกแยกไม่ออก
+         * ใส่ได้ต่อเมื่อ "อ่านจอแล้วเห็นว่าคำนั้นเกาะอยู่กับตัวเลขผล ไม่ได้อยู่ในวงเล็บ upon..."
+         * เช่น สโปเดอร์ (76) "DMG +6.25% against normal enemies for 5s upon defeating 10 enemies"
+         * — normal enemies เกาะกับ DMG ส่วนท่อน upon ไม่ได้ระบุชนิดศัตรูเลย
+         *
+         * ห้ามใส่จากการเดา ถ้ายังไม่ได้ดูจอ ให้ปล่อยให้มันเตือนต่อไป
+         */
+        enemyScopeVerified: z.boolean().optional(),
         note: text.optional(),
       })
       .optional(),

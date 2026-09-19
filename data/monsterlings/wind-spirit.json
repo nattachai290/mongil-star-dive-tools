@@ -18,7 +18,7 @@
       "trigger": "onHit",
       "condition": {
         "hitCount": 10,
-        "enemyType": "wind"
+        "triggerEnemyType": "wind"
       }
     }
   ],
@@ -27,8 +27,13 @@
     "icon": "wind-spirit-icon.webp"
   },
   "source": {
-    "verifiedAt": "2026-09-12",
+    "verifiedAt": "2026-09-19",
     "gameVersion": "unknown",
-    "by": "in-game"
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "จอทั้งสองภาษา 2026-09-19 วางชนิดศัตรูไว้ในท่อนกระตุ้น (\"upon attacking Wind enemy N times\" / \"เมื่อโจมตีมอนสเตอร์ธาตุ... N ครั้ง\") เคยเก็บเป็น enemyType ย้ายเป็น triggerEnemyType แล้ว | จอทั้งสองภาษายืนยันว่า**ไม่มีระยะเวลา** (en \"ATK +3.13% upon attacking Wind enemy 10 times\") ต่างจากวิญญาณเด็ก (145) และวิญญาณกระรอก (146) ที่มี 5 วินาที จึงไม่ใช่การอ่านตกหล่น"
   }
 }
