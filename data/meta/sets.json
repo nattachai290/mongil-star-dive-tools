@@ -1248,5 +1248,123 @@
       ],
       "note": "เซ็ตทองสี่ชิ้น เห็นชื่อแล้วสองชิ้น (ถุงมือ Avenger's Gauntlet / รองเท้า Breeze Walkers) หมวกกับเกราะอกยังไม่ได้เปิด ชื่อชิ้นไม่ได้อ้างถึงชื่อเซ็ตเลยสักชิ้น เหมือน Spirit King | [2 Set] เป็นแม่พิมพ์เดียวกับ Forest Tyrant [2] และ Spirit King [2] — ทองทั้งสาม 3 วินาทีเท่ากัน แต่ธาตุน้ำแข็งได้ 7.5% ส่วนธาตุสายฟ้ากับธาตุดินได้ 8% **เลขอาจผูกกับธาตุ** ซึ่งเป็นข้อสังเกตใหม่ ยังไม่ยืนยัน ถ้าเจอเซ็ตทองแม่พิมพ์นี้ธาตุไฟหรือธาตุลม จะรู้ทันทีว่าใช่หรือไม่ ดู PLAN §13.9.3 | [4 Set] เป็นแม่พิมพ์ของ Green Nightmare [4] (ม่วง) คือ \"...for 5s upon using a Switch Skill on enem<y|ies> with <ธาตุ> Affliction\" แต่คนละ stat (ม่วงเป็นดาเมจคริติคอล ทองเป็นดาเมจธาตุดิน) จึงเป็นเกือบคู่"
     }
+  },
+  {
+    "id": "military-officers-courtesy",
+    "name": {
+      "en": "Military Officer's Courtesy"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Earth DMG +3% upon landing a critical hit with an Earth attack"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "earth",
+            "value": 3,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onCrit",
+            "condition": {
+              "triggerDamageType": "earth"
+            }
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตม่วงสองชิ้น (ถุงมือ Gilded Armguards / รองเท้า Gilded Greaves) | เซ็ตม่วงชุดแรกที่เก็บมาตั้งแต่เริ่มทำของทอง — จอมันแทรกอยู่ระหว่างเซ็ตทอง ไม่ได้เรียงตามระดับ | ธาตุดินโผล่สองที่ในประโยคเดียว: ฝั่งกระตุ้นคือ \"critical hit with an Earth attack\" (triggerDamageType) ส่วนผลคือดาเมจธาตุดิน (effect.damageType) โครงเดียวกับคุสโตส (มอน 38)"
+    }
+  },
+  {
+    "id": "victorious-generals-rites",
+    "name": {
+      "en": "Victorious General's Rites"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Earth Attack Neutralization DMG +7.5%"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "neutralizationDmg",
+            "damageType": "earth",
+            "value": 7.5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "always"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสองชิ้น (ถุงมือ Victorious General's Gilded Armguards / รองเท้า Victorious General's Gilded Greaves) | สมาชิกที่สามของแม่พิมพ์ \"<ธาตุ> Attack Neutralization DMG +7.5%\" ต่อจาก Devourer of the Abyss (น้ำแข็ง) และ Ancient Stone (ลม) — ทองสามเซ็ต 7.5% เท่ากันหมด เปลี่ยนแค่ธาตุ แม่พิมพ์นี้นิ่งที่สุดเท่าที่เจอมา | ชื่อชิ้นคือชื่อของ Military Officer's Courtesy (ม่วง) เติมคำนำหน้า — Gilded Armguards/Greaves -> Victorious General's Gilded Armguards/Greaves ช่องก็ตรงกันทั้งสองช่อง แต่โบนัสคนละเรื่อง (ม่วงเป็นดาเมจธาตุดินตอนคริติคอล ทองเป็นดาเมจหมดฤทธิ์) เป็นคู่ชื่อ ไม่ใช่คู่ผล แบบเดียวกับ Mountain Peak Majesty / Mount Tai's Towering Might ดู PLAN §13.9.3"
+    }
+  },
+  {
+    "id": "blossoms-in-full-bloom",
+    "name": {
+      "en": "Blossoms in Full Bloom"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Ice DMG +7.5% for 5s upon using a Special Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "ice",
+            "value": 7.5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onSpecialSkill",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "fieldsUnverified": [
+        "pieces"
+      ],
+      "note": "เซ็ตทองสองชิ้น | **ยังไม่ลงไฟล์ชิ้นของเซ็ตนี้ เพราะชื่อชนกับของม่วง** — จอวันนี้ขึ้นว่า \"Undefeated Gisaeng's Flower Slippers\" (Footwear) อยู่ในเซ็ตนี้ และการ์ดเป็นทอง 5 ดาว แต่ชื่อเดียวกันเป๊ะถูกเก็บไว้แล้วตั้งแต่ 2026-09-15 ว่าเป็นของ Gisaeng's Glow Up (ม่วง 4 ดาว) เซ็ตทองอื่นทุกเซ็ตที่เจอมาใช้วิธี**เติมคำนำหน้า**ให้ชื่อของม่วง (Stone Mask -> Ancient Stone Mask, Gilded Armguards -> Victorious General's Gilded Armguards) ไม่เคยใช้ชื่อซ้ำกันเป๊ะ จึงน่าจะมีฝั่งหนึ่งอ่านผิด ต้องเปิดจอของ Gisaeng's Glow Up (ม่วง) ซ้ำเพื่อชี้ขาด — ยังไม่แก้ของเดิม | [2 Set] เป็นคู่เต็มกับ Gisaeng's Glow Up [2 Set] (ม่วง) — \"Ice DMG +N% for 5s upon using a Special Skill\" ตรงกันทุกตัวอักษร stat เดียวกัน ธาตุเดียวกัน 5% -> 7.5% คือ **x1.5** ซึ่งเป็นตัวคูณใหม่ ดู PLAN §13.9.3"
+    }
   }
 ]
