@@ -1187,7 +1187,66 @@
       "readIn": [
         "en"
       ],
-      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อแล้วชิ้นเดียว (หมวก Gourmand's Hat) อีกสามชิ้นยังไม่ได้เปิด | คนละเซ็ตกับ Gourmand's Grand Banquet (ทอง สองชิ้น) ถึงจะธีมนักกินเหมือนกันทั้งคู่ | [2 Set] แม่พิมพ์เดียวกับ Gourmand's Grand Banquet [2 Set] และ 6% เท่ากัน ต่างที่ธาตุ (ไฟ -> ลม) และตัวกระตุ้น (Tag-out -> Special Skill) | [2 Set] จอเขียน \"upon landing a Special Skill\" ส่วนพจนานุกรมเก็บ onSpecialSkillHit ไว้ด้วยคำว่า \"upon attacking with a Special Skill\" — ถือเป็นตัวกระตุ้นเดียวกันเพราะทั้งคู่เป็นฝั่ง \"โดน\" ไม่ใช่ฝั่ง \"ใช้\" แต่เป็นคนละสำนวน ถ้าเจอจอที่แยกสองอันนี้จริง ค่อยแตกออก | [4 Set] จอเขียน \"upon using a Tag-out Skill\" ซึ่งเป็นคนละอันกับ \"upon landing a Tag-out Skill\" จึงเพิ่มคำใหม่ onTagOutSkill เข้าพจนานุกรม คู่เดียวกับที่แยก onBasicAttack/onBasicAttackHit ไว้แล้ว"
+      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Gourmand's Hat / เกราะอก Gourmand's Apron / ถุงมือ Gourmand's Gloves / รองเท้า Gourmand's Slippers) | คนละเซ็ตกับ Gourmand's Grand Banquet (ทอง สองชิ้น) ถึงจะธีมนักกินเหมือนกันทั้งคู่ | [2 Set] แม่พิมพ์เดียวกับ Gourmand's Grand Banquet [2 Set] และ 6% เท่ากัน ต่างที่ธาตุ (ไฟ -> ลม) และตัวกระตุ้น (Tag-out -> Special Skill) | [2 Set] จอเขียน \"upon landing a Special Skill\" ส่วนพจนานุกรมเก็บ onSpecialSkillHit ไว้ด้วยคำว่า \"upon attacking with a Special Skill\" — ถือเป็นตัวกระตุ้นเดียวกันเพราะทั้งคู่เป็นฝั่ง \"โดน\" ไม่ใช่ฝั่ง \"ใช้\" แต่เป็นคนละสำนวน ถ้าเจอจอที่แยกสองอันนี้จริง ค่อยแตกออก | [4 Set] จอเขียน \"upon using a Tag-out Skill\" ซึ่งเป็นคนละอันกับ \"upon landing a Tag-out Skill\" จึงเพิ่มคำใหม่ onTagOutSkill เข้าพจนานุกรม คู่เดียวกับที่แยก onBasicAttack/onBasicAttackHit ไว้แล้ว"
+    }
+  },
+  {
+    "id": "west-wind",
+    "name": {
+      "en": "West Wind"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Earth DMG +8% for 3s upon using a Basic Attack"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "earth",
+            "value": 8,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onBasicAttack",
+            "durationSec": 3
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Earth DMG +10% for 5s upon using a Switch Skill on an enemy with Earth Affliction"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "earth",
+            "value": 10,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onSwitch",
+            "durationSec": 5,
+            "condition": {
+              "triggerEnemyAffliction": "earth"
+            }
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อแล้วสองชิ้น (ถุงมือ Avenger's Gauntlet / รองเท้า Breeze Walkers) หมวกกับเกราะอกยังไม่ได้เปิด ชื่อชิ้นไม่ได้อ้างถึงชื่อเซ็ตเลยสักชิ้น เหมือน Spirit King | [2 Set] เป็นแม่พิมพ์เดียวกับ Forest Tyrant [2] และ Spirit King [2] — ทองทั้งสาม 3 วินาทีเท่ากัน แต่ธาตุน้ำแข็งได้ 7.5% ส่วนธาตุสายฟ้ากับธาตุดินได้ 8% **เลขอาจผูกกับธาตุ** ซึ่งเป็นข้อสังเกตใหม่ ยังไม่ยืนยัน ถ้าเจอเซ็ตทองแม่พิมพ์นี้ธาตุไฟหรือธาตุลม จะรู้ทันทีว่าใช่หรือไม่ ดู PLAN §13.9.3 | [4 Set] เป็นแม่พิมพ์ของ Green Nightmare [4] (ม่วง) คือ \"...for 5s upon using a Switch Skill on enem<y|ies> with <ธาตุ> Affliction\" แต่คนละ stat (ม่วงเป็นดาเมจคริติคอล ทองเป็นดาเมจธาตุดิน) จึงเป็นเกือบคู่"
     }
   }
 ]
