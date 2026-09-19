@@ -1,0 +1,23 @@
+{
+  "id": "undefeated-gisaengs-headband-gold",
+  "name": {
+    "en": "Undefeated Gisaeng's Headband"
+  },
+  "grade": "gold",
+  "stars": 5,
+  "slot": "headgear",
+  "setId": "blossoms-in-full-bloom",
+  "effects": [],
+  "source": {
+    "verifiedAt": "2026-09-19",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอคราฟต์ (Sets) ภาษาอังกฤษเมื่อ 2026-09-19 ยังไม่เคยเปิดจอนี้ภาษาไทย จึงยังไม่มีชื่อไทย ห้ามแปลเอง | ไม่เก็บค่าหลักและค่ารอง เพราะจอเขียนว่าสุ่มตอนได้ของมา | **ชื่อซ้ำกับชิ้นม่วงในเซ็ต Gisaeng's Glow Up เป๊ะทุกตัวอักษร** จึงต้องต่อท้าย id ด้วย -gold ไม่งั้นชนกัน เป็นคู่แรกที่เกมใช้ชื่อซ้ำข้ามระดับ"
+  },
+  "desc": {
+    "en": "A headband made from several layers of yellow silk. This cute accessory can keep even a seven-foot-tall gisaeng in touch with her feminine side."
+  }
+}

@@ -3,10 +3,10 @@
   "name": {
     "en": "Undefeated Gisaeng's Headband"
   },
-  "grade": "gold",
-  "stars": 5,
+  "grade": "purple",
+  "stars": 4,
   "slot": "headgear",
-  "setId": "blossoms-in-full-bloom",
+  "setId": "gisaengs-glow-up",
   "effects": [],
   "desc": {
     "en": "A sturdy headband made from yellow cotton. This cute accessory can keep even a seven-foot-tall gisaeng in touch with her feminine side."
@@ -18,6 +18,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอคราฟต์ (Sets) ภาษาอังกฤษเมื่อ 2026-09-19 ยังไม่เคยเปิดจอนี้ภาษาไทย จึงยังไม่มีชื่อไทย ห้ามแปลเอง | ไม่เก็บค่าหลักและค่ารอง เพราะจอเขียนว่าสุ่มตอนได้ของมา | แก้เมื่อ 2026-09-19: เคยผูกไว้กับ Gisaeng's Glow Up (ม่วง 4 ดาว) ตั้งแต่ 2026-09-15 ซึ่งผิด จอวันนี้กดดูทั้งสองชิ้นแล้ว ทั้งคู่ขึ้น Set Effect ว่า Blossoms in Full Bloom และการ์ดเป็นทอง 5 ดาว ย้ายเซ็ตและเปลี่ยนระดับแล้ว — ชื่อชิ้นของ Gisaeng's Glow Up จึงกลับไปเป็นยังไม่รู้"
+    "note": "อ่านจากจอคราฟต์ (Sets) ภาษาอังกฤษเมื่อ 2026-09-15 และดูซ้ำ 2026-09-19 ยังไม่เคยเปิดจอนี้ภาษาไทย จึงยังไม่มีชื่อไทย ห้ามแปลเอง | ไม่เก็บค่าหลักและค่ารอง เพราะจอเขียนว่าสุ่มตอนได้ของมา | **เคยย้ายชิ้นนี้ไปเซ็ตทองเมื่อ 2026-09-19 ซึ่งเป็นการแก้ผิด** — ย้อนกลับมาแล้ว เกมมีของสองชิ้นชื่อเดียวกันเป๊ะ คนละระดับ คนละเซ็ต ชิ้นม่วงอยู่ Gisaeng's Glow Up ชิ้นทองอยู่ Blossoms in Full Bloom แยกกันได้จากคำบรรยายที่ไม่เหมือนกัน"
   }
 }
