@@ -846,7 +846,63 @@
       "readIn": [
         "en"
       ],
-      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อแล้วสามชิ้น (เกราะอก Ascendant White Wolf's Restraints / ถุงมือ Ascendant White Wolf's Grasp / รองเท้า Ascendant White Wolf's Claw) หมวกยังไม่ได้เปิด | [2 Set] โครงประโยคตรงกับหมาป่าขาวคลั่ง (ม่วง) ทุกคำ — \"All teammates' X +N% for 5s upon using a Support Skill\" ทั้งทริกเกอร์ ระยะเวลา และเป้าหมายเหมือนกันหมด แต่ stat คนละอัน (ม่วงเป็นพลังป้องกัน ทองเป็นดาเมจธาตุดิน) จึงไม่ใช่เอฟเฟกต์เดียวกันคนละระดับ ถึงตัวเลขจะเป็น 3 -> 7.5 เท่ากับคู่ Green Nightmare/Forest Tyrant ก็ตาม ดู PLAN §13.9.3 | [4 Set] \"Support DMG\" เก็บเป็น stat supportDmg ตามที่ใช้อยู่แล้วกับวิเวียนและมอนอีกห้าตัว และไม่มีคำว่า All teammates' นำหน้าเหมือน [2 Set] จึงเป็น target self"
+      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Ascendant White Wolf's Mask / เกราะอก Ascendant White Wolf's Restraints / ถุงมือ Ascendant White Wolf's Grasp / รองเท้า Ascendant White Wolf's Claw) ชื่อชิ้นตรงกับหมาป่าขาวคลั่ง (ม่วง) สองชิ้นคือ Mask กับ Restraints | [2 Set] โครงประโยคตรงกับหมาป่าขาวคลั่ง (ม่วง) ทุกคำ — \"All teammates' X +N% for 5s upon using a Support Skill\" ทั้งทริกเกอร์ ระยะเวลา และเป้าหมายเหมือนกันหมด แต่ stat คนละอัน (ม่วงเป็นพลังป้องกัน ทองเป็นดาเมจธาตุดิน) จึงไม่ใช่เอฟเฟกต์เดียวกันคนละระดับ ถึงตัวเลขจะเป็น 3 -> 7.5 เท่ากับคู่ Green Nightmare/Forest Tyrant ก็ตาม ดู PLAN §13.9.3 | [4 Set] \"Support DMG\" เก็บเป็น stat supportDmg ตามที่ใช้อยู่แล้วกับวิเวียนและมอนอีกห้าตัว และไม่มีคำว่า All teammates' นำหน้าเหมือน [2 Set] จึงเป็น target self"
+    }
+  },
+  {
+    "id": "abyss",
+    "name": {
+      "en": "Abyss"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "en": "Wind DMG +10% for 5s upon using a Special Skill"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "wind",
+            "value": 10,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onSpecialSkill",
+            "durationSec": 5
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "en": "Wind DMG +10% for 5s upon landing a critical hit"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "wind",
+            "value": 10,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onCrit",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-09-19",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "en"
+      ],
+      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นตั้งแต่รอบแรก (หมวก Corrupted Soul Helmet / เกราะอก Ominous Sculpture / ถุงมือ Abyssal Touch / รองเท้า Lord of the Void's Greaves) | เซ็ตแรกที่ [2 Set] กับ [4 Set] เป็นเอฟเฟกต์เดียวกันทั้งดุ้น — ดาเมจธาตุลม +10% นาน 5 วินาที เท่ากันทุกช่อง ต่างกันแค่สิ่งที่ไปกระตุ้น (สกิลพิเศษ กับ คริติคอล) อีกสามเซ็ตที่ตัวเลข [2] กับ [4] เท่ากัน (Green Nightmare 3 · Moonshadow 5 · Arbiter 10 · Sirius 7.5) ล้วนต่างกันที่ stat หรือระยะเวลาหรือเงื่อนไขด้วย | คนละเซ็ตกับ Devourer of the Abyss (ทอง สองชิ้น) ถึงชื่อจะมีคำว่า Abyss เหมือนกัน"
     }
   }
 ]
