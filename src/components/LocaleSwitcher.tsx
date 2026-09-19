@@ -11,6 +11,10 @@ import { createTranslate } from "@/i18n";
  *
  * href ที่เรนเดอร์ไว้เป็น URL สะอาดไม่มี query — ดีต่อ SEO และแท็บใหม่
  * ส่วนการคลิกซ้ายจะพา query ข้ามไปด้วย ไม่งั้นคำที่พิมพ์ค้นค้างไว้จะหายตอนสลับภาษา
+ *
+ * scroll={false} ทั้งสองทาง เพราะปกติ Next จะเด้งขึ้นบนสุดทุกครั้งที่เปลี่ยนหน้า
+ * แต่สลับภาษาไม่ใช่การไปหน้าอื่น มันคือหน้าเดิมคนละภาษา คนอ่านค้างอยู่ตรงไหนควรอยู่ตรงนั้น
+ * (เมนูด้านบนที่พาไปหน้าอื่นจริง ๆ ยังเด้งขึ้นบนเหมือนเดิม ซึ่งถูกแล้ว)
  */
 export function LocaleSwitcher({ locale }: { locale: Locale }) {
   const pathname = usePathname();
@@ -26,13 +30,14 @@ export function LocaleSwitcher({ locale }: { locale: Locale }) {
             key={target}
             href={swapLocaleInPath(pathname, target)}
             hrefLang={LOCALE_TAG[target]}
+            scroll={false}
             onClick={(e) => {
               const search = window.location.search;
               if (active || !search) return;
               // ปล่อยให้คลิกที่ตั้งใจเปิดแท็บใหม่ (ctrl/cmd/กลาง) ทำงานตามปกติ
               if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
               e.preventDefault();
-              router.push(`${swapLocaleInPath(pathname, target)}${search}`);
+              router.push(`${swapLocaleInPath(pathname, target)}${search}`, { scroll: false });
             }}
             aria-current={active ? "true" : undefined}
             className={
