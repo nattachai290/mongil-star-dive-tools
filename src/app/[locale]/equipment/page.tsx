@@ -4,7 +4,7 @@ import { EquipmentList, type EquipmentRow } from "@/components/EquipmentList";
 import { Text } from "@/components/Text";
 import { createTranslate } from "@/i18n";
 import { LOCALES, isLocale, type Locale } from "@/lib/i18n";
-import { EQUIPMENT, EQUIPMENT_SETS, piecesOfSet } from "@/lib/data";
+import { EQUIPMENT, EQUIPMENT_SETS, GEAR_MAIN_STATS, GEAR_SUBSTATS, piecesOfSet } from "@/lib/data";
 import { describeEffect } from "@/lib/describe";
 import { label } from "@/lib/vocabulary";
 import type { EquipmentSet } from "@/lib/schema/entities";
@@ -74,6 +74,9 @@ export async function generateMetadata({
 
 /** ม่วงก่อนทอง ตามลำดับที่จอคราฟต์เรียง ไม่ใช่เอาของดีขึ้นก่อน */
 const GRADES = ["purple", "gold"] as const;
+
+/** ลำดับช่องบนตัวละคร ใช้เรียงตารางค่าหลักให้ตรงกับที่เกมวาง */
+const SLOT_ORDER = ["headgear", "chestpiece", "gloves", "footwear"] as const;
 
 function SetCard({ set, locale, t }: { set: EquipmentSet; locale: Locale; t: (k: "equipment.setBonus") => string }) {
   const pieces = piecesOfSet(set.id);
@@ -213,6 +216,87 @@ export default async function EquipmentPage({
         <strong className="text-ink">{EQUIPMENT.length}</strong> {t("equipment.pieces")}
       </p>
       <p className="mt-1 max-w-2xl text-xs text-muted">{t("equipment.rolledNote")}</p>
+
+      {/*
+        ค่าหลักผูกกับช่องกับระดับ ไม่ได้ผูกกับชิ้น จึงอยู่ตรงนี้ครั้งเดียว
+        ไม่ใช่ซ้ำอยู่ในการ์ดทุกใบ — ตารางเดียวตอบได้ทั้งหน้า
+      */}
+      <section className="mt-5 rounded-lg border border-line bg-surface p-4">
+        <h2 className="font-display text-sm font-semibold">{t("equipment.mainStats")}</h2>
+        <p className="mt-1 text-xs text-muted">{t("equipment.mainStatNote")}</p>
+        <table className="mt-3 w-full text-sm">
+          <thead>
+            <tr className="text-start text-[11px] uppercase tracking-wide text-muted">
+              <th scope="col" className="py-1 text-start font-medium">{t("filters.slot")}</th>
+              <th scope="col" className="py-1 text-start font-medium">{t("filters.stat")}</th>
+              {GRADES.map((g) => (
+                <th key={g} scope="col" className="py-1 text-end font-medium">
+                  {label("gearGrade", g, locale)}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {SLOT_ORDER.map((slot) => {
+              const byGrade = GRADES.map((g) =>
+                GEAR_MAIN_STATS.find((m) => m.slot === slot && m.grade === g),
+              );
+              const stat = byGrade.find(Boolean)?.stat;
+              if (!stat) return null;
+              return (
+                <tr key={slot} className="border-t border-line">
+                  <td className="py-1.5 text-ink-2">{label("slot", slot, locale)}</td>
+                  <td className="py-1.5 text-ink-2">{label("stat", stat, locale)}</td>
+                  {byGrade.map((m, i) => (
+                    <td key={GRADES[i]} className="py-1.5 text-end font-mono tabular-nums text-ink">
+                      {m ? m.atMaxLevel.toLocaleString(locale === "th" ? "th-TH" : "en-US") : "—"}
+                    </td>
+                  ))}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </section>
+
+      {/*
+        ออปชันรองก็เป็นของกลางเหมือนค่าหลัก — เจ้าของข้อมูลยืนยันว่าทั้งสี่ช่องใช้ตารางเดียวกัน
+        น้ำหนักของชั้นเป็นสัดส่วนคงที่ บอกครั้งเดียวในคำอธิบายแทนที่จะพิมพ์ 55 แถว
+      */}
+      {GEAR_SUBSTATS.length > 0 && (
+        <section className="mt-4 rounded-lg border border-line bg-surface p-4">
+          <h2 className="font-display text-sm font-semibold">{t("equipment.substats")}</h2>
+          <p className="mt-1 text-xs text-muted">{t("equipment.substatNote")}</p>
+          <table className="mt-3 w-full text-sm">
+            <thead>
+              <tr className="text-[11px] uppercase tracking-wide text-muted">
+                <th scope="col" className="py-1 text-start font-medium">{t("equipment.option")}</th>
+                <th scope="col" className="py-1 text-end font-medium">{t("equipment.chance")}</th>
+                <th scope="col" className="py-1 text-end font-medium">{t("equipment.values")}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {GEAR_SUBSTATS.map((row, i) => {
+                const name = row.damageType
+                  ? `${label("stat", row.stat, locale)} ${label("damageType", row.damageType, locale)}`
+                  : label("stat", row.stat, locale);
+                const suffix = row.unit === "percent" ? "%" : "";
+                return (
+                  <tr key={i} className="border-t border-line align-baseline">
+                    <td className="py-1.5 pe-2 text-ink-2">{name}</td>
+                    <td className="py-1.5 pe-2 text-end font-mono tabular-nums text-ink">
+                      {row.chancePercent}%
+                    </td>
+                    <td className="py-1.5 text-end font-mono text-[11px] tabular-nums text-muted">
+                      {row.tiers.map((x) => `${x.atLevel1}${suffix}`).join(" · ")}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </section>
+      )}
       {/*
         ชื่อบนหน้านี้ยังไม่มีภาษาไทยเลยสักอัน ป้าย "ยังไม่แปล" รายชิ้นจึงขึ้นครบทุกบรรทัด
         จนอ่านไม่ออก — บอกครั้งเดียวตรงนี้แทน และบอกเฉพาะตอนที่ยังขาดจริง

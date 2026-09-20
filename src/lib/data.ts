@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
-import { monsterDexEntry, linkChain, monsterling, character, equipment, equipmentSet } from "./schema/entities";
-import type { Character, Equipment, EquipmentSet, LinkChain, Monsterling } from "./schema/entities";
+import { monsterDexEntry, linkChain, monsterling, character, equipment, equipmentSet, gearMainStat, gearSubstat } from "./schema/entities";
+import type { Character, Equipment, EquipmentSet, GearMainStat, GearSubstat, LinkChain, Monsterling } from "./schema/entities";
 
 /**
  * อ่านข้อมูลจาก data/ ตอน build — ไม่มี API ไม่มีฐานข้อมูล
@@ -88,6 +88,19 @@ export const EQUIPMENT: Equipment[] = readCollection("equipment", (raw) => equip
 export const EQUIPMENT_SETS: EquipmentSet[] = (
   readJson(join(DATA, "meta", "sets.json")) as unknown[]
 ).map((raw) => equipmentSet.parse(raw));
+
+/**
+ * ค่าหลักต่อช่อง — ของกลางเหมือน sets.json ไม่ใช่ของที่มีไฟล์ละชิ้น
+ * เพราะทุกชิ้นในช่องเดียวกันและระดับเดียวกันได้ค่าเท่ากันหมด
+ */
+export const GEAR_MAIN_STATS: GearMainStat[] = (
+  readJson(join(DATA, "meta", "gear-main-stats.json")) as unknown[]
+).map((raw) => gearMainStat.parse(raw));
+
+/** ตารางออปชันรอง — ของกลางเหมือนค่าหลัก ทุกช่องใช้ตารางเดียวกัน */
+export const GEAR_SUBSTATS: GearSubstat[] = (
+  readJson(join(DATA, "meta", "gear-substats.json")) as unknown[]
+).map((raw) => gearSubstat.parse(raw));
 
 /** ชิ้นของเซ็ตหนึ่ง เรียงตามลำดับช่องบนตัวละคร ไม่ใช่ตามชื่อไฟล์ */
 const SLOT_ORDER = ["headgear", "chestpiece", "gloves", "footwear"];

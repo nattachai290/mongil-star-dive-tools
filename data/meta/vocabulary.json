@@ -240,6 +240,9 @@
       "th": "ค่าพลังสนับสนุน",
       "en": "Support"
     },
+    "roleMastery": {
+      "th": "ความเชี่ยวชาญตามบทบาท"
+    },
     "supportDmg": {
       "th": "ดาเมจสนับสนุน",
       "en": "Support Skill DMG"
@@ -357,6 +360,7 @@
       "en": "upon using a Support Skill"
     },
     "onGrantShield": {
+      "th": "เมื่อมอบเอฟเฟกต์ม่านป้องกัน",
       "en": "upon granting a Shield"
     },
     "onSpecialSkillHit": {

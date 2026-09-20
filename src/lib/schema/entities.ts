@@ -223,12 +223,15 @@ export const equipment = z.object({
   slot: vocabEnum("slot"),
   setId: slug.optional(),
   /**
-   * ไม่มี mainStat / subStats โดยตั้งใจ
+   * ไม่มี mainStat / subStats ในชิ้นอุปกรณ์ แต่ด้วยเหตุผลคนละอย่างกัน
    *
-   * จอคราฟต์เขียนไว้ตรง ๆ ว่า "Main Stat determined upon acquisition" และ
-   * "Substats determined upon acquisition" — ค่าพวกนี้สุ่มตอนได้ของมา
-   * ไม่ได้ผูกกับชิ้นอุปกรณ์ เก็บไว้ที่นี่เมื่อไหร่ก็กลายเป็นข้อมูลผิดทันที
-   * เหตุผลเดียวกับ Trait ของมอนสเตอร์ลิง (ดูหมายเหตุท้าย monsterling)
+   * **ค่ารอง** สุ่มตอนได้ของมาจริง ("Substats determined upon acquisition")
+   * ผูกกับของที่ดรอปแต่ละชิ้น ไม่ผูกกับนิยามของอุปกรณ์ เหตุผลเดียวกับ Trait ของมอน
+   *
+   * **ค่าหลักไม่สุ่ม** — เข้าใจผิดมาตั้งแต่ 2026-09-15 จนถึง 2026-09-20
+   * ป๊อปอัป "ออปชันหลักที่สามารถปรากฏได้" ขึ้นค่าเดียว 100% ทุกช่อง
+   * มันผูกกับ (ช่อง x ระดับ) ไม่ใช่กับชิ้น จึงอยู่ที่ data/meta/gear-main-stats.json
+   * ไม่ใช่ในไฟล์ของแต่ละชิ้น — ไม่งั้นต้องเขียนเลขเดียวกันซ้ำ 100 ไฟล์
    */
   effects: z.array(effect).default([]),
   desc: text.optional(),
@@ -383,6 +386,58 @@ export const linkChain = z.object({
 );
 
 /**
+ * ค่าหลักของอุปกรณ์ — ผูกกับ (ช่อง x ระดับ) ไม่ใช่กับชิ้นใดชิ้นหนึ่ง
+ *
+ * หมวกได้พลังชีวิต เกราะอกได้พลังป้องกัน ถุงมือได้พลังโจมตี
+ * รองเท้าได้ความเชี่ยวชาญตามบทบาท — เหมือนกันทุกเซ็ต ทุกชิ้น
+ *
+ * เก็บเฉพาะค่าที่เลเวลสูงสุด เพราะเป็นตัวเลขที่ใช้วางแผนจริง
+ * ค่าที่เลเวลอื่นไม่เก็บ และห้ามคำนวณย้อนจากค่านี้
+ */
+export const gearMainStat = z.object({
+  slot: vocabEnum("slot"),
+  grade: vocabEnum("gearGrade"),
+  stars: z.number().int().min(1).max(5),
+  stat: vocabEnum("stat"),
+  /** ค่าที่เลเวลสูงสุด — ยังไม่รู้ว่าเลเวลสูงสุดคือเลเวลอะไร รู้แค่ว่าค่านี้คือตอนนั้น */
+  atMaxLevel: z.number().positive(),
+  source,
+});
+
+/**
+ * ตารางออปชันรองของอุปกรณ์ — ผูกกับระดับอย่างเดียว ไม่ผูกกับช่องหรือกับเซ็ต
+ *
+ * ต่างจากค่าหลักตรงที่อันนี้สุ่มจริง จอจึงบอกเป็น "โอกาส" ไม่ใช่ค่าเดียว 100%
+ * แต่ละออปชันมีห้าชั้นค่า และน้ำหนักของชั้นเป็นสัดส่วนคงที่ของโอกาสรวม
+ * (50 / 30 / 14 / 5 / 1 เปอร์เซ็นต์ของโอกาสนั้น — ตรงกันทั้ง 11 ออปชัน)
+ */
+export const gearSubstat = z
+  .object({
+    grade: vocabEnum("gearGrade"),
+    stars: z.number().int().min(1).max(5),
+    stat: vocabEnum("stat"),
+    /** ต้านทานแยกตามธาตุ ออปชันอื่นไม่มีช่องนี้ */
+    damageType: vocabEnum("damageType").optional(),
+    unit: vocabEnum("unit"),
+    /** โอกาสที่จะได้ออปชันนี้ รวมทุกชั้น */
+    chancePercent: z.number().positive().max(100),
+    tiers: z
+      .array(
+        z.object({
+          /** ค่าที่เลเวล 1 — ยังไม่รู้ว่าค่ารองโตตามเลเวลหรือไม่ จึงไม่เก็บค่าเลเวลสูงสุด */
+          atLevel1: z.number().positive(),
+          chancePercent: z.number().positive().max(100),
+        }),
+      )
+      .min(1),
+    source,
+  })
+  .refine(
+    (r) => Math.abs(r.tiers.reduce((s, x) => s + x.chancePercent, 0) - r.chancePercent) < 0.0001,
+    { message: "โอกาสของชั้นย่อยรวมแล้วไม่เท่ากับ chancePercent" },
+  );
+
+/**
  * หนึ่งแถวในสมุดภาพมอน — เก็บแค่เลขกับชื่อ ยังไม่ใช่ข้อมูลเต็มของ Monsterling
  * slug เป็น null ได้ เพราะยังไม่รู้ชื่ออังกฤษทางการ และ id ของเว็บห้ามเปลี่ยนทีหลัง
  */
@@ -418,4 +473,6 @@ export type LinkChain = z.infer<typeof linkChain>;
 export type Monsterling = z.infer<typeof monsterling>;
 export type Skill = z.infer<typeof skill>;
 export type Equipment = z.infer<typeof equipment>;
+export type GearMainStat = z.infer<typeof gearMainStat>;
+export type GearSubstat = z.infer<typeof gearSubstat>;
 export type EquipmentSet = z.infer<typeof equipmentSet>;

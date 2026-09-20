@@ -12,7 +12,7 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { z } from "zod";
-import { SCHEMAS, equipmentSet, monsterDexEntry, type Collection } from "../src/lib/schema/entities";
+import { SCHEMAS, equipmentSet, gearMainStat, gearSubstat, monsterDexEntry, type Collection } from "../src/lib/schema/entities";
 import { FORMULA, IMPLEMENTED_STEPS } from "../src/lib/formula";
 
 const ROOT = process.cwd();
@@ -101,6 +101,48 @@ for (const collection of Object.keys(SCHEMAS) as Collection[]) {
 // ---------- เซ็ตอุปกรณ์ (อยู่ใน meta) ----------
 const setIds = new Set<string>();
 const setDocs: Record<string, unknown>[] = [];
+const mainStatsRaw = readJson(join(DATA, "meta", "gear-main-stats.json"), "data/meta/gear-main-stats.json");
+if (Array.isArray(mainStatsRaw)) {
+  const seen = new Set<string>();
+  mainStatsRaw.forEach((row, i) => {
+    const where = `data/meta/gear-main-stats.json[${i}]`;
+    const r = gearMainStat.safeParse(row);
+    if (!r.success) {
+      for (const issue of r.error.issues) fail(where, `${issue.path.join(".") || "(root)"}: ${issue.message}`);
+      return;
+    }
+    // หนึ่งช่องต่อหนึ่งระดับต้องมีแถวเดียว ไม่งั้นหน้าเว็บไม่รู้จะเชื่ออันไหน
+    const key = `${r.data.grade}/${r.data.slot}`;
+    if (seen.has(key)) fail(where, `ซ้ำกับแถวก่อนหน้า: ${key}`);
+    seen.add(key);
+  });
+} else {
+  fail("data/meta/gear-main-stats.json", "ต้องเป็น array");
+}
+
+const subsRaw = readJson(join(DATA, "meta", "gear-substats.json"), "data/meta/gear-substats.json");
+if (Array.isArray(subsRaw)) {
+  const totals = new Map<string, number>();
+  subsRaw.forEach((row, i) => {
+    const where = `data/meta/gear-substats.json[${i}]`;
+    const r = gearSubstat.safeParse(row);
+    if (!r.success) {
+      for (const issue of r.error.issues) fail(where, `${issue.path.join(".") || "(root)"}: ${issue.message}`);
+      return;
+    }
+    const key = `${r.data.grade}/${r.data.stars}`;
+    totals.set(key, (totals.get(key) ?? 0) + r.data.chancePercent);
+  });
+  // ตารางที่อ่านครบต้องรวมได้ 100 — ถ้าไม่ครบแปลว่าเลื่อนดูไม่สุดแล้วอ่านตกไปบางออปชัน
+  for (const [key, total] of totals) {
+    if (Math.abs(total - 100) > 0.5) {
+      warn("data/meta/gear-substats.json", `โอกาสของ ${key} รวมได้ ${total}% ไม่ใช่ 100% — น่าจะอ่านตกบางออปชัน`);
+    }
+  }
+} else {
+  fail("data/meta/gear-substats.json", "ต้องเป็น array");
+}
+
 const setsRaw = readJson(join(DATA, "meta", "sets.json"), "data/meta/sets.json");
 if (Array.isArray(setsRaw)) {
   setsRaw.forEach((s, i) => {

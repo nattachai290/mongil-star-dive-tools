@@ -1252,6 +1252,7 @@
   {
     "id": "military-officers-courtesy",
     "name": {
+      "th": "ชุดเกียรติยศของนายทหาร",
       "en": "Military Officer's Courtesy"
     },
     "grade": "purple",
@@ -1280,18 +1281,20 @@
       }
     ],
     "source": {
-      "verifiedAt": "2026-09-19",
+      "verifiedAt": "2026-09-20",
       "gameVersion": "unknown",
       "by": "in-game",
       "readIn": [
-        "en"
+        "en",
+        "th"
       ],
-      "note": "เซ็ตม่วงสองชิ้น (ถุงมือ Gilded Armguards / รองเท้า Gilded Greaves) | เซ็ตม่วงชุดแรกที่เก็บมาตั้งแต่เริ่มทำของทอง — จอมันแทรกอยู่ระหว่างเซ็ตทอง ไม่ได้เรียงตามระดับ | ธาตุดินโผล่สองที่ในประโยคเดียว: ฝั่งกระตุ้นคือ \"critical hit with an Earth attack\" (triggerDamageType) ส่วนผลคือดาเมจธาตุดิน (effect.damageType) โครงเดียวกับคุสโตส (มอน 38)"
+      "note": "เซ็ตม่วงสองชิ้น (ถุงมือ Gilded Armguards / รองเท้า Gilded Greaves) | เซ็ตม่วงชุดแรกที่เก็บมาตั้งแต่เริ่มทำของทอง — จอมันแทรกอยู่ระหว่างเซ็ตทอง ไม่ได้เรียงตามระดับ | ธาตุดินโผล่สองที่ในประโยคเดียว: ฝั่งกระตุ้นคือ \"critical hit with an Earth attack\" (triggerDamageType) ส่วนผลคือดาเมจธาตุดิน (effect.damageType) โครงเดียวกับคุสโตส (มอน 38) | จอคราฟต์ภาษาไทย 2026-09-20 ได้ชื่อไทยของเซ็ตแล้ว"
     }
   },
   {
     "id": "victorious-generals-rites",
     "name": {
+      "th": "เครื่องแบบพิธีการของแม่ทัพผู้พิชิต",
       "en": "Victorious General's Rites"
     },
     "grade": "gold",
@@ -1317,18 +1320,20 @@
       }
     ],
     "source": {
-      "verifiedAt": "2026-09-19",
+      "verifiedAt": "2026-09-20",
       "gameVersion": "unknown",
       "by": "in-game",
       "readIn": [
-        "en"
+        "en",
+        "th"
       ],
-      "note": "เซ็ตทองสองชิ้น (ถุงมือ Victorious General's Gilded Armguards / รองเท้า Victorious General's Gilded Greaves) | สมาชิกที่สามของแม่พิมพ์ \"<ธาตุ> Attack Neutralization DMG +7.5%\" ต่อจาก Devourer of the Abyss (น้ำแข็ง) และ Ancient Stone (ลม) — ทองสามเซ็ต 7.5% เท่ากันหมด เปลี่ยนแค่ธาตุ แม่พิมพ์นี้นิ่งที่สุดเท่าที่เจอมา | ชื่อชิ้นคือชื่อของ Military Officer's Courtesy (ม่วง) เติมคำนำหน้า — Gilded Armguards/Greaves -> Victorious General's Gilded Armguards/Greaves ช่องก็ตรงกันทั้งสองช่อง แต่โบนัสคนละเรื่อง (ม่วงเป็นดาเมจธาตุดินตอนคริติคอล ทองเป็นดาเมจหมดฤทธิ์) เป็นคู่ชื่อ ไม่ใช่คู่ผล แบบเดียวกับ Mountain Peak Majesty / Mount Tai's Towering Might ดู PLAN §13.9.3"
+      "note": "เซ็ตทองสองชิ้น (ถุงมือ Victorious General's Gilded Armguards / รองเท้า Victorious General's Gilded Greaves) | สมาชิกที่สามของแม่พิมพ์ \"<ธาตุ> Attack Neutralization DMG +7.5%\" ต่อจาก Devourer of the Abyss (น้ำแข็ง) และ Ancient Stone (ลม) — ทองสามเซ็ต 7.5% เท่ากันหมด เปลี่ยนแค่ธาตุ แม่พิมพ์นี้นิ่งที่สุดเท่าที่เจอมา | ชื่อชิ้นคือชื่อของ Military Officer's Courtesy (ม่วง) เติมคำนำหน้า — Gilded Armguards/Greaves -> Victorious General's Gilded Armguards/Greaves ช่องก็ตรงกันทั้งสองช่อง แต่โบนัสคนละเรื่อง (ม่วงเป็นดาเมจธาตุดินตอนคริติคอล ทองเป็นดาเมจหมดฤทธิ์) เป็นคู่ชื่อ ไม่ใช่คู่ผล แบบเดียวกับ Mountain Peak Majesty / Mount Tai's Towering Might ดู PLAN §13.9.3 | จอคราฟต์ภาษาไทย 2026-09-20 ได้ชื่อไทยของเซ็ตแล้ว"
     }
   },
   {
     "id": "blossoms-in-full-bloom",
     "name": {
+      "th": "ดอกท้อบานสะพรั่ง",
       "en": "Blossoms in Full Bloom"
     },
     "grade": "gold",
@@ -1355,18 +1360,20 @@
       }
     ],
     "source": {
-      "verifiedAt": "2026-09-19",
+      "verifiedAt": "2026-09-20",
       "gameVersion": "unknown",
       "by": "in-game",
       "readIn": [
-        "en"
+        "en",
+        "th"
       ],
-      "note": "เซ็ตทองสองชิ้น (หมวก Undefeated Gisaeng's Headband / รองเท้า Undefeated Gisaeng's Flower Slippers — id ในไฟล์ต่อท้ายด้วย -gold เพราะชื่อชนกับชิ้นม่วง) | **เกมใช้ชื่อชิ้นซ้ำกันเป๊ะข้ามระดับ** ชิ้นชื่อเดียวกันมีทั้งแบบม่วง 4 ดาว (อยู่ Gisaeng's Glow Up) และแบบทอง 5 ดาว (อยู่เซ็ตนี้) ต่างกันที่คำบรรยาย (cotton กับ silk) เท่านั้น หักกฎที่เคยเขียนไว้ว่าเซ็ตทองเติมคำนำหน้าให้ชื่อของม่วงเสมอ ดู PLAN §13.9.3 | [2 Set] เป็นคู่เต็มกับ Gisaeng's Glow Up [2 Set] (ม่วง) — \"Ice DMG +N% for 5s upon using a Special Skill\" ตรงกันทุกตัวอักษร 5% -> 7.5% คือ **x1.5**"
+      "note": "เซ็ตทองสองชิ้น (หมวก Undefeated Gisaeng's Headband / รองเท้า Undefeated Gisaeng's Flower Slippers — id ในไฟล์ต่อท้ายด้วย -gold เพราะชื่อชนกับชิ้นม่วง) | **เกมใช้ชื่อชิ้นซ้ำกันเป๊ะข้ามระดับ** ชิ้นชื่อเดียวกันมีทั้งแบบม่วง 4 ดาว (อยู่ Gisaeng's Glow Up) และแบบทอง 5 ดาว (อยู่เซ็ตนี้) ต่างกันที่คำบรรยาย (cotton กับ silk) เท่านั้น หักกฎที่เคยเขียนไว้ว่าเซ็ตทองเติมคำนำหน้าให้ชื่อของม่วงเสมอ ดู PLAN §13.9.3 | [2 Set] เป็นคู่เต็มกับ Gisaeng's Glow Up [2 Set] (ม่วง) — \"Ice DMG +N% for 5s upon using a Special Skill\" ตรงกันทุกตัวอักษร 5% -> 7.5% คือ **x1.5** | จอคราฟต์ภาษาไทย 2026-09-20 ได้ชื่อไทยของเซ็ตแล้ว"
     }
   },
   {
     "id": "swamp-lord",
     "name": {
+      "th": "เจ้าของหนองน้ำ",
       "en": "Swamp Lord"
     },
     "grade": "gold",
@@ -1376,6 +1383,7 @@
       {
         "pieces": 2,
         "desc": {
+          "th": "เมื่อมอบเอฟเฟกต์ม่านป้องกัน จะเพิ่มดาเมจธาตุน้ำแข็งของสมาชิกทีมทั้งหมด 5% นาน 5 วินาที",
           "en": "All teammates' Ice DMG +5% for 5s upon granting a Shield"
         },
         "effects": [
@@ -1417,13 +1425,14 @@
       }
     ],
     "source": {
-      "verifiedAt": "2026-09-19",
+      "verifiedAt": "2026-09-20",
       "gameVersion": "unknown",
       "by": "in-game",
       "readIn": [
-        "en"
+        "en",
+        "th"
       ],
-      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นตั้งแต่รอบแรก (หมวก Dark Soloist's Helm / เกราะอก Crimson Chestplate of Disaster / ถุงมือ Crimson Gloves of Disaster / รองเท้า Dark Soloist's Boots) ชื่อชิ้นแบ่งเป็นสองตระกูลในเซ็ตเดียว (Dark Soloist's กับ ...of Disaster) และไม่มีชิ้นไหนอ้างถึงชื่อเซ็ตเลย | [2 Set] \"upon granting a Shield\" เป็นตัวกระตุ้นที่ไม่เคยเจอ เพิ่มคำใหม่ onGrantShield | [4 Set] เป็นครั้งแรกที่เงื่อนไขต้องการ **สถานะธาตุ + ท่าทางของศัตรูพร้อมกัน** (ติดสถานะอ่อนแอต่อน้ำแข็ง และ มึนงง) จึงใส่ทั้ง triggerEnemyAffliction กับ enemyState ในข้อเดียว | [4 Set] แม่พิมพ์เดียวกับ Vanguard of Victory [2 Set] และ Frenzied White Wolf [4 Set] แต่จอสลับรูปประโยค (\"Elemental Weakness DMG taken by target\" แทน \"Target's Elemental Weakness DMG taken\") ความหมายเดียวกัน เก็บตามที่จอเขียน | ได้ 10% เท่ากับ Vanguard ทั้งที่เงื่อนไขหินกว่าและต้องใส่สี่ชิ้น อีกหนึ่งข้อที่บอกว่าเลขไม่ได้เดินตามความยากของเงื่อนไข"
+      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นตั้งแต่รอบแรก (หมวก Dark Soloist's Helm / เกราะอก Crimson Chestplate of Disaster / ถุงมือ Crimson Gloves of Disaster / รองเท้า Dark Soloist's Boots) ชื่อชิ้นแบ่งเป็นสองตระกูลในเซ็ตเดียว (Dark Soloist's กับ ...of Disaster) และไม่มีชิ้นไหนอ้างถึงชื่อเซ็ตเลย | [2 Set] \"upon granting a Shield\" เป็นตัวกระตุ้นที่ไม่เคยเจอ เพิ่มคำใหม่ onGrantShield | [4 Set] เป็นครั้งแรกที่เงื่อนไขต้องการ **สถานะธาตุ + ท่าทางของศัตรูพร้อมกัน** (ติดสถานะอ่อนแอต่อน้ำแข็ง และ มึนงง) จึงใส่ทั้ง triggerEnemyAffliction กับ enemyState ในข้อเดียว | [4 Set] แม่พิมพ์เดียวกับ Vanguard of Victory [2 Set] และ Frenzied White Wolf [4 Set] แต่จอสลับรูปประโยค (\"Elemental Weakness DMG taken by target\" แทน \"Target's Elemental Weakness DMG taken\") ความหมายเดียวกัน เก็บตามที่จอเขียน | ได้ 10% เท่ากับ Vanguard ทั้งที่เงื่อนไขหินกว่าและต้องใส่สี่ชิ้น อีกหนึ่งข้อที่บอกว่าเลขไม่ได้เดินตามความยากของเงื่อนไข | จอคราฟต์ภาษาไทย 2026-09-20 ได้ชื่อไทยของเซ็ตแล้ว | [เซต 4 ชิ้น] ภาษาไทยถูกตัดท้ายบนจอ อ่านได้แค่ \"เมื่อโจมตีศัตรูที่ติดสถานะมึนงง\" จึงยังไม่เก็บ"
     }
   },
   {
