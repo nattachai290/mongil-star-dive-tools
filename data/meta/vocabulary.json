@@ -531,15 +531,19 @@
   },
   "slot": {
     "headgear": {
+      "th": "หมวก",
       "en": "Headgear"
     },
     "chestpiece": {
+      "th": "เสื้อ",
       "en": "Chestpieces"
     },
     "gloves": {
+      "th": "ถุงมือ",
       "en": "Gloves"
     },
     "footwear": {
+      "th": "รองเท้า",
       "en": "Footwear"
     }
   },

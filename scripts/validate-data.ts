@@ -133,6 +133,24 @@ if (Array.isArray(subsRaw)) {
     const key = `${r.data.grade}/${r.data.stars}`;
     totals.set(key, (totals.get(key) ?? 0) + r.data.chancePercent);
   });
+  // หน้าเว็บรวมคอลัมน์ "โอกาส" ของสองระดับเป็นช่องเดียว เพราะที่อ่านมาเท่ากันหมด
+  // ถ้าวันหนึ่งไม่เท่า ต้องรู้ทันทีเพื่อแยกคอลัมน์ ไม่ใช่ปล่อยให้หน้าเว็บโกหก
+  const chanceByOption = new Map<string, Map<string, number>>();
+  for (const row of subsRaw) {
+    const r = gearSubstat.safeParse(row);
+    if (!r.success) continue;
+    const option = `${r.data.stat}${r.data.damageType ? `/${r.data.damageType}` : ""}`;
+    const perGrade = chanceByOption.get(option) ?? new Map<string, number>();
+    perGrade.set(r.data.grade, r.data.chancePercent);
+    chanceByOption.set(option, perGrade);
+  }
+  for (const [option, perGrade] of chanceByOption) {
+    const values = [...new Set(perGrade.values())];
+    if (values.length > 1) {
+      warn("data/meta/gear-substats.json", `ออปชัน ${option} มีโอกาสไม่เท่ากันระหว่างระดับ (${values.join(" / ")}) — หน้าเว็บรวมคอลัมน์โอกาสไว้ ต้องแยกแล้ว`);
+    }
+  }
+
   // ตารางที่อ่านครบต้องรวมได้ 100 — ถ้าไม่ครบแปลว่าเลื่อนดูไม่สุดแล้วอ่านตกไปบางออปชัน
   for (const [key, total] of totals) {
     if (Math.abs(total - 100) > 0.5) {

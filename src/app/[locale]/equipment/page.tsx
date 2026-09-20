@@ -272,24 +272,42 @@ export default async function EquipmentPage({
               <tr className="text-[11px] uppercase tracking-wide text-muted">
                 <th scope="col" className="py-1 text-start font-medium">{t("equipment.option")}</th>
                 <th scope="col" className="py-1 text-end font-medium">{t("equipment.chance")}</th>
-                <th scope="col" className="py-1 text-end font-medium">{t("equipment.values")}</th>
+                {GRADES.map((g) => (
+                  <th key={g} scope="col" className="py-1 text-end font-medium">
+                    {label("gearGrade", g, locale)}
+                  </th>
+                ))}
               </tr>
             </thead>
             <tbody>
-              {GEAR_SUBSTATS.map((row, i) => {
-                const name = row.damageType
-                  ? `${label("stat", row.stat, locale)} ${label("damageType", row.damageType, locale)}`
-                  : label("stat", row.stat, locale);
-                const suffix = row.unit === "percent" ? "%" : "";
+              {/*
+                โอกาสของสองระดับเท่ากันทุกออปชัน (validate:data เตือนถ้าวันหนึ่งไม่เท่า)
+                จึงรวมเป็นคอลัมน์เดียว แล้วแยกคอลัมน์เฉพาะตัวเลขค่าที่ต่างกันจริง
+              */}
+              {GEAR_SUBSTATS.filter((r) => r.grade === GRADES[0]).map((first, i) => {
+                const byGrade = GRADES.map((g) =>
+                  GEAR_SUBSTATS.find(
+                    (r) => r.grade === g && r.stat === first.stat && r.damageType === first.damageType,
+                  ),
+                );
+                const name = first.damageType
+                  ? `${label("stat", first.stat, locale)} ${label("damageType", first.damageType, locale)}`
+                  : label("stat", first.stat, locale);
+                const suffix = first.unit === "percent" ? "%" : "";
                 return (
                   <tr key={i} className="border-t border-line align-baseline">
                     <td className="py-1.5 pe-2 text-ink-2">{name}</td>
                     <td className="py-1.5 pe-2 text-end font-mono tabular-nums text-ink">
-                      {row.chancePercent}%
+                      {first.chancePercent}%
                     </td>
-                    <td className="py-1.5 text-end font-mono text-[11px] tabular-nums text-muted">
-                      {row.tiers.map((x) => `${x.atLevel1}${suffix}`).join(" · ")}
-                    </td>
+                    {byGrade.map((r, j) => (
+                      <td
+                        key={GRADES[j]}
+                        className="py-1.5 ps-2 text-end font-mono text-[11px] tabular-nums text-muted"
+                      >
+                        {r ? r.tiers.map((x) => `${x.atLevel1}${suffix}`).join(" · ") : "—"}
+                      </td>
+                    ))}
                   </tr>
                 );
               })}
