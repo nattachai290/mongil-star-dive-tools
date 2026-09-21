@@ -156,6 +156,7 @@
       {
         "pieces": 2,
         "desc": {
+          "th": "เมื่อใช้สกิลสนับสนุน จะเพิ่มพลังป้องกันของสมาชิกทีมทั้งหมด 3% นาน 5 วินาที",
           "en": "All teammates' DEF +3% for 5s upon using a Support Skill"
         },
         "effects": [
@@ -173,6 +174,7 @@
       {
         "pieces": 4,
         "desc": {
+          "th": "เมื่อโจมตีศัตรูที่ติดเอฟเฟกต์อ่อนแอต่อดิน จะเพิ่มดาเมจธาตุจุดอ่อนที่ได้รับของเป้าหมาย 2% นาน 5 วินาที",
           "en": "Target's Elemental Weakness DMG taken +2% for 5s upon attacking an enemy with Earth Affliction"
         },
         "effects": [
@@ -246,6 +248,7 @@
   {
     "id": "mountain-peak-majesty",
     "name": {
+      "th": "ความโอ่อ่าแห่งภูผาสูง",
       "en": "Mountain Peak Majesty"
     },
     "grade": "purple",
@@ -292,13 +295,14 @@
       }
     ],
     "source": {
-      "verifiedAt": "2026-09-15",
+      "verifiedAt": "2026-09-21",
       "gameVersion": "unknown",
       "by": "in-game",
       "readIn": [
-        "en"
+        "en",
+        "th"
       ],
-      "note": "เซ็ตสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Mountain Peak Helm / เกราะอก Mountain Peak Iron Armor / ถุงมือ Mountain Peak Gloves / รองเท้า Mountain Peak Marching Boots) | \"Tag-out Skill\" เป็นคำที่เพิ่งเจอครั้งแรก ยังไม่รู้ว่าเป็นคำเดียวกับ Switch Skill หรือคนละอย่าง จึงเก็บเป็นตัวกระตุ้นแยก onTagOutSkillHit ตามคำที่จอเขียน ถ้าเจอจอที่ยืนยันว่าเหมือนกัน ค่อยยุบรวม | [4 Set] ไม่มีระยะเวลาบนจอ มีแต่เงื่อนไข ต่างจาก [4 Set] ของอีกสองเซ็ตที่ระบุ 5 วินาที | ใช้ triggerEnemyAffliction เป็นเซ็ตที่สาม ต่อจากฝันร้ายเขียวกับหมาป่าขาวคลุ้มคลั่ง"
+      "note": "เซ็ตสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Mountain Peak Helm / เกราะอก Mountain Peak Iron Armor / ถุงมือ Mountain Peak Gloves / รองเท้า Mountain Peak Marching Boots) | \"Tag-out Skill\" เป็นคำที่เพิ่งเจอครั้งแรก ยังไม่รู้ว่าเป็นคำเดียวกับ Switch Skill หรือคนละอย่าง จึงเก็บเป็นตัวกระตุ้นแยก onTagOutSkillHit ตามคำที่จอเขียน ถ้าเจอจอที่ยืนยันว่าเหมือนกัน ค่อยยุบรวม | [4 Set] ไม่มีระยะเวลาบนจอ มีแต่เงื่อนไข ต่างจาก [4 Set] ของอีกสองเซ็ตที่ระบุ 5 วินาที | ใช้ triggerEnemyAffliction เป็นเซ็ตที่สาม ต่อจากฝันร้ายเขียวกับหมาป่าขาวคลุ้มคลั่ง | จอคราฟต์ภาษาไทย 2026-09-21 ได้ชื่อไทยของเซ็ตแล้ว อ่านจากหัวข้อในรายการ ไม่ได้กดเข้าไปดูชิ้น จึงยังไม่มีชื่อไทยของชิ้น"
     }
   },
   {
