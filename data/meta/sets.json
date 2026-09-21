@@ -2,6 +2,7 @@
   {
     "id": "gluttons-visage",
     "name": {
+      "th": "ท่าทางของนักกินจุ",
       "en": "Glutton's Visage"
     },
     "grade": "purple",
@@ -11,6 +12,7 @@
       {
         "pieces": 2,
         "desc": {
+          "th": "เพิ่มดาเมจธาตุไฟของโจมตีพื้นฐาน 3%",
           "en": "Basic Attack's Fire DMG +3%"
         },
         "effects": [
@@ -30,18 +32,20 @@
       }
     ],
     "source": {
-      "verifiedAt": "2026-09-15",
+      "verifiedAt": "2026-09-21",
       "gameVersion": "unknown",
       "by": "in-game",
       "readIn": [
-        "en"
+        "en",
+        "th"
       ],
-      "note": "จอคราฟต์แสดงเซ็ตนี้สองชิ้นพอดี (หมวกกับเกราะอก) และมีโบนัสแค่ [2 Set] จึงเป็นเซ็ตสองชิ้น ไม่ใช่สี่ชิ้นที่ยังเห็นไม่ครบ"
+      "note": "จอคราฟต์แสดงเซ็ตนี้สองชิ้นพอดี (หมวกกับเกราะอก) และมีโบนัสแค่ [2 Set] จึงเป็นเซ็ตสองชิ้น ไม่ใช่สี่ชิ้นที่ยังเห็นไม่ครบ | จอคราฟต์ภาษาไทย 2026-09-21 ได้ชื่อไทยของเซ็ตแล้ว | **ชื่อไทยของเซ็ตนี้คือ \"ท่าทางของนักกินจุ\" ซึ่งอ่านเผิน ๆ เหมือน Devourer Stance (ม่วง สี่ชิ้น) ที่แปลว่า \"ท่าทาง\" เหมือนกัน** จับคู่ด้วยข้อความโบนัส ไม่ได้จับด้วยชื่อ — จอขึ้น \"เพิ่มดาเมจธาตุไฟของโจมตีพื้นฐาน 3%\" ซึ่งตรงกับ [2 Set] ของเซ็ตนี้เท่านั้น"
     }
   },
   {
     "id": "sticky-gorger",
     "name": {
+      "th": "นักล่าหนึบหนับ",
       "en": "Sticky Gorger"
     },
     "grade": "purple",
@@ -51,6 +55,7 @@
       {
         "pieces": 2,
         "desc": {
+          "th": "เพิ่มพลังโจมตี 3%",
           "en": "ATK +3%"
         },
         "effects": [
@@ -66,18 +71,20 @@
       }
     ],
     "source": {
-      "verifiedAt": "2026-09-15",
+      "verifiedAt": "2026-09-21",
       "gameVersion": "unknown",
       "by": "in-game",
       "readIn": [
-        "en"
+        "en",
+        "th"
       ],
-      "note": "เซ็ตสองชิ้น (ถุงมือกับรองเท้า) มีโบนัสแค่ [2 Set]"
+      "note": "เซ็ตสองชิ้น (ถุงมือกับรองเท้า) มีโบนัสแค่ [2 Set] | จอคราฟต์ภาษาไทย 2026-09-21 ได้ชื่อไทยของเซ็ตแล้ว"
     }
   },
   {
     "id": "green-nightmare",
     "name": {
+      "th": "ภวังค์ร้ายมรกต",
       "en": "Green Nightmare"
     },
     "grade": "purple",
@@ -87,6 +94,7 @@
       {
         "pieces": 2,
         "desc": {
+          "th": "เมื่อโจมตีพื้นฐาน จะเพิ่มดาเมจธาตุน้ำแข็ง 3% นาน 2 วินาที",
           "en": "Ice DMG +3% for 2s upon using a Basic Attack"
         },
         "effects": [
@@ -105,6 +113,7 @@
       {
         "pieces": 4,
         "desc": {
+          "th": "เมื่อใช้สกิลสับเปลี่ยนแก่ศัตรูที่ติดเอฟเฟกต์อ่อนแอต่อน้ำแข็ง จะเพิ่มดาเมจคริติคอล 3% นาน 5 วินาที",
           "en": "Crit DMG +3% for 5s upon using a Switch Skill on enemies with Ice Affliction"
         },
         "effects": [
@@ -124,18 +133,20 @@
       }
     ],
     "source": {
-      "verifiedAt": "2026-09-15",
+      "verifiedAt": "2026-09-21",
       "gameVersion": "unknown",
       "by": "in-game",
       "readIn": [
-        "en"
+        "en",
+        "th"
       ],
-      "note": "เซ็ตสี่ชิ้นครบแล้ว: หมวก เกราะอก ถุงมือ รองเท้า | [4 Set] เติม effects ได้แล้วเมื่อ 2026-09-15 หลังเจอเซ็ตหมาป่าขาวคลุ้มคลั่งที่ใช้โครงเดียวกัน (\"upon attacking an enemy with Earth Affliction\") จึงเพิ่มช่อง condition.triggerEnemyAffliction — ก่อนหน้านั้นเห็นแค่เซ็ตเดียวเลยยังไม่เพิ่ม"
+      "note": "เซ็ตสี่ชิ้นครบแล้ว: หมวก เกราะอก ถุงมือ รองเท้า | [4 Set] เติม effects ได้แล้วเมื่อ 2026-09-15 หลังเจอเซ็ตหมาป่าขาวคลุ้มคลั่งที่ใช้โครงเดียวกัน (\"upon attacking an enemy with Earth Affliction\") จึงเพิ่มช่อง condition.triggerEnemyAffliction — ก่อนหน้านั้นเห็นแค่เซ็ตเดียวเลยยังไม่เพิ่ม | จอคราฟต์ภาษาไทย 2026-09-21 ได้ชื่อไทยของเซ็ตแล้ว"
     }
   },
   {
     "id": "frenzied-white-wolf",
     "name": {
+      "th": "หมาป่าขาวคลั่ง",
       "en": "Frenzied White Wolf"
     },
     "grade": "purple",
@@ -184,18 +195,20 @@
       }
     ],
     "source": {
-      "verifiedAt": "2026-09-15",
+      "verifiedAt": "2026-09-21",
       "gameVersion": "unknown",
       "by": "in-game",
       "readIn": [
-        "en"
+        "en",
+        "th"
       ],
-      "note": "เซ็ตสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้วเมื่อ 2026-09-15 (หมวก Frenzied Wolf's Mask / เกราะอก Frenzied Wolf's Restraints / ถุงมือ Frenzied Wolf's Claws / รองเท้า Frenzied Wolf's Sprinters) | [4 Set] เป็นดีบัฟใส่ศัตรู ไม่ใช่บัฟตัวเอง — เพิ่มดาเมจธาตุจุดอ่อนที่ \"เป้าหมาย\" ได้รับ จึงเป็น stat dmgTaken + target enemy | [4 Set] ใช้ kind buff ไม่ใช่ debuff ทั้งที่ผลดีกับผู้เล่น เพราะ kind บอก \"ตัวเลขขึ้นหรือลง\" ไม่ได้บอก \"ดีกับใคร\" — จอเขียน +2% และดาเมจที่เป้าหมายได้รับเพิ่มขึ้นจริง ส่วนใครได้ประโยชน์ดูจาก target"
+      "note": "เซ็ตสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้วเมื่อ 2026-09-15 (หมวก Frenzied Wolf's Mask / เกราะอก Frenzied Wolf's Restraints / ถุงมือ Frenzied Wolf's Claws / รองเท้า Frenzied Wolf's Sprinters) | [4 Set] เป็นดีบัฟใส่ศัตรู ไม่ใช่บัฟตัวเอง — เพิ่มดาเมจธาตุจุดอ่อนที่ \"เป้าหมาย\" ได้รับ จึงเป็น stat dmgTaken + target enemy | [4 Set] ใช้ kind buff ไม่ใช่ debuff ทั้งที่ผลดีกับผู้เล่น เพราะ kind บอก \"ตัวเลขขึ้นหรือลง\" ไม่ได้บอก \"ดีกับใคร\" — จอเขียน +2% และดาเมจที่เป้าหมายได้รับเพิ่มขึ้นจริง ส่วนใครได้ประโยชน์ดูจาก target | จอคราฟต์ภาษาไทย 2026-09-21 ได้ชื่อไทยของเซ็ตแล้ว"
     }
   },
   {
     "id": "stone-heart",
     "name": {
+      "th": "หัวใจหิน",
       "en": "Stone Heart"
     },
     "grade": "purple",
@@ -220,13 +233,14 @@
       }
     ],
     "source": {
-      "verifiedAt": "2026-09-15",
+      "verifiedAt": "2026-09-21",
       "gameVersion": "unknown",
       "by": "in-game",
       "readIn": [
-        "en"
+        "en",
+        "th"
       ],
-      "note": "เซ็ตสองชิ้น (หมวก Stone Mask / รองเท้า Stone Sandals) มีโบนัสแค่ [2 Set]"
+      "note": "เซ็ตสองชิ้น (หมวก Stone Mask / รองเท้า Stone Sandals) มีโบนัสแค่ [2 Set] | จอคราฟต์ภาษาไทย 2026-09-21 ได้ชื่อไทยของเซ็ตแล้ว"
     }
   },
   {
