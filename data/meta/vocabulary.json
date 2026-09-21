@@ -357,6 +357,7 @@
       "en": "upon using a Special Skill"
     },
     "onSupportSkill": {
+      "th": "เมื่อใช้สกิลสนับสนุน",
       "en": "upon using a Support Skill"
     },
     "onGrantShield": {
@@ -372,6 +373,7 @@
       "en": "upon landing Basic Attacks"
     },
     "onBasicAttack": {
+      "th": "เมื่อโจมตีพื้นฐาน",
       "en": "upon using a Basic Attack"
     },
     "onEvasionCounter": {
@@ -390,6 +392,7 @@
       "en": "upon switching to another character"
     },
     "onTagOutSkillHit": {
+      "th": "เมื่อสกิลล่าถอยโดน",
       "en": "upon landing a Tag-out Skill"
     },
     "onTagOutSkill": {
