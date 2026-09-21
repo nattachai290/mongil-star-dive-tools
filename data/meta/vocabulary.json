@@ -397,6 +397,7 @@
       "en": "upon landing a Tag-out Skill"
     },
     "onTagOutSkill": {
+      "th": "เมื่อใช้สกิลล่าถอย",
       "en": "upon using a Tag-out Skill"
     },
     "onMinionSummoned": {
