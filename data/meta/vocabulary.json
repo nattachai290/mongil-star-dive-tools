@@ -382,6 +382,7 @@
       "en": "upon using Evasion Counter"
     },
     "onPerfectDodge": {
+      "th": "เมื่อหลบทันที",
       "en": "upon triggering a Perfect Dodge"
     },
     "onTakeHit": {
