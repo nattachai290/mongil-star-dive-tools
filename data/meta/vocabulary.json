@@ -401,6 +401,7 @@
       "en": "upon using a Tag-out Skill"
     },
     "onMinionSummoned": {
+      "th": "ทุกครั้งที่อัญเชิญสิ่งอัญเชิญ",
       "en": "when a minion is summoned"
     },
     "onUltimateCharged": {
