@@ -240,6 +240,9 @@
       "th": "ค่าพลังสนับสนุน",
       "en": "Support"
     },
+    "roleMastery": {
+      "th": "ความเชี่ยวชาญตามบทบาท"
+    },
     "supportDmg": {
       "th": "ดาเมจสนับสนุน",
       "en": "Support Skill DMG"
@@ -261,6 +264,7 @@
       "en": "Brawl DMG"
     },
     "staggerDmg": {
+      "th": "ดาเมจมึนงง",
       "en": "Stagger DMG"
     }
   },
@@ -354,9 +358,11 @@
       "en": "upon using a Special Skill"
     },
     "onSupportSkill": {
+      "th": "เมื่อใช้สกิลสนับสนุน",
       "en": "upon using a Support Skill"
     },
     "onGrantShield": {
+      "th": "เมื่อมอบเอฟเฟกต์ม่านป้องกัน",
       "en": "upon granting a Shield"
     },
     "onSpecialSkillHit": {
@@ -368,6 +374,7 @@
       "en": "upon landing Basic Attacks"
     },
     "onBasicAttack": {
+      "th": "เมื่อโจมตีพื้นฐาน",
       "en": "upon using a Basic Attack"
     },
     "onEvasionCounter": {
@@ -375,6 +382,7 @@
       "en": "upon using Evasion Counter"
     },
     "onPerfectDodge": {
+      "th": "เมื่อหลบทันที",
       "en": "upon triggering a Perfect Dodge"
     },
     "onTakeHit": {
@@ -386,12 +394,15 @@
       "en": "upon switching to another character"
     },
     "onTagOutSkillHit": {
+      "th": "เมื่อสกิลล่าถอยโดน",
       "en": "upon landing a Tag-out Skill"
     },
     "onTagOutSkill": {
+      "th": "เมื่อใช้สกิลล่าถอย",
       "en": "upon using a Tag-out Skill"
     },
     "onMinionSummoned": {
+      "th": "ทุกครั้งที่อัญเชิญสิ่งอัญเชิญ",
       "en": "when a minion is summoned"
     },
     "onUltimateCharged": {
@@ -527,15 +538,19 @@
   },
   "slot": {
     "headgear": {
+      "th": "หมวก",
       "en": "Headgear"
     },
     "chestpiece": {
+      "th": "เสื้อ",
       "en": "Chestpieces"
     },
     "gloves": {
+      "th": "ถุงมือ",
       "en": "Gloves"
     },
     "footwear": {
+      "th": "รองเท้า",
       "en": "Footwear"
     }
   },

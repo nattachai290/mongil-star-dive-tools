@@ -12,7 +12,7 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { z } from "zod";
-import { SCHEMAS, equipmentSet, monsterDexEntry, type Collection } from "../src/lib/schema/entities";
+import { SCHEMAS, equipmentSet, gearMainStat, gearSubstat, monsterDexEntry, type Collection } from "../src/lib/schema/entities";
 import { FORMULA, IMPLEMENTED_STEPS } from "../src/lib/formula";
 
 const ROOT = process.cwd();
@@ -101,6 +101,66 @@ for (const collection of Object.keys(SCHEMAS) as Collection[]) {
 // ---------- เซ็ตอุปกรณ์ (อยู่ใน meta) ----------
 const setIds = new Set<string>();
 const setDocs: Record<string, unknown>[] = [];
+const mainStatsRaw = readJson(join(DATA, "meta", "gear-main-stats.json"), "data/meta/gear-main-stats.json");
+if (Array.isArray(mainStatsRaw)) {
+  const seen = new Set<string>();
+  mainStatsRaw.forEach((row, i) => {
+    const where = `data/meta/gear-main-stats.json[${i}]`;
+    const r = gearMainStat.safeParse(row);
+    if (!r.success) {
+      for (const issue of r.error.issues) fail(where, `${issue.path.join(".") || "(root)"}: ${issue.message}`);
+      return;
+    }
+    // หนึ่งช่องต่อหนึ่งระดับต้องมีแถวเดียว ไม่งั้นหน้าเว็บไม่รู้จะเชื่ออันไหน
+    const key = `${r.data.grade}/${r.data.slot}`;
+    if (seen.has(key)) fail(where, `ซ้ำกับแถวก่อนหน้า: ${key}`);
+    seen.add(key);
+  });
+} else {
+  fail("data/meta/gear-main-stats.json", "ต้องเป็น array");
+}
+
+const subsRaw = readJson(join(DATA, "meta", "gear-substats.json"), "data/meta/gear-substats.json");
+if (Array.isArray(subsRaw)) {
+  const totals = new Map<string, number>();
+  subsRaw.forEach((row, i) => {
+    const where = `data/meta/gear-substats.json[${i}]`;
+    const r = gearSubstat.safeParse(row);
+    if (!r.success) {
+      for (const issue of r.error.issues) fail(where, `${issue.path.join(".") || "(root)"}: ${issue.message}`);
+      return;
+    }
+    const key = `${r.data.grade}/${r.data.stars}`;
+    totals.set(key, (totals.get(key) ?? 0) + r.data.chancePercent);
+  });
+  // หน้าเว็บรวมคอลัมน์ "โอกาส" ของสองระดับเป็นช่องเดียว เพราะที่อ่านมาเท่ากันหมด
+  // ถ้าวันหนึ่งไม่เท่า ต้องรู้ทันทีเพื่อแยกคอลัมน์ ไม่ใช่ปล่อยให้หน้าเว็บโกหก
+  const chanceByOption = new Map<string, Map<string, number>>();
+  for (const row of subsRaw) {
+    const r = gearSubstat.safeParse(row);
+    if (!r.success) continue;
+    const option = `${r.data.stat}${r.data.damageType ? `/${r.data.damageType}` : ""}`;
+    const perGrade = chanceByOption.get(option) ?? new Map<string, number>();
+    perGrade.set(r.data.grade, r.data.chancePercent);
+    chanceByOption.set(option, perGrade);
+  }
+  for (const [option, perGrade] of chanceByOption) {
+    const values = [...new Set(perGrade.values())];
+    if (values.length > 1) {
+      warn("data/meta/gear-substats.json", `ออปชัน ${option} มีโอกาสไม่เท่ากันระหว่างระดับ (${values.join(" / ")}) — หน้าเว็บรวมคอลัมน์โอกาสไว้ ต้องแยกแล้ว`);
+    }
+  }
+
+  // ตารางที่อ่านครบต้องรวมได้ 100 — ถ้าไม่ครบแปลว่าเลื่อนดูไม่สุดแล้วอ่านตกไปบางออปชัน
+  for (const [key, total] of totals) {
+    if (Math.abs(total - 100) > 0.5) {
+      warn("data/meta/gear-substats.json", `โอกาสของ ${key} รวมได้ ${total}% ไม่ใช่ 100% — น่าจะอ่านตกบางออปชัน`);
+    }
+  }
+} else {
+  fail("data/meta/gear-substats.json", "ต้องเป็น array");
+}
+
 const setsRaw = readJson(join(DATA, "meta", "sets.json"), "data/meta/sets.json");
 if (Array.isArray(setsRaw)) {
   setsRaw.forEach((s, i) => {
