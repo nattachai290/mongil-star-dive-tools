@@ -1397,6 +1397,7 @@
       {
         "pieces": 2,
         "desc": {
+          "th": "เพิ่มดาเมจหมดฤทธิ์ของการโจมตีธาตุดิน 7.5%",
           "en": "Earth Attack Neutralization DMG +7.5%"
         },
         "effects": [
@@ -1413,14 +1414,14 @@
       }
     ],
     "source": {
-      "verifiedAt": "2026-09-20",
+      "verifiedAt": "2026-09-22",
       "gameVersion": "unknown",
       "by": "in-game",
       "readIn": [
         "en",
         "th"
       ],
-      "note": "เซ็ตทองสองชิ้น (ถุงมือ Victorious General's Gilded Armguards / รองเท้า Victorious General's Gilded Greaves) | สมาชิกที่สามของแม่พิมพ์ \"<ธาตุ> Attack Neutralization DMG +7.5%\" ต่อจาก Devourer of the Abyss (น้ำแข็ง) และ Ancient Stone (ลม) — ทองสามเซ็ต 7.5% เท่ากันหมด เปลี่ยนแค่ธาตุ แม่พิมพ์นี้นิ่งที่สุดเท่าที่เจอมา | ชื่อชิ้นคือชื่อของ Military Officer's Courtesy (ม่วง) เติมคำนำหน้า — Gilded Armguards/Greaves -> Victorious General's Gilded Armguards/Greaves ช่องก็ตรงกันทั้งสองช่อง แต่โบนัสคนละเรื่อง (ม่วงเป็นดาเมจธาตุดินตอนคริติคอล ทองเป็นดาเมจหมดฤทธิ์) เป็นคู่ชื่อ ไม่ใช่คู่ผล แบบเดียวกับ Mountain Peak Majesty / Mount Tai's Towering Might ดู PLAN §13.9.3 | จอคราฟต์ภาษาไทย 2026-09-20 ได้ชื่อไทยของเซ็ตแล้ว"
+      "note": "เซ็ตทองสองชิ้น (ถุงมือ Victorious General's Gilded Armguards / รองเท้า Victorious General's Gilded Greaves) | สมาชิกที่สามของแม่พิมพ์ \"<ธาตุ> Attack Neutralization DMG +7.5%\" ต่อจาก Devourer of the Abyss (น้ำแข็ง) และ Ancient Stone (ลม) — ทองสามเซ็ต 7.5% เท่ากันหมด เปลี่ยนแค่ธาตุ แม่พิมพ์นี้นิ่งที่สุดเท่าที่เจอมา | ชื่อชิ้นคือชื่อของ Military Officer's Courtesy (ม่วง) เติมคำนำหน้า — Gilded Armguards/Greaves -> Victorious General's Gilded Armguards/Greaves ช่องก็ตรงกันทั้งสองช่อง แต่โบนัสคนละเรื่อง (ม่วงเป็นดาเมจธาตุดินตอนคริติคอล ทองเป็นดาเมจหมดฤทธิ์) เป็นคู่ชื่อ ไม่ใช่คู่ผล แบบเดียวกับ Mountain Peak Majesty / Mount Tai's Towering Might ดู PLAN §13.9.3 | จอคราฟต์ภาษาไทย 2026-09-20 ได้ชื่อไทยของเซ็ตแล้ว | จอคราฟต์ภาษาไทย 2026-09-22 ได้คำบรรยายโบนัสภาษาไทย และได้ชื่อไทยของทั้งสองชิ้นครบเซ็ต | ไทยเขียนว่า \"ดาเมจหมดฤทธิ์\" ตรงกับคำที่ vocabulary.json เก็บไว้ให้ neutralizationDmg อยู่แล้วทุกตัวอักษร | ไทยไม่มีคำบอกเวลาและไม่มีตัวกระตุ้น ตรงกับอังกฤษที่เป็นโบนัสติดตัวเปล่า ๆ trigger always ที่เก็บไว้จึงถูก"
     }
   },
   {
@@ -1603,6 +1604,7 @@
       {
         "pieces": 2,
         "desc": {
+          "th": "เมื่อใช้สกิลล่าถอย จะลดต้านทานธาตุสายฟ้า 6% นาน 5 วินาที",
           "en": "Lightning RES −6% for 5s upon using a Tag-out Skill"
         },
         "effects": [
@@ -1630,7 +1632,7 @@
       "fieldsUnverified": [
         "bonuses.0.effects.0.target"
       ],
-      "note": "เซ็ตทองสองชิ้น (ถุงมือ Fox Youkai's Fur Gloves / รองเท้า Fox Youkai's Paws) | **จอไม่มีคำว่า Target's นำหน้า** ต่างจากอีกสองเซ็ตที่ลดต้านทานเหมือนกัน (Gourmand's Grand Banquet / Gourmand Level เขียน \"Target's <ธาตุ> RES -6%\") เก็บเป็น target enemy เพราะเป็นอ่านเดียวที่สมเหตุสมผล — ถ้าเป็นตัวเองแปลว่าเซ็ตนี้มีแต่โทษล้วน แต่ติดธง fieldsUnverified ไว้ เพราะเป็นการตีความ ไม่ใช่สิ่งที่จอเขียน ถ้าเจอจอไทยหรือจอเดียวกันชัดกว่านี้ให้ยืนยันซ้ำ | ใช้ onTagOutSkill (\"upon using\") เป็นการเจอครั้งที่สอง ต่อจาก Gourmand Level [4 Set] ยืนยันว่าแยกจาก onTagOutSkillHit (\"upon landing\") ถูกแล้ว | ชื่อชิ้นเดินตาม Onsae's Dance (ม่วง สองชิ้น Mad Fox's Fur Gloves / Mad Fox's Paws) ช่องต่อช่อง แต่โบนัสคนละเรื่อง (ม่วงเป็นอัตราคริติคอลตอนหลบสมบูรณ์แบบ) เป็นคู่ชื่อ ไม่ใช่คู่ผล อีกคู่หนึ่ง | จอคราฟต์ภาษาไทย 2026-09-22 ได้ชื่อไทยของเซ็ตแล้ว"
+      "note": "เซ็ตทองสองชิ้น (ถุงมือ Fox Youkai's Fur Gloves / รองเท้า Fox Youkai's Paws) | **จอไม่มีคำว่า Target's นำหน้า** ต่างจากอีกสองเซ็ตที่ลดต้านทานเหมือนกัน (Gourmand's Grand Banquet / Gourmand Level เขียน \"Target's <ธาตุ> RES -6%\") เก็บเป็น target enemy เพราะเป็นอ่านเดียวที่สมเหตุสมผล — ถ้าเป็นตัวเองแปลว่าเซ็ตนี้มีแต่โทษล้วน แต่ติดธง fieldsUnverified ไว้ เพราะเป็นการตีความ ไม่ใช่สิ่งที่จอเขียน ถ้าเจอจอไทยหรือจอเดียวกันชัดกว่านี้ให้ยืนยันซ้ำ | ใช้ onTagOutSkill (\"upon using\") เป็นการเจอครั้งที่สอง ต่อจาก Gourmand Level [4 Set] ยืนยันว่าแยกจาก onTagOutSkillHit (\"upon landing\") ถูกแล้ว | ชื่อชิ้นเดินตาม Onsae's Dance (ม่วง สองชิ้น Mad Fox's Fur Gloves / Mad Fox's Paws) ช่องต่อช่อง แต่โบนัสคนละเรื่อง (ม่วงเป็นอัตราคริติคอลตอนหลบสมบูรณ์แบบ) เป็นคู่ชื่อ ไม่ใช่คู่ผล อีกคู่หนึ่ง | จอคราฟต์ภาษาไทย 2026-09-22 ได้ชื่อไทยของเซ็ตแล้ว | จอคราฟต์ภาษาไทย 2026-09-22 ได้คำบรรยายโบนัสภาษาไทย และมันตอบสองเรื่องพร้อมกัน: (1) ไทยเขียน \"เมื่อใช้สกิลล่าถอย\" ซึ่งเป็นคำเดียวกับที่ Gourmand Level [4 Set] ใช้ ส่วน \"เมื่อสกิลล่าถอยโดน\" เป็นของ Gourmand's Grand Banquet [2 Set] **สองภาษาแยก using กับ landing ตรงกัน** onTagOutSkill ที่เก็บไว้จึงถูก (2) **ไทยก็ไม่มีคำว่าเป้าหมายเหมือนกัน** — Gourmand ทั้งสองเซ็ตเขียน \"ลดต้านทาน...ของเป้าหมาย\" เซ็ตนี้เขียนแค่ \"ลดต้านทานธาตุสายฟ้า 6%\" แปลว่าการที่จอไม่บอกว่าลดของใครเป็นเรื่องจริงในตัวเกม ไม่ใช่คำแปลตกหล่น **ธง fieldsUnverified ของ target จึงยังอยู่** สองภาษายืนยันได้แค่ว่าจอเงียบเรื่องนี้จริง ไม่ได้ยืนยันว่าคำตอบคือ enemy"
     }
   },
   {
