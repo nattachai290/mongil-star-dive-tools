@@ -1146,6 +1146,7 @@
       {
         "pieces": 2,
         "desc": {
+          "th": "เพิ่มดาเมจมึนงงของการโจมตีธาตุสายฟ้า 7.5%",
           "en": "Lightning attack Stagger DMG +7.5%"
         },
         "effects": [
@@ -1185,6 +1186,7 @@
       {
         "pieces": 2,
         "desc": {
+          "th": "เมื่อโจมตีศัตรูที่ติดเอฟเฟกต์อ่อนแอต่อดิน จะเพิ่มดาเมจธาตุจุดอ่อนที่ได้รับของเป้าหมาย 10% นาน 5 วินาที",
           "en": "Target's Elemental Weakness DMG taken +10% for 5s upon attacking an enemy with Earth Affliction"
         },
         "effects": [
@@ -1220,6 +1222,7 @@
   {
     "id": "gourmand-level",
     "name": {
+      "th": "ขั้นแห่งเทพนักชิม",
       "en": "Gourmand Level"
     },
     "grade": "gold",
@@ -1229,6 +1232,7 @@
       {
         "pieces": 2,
         "desc": {
+          "th": "เมื่อสกิลพิเศษโดน จะลดต้านทานธาตุลมของเป้าหมาย 6% นาน 5 วินาที",
           "en": "Target's Wind RES −6% for 5s upon landing a Special Skill"
         },
         "effects": [
@@ -1247,6 +1251,7 @@
       {
         "pieces": 4,
         "desc": {
+          "th": "เมื่อใช้สกิลล่าถอย จะเพิ่มอัตราคริติคอลของสมาชิกทีมทั้งหมด 6% นาน 5 วินาที",
           "en": "All teammates' Crit Rate +6% for 5s upon using a Tag-out Skill"
         },
         "effects": [
@@ -1263,18 +1268,20 @@
       }
     ],
     "source": {
-      "verifiedAt": "2026-09-19",
+      "verifiedAt": "2026-09-22",
       "gameVersion": "unknown",
       "by": "in-game",
       "readIn": [
-        "en"
+        "en",
+        "th"
       ],
-      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Gourmand's Hat / เกราะอก Gourmand's Apron / ถุงมือ Gourmand's Gloves / รองเท้า Gourmand's Slippers) | คนละเซ็ตกับ Gourmand's Grand Banquet (ทอง สองชิ้น) ถึงจะธีมนักกินเหมือนกันทั้งคู่ | [2 Set] แม่พิมพ์เดียวกับ Gourmand's Grand Banquet [2 Set] และ 6% เท่ากัน ต่างที่ธาตุ (ไฟ -> ลม) และตัวกระตุ้น (Tag-out -> Special Skill) | [2 Set] จอเขียน \"upon landing a Special Skill\" ส่วนพจนานุกรมเก็บ onSpecialSkillHit ไว้ด้วยคำว่า \"upon attacking with a Special Skill\" — ถือเป็นตัวกระตุ้นเดียวกันเพราะทั้งคู่เป็นฝั่ง \"โดน\" ไม่ใช่ฝั่ง \"ใช้\" แต่เป็นคนละสำนวน ถ้าเจอจอที่แยกสองอันนี้จริง ค่อยแตกออก | [4 Set] จอเขียน \"upon using a Tag-out Skill\" ซึ่งเป็นคนละอันกับ \"upon landing a Tag-out Skill\" จึงเพิ่มคำใหม่ onTagOutSkill เข้าพจนานุกรม คู่เดียวกับที่แยก onBasicAttack/onBasicAttackHit ไว้แล้ว"
+      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Gourmand's Hat / เกราะอก Gourmand's Apron / ถุงมือ Gourmand's Gloves / รองเท้า Gourmand's Slippers) | คนละเซ็ตกับ Gourmand's Grand Banquet (ทอง สองชิ้น) ถึงจะธีมนักกินเหมือนกันทั้งคู่ | [2 Set] แม่พิมพ์เดียวกับ Gourmand's Grand Banquet [2 Set] และ 6% เท่ากัน ต่างที่ธาตุ (ไฟ -> ลม) และตัวกระตุ้น (Tag-out -> Special Skill) | [2 Set] มีสองสำนวน**ในทั้งสองภาษา** และจอไทย 2026-09-22 ยืนยันว่าเป็นตัวกระตุ้นเดียวกัน — อังกฤษเขียน \"upon landing a Special Skill\" ที่นี่ แต่พจนานุกรมเก็บ \"upon attacking with a Special Skill\" ส่วนไทยเขียน \"เมื่อสกิลพิเศษโดน\" ที่นี่ แต่พจนานุกรมเก็บ \"เมื่อโจมตีด้วยสกิลพิเศษ\" ทั้งสี่สำนวนอยู่ฝั่ง \"โดน\" หมด ไม่ใช่ฝั่ง \"ใช้\" จึงเป็น onSpecialSkillHit ตัวเดียวกัน ปิดข้อสงสัยเดิมได้ | [4 Set] จอเขียน \"upon using a Tag-out Skill\" ซึ่งเป็นคนละอันกับ \"upon landing a Tag-out Skill\" จึงเพิ่มคำใหม่ onTagOutSkill เข้าพจนานุกรม คู่เดียวกับที่แยก onBasicAttack/onBasicAttackHit ไว้แล้ว | จอคราฟต์ภาษาไทย 2026-09-22 ได้ชื่อไทยของเซ็ตแล้ว"
     }
   },
   {
     "id": "west-wind",
     "name": {
+      "th": "ลมแห่งทิศตะวันตก",
       "en": "West Wind"
     },
     "grade": "gold",
@@ -1322,13 +1329,14 @@
       }
     ],
     "source": {
-      "verifiedAt": "2026-09-19",
+      "verifiedAt": "2026-09-22",
       "gameVersion": "unknown",
       "by": "in-game",
       "readIn": [
-        "en"
+        "en",
+        "th"
       ],
-      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Eerie Horned Helmet / เกราะอก Avenger's Prayer Beads / ถุงมือ Avenger's Gauntlet / รองเท้า Breeze Walkers) ไม่มีชิ้นไหนอ้างถึงชื่อเซ็ตเลย เหมือน Spirit King และชื่อก็แบ่งเป็นสองตระกูลในเซ็ตเดียว (Avenger's กับอีกสองชิ้นที่ไม่เข้าพวก) | [2 Set] เป็นแม่พิมพ์เดียวกับ Forest Tyrant [2] และ Spirit King [2] — ทองทั้งสาม 3 วินาทีเท่ากัน แต่ธาตุน้ำแข็งได้ 7.5% ส่วนธาตุสายฟ้ากับธาตุดินได้ 8% **เลขอาจผูกกับธาตุ** ซึ่งเป็นข้อสังเกตใหม่ ยังไม่ยืนยัน ถ้าเจอเซ็ตทองแม่พิมพ์นี้ธาตุไฟหรือธาตุลม จะรู้ทันทีว่าใช่หรือไม่ ดู PLAN §13.9.3 | [4 Set] เป็นแม่พิมพ์ของ Green Nightmare [4] (ม่วง) คือ \"...for 5s upon using a Switch Skill on enem<y|ies> with <ธาตุ> Affliction\" แต่คนละ stat (ม่วงเป็นดาเมจคริติคอล ทองเป็นดาเมจธาตุดิน) จึงเป็นเกือบคู่"
+      "note": "เซ็ตทองสี่ชิ้น เห็นชื่อครบทั้งสี่ชิ้นแล้ว (หมวก Eerie Horned Helmet / เกราะอก Avenger's Prayer Beads / ถุงมือ Avenger's Gauntlet / รองเท้า Breeze Walkers) ไม่มีชิ้นไหนอ้างถึงชื่อเซ็ตเลย เหมือน Spirit King และชื่อก็แบ่งเป็นสองตระกูลในเซ็ตเดียว (Avenger's กับอีกสองชิ้นที่ไม่เข้าพวก) | [2 Set] เป็นแม่พิมพ์เดียวกับ Forest Tyrant [2] และ Spirit King [2] — ทองทั้งสาม 3 วินาทีเท่ากัน แต่ธาตุน้ำแข็งได้ 7.5% ส่วนธาตุสายฟ้ากับธาตุดินได้ 8% **เลขอาจผูกกับธาตุ** ซึ่งเป็นข้อสังเกตใหม่ ยังไม่ยืนยัน ถ้าเจอเซ็ตทองแม่พิมพ์นี้ธาตุไฟหรือธาตุลม จะรู้ทันทีว่าใช่หรือไม่ ดู PLAN §13.9.3 | [4 Set] เป็นแม่พิมพ์ของ Green Nightmare [4] (ม่วง) คือ \"...for 5s upon using a Switch Skill on enem<y|ies> with <ธาตุ> Affliction\" แต่คนละ stat (ม่วงเป็นดาเมจคริติคอล ทองเป็นดาเมจธาตุดิน) จึงเป็นเกือบคู่ | จอคราฟต์ภาษาไทย 2026-09-22 ได้ชื่อไทยของเซ็ตแล้ว"
     }
   },
   {
@@ -1677,6 +1685,7 @@
   {
     "id": "thousand-year-old-tree",
     "name": {
+      "th": "ต้นไม้โบราณอายุพันปี",
       "en": "Thousand-Year-Old Tree"
     },
     "grade": "gold",
@@ -1703,13 +1712,14 @@
       }
     ],
     "source": {
-      "verifiedAt": "2026-09-19",
+      "verifiedAt": "2026-09-22",
       "gameVersion": "unknown",
       "by": "in-game",
       "readIn": [
-        "en"
+        "en",
+        "th"
       ],
-      "note": "เซ็ตทองสองชิ้น (หมวก Almighty Jade Odong Hat / เกราะอก Almighty Jade Odong Armor) มีโบนัสแค่ [2 Set] | แม่พิมพ์เดียวกับ Sirius [2 Set] เป๊ะ (\"All teammates' <ธาตุ> DMG +7.5% for 5s upon using a Support Skill\") ทองทั้งคู่ **และได้ 7.5% เท่ากันทั้งที่คนละธาตุ** (ไฟ กับ ดิน) — แม่พิมพ์นี้จึงนิ่งข้ามธาตุ ต่างจากแม่พิมพ์สกิลพิเศษที่ธาตุลมกระโดดไป 10 ดู PLAN §13.9.3 | ชื่อชิ้นเดินตาม Mystical Jade Odong (ม่วง สองชิ้น หมวก Jade Odong Hat / เกราะอก Jade Odong Brigandine) ด้วยการเติมคำว่า Almighty และช่องตรงกันทั้งสองช่อง แต่โบนัสคนละเรื่องสุดขั้ว (ม่วงเป็นพลังชีวิตสูงสุด +3% ไม่มีทริกเกอร์เลย) เป็นคู่ชื่อ ไม่ใช่คู่ผล อีกคู่หนึ่ง"
+      "note": "เซ็ตทองสองชิ้น (หมวก Almighty Jade Odong Hat / เกราะอก Almighty Jade Odong Armor) มีโบนัสแค่ [2 Set] | แม่พิมพ์เดียวกับ Sirius [2 Set] เป๊ะ (\"All teammates' <ธาตุ> DMG +7.5% for 5s upon using a Support Skill\") ทองทั้งคู่ **และได้ 7.5% เท่ากันทั้งที่คนละธาตุ** (ไฟ กับ ดิน) — แม่พิมพ์นี้จึงนิ่งข้ามธาตุ ต่างจากแม่พิมพ์สกิลพิเศษที่ธาตุลมกระโดดไป 10 ดู PLAN §13.9.3 | ชื่อชิ้นเดินตาม Mystical Jade Odong (ม่วง สองชิ้น หมวก Jade Odong Hat / เกราะอก Jade Odong Brigandine) ด้วยการเติมคำว่า Almighty และช่องตรงกันทั้งสองช่อง แต่โบนัสคนละเรื่องสุดขั้ว (ม่วงเป็นพลังชีวิตสูงสุด +3% ไม่มีทริกเกอร์เลย) เป็นคู่ชื่อ ไม่ใช่คู่ผล อีกคู่หนึ่ง | จอคราฟต์ภาษาไทย 2026-09-22 ได้ชื่อไทยของเซ็ตแล้ว"
     }
   }
 ]
