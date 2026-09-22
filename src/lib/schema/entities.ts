@@ -329,6 +329,21 @@ export const traitPool = z.object({
         scopes: z.array(vocabEnum("scope")).nonempty().optional(),
         /** true = เฉพาะบอส, false = เฉพาะมอนทั่วไป, ไม่ใส่ = ไม่จำกัด */
         vsBoss: z.boolean().optional(),
+        unit: vocabEnum("unit"),
+        /**
+         * ค่าของแต่ละแรง — เก็บครบทั้งห้าค่าตามที่อ่านมา ไม่เก็บเป็นสูตร
+         *
+         * ทั้ง 27 รายการเดินตามกฎเดียวกันคือ ฐาน x ลำดับแรง (เทา 1 ... ทอง 5)
+         * แต่กฎนั้นอยู่ใน PLAN ในฐานะข้อสังเกต ไม่ใช่วิธีเก็บ — ถ้าวันหลังมีรายการ
+         * ไหนหลุดกฎ ข้อมูลในไฟล์จะยังถูก ส่วนกฎจะพังแทน ซึ่งเป็นทางที่ควรพังกว่า
+         */
+        values: z.object({
+          grey: z.number(),
+          green: z.number(),
+          blue: z.number(),
+          purple: z.number(),
+          gold: z.number(),
+        }),
       }),
     )
     .min(1),

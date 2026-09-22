@@ -12,7 +12,15 @@
         "th": "พลังโจมตี"
       },
       "kind": "buff",
-      "stat": "atk"
+      "stat": "atk",
+      "unit": "percent",
+      "values": {
+        "grey": 1,
+        "green": 2,
+        "blue": 3,
+        "purple": 4,
+        "gold": 5
+      }
     },
     {
       "id": "def",
@@ -20,7 +28,15 @@
         "th": "พลังป้องกัน"
       },
       "kind": "buff",
-      "stat": "def"
+      "stat": "def",
+      "unit": "percent",
+      "values": {
+        "grey": 1,
+        "green": 2,
+        "blue": 3,
+        "purple": 4,
+        "gold": 5
+      }
     },
     {
       "id": "hp",
@@ -28,7 +44,15 @@
         "th": "พลังชีวิต"
       },
       "kind": "buff",
-      "stat": "hp"
+      "stat": "hp",
+      "unit": "percent",
+      "values": {
+        "grey": 2,
+        "green": 4,
+        "blue": 6,
+        "purple": 8,
+        "gold": 10
+      }
     },
     {
       "id": "crit-rate",
@@ -36,7 +60,15 @@
         "th": "อัตราคริติคอล"
       },
       "kind": "buff",
-      "stat": "critRate"
+      "stat": "critRate",
+      "unit": "percent",
+      "values": {
+        "grey": 1,
+        "green": 2,
+        "blue": 3,
+        "purple": 4,
+        "gold": 5
+      }
     },
     {
       "id": "crit-dmg",
@@ -44,7 +76,15 @@
         "th": "ดาเมจคริติคอล"
       },
       "kind": "buff",
-      "stat": "critDmg"
+      "stat": "critDmg",
+      "unit": "percent",
+      "values": {
+        "grey": 3,
+        "green": 6,
+        "blue": 9,
+        "purple": 12,
+        "gold": 15
+      }
     },
     {
       "id": "support-dmg",
@@ -52,7 +92,15 @@
         "th": "เพิ่มดาเมจสนับสนุน"
       },
       "kind": "buff",
-      "stat": "supportDmg"
+      "stat": "supportDmg",
+      "unit": "percent",
+      "values": {
+        "grey": 1.5,
+        "green": 3,
+        "blue": 4.5,
+        "purple": 6,
+        "gold": 7.5
+      }
     },
     {
       "id": "suppression-dmg",
@@ -60,7 +108,15 @@
         "th": "เพิ่มดาเมจกดขี่"
       },
       "kind": "buff",
-      "stat": "suppressionDmg"
+      "stat": "suppressionDmg",
+      "unit": "percent",
+      "values": {
+        "grey": 1.5,
+        "green": 3,
+        "blue": 4.5,
+        "purple": 6,
+        "gold": 7.5
+      }
     },
     {
       "id": "brawl-dmg",
@@ -68,7 +124,15 @@
         "th": "เพิ่มดาเมจปะทะ"
       },
       "kind": "buff",
-      "stat": "brawlDmg"
+      "stat": "brawlDmg",
+      "unit": "percent",
+      "values": {
+        "grey": 1.5,
+        "green": 3,
+        "blue": 4.5,
+        "purple": 6,
+        "gold": 7.5
+      }
     },
     {
       "id": "neutralization-dmg",
@@ -76,7 +140,15 @@
         "th": "เพิ่มดาเมจหมดฤทธิ์"
       },
       "kind": "buff",
-      "stat": "neutralizationDmg"
+      "stat": "neutralizationDmg",
+      "unit": "percent",
+      "values": {
+        "grey": 1.5,
+        "green": 3,
+        "blue": 4.5,
+        "purple": 6,
+        "gold": 7.5
+      }
     },
     {
       "id": "dmg-vs-normal",
@@ -85,7 +157,15 @@
       },
       "kind": "buff",
       "stat": "dmgDealt",
-      "vsBoss": false
+      "vsBoss": false,
+      "unit": "percent",
+      "values": {
+        "grey": 2,
+        "green": 4,
+        "blue": 6,
+        "purple": 8,
+        "gold": 10
+      }
     },
     {
       "id": "dmg-vs-boss",
@@ -94,7 +174,15 @@
       },
       "kind": "buff",
       "stat": "dmgDealt",
-      "vsBoss": true
+      "vsBoss": true,
+      "unit": "percent",
+      "values": {
+        "grey": 2,
+        "green": 4,
+        "blue": 6,
+        "purple": 8,
+        "gold": 10
+      }
     },
     {
       "id": "special-skill-cooldown",
@@ -105,7 +193,15 @@
       "stat": "cooldown",
       "scopes": [
         "specialSkill"
-      ]
+      ],
+      "unit": "percent",
+      "values": {
+        "grey": 3,
+        "green": 6,
+        "blue": 9,
+        "purple": 12,
+        "gold": 15
+      }
     },
     {
       "id": "weakness-dmg",
@@ -116,7 +212,15 @@
       "stat": "dmgDealt",
       "scopes": [
         "weaknessHit"
-      ]
+      ],
+      "unit": "percent",
+      "values": {
+        "grey": 2,
+        "green": 4,
+        "blue": 6,
+        "purple": 8,
+        "gold": 10
+      }
     },
     {
       "id": "dmg-physical",
@@ -125,7 +229,15 @@
       },
       "kind": "buff",
       "stat": "dmgDealt",
-      "damageType": "physical"
+      "damageType": "physical",
+      "unit": "percent",
+      "values": {
+        "grey": 1.5,
+        "green": 3,
+        "blue": 4.5,
+        "purple": 6,
+        "gold": 7.5
+      }
     },
     {
       "id": "dmg-fire",
@@ -134,7 +246,15 @@
       },
       "kind": "buff",
       "stat": "dmgDealt",
-      "damageType": "fire"
+      "damageType": "fire",
+      "unit": "percent",
+      "values": {
+        "grey": 1.5,
+        "green": 3,
+        "blue": 4.5,
+        "purple": 6,
+        "gold": 7.5
+      }
     },
     {
       "id": "dmg-ice",
@@ -143,7 +263,15 @@
       },
       "kind": "buff",
       "stat": "dmgDealt",
-      "damageType": "ice"
+      "damageType": "ice",
+      "unit": "percent",
+      "values": {
+        "grey": 1.5,
+        "green": 3,
+        "blue": 4.5,
+        "purple": 6,
+        "gold": 7.5
+      }
     },
     {
       "id": "dmg-wind",
@@ -152,7 +280,15 @@
       },
       "kind": "buff",
       "stat": "dmgDealt",
-      "damageType": "wind"
+      "damageType": "wind",
+      "unit": "percent",
+      "values": {
+        "grey": 1.5,
+        "green": 3,
+        "blue": 4.5,
+        "purple": 6,
+        "gold": 7.5
+      }
     },
     {
       "id": "dmg-lightning",
@@ -161,7 +297,15 @@
       },
       "kind": "buff",
       "stat": "dmgDealt",
-      "damageType": "lightning"
+      "damageType": "lightning",
+      "unit": "percent",
+      "values": {
+        "grey": 1.5,
+        "green": 3,
+        "blue": 4.5,
+        "purple": 6,
+        "gold": 7.5
+      }
     },
     {
       "id": "dmg-earth",
@@ -170,7 +314,15 @@
       },
       "kind": "buff",
       "stat": "dmgDealt",
-      "damageType": "earth"
+      "damageType": "earth",
+      "unit": "percent",
+      "values": {
+        "grey": 1.5,
+        "green": 3,
+        "blue": 4.5,
+        "purple": 6,
+        "gold": 7.5
+      }
     },
     {
       "id": "res-physical",
@@ -179,7 +331,15 @@
       },
       "kind": "buff",
       "stat": "res",
-      "damageType": "physical"
+      "damageType": "physical",
+      "unit": "percent",
+      "values": {
+        "grey": 1,
+        "green": 2,
+        "blue": 3,
+        "purple": 4,
+        "gold": 5
+      }
     },
     {
       "id": "res-fire",
@@ -188,7 +348,15 @@
       },
       "kind": "buff",
       "stat": "res",
-      "damageType": "fire"
+      "damageType": "fire",
+      "unit": "percent",
+      "values": {
+        "grey": 1,
+        "green": 2,
+        "blue": 3,
+        "purple": 4,
+        "gold": 5
+      }
     },
     {
       "id": "res-ice",
@@ -197,7 +365,15 @@
       },
       "kind": "buff",
       "stat": "res",
-      "damageType": "ice"
+      "damageType": "ice",
+      "unit": "percent",
+      "values": {
+        "grey": 1,
+        "green": 2,
+        "blue": 3,
+        "purple": 4,
+        "gold": 5
+      }
     },
     {
       "id": "res-wind",
@@ -206,7 +382,15 @@
       },
       "kind": "buff",
       "stat": "res",
-      "damageType": "wind"
+      "damageType": "wind",
+      "unit": "percent",
+      "values": {
+        "grey": 1,
+        "green": 2,
+        "blue": 3,
+        "purple": 4,
+        "gold": 5
+      }
     },
     {
       "id": "res-lightning",
@@ -215,7 +399,15 @@
       },
       "kind": "buff",
       "stat": "res",
-      "damageType": "lightning"
+      "damageType": "lightning",
+      "unit": "percent",
+      "values": {
+        "grey": 1,
+        "green": 2,
+        "blue": 3,
+        "purple": 4,
+        "gold": 5
+      }
     },
     {
       "id": "res-earth",
@@ -224,7 +416,15 @@
       },
       "kind": "buff",
       "stat": "res",
-      "damageType": "earth"
+      "damageType": "earth",
+      "unit": "percent",
+      "values": {
+        "grey": 1,
+        "green": 2,
+        "blue": 3,
+        "purple": 4,
+        "gold": 5
+      }
     },
     {
       "id": "res-water",
@@ -233,7 +433,15 @@
       },
       "kind": "buff",
       "stat": "res",
-      "damageType": "water"
+      "damageType": "water",
+      "unit": "percent",
+      "values": {
+        "grey": 1,
+        "green": 2,
+        "blue": 3,
+        "purple": 4,
+        "gold": 5
+      }
     },
     {
       "id": "res-dark",
@@ -242,7 +450,15 @@
       },
       "kind": "buff",
       "stat": "res",
-      "damageType": "dark"
+      "damageType": "dark",
+      "unit": "percent",
+      "values": {
+        "grey": 1,
+        "green": 2,
+        "blue": 3,
+        "purple": 4,
+        "gold": 5
+      }
     }
   ],
   "source": {
@@ -252,6 +468,6 @@
     "readIn": [
       "th"
     ],
-    "note": "อ่านจากจอฟิลเตอร์ หัวข้อ \"ลักษณะเฉพาะ\" ภาษาไทย 2026-09-22 เห็นครบทั้ง 27 รายการในจอเดียว ผู้เล่นยืนยันว่ามีเท่านี้ และมอนหนึ่งตัวมี 4 ช่อง | **ไม่เก็บตัวเลข** เพราะจอฟิลเตอร์บอกแค่ชื่อลักษณะ ไม่บอกค่า | **รายการนี้ยืนยันการแยก element กับ damageType ที่วางไว้ตั้งแต่ต้น** — ฝั่งเพิ่มดาเมจมีแค่ กายภาพ + ห้าธาตุ (ไฟ น้ำแข็ง ลม สายฟ้า ดิน) + จุดอ่อน ส่วนฝั่งต้านทานมีแปดอย่าง คือเพิ่ม **น้ำ** กับ **มืด** เข้ามาด้วย ตรงกับ damageType ในพจนานุกรมที่มีแปดค่าพอดี | แปลว่าน้ำกับมืดเป็นชนิดดาเมจที่ \"โดนแล้วต้านได้\" แต่ไม่ใช่ธาตุที่ฝั่งเราใช้โจมตี ไม่ขัดกับกฎที่ว่าธาตุรบมีห้าอย่าง แต่เป็นครั้งแรกที่เห็นจอเกมเรียก \"ธาตุมืด\" ตรง ๆ | ยังไม่ได้เปิดจอนี้ภาษาอังกฤษ จึงยังไม่รู้คำอังกฤษของหัวข้อ \"ลักษณะเฉพาะ\""
+    "note": "อ่านจากจอฟิลเตอร์ หัวข้อ \"ลักษณะเฉพาะ\" ภาษาไทย 2026-09-22 เห็นครบทั้ง 27 รายการในจอเดียว ผู้เล่นยืนยันว่ามีเท่านี้ และมอนหนึ่งตัวมี 4 ช่อง | **ไม่เก็บตัวเลข** เพราะจอฟิลเตอร์บอกแค่ชื่อลักษณะ ไม่บอกค่า | **รายการนี้ยืนยันการแยก element กับ damageType ที่วางไว้ตั้งแต่ต้น** — ฝั่งเพิ่มดาเมจมีแค่ กายภาพ + ห้าธาตุ (ไฟ น้ำแข็ง ลม สายฟ้า ดิน) + จุดอ่อน ส่วนฝั่งต้านทานมีแปดอย่าง คือเพิ่ม **น้ำ** กับ **มืด** เข้ามาด้วย ตรงกับ damageType ในพจนานุกรมที่มีแปดค่าพอดี | แปลว่าน้ำกับมืดเป็นชนิดดาเมจที่ \"โดนแล้วต้านได้\" แต่ไม่ใช่ธาตุที่ฝั่งเราใช้โจมตี ไม่ขัดกับกฎที่ว่าธาตุรบมีห้าอย่าง แต่เป็นครั้งแรกที่เห็นจอเกมเรียก \"ธาตุมืด\" ตรง ๆ | ยังไม่ได้เปิดจอนี้ภาษาอังกฤษ จึงยังไม่รู้คำอังกฤษของหัวข้อ \"ลักษณะเฉพาะ\" | **ค่าตัวเลขได้มาเมื่อ 2026-09-22 จากผู้เล่นพิมพ์มาให้ ไม่ได้อ่านจากจอเอง** ครบทั้ง 27 รายการ x 5 แรง | ทั้ง 135 ค่าเดินตามกฎเดียวกันเป๊ะ คือ **ฐาน x ลำดับแรง** (เทา 1 เขียว 2 ฟ้า 3 ม่วง 4 ทอง 5) ฐานมีแค่สี่ค่าคือ 1 / 1.5 / 2 / 3 ทองจึงเท่ากับเทาห้าเท่าเสมอ | ถึงกฎจะลงตัวก็ยังเก็บค่าครบทั้งห้าช่องตามที่ได้มา ไม่เก็บเป็นสูตร ถ้าวันหลังมีรายการไหนหลุดกฎ ไฟล์จะยังถูกและกฎจะพังแทน ซึ่งเป็นทางที่ควรพังกว่า"
   }
 }

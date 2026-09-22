@@ -134,6 +134,20 @@ if (!traitsParsed.success) {
   }
   // ให้ช่องที่ยังขาดภาษาโผล่ในคำเตือนเหมือนหมวดอื่น ไม่งั้นมันจะถูกลืมอยู่ในไฟล์ meta
   countMissingLocale(traitsParsed.data.pool, "data/meta/traits.json", ["pool"]);
+
+  // ค่าต้องไต่ขึ้นตามแรงเสมอ — ไม่ได้บังคับว่าต้องเป็น ฐาน x ลำดับ เพราะนั่นเป็นข้อสังเกต
+  // ไม่ใช่กฎของเกม แต่ถ้าแรงสูงกว่าได้ค่าน้อยกว่า แปลว่ากรอกสลับแถวแน่ ๆ
+  const RANK_ORDER = ["grey", "green", "blue", "purple", "gold"] as const;
+  for (const tr of traitsParsed.data.pool) {
+    const seq = RANK_ORDER.map((r) => tr.values[r]);
+    for (let i = 1; i < seq.length; i++) {
+      if (seq[i] <= seq[i - 1])
+        fail(
+          "data/meta/traits.json",
+          `${tr.id}: ค่าไม่ได้ไต่ขึ้นตามแรง (${RANK_ORDER[i - 1]} ${seq[i - 1]} -> ${RANK_ORDER[i]} ${seq[i]})`,
+        );
+    }
+  }
 }
 
 // ลักษณะเฉพาะสุ่มรายตัวตอนจับ ไม่ผูกกับสายพันธุ์ — ถ้ามันไปโผล่ในไฟล์มอนเมื่อไร

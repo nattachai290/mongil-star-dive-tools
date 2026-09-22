@@ -9,6 +9,9 @@ import { describeEffect } from "@/lib/describe";
 import { label } from "@/lib/vocabulary";
 import { linkableIds, linkableOf, linkableBadge } from "@/lib/linkable";
 
+/** เรียงจากแรงต่ำไปสูง ให้ตารางอ่านจากซ้ายไปขวาแล้วเห็นว่าค่าไต่ขึ้น */
+const RANKS = ["grey", "green", "blue", "purple", "gold"] as const;
+
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
 }
@@ -202,27 +205,48 @@ export default async function MonsterlingsPage({
         <p className="mt-1 max-w-2xl text-xs leading-relaxed text-ink-2">
           {t("monsterlings.traitsNote").replace("{slots}", String(TRAIT_POOL.slots))}
         </p>
-        <ul className="mt-3 flex flex-wrap gap-1.5">
-          {TRAIT_POOL.pool.map((tr) => {
-            const picked = pickText(tr.name, locale);
-            return (
-              <li
-                key={tr.id}
-                className="rounded border border-line bg-surface px-2 py-1 text-[11px] leading-tight text-ink-2"
-              >
-                {picked?.value ?? tr.id}
-                {picked?.isFallback && (
-                  <span
-                    className="ms-1 rounded bg-surface-2 px-1 align-middle font-mono text-[9px] text-muted"
-                    title={t("locale.untranslatedTitle")}
-                  >
-                    {t("locale.untranslated")}
-                  </span>
-                )}
-              </li>
-            );
-          })}
-        </ul>
+        <div className="mt-3 overflow-x-auto">
+          <table className="w-full min-w-[26rem] border-collapse text-[11px]">
+            <thead>
+              <tr className="border-b border-line text-muted">
+                <th className="py-1.5 pe-3 text-start font-medium">{t("monsterlings.traitsTitle")}</th>
+                {RANKS.map((rank) => (
+                  <th key={rank} className="px-2 py-1.5 text-end font-medium">
+                    {label("monsterRank", rank, locale)}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {TRAIT_POOL.pool.map((tr) => {
+                const picked = pickText(tr.name, locale);
+                return (
+                  <tr key={tr.id} className="border-b border-line/50 last:border-0">
+                    <td className="py-1.5 pe-3 text-ink-2">
+                      {picked?.value ?? tr.id}
+                      {picked?.isFallback && (
+                        <span
+                          className="ms-1 rounded bg-surface-2 px-1 align-middle font-mono text-[9px] text-muted"
+                          title={t("locale.untranslatedTitle")}
+                        >
+                          {t("locale.untranslated")}
+                        </span>
+                      )}
+                    </td>
+                    {RANKS.map((rank) => (
+                      <td
+                        key={rank}
+                        className={`px-2 py-1.5 text-end tabular-nums ${rank === "gold" ? "font-medium text-ink" : "text-muted"}`}
+                      >
+                        {tr.values[rank]}%
+                      </td>
+                    ))}
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <MonsterlingList
