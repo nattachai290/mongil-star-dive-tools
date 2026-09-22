@@ -281,6 +281,15 @@ export const monsterling = z.object({
    */
   effectsRank: vocabEnum("monsterRank").optional(),
   obtain: z.object({ method: vocabEnum("obtainMethod"), note: text.optional() }).optional(),
+  /**
+   * ของที่มอนตัวนี้ดรอป — เก็บแค่ชื่อ
+   *
+   * ยังไม่เก็บจำนวนกับอัตราดรอป เพราะยังไม่เคยเห็นจอที่บอกสองอย่างนั้น
+   * ชื่อที่อยู่ในนี้เป็นชื่อของของ ไม่ใช่ id ของ entity อื่น — ของพวกนี้
+   * ส่วนใหญ่เป็นวัตถุดิบที่ยังไม่มีไฟล์ของตัวเอง ถ้าวันหลังทำไฟล์วัตถุดิบ
+   * ค่อยผูก id เพิ่ม อย่าเพิ่งเดาว่าชื่อไหนตรงกับไฟล์ไหน
+   */
+  drops: z.array(z.object({ name: text })).default([]),
   images: z.object({ icon: z.string().optional() }).optional(),
   source,
 }).refine(

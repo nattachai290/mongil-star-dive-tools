@@ -113,6 +113,9 @@ function buildRows(locale: Locale, bookLabel: (book: string) => string): Monster
       // การไม่มีป้ายอ่านได้ว่า "ใส่ไม่ได้" เพราะยืนยันแล้วว่ารายการลิงก์เชนในเกมครบ
       const linkable = slug !== null && linkableOf(slug, CHAIN_IDS) === "yes";
 
+      // ของที่ดรอปยังมีแค่ชื่อไทย pickText จึงตกไปภาษาที่มีให้เอง
+      const drops = (mon?.drops ?? []).map((d) => pickText(d.name, locale)?.value ?? "").filter(Boolean);
+
       rows.push({
         key: `${entry.book}-${entry.no}`,
         facets: facetsOf(mon?.speciesEffects ?? [], linkable),
@@ -124,12 +127,14 @@ function buildRows(locale: Locale, bookLabel: (book: string) => string): Monster
         image: slug ? monsterlingImage(slug) : null,
         badge: linkable ? (linkableBadge("yes")?.[locale] ?? null) : null,
         effects,
+        drops,
         // ค้นได้ทั้งสองภาษาและค้นจากข้อความเอฟเฟกต์ด้วย เช่นพิมพ์ "คริ" หรือ "boss"
         haystack: [
           entry.name.th,
           entry.name.en,
           slug,
           `no.${entry.no}`,
+          ...(mon?.drops ?? []).flatMap((d) => [d.name.th, d.name.en]),
           ...effects.flatMap((e) => [e.headline, ...e.qualifiers]),
           ...effectsOther.flatMap((e) => [e.headline, ...e.qualifiers]),
         ]
@@ -201,6 +206,7 @@ export default async function MonsterlingsPage({
           matches: t("monsterlings.matches"),
           noMatch: t("monsterlings.noMatch"),
           noEffect: t("monsterlings.noEffect"),
+          drops: t("monsterlings.drops"),
           untranslated: t("locale.untranslated"),
           untranslatedTitle: t("locale.untranslatedTitle"),
           filters: t("filters.legend"),

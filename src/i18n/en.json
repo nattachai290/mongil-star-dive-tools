@@ -24,6 +24,7 @@
   "monsterlings.coverage": "with effects recorded",
   "monsterlings.linkable": "can take a Link Chain",
   "monsterlings.noEffect": "No effect recorded yet",
+  "monsterlings.drops": "Drops",
   "linkChains.title": "Link Chains",
   "linkChains.lede": "The moves monsterlings come out to perform, with appearance conditions and bonus effects",
   "linkChains.level": "Rank",
