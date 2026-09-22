@@ -305,6 +305,37 @@ export const monsterling = z.object({
  * ก็กลายเป็นข้อมูลผิดทันที เพราะมอนชื่อเดียวกันคนละตัวจะได้ Trait ไม่เหมือนกัน
  */
 
+/**
+ * คลังลักษณะเฉพาะที่เกมสุ่มใส่มอนแต่ละตัวตอนจับ
+ *
+ * **นี่คือ "มีอะไรให้สุ่มได้บ้าง" ไม่ใช่ "มอนตัวไหนได้อะไร"** — ห้ามเอาไปแปะไว้ที่
+ * ไฟล์มอน เพราะลักษณะเฉพาะสุ่มรายตัวตอนจับ มอนชื่อเดียวกันคนละตัวได้คนละอย่าง
+ * เก็บไว้ที่นี่ที่เดียวในฐานะรายการตัวเลือก ดูหมายเหตุท้าย monsterling
+ *
+ * ไม่เก็บตัวเลข เพราะจอที่อ่านมาเป็นจอฟิลเตอร์ซึ่งบอกแค่ชื่อลักษณะ ไม่บอกค่า
+ */
+export const traitPool = z.object({
+  /** มอนหนึ่งตัวมีกี่ช่อง */
+  slots: z.number().int().positive(),
+  pool: z
+    .array(
+      z.object({
+        id: slug,
+        /** คำที่จอเขียนตรง ๆ — ยังมีแต่ไทย เพราะยังไม่ได้เปิดจอนี้ภาษาอังกฤษ */
+        name: text,
+        kind: vocabEnum("effectKind"),
+        stat: vocabEnum("stat"),
+        damageType: vocabEnum("damageType").optional(),
+        scopes: z.array(vocabEnum("scope")).nonempty().optional(),
+        /** true = เฉพาะบอส, false = เฉพาะมอนทั่วไป, ไม่ใส่ = ไม่จำกัด */
+        vsBoss: z.boolean().optional(),
+      }),
+    )
+    .min(1),
+  source,
+});
+export type TraitPool = z.infer<typeof traitPool>;
+
 export const food = z.object({
   id: slug,
   name: text,

@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { MonsterlingList, type MonsterlingRow } from "@/components/MonsterlingList";
 import { createTranslate } from "@/i18n";
 import { LOCALES, isLocale, pickText, type Locale } from "@/lib/i18n";
-import { DEX, LINK_CHAINS, MONSTERLINGS, monsterlingImage } from "@/lib/data";
+import { DEX, LINK_CHAINS, MONSTERLINGS, TRAIT_POOL, monsterlingImage } from "@/lib/data";
 import type { Monsterling } from "@/lib/schema/entities";
 import { describeEffect } from "@/lib/describe";
 import { label } from "@/lib/vocabulary";
@@ -196,6 +196,34 @@ export default async function MonsterlingsPage({
         {t("monsterlings.coverage")} · <strong className="text-ink">{linkable}</strong>{" "}
         {t("monsterlings.linkable")} · {t("monsterling.rankNote")}
       </p>
+
+      <section className="mt-6 rounded-lg border border-line bg-surface-2/40 p-4">
+        <h2 className="font-display text-sm font-semibold">{t("monsterlings.traitsTitle")}</h2>
+        <p className="mt-1 max-w-2xl text-xs leading-relaxed text-ink-2">
+          {t("monsterlings.traitsNote").replace("{slots}", String(TRAIT_POOL.slots))}
+        </p>
+        <ul className="mt-3 flex flex-wrap gap-1.5">
+          {TRAIT_POOL.pool.map((tr) => {
+            const picked = pickText(tr.name, locale);
+            return (
+              <li
+                key={tr.id}
+                className="rounded border border-line bg-surface px-2 py-1 text-[11px] leading-tight text-ink-2"
+              >
+                {picked?.value ?? tr.id}
+                {picked?.isFallback && (
+                  <span
+                    className="ms-1 rounded bg-surface-2 px-1 align-middle font-mono text-[9px] text-muted"
+                    title={t("locale.untranslatedTitle")}
+                  >
+                    {t("locale.untranslated")}
+                  </span>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </section>
 
       <MonsterlingList
         rows={rows}

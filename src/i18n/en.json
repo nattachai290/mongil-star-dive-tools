@@ -25,6 +25,8 @@
   "monsterlings.linkable": "can take a Link Chain",
   "monsterlings.noEffect": "No effect recorded yet",
   "monsterlings.drops": "Drops",
+  "monsterlings.traitsTitle": "Traits",
+  "monsterlings.traitsNote": "Rolled per captured monsterling, {slots} slots each. They belong to the individual you caught, not the species, so they are listed here as a pool and never stored on a monsterling.",
   "linkChains.title": "Link Chains",
   "linkChains.lede": "The moves monsterlings come out to perform, with appearance conditions and bonus effects",
   "linkChains.level": "Rank",

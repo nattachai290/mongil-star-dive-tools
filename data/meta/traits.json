@@ -1,0 +1,257 @@
+{
+  "_meta": {
+    "version": 1,
+    "updatedAt": "2026-09-22",
+    "note": "คลังลักษณะเฉพาะที่เกมสุ่มใส่มอนตอนจับ — เก็บที่นี่ที่เดียวในฐานะรายการตัวเลือก ห้ามแปะไว้ที่ไฟล์มอน"
+  },
+  "slots": 4,
+  "pool": [
+    {
+      "id": "atk",
+      "name": {
+        "th": "พลังโจมตี"
+      },
+      "kind": "buff",
+      "stat": "atk"
+    },
+    {
+      "id": "def",
+      "name": {
+        "th": "พลังป้องกัน"
+      },
+      "kind": "buff",
+      "stat": "def"
+    },
+    {
+      "id": "hp",
+      "name": {
+        "th": "พลังชีวิต"
+      },
+      "kind": "buff",
+      "stat": "hp"
+    },
+    {
+      "id": "crit-rate",
+      "name": {
+        "th": "อัตราคริติคอล"
+      },
+      "kind": "buff",
+      "stat": "critRate"
+    },
+    {
+      "id": "crit-dmg",
+      "name": {
+        "th": "ดาเมจคริติคอล"
+      },
+      "kind": "buff",
+      "stat": "critDmg"
+    },
+    {
+      "id": "support-dmg",
+      "name": {
+        "th": "เพิ่มดาเมจสนับสนุน"
+      },
+      "kind": "buff",
+      "stat": "supportDmg"
+    },
+    {
+      "id": "suppression-dmg",
+      "name": {
+        "th": "เพิ่มดาเมจกดขี่"
+      },
+      "kind": "buff",
+      "stat": "suppressionDmg"
+    },
+    {
+      "id": "brawl-dmg",
+      "name": {
+        "th": "เพิ่มดาเมจปะทะ"
+      },
+      "kind": "buff",
+      "stat": "brawlDmg"
+    },
+    {
+      "id": "neutralization-dmg",
+      "name": {
+        "th": "เพิ่มดาเมจหมดฤทธิ์"
+      },
+      "kind": "buff",
+      "stat": "neutralizationDmg"
+    },
+    {
+      "id": "dmg-vs-normal",
+      "name": {
+        "th": "เพิ่มดาเมจมอนสเตอร์ทั่วไป"
+      },
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "vsBoss": false
+    },
+    {
+      "id": "dmg-vs-boss",
+      "name": {
+        "th": "เพิ่มดาเมจมอนสเตอร์บอส"
+      },
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "vsBoss": true
+    },
+    {
+      "id": "special-skill-cooldown",
+      "name": {
+        "th": "ลดคูลดาวน์สกิลพิเศษ"
+      },
+      "kind": "debuff",
+      "stat": "cooldown",
+      "scopes": [
+        "specialSkill"
+      ]
+    },
+    {
+      "id": "weakness-dmg",
+      "name": {
+        "th": "เพิ่มดาเมจธาตุจุดอ่อน"
+      },
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "weaknessHit"
+      ]
+    },
+    {
+      "id": "dmg-physical",
+      "name": {
+        "th": "เพิ่มดาเมจกายภาพ"
+      },
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "physical"
+    },
+    {
+      "id": "dmg-fire",
+      "name": {
+        "th": "เพิ่มดาเมจธาตุไฟ"
+      },
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "fire"
+    },
+    {
+      "id": "dmg-ice",
+      "name": {
+        "th": "เพิ่มดาเมจธาตุน้ำแข็ง"
+      },
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "ice"
+    },
+    {
+      "id": "dmg-wind",
+      "name": {
+        "th": "เพิ่มดาเมจธาตุลม"
+      },
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "wind"
+    },
+    {
+      "id": "dmg-lightning",
+      "name": {
+        "th": "เพิ่มดาเมจธาตุสายฟ้า"
+      },
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "lightning"
+    },
+    {
+      "id": "dmg-earth",
+      "name": {
+        "th": "เพิ่มดาเมจธาตุดิน"
+      },
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "earth"
+    },
+    {
+      "id": "res-physical",
+      "name": {
+        "th": "ต้านทานกายภาพ"
+      },
+      "kind": "buff",
+      "stat": "res",
+      "damageType": "physical"
+    },
+    {
+      "id": "res-fire",
+      "name": {
+        "th": "ต้านทานธาตุไฟ"
+      },
+      "kind": "buff",
+      "stat": "res",
+      "damageType": "fire"
+    },
+    {
+      "id": "res-ice",
+      "name": {
+        "th": "ต้านทานธาตุน้ำแข็ง"
+      },
+      "kind": "buff",
+      "stat": "res",
+      "damageType": "ice"
+    },
+    {
+      "id": "res-wind",
+      "name": {
+        "th": "ต้านทานธาตุลม"
+      },
+      "kind": "buff",
+      "stat": "res",
+      "damageType": "wind"
+    },
+    {
+      "id": "res-lightning",
+      "name": {
+        "th": "ต้านทานธาตุสายฟ้า"
+      },
+      "kind": "buff",
+      "stat": "res",
+      "damageType": "lightning"
+    },
+    {
+      "id": "res-earth",
+      "name": {
+        "th": "ต้านทานธาตุดิน"
+      },
+      "kind": "buff",
+      "stat": "res",
+      "damageType": "earth"
+    },
+    {
+      "id": "res-water",
+      "name": {
+        "th": "ต้านทานธาตุน้ำ"
+      },
+      "kind": "buff",
+      "stat": "res",
+      "damageType": "water"
+    },
+    {
+      "id": "res-dark",
+      "name": {
+        "th": "ต้านทานธาตุมืด"
+      },
+      "kind": "buff",
+      "stat": "res",
+      "damageType": "dark"
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th"
+    ],
+    "note": "อ่านจากจอฟิลเตอร์ หัวข้อ \"ลักษณะเฉพาะ\" ภาษาไทย 2026-09-22 เห็นครบทั้ง 27 รายการในจอเดียว ผู้เล่นยืนยันว่ามีเท่านี้ และมอนหนึ่งตัวมี 4 ช่อง | **ไม่เก็บตัวเลข** เพราะจอฟิลเตอร์บอกแค่ชื่อลักษณะ ไม่บอกค่า | **รายการนี้ยืนยันการแยก element กับ damageType ที่วางไว้ตั้งแต่ต้น** — ฝั่งเพิ่มดาเมจมีแค่ กายภาพ + ห้าธาตุ (ไฟ น้ำแข็ง ลม สายฟ้า ดิน) + จุดอ่อน ส่วนฝั่งต้านทานมีแปดอย่าง คือเพิ่ม **น้ำ** กับ **มืด** เข้ามาด้วย ตรงกับ damageType ในพจนานุกรมที่มีแปดค่าพอดี | แปลว่าน้ำกับมืดเป็นชนิดดาเมจที่ \"โดนแล้วต้านได้\" แต่ไม่ใช่ธาตุที่ฝั่งเราใช้โจมตี ไม่ขัดกับกฎที่ว่าธาตุรบมีห้าอย่าง แต่เป็นครั้งแรกที่เห็นจอเกมเรียก \"ธาตุมืด\" ตรง ๆ | ยังไม่ได้เปิดจอนี้ภาษาอังกฤษ จึงยังไม่รู้คำอังกฤษของหัวข้อ \"ลักษณะเฉพาะ\""
+  }
+}

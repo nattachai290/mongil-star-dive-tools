@@ -12,7 +12,7 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { z } from "zod";
-import { SCHEMAS, equipmentSet, gearMainStat, gearSubstat, monsterDexEntry, type Collection } from "../src/lib/schema/entities";
+import { SCHEMAS, equipmentSet, gearMainStat, gearSubstat, monsterDexEntry, traitPool, type Collection } from "../src/lib/schema/entities";
 import { FORMULA, IMPLEMENTED_STEPS } from "../src/lib/formula";
 
 const ROOT = process.cwd();
@@ -118,6 +118,36 @@ if (Array.isArray(mainStatsRaw)) {
   });
 } else {
   fail("data/meta/gear-main-stats.json", "ต้องเป็น array");
+}
+
+// ---------- คลังลักษณะเฉพาะ ----------
+const traitsRaw = readJson(join(DATA, "meta", "traits.json"), "data/meta/traits.json");
+const traitsParsed = traitPool.safeParse(traitsRaw);
+if (!traitsParsed.success) {
+  for (const issue of traitsParsed.error.issues)
+    fail("data/meta/traits.json", `${issue.path.join(".") || "(root)"}: ${issue.message}`);
+} else {
+  const seen = new Set<string>();
+  for (const tr of traitsParsed.data.pool) {
+    if (seen.has(tr.id)) fail("data/meta/traits.json", `id ซ้ำ: ${tr.id}`);
+    seen.add(tr.id);
+  }
+  // ให้ช่องที่ยังขาดภาษาโผล่ในคำเตือนเหมือนหมวดอื่น ไม่งั้นมันจะถูกลืมอยู่ในไฟล์ meta
+  countMissingLocale(traitsParsed.data.pool, "data/meta/traits.json", ["pool"]);
+}
+
+// ลักษณะเฉพาะสุ่มรายตัวตอนจับ ไม่ผูกกับสายพันธุ์ — ถ้ามันไปโผล่ในไฟล์มอนเมื่อไร
+// แปลว่าข้อมูลผิดทันที และ zod จะไม่จับให้ เพราะ object ตัดคีย์ที่ไม่รู้จักทิ้งเงียบ ๆ
+const monsterDir = join(DATA, "monsterlings");
+if (existsSync(monsterDir)) {
+  for (const file of readdirSync(monsterDir).filter((f) => f.endsWith(".json"))) {
+    const raw = readJson(join(monsterDir, file), `data/monsterlings/${file}`);
+    if (raw && typeof raw === "object" && ("traits" in raw || "trait" in raw))
+      fail(
+        `data/monsterlings/${file}`,
+        'มีช่อง traits ซึ่งห้ามเก็บที่ไฟล์มอน — ลักษณะเฉพาะสุ่มรายตัวตอนจับ คลังตัวเลือกอยู่ที่ data/meta/traits.json',
+      );
+  }
 }
 
 const subsRaw = readJson(join(DATA, "meta", "gear-substats.json"), "data/meta/gear-substats.json");

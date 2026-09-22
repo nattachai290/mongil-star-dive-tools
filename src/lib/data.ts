@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
-import { monsterDexEntry, linkChain, monsterling, character, equipment, equipmentSet, gearMainStat, gearSubstat } from "./schema/entities";
-import type { Character, Equipment, EquipmentSet, GearMainStat, GearSubstat, LinkChain, Monsterling } from "./schema/entities";
+import { monsterDexEntry, linkChain, monsterling, character, equipment, equipmentSet, gearMainStat, gearSubstat, traitPool } from "./schema/entities";
+import type { Character, Equipment, EquipmentSet, GearMainStat, GearSubstat, LinkChain, Monsterling, TraitPool } from "./schema/entities";
 
 /**
  * อ่านข้อมูลจาก data/ ตอน build — ไม่มี API ไม่มีฐานข้อมูล
@@ -101,6 +101,12 @@ export const GEAR_MAIN_STATS: GearMainStat[] = (
 export const GEAR_SUBSTATS: GearSubstat[] = (
   readJson(join(DATA, "meta", "gear-substats.json")) as unknown[]
 ).map((raw) => gearSubstat.parse(raw));
+
+/**
+ * คลังลักษณะเฉพาะที่สุ่มใส่มอนตอนจับ — ของกลางไฟล์เดียว ไม่ผูกกับมอนตัวไหน
+ * ถ้าวันหนึ่งมันไปโผล่อยู่ในไฟล์มอน แปลว่ามีคนเข้าใจผิดแล้ว
+ */
+export const TRAIT_POOL: TraitPool = traitPool.parse(readJson(join(DATA, "meta", "traits.json")));
 
 /** ชิ้นของเซ็ตหนึ่ง เรียงตามลำดับช่องบนตัวละคร ไม่ใช่ตามชื่อไฟล์ */
 const SLOT_ORDER = ["headgear", "chestpiece", "gloves", "footwear"];

@@ -25,6 +25,8 @@
   "monsterlings.linkable": "ตัวที่ใส่ลิงก์เชนได้",
   "monsterlings.noEffect": "ยังไม่มีข้อมูลเอฟเฟกต์",
   "monsterlings.drops": "ดรอป",
+  "monsterlings.traitsTitle": "ลักษณะเฉพาะ",
+  "monsterlings.traitsNote": "สุ่มให้มอนแต่ละตัวตอนจับ ตัวละ {slots} ช่อง เป็นของตัวที่จับมา ไม่ใช่ของสายพันธุ์ จึงเก็บไว้เป็นรายการตัวเลือก ไม่ผูกกับมอนตัวไหน",
   "linkChains.title": "ลิงก์เชน",
   "linkChains.lede": "ท่าที่มอนสเตอร์ลิงออกมาช่วย พร้อมเงื่อนไขปรากฏตัวและเอฟเฟกต์เพิ่มเติม",
   "linkChains.level": "ขั้น",
