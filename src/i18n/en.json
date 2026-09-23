@@ -27,6 +27,8 @@
   "monsterlings.drops": "Drops",
   "monsterlings.traitsTitle": "Traits",
   "monsterlings.traitsNote": "Rolled per captured monsterling, {slots} slots each. They belong to the individual you caught, not the species, so they are listed here as a pool and never stored on a monsterling.",
+  "monsterlings.otherDropsTitle": "Drops from enemies with no monsterling",
+  "monsterlings.otherDropsNote": "These cannot be caught, so they have no dex page and no monsterling file. Listed here so their drops are not lost.",
   "linkChains.title": "Link Chains",
   "linkChains.lede": "The moves monsterlings come out to perform, with appearance conditions and bonus effects",
   "linkChains.level": "Rank",

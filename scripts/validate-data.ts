@@ -12,7 +12,7 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { z } from "zod";
-import { SCHEMAS, equipmentSet, gearMainStat, gearSubstat, monsterDexEntry, traitPool, type Collection } from "../src/lib/schema/entities";
+import { SCHEMAS, equipmentSet, gearMainStat, gearSubstat, monsterDexEntry, traitPool, dropSources, type Collection } from "../src/lib/schema/entities";
 import { FORMULA, IMPLEMENTED_STEPS } from "../src/lib/formula";
 
 const ROOT = process.cwd();
@@ -148,6 +148,32 @@ if (!traitsParsed.success) {
         );
     }
   }
+}
+
+// ---------- ศัตรูที่ดรอปของแต่ไม่มีมอนสเตอร์ลิง ----------
+const dropSrcRaw = readJson(join(DATA, "meta", "drop-sources.json"), "data/meta/drop-sources.json");
+const dropSrcParsed = dropSources.safeParse(dropSrcRaw);
+if (!dropSrcParsed.success) {
+  for (const issue of dropSrcParsed.error.issues)
+    fail("data/meta/drop-sources.json", `${issue.path.join(".") || "(root)"}: ${issue.message}`);
+} else {
+  const seenIds = new Set<string>();
+  for (const e of dropSrcParsed.data.entries) {
+    if (seenIds.has(e.id)) fail("data/meta/drop-sources.json", `id ซ้ำ: ${e.id}`);
+    seenIds.add(e.id);
+    // ถ้าวันหลังตัวไหนโผล่ในสมุดภาพ แปลว่าไม่ใช่ "ไม่มีมอนสเตอร์ลิง" อีกต่อไป ต้องย้ายไป
+    // อ่านสมุดภาพซ้ำตรงนี้เอง เพราะบล็อกที่แจงสมุดภาพอยู่ล่างกว่านี้ในไฟล์
+    const dexForCheck = readJson(join(DATA, "meta", "monster-dex.json"), "data/meta/monster-dex.json") as
+      | { entries?: { name?: { th?: string } }[] }
+      | undefined;
+    const inDex = (dexForCheck?.entries ?? []).some((d) => d.name?.th && e.name.th && d.name.th === e.name.th);
+    if (inDex)
+      fail(
+        "data/meta/drop-sources.json",
+        `${e.id}: ชื่อนี้มีอยู่ในสมุดภาพแล้ว — ถ้ามีมอนสเตอร์ลิงจริง ให้ย้าย drops ไปไว้ที่ไฟล์มอน`,
+      );
+  }
+  countMissingLocale(dropSrcParsed.data.entries, "data/meta/drop-sources.json", ["entries"]);
 }
 
 // ลักษณะเฉพาะสุ่มรายตัวตอนจับ ไม่ผูกกับสายพันธุ์ — ถ้ามันไปโผล่ในไฟล์มอนเมื่อไร

@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { MonsterlingList, type MonsterlingRow } from "@/components/MonsterlingList";
 import { createTranslate } from "@/i18n";
 import { LOCALES, isLocale, pickText, type Locale } from "@/lib/i18n";
-import { DEX, LINK_CHAINS, MONSTERLINGS, TRAIT_POOL, monsterlingImage } from "@/lib/data";
+import { DEX, DROP_SOURCES, LINK_CHAINS, MONSTERLINGS, TRAIT_POOL, monsterlingImage } from "@/lib/data";
 import type { Monsterling } from "@/lib/schema/entities";
 import { describeEffect } from "@/lib/describe";
 import { label } from "@/lib/vocabulary";
@@ -247,6 +247,37 @@ export default async function MonsterlingsPage({
             </tbody>
           </table>
         </div>
+      </section>
+
+      <section className="mt-4 rounded-lg border border-line bg-surface-2/40 p-4">
+        <h2 className="font-display text-sm font-semibold">{t("monsterlings.otherDropsTitle")}</h2>
+        <p className="mt-1 max-w-2xl text-xs leading-relaxed text-ink-2">
+          {t("monsterlings.otherDropsNote")}
+        </p>
+        <ul className="mt-3 space-y-1.5">
+          {DROP_SOURCES.entries.map((entry) => {
+            const who = pickText(entry.name, locale);
+            return (
+              <li key={entry.id} className="flex flex-wrap items-baseline gap-x-2 gap-y-1 text-xs">
+                <span className="text-ink">{who?.value ?? entry.id}</span>
+                <span aria-hidden className="text-muted">
+                  →
+                </span>
+                {entry.drops.map((drop) => {
+                  const what = pickText(drop.name, locale);
+                  return (
+                    <span
+                      key={what?.value ?? ""}
+                      className="rounded border border-line bg-surface px-1.5 py-0.5 text-[11px] leading-tight text-ink-2"
+                    >
+                      {what?.value ?? ""}
+                    </span>
+                  );
+                })}
+              </li>
+            );
+          })}
+        </ul>
       </section>
 
       <MonsterlingList
