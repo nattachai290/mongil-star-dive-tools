@@ -1,0 +1,38 @@
+{
+  "id": "hunppy",
+  "name": {
+    "th": "ฮันเตอร์พี",
+    "en": "Hunppy"
+  },
+  "dex": {
+    "book": "field",
+    "no": 181
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "brawlDmg",
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onWeaknessHit",
+      "scopes": [
+        "weaknessHit"
+      ]
+    }
+  ],
+  "effectsRank": "gold",
+  "source": {
+    "verifiedAt": "2026-10-02",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "fieldsUnverified": [
+      "effectsRank"
+    ],
+    "note": "อ่านจากจอกระเป๋า > Monsterlings ภาษาอังกฤษ 2026-10-02 ชื่อไทยได้จากจอสมุดภาพวันเดียวกัน | effectsRank เก็บเป็น gold ตามที่ทั้งไฟล์ใช้ **แต่ติดธงไว้** หัวพาเนลเขียนว่า \"Prime\" ซึ่งไม่ใช่ชื่อสีของแรง | **เป็นขั้นบนของ Grippy (field 180) แบบคู่เต็ม** stat เดียวกัน ตัวกระตุ้นเดียวกัน และ**ไม่มีระยะเวลาทั้งคู่** ต่างกันแค่ 6.25 -> 6.57 คือ ฐาน x 1.05 ปัดขึ้นสองตำแหน่ง ตาม PLAN §13.9.2 | เลขติดกันพอดี (180/181) เป็นคู่ที่สี่ของเซกเตอร์ 3 ต่อจาก 167/168 · 169/170 · 186/187"
+  }
+}
