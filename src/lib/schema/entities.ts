@@ -280,6 +280,14 @@ export const monsterling = z.object({
    * ไม่ใส่ = ยังไม่รู้แรง ไม่ใช่ "แรงต่ำ" — เว็บแสดงเฉพาะค่าจากตัวสีทอง
    */
   effectsRank: vocabEnum("monsterRank").optional(),
+  /**
+   * "[เอฟเฟกต์เพิ่มเติม]" ที่จอแสดงแยกเหนือ Rank Effect — เก็บเป็นข้อความสองภาษาตามจอ
+   *
+   * ไม่แปลงเป็นโครงเหมือน speciesEffects เพราะยังอ่านไม่ออกว่าจะใส่ช่องไหน
+   * เช่น "จนกว่าเบิร์สจะสิ้นสุด" ไม่ใช่จำนวนวินาที และ "ธาตุทั้งหมด" ไม่ใช่ damageType เดียว
+   * ใช้โครงเดียวกับ bonusEffects ของลิงก์เชนซึ่งเจอปัญหาเดียวกันมาก่อน
+   */
+  bonusEffects: z.array(text).min(1).optional(),
   obtain: z.object({ method: vocabEnum("obtainMethod"), note: text.optional() }).optional(),
   /**
    * ของที่มอนตัวนี้ดรอป — เก็บแค่ชื่อ

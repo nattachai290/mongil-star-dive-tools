@@ -22,6 +22,8 @@ export type MonsterlingRow = {
   effects: { headline: string; qualifiers: string[] }[];
   /** ชื่อของที่มอนตัวนี้ดรอป เลือกภาษามาแล้วจากฝั่งเซิร์ฟเวอร์ */
   drops: string[];
+  /** [เอฟเฟกต์เพิ่มเติม] ตามที่จอเขียน ยังไม่ได้แปลงเป็นโครง */
+  bonusEffects: string[];
   /** ทุกอย่างที่ค้นหาได้ รวมชื่ออีกภาษาและข้อความเอฟเฟกต์ */
   haystack: string;
 };
@@ -47,6 +49,7 @@ export function MonsterlingList({
     noMatch: string;
     noEffect: string;
     drops: string;
+    bonusEffect: string;
     untranslated: string;
     untranslatedTitle: string;
     filters: string;
@@ -150,6 +153,19 @@ export function MonsterlingList({
                     </div>
                   ) : (
                     <p className="mt-2 text-xs text-muted">{labels.noEffect}</p>
+                  )}
+
+                  {row.bonusEffects.length > 0 && (
+                    <div className="mt-2 border-t border-line pt-2">
+                      <p className="text-[11px] uppercase tracking-wide text-muted">{labels.bonusEffect}</p>
+                      <ul className="mt-1 space-y-0.5">
+                        {row.bonusEffects.map((b) => (
+                          <li key={b} className="text-xs leading-relaxed text-ink-2">
+                            {b}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   )}
 
                   {row.drops.length > 0 && (

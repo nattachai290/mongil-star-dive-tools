@@ -118,6 +118,8 @@ function buildRows(locale: Locale, bookLabel: (book: string) => string): Monster
 
       // ของที่ดรอปยังมีแค่ชื่อไทย pickText จึงตกไปภาษาที่มีให้เอง
       const drops = (mon?.drops ?? []).map((d) => pickText(d.name, locale)?.value ?? "").filter(Boolean);
+      // [เอฟเฟกต์เพิ่มเติม] เก็บเป็นข้อความตามจอ ไม่ได้ผ่าน describeEffect
+      const bonusEffects = (mon?.bonusEffects ?? []).map((b) => pickText(b, locale)?.value ?? "").filter(Boolean);
 
       rows.push({
         key: `${entry.book}-${entry.no}`,
@@ -131,6 +133,7 @@ function buildRows(locale: Locale, bookLabel: (book: string) => string): Monster
         badge: linkable ? (linkableBadge("yes")?.[locale] ?? null) : null,
         effects,
         drops,
+        bonusEffects,
         // ค้นได้ทั้งสองภาษาและค้นจากข้อความเอฟเฟกต์ด้วย เช่นพิมพ์ "คริ" หรือ "boss"
         haystack: [
           entry.name.th,
@@ -138,6 +141,7 @@ function buildRows(locale: Locale, bookLabel: (book: string) => string): Monster
           slug,
           `no.${entry.no}`,
           ...(mon?.drops ?? []).flatMap((d) => [d.name.th, d.name.en]),
+          ...(mon?.bonusEffects ?? []).flatMap((b) => [b.th, b.en]),
           ...effects.flatMap((e) => [e.headline, ...e.qualifiers]),
           ...effectsOther.flatMap((e) => [e.headline, ...e.qualifiers]),
         ]
@@ -290,6 +294,7 @@ export default async function MonsterlingsPage({
           noMatch: t("monsterlings.noMatch"),
           noEffect: t("monsterlings.noEffect"),
           drops: t("monsterlings.drops"),
+          bonusEffect: t("monsterlings.bonusEffect"),
           untranslated: t("locale.untranslated"),
           untranslatedTitle: t("locale.untranslatedTitle"),
           filters: t("filters.legend"),
