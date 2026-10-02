@@ -1,0 +1,40 @@
+{
+  "id": "redb",
+  "name": {
+    "th": "เรดบี",
+    "en": "RedB"
+  },
+  "dex": {
+    "book": "field",
+    "no": 168
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "lightning",
+      "value": 6.57,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onHit",
+      "condition": {
+        "hitCount": 10,
+        "triggerEnemyType": "lightning"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "source": {
+    "verifiedAt": "2026-10-02",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "fieldsUnverified": [
+      "effectsRank"
+    ],
+    "note": "อ่านจากจอกระเป๋า > Monsterlings ภาษาอังกฤษ และจอสมุดภาพภาษาไทย 2026-10-02 | effectsRank เก็บเป็น gold ตามที่ทั้งไฟล์ใช้ **แต่ติดธงไว้** หัวพาเนลเขียนว่า \"Prime / ไพร์ม\" ซึ่งไม่ใช่ชื่อสีของแรง | **เป็นขั้นบนของ EightB (field 167) แบบคู่เต็ม** เอฟเฟกต์เหมือนกันทุกช่อง — stat เดียวกัน เงื่อนไขเดียวกัน ทั้งคู่ไม่มีระยะเวลา และทั้งคู่ต้องตี 10 ครั้ง — ต่างกันแค่ตัวเลข 6.25 -> 6.57 ซึ่งคือ ฐาน x 1.05 ปัดขึ้นสองตำแหน่ง (6.5625) ตามกฎใน PLAN §13.9.2 | และเลขในสมุดภาพอยู่ติดกันพอดี (167 กับ 168) ตรงกับแม่พิมพ์คู่ฐาน/ขั้นบนที่เจอมาตลอดในของเก่า แปลว่ากฎนี้ข้ามมาถึงเนื้อหาใหม่ด้วย"
+  }
+}
