@@ -1,0 +1,495 @@
+{
+  "_meta": {
+    "version": 1,
+    "updatedAt": "2026-10-02",
+    "note": "คลังลักษณะเฉพาะที่เกมสุ่มใส่มอนตอนจับ — เก็บที่นี่ที่เดียวในฐานะรายการตัวเลือก ห้ามแปะไว้ที่ไฟล์มอน"
+  },
+  "slots": 4,
+  "pool": [
+    {
+      "id": "atk",
+      "name": {
+        "th": "พลังโจมตี",
+        "en": "ATK"
+      },
+      "kind": "buff",
+      "stat": "atk",
+      "unit": "percent",
+      "values": {
+        "grey": 1,
+        "green": 2,
+        "blue": 3,
+        "purple": 4,
+        "gold": 5
+      }
+    },
+    {
+      "id": "def",
+      "name": {
+        "th": "พลังป้องกัน",
+        "en": "DEF"
+      },
+      "kind": "buff",
+      "stat": "def",
+      "unit": "percent",
+      "values": {
+        "grey": 1,
+        "green": 2,
+        "blue": 3,
+        "purple": 4,
+        "gold": 5
+      }
+    },
+    {
+      "id": "hp",
+      "name": {
+        "th": "พลังชีวิต",
+        "en": "HP"
+      },
+      "kind": "buff",
+      "stat": "hp",
+      "unit": "percent",
+      "values": {
+        "grey": 2,
+        "green": 4,
+        "blue": 6,
+        "purple": 8,
+        "gold": 10
+      }
+    },
+    {
+      "id": "crit-rate",
+      "name": {
+        "th": "อัตราคริติคอล",
+        "en": "Crit Rate"
+      },
+      "kind": "buff",
+      "stat": "critRate",
+      "unit": "percent",
+      "values": {
+        "grey": 1,
+        "green": 2,
+        "blue": 3,
+        "purple": 4,
+        "gold": 5
+      }
+    },
+    {
+      "id": "crit-dmg",
+      "name": {
+        "th": "ดาเมจคริติคอล",
+        "en": "Crit DMG"
+      },
+      "kind": "buff",
+      "stat": "critDmg",
+      "unit": "percent",
+      "values": {
+        "grey": 3,
+        "green": 6,
+        "blue": 9,
+        "purple": 12,
+        "gold": 15
+      }
+    },
+    {
+      "id": "support-dmg",
+      "name": {
+        "th": "เพิ่มดาเมจสนับสนุน",
+        "en": "Support Skill DMG"
+      },
+      "kind": "buff",
+      "stat": "supportDmg",
+      "unit": "percent",
+      "values": {
+        "grey": 1.5,
+        "green": 3,
+        "blue": 4.5,
+        "purple": 6,
+        "gold": 7.5
+      }
+    },
+    {
+      "id": "suppression-dmg",
+      "name": {
+        "th": "เพิ่มดาเมจกดขี่",
+        "en": "Suppression DMG"
+      },
+      "kind": "buff",
+      "stat": "suppressionDmg",
+      "unit": "percent",
+      "values": {
+        "grey": 1.5,
+        "green": 3,
+        "blue": 4.5,
+        "purple": 6,
+        "gold": 7.5
+      }
+    },
+    {
+      "id": "brawl-dmg",
+      "name": {
+        "th": "เพิ่มดาเมจปะทะ",
+        "en": "Brawl DMG"
+      },
+      "kind": "buff",
+      "stat": "brawlDmg",
+      "unit": "percent",
+      "values": {
+        "grey": 1.5,
+        "green": 3,
+        "blue": 4.5,
+        "purple": 6,
+        "gold": 7.5
+      }
+    },
+    {
+      "id": "neutralization-dmg",
+      "name": {
+        "th": "เพิ่มดาเมจหมดฤทธิ์",
+        "en": "Neutralization DMG"
+      },
+      "kind": "buff",
+      "stat": "neutralizationDmg",
+      "unit": "percent",
+      "values": {
+        "grey": 1.5,
+        "green": 3,
+        "blue": 4.5,
+        "purple": 6,
+        "gold": 7.5
+      }
+    },
+    {
+      "id": "dmg-vs-normal",
+      "name": {
+        "th": "เพิ่มดาเมจมอนสเตอร์ทั่วไป",
+        "en": "DMG to Normal Enemies"
+      },
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "vsBoss": false,
+      "unit": "percent",
+      "values": {
+        "grey": 2,
+        "green": 4,
+        "blue": 6,
+        "purple": 8,
+        "gold": 10
+      }
+    },
+    {
+      "id": "dmg-vs-boss",
+      "name": {
+        "th": "เพิ่มดาเมจมอนสเตอร์บอส",
+        "en": "DMG to Boss Enemies"
+      },
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "vsBoss": true,
+      "unit": "percent",
+      "values": {
+        "grey": 2,
+        "green": 4,
+        "blue": 6,
+        "purple": 8,
+        "gold": 10
+      }
+    },
+    {
+      "id": "special-skill-cooldown",
+      "name": {
+        "th": "ลดคูลดาวน์สกิลพิเศษ",
+        "en": "Special Skill Cooldown"
+      },
+      "kind": "debuff",
+      "stat": "cooldown",
+      "scopes": [
+        "specialSkill"
+      ],
+      "unit": "percent",
+      "values": {
+        "grey": 3,
+        "green": 6,
+        "blue": 9,
+        "purple": 12,
+        "gold": 15
+      }
+    },
+    {
+      "id": "weakness-dmg",
+      "name": {
+        "th": "เพิ่มดาเมจธาตุจุดอ่อน",
+        "en": "Elemental Weakness DMG"
+      },
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "weaknessHit"
+      ],
+      "unit": "percent",
+      "values": {
+        "grey": 2,
+        "green": 4,
+        "blue": 6,
+        "purple": 8,
+        "gold": 10
+      }
+    },
+    {
+      "id": "dmg-physical",
+      "name": {
+        "th": "เพิ่มดาเมจกายภาพ",
+        "en": "Physical DMG"
+      },
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "physical",
+      "unit": "percent",
+      "values": {
+        "grey": 1.5,
+        "green": 3,
+        "blue": 4.5,
+        "purple": 6,
+        "gold": 7.5
+      }
+    },
+    {
+      "id": "dmg-fire",
+      "name": {
+        "th": "เพิ่มดาเมจธาตุไฟ",
+        "en": "Fire DMG"
+      },
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "fire",
+      "unit": "percent",
+      "values": {
+        "grey": 1.5,
+        "green": 3,
+        "blue": 4.5,
+        "purple": 6,
+        "gold": 7.5
+      }
+    },
+    {
+      "id": "dmg-ice",
+      "name": {
+        "th": "เพิ่มดาเมจธาตุน้ำแข็ง",
+        "en": "Ice DMG"
+      },
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "ice",
+      "unit": "percent",
+      "values": {
+        "grey": 1.5,
+        "green": 3,
+        "blue": 4.5,
+        "purple": 6,
+        "gold": 7.5
+      }
+    },
+    {
+      "id": "dmg-wind",
+      "name": {
+        "th": "เพิ่มดาเมจธาตุลม",
+        "en": "Wind DMG"
+      },
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "wind",
+      "unit": "percent",
+      "values": {
+        "grey": 1.5,
+        "green": 3,
+        "blue": 4.5,
+        "purple": 6,
+        "gold": 7.5
+      }
+    },
+    {
+      "id": "dmg-lightning",
+      "name": {
+        "th": "เพิ่มดาเมจธาตุสายฟ้า",
+        "en": "Lightning DMG"
+      },
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "lightning",
+      "unit": "percent",
+      "values": {
+        "grey": 1.5,
+        "green": 3,
+        "blue": 4.5,
+        "purple": 6,
+        "gold": 7.5
+      }
+    },
+    {
+      "id": "dmg-earth",
+      "name": {
+        "th": "เพิ่มดาเมจธาตุดิน"
+      },
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "earth",
+      "unit": "percent",
+      "values": {
+        "grey": 1.5,
+        "green": 3,
+        "blue": 4.5,
+        "purple": 6,
+        "gold": 7.5
+      }
+    },
+    {
+      "id": "res-physical",
+      "name": {
+        "th": "ต้านทานกายภาพ",
+        "en": "Physical RES"
+      },
+      "kind": "buff",
+      "stat": "res",
+      "damageType": "physical",
+      "unit": "percent",
+      "values": {
+        "grey": 1,
+        "green": 2,
+        "blue": 3,
+        "purple": 4,
+        "gold": 5
+      }
+    },
+    {
+      "id": "res-fire",
+      "name": {
+        "th": "ต้านทานธาตุไฟ",
+        "en": "Fire RES"
+      },
+      "kind": "buff",
+      "stat": "res",
+      "damageType": "fire",
+      "unit": "percent",
+      "values": {
+        "grey": 1,
+        "green": 2,
+        "blue": 3,
+        "purple": 4,
+        "gold": 5
+      }
+    },
+    {
+      "id": "res-ice",
+      "name": {
+        "th": "ต้านทานธาตุน้ำแข็ง"
+      },
+      "kind": "buff",
+      "stat": "res",
+      "damageType": "ice",
+      "unit": "percent",
+      "values": {
+        "grey": 1,
+        "green": 2,
+        "blue": 3,
+        "purple": 4,
+        "gold": 5
+      }
+    },
+    {
+      "id": "res-wind",
+      "name": {
+        "th": "ต้านทานธาตุลม"
+      },
+      "kind": "buff",
+      "stat": "res",
+      "damageType": "wind",
+      "unit": "percent",
+      "values": {
+        "grey": 1,
+        "green": 2,
+        "blue": 3,
+        "purple": 4,
+        "gold": 5
+      }
+    },
+    {
+      "id": "res-lightning",
+      "name": {
+        "th": "ต้านทานธาตุสายฟ้า"
+      },
+      "kind": "buff",
+      "stat": "res",
+      "damageType": "lightning",
+      "unit": "percent",
+      "values": {
+        "grey": 1,
+        "green": 2,
+        "blue": 3,
+        "purple": 4,
+        "gold": 5
+      }
+    },
+    {
+      "id": "res-earth",
+      "name": {
+        "th": "ต้านทานธาตุดิน",
+        "en": "Earth RES"
+      },
+      "kind": "buff",
+      "stat": "res",
+      "damageType": "earth",
+      "unit": "percent",
+      "values": {
+        "grey": 1,
+        "green": 2,
+        "blue": 3,
+        "purple": 4,
+        "gold": 5
+      }
+    },
+    {
+      "id": "res-water",
+      "name": {
+        "th": "ต้านทานธาตุน้ำ"
+      },
+      "kind": "buff",
+      "stat": "res",
+      "damageType": "water",
+      "unit": "percent",
+      "values": {
+        "grey": 1,
+        "green": 2,
+        "blue": 3,
+        "purple": 4,
+        "gold": 5
+      }
+    },
+    {
+      "id": "res-dark",
+      "name": {
+        "th": "ต้านทานธาตุมืด"
+      },
+      "kind": "buff",
+      "stat": "res",
+      "damageType": "dark",
+      "unit": "percent",
+      "values": {
+        "grey": 1,
+        "green": 2,
+        "blue": 3,
+        "purple": 4,
+        "gold": 5
+      }
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-09-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "อ่านจากจอฟิลเตอร์ หัวข้อ \"ลักษณะเฉพาะ\" ภาษาไทย 2026-09-22 เห็นครบทั้ง 27 รายการในจอเดียว ผู้เล่นยืนยันว่ามีเท่านี้ และมอนหนึ่งตัวมี 4 ช่อง | **ไม่เก็บตัวเลข** เพราะจอฟิลเตอร์บอกแค่ชื่อลักษณะ ไม่บอกค่า | **รายการนี้ยืนยันการแยก element กับ damageType ที่วางไว้ตั้งแต่ต้น** — ฝั่งเพิ่มดาเมจมีแค่ กายภาพ + ห้าธาตุ (ไฟ น้ำแข็ง ลม สายฟ้า ดิน) + จุดอ่อน ส่วนฝั่งต้านทานมีแปดอย่าง คือเพิ่ม **น้ำ** กับ **มืด** เข้ามาด้วย ตรงกับ damageType ในพจนานุกรมที่มีแปดค่าพอดี | แปลว่าน้ำกับมืดเป็นชนิดดาเมจที่ \"โดนแล้วต้านได้\" แต่ไม่ใช่ธาตุที่ฝั่งเราใช้โจมตี ไม่ขัดกับกฎที่ว่าธาตุรบมีห้าอย่าง แต่เป็นครั้งแรกที่เห็นจอเกมเรียก \"ธาตุมืด\" ตรง ๆ | ยังไม่ได้เปิดจอนี้ภาษาอังกฤษ จึงยังไม่รู้คำอังกฤษของหัวข้อ \"ลักษณะเฉพาะ\" | **ค่าตัวเลขได้มาเมื่อ 2026-09-22 จากผู้เล่นพิมพ์มาให้ ไม่ได้อ่านจากจอเอง** ครบทั้ง 27 รายการ x 5 แรง | ทั้ง 135 ค่าเดินตามกฎเดียวกันเป๊ะ คือ **ฐาน x ลำดับแรง** (เทา 1 เขียว 2 ฟ้า 3 ม่วง 4 ทอง 5) ฐานมีแค่สี่ค่าคือ 1 / 1.5 / 2 / 3 ทองจึงเท่ากับเทาห้าเท่าเสมอ | ถึงกฎจะลงตัวก็ยังเก็บค่าครบทั้งห้าช่องตามที่ได้มา ไม่เก็บเป็นสูตร ถ้าวันหลังมีรายการไหนหลุดกฎ ไฟล์จะยังถูกและกฎจะพังแทน ซึ่งเป็นทางที่ควรพังกว่า | **2026-10-02 ตารางนี้ถูกตรวจจากจอจริงเป็นครั้งแรก** จอมอนเซกเตอร์ 3 ห้าตัว (โปรโม ครัชเชอร์ เฟียร์เลส สลัดจ์ กริฟฟี่) แสดงลักษณะเฉพาะที่สุ่มติดมา รวมเก้าค่า **ทุกค่าตกลงบนแถวในตารางนี้พอดี ไม่มีค่าไหนหลุด** และเป็นค่าที่มาจากจอ ไม่ใช่จากรายการที่ใช้สร้างตาราง จึงเป็นการยืนยันอิสระจริง ๆ | **ที่สำคัญกว่านั้น เก้าค่านั้นกระจายอยู่ถึงสี่แรง** (เทา 1% · เขียว 3% 4% 6% · ม่วง 4% 6% · ทอง 5%) ทั้งที่อยู่บนมอนตัวเดียวกัน แปลว่า **แรงของลักษณะเฉพาะสุ่มรายช่อง ไม่ใช่รายมอน** ซึ่งเป็นเหตุผลเพิ่มอีกข้อว่าทำไมห้ามเก็บลักษณะเฉพาะไว้ที่ไฟล์มอน | **2026-10-02 (รอบสอง) ตรวจซ้ำอีก 12 ค่าจากจอของ RedB · CapQ · Feargiver ตรงทั้งหมด** รวมสองรอบเป็น 21 ค่าจากจอจริง ยังไม่มีค่าไหนหลุดตาราง และคราวนี้กระจายครบทั้งห้าแรง | **2026-10-02 (รอบสาม) จอกระเป๋าภาษาอังกฤษให้ชื่ออังกฤษของลักษณะเฉพาะ 18 จาก 27 รายการ** อ่านจากชิปที่สุ่มติดมาจริงบนจอ ไม่ได้แปลเอง อีก 9 รายการ (ATK · ลดคูลดาวน์สกิลพิเศษ · ธาตุไฟ · ธาตุดิน · ต้านทานน้ำแข็ง ลม สายฟ้า น้ำ มืด) ยังไม่เคยสุ่มขึ้นมาให้เห็น จึงยังไม่มีชื่ออังกฤษ **ห้ามเดาจากแม่พิมพ์ของตัวที่เห็นแล้ว** ถึงจะดูเดาง่ายก็ตาม | ตรวจค่าเพิ่มอีก 20 ค่าจากจออังกฤษ ตรงกับตารางทั้งหมด รวมสามรอบเป็น 41 ค่าจากจอจริง ไม่มีค่าไหนหลุด | **เจอว่าจอบอกแรงของลักษณะเฉพาะได้ด้วย: ชิปที่เป็นแรงทองจะมีไอคอนดาวกำกับ** ตรวจกับ 20 ค่าในรอบนี้แล้วตรงทุกใบ — มีดาวสองใบ ทั้งคู่เป็นทอง และไม่มีทองใบไหนที่ไม่มีดาว (สีพื้นของชิปก็ดูจะเดินตามแรงด้วย แต่ยังไม่ได้ตรวจอย่างเป็นระบบ จึงยังไม่สรุป) | **2026-10-02 (รอบสี่) ได้ชื่ออังกฤษเพิ่มอีกสาม: ATK · Special Skill Cooldown · Fire DMG** รวมเป็น 21 จาก 27 เหลือที่ยังไม่เคยสุ่มขึ้นมาให้เห็นหกรายการ (Earth DMG และต้านทานน้ำแข็ง ลม สายฟ้า น้ำ มืด) | จอเขียน \"Special Skill Cooldown **−**3%\" มีเครื่องหมายลบ ยืนยันว่าเก็บเป็น kind debuff ถูกแล้ว เพราะ kind บอกทิศของตัวเลข ไม่ได้บอกว่าดีหรือร้าย | ตรวจค่าเพิ่มอีก 20 ค่าจากจอรอบนี้ ตรงทั้งหมด รวมสี่รอบเป็น 61 ค่าจากจอจริง ยังไม่มีค่าไหนหลุดตาราง | **2026-10-02 (รอบห้า) ตรวจการจับคู่ชื่อไทย-อังกฤษจากมอนตัวเดียวกัน 12 ช่อง ตรงทุกช่อง** (แคปคิว · ฮันเตอร์พี · เฟียร์กิฟเวอร์ แต่ละตัวถ่ายมาทั้งสองภาษา ช่องเดียวกันเรียงเหมือนกัน ค่าเท่ากัน) จึงยืนยันว่าชื่ออังกฤษที่ใส่ไปผูกกับแถวที่ถูกต้อง ไม่ใช่แค่ชื่อถูก | **เจอว่าเกมเรียกลักษณะเดียวกันไม่เหมือนกันสองจอ** จอฟิลเตอร์เขียน \"พลังป้องกัน\" กับ \"พลังชีวิต\" เฉย ๆ แต่ชิปบนพาเนลมอนเขียน \"เพิ่มพลังป้องกัน\" กับ \"เพิ่มพลังชีวิต\" มีคำว่า เพิ่ม นำหน้า ช่องที่ขึ้นต้นด้วย ดาเมจ/ต้านทาน ใช้คำเดียวกันทั้งสองจอ **เก็บตามจอฟิลเตอร์ซึ่งเป็นที่มาเดิมของตาราง** บันทึกไว้เพราะถ้าวันหลังมีใครไล่จับคู่ด้วยสตริงตรง ๆ จะพลาดสองแถวนี้"
+  }
+}

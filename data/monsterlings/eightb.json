@@ -1,0 +1,40 @@
+{
+  "id": "eightb",
+  "name": {
+    "th": "เอทบี",
+    "en": "EightB"
+  },
+  "dex": {
+    "book": "field",
+    "no": 167
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "lightning",
+      "value": 6.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onHit",
+      "condition": {
+        "hitCount": 10,
+        "triggerEnemyType": "lightning"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "source": {
+    "verifiedAt": "2026-10-02",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "fieldsUnverified": [
+      "effectsRank"
+    ],
+    "note": "อ่านจากจอกระเป๋า > มอนสเตอร์ลิง ภาษาไทย 2026-10-02 และได้ชื่ออังกฤษจากจอ Monster Codex วันเดียวกัน | effectsRank เก็บเป็น gold ตามที่ทั้งไฟล์ใช้ **แต่ติดธงไว้** หัวพาเนลเขียนว่า \"ไพร์ม / Prime\" ซึ่งไม่ใช่ชื่อสีของแรง และต่างจาก \"คัตเตอร์ / Fodder\" ของโซริน แปลว่าเป็นหมวดอย่างอื่นที่ยังไม่รู้ว่าคืออะไร | **ไม่มีระยะเวลา** จอเขียนแค่ \"จะเพิ่มดาเมจธาตุสายฟ้า 6.25%\" ไม่มี \"นาน N วินาที\" ต่อท้าย ไม่ใช่กรอกตก | จออังกฤษ 2026-10-02 แสดง Rank Effect ตรงกับที่เก็บไว้ทุกช่อง ยืนยันสองภาษาครบแล้ว"
+  }
+}

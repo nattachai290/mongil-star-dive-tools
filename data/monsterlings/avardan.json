@@ -12,7 +12,9 @@
     {
       "kind": "buff",
       "stat": "dmgDealt",
-      "scopes": ["ultimate"],
+      "scopes": [
+        "ultimate"
+      ],
       "value": 11,
       "unit": "percent",
       "target": "team",
@@ -24,12 +26,20 @@
     }
   ],
   "effectsRank": "gold",
+  "drops": [
+    {
+      "name": {
+        "th": "แกนวิญญาณแห่งนิรันดร์"
+      }
+    }
+  ],
   "images": {
     "icon": "avardan-icon.webp"
   },
   "source": {
     "verifiedAt": "2026-09-12",
     "gameVersion": "unknown",
-    "by": "in-game"
+    "by": "in-game",
+    "note": "ของที่ดรอปได้มาจากผู้เล่นบอกเมื่อ 2026-09-22 ไม่ได้อ่านจากจอเอง เก็บเฉพาะชื่อไทย ยังไม่รู้ชื่ออังกฤษ ยังไม่รู้จำนวนและอัตราดรอป"
   }
 }

@@ -281,6 +281,15 @@ export const monsterling = z.object({
    */
   effectsRank: vocabEnum("monsterRank").optional(),
   obtain: z.object({ method: vocabEnum("obtainMethod"), note: text.optional() }).optional(),
+  /**
+   * ของที่มอนตัวนี้ดรอป — เก็บแค่ชื่อ
+   *
+   * ยังไม่เก็บจำนวนกับอัตราดรอป เพราะยังไม่เคยเห็นจอที่บอกสองอย่างนั้น
+   * ชื่อที่อยู่ในนี้เป็นชื่อของของ ไม่ใช่ id ของ entity อื่น — ของพวกนี้
+   * ส่วนใหญ่เป็นวัตถุดิบที่ยังไม่มีไฟล์ของตัวเอง ถ้าวันหลังทำไฟล์วัตถุดิบ
+   * ค่อยผูก id เพิ่ม อย่าเพิ่งเดาว่าชื่อไหนตรงกับไฟล์ไหน
+   */
+  drops: z.array(z.object({ name: text })).default([]),
   images: z.object({ icon: z.string().optional() }).optional(),
   source,
 }).refine(
@@ -295,6 +304,76 @@ export const monsterling = z.object({
  * Trait ถูกสุ่มให้มอนแต่ละตัวตอนจับ ไม่ได้ผูกกับสายพันธุ์ — เก็บไว้ที่นี่เมื่อไหร่
  * ก็กลายเป็นข้อมูลผิดทันที เพราะมอนชื่อเดียวกันคนละตัวจะได้ Trait ไม่เหมือนกัน
  */
+
+/**
+ * คลังลักษณะเฉพาะที่เกมสุ่มใส่มอนแต่ละตัวตอนจับ
+ *
+ * **นี่คือ "มีอะไรให้สุ่มได้บ้าง" ไม่ใช่ "มอนตัวไหนได้อะไร"** — ห้ามเอาไปแปะไว้ที่
+ * ไฟล์มอน เพราะลักษณะเฉพาะสุ่มรายตัวตอนจับ มอนชื่อเดียวกันคนละตัวได้คนละอย่าง
+ * เก็บไว้ที่นี่ที่เดียวในฐานะรายการตัวเลือก ดูหมายเหตุท้าย monsterling
+ *
+ * ไม่เก็บตัวเลข เพราะจอที่อ่านมาเป็นจอฟิลเตอร์ซึ่งบอกแค่ชื่อลักษณะ ไม่บอกค่า
+ */
+export const traitPool = z.object({
+  /** มอนหนึ่งตัวมีกี่ช่อง */
+  slots: z.number().int().positive(),
+  pool: z
+    .array(
+      z.object({
+        id: slug,
+        /** คำที่จอเขียนตรง ๆ — ยังมีแต่ไทย เพราะยังไม่ได้เปิดจอนี้ภาษาอังกฤษ */
+        name: text,
+        kind: vocabEnum("effectKind"),
+        stat: vocabEnum("stat"),
+        damageType: vocabEnum("damageType").optional(),
+        scopes: z.array(vocabEnum("scope")).nonempty().optional(),
+        /** true = เฉพาะบอส, false = เฉพาะมอนทั่วไป, ไม่ใส่ = ไม่จำกัด */
+        vsBoss: z.boolean().optional(),
+        unit: vocabEnum("unit"),
+        /**
+         * ค่าของแต่ละแรง — เก็บครบทั้งห้าค่าตามที่อ่านมา ไม่เก็บเป็นสูตร
+         *
+         * ทั้ง 27 รายการเดินตามกฎเดียวกันคือ ฐาน x ลำดับแรง (เทา 1 ... ทอง 5)
+         * แต่กฎนั้นอยู่ใน PLAN ในฐานะข้อสังเกต ไม่ใช่วิธีเก็บ — ถ้าวันหลังมีรายการ
+         * ไหนหลุดกฎ ข้อมูลในไฟล์จะยังถูก ส่วนกฎจะพังแทน ซึ่งเป็นทางที่ควรพังกว่า
+         */
+        values: z.object({
+          grey: z.number(),
+          green: z.number(),
+          blue: z.number(),
+          purple: z.number(),
+          gold: z.number(),
+        }),
+      }),
+    )
+    .min(1),
+  source,
+});
+export type TraitPool = z.infer<typeof traitPool>;
+
+/**
+ * ศัตรูที่ดรอปของแต่ "ไม่มีมอนสเตอร์ลิง" — จับไม่ได้ จึงไม่มีหน้าในสมุดภาพ
+ *
+ * แยกไฟล์จากมอนเพราะมันไม่ใช่มอน ไม่ใช่เพราะข้อมูลยังไม่ครบ — ถ้าวันหลังเจอว่า
+ * ตัวไหนมีหน้าในสมุดภาพจริง ให้ย้าย drops ไปไว้ที่ไฟล์มอนแล้วลบออกจากที่นี่
+ *
+ * ยังไม่ตั้งประเภทให้ (บอส/ศัตรูสนาม/อื่น ๆ) เพราะผู้เล่นบอกแค่ว่าไม่มีมอนสเตอร์ลิง
+ * การเดาประเภทเองคือการสร้างข้อมูลที่ไม่มีใครบอกมา
+ */
+export const dropSources = z.object({
+  entries: z
+    .array(
+      z.object({
+        /** คีย์ภายในเท่านั้น ถอดเสียงจากไทย ไม่ใช่ชื่ออังกฤษของเกม ซึ่งยังไม่รู้ */
+        id: slug,
+        name: text,
+        drops: z.array(z.object({ name: text })).min(1),
+      }),
+    )
+    .min(1),
+  source,
+});
+export type DropSources = z.infer<typeof dropSources>;
 
 export const food = z.object({
   id: slug,

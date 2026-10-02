@@ -12,7 +12,7 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { z } from "zod";
-import { SCHEMAS, equipmentSet, gearMainStat, gearSubstat, monsterDexEntry, type Collection } from "../src/lib/schema/entities";
+import { SCHEMAS, equipmentSet, gearMainStat, gearSubstat, monsterDexEntry, traitPool, dropSources, type Collection } from "../src/lib/schema/entities";
 import { FORMULA, IMPLEMENTED_STEPS } from "../src/lib/formula";
 
 const ROOT = process.cwd();
@@ -118,6 +118,76 @@ if (Array.isArray(mainStatsRaw)) {
   });
 } else {
   fail("data/meta/gear-main-stats.json", "ต้องเป็น array");
+}
+
+// ---------- คลังลักษณะเฉพาะ ----------
+const traitsRaw = readJson(join(DATA, "meta", "traits.json"), "data/meta/traits.json");
+const traitsParsed = traitPool.safeParse(traitsRaw);
+if (!traitsParsed.success) {
+  for (const issue of traitsParsed.error.issues)
+    fail("data/meta/traits.json", `${issue.path.join(".") || "(root)"}: ${issue.message}`);
+} else {
+  const seen = new Set<string>();
+  for (const tr of traitsParsed.data.pool) {
+    if (seen.has(tr.id)) fail("data/meta/traits.json", `id ซ้ำ: ${tr.id}`);
+    seen.add(tr.id);
+  }
+  // ให้ช่องที่ยังขาดภาษาโผล่ในคำเตือนเหมือนหมวดอื่น ไม่งั้นมันจะถูกลืมอยู่ในไฟล์ meta
+  countMissingLocale(traitsParsed.data.pool, "data/meta/traits.json", ["pool"]);
+
+  // ค่าต้องไต่ขึ้นตามแรงเสมอ — ไม่ได้บังคับว่าต้องเป็น ฐาน x ลำดับ เพราะนั่นเป็นข้อสังเกต
+  // ไม่ใช่กฎของเกม แต่ถ้าแรงสูงกว่าได้ค่าน้อยกว่า แปลว่ากรอกสลับแถวแน่ ๆ
+  const RANK_ORDER = ["grey", "green", "blue", "purple", "gold"] as const;
+  for (const tr of traitsParsed.data.pool) {
+    const seq = RANK_ORDER.map((r) => tr.values[r]);
+    for (let i = 1; i < seq.length; i++) {
+      if (seq[i] <= seq[i - 1])
+        fail(
+          "data/meta/traits.json",
+          `${tr.id}: ค่าไม่ได้ไต่ขึ้นตามแรง (${RANK_ORDER[i - 1]} ${seq[i - 1]} -> ${RANK_ORDER[i]} ${seq[i]})`,
+        );
+    }
+  }
+}
+
+// ---------- ศัตรูที่ดรอปของแต่ไม่มีมอนสเตอร์ลิง ----------
+const dropSrcRaw = readJson(join(DATA, "meta", "drop-sources.json"), "data/meta/drop-sources.json");
+const dropSrcParsed = dropSources.safeParse(dropSrcRaw);
+if (!dropSrcParsed.success) {
+  for (const issue of dropSrcParsed.error.issues)
+    fail("data/meta/drop-sources.json", `${issue.path.join(".") || "(root)"}: ${issue.message}`);
+} else {
+  const seenIds = new Set<string>();
+  for (const e of dropSrcParsed.data.entries) {
+    if (seenIds.has(e.id)) fail("data/meta/drop-sources.json", `id ซ้ำ: ${e.id}`);
+    seenIds.add(e.id);
+    // ถ้าวันหลังตัวไหนโผล่ในสมุดภาพ แปลว่าไม่ใช่ "ไม่มีมอนสเตอร์ลิง" อีกต่อไป ต้องย้ายไป
+    // อ่านสมุดภาพซ้ำตรงนี้เอง เพราะบล็อกที่แจงสมุดภาพอยู่ล่างกว่านี้ในไฟล์
+    const dexForCheck = readJson(join(DATA, "meta", "monster-dex.json"), "data/meta/monster-dex.json") as
+      | { entries?: { name?: { th?: string } }[] }
+      | undefined;
+    const inDex = (dexForCheck?.entries ?? []).some((d) => d.name?.th && e.name.th && d.name.th === e.name.th);
+    if (inDex)
+      fail(
+        "data/meta/drop-sources.json",
+        `${e.id}: ชื่อนี้มีอยู่ในสมุดภาพแล้ว — ถ้ามีมอนสเตอร์ลิงจริง ให้ย้าย drops ไปไว้ที่ไฟล์มอน`,
+      );
+  }
+  countMissingLocale(dropSrcParsed.data.entries, "data/meta/drop-sources.json", ["entries"]);
+}
+
+// ลักษณะเฉพาะสุ่มรายตัวตอนจับ ไม่ผูกกับสายพันธุ์ — ถ้ามันไปโผล่ในไฟล์มอนเมื่อไร
+// แปลว่าข้อมูลผิดทันที และ zod จะไม่จับให้ เพราะ object ตัดคีย์ที่ไม่รู้จักทิ้งเงียบ ๆ
+const monsterDir = join(DATA, "monsterlings");
+if (existsSync(monsterDir)) {
+  for (const file of readdirSync(monsterDir).filter((f) => f.endsWith(".json"))) {
+    const raw = readJson(join(monsterDir, file), `data/monsterlings/${file}`);
+    if (raw && typeof raw === "object" && ("traits" in raw || "trait" in raw))
+      fail(
+        `data/monsterlings/${file}`,
+        'มีช่อง traits ซึ่งห้ามเก็บที่ไฟล์มอน — ลักษณะเฉพาะสุ่มรายตัวตอนจับ คลังตัวเลือกอยู่ที่ data/meta/traits.json',
+      );
+  }
 }
 
 const subsRaw = readJson(join(DATA, "meta", "gear-substats.json"), "data/meta/gear-substats.json");

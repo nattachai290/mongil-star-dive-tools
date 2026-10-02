@@ -329,6 +329,10 @@
       "th": "เมื่อใช้สกิลสับเปลี่ยน",
       "en": "upon using a Switch Skill"
     },
+    "onSwitchSkillHit": {
+      "th": "เมื่อสกิลสับเปลี่ยนโดน",
+      "en": "upon landing a Switch Skill hit"
+    },
     "onSkill": {
       "th": "เมื่อใช้สกิล",
       "en": "On skill"

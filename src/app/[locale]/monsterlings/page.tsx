@@ -3,11 +3,14 @@ import { notFound } from "next/navigation";
 import { MonsterlingList, type MonsterlingRow } from "@/components/MonsterlingList";
 import { createTranslate } from "@/i18n";
 import { LOCALES, isLocale, pickText, type Locale } from "@/lib/i18n";
-import { DEX, LINK_CHAINS, MONSTERLINGS, monsterlingImage } from "@/lib/data";
+import { DEX, DROP_SOURCES, LINK_CHAINS, MONSTERLINGS, TRAIT_POOL, monsterlingImage } from "@/lib/data";
 import type { Monsterling } from "@/lib/schema/entities";
 import { describeEffect } from "@/lib/describe";
 import { label } from "@/lib/vocabulary";
 import { linkableIds, linkableOf, linkableBadge } from "@/lib/linkable";
+
+/** เรียงจากแรงต่ำไปสูง ให้ตารางอ่านจากซ้ายไปขวาแล้วเห็นว่าค่าไต่ขึ้น */
+const RANKS = ["grey", "green", "blue", "purple", "gold"] as const;
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
@@ -113,6 +116,9 @@ function buildRows(locale: Locale, bookLabel: (book: string) => string): Monster
       // การไม่มีป้ายอ่านได้ว่า "ใส่ไม่ได้" เพราะยืนยันแล้วว่ารายการลิงก์เชนในเกมครบ
       const linkable = slug !== null && linkableOf(slug, CHAIN_IDS) === "yes";
 
+      // ของที่ดรอปยังมีแค่ชื่อไทย pickText จึงตกไปภาษาที่มีให้เอง
+      const drops = (mon?.drops ?? []).map((d) => pickText(d.name, locale)?.value ?? "").filter(Boolean);
+
       rows.push({
         key: `${entry.book}-${entry.no}`,
         facets: facetsOf(mon?.speciesEffects ?? [], linkable),
@@ -124,12 +130,14 @@ function buildRows(locale: Locale, bookLabel: (book: string) => string): Monster
         image: slug ? monsterlingImage(slug) : null,
         badge: linkable ? (linkableBadge("yes")?.[locale] ?? null) : null,
         effects,
+        drops,
         // ค้นได้ทั้งสองภาษาและค้นจากข้อความเอฟเฟกต์ด้วย เช่นพิมพ์ "คริ" หรือ "boss"
         haystack: [
           entry.name.th,
           entry.name.en,
           slug,
           `no.${entry.no}`,
+          ...(mon?.drops ?? []).flatMap((d) => [d.name.th, d.name.en]),
           ...effects.flatMap((e) => [e.headline, ...e.qualifiers]),
           ...effectsOther.flatMap((e) => [e.headline, ...e.qualifiers]),
         ]
@@ -192,6 +200,86 @@ export default async function MonsterlingsPage({
         {t("monsterlings.linkable")} · {t("monsterling.rankNote")}
       </p>
 
+      <section className="mt-6 rounded-lg border border-line bg-surface-2/40 p-4">
+        <h2 className="font-display text-sm font-semibold">{t("monsterlings.traitsTitle")}</h2>
+        <p className="mt-1 max-w-2xl text-xs leading-relaxed text-ink-2">
+          {t("monsterlings.traitsNote").replace("{slots}", String(TRAIT_POOL.slots))}
+        </p>
+        <div className="mt-3 overflow-x-auto">
+          <table className="w-full min-w-[26rem] border-collapse text-[11px]">
+            <thead>
+              <tr className="border-b border-line text-muted">
+                <th className="py-1.5 pe-3 text-start font-medium">{t("monsterlings.traitsTitle")}</th>
+                {RANKS.map((rank) => (
+                  <th key={rank} className="px-2 py-1.5 text-end font-medium">
+                    {label("monsterRank", rank, locale)}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {TRAIT_POOL.pool.map((tr) => {
+                const picked = pickText(tr.name, locale);
+                return (
+                  <tr key={tr.id} className="border-b border-line/50 last:border-0">
+                    <td className="py-1.5 pe-3 text-ink-2">
+                      {picked?.value ?? tr.id}
+                      {picked?.isFallback && (
+                        <span
+                          className="ms-1 rounded bg-surface-2 px-1 align-middle font-mono text-[9px] text-muted"
+                          title={t("locale.untranslatedTitle")}
+                        >
+                          {t("locale.untranslated")}
+                        </span>
+                      )}
+                    </td>
+                    {RANKS.map((rank) => (
+                      <td
+                        key={rank}
+                        className={`px-2 py-1.5 text-end tabular-nums ${rank === "gold" ? "font-medium text-ink" : "text-muted"}`}
+                      >
+                        {tr.values[rank]}%
+                      </td>
+                    ))}
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section className="mt-4 rounded-lg border border-line bg-surface-2/40 p-4">
+        <h2 className="font-display text-sm font-semibold">{t("monsterlings.otherDropsTitle")}</h2>
+        <p className="mt-1 max-w-2xl text-xs leading-relaxed text-ink-2">
+          {t("monsterlings.otherDropsNote")}
+        </p>
+        <ul className="mt-3 space-y-1.5">
+          {DROP_SOURCES.entries.map((entry) => {
+            const who = pickText(entry.name, locale);
+            return (
+              <li key={entry.id} className="flex flex-wrap items-baseline gap-x-2 gap-y-1 text-xs">
+                <span className="text-ink">{who?.value ?? entry.id}</span>
+                <span aria-hidden className="text-muted">
+                  →
+                </span>
+                {entry.drops.map((drop) => {
+                  const what = pickText(drop.name, locale);
+                  return (
+                    <span
+                      key={what?.value ?? ""}
+                      className="rounded border border-line bg-surface px-1.5 py-0.5 text-[11px] leading-tight text-ink-2"
+                    >
+                      {what?.value ?? ""}
+                    </span>
+                  );
+                })}
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+
       <MonsterlingList
         rows={rows}
         locale={locale}
@@ -201,6 +289,7 @@ export default async function MonsterlingsPage({
           matches: t("monsterlings.matches"),
           noMatch: t("monsterlings.noMatch"),
           noEffect: t("monsterlings.noEffect"),
+          drops: t("monsterlings.drops"),
           untranslated: t("locale.untranslated"),
           untranslatedTitle: t("locale.untranslatedTitle"),
           filters: t("filters.legend"),
