@@ -98,6 +98,7 @@
   "equipment.sets": "เซ็ต",
   "equipment.pieces": "ชิ้น",
   "equipment.setBonus": "ใส่ครบ",
+  "equipment.listedAs": "ในจอคราฟต์ใช้ชื่อ",
   "equipment.piecesInSet": "ชิ้นในเซ็ต",
   "equipment.rolledNote": "ค่ารองสุ่มตอนได้ของมา จึงไม่ผูกกับชิ้นอุปกรณ์และไม่เก็บไว้ที่นี่",
   "equipment.mainStats": "ค่าหลักตามช่อง",

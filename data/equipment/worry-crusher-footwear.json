@@ -1,0 +1,26 @@
+{
+  "id": "worry-crusher-footwear",
+  "name": {
+    "th": "รองเท้าของผู้สลายจิต",
+    "en": "Worry Crusher Footwear"
+  },
+  "grade": "purple",
+  "stars": 4,
+  "slot": "footwear",
+  "setId": "thought-shredder",
+  "effects": [],
+  "desc": {
+    "th": "รองเท้าบูตหนาที่แข็งแรงจนเดินเหยียบกองเศษเหล็กก็ไม่เป็นอะไร ไม่ต้องคอยระวังว่ากำลังเหยียบอะไรอยู่ใต้เท้าอีกต่อไป",
+    "en": "A pair of thick boots that can withstand walking over piles of scrap metal, so you can walk safely without concern for the soles of your feet."
+  },
+  "source": {
+    "verifiedAt": "2026-10-03",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "อ่านจากจอคราฟต์ (Sets) ทั้งสองภาษา 2026-10-02/03 | ไม่เก็บค่ารอง เพราะจอเขียนว่าสุ่มตอนได้ของมา ส่วนค่าหลักไม่สุ่ม อยู่ที่ data/meta/gear-main-stats.json | คำบรรยายครบทั้งสองภาษา (ทั้งสองจอจบประโยคก่อนหัวข้อวัตถุดิบ และเนื้อความตรงกัน)"
+  }
+}

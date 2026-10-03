@@ -341,6 +341,10 @@
       "th": "เมื่อใช้สกิลอัลติเมต",
       "en": "upon using an Ultimate Skill"
     },
+    "onUltimateHit": {
+      "th": "เมื่อสกิลอัลติเมตโดน",
+      "en": "upon landing an Ultimate Skill hit"
+    },
     "onKill": {
       "th": "เมื่อกำจัดมอนสเตอร์",
       "en": "upon defeating monsters"
@@ -368,6 +372,10 @@
     "onGrantShield": {
       "th": "เมื่อมอบเอฟเฟกต์ม่านป้องกัน",
       "en": "upon granting a Shield"
+    },
+    "onApplyFreeze": {
+      "th": "เมื่อมอบเอฟเฟกต์เยือกแข็ง",
+      "en": "upon applying Freeze"
     },
     "onSpecialSkillHit": {
       "th": "เมื่อโจมตีด้วยสกิลพิเศษ",

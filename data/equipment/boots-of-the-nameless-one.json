@@ -1,0 +1,22 @@
+{
+  "id": "boots-of-the-nameless-one",
+  "name": {
+    "th": "รองเท้าหุ้มข้อของผู้ไร้นาม",
+    "en": "Boots of the Nameless One"
+  },
+  "grade": "gold",
+  "stars": 5,
+  "slot": "footwear",
+  "setId": "the-nameless-one",
+  "effects": [],
+  "source": {
+    "verifiedAt": "2026-10-03",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "อ่านจากจอคราฟต์ (Sets) ทั้งสองภาษา 2026-10-02/03 | ไม่เก็บค่ารอง เพราะจอเขียนว่าสุ่มตอนได้ของมา ส่วนค่าหลักไม่สุ่ม อยู่ที่ data/meta/gear-main-stats.json | คำบรรยายถูกหัวข้อ \"วัตถุดิบจำเป็น\" บังท้ายทั้งสองภาษา จึงยังไม่เก็บ"
+  }
+}

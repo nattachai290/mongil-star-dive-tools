@@ -1,0 +1,26 @@
+{
+  "id": "speechless-destroyers-gloves",
+  "name": {
+    "th": "ถุงมือของนักทำลายล้างผู้เงียบงัน",
+    "en": "Speechless Destroyer's Gloves"
+  },
+  "grade": "purple",
+  "stars": 4,
+  "slot": "gloves",
+  "setId": "silent-dismantler",
+  "effects": [],
+  "desc": {
+    "th": "ถุงมือที่นำตะขอของกาเบจมาติดไว้บริเวณปลายนิ้ว สิ่งใดก็ตามที่ถูกกำไว้จะถูกฉีกกระชากออกจนไม่เหลือ",
+    "en": "Gloves with Garbinator's hooks attached to the fingertips. Just one grasp will cleave flesh clean from bone."
+  },
+  "source": {
+    "verifiedAt": "2026-10-03",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "อ่านจากจอคราฟต์ (Sets) ทั้งสองภาษา 2026-10-02/03 | ไม่เก็บค่ารอง เพราะจอเขียนว่าสุ่มตอนได้ของมา ส่วนค่าหลักไม่สุ่ม อยู่ที่ data/meta/gear-main-stats.json | คำบรรยายครบทั้งสองภาษา (ทั้งสองจอจบประโยคก่อนหัวข้อวัตถุดิบ และเนื้อความตรงกัน)"
+  }
+}

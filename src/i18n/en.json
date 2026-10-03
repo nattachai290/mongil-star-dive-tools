@@ -98,6 +98,7 @@
   "equipment.sets": "sets",
   "equipment.pieces": "pieces",
   "equipment.setBonus": "Set",
+  "equipment.listedAs": "Listed in crafting as",
   "equipment.piecesInSet": "Pieces",
   "equipment.rolledNote": "Substats are rolled when the item drops, so they belong to no item definition and are not stored here",
   "equipment.mainStats": "Main stat by slot",

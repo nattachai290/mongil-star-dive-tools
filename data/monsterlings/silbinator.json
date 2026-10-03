@@ -1,0 +1,40 @@
+{
+  "id": "silbinator",
+  "name": {
+    "th": "ซิลเบจ",
+    "en": "Silbinator"
+  },
+  "dex": {
+    "book": "field",
+    "no": 179
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "critDmg",
+      "value": 11.55,
+      "unit": "percent",
+      "target": "team",
+      "trigger": "onHit",
+      "durationSec": 10,
+      "condition": {
+        "hitCount": 10,
+        "triggerVsBoss": true
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "source": {
+    "verifiedAt": "2026-10-03",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "fieldsUnverified": [
+      "effectsRank"
+    ],
+    "note": "อ่านจากจอกระเป๋า > มอนสเตอร์ลิง ภาษาไทย 2026-10-03 แล้วยืนยันกับจออังกฤษวันเดียวกัน · เลขกับชื่อได้จากสมุดภาพทั้งสองภาษา 2026-10-03 | ตอนอ่านจอไทยครั้งแรกตัวนี้ยังไม่อยู่ในสมุดภาพที่เก็บไว้ จึงรอจนได้เลขและชื่ออังกฤษก่อนค่อยสร้างไฟล์ ไม่ได้ตั้ง id จากคำไทย | effectsRank เก็บเป็น gold ตามที่ทั้งไฟล์ใช้ **แต่ติดธงไว้** หัวพาเนลเขียนว่า \"ไพร์ม / Prime\" ซึ่งไม่ใช่ชื่อสีของแรง | จออังกฤษเขียน \"Upon attacking the Boss Monster 10 times / All Teammates' Crit DMG increases by 11.55% for 10 seconds\" ไทย \"เมื่อโจมตีบอสมอนสเตอร์ 10 ครั้ง\" — บอสอยู่ในท่อนกระตุ้น ผลลงทั้งทีม จึงเป็น triggerVsBoss ไม่ใช่ vsBoss ตามแบบอาม่อนกับโบร์โบก | **ชื่อไทยกับอังกฤษห่างกัน** ไทย ซิลเบจ · อังกฤษ Silbinator คล้ายคู่ การ์เบจ / Garbinator (178) — ถ้าตั้ง id จากคำไทยจะผิด | **บล็อกลิงก์เชน ชื่อยังอยู่นอกกรอบ จึงยังไม่สร้างไฟล์ลิงก์เชน** ไทย: [เงื่อนไขปรากฏตัว] ถูกตัด · ดาเมจของพลังโจมตีตัวละคร 20% · 15 วินาที · ลดต้านทานหมดฤทธิ์ 30% (5 วินาที) | อังกฤษ: DMG based on equipping character's ATK 20% · Cooldown 15s · [Bonus Effect] 30% Neutralization RES Reduction (5s) ตรงกับไทย · บรรทัดเงื่อนไขเห็นแค่ท่อนท้ายที่ถูกตัดครึ่ง \"...Attacking with an Elemental Weakness\" ยังไม่ใช่ข้อความเต็ม"
+  }
+}
