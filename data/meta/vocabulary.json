@@ -369,6 +369,10 @@
       "th": "เมื่อมอบเอฟเฟกต์ม่านป้องกัน",
       "en": "upon granting a Shield"
     },
+    "onApplyFreeze": {
+      "th": "เมื่อมอบเอฟเฟกต์เยือกแข็ง",
+      "en": "upon applying Freeze"
+    },
     "onSpecialSkillHit": {
       "th": "เมื่อโจมตีด้วยสกิลพิเศษ",
       "en": "upon attacking with a Special Skill"

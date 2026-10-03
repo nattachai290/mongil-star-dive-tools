@@ -1738,5 +1738,124 @@
       ],
       "note": "เซ็ตทองสองชิ้น (หมวก Almighty Jade Odong Hat / เกราะอก Almighty Jade Odong Armor) มีโบนัสแค่ [2 Set] | แม่พิมพ์เดียวกับ Sirius [2 Set] เป๊ะ (\"All teammates' <ธาตุ> DMG +7.5% for 5s upon using a Support Skill\") ทองทั้งคู่ **และได้ 7.5% เท่ากันทั้งที่คนละธาตุ** (ไฟ กับ ดิน) — แม่พิมพ์นี้จึงนิ่งข้ามธาตุ ต่างจากแม่พิมพ์สกิลพิเศษที่ธาตุลมกระโดดไป 10 ดู PLAN §13.9.3 | ชื่อชิ้นเดินตาม Mystical Jade Odong (ม่วง สองชิ้น หมวก Jade Odong Hat / เกราะอก Jade Odong Brigandine) ด้วยการเติมคำว่า Almighty และช่องตรงกันทั้งสองช่อง แต่โบนัสคนละเรื่องสุดขั้ว (ม่วงเป็นพลังชีวิตสูงสุด +3% ไม่มีทริกเกอร์เลย) เป็นคู่ชื่อ ไม่ใช่คู่ผล อีกคู่หนึ่ง | จอคราฟต์ภาษาไทย 2026-09-22 ได้ชื่อไทยของเซ็ตแล้ว | ชื่อชิ้นภาษาไทยไม่ได้เติมคำนำหน้าให้ของม่วงแบบที่อังกฤษทำ — อังกฤษเติม Almighty เข้าไปหน้า Jade Odong Hat/Brigandine ส่วนไทยเปลี่ยนคำท้ายแทน (หมวกประดับต้นสน -> หมวกนักรบต้นสนทรงฤทธิ์) แต่คำว่า \"ต้นสน\" ยังอยู่ทั้งคู่"
     }
+  },
+  {
+    "id": "merciless-destroyer",
+    "name": {
+      "th": "ผู้ทำลายไร้ความปรานี",
+      "en": "Merciless Destroyer"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "th": "เมื่อมอบเอฟเฟกต์เยือกแข็ง จะเพิ่มดาเมจธาตุน้ำแข็ง 5% นาน 5 วินาที",
+          "en": "Upon applying Freeze, Ice Element DMG increases by 5% for 5 seconds"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "ice",
+            "value": 5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onApplyFreeze",
+            "durationSec": 5
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "th": "เมื่อใช้สกิลล่าถอย จะเพิ่มดาเมจหมดฤทธิ์ 10% นาน 5 วินาที",
+          "en": "Upon using Tag-out Skill, Incapacitate DMG increases by 10% for 5 seconds"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "neutralizationDmg",
+            "value": 10,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onTagOutSkill",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-10-03",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "th",
+        "en"
+      ],
+      "note": "เซ็ตใหม่จากอัปเดตเซกเตอร์ 3 อ่านจากจอคราฟต์ทั้งสองภาษา 2026-10-02/03 | **ได้ชื่ออังกฤษสามชิ้น (เสื้อ ถุงมือ รองเท้า) หมวกยังไม่ได้กดในจออังกฤษ จึงยังไม่สร้างไฟล์หมวก** ชื่อไทยของหมวกคือ \"หมวกเกราะของผู้ทำลายไร้ความปรานี\" | เพิ่มคำใหม่ onApplyFreeze (\"Upon applying Freeze\" / \"เมื่อมอบเอฟเฟกต์เยือกแข็ง\") เป็นพี่น้องของ onGrantShield | **ภาษาอังกฤษของเนื้อหาใหม่ใช้สำนวนต่างจากของเดิม** เขียน \"[2-Set]\" แทน \"[2 Set]\", \"for 5 seconds\" แทน \"for 5s\", \"Ice Element DMG\" แทน \"Ice DMG\" และ**เรียก ดาเมจหมดฤทธิ์ ว่า \"Incapacitate DMG\"** ทั้งที่ชิปลักษณะเฉพาะและพจนานุกรมเรียก \"Neutralization DMG\" ไทยเขียน \"ดาเมจหมดฤทธิ์\" ทั้งสองที่ จึงเก็บเป็น stat neutralizationDmg ตัวเดียวกัน และเก็บคำอังกฤษตามจอใน desc | **เป็นคู่ชื่อ/คู่หน้าตาของเซ็ตม่วง \"นักล่าอำมหิต\" แต่ไม่ใช่คู่ผล** เกราะแร็พเตอร์ขาว-ส้มแบบเดียวกัน คำบรรยายอ้างหุ่นยนต์ตัวเดียวกัน (แร็พเตอร์ AE-287 ของฟิเดลิส) แต่โบนัสคนละเรื่องทั้งสองข้อ แบบเดียวกับ PLAN §13.9.3"
+    }
+  },
+  {
+    "id": "the-nameless-one",
+    "name": {
+      "th": "ผู้ไร้นาม",
+      "en": "The Nameless One"
+    },
+    "grade": "gold",
+    "stars": 5,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "th": "เพิ่มดาเมจธาตุลมของโจมตีพื้นฐาน 5%"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "wind",
+            "scopes": [
+              "basicAttack"
+            ],
+            "value": 5,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "always"
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "th": "เมื่อใช้สกิลอัลติเมต จะลดต้านทานธาตุลมของเป้าหมาย 10% นาน 5 วินาที"
+        },
+        "effects": [
+          {
+            "kind": "debuff",
+            "stat": "res",
+            "damageType": "wind",
+            "value": 10,
+            "unit": "percent",
+            "target": "enemy",
+            "trigger": "onUltimate",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-10-03",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "th",
+        "en"
+      ],
+      "note": "เซ็ตใหม่จากอัปเดตเซกเตอร์ 3 อ่านโบนัสจากจอคราฟต์ภาษาไทย 2026-10-02/03 ชื่ออังกฤษของเซ็ตได้จากหัวกลุ่มในแถบซ้ายของจอคราฟต์ภาษาอังกฤษ | **ยังไม่มีไฟล์ชิ้นเลย** เพราะยังไม่ได้กดชิ้นไหนในจออังกฤษ id ของชิ้นจึงยังตั้งไม่ได้ ชื่อไทยครบทั้งสี่ชิ้นแล้ว: หมวกของผู้ไร้นาม · ชุดเกราะของผู้ไร้นาม · ถุงมือของผู้ไร้นาม · รองเท้าหุ้มข้อของผู้ไร้นาม | คำบรรยายโบนัสภาษาอังกฤษยังไม่เห็น"
+    }
   }
 ]
