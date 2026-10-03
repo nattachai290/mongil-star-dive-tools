@@ -343,7 +343,7 @@
     },
     "onUltimateHit": {
       "th": "เมื่อสกิลอัลติเมตโดน",
-      "en": "upon landing an Ultimate Skill"
+      "en": "upon landing an Ultimate Skill hit"
     },
     "onKill": {
       "th": "เมื่อกำจัดมอนสเตอร์",
