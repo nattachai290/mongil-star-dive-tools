@@ -1,0 +1,26 @@
+{
+  "id": "worry-crusher-hat",
+  "name": {
+    "th": "หมวกของผู้สลายจิต",
+    "en": "Worry Crusher Hat"
+  },
+  "grade": "purple",
+  "stars": 4,
+  "slot": "headgear",
+  "setId": "thought-shredder",
+  "effects": [],
+  "desc": {
+    "th": "หมวกที่ทำขึ้นจากการนำเกราะแข็งของสแครป โฮเดอร์มาซ้อนกันหลายชั้น แม้จะดูหยาบๆ แต่สามารถป้องกันแรงกระแทกได้ทุกรูปแบบ",
+    "en": "A hat made from layers of the Scrap Horde's solid armor. It may look crude, but it's capable of blocking any impact."
+  },
+  "source": {
+    "verifiedAt": "2026-10-03",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "อ่านจากจอคราฟต์ (Sets) ทั้งสองภาษา 2026-10-02/03 | ไม่เก็บค่ารอง เพราะจอเขียนว่าสุ่มตอนได้ของมา ส่วนค่าหลักไม่สุ่ม อยู่ที่ data/meta/gear-main-stats.json | คำบรรยายครบทั้งสองภาษา (ทั้งสองจอจบประโยคก่อนหัวข้อวัตถุดิบ และเนื้อความตรงกัน)"
+  }
+}

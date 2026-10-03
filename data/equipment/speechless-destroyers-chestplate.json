@@ -1,0 +1,26 @@
+{
+  "id": "speechless-destroyers-chestplate",
+  "name": {
+    "th": "เกราะของนักทำลายล้างผู้เงียบงัน",
+    "en": "Speechless Destroyer's Chestplate"
+  },
+  "grade": "purple",
+  "stars": 4,
+  "slot": "chestpiece",
+  "setId": "silent-dismantler",
+  "effects": [],
+  "desc": {
+    "th": "เกราะที่ตัดแผ่นเกราะทรงกลมของกาเบจมาติดเสริม สามารถสะท้อนแรงกระแทกได้ทุกชนิดโดยไม่ทิ้งแม้แต่รอยขีดข่วน",
+    "en": "A chestplate reinforced with pieces cut from Garbinator's spherical housing. It reflects any impact, leaving not even single scratch."
+  },
+  "source": {
+    "verifiedAt": "2026-10-03",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "อ่านจากจอคราฟต์ (Sets) ทั้งสองภาษา 2026-10-02/03 | ไม่เก็บค่ารอง เพราะจอเขียนว่าสุ่มตอนได้ของมา ส่วนค่าหลักไม่สุ่ม อยู่ที่ data/meta/gear-main-stats.json | คำบรรยายครบทั้งสองภาษา (ทั้งสองจอจบประโยคก่อนหัวข้อวัตถุดิบ และเนื้อความตรงกัน)"
+  }
+}

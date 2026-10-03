@@ -242,7 +242,16 @@ export const equipment = z.object({
 /** โบนัสเซ็ต อยู่ใน data/meta/sets.json เพราะเป็นของกลางที่ equipment หลายชิ้นอ้างถึง */
 export const equipmentSet = z.object({
   id: slug,
+  /** ชื่อที่หัวแผง [Set Effect] — เป็นชื่อของเซ็ตจริง */
   name: text,
+  /**
+   * ชื่อหัวกลุ่มในแถบซ้ายของจอคราฟต์ ใส่เฉพาะตอนที่ไม่ตรงกับ name
+   *
+   * ส่วนใหญ่สองที่เขียนเหมือนกัน แต่บางเซ็ตไม่ใช่ และเป็นแบบนั้นทั้งสองภาษา
+   * เช่น แถบซ้าย "Worry Crusher" แต่หัวแผงเขียน "Thought Shredder"
+   * ชื่อชิ้นมักเดินตามชื่อแถบซ้าย คนที่เห็นแต่จอคราฟต์จึงต้องค้นด้วยชื่อนี้เจอ
+   */
+  listedAs: text.optional(),
   grade: vocabEnum("gearGrade"),
   stars: z.number().int().min(1).max(5).optional(),
   /**

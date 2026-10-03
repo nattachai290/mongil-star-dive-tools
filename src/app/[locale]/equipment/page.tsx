@@ -78,7 +78,7 @@ const GRADES = ["purple", "gold"] as const;
 /** ลำดับช่องบนตัวละคร ใช้เรียงตารางค่าหลักให้ตรงกับที่เกมวาง */
 const SLOT_ORDER = ["headgear", "chestpiece", "gloves", "footwear"] as const;
 
-function SetCard({ set, locale, t }: { set: EquipmentSet; locale: Locale; t: (k: "equipment.setBonus") => string }) {
+function SetCard({ set, locale, t }: { set: EquipmentSet; locale: Locale; t: (k: "equipment.setBonus" | "equipment.listedAs") => string }) {
   const pieces = piecesOfSet(set.id);
 
   return (
@@ -92,6 +92,11 @@ function SetCard({ set, locale, t }: { set: EquipmentSet; locale: Locale; t: (k:
           {label("gearGrade", set.grade, locale)}
         </span>
       </div>
+      {set.listedAs && (
+        <p className="mt-0.5 text-[11px] text-muted">
+          {t("equipment.listedAs")} <Text value={set.listedAs} locale={locale} showFallbackBadge={false} />
+        </p>
+      )}
 
       <ul className="mt-3 space-y-2">
         {set.bonuses.map((bonus, i) => {
@@ -176,6 +181,8 @@ export default async function EquipmentPage({
         haystack: [
           set.name.th,
           set.name.en,
+          set.listedAs?.th,
+          set.listedAs?.en,
           set.id,
           ...pieces.flatMap((p) => [p.name.th, p.name.en]),
           ...set.bonuses.flatMap((b) => [b.desc?.th, b.desc?.en]),

@@ -1859,5 +1859,159 @@
       ],
       "note": "เซ็ตใหม่จากอัปเดตเซกเตอร์ 3 อ่านโบนัสจากจอคราฟต์ภาษาไทย 2026-10-02/03 ชื่ออังกฤษของเซ็ตได้จากหัวกลุ่มในแถบซ้ายของจอคราฟต์ภาษาอังกฤษ | ชื่อไทยครบทั้งสี่ชิ้นแล้ว: หมวกของผู้ไร้นาม · ชุดเกราะของผู้ไร้นาม · ถุงมือของผู้ไร้นาม · รองเท้าหุ้มข้อของผู้ไร้นาม | 2026-10-03 ได้จอคราฟต์ภาษาอังกฤษครบสี่ชิ้นและคำบรรยายโบนัสอังกฤษ ครบเซ็ตแล้ว | **ชื่ออังกฤษของชิ้นใช้สองแบบในเซ็ตเดียว** หมวกเป็น \"The Nameless One's Helmet\" (แบบ 's) อีกสามชิ้นเป็น \"Armor/Gloves/Boots of the Nameless One\" (แบบ of) ส่วนไทยเขียน \"…ของผู้ไร้นาม\" เหมือนกันทั้งสี่ชิ้น เก็บตามจอแต่ละใบ ไม่ปรับให้เป็นแบบเดียวกัน"
     }
+  },
+  {
+    "id": "thought-shredder",
+    "name": {
+      "th": "เครื่องบดขยี้ความคิด",
+      "en": "Thought Shredder"
+    },
+    "listedAs": {
+      "th": "ผู้สลายจิต",
+      "en": "Worry Crusher"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "th": "เพิ่มดาเมจธาตุดินของโจมตีพื้นฐาน 3%",
+          "en": "Earth Element DMG on Basic Attack increases by 3%"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "earth",
+            "scopes": [
+              "basicAttack"
+            ],
+            "value": 3,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "always"
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-10-03",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "th",
+        "en"
+      ],
+      "note": "เซ็ตใหม่จากอัปเดตเซกเตอร์ 3 อ่านจากจอคราฟต์ทั้งสองภาษา 2026-10-02/03 | **ชื่อหัวกลุ่มในแถบซ้ายกับชื่อหัวแผง [Set Effect] ไม่ตรงกัน และไม่ตรงกันทั้งสองภาษา** เก็บชื่อหัวแผงเป็น name (เป็นชื่อที่ผูกกับโบนัส) และเก็บชื่อแถบซ้ายไว้ที่ listedAs ชื่อชิ้นเดินตามชื่อแถบซ้าย | ตอนเห็นแต่จอไทย เคยตั้งสมมติฐานว่าเป็นข้อความอังกฤษอันเดียวที่แปลไทยสองครั้งไม่ตรงกัน — **ผิด** จออังกฤษเขียนสองชื่อต่างกันเหมือนไทย ภาษาไทยแปลตรงทั้งสองชื่อ ไม่ได้แปลพลาด | หมวกกับรองเท้าครบสองชิ้น | คำบรรยายของชิ้นอ้าง Scrap Hoarder (field 176) แต่อังกฤษสะกดว่า \"Scrap Horde\" ส่วนไทยเขียน \"สแครป โฮเดอร์\" ตรงกับชื่อมอน เก็บตามจอ"
+    }
+  },
+  {
+    "id": "silent-dismantler",
+    "name": {
+      "th": "ผู้แยกชิ้นส่วนไร้เสียง",
+      "en": "Silent Dismantler"
+    },
+    "listedAs": {
+      "th": "นักทำลายล้างผู้เงียบงัน",
+      "en": "Speechless Destroyer"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 2,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "th": "เมื่อใช้สกิลสนับสนุน จะเพิ่มดาเมจธาตุสายฟ้าของสมาชิกทีมทั้งหมด 3% นาน 5 วินาที",
+          "en": "Upon using Support Skill, all Teammates' Lightning Element DMG increases by 3% for 5 seconds"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "lightning",
+            "value": 3,
+            "unit": "percent",
+            "target": "team",
+            "trigger": "onSupportSkill",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-10-03",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "th",
+        "en"
+      ],
+      "note": "เซ็ตใหม่จากอัปเดตเซกเตอร์ 3 อ่านจากจอคราฟต์ทั้งสองภาษา 2026-10-02/03 | **ชื่อหัวกลุ่มในแถบซ้ายกับชื่อหัวแผง [Set Effect] ไม่ตรงกัน และไม่ตรงกันทั้งสองภาษา** เก็บชื่อหัวแผงเป็น name (เป็นชื่อที่ผูกกับโบนัส) และเก็บชื่อแถบซ้ายไว้ที่ listedAs ชื่อชิ้นเดินตามชื่อแถบซ้าย | ตอนเห็นแต่จอไทย เคยตั้งสมมติฐานว่าเป็นข้อความอังกฤษอันเดียวที่แปลไทยสองครั้งไม่ตรงกัน — **ผิด** จออังกฤษเขียนสองชื่อต่างกันเหมือนไทย ภาษาไทยแปลตรงทั้งสองชื่อ ไม่ได้แปลพลาด | เสื้อกับถุงมือครบสองชิ้น | คำบรรยายอ้าง Garbinator (field 178) ไทยเขียน \"กาเบจ\" ส่วนชื่อมอนในสมุดภาพเป็น \"การ์เบจ\" เก็บตามจอ"
+    }
+  },
+  {
+    "id": "violent-predator",
+    "name": {
+      "th": "นักล่าอำมหิต",
+      "en": "Violent Predator"
+    },
+    "grade": "purple",
+    "stars": 4,
+    "pieceCount": 4,
+    "bonuses": [
+      {
+        "pieces": 2,
+        "desc": {
+          "th": "เพิ่มดาเมจธาตุน้ำแข็งของโจมตีพื้นฐาน 3%",
+          "en": "Basic attacks deal 3% increased Ice damage"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "ice",
+            "scopes": [
+              "basicAttack"
+            ],
+            "value": 3,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "always"
+          }
+        ]
+      },
+      {
+        "pieces": 4,
+        "desc": {
+          "th": "เมื่อโจมตีคริติคอล จะเพิ่มดาเมจธาตุน้ำแข็ง 7% นาน 5 วินาที",
+          "en": "Upon a critical hit, Ice Element DMG increases by 7% for 5 seconds"
+        },
+        "effects": [
+          {
+            "kind": "buff",
+            "stat": "dmgDealt",
+            "damageType": "ice",
+            "value": 7,
+            "unit": "percent",
+            "target": "self",
+            "trigger": "onCrit",
+            "durationSec": 5
+          }
+        ]
+      }
+    ],
+    "source": {
+      "verifiedAt": "2026-10-03",
+      "gameVersion": "unknown",
+      "by": "in-game",
+      "readIn": [
+        "th",
+        "en"
+      ],
+      "note": "เซ็ตใหม่จากอัปเดตเซกเตอร์ 3 อ่านจากจอคราฟต์ทั้งสองภาษา 2026-10-02/03 | **ได้ชื่ออังกฤษแค่รองเท้า (Violent Predator's Greaves)** อีกสามชิ้นยังไม่ได้กดในจออังกฤษ ยังไม่สร้างไฟล์ ชื่อไทย: หมวกเกราะของนักล่าอำมหิต · เกราะของนักล่าอำมหิต · สนับแขนของนักล่าอำมหิต | [2 ชิ้น] แม่พิมพ์เดียวกับ Glutton's Visage และ Thought Shredder (ดาเมจธาตุของโจมตีพื้นฐาน 3%) ไทยใช้ประโยคแบบเดียวกันทุกเซ็ต แต่อังกฤษเขียนสองแบบ (\"Basic attacks deal 3% increased Ice damage\" กับ \"Earth Element DMG on Basic Attack increases by 3%\") | เป็นคู่หน้าตาของเซ็ตทอง Merciless Destroyer แต่โบนัสไม่ตรงกัน ดูโน้ตของเซ็ตนั้น"
+    }
   }
 ]
