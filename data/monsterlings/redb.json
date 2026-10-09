@@ -24,6 +24,9 @@
     }
   ],
   "effectsRank": "gold",
+  "images": {
+    "icon": "redb-icon.webp"
+  },
   "source": {
     "verifiedAt": "2026-10-02",
     "gameVersion": "unknown",
