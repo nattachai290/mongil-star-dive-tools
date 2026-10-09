@@ -1,0 +1,38 @@
+{
+  "id": "scrap-hoarder",
+  "name": {
+    "th": "สแครป โฮเดอร์",
+    "en": "Scrap Hoarder"
+  },
+  "dex": {
+    "book": "field",
+    "no": 176
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "basicAttack"
+      ],
+      "value": 11,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onSwitchSkillHit",
+      "durationSec": 10
+    }
+  ],
+  "effectsRank": "gold",
+  "source": {
+    "verifiedAt": "2026-10-09",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th"
+    ],
+    "fieldsUnverified": [
+      "effectsRank"
+    ],
+    "note": "อ่านจากจอกระเป๋า > มอนสเตอร์ลิง ภาษาไทย 2026-10-09 ชื่ออังกฤษได้จากสมุดภาพ Monster Codex 2026-10-02 · **ยังไม่มีจออังกฤษของ Rank Effect** | effectsRank เก็บเป็น gold ตามที่ทั้งไฟล์ใช้ **แต่ติดธงไว้** หัวพาเนลเขียนว่า \"ไพร์ม\" ซึ่งไม่ใช่ชื่อสีของแรง | จอเขียน \"เมื่อสกิลสับเปลี่ยนโดน จะเพิ่มดาเมจโจมตีพื้นฐาน 11% นาน 10 วินาที\" — ดาเมจโจมตีพื้นฐานเก็บเป็น dmgDealt + scopes basicAttack ตามแบบสเวลลี่แมนเดอร์ | **บล็อกลิงก์เชนเห็นแค่ท่อนท้าย** [เอฟเฟกต์เพิ่มเติม] ลดพลังป้องกัน 5% (5 วินาที) ส่วนเงื่อนไขกับข้อมูลปรากฏตัวและชื่อลิงก์เชนอยู่นอกกรอบ"
+  }
+}
