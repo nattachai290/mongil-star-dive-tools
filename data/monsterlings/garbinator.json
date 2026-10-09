@@ -1,0 +1,41 @@
+{
+  "id": "garbinator",
+  "name": {
+    "th": "การ์เบจ",
+    "en": "Garbinator"
+  },
+  "dex": {
+    "book": "field",
+    "no": 178
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "switchSkill"
+      ],
+      "value": 11,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onSwitchSkillHit",
+      "condition": {
+        "triggerEnemyAffliction": "lightning"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "source": {
+    "verifiedAt": "2026-10-09",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "fieldsUnverified": [
+      "effectsRank"
+    ],
+    "note": "อ่านจากจอกระเป๋า > มอนสเตอร์ลิง **ภาษาอังกฤษ** 2026-10-09 · ชื่อไทย (การ์เบจ) กับเลขได้จากสมุดภาพ · **ยังไม่มีจอไทยของ Rank Effect** | effectsRank เก็บเป็น gold ตามที่ทั้งไฟล์ใช้ **แต่ติดธงไว้** หัวพาเนลเขียนว่า \"Prime\" ซึ่งไม่ใช่ชื่อสีของแรง | จอเขียน \"Upon attacking an enemy afflicted with a Lightning weakening effect using the Switch Skill / Switch Skill damage increases by 11%\" — ตีด้วยสกิลสับเปลี่ยน (onSwitchSkillHit) ใส่ศัตรูที่ติดสถานะอ่อนแอต่อสายฟ้า (triggerEnemyAffliction) ผลคือดาเมจสกิลสับเปลี่ยน (dmgDealt + scopes switchSkill) | **ไม่มีระยะเวลาบนจอ** แบบเดียวกับฟิเดลิส แรปเตอร์ (190) ที่จอทั้งสองภาษาก็ไม่มี จึงไม่ใส่ ไม่ได้ตกหล่น | ค่า 11 -> 11.55 ของซิลเบจ / Silbinator (179) ที่อยู่ติดกันเป็นขั้น x1.05 แต่คนละ stat และคนละตัวกระตุ้น จึงไม่ใช่คู่เต็ม | **ลิงก์เชน (ชื่ออยู่นอกกรอบ):** [เงื่อนไขปรากฏตัว] เห็นแค่ท่อนท้าย \"...Attacking with an Elemental Weakness\" (ท่อนเดียวกับที่เห็นบนจอของ Silbinator) · DMG based on equipping character's ATK 20% · Cooldown 15s · [Bonus Effect] 10% Lightning RES Reduction (5s)"
+  }
+}
