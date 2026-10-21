@@ -23,6 +23,9 @@
     }
   ],
   "effectsRank": "gold",
+  "images": {
+    "icon": "bizpomo-icon.webp"
+  },
   "source": {
     "verifiedAt": "2026-10-03",
     "gameVersion": "unknown",

@@ -1,0 +1,43 @@
+{
+  "id": "twisted-circuit",
+  "name": {
+    "th": "วงจรบิดเบี้ยว",
+    "en": "Twisted Circuit"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "the-great-unknown",
+  "rarity": 5,
+  "levels": [
+    {
+      "level": 1,
+      "damageType": "dark",
+      "appearanceConditions": [
+        "switchSkillVsDark"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 40,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "ลดพลังป้องกัน 5% (5 วินาที)",
+          "en": "5% DEF Reduction (5s)"
+        },
+        {
+          "th": "เพิ่มดาเมจธาตุจุดอ่อนที่ได้รับ 5% (5 วินาที)",
+          "en": "5% Elemental Weakness DMG Taken Boost (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-10-21",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "จอลิงก์เชน ทั้งภาษาไทยและอังกฤษ 2026-10-21 | ดาเมจธาตุมืด / Dark DMG จากบรรทัดบรรยายท่า — **ลิงก์เชนแรกที่สร้างดาเมจธาตุมืด** | เงื่อนไขระบุธาตุของศัตรู (มืด) จึงเพิ่มคำ switchSkillVsDark แยกจาก switchSkill | ข้อความบรรยายภาษาไทยเรียกมอนว่า \"มอนสเตอร์ลิ่งตัวตนปริศนา\" ไม่ใช่ อันโนน ที่ป้ายเขียน ไม่ใช้ | ยังไม่ได้ผลิต"
+  }
+}

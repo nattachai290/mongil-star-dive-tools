@@ -1,0 +1,37 @@
+{
+  "id": "a-wish-for-the-heavens",
+  "name": {
+    "th": "แรงปรารถนาสู่นภา",
+    "en": "A Wish for the Heavens"
+  },
+  "kind": "legendary",
+  "monsterlingId": "sorin",
+  "rarity": 5,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        "burst"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 250
+      },
+      "bonusEffects": [
+        {
+          "th": "ลดต้านทานธาตุทั้งหมด 15% (จนกว่าเบิร์สจะสิ้นสุด)",
+          "en": "15% All Elemental RES Reduction (Until end of Burst)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-10-21",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "จอลิงก์เชน ทั้งภาษาไทยและอังกฤษ 2026-10-21 | สายตำนาน: [เงื่อนไขที่กำหนด] / [Specific Condition] และ [ข้อมูลสัตว์เทพ] / [Divine Beast Info] ไม่มีคูลดาวน์ ตามแบบคลื่นดวงดาว | ไม่ใส่ damageType เพราะบรรทัดชนิดดาเมจถูกตัดครึ่งบนทั้งสองจอ"
+  }
+}

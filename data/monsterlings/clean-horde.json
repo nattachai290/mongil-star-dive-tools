@@ -1,0 +1,41 @@
+{
+  "id": "clean-horde",
+  "name": {
+    "th": "คลีน โฮเดอร์",
+    "en": "Clean Horde"
+  },
+  "dex": {
+    "book": "field",
+    "no": 177
+  },
+  "speciesEffects": [
+    {
+      "kind": "debuff",
+      "stat": "res",
+      "damageType": "wind",
+      "value": 11.55,
+      "unit": "percent",
+      "target": "enemy",
+      "trigger": "onHit",
+      "durationSec": 10,
+      "condition": {
+        "hitCount": 10,
+        "triggerVsBoss": true
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "source": {
+    "verifiedAt": "2026-10-21",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "fieldsUnverified": [
+      "effectsRank"
+    ],
+    "note": "อ่านจากจอกระเป๋า > มอนสเตอร์ลิง ภาษาไทย 2026-10-21 · ชื่ออังกฤษกับเลขจากสมุดภาพอังกฤษ ชื่อไทยตรงกับป้ายบนจอลิงก์เชนไทยและหัวพาเนลนี้ | effectsRank เก็บเป็น gold ตามที่ทั้งไฟล์ใช้ **แต่ติดธงไว้** หัวพาเนลเขียนว่า \"ไพร์ม\" ซึ่งไม่ใช่ชื่อสีของแรง | จอเขียน \"เมื่อโจมตีมอนสเตอร์บอส 10 ครั้ง จะลดต้านทานธาตุลมของเป้าหมาย 11.55% นาน 10 วินาที\" — บอสอยู่ในท่อนกระตุ้น (triggerVsBoss) แบบเดียวกับรัคนาดอน (189) | ค่า 11.55 คือ 11 x 1.05 ของสแครป โฮเดอร์ (176) ซึ่งลิงก์เชนเป็นคู่กัน แต่เอฟเฟกต์สายพันธุ์คนละอย่างทั้ง stat และตัวกระตุ้น จึงไม่ใช่คู่เต็ม | บล็อกลิงก์เชน (150% · 5 วินาที · ลดพลังป้องกัน 5% · ลดต้านทานธาตุลม 10%) ตรงกับ data/link-chains/clean-machine-heart.json | ลักษณะบนชิป: เพิ่มพลังโจมตี 4% (ม่วง) ตรงกับตาราง | **2026-10-21 จอกระเป๋าภาษาอังกฤษยืนยัน Rank Effect แล้ว** \"Target's Wind RES -11.55% for 10s upon attacking a boss enemy 10 times\" ตรงกับไทยทุกช่อง ยืนยันครบสองภาษาแล้ว · บล็อกลิงก์เชนภาษาอังกฤษ (Upon Part Destruction / Upon Counter Gauge Destruction / When Burst is triggered · 150% · 5s · 5% DEF Reduction · 10% Wind RES Reduction) ตรงกับ clean-machine-heart.json"
+  }
+}

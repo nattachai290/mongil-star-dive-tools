@@ -1,0 +1,42 @@
+{
+  "id": "steel-saw-jaws",
+  "name": {
+    "th": "ขากรรไกรใบเลื่อยเหล็ก",
+    "en": "Steel Saw Jaws"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "macrodon",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        "landIceAttack"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 20,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "ลดต้านทานธาตุน้ำแข็ง 3% (5 วินาที)",
+          "en": "3% Ice RES Reduction (5s)"
+        },
+        {
+          "th": "สถานะเยือกแข็ง (3 วินาที)",
+          "en": "Freeze (3s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-10-21",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "จอลิงก์เชน ทั้งภาษาไทยและอังกฤษ 2026-10-21 | ไม่ใส่ damageType เพราะทั้งสองจอเลื่อนเลยบรรทัดบรรยายท่าไปแล้ว"
+  }
+}

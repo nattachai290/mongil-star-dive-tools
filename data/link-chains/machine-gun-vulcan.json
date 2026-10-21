@@ -1,0 +1,39 @@
+{
+  "id": "machine-gun-vulcan",
+  "name": {
+    "th": "ปืนกลวัลแคน",
+    "en": "Machine Gun Vulcan"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "silbinator",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 1,
+      "damageType": "lightning",
+      "appearanceConditions": [
+        "weaknessAttack"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 20,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "ลดต้านทานหมดฤทธิ์ 30% (5 วินาที)",
+          "en": "30% Neutralization RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-10-21",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "**2026-10-21 จอลิงก์เชนภาษาไทยได้ชื่อไทยแล้ว** \"ปืนกลวัลแคน\" · ค่าทุกช่องบนจอไทยตรงกับจออังกฤษ และข้อความเอฟเฟกต์เพิ่มเติมภาษาไทยตรงกับที่เก็บไว้ทุกตัวอักษร | จอลิงก์เชนภาษาอังกฤษ 2026-10-21 · **ยังไม่เห็นชื่อไทยของลิงก์เชนนี้** · ข้อความเอฟเฟกต์เพิ่มเติมภาษาไทยมาจากบล็อกลิงก์เชนในจอกระเป๋าภาษาไทยของซิลเบจ ที่ค่าตรงกัน | Lightning DMG อ่านจากบรรทัดบรรยายท่าที่ถูกตัดครึ่งบนแต่ยังอ่านออก (\"Lightning DMG and inflicting a Bonus Effect.\") | เงื่อนไขเดียวกับแอคทีฟคอร์ของการ์เบจ (178)"
+  }
+}

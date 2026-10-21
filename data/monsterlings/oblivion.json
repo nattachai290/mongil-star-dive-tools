@@ -1,0 +1,40 @@
+{
+  "id": "oblivion",
+  "name": {
+    "th": "ออบลิเวียน",
+    "en": "Oblivion"
+  },
+  "dex": {
+    "book": "field",
+    "no": 193
+  },
+  "speciesEffects": [
+    {
+      "kind": "debuff",
+      "stat": "res",
+      "damageType": "wind",
+      "value": 11.55,
+      "unit": "percent",
+      "target": "enemy",
+      "trigger": "onSpecialSkillHit",
+      "durationSec": 10,
+      "condition": {
+        "triggerDamageType": "wind"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "source": {
+    "verifiedAt": "2026-10-21",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "fieldsUnverified": [
+      "effectsRank"
+    ],
+    "note": "อ่านจากจอกระเป๋า > มอนสเตอร์ลิง ภาษาไทย 2026-10-21 · เลขจากสมุดภาพไทย และชื่ออังกฤษจากสมุดภาพอังกฤษ วันเดียวกัน | effectsRank เก็บเป็น gold ตามที่ทั้งไฟล์ใช้ **แต่ติดธงไว้** หัวพาเนลเขียนว่า \"ไพร์ม\" ซึ่งไม่ใช่ชื่อสีของแรง | จอเขียน \"เมื่อโจมตีธาตุลมด้วยสกิลพิเศษ จะลดต้านทานธาตุลมของเป้าหมาย 11.55% นาน 10 วินาที\" — โจมตีด้วยสกิลพิเศษ (onSpecialSkillHit) ที่เป็นธาตุลม (triggerDamageType) | ค่า 11.55 คือ 11 x 1.05 ของอันโนน / The Great Unknown (192) ที่อยู่ติดกัน แต่คนละ stat จึงไม่ใช่คู่เต็ม · ลิงก์เชนแทบเหมือนกันทุกช่อง ต่างกันที่เพิ่มดาเมจธาตุจุดอ่อนที่ได้รับ 5% -> 15% และเงื่อนไขสกิลสับเปลี่ยน -> สกิลพิเศษ | ลิงก์เชน: data/link-chains/pure-void-crystal.json | **2026-10-21 จอกระเป๋าภาษาอังกฤษยืนยัน Rank Effect แล้ว** \"Target's Wind RES -11.55% for 10s upon attacking with a Wind Special Skill\" ตรงกับที่เก็บไว้ทุกช่อง ยืนยันครบสองภาษาแล้ว · บล็อกลิงก์เชนภาษาอังกฤษตรงกับ pure-void-crystal.json"
+  }
+}

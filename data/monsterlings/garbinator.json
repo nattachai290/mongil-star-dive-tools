@@ -1,0 +1,41 @@
+{
+  "id": "garbinator",
+  "name": {
+    "th": "การ์เบจ",
+    "en": "Garbinator"
+  },
+  "dex": {
+    "book": "field",
+    "no": 178
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "switchSkill"
+      ],
+      "value": 11,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onSwitchSkillHit",
+      "condition": {
+        "triggerEnemyAffliction": "lightning"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "source": {
+    "verifiedAt": "2026-10-09",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "fieldsUnverified": [
+      "effectsRank"
+    ],
+    "note": "อ่านจากจอกระเป๋า > มอนสเตอร์ลิง **ภาษาอังกฤษ** 2026-10-09 · ชื่อไทย (การ์เบจ) กับเลขได้จากสมุดภาพ | effectsRank เก็บเป็น gold ตามที่ทั้งไฟล์ใช้ **แต่ติดธงไว้** หัวพาเนลเขียนว่า \"Prime\" ซึ่งไม่ใช่ชื่อสีของแรง | จอเขียน \"Upon attacking an enemy afflicted with a Lightning weakening effect using the Switch Skill / Switch Skill damage increases by 11%\" — ตีด้วยสกิลสับเปลี่ยน (onSwitchSkillHit) ใส่ศัตรูที่ติดสถานะอ่อนแอต่อสายฟ้า (triggerEnemyAffliction) ผลคือดาเมจสกิลสับเปลี่ยน (dmgDealt + scopes switchSkill) | **ไม่มีระยะเวลาบนจอ** แบบเดียวกับฟิเดลิส แรปเตอร์ (190) ที่จอทั้งสองภาษาก็ไม่มี จึงไม่ใส่ ไม่ได้ตกหล่น | ค่า 11 -> 11.55 ของซิลเบจ / Silbinator (179) ที่อยู่ติดกันเป็นขั้น x1.05 แต่คนละ stat และคนละตัวกระตุ้น จึงไม่ใช่คู่เต็ม | **ลิงก์เชน (ชื่ออยู่นอกกรอบ):** [เงื่อนไขปรากฏตัว] เห็นแค่ท่อนท้าย \"...Attacking with an Elemental Weakness\" (ท่อนเดียวกับที่เห็นบนจอของ Silbinator) · DMG based on equipping character's ATK 20% · Cooldown 15s · [Bonus Effect] 10% Lightning RES Reduction (5s) | **2026-10-21 ได้ชื่อลิงก์เชนจากจอลิงก์เชนแล้ว สร้างไฟล์ที่ data/link-chains/active-core.json** ค่าที่จดไว้ในโน้ตนี้ตรงกับจอนั้นทุกช่อง | **2026-10-21 จอกระเป๋าภาษาไทยยืนยัน Rank Effect แล้ว** \"เมื่อโจมตีศัตรูที่ติดสถานะอ่อนแอต่อธาตุสายฟ้าด้วยสกิลสับเปลี่ยน จะเพิ่มดาเมจสกิลสับเปลี่ยน 11%\" ตรงกับที่เก็บไว้ และไทยก็ไม่มีระยะเวลาเช่นกัน ยืนยันครบสองภาษาแล้ว | **บล็อกลิงก์เชนในจอกระเป๋าภาษาไทยเขียน \"ลดต้านทานธาตุสายฟ้า 5% (5 วินาที)\"** ต่างจากอีกสามจอที่เขียน 10% (จอกระเป๋าอังกฤษ · จอลิงก์เชนอังกฤษ · จอลิงก์เชนไทย \"ลดต้านทานธาตุสายฟ้า 10% (5 วินาที)\") ไฟล์ลิงก์เชนเก็บ 10% ตามสามจอที่ตรงกัน และจดความต่างนี้ไว้ — เป็นกรณีที่สามที่จอสองชนิดในเกมให้ตัวเลขลิงก์เชนไม่ตรงกัน (ต่อจาก Iron Saw Horn และ Moonlight-Touched Claw)"
+  }
+}

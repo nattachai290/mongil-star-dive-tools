@@ -1,0 +1,41 @@
+{
+  "id": "rusted-heart",
+  "name": {
+    "th": "หัวใจสนิม",
+    "en": "Rusted Heart"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "scrap-hoarder",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 1,
+      "damageType": "physical",
+      "appearanceConditions": [
+        "partDestruction",
+        "counterGaugeDestruction",
+        "burst"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 150,
+        "cooldownSec": 5
+      },
+      "bonusEffects": [
+        {
+          "th": "ลดพลังป้องกัน 5% (5 วินาที)",
+          "en": "5% DEF Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-10-21",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "จอลิงก์เชน ทั้งภาษาไทยและอังกฤษ 2026-10-21 | ออกได้สามทาง ทั้งสองภาษาตรงกัน · ดาเมจกายภาพ / Physical DMG จากบรรทัดบรรยายท่า | ตัวคูณ 150% คูลดาวน์ 5 วินาที สูงและถี่กว่าลิงก์เชนเซกเตอร์ 3 ตัวอื่นมาก ตรงกับบล็อกในจอกระเป๋าสองภาษา | **ข้อความบรรยายภาษาอังกฤษเรียกมอนว่า \"Scrap Horde Monsterling\"** ส่วนชื่อมอนจริงคือ Scrap Hoarder (สมุดภาพ จอกระเป๋า และป้ายบนจอนี้เอง) ถือเป็นคำพิมพ์ผิดในตัวเกม ไม่ใช้ | ยังไม่ได้ผลิต (ปุ่ม \"Obtain Monsterling x1\")"
+  }
+}

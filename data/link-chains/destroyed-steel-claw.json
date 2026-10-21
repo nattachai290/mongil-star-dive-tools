@@ -1,0 +1,39 @@
+{
+  "id": "destroyed-steel-claw",
+  "name": {
+    "th": "กรงเล็บเหล็กที่แตกหัก",
+    "en": "Destroyed Steel Claw"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "ragnadon",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "damageType": "fire",
+      "appearanceConditions": [
+        "inCombat"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 20,
+        "cooldownSec": 20
+      },
+      "bonusEffects": [
+        {
+          "th": "ลดต้านทานธาตุไฟ 3% (5 วินาที)",
+          "en": "3% Fire RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-10-21",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "จอลิงก์เชน ทั้งภาษาไทยและอังกฤษ 2026-10-21 | damageType fire อ่านจากท่อนท้ายบรรทัดบรรยายภาษาไทยที่เห็น \"...สร้างดาเมจธาตุไฟ และมอบเอฟเฟกต์เพิ่มเติม\" (อังกฤษเห็นแค่ \"inflicting a Bonus Effect.\") | จอกระเป๋าอังกฤษของ Ragnadon 2026-10-21 แสดงบล็อกเดียวกันนี้ ค่าตรงทุกช่อง"
+  }
+}
