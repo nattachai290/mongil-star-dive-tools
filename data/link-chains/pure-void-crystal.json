@@ -1,0 +1,41 @@
+{
+  "id": "pure-void-crystal",
+  "name": {
+    "en": "Pure Void Crystal"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "oblivion",
+  "rarity": 5,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        "specialSkillVsDark"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 40,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "ลดพลังป้องกัน 5% (5 วินาที)",
+          "en": "5% DEF Reduction (5s)"
+        },
+        {
+          "th": "เพิ่มดาเมจธาตุจุดอ่อนที่ได้รับ 15% (5 วินาที)",
+          "en": "15% Elemental Weakness DMG Taken Boost (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-10-21",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "จอลิงก์เชนภาษาอังกฤษ 2026-10-21 · **ยังไม่เห็นชื่อไทยของลิงก์เชนนี้ และยังไม่เห็นเงื่อนไขปรากฏตัวภาษาไทย** (คำ specialSkillVsDark ในพจนานุกรมจึงมีแต่ภาษาอังกฤษ) · ข้อความเอฟเฟกต์เพิ่มเติมภาษาไทยมาจากบล็อกในจอกระเป๋าภาษาไทยของออบลิเวียนที่ค่าตรงกัน (40% · 15 วินาที) | ไม่ใส่ damageType เพราะไม่เห็นบรรทัดบรรยายท่า | คู่กับวงจรบิดเบี้ยว / Twisted Circuit ของอันโนน: สกิลสับเปลี่ยน -> สกิลพิเศษ และจุดอ่อน 5% -> 15%"
+  }
+}

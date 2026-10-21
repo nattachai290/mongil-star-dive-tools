@@ -107,6 +107,9 @@
     "switchSkillVsDark": {
       "th": "เมื่อใช้สกิลสับเปลี่ยนแก่มอนสเตอร์ธาตุมืด",
       "en": "Upon using a Switch Skill against a Dark enemy"
+    },
+    "specialSkillVsDark": {
+      "en": "Upon using a Special Skill against a Dark enemy"
     }
   },
   "linkChainKind": {
