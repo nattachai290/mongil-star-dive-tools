@@ -1,0 +1,41 @@
+{
+  "id": "ragnadon",
+  "name": {
+    "th": "รัคนาดอน",
+    "en": "Ragnadon"
+  },
+  "dex": {
+    "book": "field",
+    "no": 189
+  },
+  "speciesEffects": [
+    {
+      "kind": "debuff",
+      "stat": "res",
+      "damageType": "fire",
+      "value": 8,
+      "unit": "percent",
+      "target": "enemy",
+      "trigger": "onHit",
+      "durationSec": 10,
+      "condition": {
+        "hitCount": 10,
+        "triggerVsBoss": true
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "source": {
+    "verifiedAt": "2026-10-21",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "fieldsUnverified": [
+      "effectsRank"
+    ],
+    "note": "อ่านจากจอกระเป๋า > มอนสเตอร์ลิง **ภาษาอังกฤษ** 2026-10-21 · ชื่อไทย (รัคนาดอน) กับเลขได้จากสมุดภาพ · **ยังไม่มีจอไทยของ Rank Effect** | effectsRank เก็บเป็น gold ตามที่ทั้งไฟล์ใช้ **แต่ติดธงไว้** หัวพาเนลเขียนว่า \"Prime\" ซึ่งไม่ใช่ชื่อสีของแรง | จอเขียน \"Target's Fire RES -8% for 10s upon attacking a boss enemy 10 times\" — บอสอยู่ในท่อนกระตุ้น (triggerVsBoss) ผลลงที่เป้าหมาย | บล็อกลิงก์เชนบนจอนี้ (While in Combat · 20% · 20s · 3% Fire RES Reduction (5s)) ตรงกับ data/link-chains/destroyed-steel-claw.json ที่สร้างไว้ก่อนแล้ว"
+  }
+}

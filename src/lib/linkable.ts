@@ -31,8 +31,22 @@ export function linkableIds(chains: Pick<LinkChain, "monsterlingId">[]): Set<str
  * - no      = ไม่มีลิงก์เชนชี้มา และยืนยันแล้วว่ารายการในเกมครบ
  * - unknown = ไม่มีลิงก์เชนชี้มา แต่ยังไม่ยืนยันว่ารายการครบ
  */
+/**
+ * มอนที่เห็นการ์ดลิงก์เชนของมันในเกมแล้ว แต่ยังสร้างไฟล์ลิงก์เชนไม่ได้
+ * (ชื่อถูกตัด หรือยังไม่ได้เปิดดูเงื่อนไขปรากฏตัว ซึ่งไฟล์บังคับต้องมี)
+ *
+ * ถ้าไม่มีรายการนี้ LINK_CHAIN_LIST_IS_COMPLETE จะทำให้มอนพวกนี้ได้ "no"
+ * ทั้งที่เกมมีลิงก์เชนให้จริง — สร้างไฟล์ลิงก์เชนเมื่อไรให้ลบชื่อออกจากที่นี่
+ */
+const CHAIN_SEEN_NOT_RECORDED: ReadonlySet<string> = new Set([
+  "colossus-alter", // "State-of-th..." (จอลิงก์เชนอังกฤษ 2026-10-21)
+  "silbinator", // "Machine Gu..."
+  "whitelon", // "Iron Saw Horn" — ชื่อเต็ม แต่ยังไม่เห็นเงื่อนไขปรากฏตัว
+  "altus-raptor", // "Intricate St..."
+]);
+
 export function linkableOf(slug: string, ids: Set<string>): Linkable {
-  if (ids.has(slug)) return "yes";
+  if (ids.has(slug) || CHAIN_SEEN_NOT_RECORDED.has(slug)) return "yes";
   return LINK_CHAIN_LIST_IS_COMPLETE ? "no" : "unknown";
 }
 
