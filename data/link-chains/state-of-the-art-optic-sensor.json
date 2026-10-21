@@ -1,0 +1,37 @@
+{
+  "id": "state-of-the-art-optic-sensor",
+  "name": {
+    "en": "State-of-the-Art Optic Sensor"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "colossus-alter",
+  "rarity": 3,
+  "levels": [
+    {
+      "level": 1,
+      "appearanceConditions": [
+        "specialSkill"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 40,
+        "cooldownSec": 15
+      },
+      "bonusEffects": [
+        {
+          "th": "ลดต้านทานธาตุดิน 5% (5 วินาที)",
+          "en": "5% Earth RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-10-21",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "จอลิงก์เชนภาษาอังกฤษ 2026-10-21 · **ยังไม่เห็นชื่อไทยของลิงก์เชนนี้** · ข้อความเอฟเฟกต์เพิ่มเติมภาษาไทยมาจากบล็อกลิงก์เชนในจอกระเป๋าภาษาไทยของโคลอสซัส อัลเทอร์ ที่ค่าตรงกัน (เมื่อใช้สกิลพิเศษ · 40% · 15 วินาที) | ไม่ใส่ damageType เพราะชนิดดาเมจในบรรทัดบรรยายถูกตัด (เห็นแค่ \"DMG and inflicting a Bonus Effect.\") | คู่กับหมัดยักษ์ที่แตกหักของโคลอสซัส (174): สกิลสับเปลี่ยน -> สกิลพิเศษ และลดต้านทานดิน 3% -> 5%"
+  }
+}

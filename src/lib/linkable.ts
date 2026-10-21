@@ -39,10 +39,7 @@ export function linkableIds(chains: Pick<LinkChain, "monsterlingId">[]): Set<str
  * ทั้งที่เกมมีลิงก์เชนให้จริง — สร้างไฟล์ลิงก์เชนเมื่อไรให้ลบชื่อออกจากที่นี่
  */
 const CHAIN_SEEN_NOT_RECORDED: ReadonlySet<string> = new Set([
-  "colossus-alter", // "State-of-th..." (จอลิงก์เชนอังกฤษ 2026-10-21)
-  "silbinator", // "Machine Gu..."
-  "whitelon", // "Iron Saw Horn" — ชื่อเต็ม แต่ยังไม่เห็นเงื่อนไขปรากฏตัว
-  "altus-raptor", // "Intricate St..."
+  // ว่างอยู่ตอนนี้ — ทุกใบที่เห็นมีไฟล์แล้ว (2026-10-21)
 ]);
 
 export function linkableOf(slug: string, ids: Set<string>): Linkable {
