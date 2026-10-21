@@ -25,7 +25,7 @@ npm run dev          # http://localhost:3000
 | `npm run selftest` | ทดสอบ schema และสูตรดาเมจด้วยข้อมูลจำลอง |
 | `npm run validate:data` | ตรวจไฟล์ JSON ใน `data/` |
 | `npm run crop:codex` | ตัดรูปมอนจากภาพแคป Monster Codex (ใส่ `-- --preview` เพื่อเช็คกรอบก่อน) |
-| `npm run audit` | ตรวจช่องโหว่ dependency ระดับ high ขึ้นไป |
+| `npm run audit` | ตรวจช่องโหว่ระดับ high ขึ้นไป เฉพาะแพ็กเกจที่ไปกับเว็บ (ไม่นับ dev) |
 
 ## โครงสร้าง
 

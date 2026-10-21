@@ -7,7 +7,7 @@
 | Job | ทำอะไร | fail เมื่อ |
 |---|---|---|
 | `check` | typecheck → lint → ตรวจไฟล์ข้อมูล → build | typecheck/lint พัง, ข้อมูลผิด schema, build ไม่ผ่าน |
-| `audit` | `npm audit --audit-level=high` | เจอช่องโหว่ระดับ **high** หรือ **critical** |
+| `audit` | `npm audit --omit=dev --audit-level=high` | แพ็กเกจที่ไปกับเว็บจริงมีช่องโหว่ระดับ **high** หรือ **critical** |
 
 รันเมื่อ:
 
@@ -25,11 +25,23 @@
 ช่องโหว่ **ทุกระดับ** ยังถูกรายงานอยู่ดีใน **job summary** ของแต่ละรัน (แท็บ Actions → เลือกรัน)
 ถ้าอยากเข้มขึ้นภายหลัง เปลี่ยน `--audit-level=high` เป็น `moderate` ใน workflow
 
+### ทำไมไม่นับ devDependencies
+
+ตั้งแต่ 2026-10 ตัวที่ทำให้ job แดงดูเฉพาะ `dependencies` (`--omit=dev`)
+เว็บนี้ build เป็น static แพ็กเกจฝั่ง dev (eslint, typescript, sharp ที่ใช้ตัดรูป) ไม่ได้ไปถึงผู้ใช้
+
+ที่มา: `braces` ซึ่งมาทาง eslint-config-next → @next/eslint-plugin-next → fast-glob → micromatch
+มีช่องโหว่ high ทุกเวอร์ชันและยังไม่มีตัวแก้ `npm audit fix --force` เสนอให้ลด eslint-config-next ไปเวอร์ชัน 14
+ซึ่งใช้กับ Next 16 ไม่ได้ ถ้าเกณฑ์ยังนับ dev ด้วย CI จะแดงค้างจนกว่า upstream จะแก้ — แบบที่ย่อหน้าบนเตือนไว้
+
+ช่องโหว่ฝั่ง dev **ยังถูกรายงานทุกครั้ง** ใน job summary (`npm audit` แบบเต็ม) ดูเป็นระยะ
+และพอ braces มีเวอร์ชันแก้ ให้รัน `npm audit fix` ตามปกติ
+
 ตรวจในเครื่องด้วยคำสั่งเดียวกัน:
 
 ```bash
-npm run audit          # เท่ากับที่ CI รัน
-npm audit              # ดูทุกระดับ
+npm run audit          # เท่ากับที่ CI รัน (เฉพาะแพ็กเกจที่ไปกับเว็บ)
+npm audit              # ดูทุกระดับ รวม dev
 npm audit fix          # แก้อัตโนมัติเท่าที่ทำได้
 ```
 

@@ -58,16 +58,19 @@ jobs:
 
       - run: npm ci
 
-      # ทำให้ job แดงเมื่อเจอช่องโหว่ระดับ high ขึ้นไป
-      - name: npm audit (high ขึ้นไป = fail)
-        run: npm audit --audit-level=high
+      # ทำให้ job แดงเมื่อแพ็กเกจที่ไปกับเว็บจริงมีช่องโหว่ระดับ high ขึ้นไป
+      # ไม่นับ devDependencies (eslint, sharp ฯลฯ) เพราะเว็บ static ไม่ได้ส่งของพวกนี้ไปถึงผู้ใช้
+      # และเคยมีช่องโหว่ใน dev ที่ไม่มีเวอร์ชันแก้ (braces ผ่าน eslint-config-next) ทำให้ CI แดงค้าง
+      # ช่องโหว่ของ dev ทุกตัวยังแสดงใน summary ด้านล่าง ไม่ได้หายไป (docs/DEPLOY.md)
+      - name: npm audit เฉพาะแพ็กเกจที่ไปกับเว็บ (high ขึ้นไป = fail)
+        run: npm audit --omit=dev --audit-level=high
 
       # รายงานทุกระดับไว้ดูใน summary โดยไม่ทำให้ job แดง
       - name: สรุปช่องโหว่ทุกระดับ
         if: always()
         run: |
           {
-            echo "### npm audit"
+            echo "### npm audit (ทุกแพ็กเกจ รวม dev)"
             echo '```'
             npm audit || true
             echo '```'
