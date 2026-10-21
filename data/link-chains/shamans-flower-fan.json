@@ -1,0 +1,38 @@
+{
+  "id": "shamans-flower-fan",
+  "name": {
+    "en": "Shaman's Flower Fan"
+  },
+  "kind": "monsterling",
+  "monsterlingId": "nagi",
+  "rarity": 4,
+  "levels": [
+    {
+      "level": 1,
+      "damageType": "wind",
+      "appearanceConditions": [
+        "inCombat"
+      ],
+      "appearanceInfo": {
+        "dmgPercentOfAtk": 20,
+        "cooldownSec": 20
+      },
+      "bonusEffects": [
+        {
+          "th": "ลดต้านทานธาตุลม 10% (5 วินาที)",
+          "en": "10% Wind RES Reduction (5s)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-10-21",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "จอลิงก์เชนภาษาอังกฤษ 2026-10-21 · **ยังไม่เห็นชื่อไทยของลิงก์เชนนี้** · ข้อความเอฟเฟกต์เพิ่มเติมภาษาไทยมาจากบล็อกในจอกระเป๋าภาษาไทยของนากิ (2026-10-02) ที่ค่าตรงกัน (20% · 20 วินาที · ลดต้านทานธาตุลม 10%) | Wind DMG จากบรรทัดบรรยายท่า | ยังไม่ได้ผลิต (ปุ่ม Craft)"
+  }
+}

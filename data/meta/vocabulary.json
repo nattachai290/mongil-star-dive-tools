@@ -87,6 +87,26 @@
     "landWindAttack": {
       "th": "เมื่อโจมตีธาตุลมโดน",
       "en": "Landing a Wind Attack"
+    },
+    "inCombat": {
+      "th": "เมื่ออยู่ในระหว่างการต่อสู้",
+      "en": "While in Combat"
+    },
+    "partDestruction": {
+      "th": "เมื่อทำลายส่วน",
+      "en": "Upon Part Destruction"
+    },
+    "counterGaugeDestruction": {
+      "th": "เมื่อทำลายเกจเคาน์เตอร์",
+      "en": "Upon Counter Gauge Destruction"
+    },
+    "weaknessAttack": {
+      "th": "เมื่อโจมตีธาตุจุดอ่อน",
+      "en": "Attacking with an Elemental Weakness"
+    },
+    "switchSkillVsDark": {
+      "th": "เมื่อใช้สกิลสับเปลี่ยนแก่มอนสเตอร์ธาตุมืด",
+      "en": "Upon using a Switch Skill against a Dark enemy"
     }
   },
   "linkChainKind": {
