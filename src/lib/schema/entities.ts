@@ -434,6 +434,10 @@ export const food = z.object({
   id: slug,
   name: text,
   category: vocabEnum("foodCategory"),
+  /** ดาวบนการ์ดในจอ Cooking (1–4 เท่าที่เห็น) */
+  stars: z.number().int().min(1).max(5).optional(),
+  /** ทองที่ใช้ทำหนึ่งครั้ง ตามตัวเลขเหนือปุ่ม Start Cooking */
+  goldCost: z.number().int().positive().optional(),
   effects: z.array(effect).default([]),
   durationSec: z.number().positive(),
   exquisite: z.object({ effects: z.array(effect).default([]) }).optional(),
@@ -608,6 +612,7 @@ export type Monsterling = z.infer<typeof monsterling>;
 export type Skill = z.infer<typeof skill>;
 export type Equipment = z.infer<typeof equipment>;
 export type Artifact = z.infer<typeof artifact>;
+export type Food = z.infer<typeof food>;
 export type GearMainStat = z.infer<typeof gearMainStat>;
 export type GearSubstat = z.infer<typeof gearSubstat>;
 export type EquipmentSet = z.infer<typeof equipmentSet>;

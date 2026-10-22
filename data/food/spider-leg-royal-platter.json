@@ -1,0 +1,45 @@
+{
+  "id": "spider-leg-royal-platter",
+  "name": {
+    "en": "Spider Leg Royal Platter"
+  },
+  "category": "entree",
+  "stars": 3,
+  "goldCost": 5000,
+  "effects": [
+    {
+      "kind": "buff",
+      "stat": "hp",
+      "value": 11,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "atk",
+      "value": 8.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "debuff",
+      "stat": "staminaConsumption",
+      "value": 13.75,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
+  "durationSec": 1800,
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Cooking → Entrées** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | Duration 30m · ผู้รับบัฟไม่ระบุบนจอ → target self (PLAN §13.11) | **ไม่เก็บวัตถุดิบ** — จอแสดงแค่รูป ดาว และจำนวน ไม่มีชื่อวัตถุดิบ (schema ต้องมีชื่อ) · วัตถุดิบที่เห็น: กรงเล็บ 1 ดาว ×3 (สลับได้) · สตรอว์เบอร์รี 1 ดาว ×3 (สลับได้) · ลูกบอลหิน 3 ดาว ×10 | **ไม่มีไอคอน** — ภาพชุดนี้ไม่ได้ถูกบันทึกเป็นไฟล์ในเครื่อง | Stamina Consumption −X% → kind debuff stat staminaConsumption (เพิ่มเข้าพจนานุกรม อังกฤษอย่างเดียว)"
+  }
+}

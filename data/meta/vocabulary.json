@@ -276,6 +276,12 @@
     "destroyerPower": {
       "en": "Destroyer"
     },
+    "captureProficiency": {
+      "en": "Capture Proficiency"
+    },
+    "staminaConsumption": {
+      "en": "Stamina Consumption"
+    },
     "roleMastery": {
       "th": "ความเชี่ยวชาญตามบทบาท"
     },

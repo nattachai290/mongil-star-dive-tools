@@ -1,0 +1,51 @@
+{
+  "id": "swamp-odong-seeds-honey-pancake",
+  "name": {
+    "en": "Swamp Odong Seeds Honey Pancake"
+  },
+  "category": "side",
+  "stars": 3,
+  "goldCost": 5000,
+  "effects": [
+    {
+      "kind": "buff",
+      "stat": "def",
+      "value": 8.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "weaknessHit"
+      ],
+      "value": 16.5,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "captureProficiency",
+      "value": 825,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
+  "durationSec": 1800,
+  "images": {
+    "icon": "swamp-odong-seeds-honey-pancake-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Cooking → Sides** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | Duration 30m · ผู้รับบัฟไม่ระบุบนจอ → target self (PLAN §13.11) | **ไม่เก็บวัตถุดิบ** — จอแสดงแค่รูป ดาว และจำนวน ไม่มีชื่อวัตถุดิบ (schema ต้องมีชื่อ) · วัตถุดิบที่เห็น: สตรอว์เบอร์รี 1 ดาว ×3 (สลับได้) · หญ้า 1 ดาว ×3 (สลับได้) · ดอกไม้ 3 ดาว ×10 | Capture Proficiency เพิ่มเข้าพจนานุกรมเป็น captureProficiency (อังกฤษอย่างเดียว ยังไม่เห็นจอไทย)"
+  }
+}
