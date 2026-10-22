@@ -15,7 +15,190 @@
     "critRate": 5,
     "critDmg": 50
   },
+  "otherStats": [
+    {
+      "kind": "buff",
+      "stat": "supportDmg",
+      "value": 11.59,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "weaknessHit"
+      ],
+      "value": 125,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "energyGain",
+      "value": 100,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "stamina",
+      "value": 100,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "supportPower",
+      "value": 1026,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
   "awaken": [],
+  "skills": {
+    "switch": {
+      "name": {
+        "en": "Outpatient Check-up"
+      },
+      "desc": {
+        "en": "Francis strikes an enemy with her medical chart, dealing Physical DMG. / [Tag-out Skill] When switched out, she reviews the chart to trigger On-the-Fly Diagnosis. This effect does not stack with other On-the-Fly Diagnosis effects. / [Support Skill] When a teammate's HP falls to 75% or below, Francis appears by their side and deals Earth DMG, inflicts Earth Affliction on an enemy, and heals the teammate based on her ATK."
+      },
+      "damageType": "physical",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Switch Skill DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            132.6,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "On-the-Fly Diagnosis Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            10,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Support Skill DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            109.7,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "ATK-Based Healing"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            66,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        }
+      ]
+    },
+    "elemental": {
+      "name": {
+        "en": "Do You Need a New Prescription?"
+      },
+      "desc": {
+        "en": "Upon switching to another teammate, the new character's HP is restored by 20.5% of Francis's ATK."
+      },
+      "effects": [
+        {
+          "kind": "heal",
+          "stat": "hp",
+          "value": 20.5,
+          "unit": "percent",
+          "target": "ally",
+          "trigger": "onSwitchOut",
+          "condition": {
+            "note": {
+              "en": "the new character · 20.5% of Francis's ATK"
+            }
+          }
+        }
+      ],
+      "values": []
+    }
+  },
   "images": {
     "portrait": "francis-portrait.webp"
   },
@@ -26,6 +209,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Support · Earth · Ranged · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวปกติ ไม่ใช่ Francis: Summer Dive! (คนละไฟล์ francis-summer-dive) | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 1,866 · DEF 686 · HP 10,662 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,678 · DEF 609 · HP 9,272 · Crit 5% / 50%** — ตรงกับ Daisy (Earth Support 4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | ยังไม่ได้อ่าน: Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลัง · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Support · Earth · Ranged · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวปกติ ไม่ใช่ Francis: Summer Dive! (คนละไฟล์ francis-summer-dive) | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 1,866 · DEF 686 · HP 10,662 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,678 · DEF 609 · HP 9,272 · Crit 5% / 50%** — ตรงกับ Daisy (Earth Support 4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 11.59% · Support 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · ไม่มีบรรทัดธาตุ · **Special Skill Cooldown Reduction 4.5% ไม่เก็บ** (แบบ Sera — มาจากปลุกพลัง ยืนยันเมื่อเห็นจอปลุกพลัง) | **สกิลบนจอบัญชีนี้ Lv.13 ทั้งสี่ช่อง (\"Level 9 +4\")** · Passive Lv.1 · Guidance of Earth Inactive Lv.1 | Switch Outpatient Check-up (Physical · Lv.13 · สามท่อน Switch / Tag-out / Support) · **ตารางแถวที่ห้า (Earth Affliction Duration) ถูกตัดที่ขอบล่าง อ่านตัวเลขไม่ได้ ไม่เก็บ** | Guidance of Earth Do You Need a New Prescription?: **ค่า Lv.12 = 20.5% จากป๊อปอัป Skill Info (Lv. 1 >> Lv. 12)** จอหลัก Lv.1 = 15% · ฟื้น HP ตัวที่สลับเข้ามา 20.5% ของ ATK ของ Francis → kind heal target ally onSwitchOut + note (ไม่ใช่ % ของ Max HP แบบ Daisy) | ยังไม่ได้อ่าน: Basic · Special · Ultimate · Passive · Switch แถวสุดท้าย · Effect Details · ปลุกพลัง · จอไทยทั้งหมด"
   }
 }
