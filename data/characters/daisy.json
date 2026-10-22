@@ -15,7 +15,320 @@
     "critRate": 5,
     "critDmg": 50
   },
+  "otherStats": [
+    {
+      "kind": "buff",
+      "stat": "supportDmg",
+      "value": 11.59,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "weaknessHit"
+      ],
+      "value": 125,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "res",
+      "damageType": "earth",
+      "value": 10,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "energyGain",
+      "value": 100,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "stamina",
+      "value": 100,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "supportPower",
+      "value": 1026,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
   "awaken": [],
+  "skills": {
+    "basic": {
+      "name": {
+        "en": "Go, Mr. Seeds!"
+      },
+      "desc": {
+        "en": "Daisy deals Earth DMG by launching seeds at an enemy."
+      },
+      "damageType": "earth",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            30.3,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            32.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "3rd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            67.2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Air Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            99.6,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Evasion Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            227.5,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "ultimate": {
+      "name": {
+        "en": "Help Us, Mr. Flower!"
+      },
+      "desc": {
+        "en": "Daisy spreads the power of Mr. Flower in an area around her. This power deals Earth DMG, inflicts Earth Affliction on enemies, and restores all teammates' HP based on her Max HP. / Using her Ultimate skill again causes Daisy to call upon Mr. Flower's power once more to deal Earth DMG and knock enemies hit Airborne. All teammates' HP is restored based on Daisy's Max HP. / While this skill is active, Daisy moves at a reduced speed."
+      },
+      "damageType": "earth",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "DoT"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            586.2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Bonus DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            586.2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Max HP-Based Healing"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            27.7,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Earth Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    }
+  },
+  "statuses": [
+    {
+      "name": {
+        "en": "Earth Affliction"
+      },
+      "desc": {
+        "en": "Afflicted targets take Earth DMG over time, and Earth and Physical RES decrease by 15%."
+      },
+      "effects": []
+    }
+  ],
   "images": {
     "portrait": "daisy-portrait.webp"
   },
@@ -26,6 +339,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Support · **Earth** (ธาตุที่ห้า — ครบห้าธาตุรบแล้ว) · Ranged · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลักจากจอ Info: ATK 1,678 (เท่ากับ Bonnie ซึ่งเป็น Support 4 ดาวเหมือนกัน) · DEF 609 · HP 9,272 · Crit 5% / 50% · **ยังไม่ได้เปิด Detailed Stats** — ไม่ใส่ otherStats จากการคาด (บทเรียนจาก Reina ที่ค่าบูสต์ไม่ตรงแบบ) | รูป portrait ตัดจากจอ Info 360x360 | ยังไม่ได้อ่าน: Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลัง · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Support · **Earth** (ธาตุที่ห้า — ครบห้าธาตุรบแล้ว) · Ranged · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลักจากจอ Info: ATK 1,678 (เท่ากับ Bonnie ซึ่งเป็น Support 4 ดาวเหมือนกัน) · DEF 609 · HP 9,272 · Crit 5% / 50% | รูป portrait ตัดจากจอ Info 360x360 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 11.59% · Support 1,026 · Elemental Weakness 125% · gauge 100% · stamina 100 และ **Earth RES 10%** — บรรทัดต้านทานธาตุบนจอค่าพลังตัวละคร เห็นครั้งแรก เก็บเป็น stat res + damageType earth | Basic Go, Mr. Seeds! · Ultimate Help Us, Mr. Flower! (Lv.12) · Effect Details ของ Earth Affliction | ultimate: Max HP-Based Healing ไม่ใส่ line เพราะท่อน 1 และ 2 ต่างพูดถึงการฮีล · **DoT กับ Bonus DMG เป็น 586.2% เท่ากันพอดี** อ่านจากจอซ้ำสองจอแล้ว | **Earth Affliction ต่างจากอีกสี่ธาตุ: ลดต้านทาน \"ทั้งดินและกายภาพ\" 15%** (\"Earth and Physical RES decrease by 15%\") ส่วนธาตุอื่นลดแค่ธาตุตัวเอง | ยังไม่ได้อ่าน: Switch · Special · Passive · Guidance of Earth · ปลุกพลัง · จอไทยทั้งหมด"
   }
 }
