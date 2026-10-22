@@ -919,7 +919,22 @@
       "desc": {
         "en": "ATK increases by 11.9% upon generating a Shadow using Yeonhwa's Support Skill. (Duration: 15s)"
       },
-      "effects": [],
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "atk",
+          "value": 11.9,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSupportSkill",
+          "durationSec": 15,
+          "condition": {
+            "note": {
+              "en": "upon generating a Shadow using her Support Skill"
+            }
+          }
+        }
+      ],
       "values": []
     }
   },
@@ -944,6 +959,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Assassin · Lightning · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลักจากจอ Info: ATK 1,908 · DEF 598 · HP 8,389 · Crit 5% / 50% — **เท่ากับ Reina ทุกตัว** (Lightning Melee 4 ดาวเหมือนกัน แต่คนละบทบาท) อ่านจากจอตรง ๆ ไม่ได้คัดลอก | รูป portrait ตัดจากจอ Info 340x340 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 11.59% · Assassin 1,026 · Elemental Weakness 125% · gauge 100% · stamina 100 (แบบ Assassin 4 ดาวเดียวกับ Angel) | Basic Bloody Bamboo (ดาเมจกายภาพ) · Ultimate Storm Call (สายฟ้า · Lightning Bolt 1,064.8%) · Passive Wraith (Lv.1) · Guidance of Lightning: Slay (Lv.12 ATK +11.9% 15s · ไม่ระบุเป้าหมาย เก็บเป็นข้อความ) · Lightning Affliction | passive: ประโยคแรกเคยถูกตัดหัว — จอที่เลื่อนขึ้นบนสุด 2026-10-22 ได้ประโยคเต็ม **\"Yeonhwa's Crit DMG increases by a portion of her Lightning DMG Boost, but it doesn't increase above a set maximum.\"** ยืนยันว่าแปลง Lightning DMG Boost (อัตรา 150%) เป็น Crit DMG สูงสุด 50% ตามที่คาดไว้ · effects ยังว่าง เพราะโครง effect ยังเก็บการแปลงค่าจาก stat อื่นไม่ได้ (แบบเดียวกับ passive ของวิเวียน) | **2026-10-22 รอบสาม** Switch Seized Opportunity (ครบหกบรรทัดจากจอที่เลื่อนลง) · Special Thunder Chain Slash · ปลุกพลังครบหกขั้น — **ครบทั้งหกช่องสกิลแล้ว** | switch: ประโยคแรกเคยถูกตัดหัว — จอที่เลื่อนขึ้นบนสุด 2026-10-22 ได้ประโยคเต็มแล้ว (\"Yeonhwa quickly approaches the enemy and delivers...\") | ปลุกพลัง: effects เติมขั้น 2 (ใช้สกิลสับเปลี่ยน → อัตราคริติคอลตัวเอง +20% 8 วินาที · onSwitch ตามคำ \"Using ... Switch Skill\" เป้าหมายชัดว่า \"her\") · ขั้น 3 (ดาเมจสกิลสับเปลี่ยน +6% ไม่รวมสกิลสนับสนุน/Tag-out — scopes switchSkill ซึ่งหมายถึงตัวสกิลสับเปลี่ยนอยู่แล้ว) · ขั้น 5 (ดาเมจสกิลสนับสนุน +6%) · ขั้น 1 (ลดพลังป้องกันเป้าหมายเดียว 25% เมื่อสกิลสนับสนุนโดน) เก็บเป็นข้อความ เพราะยังไม่มีตัวกระตุ้นฝั่ง \"สกิลสนับสนุนโดน\" | ยังไม่ได้อ่าน: จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Assassin · Lightning · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลักจากจอ Info: ATK 1,908 · DEF 598 · HP 8,389 · Crit 5% / 50% — **เท่ากับ Reina ทุกตัว** (Lightning Melee 4 ดาวเหมือนกัน แต่คนละบทบาท) อ่านจากจอตรง ๆ ไม่ได้คัดลอก | รูป portrait ตัดจากจอ Info 340x340 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 11.59% · Assassin 1,026 · Elemental Weakness 125% · gauge 100% · stamina 100 (แบบ Assassin 4 ดาวเดียวกับ Angel) | Basic Bloody Bamboo (ดาเมจกายภาพ) · Ultimate Storm Call (สายฟ้า · Lightning Bolt 1,064.8%) · Passive Wraith (Lv.1) · Guidance of Lightning: Slay (Lv.12 ATK +11.9% 15s · ไม่ระบุเป้าหมาย เก็บเป็นข้อความ) · Lightning Affliction | passive: ประโยคแรกเคยถูกตัดหัว — จอที่เลื่อนขึ้นบนสุด 2026-10-22 ได้ประโยคเต็ม **\"Yeonhwa's Crit DMG increases by a portion of her Lightning DMG Boost, but it doesn't increase above a set maximum.\"** ยืนยันว่าแปลง Lightning DMG Boost (อัตรา 150%) เป็น Crit DMG สูงสุด 50% ตามที่คาดไว้ · effects ยังว่าง เพราะโครง effect ยังเก็บการแปลงค่าจาก stat อื่นไม่ได้ (แบบเดียวกับ passive ของวิเวียน) | **2026-10-22 รอบสาม** Switch Seized Opportunity (ครบหกบรรทัดจากจอที่เลื่อนลง) · Special Thunder Chain Slash · ปลุกพลังครบหกขั้น — **ครบทั้งหกช่องสกิลแล้ว** | switch: ประโยคแรกเคยถูกตัดหัว — จอที่เลื่อนขึ้นบนสุด 2026-10-22 ได้ประโยคเต็มแล้ว (\"Yeonhwa quickly approaches the enemy and delivers...\") | ปลุกพลัง: effects เติมขั้น 2 (ใช้สกิลสับเปลี่ยน → อัตราคริติคอลตัวเอง +20% 8 วินาที · onSwitch ตามคำ \"Using ... Switch Skill\" เป้าหมายชัดว่า \"her\") · ขั้น 3 (ดาเมจสกิลสับเปลี่ยน +6% ไม่รวมสกิลสนับสนุน/Tag-out — scopes switchSkill ซึ่งหมายถึงตัวสกิลสับเปลี่ยนอยู่แล้ว) · ขั้น 5 (ดาเมจสกิลสนับสนุน +6%) · ขั้น 1 (ลดพลังป้องกันเป้าหมายเดียว 25% เมื่อสกิลสนับสนุนโดน) เก็บเป็นข้อความ เพราะยังไม่มีตัวกระตุ้นฝั่ง \"สกิลสนับสนุนโดน\" | ยังไม่ได้อ่าน: จอไทยทั้งหมด | **สกิลธาตุเติม effect แล้ว** (ผู้เล่นกำหนด 2026-10-22: \"ถ้าไม่บอกว่าใครก็คือตัวเอง\" — ข้อความที่ไม่ระบุผู้รับบัฟ ให้ target self) · ตัวกระตุ้นจริงคือ \"สร้าง Shadow ด้วยสกิลสนับสนุน\" (Shadow เกิดได้ 40%) เก็บเป็น onSupportSkill + condition.note ตามข้อความเกม"
   }
 }

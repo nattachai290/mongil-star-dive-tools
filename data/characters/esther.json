@@ -809,7 +809,22 @@
       "desc": {
         "en": "ATK increases by 40.1% upon gaining Sharpness. (Duration: 10s)"
       },
-      "effects": [],
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "atk",
+          "value": 40.1,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSpecialSkill",
+          "durationSec": 10,
+          "condition": {
+            "note": {
+              "en": "upon gaining Sharpness"
+            }
+          }
+        }
+      ],
       "values": []
     }
   },
@@ -820,6 +835,15 @@
       },
       "desc": {
         "en": "Afflicted targets take Wind DMG over time, and Wind RES decreases by 15%."
+      },
+      "effects": []
+    },
+    {
+      "name": {
+        "en": "Confused"
+      },
+      "desc": {
+        "en": "Afflicted targets cannot identify enemies."
       },
       "effects": []
     }
@@ -834,6 +858,9 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Assassin · Wind · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** — Assassin 5 ดาวตัวแรก | ค่าพลังห้าค่าหลักจากจอ Info: ATK 2,049 (เท่ากับ Verna / Mina ซึ่งเป็น 5 ดาวเหมือนกัน) · DEF 656 (เท่ากับ Chloe) · HP 9,537 · Crit 5% / 50% | รูป portrait ตัดจากจอ Info 360x360 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 12.18% · Assassin 1,078 · Elemental Weakness 125% — ตรงแบบตัว 5 ดาว (12.18% / 1,078) | Basic Maid's Double Life (Lv.12 ครบสิบบรรทัด จากจอที่เลื่อนลง · ดาเมจกายภาพตามท่อนแรก ท่อนเดียวกันจบด้วย Wind DMG) · Ultimate The Maid & Clover Inn's Peacekeeper (1,312.5%) · Passive (Lv.1) · Wind Affliction | **Passive Trait กับ Basic Attack ใช้ชื่อเดียวกัน \"Maid's Double Life\"** ตามที่สองจอเขียน — เก็บตามจอ ไม่ได้พิมพ์ซ้ำผิด | ปลุกพลัง: ครบหกขั้น (ขั้น 1-2 มารอบสาม) · ขั้น 4 เติม effect (ใช้สกิลพิเศษ → Crit DMG ตัวเอง +50% 10 วินาที) · ขั้น 5 (ดาเมจโจมตีพื้นฐาน +6%) · ขั้น 3 ลดคูลดาวน์สกิลสนับสนุน 4.5% และขั้น 6 Enhanced Basic Attack +125% เก็บเป็นข้อความ | **2026-10-22 รอบสาม** Switch Taking Out the Trash (ครบห้าบรรทัดจากจอที่เลื่อนลง) · Special Housekeeping! · Guidance of Wind: Maid and Silver Flash (Lv.12 ATK +40.1% 10 วินาที เมื่อได้ Sharpness · ไม่ระบุเป้าหมาย เก็บเป็นข้อความ) · ปลุกพลังขั้น 1-2 — **ครบทั้งหกช่องสกิลและหกขั้นปลุกพลังแล้ว** | special: ย่อหน้าที่สองคือคำอธิบายย่อยของ Dust Cloud (หัวข้อสีเหลือง) เก็บพร้อม \"Dust Cloud:\" · Dust Cloud DMG ผูกท่อน 1 (\"dealing Wind DMG\") · มีลิงก์สถานะ Confused แต่ยังไม่เห็นหน้าต่างรายละเอียด | ยังไม่ได้อ่าน: หน้าต่าง Confused · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Assassin · Wind · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** — Assassin 5 ดาวตัวแรก | ค่าพลังห้าค่าหลักจากจอ Info: ATK 2,049 (เท่ากับ Verna / Mina ซึ่งเป็น 5 ดาวเหมือนกัน) · DEF 656 (เท่ากับ Chloe) · HP 9,537 · Crit 5% / 50% | รูป portrait ตัดจากจอ Info 360x360 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 12.18% · Assassin 1,078 · Elemental Weakness 125% — ตรงแบบตัว 5 ดาว (12.18% / 1,078) | Basic Maid's Double Life (Lv.12 ครบสิบบรรทัด จากจอที่เลื่อนลง · ดาเมจกายภาพตามท่อนแรก ท่อนเดียวกันจบด้วย Wind DMG) · Ultimate The Maid & Clover Inn's Peacekeeper (1,312.5%) · Passive (Lv.1) · Wind Affliction | **Passive Trait กับ Basic Attack ใช้ชื่อเดียวกัน \"Maid's Double Life\"** ตามที่สองจอเขียน — เก็บตามจอ ไม่ได้พิมพ์ซ้ำผิด | ปลุกพลัง: ครบหกขั้น (ขั้น 1-2 มารอบสาม) · ขั้น 4 เติม effect (ใช้สกิลพิเศษ → Crit DMG ตัวเอง +50% 10 วินาที) · ขั้น 5 (ดาเมจโจมตีพื้นฐาน +6%) · ขั้น 3 ลดคูลดาวน์สกิลสนับสนุน 4.5% และขั้น 6 Enhanced Basic Attack +125% เก็บเป็นข้อความ | **2026-10-22 รอบสาม** Switch Taking Out the Trash (ครบห้าบรรทัดจากจอที่เลื่อนลง) · Special Housekeeping! · Guidance of Wind: Maid and Silver Flash (Lv.12 ATK +40.1% 10 วินาที เมื่อได้ Sharpness · ไม่ระบุเป้าหมาย เก็บเป็นข้อความ) · ปลุกพลังขั้น 1-2 — **ครบทั้งหกช่องสกิลและหกขั้นปลุกพลังแล้ว** | special: ย่อหน้าที่สองคือคำอธิบายย่อยของ Dust Cloud (หัวข้อสีเหลือง) เก็บพร้อม \"Dust Cloud:\" · Dust Cloud DMG ผูกท่อน 1 (\"dealing Wind DMG\") · มีลิงก์สถานะ Confused แต่ยังไม่เห็นหน้าต่างรายละเอียด | ยังไม่ได้อ่าน: จอไทยทั้งหมด | **สกิลธาตุเติม effect แล้ว** (ผู้เล่นกำหนด 2026-10-22: \"ถ้าไม่บอกว่าใครก็คือตัวเอง\" — ข้อความที่ไม่ระบุผู้รับบัฟ ให้ target self) · ตัวกระตุ้นจริงคือ \"ได้ Sharpness\" ซึ่งคำอธิบายสกิลพิเศษบอกว่าได้จากสกิลพิเศษ (Sharpness Obtained 2) จึงเก็บเป็น onSpecialSkill + condition.note และติดธง trigger ไว้ เพราะยังไม่รู้ว่ามีทางอื่นที่ได้ Sharpness หรือไม่ | Effect Details ของ **Confused**: \"Afflicted targets cannot identify enemies.\" (จอนี้เปิดที่ Lv.1 — Dust Cloud DMG 60.4% ที่ Lv.1 ไม่เก็บ เพราะหน้าเว็บโชว์เลเวลสูงสุดเท่านั้น และค่าที่เก็บไว้คือ Lv.12)",
+    "fieldsUnverified": [
+      "skills.elemental.effects.0.trigger"
+    ]
   }
 }

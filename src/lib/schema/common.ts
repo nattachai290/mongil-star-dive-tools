@@ -56,6 +56,10 @@ export const effect = z
     stat: vocabEnum("stat").optional(),
     value: z.number().optional(),
     unit: vocabEnum("unit").optional(),
+    /**
+     * ข้อความเกมที่ไม่ได้ระบุผู้รับ (เช่น "ATK increases by 7.7%") ให้ใส่ self
+     * — ผู้เล่นกำหนด 2026-10-22 "ถ้าไม่บอกว่าใครก็คือตัวเอง" ดู PLAN §13.11
+     */
     target: vocabEnum("target"),
     trigger: vocabEnum("trigger"),
     /** ชนิดดาเมจที่เอฟเฟกต์นี้พูดถึง เช่น "ดาเมจธาตุไฟ" หรือ "ดาเมจกายภาพ" */
