@@ -1,0 +1,71 @@
+{
+  "id": "shadow-lotus",
+  "name": {
+    "en": "Shadow Lotus"
+  },
+  "stars": 4,
+  "role": "assassin",
+  "level": 60,
+  "stats": [
+    {
+      "stat": "atk",
+      "value": 663,
+      "unit": "flat"
+    },
+    {
+      "stat": "atk",
+      "value": 20.25,
+      "unit": "percent"
+    }
+  ],
+  "fusion": {
+    "level": 5,
+    "name": {
+      "en": "In Silence... V"
+    },
+    "desc": {
+      "en": "When equipped by an [Assassin] character, grants the following effect. / Grants Assault when the equipping character lands a Support Skill, increasing Lightning DMG by 10% and Crit Rate by 6%. Switching to the equipping character removes Assault after 1s. / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Assassin proficiency. (Max: 5%)"
+    },
+    "effects": [
+      {
+        "kind": "buff",
+        "stat": "dmgDealt",
+        "damageType": "lightning",
+        "value": 10,
+        "unit": "percent",
+        "target": "self",
+        "trigger": "onSupportSkill",
+        "condition": {
+          "note": {
+            "en": "Assault · Switching to the equipping character removes Assault after 1s."
+          }
+        }
+      },
+      {
+        "kind": "buff",
+        "stat": "critRate",
+        "value": 6,
+        "unit": "percent",
+        "target": "self",
+        "trigger": "onSupportSkill",
+        "condition": {
+          "note": {
+            "en": "Assault · Switching to the equipping character removes Assault after 1s."
+          }
+        }
+      }
+    ]
+  },
+  "images": {
+    "icon": "shadow-lotus-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **4 ดาว (ผู้เล่นบอก 2026-10-22 \"artifact 4 ดาวหมด\")** ตรงกับเพชร 4 เม็ดบนการ์ด · เลเวล 60 (Max) · Fusion Level 5 | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | ค่าสเตตัสบรรทัดสองเป็น ATK อีกบรรทัด แบบเปอร์เซ็นต์ (20.25%) — จอพิมพ์ ATK ซ้ำสองบรรทัดจริง | จอเขียน \"lands a Support Skill\" ใช้ trigger onSupportSkill (ยังไม่มี onSupportSkillHit) · Assault ไม่มีระยะเวลาบนจอ หมดเมื่อสลับกลับมาเป็นตัวที่ใส่ 1 วินาที | Fusion Level 5 (ATK ตามความชำนาญ Assassin) เก็บเป็นข้อความ"
+  }
+}

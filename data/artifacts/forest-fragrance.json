@@ -1,0 +1,54 @@
+{
+  "id": "forest-fragrance",
+  "name": {
+    "en": "Forest Fragrance"
+  },
+  "stars": 4,
+  "role": "supporter",
+  "level": 60,
+  "stats": [
+    {
+      "stat": "atk",
+      "value": 663,
+      "unit": "flat"
+    },
+    {
+      "stat": "hp",
+      "value": 2319,
+      "unit": "flat"
+    }
+  ],
+  "fusion": {
+    "level": 5,
+    "name": {
+      "en": "Happiness for All V"
+    },
+    "desc": {
+      "en": "When equipped by a [Support] character, grants the following effect. / Triggering a Support Skill increases all teammates' Earth DMG by 20%. (Duration: 7s). / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Support proficiency. (Max: 5%)"
+    },
+    "effects": [
+      {
+        "kind": "buff",
+        "stat": "dmgDealt",
+        "damageType": "earth",
+        "value": 20,
+        "unit": "percent",
+        "target": "team",
+        "trigger": "onSupportSkill",
+        "durationSec": 7
+      }
+    ]
+  },
+  "images": {
+    "icon": "forest-fragrance-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **4 ดาว (ผู้เล่นบอก 2026-10-22 \"artifact 4 ดาวหมด\")** ตรงกับเพชร 4 เม็ดบนการ์ด · เลเวล 60 (Max) · Fusion Level 5 | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | Fusion Level 5 (ATK ตามความชำนาญ Support) เก็บเป็นข้อความ"
+  }
+}

@@ -1,0 +1,964 @@
+{
+  "id": "yeonhwa",
+  "name": {
+    "en": "Yeonhwa"
+  },
+  "rarity": 4,
+  "element": "lightning",
+  "role": "assassin",
+  "range": "melee",
+  "stats": {
+    "atLevel": 60,
+    "hp": 8389,
+    "atk": 1908,
+    "def": 598,
+    "critRate": 5,
+    "critDmg": 50
+  },
+  "otherStats": [
+    {
+      "kind": "buff",
+      "stat": "suppressionDmg",
+      "value": 11.59,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "weaknessHit"
+      ],
+      "value": 125,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "energyGain",
+      "value": 100,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "stamina",
+      "value": 100,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "assassinPower",
+      "value": 1026,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
+  "awaken": [
+    {
+      "stage": 1,
+      "name": {
+        "en": "Lost Shadow"
+      },
+      "desc": {
+        "en": "Hitting an enemy with Yeonhwa's Support Skill decreases a single target's DEF by 25% for 2s."
+      },
+      "effects": []
+    },
+    {
+      "stage": 2,
+      "name": {
+        "en": "Secretly"
+      },
+      "desc": {
+        "en": "Using Yeonhwa's Switch Skill increases her Crit Rate by 20% for 8s."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "critRate",
+          "value": 20,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSwitch",
+          "durationSec": 8
+        }
+      ]
+    },
+    {
+      "stage": 3,
+      "name": {
+        "en": "Seeping Darkness"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Switch Skill DMG by 6%. (Support Skill and Tag-out Skill excluded)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "switchSkill"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 4,
+      "name": {
+        "en": "Commence Operation"
+      },
+      "desc": {
+        "en": "Moving to a Shadow's location does not destroy it, and Yeonhwa's next attack's DMG increases by 50%. This effect applies 1 time(s) upon using her Basic Attack, Special Skill, Ultimate Skill, Switch Skill, or Support Skill, then is removed."
+      },
+      "effects": []
+    },
+    {
+      "stage": 5,
+      "name": {
+        "en": "Blade Forged of Shadow"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Support Skill DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "supportDmg",
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 6,
+      "name": {
+        "en": "Blossoming Shadow"
+      },
+      "desc": {
+        "en": "If Yeonhwa's Ultimate Skill is used while a Shadow is on the field, the Shadow can be moved to Yeonhwa's location and copy her moves, dealing Lightning DMG equal to 50% of her Ultimate DMG. Shadows that copy her actions disappear."
+      },
+      "effects": []
+    }
+  ],
+  "skills": {
+    "basic": {
+      "name": {
+        "en": "Bloody Bamboo"
+      },
+      "desc": {
+        "en": "Yeonhwa deals Physical DMG by quickly slashing with her bamboo blade. Using her finishing attack during battle generates a Shadow that copies her movements, dealing Physical DMG."
+      },
+      "damageType": "physical",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            12.8,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            15.4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "3rd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            25.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "4th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            28.2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "5th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            28.2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "6th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            56.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Shadow DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            14.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Air Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            109.9,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Evasion Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            229.6,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "switch": {
+      "name": {
+        "en": "Seized Opportunity"
+      },
+      "desc": {
+        "en": "Yeonhwa quickly approaches the enemy and delivers a sweeping slash with her bamboo blade, dealing Lightning DMG. / [Support Skill] If a teammate lands a critical hit during combat, Yeonhwa quickly slashes and stabs the target enemy, dealing Lightning DMG and inflicting Lightning Affliction. Yeonhwa has a set chance of generating a Shadow that does nothing. / If Yeonhwa's Support Skill is triggered while a Shadow is on the field, it will follow her actions once, dealing Lightning DMG before disappearing."
+      },
+      "damageType": "lightning",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Switch Skill DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            281.7,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Support Skill DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            190,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Shadow DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            95,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "Shadow Generation Rate"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            40,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Lightning Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Support Skill Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            3.5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "special": {
+      "name": {
+        "en": "Thunder Chain Slash"
+      },
+      "desc": {
+        "en": "Yeonhwa quickly approaches the enemy and slashes them, dealing Lightning DMG. Pressing the Special Skill button while moving will move the character in that direction while attacking. / The skill can be used an additional time within a set duration after using the skill, but doing so extends the cooldown."
+      },
+      "damageType": "lightning",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Swift Slash 1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            195.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Swift Slash 2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            76.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Swift Slash 3rd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            186.9,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Swift Slash 1st Hit Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            7.7,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Swift Slash 2nd Hit Cooldown Boost"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Swift Slash 3rd Hit Cooldown Boost"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            2.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "ultimate": {
+      "name": {
+        "en": "Storm Call"
+      },
+      "desc": {
+        "en": "Using her bamboo blade as a lightning rod, Yeonhwa strikes down nearby enemies with a lightning bolt, dealing Lightning DMG and rendering them Airborne. / Yeonhwa enters the Lightning Strike state for a set duration, causing all attacks to deal Lightning DMG and inflicting Lightning Affliction on enemies upon landing attacks. Also, a Shadow is generated upon using her Basic Attack which deals Bonus DMG equal to a portion of the attack."
+      },
+      "damageType": "lightning",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Lightning Bolt DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1064.8,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Lightning Strike Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Shadow Bonus DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            50,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Lightning Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "passive": {
+      "name": {
+        "en": "Wraith"
+      },
+      "desc": {
+        "en": "Yeonhwa's Crit DMG increases by a portion of her Lightning DMG Boost, but it doesn't increase above a set maximum. / While in combat, a Shadow is generated by her Basic Attack's finishing attack, and only one Shadow may exist on the field at a time. / Shadow: The Shadow follows Yeonhwa's movements when her Support Skill is triggered, and holding the Dodge button will teleport Yeonhwa to the Shadow's location. Yeonhwa's Shadow disappears when Yeonhwa is not in combat."
+      },
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Lightning DMG Boost Conversion Ratio"
+          },
+          "unit": "percent",
+          "scaling": [
+            150,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Crit DMG Boost Max"
+          },
+          "unit": "percent",
+          "scaling": [
+            50,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Shadow Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            30,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "elemental": {
+      "name": {
+        "en": "Slay"
+      },
+      "desc": {
+        "en": "ATK increases by 11.9% upon generating a Shadow using Yeonhwa's Support Skill. (Duration: 15s)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "atk",
+          "value": 11.9,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSupportSkill",
+          "durationSec": 15,
+          "condition": {
+            "note": {
+              "en": "upon generating a Shadow using her Support Skill"
+            }
+          }
+        }
+      ],
+      "values": []
+    }
+  },
+  "statuses": [
+    {
+      "name": {
+        "en": "Lightning Affliction"
+      },
+      "desc": {
+        "en": "Afflicted targets take Lightning DMG over time, and Lightning RES decreases by 15%."
+      },
+      "effects": []
+    }
+  ],
+  "images": {
+    "portrait": "yeonhwa-portrait.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Assassin · Lightning · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลักจากจอ Info: ATK 1,908 · DEF 598 · HP 8,389 · Crit 5% / 50% — **เท่ากับ Reina ทุกตัว** (Lightning Melee 4 ดาวเหมือนกัน แต่คนละบทบาท) อ่านจากจอตรง ๆ ไม่ได้คัดลอก | รูป portrait ตัดจากจอ Info 340x340 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 11.59% · Assassin 1,026 · Elemental Weakness 125% · gauge 100% · stamina 100 (แบบ Assassin 4 ดาวเดียวกับ Angel) | Basic Bloody Bamboo (ดาเมจกายภาพ) · Ultimate Storm Call (สายฟ้า · Lightning Bolt 1,064.8%) · Passive Wraith (Lv.1) · Guidance of Lightning: Slay (Lv.12 ATK +11.9% 15s · ไม่ระบุเป้าหมาย เก็บเป็นข้อความ) · Lightning Affliction | passive: ประโยคแรกเคยถูกตัดหัว — จอที่เลื่อนขึ้นบนสุด 2026-10-22 ได้ประโยคเต็ม **\"Yeonhwa's Crit DMG increases by a portion of her Lightning DMG Boost, but it doesn't increase above a set maximum.\"** ยืนยันว่าแปลง Lightning DMG Boost (อัตรา 150%) เป็น Crit DMG สูงสุด 50% ตามที่คาดไว้ · effects ยังว่าง เพราะโครง effect ยังเก็บการแปลงค่าจาก stat อื่นไม่ได้ (แบบเดียวกับ passive ของวิเวียน) | **2026-10-22 รอบสาม** Switch Seized Opportunity (ครบหกบรรทัดจากจอที่เลื่อนลง) · Special Thunder Chain Slash · ปลุกพลังครบหกขั้น — **ครบทั้งหกช่องสกิลแล้ว** | switch: ประโยคแรกเคยถูกตัดหัว — จอที่เลื่อนขึ้นบนสุด 2026-10-22 ได้ประโยคเต็มแล้ว (\"Yeonhwa quickly approaches the enemy and delivers...\") | ปลุกพลัง: effects เติมขั้น 2 (ใช้สกิลสับเปลี่ยน → อัตราคริติคอลตัวเอง +20% 8 วินาที · onSwitch ตามคำ \"Using ... Switch Skill\" เป้าหมายชัดว่า \"her\") · ขั้น 3 (ดาเมจสกิลสับเปลี่ยน +6% ไม่รวมสกิลสนับสนุน/Tag-out — scopes switchSkill ซึ่งหมายถึงตัวสกิลสับเปลี่ยนอยู่แล้ว) · ขั้น 5 (ดาเมจสกิลสนับสนุน +6%) · ขั้น 1 (ลดพลังป้องกันเป้าหมายเดียว 25% เมื่อสกิลสนับสนุนโดน) เก็บเป็นข้อความ เพราะยังไม่มีตัวกระตุ้นฝั่ง \"สกิลสนับสนุนโดน\" | ยังไม่ได้อ่าน: จอไทยทั้งหมด | **สกิลธาตุเติม effect แล้ว** (ผู้เล่นกำหนด 2026-10-22: \"ถ้าไม่บอกว่าใครก็คือตัวเอง\" — ข้อความที่ไม่ระบุผู้รับบัฟ ให้ target self) · ตัวกระตุ้นจริงคือ \"สร้าง Shadow ด้วยสกิลสนับสนุน\" (Shadow เกิดได้ 40%) เก็บเป็น onSupportSkill + condition.note ตามข้อความเกม"
+  }
+}

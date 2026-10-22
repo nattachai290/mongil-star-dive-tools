@@ -1,0 +1,78 @@
+{
+  "id": "unrelenting-chivalry",
+  "name": {
+    "en": "Unrelenting Chivalry"
+  },
+  "stars": 4,
+  "role": "destroyer",
+  "level": 60,
+  "stats": [
+    {
+      "stat": "atk",
+      "value": 663,
+      "unit": "flat"
+    },
+    {
+      "stat": "hp",
+      "value": 2319,
+      "unit": "flat"
+    }
+  ],
+  "fusion": {
+    "level": 5,
+    "name": {
+      "en": "Firm Resolve, Unwavering Vow V"
+    },
+    "desc": {
+      "en": "When equipped by a [Destroyer] character, grants the following effect. / Spirit of Chivalry is granted in the following situations. (Max Stacks: 3) / - Using a Tag-out Skill / - Using a Switch Skill / - Using a Special Skill / - Grants 3 stacks upon using an Ultimate Skill / Spirit of Chivalry: Upon using a Basic Attack, all stacks are consumed, Lightning DMG increases by 6%, and Basic Attack DMG increases by 6% per stack. (Max Stacks: 3, Duration: 4s, New stacks reset the duration). / All stacks are removed at the end of combat. / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Destroyer proficiency. (Max: 5%)"
+    },
+    "effects": [
+      {
+        "kind": "buff",
+        "stat": "dmgDealt",
+        "damageType": "lightning",
+        "value": 6,
+        "unit": "percent",
+        "target": "self",
+        "trigger": "onBasicAttack",
+        "durationSec": 4,
+        "maxStacks": 3,
+        "condition": {
+          "note": {
+            "en": "Spirit of Chivalry · all stacks are consumed upon using a Basic Attack"
+          }
+        }
+      },
+      {
+        "kind": "buff",
+        "stat": "dmgDealt",
+        "scopes": [
+          "basicAttack"
+        ],
+        "value": 6,
+        "unit": "percent",
+        "target": "self",
+        "trigger": "onBasicAttack",
+        "durationSec": 4,
+        "maxStacks": 3,
+        "condition": {
+          "note": {
+            "en": "Spirit of Chivalry · all stacks are consumed upon using a Basic Attack"
+          }
+        }
+      }
+    ]
+  },
+  "images": {
+    "icon": "unrelenting-chivalry-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **4 ดาว (ผู้เล่นบอก 2026-10-22 \"artifact 4 ดาวหมด\")** ตรงกับเพชร 4 เม็ดบนการ์ด · เลเวล 60 (Max) · Fusion Level 5 | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | ข้อความ Fusion อ่านสองจอต่อกัน | **\"per stack\" อยู่ท้ายประโยค จอไม่ชัดว่าครอบ Lightning DMG 6% ด้วยหรือไม่** — ใส่ maxStacks 3 ทั้งสองข้อตามรูปประโยค \"(Max Stacks: 3)\" ที่ครอบทั้งสถานะ | Fusion Level 5 (ATK ตามความชำนาญ Destroyer) เก็บเป็นข้อความ"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "military-bands-offbeat-marcher",
+  "name": {
+    "en": "Military Band's Offbeat Marcher"
+  },
+  "stars": 4,
+  "role": "supporter",
+  "level": 60,
+  "stats": [
+    {
+      "stat": "atk",
+      "value": 663,
+      "unit": "flat"
+    },
+    {
+      "stat": "def",
+      "value": 15.75,
+      "unit": "percent"
+    }
+  ],
+  "fusion": {
+    "level": 5,
+    "name": {
+      "en": "Fanfare! V"
+    },
+    "desc": {
+      "en": "When equipped by a [Support] character, grants the following effect. / When the equipping character lands a Tag-out Skill attack, Musical Scale is granted to them and all other teammates. (Cooldown: 0.5s) / Musical Scale: Increases Wind DMG by 3%. (Max Stacks: 7, Duration: 2s, New stacks reset the duration) / Fusion Level 5: Gains 0.06% Crit Rate Boost for every 10 points of Support proficiency. (Max: 5%)"
+    },
+    "effects": [
+      {
+        "kind": "buff",
+        "stat": "dmgDealt",
+        "damageType": "wind",
+        "value": 3,
+        "unit": "percent",
+        "target": "team",
+        "trigger": "onTagOutSkillHit",
+        "durationSec": 2,
+        "internalCooldownSec": 0.5,
+        "maxStacks": 7,
+        "condition": {
+          "note": {
+            "en": "Musical Scale · New stacks reset the duration"
+          }
+        }
+      }
+    ]
+  },
+  "images": {
+    "icon": "military-bands-offbeat-marcher-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **4 ดาว (ผู้เล่นบอก 2026-10-22 \"artifact 4 ดาวหมด\")** ตรงกับเพชร 4 เม็ดบนการ์ด · เลเวล 60 (Max) · Fusion Level 5 | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | ข้อความ Fusion อ่านสองจอ (เลื่อนลง) ต่อกันครบ | บรรทัด Fusion Level 5 (Crit Rate ตามความชำนาญ Support สูงสุด 5%) เก็บเป็นข้อความ — schema ยังไม่มีแบบ \"ต่อทุก N แต้ม\""
+  }
+}

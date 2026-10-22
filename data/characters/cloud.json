@@ -1,0 +1,626 @@
+{
+  "id": "cloud",
+  "name": {
+    "en": "Cloud"
+  },
+  "rarity": 4,
+  "element": "ice",
+  "role": "destroyer",
+  "range": "ranged",
+  "stats": {
+    "atLevel": 60,
+    "hp": 8830,
+    "atk": 1855,
+    "def": 580,
+    "critRate": 5,
+    "critDmg": 50
+  },
+  "otherStats": [
+    {
+      "kind": "buff",
+      "stat": "neutralizationDmg",
+      "value": 11.59,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "weaknessHit"
+      ],
+      "value": 125,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "energyGain",
+      "value": 100,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "stamina",
+      "value": 100,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "destroyerPower",
+      "value": 1026,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
+  "awaken": [
+    {
+      "stage": 1,
+      "name": {
+        "en": "Hot But Cold!"
+      },
+      "desc": {
+        "en": "Hitting an enemy with Cloud's Ultimate Skill grants Ice Crystals for each enemy hit, capping at 5. If the enemy is a boss, at least 2 Ice Crystals are guaranteed. / The duration of Glacier Zone increases to 8s, its total DMG increases by 50%, and Glacier Zone DMG inflicts Freeze on enemies for 2s."
+      },
+      "effects": []
+    },
+    {
+      "stage": 2,
+      "name": {
+        "en": "Unleashed Arrow"
+      },
+      "desc": {
+        "en": "Using Cloud's Special Skill decreases the amount of time it will take to generate an Ice Crystal by 25%. / Releasing the button with the right timing to generate Ice Crystals increases the skill's attack range and increases Cloud's Ice DMG by 30% for 12s. / If the enemy Cloud hits with his Special Skill or Ultimate Skill is a boss, the number of Ice Crystals gained increases to 3."
+      },
+      "effects": []
+    },
+    {
+      "stage": 3,
+      "name": {
+        "en": "Upright Heart"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Special Skill DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "specialSkill"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 4,
+      "name": {
+        "en": "Expert Monster Hunter"
+      },
+      "desc": {
+        "en": "Cloud's Passive Trait's maximum number of Ice Crystals increases to 8, and the Generation Period decreases to 4s. / Additionally, Ice Crystals can be generated at set intervals, even when Cloud is not being actively controlled."
+      },
+      "effects": []
+    },
+    {
+      "stage": 5,
+      "name": {
+        "en": "Lucky Arrow"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 6,
+      "name": {
+        "en": "Monstrous Dynamic Vision"
+      },
+      "desc": {
+        "en": "Triggering Rapid-Fire generates extra ice arrows that are launched at random enemies, each of which deals Ice DMG equal to 10% of Rapid-Fire Attack DMG."
+      },
+      "effects": []
+    }
+  ],
+  "skills": {
+    "basic": {
+      "name": {
+        "en": "Frosted Arrows"
+      },
+      "desc": {
+        "en": "Cloud deals Physical DMG to enemies by shooting an arrow at them. / Holding the Basic Attack button with at least 1 Ice Crystal triggers Rapid-Fire, dealing Ice DMG and consuming the Ice Crystals."
+      },
+      "damageType": "physical",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            25,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            95.9,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "3rd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            91.7,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "4th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            108.4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Rapid-Fire Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            180.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Air Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            111,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Evasion Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            231,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "switch": {
+      "name": {
+        "en": "Frost Wave"
+      },
+      "desc": {
+        "en": "Cloud appears near a teammate, then launches a wide spread of ice arrows towards the enemy. Ice arrows pierce through enemies and deal Ice DMG."
+      },
+      "damageType": "ice",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Ice Arrow DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            143.5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "special": {
+      "name": {
+        "en": "Piercing Ice"
+      },
+      "desc": {
+        "en": "Cloud fires a powerful ice arrow at an enemy. This ice arrow pierces through enemies and deals Ice DMG. / Holding the Special Skill button, then releasing the button at the right time grants Cloud 1 Ice Crystal per enemy hit, up to 5. If the enemy is a boss, 2 Ice Crystals are guaranteed."
+      },
+      "damageType": "ice",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Ice Arrow DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            157.2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            8.6,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "ultimate": {
+      "name": {
+        "en": "Frost Burst"
+      },
+      "desc": {
+        "en": "Cloud gathers ice energy into an arrow, then fires it at the enemy. This arrow pierces through enemies, deals Ice DMG, and inflicts Ice Affliction. / A Glacier Zone is created where the ice arrow flies, which deals Ice DMG and inflicts Ice Affliction on enemies."
+      },
+      "damageType": "ice",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Ice Arrow DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            370.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Glacier Zone DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            74,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Glacier Zone Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Ice Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "passive": {
+      "name": {
+        "en": "Crystal Bullets"
+      },
+      "desc": {
+        "en": "Cloud gains an Ice Crystal at set intervals. Ice Crystals can be consumed by holding the Basic Attack button."
+      },
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Ice Crystal Generation Period"
+          },
+          "unit": "seconds",
+          "scaling": [
+            5,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "elemental": {
+      "name": {
+        "en": "Frost Chain"
+      },
+      "desc": {
+        "en": "Using Verna's Switch Skill increases ATK by 7.7% (Duration: 15s)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "atk",
+          "value": 7.7,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSwitch",
+          "durationSec": 15
+        }
+      ],
+      "values": []
+    }
+  },
+  "statuses": [
+    {
+      "name": {
+        "en": "Ice Affliction"
+      },
+      "desc": {
+        "en": "Afflicted targets take Ice DMG over time, and Ice RES decreases by 15%."
+      },
+      "effects": []
+    }
+  ],
+  "images": {
+    "portrait": "cloud-portrait.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 · Info · Detailed Stats · Basic Attack · Passive · Guidance of Ice · **ยังไม่มีจอไทย** | **ตัวละครชายตัวแรก** · Destroyer · **Ice** (ธาตุที่สาม) · Ranged · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลัง (จอ Info กับ Detailed Stats ตรงกัน): ATK 1,855 · DEF 580 (เท่ากับ Angel) · HP 8,830 · **Neutralization DMG Boost 11.59%** · **Destroyer 1,026 → stat ใหม่ destroyerPower** — ครบสี่บทบาทแล้ว (support · fighter · assassin · destroyer) และ 1,026 / 11.59% ตรงกับแบบของตัว 4 ดาว | basic: ดาเมจ**กายภาพ** (ท่อน 1) ส่วน Rapid-Fire เป็นธาตุน้ำแข็ง (ท่อน 2) — เก็บ damageType physical ตามท่อนแรก แบบเดียวกับ Verna | **Guidance of Ice: Frost Chain — ข้อความในเกมเขียนว่า \"Using Verna's Switch Skill\" ทั้งที่เป็นสกิลของ Cloud** เก็บตามที่จอเขียน ไม่ได้แก้ (น่าจะเป็นข้อความผิดในเกม คัดลอกมาจากของ Verna) · Lv.12 ATK +7.7% 15 วินาที · effects ว่าง เพราะจอไม่ได้บอกว่าบัฟลงที่ใคร | ช่องที่หกชื่อ **Guidance of Ice** — ชื่อเปลี่ยนตามธาตุครบสามธาตุแล้ว (Fire · Wind · Ice) | รูป portrait ตัดจากจอ Info 400x400 (ผู้เล่นส่งภาพมาใหม่ 2026-10-22) | **2026-10-22 รอบสอง** Switch Frost Wave · Special Piercing Ice · Ultimate Frost Burst (Lv.12) · Effect Details ของ Ice Affliction · ปลุกพลังครบหกขั้น (ยังล็อกบนจอตัวอย่าง) — **ครบทั้งหกช่องสกิลแล้ว** | ultimate: Ice Affliction Duration ไม่ใส่ line เพราะทั้งสองท่อนพูดถึง Ice Affliction · **Ice Affliction ข้อความรูปแบบเดียวกับ Fire / Wind Affliction ทุกคำ** ครบสามธาตุแล้ว | ปลุกพลัง: effects เติมขั้น 3 (ดาเมจสกิลพิเศษ +6%) และขั้น 5 (ดาเมจโจมตีพื้นฐาน +6%) พร้อมเลเวลสกิล +2 · ขั้นอื่นปรับกลไกเดิม เก็บเป็นข้อความ · ขั้น 1 อ้างถึง Freeze (มีปุ่ม Effects แต่ยังไม่เห็นหน้าต่าง) | ยังไม่ได้อ่าน: จอไทยทั้งหมด | 2026-10-22 ทูลทิปบรรทัด Destroyer: \"Destroyers' Neutralization DMG increases based on their Destroyer proficiency\" — ยืนยัน destroyerPower คู่กับ Neutralization DMG (แบบ Fighter→Brawl · Assassin→Suppression) | **สกิลธาตุเติม effect แล้ว** (ผู้เล่นกำหนด 2026-10-22: \"ถ้าไม่บอกว่าใครก็คือตัวเอง\" — ข้อความที่ไม่ระบุผู้รับบัฟ ให้ target self) · trigger onSwitch แม้จอเขียน \"Verna's Switch Skill\" — ถือว่าเป็นข้อความผิดในเกม (สกิลอยู่ในชุดของ Cloud เอง)"
+  }
+}

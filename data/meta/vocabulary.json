@@ -273,6 +273,9 @@
     "assassinPower": {
       "en": "Assassin"
     },
+    "destroyerPower": {
+      "en": "Destroyer"
+    },
     "roleMastery": {
       "th": "ความเชี่ยวชาญตามบทบาท"
     },
@@ -687,6 +690,9 @@
     "switchSkill": {
       "th": "สกิลสับเปลี่ยน",
       "en": "Switch Skill"
+    },
+    "tagOutSkill": {
+      "en": "Tag-out Skill"
     },
     "ultimate": {
       "th": "สกิลอัลติเมต",

@@ -1,0 +1,866 @@
+{
+  "id": "esther",
+  "name": {
+    "en": "Esther"
+  },
+  "rarity": 5,
+  "element": "wind",
+  "role": "assassin",
+  "range": "melee",
+  "stats": {
+    "atLevel": 60,
+    "hp": 9537,
+    "atk": 2049,
+    "def": 656,
+    "critRate": 5,
+    "critDmg": 50
+  },
+  "otherStats": [
+    {
+      "kind": "buff",
+      "stat": "suppressionDmg",
+      "value": 12.18,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "weaknessHit"
+      ],
+      "value": 125,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "energyGain",
+      "value": 100,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "stamina",
+      "value": 100,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "assassinPower",
+      "value": 1078,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
+  "awaken": [
+    {
+      "stage": 1,
+      "name": {
+        "en": "I'll clean this up."
+      },
+      "desc": {
+        "en": "Using Esther's Switch Skill triggers a Dust Cloud for 3s. Ambush range increases, and Ambush DMG is multiplied by 2."
+      },
+      "effects": []
+    },
+    {
+      "stage": 2,
+      "name": {
+        "en": "Broom Blade, Silver Flash"
+      },
+      "desc": {
+        "en": "The range of Esther's Special Skill's Dust Cloud increases. She also deals 75% bonus DMG when attacking enemies within the Dust Cloud."
+      },
+      "effects": []
+    },
+    {
+      "stage": 3,
+      "name": {
+        "en": "Former Commander of the 9th Brigade"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Support Skill's cooldown decreases by 4.5%."
+      },
+      "effects": [],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 4,
+      "name": {
+        "en": "No Troublemakers Allowed"
+      },
+      "desc": {
+        "en": "Using Esther's Special Skill grants an effect that increases her Crit DMG by 50% for 10s."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "critDmg",
+          "value": 50,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSpecialSkill",
+          "durationSec": 10
+        }
+      ]
+    },
+    {
+      "stage": 5,
+      "name": {
+        "en": "Maid and Clover"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 6,
+      "name": {
+        "en": "Final Form of the Hidden Cloud Style"
+      },
+      "desc": {
+        "en": "Esther's Enhanced Basic Attack DMG increases by 125%. The range of her enhanced Basic Attack's 3rd Hit also increases."
+      },
+      "effects": []
+    }
+  ],
+  "skills": {
+    "basic": {
+      "name": {
+        "en": "Maid's Double Life"
+      },
+      "desc": {
+        "en": "Esther deals Physical DMG by hitting enemies with a broom, then finishes with a flurry of slashes from a sword hidden inside it, dealing Wind DMG. / This skill is enhanced when used within the Dust Cloud from her Special Skill, unleashing rapid sword strikes that deal Wind DMG to enemies."
+      },
+      "damageType": "physical",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            19.2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            19.2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "3rd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            32.3,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "4th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            44.8,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Charge Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            33.3,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Air Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            109.8,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Evasion Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            184.2,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "1st Enhanced Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            68.2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "2nd Enhanced Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            68.2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "3rd Enhanced Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            467.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "switch": {
+      "name": {
+        "en": "Taking Out the Trash"
+      },
+      "desc": {
+        "en": "Esther uses her broom to start a whirlwind, dealing Wind DMG to enemies and knocking them Airborne. The whirlwind pulls in hit enemies. / [Support Skill] If a teammate lands an attack on an enemy while in combat, Esther appears near them and prepares for an ambush. If an enemy comes within Esther's attack range while she's preparing, she unleashes a flurry of slashes on them, dealing Wind DMG. She inflicts hit enemies with Wind Affliction. / If Esther returns without dealing DMG to any enemy while in ambush preparation, her Support Skill cooldown is reduced by half. Esther's Support Skill cooldown decreases when Sharpness is active."
+      },
+      "damageType": "wind",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            528.5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Support Skill DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            794.7,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Sharpness Support Skill Cooldown Decrease"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            100,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "Support Skill Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            12,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Wind Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "special": {
+      "name": {
+        "en": "Housekeeping!"
+      },
+      "desc": {
+        "en": "Esther uses her broom to sweep up dust around her, creating a Dust Cloud, gaining Sharpness, and dealing Wind DMG to enemies. / Dust Cloud: Within the Dust Cloud, enemies become Confused, Esther's Basic Attack becomes enhanced, and she gains Super Armor. Also, she grants DMG Reduction to herself and Wind teammates."
+      },
+      "damageType": "wind",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Dust Cloud Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Dust Cloud DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            105.7,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Sharpness Obtained"
+          },
+          "unit": "times",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "DMG Reduction"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            30,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            15,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "ultimate": {
+      "name": {
+        "en": "The Maid & Clover Inn's Peacekeeper"
+      },
+      "desc": {
+        "en": "Esther unleashes her hidden power to deliver a lightning-quick slash that cuts through all enemies in front of her, dealing Wind DMG and knocking them Airborne. Hit enemies are inflicted with Wind Affliction."
+      },
+      "damageType": "wind",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1312.5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Wind Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "passive": {
+      "name": {
+        "en": "Maid's Double Life"
+      },
+      "desc": {
+        "en": "Esther's ATK increases when she is within the Dust Cloud created by her Special Skill. This boost goes away when she moves out of the Dust Cloud. / When Sharpness is active, using her Enhanced Basic Attack's 3rd Hit, Support Skill, or Ultimate Skill consumes 1 Sharpness stack and increases each attack's DMG."
+      },
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "ATK"
+          },
+          "unit": "percent",
+          "scaling": [
+            15,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "DMG Boost"
+          },
+          "unit": "percent",
+          "scaling": [
+            70,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "elemental": {
+      "name": {
+        "en": "Maid and Silver Flash"
+      },
+      "desc": {
+        "en": "ATK increases by 40.1% upon gaining Sharpness. (Duration: 10s)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "atk",
+          "value": 40.1,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSpecialSkill",
+          "durationSec": 10,
+          "condition": {
+            "note": {
+              "en": "upon gaining Sharpness"
+            }
+          }
+        }
+      ],
+      "values": []
+    }
+  },
+  "statuses": [
+    {
+      "name": {
+        "en": "Wind Affliction"
+      },
+      "desc": {
+        "en": "Afflicted targets take Wind DMG over time, and Wind RES decreases by 15%."
+      },
+      "effects": []
+    },
+    {
+      "name": {
+        "en": "Confused"
+      },
+      "desc": {
+        "en": "Afflicted targets cannot identify enemies."
+      },
+      "effects": []
+    }
+  ],
+  "images": {
+    "portrait": "esther-portrait.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Assassin · Wind · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** — Assassin 5 ดาวตัวแรก | ค่าพลังห้าค่าหลักจากจอ Info: ATK 2,049 (เท่ากับ Verna / Mina ซึ่งเป็น 5 ดาวเหมือนกัน) · DEF 656 (เท่ากับ Chloe) · HP 9,537 · Crit 5% / 50% | รูป portrait ตัดจากจอ Info 360x360 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 12.18% · Assassin 1,078 · Elemental Weakness 125% — ตรงแบบตัว 5 ดาว (12.18% / 1,078) | Basic Maid's Double Life (Lv.12 ครบสิบบรรทัด จากจอที่เลื่อนลง · ดาเมจกายภาพตามท่อนแรก ท่อนเดียวกันจบด้วย Wind DMG) · Ultimate The Maid & Clover Inn's Peacekeeper (1,312.5%) · Passive (Lv.1) · Wind Affliction | **Passive Trait กับ Basic Attack ใช้ชื่อเดียวกัน \"Maid's Double Life\"** ตามที่สองจอเขียน — เก็บตามจอ ไม่ได้พิมพ์ซ้ำผิด | ปลุกพลัง: ครบหกขั้น (ขั้น 1-2 มารอบสาม) · ขั้น 4 เติม effect (ใช้สกิลพิเศษ → Crit DMG ตัวเอง +50% 10 วินาที) · ขั้น 5 (ดาเมจโจมตีพื้นฐาน +6%) · ขั้น 3 ลดคูลดาวน์สกิลสนับสนุน 4.5% และขั้น 6 Enhanced Basic Attack +125% เก็บเป็นข้อความ | **2026-10-22 รอบสาม** Switch Taking Out the Trash (ครบห้าบรรทัดจากจอที่เลื่อนลง) · Special Housekeeping! · Guidance of Wind: Maid and Silver Flash (Lv.12 ATK +40.1% 10 วินาที เมื่อได้ Sharpness · ไม่ระบุเป้าหมาย เก็บเป็นข้อความ) · ปลุกพลังขั้น 1-2 — **ครบทั้งหกช่องสกิลและหกขั้นปลุกพลังแล้ว** | special: ย่อหน้าที่สองคือคำอธิบายย่อยของ Dust Cloud (หัวข้อสีเหลือง) เก็บพร้อม \"Dust Cloud:\" · Dust Cloud DMG ผูกท่อน 1 (\"dealing Wind DMG\") · มีลิงก์สถานะ Confused แต่ยังไม่เห็นหน้าต่างรายละเอียด | ยังไม่ได้อ่าน: จอไทยทั้งหมด | **สกิลธาตุเติม effect แล้ว** (ผู้เล่นกำหนด 2026-10-22: \"ถ้าไม่บอกว่าใครก็คือตัวเอง\" — ข้อความที่ไม่ระบุผู้รับบัฟ ให้ target self) · ตัวกระตุ้นจริงคือ \"ได้ Sharpness\" ซึ่งคำอธิบายสกิลพิเศษบอกว่าได้จากสกิลพิเศษ (Sharpness Obtained 2) จึงเก็บเป็น onSpecialSkill + condition.note และติดธง trigger ไว้ เพราะยังไม่รู้ว่ามีทางอื่นที่ได้ Sharpness หรือไม่ | Effect Details ของ **Confused**: \"Afflicted targets cannot identify enemies.\" (จอนี้เปิดที่ Lv.1 — Dust Cloud DMG 60.4% ที่ Lv.1 ไม่เก็บ เพราะหน้าเว็บโชว์เลเวลสูงสุดเท่านั้น และค่าที่เก็บไว้คือ Lv.12)",
+    "fieldsUnverified": [
+      "skills.elemental.effects.0.trigger"
+    ]
+  }
+}

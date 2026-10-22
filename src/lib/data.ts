@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
-import { monsterDexEntry, linkChain, monsterling, character, equipment, equipmentSet, gearMainStat, gearSubstat, traitPool, dropSources } from "./schema/entities";
-import type { Character, Equipment, EquipmentSet, GearMainStat, GearSubstat, LinkChain, Monsterling, TraitPool, DropSources } from "./schema/entities";
+import { artifact, monsterDexEntry, linkChain, monsterling, character, equipment, equipmentSet, gearMainStat, gearSubstat, traitPool, dropSources } from "./schema/entities";
+import type { Artifact, Character, Equipment, EquipmentSet, GearMainStat, GearSubstat, LinkChain, Monsterling, TraitPool, DropSources } from "./schema/entities";
 
 /**
  * อ่านข้อมูลจาก data/ ตอน build — ไม่มี API ไม่มีฐานข้อมูล
@@ -74,6 +74,19 @@ export function characterImage(id: string): string | null {
     }
   }
   return null;
+}
+
+/**
+ * Artifact ทั้งหมด — เรียงตามดาวมากก่อน แล้วตามชื่อของภาษาที่แสดง
+ * จอ Artifact Preview ในเกมไม่ได้บอกลำดับที่ใช้ได้ จึงไม่พยายามเลียนแบบ
+ */
+export const ARTIFACTS: Artifact[] = readCollection("artifacts", (raw) => artifact.parse(raw));
+
+export function artifactsSorted(locale: "th" | "en"): Artifact[] {
+  const key = (a: Artifact) => a.name[locale] ?? a.name.en ?? a.name.th ?? a.id;
+  return [...ARTIFACTS].sort(
+    (a, b) => (b.stars ?? 0) - (a.stars ?? 0) || key(a).localeCompare(key(b), locale),
+  );
 }
 
 /** ชิ้นอุปกรณ์ทั้งหมด — ผูกกับเซ็ตด้วย setId */
