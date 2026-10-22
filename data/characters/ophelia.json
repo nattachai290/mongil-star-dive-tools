@@ -60,8 +60,304 @@
       "trigger": "passive"
     }
   ],
-  "awaken": [],
+  "awaken": [
+    {
+      "stage": 1,
+      "name": {
+        "en": "Frost Settles Upon the Waves..."
+      },
+      "desc": {
+        "en": "Ophelia's Special Skill's range increases, and its DMG increases by 50%. Support DMG effect increases to 30% upon using Falling Slash's 3rd Hit."
+      },
+      "effects": []
+    },
+    {
+      "stage": 2,
+      "name": {
+        "en": "Born From Gentle Ripples..."
+      },
+      "desc": {
+        "en": "Ophelia's Ice DMG increases by 76% while Amethyst Witch is active."
+      },
+      "effects": []
+    },
+    {
+      "stage": 3,
+      "name": {
+        "en": "Carving Far-Reaching Echoes..."
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Special Skill DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "specialSkill"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 4,
+      "name": {
+        "en": "A Blade Tempered With Resolve..."
+      },
+      "desc": {
+        "en": "Ophelia's Basic Attacks will always be critical hits for a set duration after using a Special Skill. (Duration: 4s)"
+      },
+      "effects": []
+    },
+    {
+      "stage": 5,
+      "name": {
+        "en": "Turns Into a World-Shattering Icy Torrent..."
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 6,
+      "name": {
+        "en": "Purging All Evil With Judgment"
+      },
+      "desc": {
+        "en": "Using Ophelia's Ultimate Skill generates sword energy equal to 176% of her Basic Attack's DMG as Bonus DMG for 20s."
+      },
+      "effects": []
+    }
+  ],
   "skills": {
+    "basic": {
+      "name": {
+        "en": "Achouffe Swordsmanship"
+      },
+      "desc": {
+        "en": "Ophelia deals Physical DMG by lunging forward and slashing enemies. Enemies hit by her final strike are knocked forward. / Her Basic Attack's Crit DMG increases while Amethyst Witch is active."
+      },
+      "damageType": "physical",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            58.3,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            50,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "3rd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            116.7,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "4th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            286.9,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Charge Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            79.2,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Air Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            110.5,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Evasion Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            226.8,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Crit DMG Boost"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            25,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
     "switch": {
       "name": {
         "en": "Crystalline Leap"
@@ -309,8 +605,140 @@
           "line": 2
         }
       ]
+    },
+    "ultimate": {
+      "name": {
+        "en": "Judgment"
+      },
+      "desc": {
+        "en": "Ophelia channels frost energy into her blade, knocking the enemy airborne with an upward slash before striking down to deal Ice DMG. Hit enemies are inflicted with Ice Affliction."
+      },
+      "damageType": "ice",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            882,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Ice Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "passive": {
+      "name": {
+        "en": "Amethyst Witch"
+      },
+      "desc": {
+        "en": "Ophelia gains Amethyst Witch upon using her Special Skill or Switch Skill."
+      },
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Amethyst Witch Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            4,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "elemental": {
+      "name": {
+        "en": "Frost-Wave Blade Swordsman"
+      },
+      "desc": {
+        "en": "Using Ophelia's Switch Skill increases Basic Attack DMG by 36%. (Duration: 15s)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 36,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSwitch",
+          "durationSec": 15
+        }
+      ],
+      "values": []
     }
   },
+  "statuses": [
+    {
+      "name": {
+        "en": "Amethyst Witch"
+      },
+      "desc": {
+        "en": "Ophelia's attack element changes to Ice. Crit Rate increases by 15%."
+      },
+      "effects": []
+    }
+  ],
   "images": {
     "portrait": "ophelia-portrait.webp"
   },
@@ -321,6 +749,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Fighter · Ice · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,943 · DEF 638 · HP 10,243 · Crit 5% / 50% อ่านจากจอตรง ๆ — เท่ากับ Vivian ทุกค่า | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Brawl DMG Boost 12.18% · Fighter 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Switch Crystalline Leap (211.1%) · Special Flowing Frost (ตารางแปดแถว อ่านจากจอที่เลื่อนลง) | ยังไม่ได้อ่าน: Basic · Ultimate · Passive · Guidance of Ice · ปลุกพลัง · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Fighter · Ice · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,943 · DEF 638 · HP 10,243 · Crit 5% / 50% อ่านจากจอตรง ๆ — เท่ากับ Vivian ทุกค่า | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Brawl DMG Boost 12.18% · Fighter 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Switch Crystalline Leap (211.1%) · Special Flowing Frost (ตารางแปดแถว อ่านจากจอที่เลื่อนลง) | **2026-10-22 รอบสาม** Basic Achouffe Swordsmanship (Physical, แปดแถว) · Ultimate Judgment (882%) · Passive Amethyst Witch (4 วินาที) · Effect Details ของ Amethyst Witch (จากปุ่ม Effects ของ Basic) · Guidance of Ice Frost-Wave Blade Swordsman (ดาเมจโจมตีพื้นฐาน +36% เมื่อใช้ Switch Skill, 15 วินาที) · ปลุกพลังครบหกขั้น | ปลุกพลัง: จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส · effects: ขั้น 3 Special +6% · ขั้น 5 Basic +6% · ขั้นอื่นเก็บเป็นข้อความ | **ชื่อขั้น 1–5 ลงท้ายด้วย \"...\" ตามจอ** (ขั้น 6 ไม่มี) | ปุ่ม Effects ของ Ultimate ยังไม่ได้เปิด → ยังไม่มีสถานะ Ice Affliction | ยังไม่ได้อ่าน: Effect Details ของ Ultimate · จอไทยทั้งหมด"
   }
 }
