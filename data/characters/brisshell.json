@@ -445,6 +445,196 @@
           "line": 2
         }
       ]
+    },
+    "ultimate": {
+      "name": {
+        "en": "Anxiety Burst"
+      },
+      "desc": {
+        "en": "Overwhelmed with anxiety, Brisshell is unable to control her powers, causingAlien Power to explode around her, dealing Earth DMG and inflicting Earth Affliction."
+      },
+      "damageType": "earth",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Alien Power Explosion DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1315.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Earth Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "passive": {
+      "name": {
+        "en": "Attention Overload"
+      },
+      "desc": {
+        "en": "Brisshell gains Attention Overload upon using her Switch Skill or Ultimate Skill. / Inflicts DEF Reduction on enemies upon landing attacks with Alien Power."
+      },
+      "effects": [
+        {
+          "kind": "debuff",
+          "stat": "def",
+          "value": 10,
+          "unit": "percent",
+          "target": "enemy",
+          "trigger": "onHit",
+          "durationSec": 6,
+          "condition": {
+            "note": {
+              "en": "upon landing attacks with Alien Power"
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "label": {
+            "en": "Attention Overload Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            6,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "DEF Reduction Rate"
+          },
+          "unit": "percent",
+          "scaling": [
+            10,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "DEF Reduction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            6,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "elemental": {
+      "name": {
+        "en": "Loner's Efforts"
+      },
+      "desc": {
+        "en": "Increases all teammates' Earth DMG by 22.6% upon using Brisshell's Support Skill or Switch Skill. (Max Stacks: 2, Duration: 10 sec, New stacks reset the duration)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "damageType": "earth",
+          "value": 22.6,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onSwitch",
+          "durationSec": 10,
+          "maxStacks": 2,
+          "condition": {
+            "note": {
+              "en": "upon using Brisshell's Support Skill or Switch Skill · New stacks reset the duration"
+            }
+          }
+        }
+      ],
+      "values": []
     }
   },
   "statuses": [
@@ -454,6 +644,15 @@
       },
       "desc": {
         "en": "Increases ATK by 10% and Suppression DMG by 5%."
+      },
+      "effects": []
+    },
+    {
+      "name": {
+        "en": "Earth Affliction"
+      },
+      "desc": {
+        "en": "Afflicted targets take Earth DMG over time, and Earth and Physical RES decrease by 15%."
       },
       "effects": []
     }
@@ -468,6 +667,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Assassin · Earth · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | **ค่าพลังหักบัฟอาหารแล้ว** (ผู้เล่นบอก \"ตอนนี้ยังมีบัพอาหารออกลบตัวเลขออกด้วย\" — อาหารชุดเดียวกับ Narae / Isabella: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,279 · DEF 758 · HP 10,662 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 2,049 · DEF 673 · HP 9,272 · Crit 5% / 50%** — ทั้งสามค่าเคยเห็นในตัว Preview แล้ว (ATK 2,049 แบบ 5 ดาวหลายตัว · DEF 673 เท่า Gabi · HP 9,272 เท่า Flare) | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 12.18% · Assassin 1,078 · Ultimate Gauge 100% · Stamina 100 · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · ไม่มีบรรทัดธาตุ | Basic My First Friend Alfred (Physical · ตาราง 15 แถวจากสองจอ) · Effect Details Attention Overload | **Guidance of Earth ขึ้น \"Inactive\" บนจอบัญชีนี้** — ยังไม่ได้อ่าน | ยังไม่ได้อ่าน: Switch · Special · Ultimate · Passive · Guidance of Earth · ปลุกพลัง · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Assassin · Earth · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | **ค่าพลังหักบัฟอาหารแล้ว** (ผู้เล่นบอก \"ตอนนี้ยังมีบัพอาหารออกลบตัวเลขออกด้วย\" — อาหารชุดเดียวกับ Narae / Isabella: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,279 · DEF 758 · HP 10,662 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 2,049 · DEF 673 · HP 9,272 · Crit 5% / 50%** — ทั้งสามค่าเคยเห็นในตัว Preview แล้ว (ATK 2,049 แบบ 5 ดาวหลายตัว · DEF 673 เท่า Gabi · HP 9,272 เท่า Flare) | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 12.18% · Assassin 1,078 · Ultimate Gauge 100% · Stamina 100 · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · ไม่มีบรรทัดธาตุ | Basic My First Friend Alfred (Physical · ตาราง 15 แถวจากสองจอ) · Effect Details Attention Overload | **Guidance of Earth ขึ้น \"Inactive\" บนจอบัญชีนี้** — ยังไม่ได้อ่าน | **2026-10-22 รอบสาม** Ultimate Anxiety Burst (1,315.1% · จอพิมพ์ \"causingAlien\" ติดกัน เก็บตามจอ) · Effect Details Earth Affliction · Passive Attention Overload (ชื่อซ้ำกับสถานะ · ลด DEF ศัตรู 10% 6 วินาทีเมื่อโจมตีด้วย Alien Power → effect debuff onHit + note) | Guidance of Earth Loner's Efforts: **ค่า Lv.12 = 22.6% จากป๊อปอัป Skill Info (Lv. 1 >> Lv. 12)** — จอหลักขึ้น \"Inactive\" Lv.1 = 16% · trigger เก็บได้ช่องเดียว ใส่ onSwitch แล้วเขียน Support Skill ไว้ใน note | ยังไม่ได้อ่าน: Switch · Special · ปลุกพลัง · จอไทยทั้งหมด"
   }
 }
