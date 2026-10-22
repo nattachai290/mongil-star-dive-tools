@@ -436,15 +436,14 @@ export const food = z.object({
   category: vocabEnum("foodCategory"),
   /** ดาวบนการ์ดในจอ Cooking (1–4 เท่าที่เห็น) */
   stars: z.number().int().min(1).max(5).optional(),
-  /** ทองที่ใช้ทำหนึ่งครั้ง ตามตัวเลขเหนือปุ่ม Start Cooking */
-  goldCost: z.number().int().positive().optional(),
   effects: z.array(effect).default([]),
   durationSec: z.number().positive(),
   exquisite: z.object({ effects: z.array(effect).default([]) }).optional(),
   unlock: z.object({ method: vocabEnum("obtainMethod"), note: text.optional() }).optional(),
   images: z.object({ icon: z.string().optional() }).optional(),
   /**
-   * ไม่มีช่อง ingredients — ตัดออกจากขอบเขตตามคำสั่งผู้เล่น 2026-10-22 "ชื่อวัตถุดิบ ไม่เก็บ"
+   * ไม่มีช่อง ingredients และ goldCost — ตัดออกจากขอบเขตตามคำสั่งผู้เล่น 2026-10-22
+   * "ชื่อวัตถุดิบ ไม่เก็บ" · "ทองที่ใช้ทำไม่เก็บ"
    * ดู PLAN §13.7.2 · schema ตั้งเป็น .strict() ไฟล์ที่ใส่วัตถุดิบกลับมาจะไม่ผ่าน validate
    */
   source,

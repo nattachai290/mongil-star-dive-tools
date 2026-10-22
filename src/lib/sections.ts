@@ -61,8 +61,8 @@ export const SECTIONS: Section[] = [
     slug: "food",
     title: { th: "อาหาร", en: "Food" },
     blurb: {
-      th: "จานหลักและจานเคียง บัฟ 30 นาทีของแต่ละจาน ดาว และราคาทอง",
-      en: "Entrées and sides, each dish's 30-minute buffs, stars and gold cost",
+      th: "จานหลักและจานเคียง บัฟ 30 นาทีของแต่ละจาน และดาว",
+      en: "Entrées and sides, each dish's 30-minute buffs and stars",
     },
     ready: true,
   },

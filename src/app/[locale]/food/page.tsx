@@ -29,8 +29,6 @@ type T = ReturnType<typeof createTranslate>;
 const CATEGORIES = ["entree", "side"] as const;
 
 function FoodCard({ f, locale, t }: { f: Food; locale: Locale; t: T }) {
-  const fmt = (n: number) => n.toLocaleString(locale === "th" ? "th-TH" : "en-US");
-
   return (
     <li className="rounded-lg border border-line bg-surface p-4">
       <div className="flex items-start gap-3">
@@ -53,11 +51,6 @@ function FoodCard({ f, locale, t }: { f: Food; locale: Locale; t: T }) {
             <span className="font-mono text-[11px] text-muted">
               {t("food.duration")} {f.durationSec / 60} {t("food.minutes")}
             </span>
-            {f.goldCost !== undefined && (
-              <span className="font-mono text-[11px] text-muted">
-                {fmt(f.goldCost)} {t("food.gold")}
-              </span>
-            )}
           </p>
         </div>
       </div>
