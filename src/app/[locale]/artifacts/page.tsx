@@ -57,8 +57,8 @@ function ArtifactCard({ a, locale, t }: { a: Artifact; locale: Locale; t: T }) {
 
       <table className="mt-3 w-full text-sm">
         <tbody>
-          {a.stats.map((s) => (
-            <tr key={s.stat} className="border-t border-line">
+          {a.stats.map((s, i) => (
+            <tr key={i} className="border-t border-line">
               <td className="py-1.5 text-ink-2">{label("stat", s.stat, locale)}</td>
               <td className="py-1.5 text-end font-mono tabular-nums text-ink">
                 {fmt(s.value)}
