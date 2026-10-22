@@ -692,7 +692,30 @@
       "desc": {
         "en": "Upon switching to another teammate, all teammates' HP is restored by 6.2% of Daisy's Max HP. / If there are 3 or more Earth teammates on the team, an additional 6.6% ATK Boost is granted. (Duration: 10s)"
       },
-      "effects": [],
+      "effects": [
+        {
+          "kind": "heal",
+          "stat": "hp",
+          "value": 6.2,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onSwitchOut"
+        },
+        {
+          "kind": "buff",
+          "stat": "atk",
+          "value": 6.6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSwitchOut",
+          "durationSec": 10,
+          "condition": {
+            "note": {
+              "en": "If there are 3 or more Earth teammates on the team"
+            }
+          }
+        }
+      ],
       "values": []
     }
   },
@@ -717,6 +740,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Support · **Earth** (ธาตุที่ห้า — ครบห้าธาตุรบแล้ว) · Ranged · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลักจากจอ Info: ATK 1,678 (เท่ากับ Bonnie ซึ่งเป็น Support 4 ดาวเหมือนกัน) · DEF 609 · HP 9,272 · Crit 5% / 50% | รูป portrait ตัดจากจอ Info 360x360 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 11.59% · Support 1,026 · Elemental Weakness 125% · gauge 100% · stamina 100 และ **Earth RES 10%** — บรรทัดต้านทานธาตุบนจอค่าพลังตัวละคร เห็นครั้งแรก เก็บเป็น stat res + damageType earth | Basic Go, Mr. Seeds! · Ultimate Help Us, Mr. Flower! (Lv.12) · Effect Details ของ Earth Affliction | ultimate: Max HP-Based Healing ไม่ใส่ line เพราะท่อน 1 และ 2 ต่างพูดถึงการฮีล · **DoT กับ Bonus DMG เป็น 586.2% เท่ากันพอดี** อ่านจากจอซ้ำสองจอแล้ว | **Earth Affliction ต่างจากอีกสี่ธาตุ: ลดต้านทาน \"ทั้งดินและกายภาพ\" 15%** (\"Earth and Physical RES decrease by 15%\") ส่วนธาตุอื่นลดแค่ธาตุตัวเอง | **2026-10-22 รอบสาม** Switch Fly, Flowers! · Special This Is My Flower Garden! (Lv.12) · Passive Mr. Flower's Aid (Lv.1) · Guidance of Earth: Fresh Flowers (Lv.12) · ปลุกพลังครบหกขั้น — **ครบทั้งหกช่องสกิลแล้ว** | special ไม่ใส่ damageType — จอไม่ได้เขียนว่าสร้างดาเมจ (มีแต่ฮีล · ลดความเร็ว · Earth Affliction) | **passive ใส่ effect ได้ครบ**: Earth RES +10% ให้ทั้งทีม (จอบอกเป้าหมายชัด) · **Earth RES 10% บนจอ Detailed Stats น่าจะมาจาก passive นี้** แบบเดียวกับที่ 19.97% ของ Reina รวม passive ไว้ — จดไว้เป็นข้อสังเกต ค่าที่เก็บยังตามจอ | Guidance of Earth: ฮีลทีม 6.2% เมื่อสลับตัว และ ATK +6.6% ถ้ามีเพื่อนธาตุดิน 3 คนขึ้นไป — ส่วนหลังเป็นเงื่อนไของค์ประกอบทีม effect เขียนไม่ได้ จึงไม่เติมทั้งก้อน (ไม่เติมบางส่วน) | ปลุกพลัง: ขั้น 5 เติม effects (ดาเมจโจมตีพื้นฐาน +6%) · ขั้น 3 ลดคูลดาวน์ 4.5% เก็บเป็นข้อความตามแบบเดิม · ขั้น 6 มีการชุบชีวิตเพื่อน | ยังไม่ได้อ่าน: จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Support · **Earth** (ธาตุที่ห้า — ครบห้าธาตุรบแล้ว) · Ranged · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลักจากจอ Info: ATK 1,678 (เท่ากับ Bonnie ซึ่งเป็น Support 4 ดาวเหมือนกัน) · DEF 609 · HP 9,272 · Crit 5% / 50% | รูป portrait ตัดจากจอ Info 360x360 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 11.59% · Support 1,026 · Elemental Weakness 125% · gauge 100% · stamina 100 และ **Earth RES 10%** — บรรทัดต้านทานธาตุบนจอค่าพลังตัวละคร เห็นครั้งแรก เก็บเป็น stat res + damageType earth | Basic Go, Mr. Seeds! · Ultimate Help Us, Mr. Flower! (Lv.12) · Effect Details ของ Earth Affliction | ultimate: Max HP-Based Healing ไม่ใส่ line เพราะท่อน 1 และ 2 ต่างพูดถึงการฮีล · **DoT กับ Bonus DMG เป็น 586.2% เท่ากันพอดี** อ่านจากจอซ้ำสองจอแล้ว | **Earth Affliction ต่างจากอีกสี่ธาตุ: ลดต้านทาน \"ทั้งดินและกายภาพ\" 15%** (\"Earth and Physical RES decrease by 15%\") ส่วนธาตุอื่นลดแค่ธาตุตัวเอง | **2026-10-22 รอบสาม** Switch Fly, Flowers! · Special This Is My Flower Garden! (Lv.12) · Passive Mr. Flower's Aid (Lv.1) · Guidance of Earth: Fresh Flowers (Lv.12) · ปลุกพลังครบหกขั้น — **ครบทั้งหกช่องสกิลแล้ว** | special ไม่ใส่ damageType — จอไม่ได้เขียนว่าสร้างดาเมจ (มีแต่ฮีล · ลดความเร็ว · Earth Affliction) | **passive ใส่ effect ได้ครบ**: Earth RES +10% ให้ทั้งทีม (จอบอกเป้าหมายชัด) · **Earth RES 10% บนจอ Detailed Stats น่าจะมาจาก passive นี้** แบบเดียวกับที่ 19.97% ของ Reina รวม passive ไว้ — จดไว้เป็นข้อสังเกต ค่าที่เก็บยังตามจอ | Guidance of Earth: **ผู้เล่นยืนยัน 2026-10-22 ว่าทั้งสองท่อนเกิดเมื่อสลับตัว** — ฮีลทั้งทีม 6.2% ของพลังชีวิตสูงสุดของ Daisy ทุกครั้ง และถ้ามีเพื่อนธาตุดิน 3 คนขึ้นไปจะได้ ATK +6.6% 10 วินาทีเพิ่มด้วย · เติม effects สองตัว: heal team (onSwitchOut) และ ATK ตัวเอง (กฎ PLAN §13.11) พร้อม condition.note เรื่องธาตุดินสามคน เพราะยังไม่มีช่องเงื่อนไของค์ประกอบทีม | ปลุกพลัง: ขั้น 5 เติม effects (ดาเมจโจมตีพื้นฐาน +6%) · ขั้น 3 ลดคูลดาวน์ 4.5% เก็บเป็นข้อความตามแบบเดิม · ขั้น 6 มีการชุบชีวิตเพื่อน | ยังไม่ได้อ่าน: จอไทยทั้งหมด"
   }
 }
