@@ -1,0 +1,31 @@
+{
+  "id": "daisy",
+  "name": {
+    "en": "Daisy"
+  },
+  "rarity": 4,
+  "element": "earth",
+  "role": "supporter",
+  "range": "ranged",
+  "stats": {
+    "atLevel": 60,
+    "hp": 9272,
+    "atk": 1678,
+    "def": 609,
+    "critRate": 5,
+    "critDmg": 50
+  },
+  "awaken": [],
+  "images": {
+    "portrait": "daisy-portrait.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Support · **Earth** (ธาตุที่ห้า — ครบห้าธาตุรบแล้ว) · Ranged · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลักจากจอ Info: ATK 1,678 (เท่ากับ Bonnie ซึ่งเป็น Support 4 ดาวเหมือนกัน) · DEF 609 · HP 9,272 · Crit 5% / 50% · **ยังไม่ได้เปิด Detailed Stats** — ไม่ใส่ otherStats จากการคาด (บทเรียนจาก Reina ที่ค่าบูสต์ไม่ตรงแบบ) | รูป portrait ตัดจากจอ Info 360x360 | ยังไม่ได้อ่าน: Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลัง · จอไทยทั้งหมด"
+  }
+}
