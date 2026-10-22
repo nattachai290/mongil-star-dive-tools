@@ -15,7 +15,497 @@
     "critRate": 12.5,
     "critDmg": 92.5
   },
+  "otherStats": [
+    {
+      "kind": "buff",
+      "stat": "neutralizationDmg",
+      "value": 12.18,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "weaknessHit"
+      ],
+      "value": 150.5,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "energyGain",
+      "value": 100,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "stamina",
+      "value": 100,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "destroyerPower",
+      "value": 1078,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "ice",
+      "value": 1.3,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
   "awaken": [],
+  "skills": {
+    "basic": {
+      "name": {
+        "en": "Plasma Forge"
+      },
+      "desc": {
+        "en": "Isabella attacks the enemy with a plasma reflector, dealing Ice DMG and gaining energy. Energy cannot exceed maximum capacity. / Energy is also gained upon using Evasion Counter. However, energy can't be gained with Evasion Counter while Cooling Cycle is active. / When energy reaches a certain level, Isabella's Basic Attack's 4th Hit is triggered. While it's active, DMG Taken decreases and hit enemies are inflicted with Freeze. Also, Isabella's Charge Attack leads to Basic Attack's 4th Hit. / When Isabella remains on the field and attacks enemies after using her Tag-out Skill, she uses her Basic Attack's 3rd and 5th Hit. Enemies hit by her Basic Attack's 5th Hit have their Neutralization RES decreased. / Isabella cannot gain energy with her Basic Attack when she's not being actively controlled."
+      },
+      "damageType": "ice",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            36.4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            36.4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "3rd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            63.7,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Basic Attack Energy Gain"
+          },
+          "unit": "flat",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            20,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Max Energy Capacity"
+          },
+          "unit": "flat",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            100,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Energy Required to Trigger 4th Hit"
+          },
+          "unit": "flat",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            60,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "4th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            256.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "Basic Attack's 4th Hit Energy Gain"
+          },
+          "unit": "flat",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            40,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "DMG Taken Reduction"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            50,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "5th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            127.4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 4
+        },
+        {
+          "label": {
+            "en": "Incapacitate RES Decrease"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 4
+        },
+        {
+          "label": {
+            "en": "Neutralization RES Reduction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 4
+        },
+        {
+          "label": {
+            "en": "Charge Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            69.7,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Air Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            130.4,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Evasion Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            306.6,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Evasion Counter Energy Gain"
+          },
+          "unit": "flat",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            20,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Freeze Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        }
+      ]
+    }
+  },
   "images": {
     "portrait": "isabella-portrait.webp"
   },
@@ -27,8 +517,9 @@
       "en"
     ],
     "fieldsUnverified": [
-      "stats"
+      "stats",
+      "otherStats"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max · มีปุ่ม Quick Power Up — ไม่ใช่ Character Preview) · **ยังไม่มีจอไทย** | Destroyer · Ice · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลัง ATK 2,279 · DEF 719 · HP 11,169 · Crit 12.5% / 92.5% — เก็บตามแบบ Narae ที่ผู้เล่นยืนยันว่าจอบัญชีไม่ติดของ · **Crit 12.5 / 92.5 เท่า Narae และไม่ตรงกับตัว Preview ทั้งหมด (5 / 50)** → fieldsUnverified จนกว่าจะเทียบจอ Preview | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | ยังไม่ได้อ่าน: Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลัง · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max · มีปุ่ม Quick Power Up — ไม่ใช่ Character Preview) · **ยังไม่มีจอไทย** | Destroyer · Ice · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลัง ATK 2,279 · DEF 719 · HP 11,169 · Crit 12.5% / 92.5% — เก็บตามแบบ Narae ที่ผู้เล่นยืนยันว่าจอบัญชีไม่ติดของ · **Crit 12.5 / 92.5 เท่า Narae และไม่ตรงกับตัว Preview ทั้งหมด (5 / 50)** → fieldsUnverified จนกว่าจะเทียบจอ Preview | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats (จอบัญชี): Neutralization DMG Boost 12.18% · Destroyer 1,078 · Ultimate Gauge 100% · Stamina 100 · **Elemental Weakness 150.5% · Ice DMG Boost 1.3% เท่า Narae** (ไม่ตรงกับตัว Preview → fieldsUnverified) | Basic Plasma Forge (คำอธิบายห้าท่อน · ตาราง 17 แถว จากสามจอเลื่อนต่อกัน · พลังงานเป็นค่าคงที่) · **ตารางใช้สองคำกับค่าเดียว: \"Incapacitate RES Decrease\" กับ \"Neutralization RES Reduction Duration\" เก็บตามจอ** | ยังไม่ได้อ่าน: Switch · Special · Ultimate · Passive · Guidance of Ice (Lv.12) · Effect Details · ปลุกพลัง · จอไทยทั้งหมด"
   }
 }
