@@ -100,6 +100,8 @@
   "artifacts.empty": "No artifacts in the database yet",
   "artifacts.level": "Lv.",
   "artifacts.fusion": "Fusion Level",
+  "artifacts.fusionUnread": "Fusion (box header not in the screenshot)",
+  "artifacts.atLevel": "at artifact Lv.",
   "artifacts.roleOnly": "Only works when equipped by this role",
   "artifacts.enOnlyNote": "Names and text on this page are English only for now.",
   "equipment.title": "Equipment",

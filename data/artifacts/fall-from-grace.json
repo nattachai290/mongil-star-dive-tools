@@ -18,51 +18,54 @@
       "unit": "percent"
     }
   ],
-  "fusion": {
-    "level": 5,
-    "name": {
-      "en": "Until All Evil is Slain V"
-    },
-    "desc": {
-      "en": "When equipped by an [Assassin] character, grants the following effect. / ATK increases by 7% if the equipping character is a Ranged type. / Using a Special Skill increases Support Skill DMG by 14% and Basic Attack DMG by 14%. (Duration: 10s) / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Assassin proficiency. (Max: 5%)"
-    },
-    "effects": [
-      {
-        "kind": "buff",
-        "stat": "atk",
-        "value": 7,
-        "unit": "percent",
-        "target": "self",
-        "trigger": "passive",
-        "condition": {
-          "note": {
-            "en": "if the equipping character is a Ranged type"
+  "fusion": [
+    {
+      "artifactLevel": 60,
+      "level": 5,
+      "name": {
+        "en": "Until All Evil is Slain V"
+      },
+      "desc": {
+        "en": "When equipped by an [Assassin] character, grants the following effect. / ATK increases by 7% if the equipping character is a Ranged type. / Using a Special Skill increases Support Skill DMG by 14% and Basic Attack DMG by 14%. (Duration: 10s) / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Assassin proficiency. (Max: 5%)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "atk",
+          "value": 7,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive",
+          "condition": {
+            "note": {
+              "en": "if the equipping character is a Ranged type"
+            }
           }
+        },
+        {
+          "kind": "buff",
+          "stat": "supportDmg",
+          "value": 14,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSpecialSkill",
+          "durationSec": 10
+        },
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 14,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSpecialSkill",
+          "durationSec": 10
         }
-      },
-      {
-        "kind": "buff",
-        "stat": "supportDmg",
-        "value": 14,
-        "unit": "percent",
-        "target": "self",
-        "trigger": "onSpecialSkill",
-        "durationSec": 10
-      },
-      {
-        "kind": "buff",
-        "stat": "dmgDealt",
-        "scopes": [
-          "basicAttack"
-        ],
-        "value": 14,
-        "unit": "percent",
-        "target": "self",
-        "trigger": "onSpecialSkill",
-        "durationSec": 10
-      }
-    ]
-  },
+      ]
+    }
+  ],
   "images": {
     "icon": "fall-from-grace-icon.webp"
   },

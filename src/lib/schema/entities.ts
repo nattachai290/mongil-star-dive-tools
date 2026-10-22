@@ -224,17 +224,24 @@ export const artifact = z.object({
   /** ค่าสเตตัสใต้กล่องเอฟเฟกต์ ตามลำดับบนจอ — บรรทัดแรกเป็น ATK แบบค่าคงที่ทุกชิ้นเท่าที่เห็น */
   stats: z.array(statValue).min(1),
   /**
-   * กล่อง "Fusion Level N" — ชื่อเอฟเฟกต์ลงท้ายด้วยเลขโรมันตามจอ ("Fanfare! V")
-   * เก็บชื่อตามที่พิมพ์ ไม่ตัดเลขโรมันออก เพราะยังไม่เคยเห็นระดับอื่นมายืนยัน
+   * กล่อง "Fusion Level N" — หนึ่งรายการต่อหนึ่งจอที่เห็น (ปุ่ม Min / Max สลับจอ Lv.1 กับ Lv.60)
+   *
+   * ชื่อเอฟเฟกต์ลงท้ายด้วยเลขโรมันตามจอ ("Fanfare! V") เก็บตามที่พิมพ์ ไม่ตัดออก
+   * level / name เว้นได้ เพราะจอ Lv.60 ของ Artifact 5 ดาวที่ส่งมาถูกเลื่อนลงจนหัวกล่องพ้นจอ
+   * ไม่เดาว่าเป็น Fusion 5 ตามแบบ 4 ดาว — รอจอที่เห็นหัวกล่องจริง
    */
   fusion: z
-    .object({
-      level: z.number().int().positive(),
-      name: text,
-      desc: text,
-      effects: z.array(effect).default([]),
-    })
-    .optional(),
+    .array(
+      z.object({
+        /** เลเวลของ Artifact บนการ์ดตอนอ่านกล่องนี้ (01 หรือ 60) */
+        artifactLevel: z.number().int().positive(),
+        level: z.number().int().positive().optional(),
+        name: text.optional(),
+        desc: text,
+        effects: z.array(effect).default([]),
+      }),
+    )
+    .default([]),
   obtain: z.object({ method: vocabEnum("obtainMethod"), note: text.optional() }).optional(),
   recommendedFor: z.array(slug).default([]),
   images: z.object({ icon: z.string().optional() }).optional(),

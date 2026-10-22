@@ -18,27 +18,30 @@
       "unit": "flat"
     }
   ],
-  "fusion": {
-    "level": 5,
-    "name": {
-      "en": "Happiness for All V"
-    },
-    "desc": {
-      "en": "When equipped by a [Support] character, grants the following effect. / Triggering a Support Skill increases all teammates' Earth DMG by 20%. (Duration: 7s). / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Support proficiency. (Max: 5%)"
-    },
-    "effects": [
-      {
-        "kind": "buff",
-        "stat": "dmgDealt",
-        "damageType": "earth",
-        "value": 20,
-        "unit": "percent",
-        "target": "team",
-        "trigger": "onSupportSkill",
-        "durationSec": 7
-      }
-    ]
-  },
+  "fusion": [
+    {
+      "artifactLevel": 60,
+      "level": 5,
+      "name": {
+        "en": "Happiness for All V"
+      },
+      "desc": {
+        "en": "When equipped by a [Support] character, grants the following effect. / Triggering a Support Skill increases all teammates' Earth DMG by 20%. (Duration: 7s). / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Support proficiency. (Max: 5%)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "damageType": "earth",
+          "value": 20,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onSupportSkill",
+          "durationSec": 7
+        }
+      ]
+    }
+  ],
   "images": {
     "icon": "forest-fragrance-icon.webp"
   },
