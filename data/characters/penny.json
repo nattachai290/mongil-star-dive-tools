@@ -15,7 +15,399 @@
     "critRate": 5,
     "critDmg": 50
   },
+  "otherStats": [
+    {
+      "kind": "buff",
+      "stat": "brawlDmg",
+      "value": 12.18,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "weaknessHit"
+      ],
+      "value": 125,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "energyGain",
+      "value": 100,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "stamina",
+      "value": 100,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "fighterPower",
+      "value": 1078,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
   "awaken": [],
+  "skills": {
+    "basic": {
+      "name": {
+        "en": "Titanium Bow"
+      },
+      "desc": {
+        "en": "Penny deals Lightning DMG by firing her mechanical bow. The 3rd Hit creates an electrical current that seeks out nearby enemies, dealing Lightning DMG. / Using a Charge Attack by spending a Coin restores Stamina and increases the DMG of the next Special Skill used within a set duration 1 time. / Special Skill DMG Boost is also gained upon a successful Evasion Counter."
+      },
+      "damageType": "lightning",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            27.3,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            51.5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "3rd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            66.3,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "3rd Hit Electric DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            28.4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "4th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            98.5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Charge Attack Pierce DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            70,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Charge Attack Explosion DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            105,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Stamina Recovery"
+          },
+          "unit": "flat",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            40,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Duration of the next Special Skill DMG Boost"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Special Skill DMG Boost"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            50,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Air Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            102.1,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Evasion Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            231,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "passive": {
+      "name": {
+        "en": "Electric Charge"
+      },
+      "desc": {
+        "en": "Penny's Crit Rate increases by a portion of her Lightning DMG Boost, but it doesn't increase above a set maximum. / When Penny lands her Basic Attack's 3rd Hit, a Coin is generated. No Coin will generate if Penny already has a Coin or if there is already a Coin on the field. Coins that are not picked up will be automatically collected after a set duration passes or will disappear upon switching to another character. / Penny gains a Coin upon a successful Critical Dodge if there are none generated or if she doesn't have a Coin. / Coin: …"
+      },
+      "effects": [],
+      "values": []
+    },
+    "elemental": {
+      "name": {
+        "en": "A Generous Quest Reward"
+      },
+      "desc": {
+        "en": "Pierce Rate increases by 5.6% and ATK increases by 15.5% upon picking up a Coin after using Penny's Switch Skill. (Duration: 10s)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "atk",
+          "value": 15.5,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSwitch",
+          "durationSec": 10,
+          "condition": {
+            "note": {
+              "en": "upon picking up a Coin after using Penny's Switch Skill · also Pierce Rate +5.6%"
+            }
+          }
+        }
+      ],
+      "values": []
+    }
+  },
   "images": {
     "portrait": "penny-portrait.webp"
   },
@@ -26,6 +418,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Fighter · Lightning · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,996 · DEF 656 · HP 9,713 · Crit 5% / 50% อ่านจากจอตรง ๆ — ชุดตัวเลขนี้ยังไม่ซ้ำกับตัวไหนที่ลงไว้ | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | ยังไม่ได้อ่าน: Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลัง · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Fighter · Lightning · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,996 · DEF 656 · HP 9,713 · Crit 5% / 50% อ่านจากจอตรง ๆ — ชุดตัวเลขนี้ยังไม่ซ้ำกับตัวไหนที่ลงไว้ | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Brawl DMG Boost 12.18% · Fighter 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Basic Titanium Bow (ตาราง 12 แถว อ่านจากจอที่เลื่อนลง · Stamina Recovery 40 เป็นค่าคงที่) · Guidance of Lightning A Generous Quest Reward (ATK +15.5% เป็น effect · Pierce Rate +5.6% อยู่ใน note เพราะพจนานุกรมยังไม่มี Pierce Rate — ดูโน้ตของ Chloe) | **Passive Electric Charge อ่านได้ไม่ครบ** — จอตัดที่หัวข้อ \"Coin\" ท้ายกล่อง desc จึงลงท้ายด้วย \"Coin: …\" และยังไม่เห็นตารางค่า | ยังไม่ได้อ่าน: Switch · Special · Ultimate · Passive ส่วนที่เลื่อนลง · ปลุกพลัง · จอไทยทั้งหมด"
   }
 }
