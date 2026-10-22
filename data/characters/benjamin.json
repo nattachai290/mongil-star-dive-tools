@@ -60,7 +60,114 @@
       "trigger": "passive"
     }
   ],
-  "awaken": [],
+  "awaken": [
+    {
+      "stage": 1,
+      "name": {
+        "en": "From Silence, Enlightenment"
+      },
+      "desc": {
+        "en": "If Nightmare Sprint is active, using Benjamin's Enhanced Special Skill or Tag-out Skill during the effect's duration won't remove Nightmare Sprint."
+      },
+      "effects": []
+    },
+    {
+      "stage": 2,
+      "name": {
+        "en": "Unstoppable Waves"
+      },
+      "desc": {
+        "en": "Nightmare Sprint is granted immediately after using Benjamin's Special Skill, and the range of his Enhanced Special Skill and Tag-out Skill increases. / Also, for the duration of the effect, Benjamin's Enhanced Special Skill cooldown is decreased by 50%. This effect is not subject to the Special Skill cooldown reduction cap."
+      },
+      "effects": []
+    },
+    {
+      "stage": 3,
+      "name": {
+        "en": "Choose Your Battles"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Tag-out Skill DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "tagOutSkill"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 4,
+      "name": {
+        "en": "Skills Showcase"
+      },
+      "desc": {
+        "en": "Benjamin's Tag-out Skill and Support Skill are enhanced, increasing the duration of Lightning Affliction by 5s and decreasing his Support Skill cooldown by 6s. / Also, the Strike Count of Nightmare Sprint increases by 3."
+      },
+      "effects": []
+    },
+    {
+      "stage": 5,
+      "name": {
+        "en": "Stormhawk"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Special Skill DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "specialSkill"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 6,
+      "name": {
+        "en": "Tea Break"
+      },
+      "desc": {
+        "en": "Benjamin's Nightmare Sprint is enhanced, increasing its duration by 5s. / Also, his Tag-out Skill and Support Skill DMG is increased by 20%. Through Nightmare Sprint, his Enhanced Support Skill deals 163.5% Lightning DMG."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "tagOutSkill"
+          ],
+          "value": 20,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        },
+        {
+          "kind": "buff",
+          "stat": "supportDmg",
+          "value": 20,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ]
+    }
+  ],
   "skills": {
     "basic": {
       "name": {
@@ -271,6 +378,253 @@
         }
       ]
     },
+    "switch": {
+      "name": {
+        "en": "Raging Flurry"
+      },
+      "desc": {
+        "en": "Benjamin appears near the enemy and fiercely charges at them, unleashing a flurry of slashes with his sword to deal consecutive Lightning DMG. / [Tag-out Skill] When Nightmare Sprint is active, Benjamin charges at enemies with his clones, dealing Lightning DMG and rendering enemies Airborne. Hit enemies are inflicted with Lightning Affliction. / [Support Skill] When a teammate uses a Special Skill during combat, Benjamin appears nearby, dealing Lightning DMG and inflicting Lightning Affliction on hit enemies."
+      },
+      "damageType": "lightning",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Switch Skill DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            131.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Tag-out Skill DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            148.9,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Support Skill DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            222.5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "Support Skill Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            12,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "Lightning Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "special": {
+      "name": {
+        "en": "Nightmare Mark"
+      },
+      "desc": {
+        "en": "Clones appear around Benjamin, simultaneously swinging swords to unleash a barrage of slashes. Benjamin then summons his sword, dealing Lightning DMG and rendering enemies Airborne. / When Nightmare Sprint is active, Benjamin's Special Skill is enhanced. He charges at enemies with his clones, dealing Lightning DMG and rendering enemies Airborne."
+      },
+      "damageType": "lightning",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Slash DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            118.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Sword Summon DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            144.9,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Enhanced Special Skill DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            405.4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            10,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
     "ultimate": {
       "name": {
         "en": "Dimensional Annihilation Slash"
@@ -393,6 +747,26 @@
           "line": 1
         }
       ]
+    },
+    "elemental": {
+      "name": {
+        "en": "Fixer's Gut"
+      },
+      "desc": {
+        "en": "ATK increases by 7.6% upon switching to another teammate. (Duration: 15s)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "atk",
+          "value": 7.6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSwitchOut",
+          "durationSec": 15
+        }
+      ],
+      "values": []
     }
   },
   "statuses": [
@@ -425,6 +799,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Assassin · Lightning · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวละครชายตัวที่สอง | ค่าพลังห้าค่าหลัก: ATK 1,908 · DEF 598 · HP 8,389 · Crit 5% / 50% — เท่ากับ Reina และ Yeonhwa ทุกตัว (Lightning Melee 4 ดาว) อ่านจากจอตรง ๆ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 11.59% · Assassin 1,026 · Elemental Weakness 125% (แบบ Assassin 4 ดาว) · Basic Sardonic Swordplay · Ultimate Dimensional Annihilation Slash (921.2%) · Passive Sleepless Torrent · Effect Details ของ Lightning Affliction และ Nightmare Sprint | basic: ดาเมจกายภาพตามท่อนแรก ท่อนสองเปลี่ยนธาตุของทุกการโจมตีเป็นสายฟ้า 4 วินาทีหลังจังหวะที่ 3 · **จอเขียน \"3th Hit\" (ไวยากรณ์ผิดในเกม) เก็บตามจอ** | ยังไม่ได้อ่าน: Switch · Special · Guidance of Lightning · ปลุกพลัง · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Assassin · Lightning · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวละครชายตัวที่สอง | ค่าพลังห้าค่าหลัก: ATK 1,908 · DEF 598 · HP 8,389 · Crit 5% / 50% — เท่ากับ Reina และ Yeonhwa ทุกตัว (Lightning Melee 4 ดาว) อ่านจากจอตรง ๆ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 11.59% · Assassin 1,026 · Elemental Weakness 125% (แบบ Assassin 4 ดาว) · Basic Sardonic Swordplay · Ultimate Dimensional Annihilation Slash (921.2%) · Passive Sleepless Torrent · Effect Details ของ Lightning Affliction และ Nightmare Sprint | basic: ดาเมจกายภาพตามท่อนแรก ท่อนสองเปลี่ยนธาตุของทุกการโจมตีเป็นสายฟ้า 4 วินาทีหลังจังหวะที่ 3 · **จอเขียน \"3th Hit\" (ไวยากรณ์ผิดในเกม) เก็บตามจอ** | **2026-10-22 รอบสาม** Switch Raging Flurry (Switch/Tag-out/Support) · Special Nightmare Mark · Guidance of Lightning Fixer's Gut (ATK +7.6% เมื่อสลับไปตัวอื่น → onSwitchOut, target self ตามกฎ \"ถ้าไม่บอกว่าใครก็คือตัวเอง\") · ปลุกพลังครบหกขั้น (จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส) | effects ปลุกพลัง: ขั้น 3 Tag-out +6% · ขั้น 5 Special +6% · ขั้น 6 Tag-out +20% และ supportDmg +20% · ขั้นอื่นเปลี่ยนกลไก/ค่าสกิล เก็บเป็นข้อความ | ขั้น 4 เอ่ยถึง \"Strike Count of Nightmare Sprint\" แต่ Effect Details ของ Nightmare Sprint ไม่มีตัวเลขครั้ง — เก็บตามจอ | ยังไม่ได้อ่าน: จอไทยทั้งหมด"
   }
 }
