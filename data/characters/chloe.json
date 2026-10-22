@@ -3,6 +3,7 @@
   "name": {
     "en": "Chloe"
   },
+  "rarity": 5,
   "element": "wind",
   "role": "fighter",
   "range": "melee",
@@ -494,6 +495,368 @@
           ]
         }
       ]
+    },
+    "switch": {
+      "name": {
+        "en": "Substitution"
+      },
+      "desc": {
+        "en": "Chloe appears near the enemy, jumps high into the sky, and powerfully strikes the ground, knocking the enemy airborne and dealing Wind DMG. / She grants herself High Tempo."
+      },
+      "damageType": "wind",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            176.8,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "High Tempo Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "ultimate": {
+      "name": {
+        "en": "Blow It All Up!"
+      },
+      "desc": {
+        "en": "Chloe nimbly jumps in and throws a heavy, superheated punch. She deals Wind DMG and inflicts Wind Affliction on the enemy and grants herself It's... Not Over Yet!. / Chloe's Special Skill cooldown is reset when It's... Not Over Yet! is applied, and Special Skill's Windmill Kick can be used immediately while the effect is active. / Special Skill cooldown is reset again when the effect duration of It's... Not Over Yet! ends."
+      },
+      "damageType": "wind",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            712.8,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "It's... Not Over Yet! Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Wind Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "passive": {
+      "name": {
+        "en": "Overheat"
+      },
+      "desc": {
+        "en": "When Chloe joins the battle while not being controlled, she is granted High Tempo and uses Enhanced Basic Attack."
+      },
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Energy Charge per Basic Attack DMG Ratio"
+          },
+          "unit": "percent",
+          "scaling": [
+            1.67,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Energy Gain Rate per Special Skill DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            16.67,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Energy Charge per Enhanced Basic Attack DMG Ratio"
+          },
+          "unit": "percent",
+          "scaling": [
+            6.67,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Energy Charge per Hyper Punch Attack 2nd Hit Ratio"
+          },
+          "unit": "percent",
+          "scaling": [
+            63.33,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Energy Charge per Hyper Punch Attack 3rd Hit Ratio"
+          },
+          "unit": "percent",
+          "scaling": [
+            13.33,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Energy Charge per Charge Attack Ratio"
+          },
+          "unit": "percent",
+          "scaling": [
+            8.33,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Energy Charge per Air Counter Ratio"
+          },
+          "unit": "percent",
+          "scaling": [
+            8.33,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Energy Charge per Evasion Counter Ratio"
+          },
+          "unit": "percent",
+          "scaling": [
+            8.33,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "elemental": {
+      "name": {
+        "en": "Time to Lock In!"
+      },
+      "desc": {
+        "en": "Using a Switch Skill increases Wind DMG by 24.6%. (Duration: 15s)"
+      },
+      "effects": [],
+      "values": []
     }
   },
   "statuses": [
@@ -514,6 +877,15 @@
         "en": "Basic Attack changes to a [High-Speed Punch] attack, Penetration Rate increases by 12%, and you become immune to attacks for the duration. The effect is removed when switching to another character."
       },
       "effects": []
+    },
+    {
+      "name": {
+        "en": "Wind Affliction"
+      },
+      "desc": {
+        "en": "Afflicted targets take Wind DMG over time, and Wind RES decreases by 15%."
+      },
+      "effects": []
     }
   ],
   "images": {
@@ -526,6 +898,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (ผู้เล่นยังไม่มีตัวนี้ จอตัวอย่างเปิดดูได้) · Info · Detailed Stats · Basic Attack · Effect Details · **ยังไม่มีจอไทย** | Fighter · **Wind** · Melee · เลเวล 60 · **ไม่ใส่ rarity** ดาวบนจอ Info คือดาวอัปเลเวล | ค่าพลังจากจอตัวอย่าง (ไม่มีของติด จอ Info กับ Detailed Stats ตรงกัน): ATK 1,943 (เท่ากับวิเวียน) · DEF 656 · HP 9,978 · ไม่มีบรรทัด Wind DMG Boost บนจอ (ตัวอื่นมี Fire DMG Boost) · Fighter 1,078 เท่ากับ Verna / Mina | Basic Attack Lv.12 ครบ 17 บรรทัด (จอที่สองเลื่อนลงจนเห็นทั้งตาราง) · line: Hit 1-5 = ท่อน 1 · Enhanced ทั้งหมดรวม Gust = ท่อน 2 · Hyper Punch = ท่อน 3 · Charge / Air / Evasion ไม่ใส่ | statuses เก็บเป็นข้อความ: High Tempo มีหลายผลปนกัน (ATK · ลดดาเมจที่ได้รับ · กันกระเด็น · จำนวนครั้งตี) · It's... Not Over Yet! พูดถึง **\"Penetration Rate\"** ซึ่งยังไม่มีในพจนานุกรม (Verna ปลุกพลังขั้น 6 เขียน \"Pierce Rate\" — ยังไม่รู้ว่าเป็นค่าเดียวกันไหม) | ช่องที่หกชื่อ **Guidance of Wind** (Lv.12 บนจอตัวอย่าง) — ยืนยันว่าหัวช่องเปลี่ยนตามธาตุ | รูป portrait ตัดจากจอ Info 380x380 | ยังไม่ได้อ่าน: Switch · Special · Ultimate · Passive · Guidance of Wind · ปลุกพลัง · แรงก์ · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (ผู้เล่นยังไม่มีตัวนี้ จอตัวอย่างเปิดดูได้) · Info · Detailed Stats · Basic Attack · Effect Details · **ยังไม่มีจอไทย** | Fighter · **Wind** · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** ดาวบนจอ Info คือดาวอัปเลเวล | ค่าพลังจากจอตัวอย่าง (ไม่มีของติด จอ Info กับ Detailed Stats ตรงกัน): ATK 1,943 (เท่ากับวิเวียน) · DEF 656 · HP 9,978 · ไม่มีบรรทัด Wind DMG Boost บนจอ (ตัวอื่นมี Fire DMG Boost) · Fighter 1,078 เท่ากับ Verna / Mina | Basic Attack Lv.12 ครบ 17 บรรทัด (จอที่สองเลื่อนลงจนเห็นทั้งตาราง) · line: Hit 1-5 = ท่อน 1 · Enhanced ทั้งหมดรวม Gust = ท่อน 2 · Hyper Punch = ท่อน 3 · Charge / Air / Evasion ไม่ใส่ | statuses เก็บเป็นข้อความ: High Tempo มีหลายผลปนกัน (ATK · ลดดาเมจที่ได้รับ · กันกระเด็น · จำนวนครั้งตี) · It's... Not Over Yet! พูดถึง **\"Penetration Rate\"** ซึ่งยังไม่มีในพจนานุกรม (Verna ปลุกพลังขั้น 6 เขียน \"Pierce Rate\" — ยังไม่รู้ว่าเป็นค่าเดียวกันไหม) | ช่องที่หกชื่อ **Guidance of Wind** (Lv.12 บนจอตัวอย่าง) — ยืนยันว่าหัวช่องเปลี่ยนตามธาตุ | รูป portrait ตัดจากจอ Info 380x380 | **2026-10-22 รอบสอง** Switch Skill Substitution · Ultimate Skill Blow It All Up! (Lv.12) · Passive Trait Overheat (Lv.1) · Guidance of Wind Time to Lock In! (**Lv.12 บนจอตัวอย่าง** = Wind DMG +24.6% 15 วินาที เมื่อใช้สกิลสับเปลี่ยน · effects ว่าง เพราะจอไม่ได้บอกว่าบัฟลงที่ใคร) · Effect Details ของ Wind Affliction | **Passive: คำอธิบายบนจอมีช่องว่างเหนือประโยคแรก** อาจเป็นเพราะพาเนลเลื่อนลงไปแล้ว มีท่อนก่อนหน้าที่ไม่เห็น — เก็บเฉพาะที่เห็น บรรทัดค่าทั้งแปดเป็นอัตราชาร์จพลังงานอัลติเมตตามท่า ไม่ใส่ line | **Wind Affliction ข้อความรูปแบบเดียวกับ Fire Affliction ทุกคำ** แค่เปลี่ยนธาตุ (Wind DMG over time · Wind RES −15%) | ultimate: บรรทัดค่าทั้งสามผูกท่อน 1 · switch: DMG = ท่อน 1 · High Tempo Duration = ท่อน 2 | ยังไม่ได้อ่าน: Special Skill (ชื่อท่อนย่อย Windmill Kick ถูกอ้างในอัลติเมต) · ปลุกพลัง · จอไทยทั้งหมด"
   }
 }
