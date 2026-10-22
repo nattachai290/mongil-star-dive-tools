@@ -504,6 +504,357 @@
           "line": 3
         }
       ]
+    },
+    "switch": {
+      "name": {
+        "en": "Repulsion"
+      },
+      "desc": {
+        "en": "Isabella causes an explosion on the ground with her plasma reflector, dealing Ice DMG, and then leaps backward. Hit enemies are inflicted with Freeze, and the remaining cooldown for Isabella's Special Skill immediately decreases. / [Tag-out Skill] Isabella's Tag-out Skill is triggered upon switching to another teammate while Cooling Cycle is active, and Isabella remains on the field for a set duration and attacks enemies with her Basic Attack."
+      },
+      "damageType": "ice",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Switch Skill DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            238.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Freeze Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Special Skill Cooldown Decrease"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            100,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "On-Field Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "special": {
+      "name": {
+        "en": "Energy Conversion"
+      },
+      "desc": {
+        "en": "Isabella fires a shell at the enemy, dealing Ice DMG and inflicting Freeze. / DMG Taken decreases and energy is consumed while using her Special Skill. Consuming energy increases Special Skill DMG, and consuming maximum energy all at once additionally increases the Pierce Rate. / The Special Skill DMG Boost and Pierce Rate Boost only apply while Isabella's Special Skill is being used."
+      },
+      "damageType": "ice",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1472,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Energy Consumption"
+          },
+          "unit": "flat",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            10,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Special Skill DMG Boost"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            3,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Special Skill DMG Boost Max Stacks"
+          },
+          "unit": "flat",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            10,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Penetration Rate Increase"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            15,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "DMG Taken Reduction"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            50,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Freeze Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            30,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "elemental": {
+      "name": {
+        "en": "Support System Maintenance"
+      },
+      "desc": {
+        "en": "Using Isabella's Switch Skill increases Ice teammates' Basic Attack DMG by 40.1% (Duration: 12s)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 40.1,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onSwitch",
+          "durationSec": 12,
+          "condition": {
+            "note": {
+              "en": "Ice teammates"
+            }
+          }
+        }
+      ],
+      "values": []
     }
   },
   "images": {
@@ -520,6 +871,6 @@
       "stats",
       "otherStats"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max · มีปุ่ม Quick Power Up — ไม่ใช่ Character Preview) · **ยังไม่มีจอไทย** | Destroyer · Ice · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลัง ATK 2,279 · DEF 719 · HP 11,169 · Crit 12.5% / 92.5% — เก็บตามแบบ Narae ที่ผู้เล่นยืนยันว่าจอบัญชีไม่ติดของ · **Crit 12.5 / 92.5 เท่า Narae และไม่ตรงกับตัว Preview ทั้งหมด (5 / 50)** → fieldsUnverified จนกว่าจะเทียบจอ Preview | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats (จอบัญชี): Neutralization DMG Boost 12.18% · Destroyer 1,078 · Ultimate Gauge 100% · Stamina 100 · **Elemental Weakness 150.5% · Ice DMG Boost 1.3% เท่า Narae** (ไม่ตรงกับตัว Preview → fieldsUnverified) | Basic Plasma Forge (คำอธิบายห้าท่อน · ตาราง 17 แถว จากสามจอเลื่อนต่อกัน · พลังงานเป็นค่าคงที่) · **ตารางใช้สองคำกับค่าเดียว: \"Incapacitate RES Decrease\" กับ \"Neutralization RES Reduction Duration\" เก็บตามจอ** | ยังไม่ได้อ่าน: Switch · Special · Ultimate · Passive · Guidance of Ice (Lv.12) · Effect Details · ปลุกพลัง · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max · มีปุ่ม Quick Power Up — ไม่ใช่ Character Preview) · **ยังไม่มีจอไทย** | Destroyer · Ice · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลัง ATK 2,279 · DEF 719 · HP 11,169 · Crit 12.5% / 92.5% — เก็บตามแบบ Narae ที่ผู้เล่นยืนยันว่าจอบัญชีไม่ติดของ · **Crit 12.5 / 92.5 เท่า Narae และไม่ตรงกับตัว Preview ทั้งหมด (5 / 50)** → fieldsUnverified จนกว่าจะเทียบจอ Preview | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats (จอบัญชี): Neutralization DMG Boost 12.18% · Destroyer 1,078 · Ultimate Gauge 100% · Stamina 100 · **Elemental Weakness 150.5% · Ice DMG Boost 1.3% เท่า Narae** (ไม่ตรงกับตัว Preview → fieldsUnverified) | Basic Plasma Forge (คำอธิบายห้าท่อน · ตาราง 17 แถว จากสามจอเลื่อนต่อกัน · พลังงานเป็นค่าคงที่) · **ตารางใช้สองคำกับค่าเดียว: \"Incapacitate RES Decrease\" กับ \"Neutralization RES Reduction Duration\" เก็บตามจอ** | **2026-10-22 รอบสาม** Switch Repulsion (238.1% + Tag-out) · Special Energy Conversion (1,472% · คูลดาวน์ 30 วินาที · ตารางแปดแถวจากสองจอ) · **คำอธิบายใช้ \"Pierce Rate\" แต่ตารางใช้ \"Penetration Rate Increase\" — ค่าเดียวกันตามโน้ตของ Chloe เก็บตามจอ** | Guidance of Ice Support System Maintenance: **ค่า Lv.12 = 40.1% อ่านจากป๊อปอัป Skill Info (Lv. 3 >> Lv. 12)** จอหลักขึ้น Lv.3 = 30.2% · ไม่มีจุดท้ายประโยคตามจอ | ยังไม่ได้อ่าน: Ultimate · Passive · Effect Details · ปลุกพลัง · จอไทยทั้งหมด"
   }
 }
