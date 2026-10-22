@@ -15,7 +15,84 @@
     "critRate": 5,
     "critDmg": 50
   },
-  "awaken": [],
+  "awaken": [
+    {
+      "stage": 2,
+      "name": {
+        "en": "Big Swing Coming Up!"
+      },
+      "desc": {
+        "en": "Using Gabi's Switch Skill inflicts Petrification on nearby enemies. Petrification lasts for 4 sec and can affect up to 7 target(s). / Landing her Basic Attack's 4th Hit always generates a Rock, and the generated Rock's Petrification effect range increases."
+      },
+      "effects": []
+    },
+    {
+      "stage": 3,
+      "name": {
+        "en": "Brutal Dokkaebi Instincts"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 4,
+      "name": {
+        "en": "Crush Any Obstacles!"
+      },
+      "desc": {
+        "en": "Gabi's Crushing Blow deals 104% increased DMG, and the Bonus DMG that Crushing Blow inflicts against targets with Petrification increases to 170%."
+      },
+      "effects": []
+    },
+    {
+      "stage": 5,
+      "name": {
+        "en": "Descendant of Duoxini"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Ultimate Skill DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "ultimate"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 6,
+      "name": {
+        "en": "True Friends' Sworn Protector"
+      },
+      "desc": {
+        "en": "The Wooden Guardian Statue effect increases 3.4-fold. Gabi's Basic Attack and Crushing Blow DMG increases 2-fold while the Wooden Guardian Statue effect is active / In addition, Wooden Guardian Statue periodically inflicts Petrification on nearby enemies. Petrification lasts for 4 sec and can affect up to 7 target(s)."
+      },
+      "effects": []
+    }
+  ],
   "images": {
     "portrait": "gabi-portrait.webp"
   },
@@ -26,6 +103,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Fighter · Earth · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,943 · DEF 673 · HP 9,713 · Crit 5% / 50% อ่านจากจอตรง ๆ — **DEF 673 สูงกว่าตัวอื่นที่ลงไว้ทั้งหมด (สูงสุดเดิม 656)** เก็บตามจอ | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 380x380 ขยายเป็น 400x400 | ยังไม่ได้อ่าน: Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลัง · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Fighter · Earth · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,943 · DEF 673 · HP 9,713 · Crit 5% / 50% อ่านจากจอตรง ๆ — **DEF 673 สูงกว่าตัวอื่นที่ลงไว้ทั้งหมด (สูงสุดเดิม 656)** เก็บตามจอ | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** ปลุกพลังขั้น 2–6 (จอยังล็อกทุกขั้น · effects: ขั้น 3 Basic +6% · ขั้น 5 Ultimate +6% · ขั้นอื่นเก็บเป็นข้อความ) · ขั้น 6 ประโยคแรกไม่มีจุดท้าย \"…is active\" ตามจอ · \"Duoxini\" ชื่อในขั้น 5 ตามจอ | ปุ่ม Effects ของขั้น 2 / 4 / 6 ยังไม่ได้เปิด (Petrification ฯลฯ) | ยังไม่ได้อ่าน: Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลังขั้น 1 · Effect Details · จอไทยทั้งหมด"
   }
 }
