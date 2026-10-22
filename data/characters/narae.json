@@ -317,6 +317,116 @@
             null
           ],
           "line": 2
+        },
+        {
+          "label": {
+            "en": "Freeze Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            3,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Air Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            99.7,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Evasion Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            236.6,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "switch": {
+      "name": {
+        "en": "Prison of Dew"
+      },
+      "desc": {
+        "en": "Narae unleashes a surging wave forward, dealing Ice DMG and knocking back enemies."
+      },
+      "damageType": "ice",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Water Flow DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            183.4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
         }
       ]
     },
@@ -836,6 +946,31 @@
           "line": 1
         }
       ]
+    },
+    "elemental": {
+      "name": {
+        "en": "Go With the Flow"
+      },
+      "desc": {
+        "en": "If Narae enters battle without being controlled, DMG Taken by all teammates decreases by 26%. (Duration: 3s)"
+      },
+      "effects": [
+        {
+          "kind": "debuff",
+          "stat": "dmgTaken",
+          "value": 26,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "passive",
+          "durationSec": 3,
+          "condition": {
+            "note": {
+              "en": "If Narae enters battle without being controlled"
+            }
+          }
+        }
+      ],
+      "values": []
     }
   },
   "statuses": [
@@ -868,6 +1003,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (มีปุ่ม Quick Power Up / Max Level — ไม่ใช่จอ Character Preview) · **ยังไม่มีจอไทย** | Support · Ice · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | **ไม่เก็บค่าพลัง** — จอขึ้น ATK 2,063 · DEF 719 · HP 12,388 · Crit 12.5% / 92.5% ซึ่ง Crit ไม่ใช่ฐาน 5% / 50% แปลว่าติดอุปกรณ์หรือมอนอยู่ (กฎ: stats ต้องเป็นค่าเปล่า) · รอจอ Character Preview หรือจอที่ถอดของแล้ว | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats ของจอตัวละครผู้เล่น (ติดของ): เก็บเฉพาะบรรทัดที่ตรงกับแบบ Support 5 ดาว — Support DMG Boost 12.18% · Support 1,078 · Ultimate Gauge Charge 100% · Max Stamina 100 · **ไม่เก็บ Elemental Weakness 150.5% (ฐาน 125%) และ Ice DMG Boost 1.3% เพราะมาจากของ/มอน** | สกิล Lv.12 ทั้งสี่ช่องหลัก (จอผู้เล่นขึ้น Lv.12 เท่า Preview) · Special Dew Blankets All (ตาราง 12 แถว จากสองจอ · effects ทีม: ดาเมจน้ำแข็ง +50% / สกิลพิเศษ +30% ให้เพื่อนน้ำแข็ง · สกิลพิเศษ +80% ให้เพื่อนระยะไกลที่ไม่ใช่น้ำแข็ง · 14 วินาที) · Ultimate Bubble Spout (**\"Waster Stream DMG\" สะกดผิดในเกม เก็บตามจอ**) · Passive Blessings of the Morning Dew (ATK +15% 8 วินาทีเมื่อให้โล่ตัวเอง → onGrantShield) | ATK-Based Healing 5.3% ไม่มีประโยคบอกท่อน ไม่ใส่ line | **Guidance of Ice บนจอนี้ Lv.3 ไม่ใช่ 12** (ตัวของผู้เล่นยังอัปไม่เต็ม) — ยังไม่ได้อ่าน ต้องใช้จอ Preview ถ้าจะเก็บค่าที่ Lv.12 | **2026-10-22 รอบสาม** ปลุกพลังขั้น 3–6 จากจอตัวละครผู้เล่น (ขั้น 1 ปลดแล้ว ขั้น 2–6 ล็อก — ข้อความยังอ่านได้) · effects: ขั้น 3 Ultimate +6% · ขั้น 5 ลดคูลดาวน์ Special 4.5% เก็บเป็นข้อความ · ขั้น 4 / 6 เปลี่ยนค่าและกลไก เก็บเป็นข้อความ | **ขั้น 1 ของบัญชีนี้ปลดแล้ว แต่ไม่ได้เพิ่มเลเวลสกิล — ค่าสกิล Lv.12 ที่เก็บยังเป็นค่าไม่มีโบนัส** | **2026-10-22 รอบสี่** Basic Dew-Jade Barrage (เจ็ดแถว) · ปลุกพลังขั้น 1 (ปลดแล้วในบัญชีนี้ \"Awakening Complete\") และขั้น 2 → ครบหกขั้น · Effect Details: Dew · Ice Affliction | ขั้น 2: ATK ทีม +22% 20 วินาทีเมื่อ Narae ได้โล่ → effect target team · ขั้น 1 ลด Ice RES ศัตรู 15% เมื่อเพื่อนติด Ice Affliction ไม่มี trigger ตรง เก็บเป็นข้อความ · \"Affliction.Ice\" ไม่มีเว้นวรรคตามจอ | **Dew บล็อก 603 ดาเมจ** — ตัวเลขนี้มาจากจอบัญชีผู้เล่น (ติดของ ATK 2,063) และโล่บวกตาม ATK จึงอาจไม่ใช่ค่าเปล่า เก็บตามจอ | ยังไม่ได้อ่าน: ค่าพลังเปล่า · Switch · Guidance of Ice (Lv.12) · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (มีปุ่ม Quick Power Up / Max Level — ไม่ใช่จอ Character Preview) · **ยังไม่มีจอไทย** | Support · Ice · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | **ไม่เก็บค่าพลัง** — จอขึ้น ATK 2,063 · DEF 719 · HP 12,388 · Crit 12.5% / 92.5% ซึ่ง Crit ไม่ใช่ฐาน 5% / 50% แปลว่าติดอุปกรณ์หรือมอนอยู่ (กฎ: stats ต้องเป็นค่าเปล่า) · รอจอ Character Preview หรือจอที่ถอดของแล้ว | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats ของจอตัวละครผู้เล่น (ติดของ): เก็บเฉพาะบรรทัดที่ตรงกับแบบ Support 5 ดาว — Support DMG Boost 12.18% · Support 1,078 · Ultimate Gauge Charge 100% · Max Stamina 100 · **ไม่เก็บ Elemental Weakness 150.5% (ฐาน 125%) และ Ice DMG Boost 1.3% เพราะมาจากของ/มอน** | สกิล Lv.12 ทั้งสี่ช่องหลัก (จอผู้เล่นขึ้น Lv.12 เท่า Preview) · Special Dew Blankets All (ตาราง 12 แถว จากสองจอ · effects ทีม: ดาเมจน้ำแข็ง +50% / สกิลพิเศษ +30% ให้เพื่อนน้ำแข็ง · สกิลพิเศษ +80% ให้เพื่อนระยะไกลที่ไม่ใช่น้ำแข็ง · 14 วินาที) · Ultimate Bubble Spout (**\"Waster Stream DMG\" สะกดผิดในเกม เก็บตามจอ**) · Passive Blessings of the Morning Dew (ATK +15% 8 วินาทีเมื่อให้โล่ตัวเอง → onGrantShield) | ATK-Based Healing 5.3% ไม่มีประโยคบอกท่อน ไม่ใส่ line | **Guidance of Ice บนจอนี้ Lv.3 ไม่ใช่ 12** (ตัวของผู้เล่นยังอัปไม่เต็ม) — ยังไม่ได้อ่าน ต้องใช้จอ Preview ถ้าจะเก็บค่าที่ Lv.12 | **2026-10-22 รอบสาม** ปลุกพลังขั้น 3–6 จากจอตัวละครผู้เล่น (ขั้น 1 ปลดแล้ว ขั้น 2–6 ล็อก — ข้อความยังอ่านได้) · effects: ขั้น 3 Ultimate +6% · ขั้น 5 ลดคูลดาวน์ Special 4.5% เก็บเป็นข้อความ · ขั้น 4 / 6 เปลี่ยนค่าและกลไก เก็บเป็นข้อความ | **ขั้น 1 ของบัญชีนี้ปลดแล้ว แต่ไม่ได้เพิ่มเลเวลสกิล — ค่าสกิล Lv.12 ที่เก็บยังเป็นค่าไม่มีโบนัส** | **2026-10-22 รอบสี่** Basic Dew-Jade Barrage (เจ็ดแถว) · ปลุกพลังขั้น 1 (ปลดแล้วในบัญชีนี้ \"Awakening Complete\") และขั้น 2 → ครบหกขั้น · Effect Details: Dew · Ice Affliction | ขั้น 2: ATK ทีม +22% 20 วินาทีเมื่อ Narae ได้โล่ → effect target team · ขั้น 1 ลด Ice RES ศัตรู 15% เมื่อเพื่อนติด Ice Affliction ไม่มี trigger ตรง เก็บเป็นข้อความ · \"Affliction.Ice\" ไม่มีเว้นวรรคตามจอ | **Dew บล็อก 603 ดาเมจ** — ตัวเลขนี้มาจากจอบัญชีผู้เล่น (ติดของ ATK 2,063) และโล่บวกตาม ATK จึงอาจไม่ใช่ค่าเปล่า เก็บตามจอ | **2026-10-22 รอบห้า** Basic ส่วนที่เลื่อนลง (Freeze 3s · Air Counter 99.7% · Evasion Counter 236.6%) → ครบสิบแถว · Switch Prison of Dew (183.4%) | **Guidance of Ice Go With the Flow ค่า Lv.12 = 26% อ่านจากป๊อปอัป Skill Info ของเกม (Lv. 3 >> Lv. 12)** — จอหลักของบัญชีนี้ขึ้น Lv.3 = 17% · DMG Taken ลด → kind debuff stat dmgTaken target team · ไม่มี trigger \"เข้าสนามโดยไม่ได้ควบคุม\" ใส่ passive + note | ยังไม่ได้อ่าน: ค่าพลังเปล่า · จอไทยทั้งหมด"
   }
 }
