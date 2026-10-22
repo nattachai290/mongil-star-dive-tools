@@ -52,8 +52,11 @@
     {
       "artifactLevel": 60,
       "level": 5,
+      "name": {
+        "en": "Gust Flight V"
+      },
       "desc": {
-        "en": "Increases ATK by 20%. / Using a Special Skill increases Wind DMG by 70% (Duration: 10s) / Fusion Level 3: Gains 0.06% Crit Rate Boost for every 10 points of Assassin proficiency. (Max: 15%) / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Assassin proficiency. (Max: 15%)"
+        "en": "When equipped by an [Assassin] character, grants the following effect. / Increases ATK by 20%. / Using a Special Skill increases Wind DMG by 70% (Duration: 10s) / Fusion Level 3: Gains 0.06% Crit Rate Boost for every 10 points of Assassin proficiency. (Max: 15%) / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Assassin proficiency. (Max: 15%)"
       },
       "effects": [
         {
@@ -87,6 +90,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **5 ดาว (ผู้เล่นบอก 2026-10-22)** ตรงกับเพชร 5 เม็ดบนการ์ดสีส้ม | สองจอ: ปุ่ม Max → การ์ด Lv.01 (0/123) กล่อง Fusion Level 1 · ปุ่ม Min → การ์ด Lv.60 Max | ค่าสเตตัสเป็นของจอ Lv.60 — จอ Lv.01 ไม่เห็นแถบค่าสเตตัส | **จอ Lv.60 = Fusion Level 5 (ผู้เล่นบอก 2026-10-22: \"Fusion 1 ให้เก็บเวล 1 กับ 5\")** — จอถูกเลื่อนลงจนหัวกล่องพ้นจอ ชื่อเอฟเฟกต์ของ Fusion 5 ยังไม่ได้อ่าน จึงเว้นไว้ · desc ของ Lv.60 เก็บเฉพาะบรรทัดที่อยู่ในจอ | บรรทัด Fusion Level 3 / 5 (ตามความชำนาญ สูงสุด 15% — 4 ดาวคือ 5%) เป็นสีเทาที่ Fusion 1 เก็บเป็นข้อความ | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | ค่าสเตตัสเก็บที่ Lv.60 เท่านั้น (ผู้เล่นกำหนด 2026-10-22)"
+    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **5 ดาว (ผู้เล่นบอก 2026-10-22)** ตรงกับเพชร 5 เม็ดบนการ์ดสีส้ม | สองจอ: ปุ่ม Max → การ์ด Lv.01 (0/123) กล่อง Fusion Level 1 · ปุ่ม Min → การ์ด Lv.60 Max | ค่าสเตตัสเป็นของจอ Lv.60 — จอ Lv.01 ไม่เห็นแถบค่าสเตตัส | **จอ Lv.60 = Fusion Level 5 (ผู้เล่นบอก 2026-10-22: \"Fusion 1 ให้เก็บเวล 1 กับ 5\")** · **ยืนยันจากจอแล้ว 2026-10-22** (ส่งจอ Lv.60 ที่เลื่อนขึ้นบนสุดมา หัวกล่องเขียน \"Fusion Level 5\" และชื่อ \"Gust Flight V\") | บรรทัด Fusion Level 3 / 5 (ตามความชำนาญ สูงสุด 15% — 4 ดาวคือ 5%) เป็นสีเทาที่ Fusion 1 เก็บเป็นข้อความ | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | ค่าสเตตัสเก็บที่ Lv.60 เท่านั้น (ผู้เล่นกำหนด 2026-10-22)"
   }
 }
