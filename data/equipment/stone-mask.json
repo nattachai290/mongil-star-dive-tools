@@ -9,10 +9,6 @@
   "slot": "headgear",
   "setId": "stone-heart",
   "effects": [],
-  "desc": {
-    "th": "หน้ากากที่มีวิญญาณแห่งหินสถิตอยู่ หากใช้ไปนานๆ จะรู้สึกราวกับว่านิสัยเปลี่ยนไป",
-    "en": "A mask harboring a stone spirit. Wearing it for too long may make you feel like you're becoming someone else."
-  },
   "source": {
     "verifiedAt": "2026-09-21",
     "gameVersion": "unknown",

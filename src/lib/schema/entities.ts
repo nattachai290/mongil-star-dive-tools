@@ -63,13 +63,17 @@ export const character = z.object({
   id: slug,
   name: text,
   /**
-   * ความหายากเป็น "จำนวนดาว" ตามที่จอตัวละครแสดง ไม่ใช่ R/SR/SSR
+   * ความหายากเป็น "จำนวนดาว" ของตัวละคร ไม่ใช่ R/SR/SSR
+   *
+   * ⚠️ ดาวแถวใต้ชื่อบนจอ Info **ไม่ใช่ค่านี้** — นั่นคือดาวของการอัปเลเวล
+   * Verna: Summer Dive! เลเวล 60 เต็มขึ้นสี่ดวง แต่ตัวละครเป็น 5 ดาว (ผู้เล่นบอก 2026-10-22)
    * (คำพวกนั้นเป็นของที่ร่างไว้ก่อนเห็นเกมจริง เกมนี้ไม่มีใช้เลย)
    *
    * เกมมีตัวละคร 4 ดาวกับ 5 ดาวเท่านั้น — ค่าอื่นคืออ่านจอผิด
    * (ลิงก์เชนใช้ช่วงคนละแบบ ของนั้นเจอตั้งแต่ 3 ดาว)
    */
-  rarity: z.number().int().min(4).max(5),
+  rarity: z.number().int().min(4).max(5).optional(),
+  // ไม่ใส่ = ยังไม่รู้แรงก์ (ดาวบนจอ Info ไม่ใช่แรงก์ ต้องมีคนบอกหรือมีจออื่นยืนยัน)
   /** ระยะการโจมตี เช่น ระยะใกล้ — เพิ่มคำใหม่เมื่อเห็นจากจอเท่านั้น */
   range: vocabEnum("range").optional(),
   /**
@@ -146,6 +150,13 @@ export const character = z.object({
       ultimate: skill,
       /** ช่องที่ห้าบนจอสกิล ไม่ได้กดใช้เอง ทำงานเองตลอด */
       passive: skill.optional(),
+      /**
+       * ช่องที่หก — สกิลธาตุ เห็นครั้งแรกที่ Verna: Summer Dive! (2026-10-22)
+       * จอเรียกหัวช่องตามธาตุ ("Guidance of Fire") เลเวลขึ้นตาม Elemental Blessing
+       * ("Every time the Elemental Blessing reaches a specific level, your skill level increases.")
+       * ไม่มีตารางค่า ตัวเลขอยู่ในประโยคเลย จึงเก็บเป็น effects ของเลเวลที่เห็น
+       */
+      elemental: skill.optional(),
     })
     .partial()
     .optional(),
@@ -234,10 +245,15 @@ export const equipment = z.object({
    * ไม่ใช่ในไฟล์ของแต่ละชิ้น — ไม่งั้นต้องเขียนเลขเดียวกันซ้ำ 100 ไฟล์
    */
   effects: z.array(effect).default([]),
-  desc: text.optional(),
+  /**
+   * ไม่มีช่อง desc (คำบรรยายของชิ้น) — ตัดออกจากขอบเขตตามคำสั่งผู้เล่น 2026-10-22
+   * "เก็บแค่ set effect คำบรรยายไม่เอา" ดู PLAN §13.7.1
+   * ตัดออกจาก schema เลย ไม่ใช่แค่ลบข้อมูล ไฟล์ที่ใส่ desc กลับมาจะไม่ผ่าน validate
+   * (คำอธิบายใต้ [Set Effect] ยังเก็บอยู่ที่ sets.json bonuses[].desc คนละเรื่องกัน)
+   */
   images: z.object({ icon: z.string().optional() }).optional(),
   source,
-});
+}).strict();
 
 /** โบนัสเซ็ต อยู่ใน data/meta/sets.json เพราะเป็นของกลางที่ equipment หลายชิ้นอ้างถึง */
 export const equipmentSet = z.object({

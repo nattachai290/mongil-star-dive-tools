@@ -29,13 +29,14 @@ export async function generateMetadata({
   return { title: name, description: createTranslate(locale)("characters.lede") };
 }
 
-/** ห้าช่องบนจอสกิล เรียงตามที่เกมเรียง ไม่ใช่ตามลำดับตัวอักษร */
+/** หกช่องบนจอสกิล เรียงตามที่เกมเรียง ไม่ใช่ตามลำดับตัวอักษร */
 const SKILL_SLOTS = [
   ["basic", "skill.basic"],
   ["switch", "skill.switch"],
   ["special", "skill.special"],
   ["ultimate", "skill.ultimate"],
   ["passive", "skill.passive"],
+  ["elemental", "skill.elemental"],
 ] as const;
 
 function EffectList({ effects, locale }: { effects: Effect[]; locale: Locale }) {
@@ -67,11 +68,11 @@ function EffectList({ effects, locale }: { effects: Effect[]; locale: Locale }) 
 }
 
 /**
- * ตารางค่าของสกิล — แสดงเฉพาะเลเวลที่มีค่าจริง
+ * ตารางค่าของสกิล — แสดงเฉพาะเลเวลสูงสุดที่อ่านมา
  *
  * scaling ยาว 16 ช่องเสมอ แต่ส่วนใหญ่เป็น null เพราะอ่านได้ทีละเลเวล
- * ถ้าวาดครบ 16 คอลัมน์จะได้ตารางที่ว่าง 15 ช่อง และดูเหมือนข้อมูลหาย
- * จึงวาดเฉพาะเลเวลที่อ่านมาแล้ว และบอกตรง ๆ ว่าที่เหลือคือยังไม่ได้อ่าน
+ * เดิมวาดทุกเลเวลที่มีค่า (เช่น วิเวียน Lv.9 กับ Lv.12 คู่กัน)
+ * ตั้งแต่ 2026-10-22 ผู้เล่นสั่งให้โชว์เลเวลสูงสุดอย่างเดียว ค่าเลเวลอื่นยังเก็บในไฟล์
  */
 /**
  * ตัดคำอธิบายเป็นบรรทัดตาม "/" ที่เกมใส่มาเอง
@@ -247,9 +248,9 @@ function SkillSummary({
 function SkillValues({ skill, locale, t }: { skill: Skill; locale: Locale; t: (k: MessageKey) => string }) {
   if (skill.values.length === 0) return null;
 
-  const levels = [...new Set(skill.values.flatMap((v) =>
-    v.scaling.flatMap((n, i) => (n === null ? [] : [i + 1])),
-  ))].sort((a, b) => a - b);
+  // โชว์แค่เลเวลสูงสุดที่อ่านมา (ผู้เล่นสั่ง 2026-10-22) — เลเวลต่ำกว่ายังอยู่ในไฟล์ แค่ไม่วาด
+  const top = topLevel(skill);
+  const levels = top === null ? [] : [top];
 
   if (levels.length === 0) {
     return <p className="mt-3 text-xs text-muted">{t("character.noValues")}</p>;
@@ -357,12 +358,14 @@ export default async function CharacterPage({
           <h1 className="font-display text-2xl font-semibold">
             <Text value={character.name} locale={locale} />
           </h1>
-          <p className="mt-1 text-sm text-gold">
-            {"★".repeat(character.rarity)}{" "}
-            <span className="text-muted">
-              {character.rarity} {t("character.stars")}
-            </span>
-          </p>
+          {character.rarity !== undefined && (
+            <p className="mt-1 text-sm text-gold">
+              {"★".repeat(character.rarity)}{" "}
+              <span className="text-muted">
+                {character.rarity} {t("character.stars")}
+              </span>
+            </p>
+          )}
           <ul className="mt-2 flex flex-wrap gap-1">
             {[
               label("element", character.element, locale),

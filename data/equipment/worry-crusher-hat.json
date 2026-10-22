@@ -9,10 +9,6 @@
   "slot": "headgear",
   "setId": "thought-shredder",
   "effects": [],
-  "desc": {
-    "th": "หมวกที่ทำขึ้นจากการนำเกราะแข็งของสแครป โฮเดอร์มาซ้อนกันหลายชั้น แม้จะดูหยาบๆ แต่สามารถป้องกันแรงกระแทกได้ทุกรูปแบบ",
-    "en": "A hat made from layers of the Scrap Horde's solid armor. It may look crude, but it's capable of blocking any impact."
-  },
   "source": {
     "verifiedAt": "2026-10-03",
     "gameVersion": "unknown",

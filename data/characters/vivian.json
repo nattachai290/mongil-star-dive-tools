@@ -155,16 +155,6 @@
       "effects": []
     }
   ],
-  "source": {
-    "verifiedAt": "2026-09-13",
-    "gameVersion": "unknown",
-    "by": "in-game",
-    "readIn": [
-      "th",
-      "en"
-    ],
-    "note": "ชื่ออังกฤษคือ \"Vivian\" ไม่ใช่ Vivienne — id จึงเป็น vivian ตามจอเกม | ค่าพลังเปล่า อ่านจากจอ \"ข้อมูลรายละเอียดค่าพลัง\" ตอนถอดอุปกรณ์ออกหมดแล้ว ที่เลเวล 60 ซึ่งจอบอกว่าสูงสุด — เกมไม่มีระบบทะลุจำกัดแยกต่างหาก ระบบเสริมพลังคือปลุกพลังด้วยตัวซ้ำ ซึ่งเก็บครบหกขั้นแล้ว | สกิลครบทั้งห้าท่าแล้ว: สี่ท่าอ่านที่เลเวล 9 แพสซีฟที่เลเวล 1 จึงเติม scaling แค่ช่องนั้น ช่องอื่นเป็น null  | \"คูลดาวน์\" ของสกิลพิเศษอยู่ในตารางค่าที่เลื่อนตามเลเวล จึงเก็บเป็นบรรทัด values ไม่ใช่ช่องคงที่  | แพสซีฟแปลงค่าจาก stat ของตัวเองไปเป็นบัฟให้ทีม (ดาเมจสนับสนุน→ดาเมจธาตุไฟของเพื่อนระยะใกล้ 25% เพดาน 15% / ดาเมจกดขี่→พลังโจมตีทีม 18% เพดาน 9%) ซึ่งโครง effect ยังไม่มีวิธีเก็บ \"แปลงจาก stat อื่น\" จึงเก็บไว้ในบรรทัด values ตามที่จอเขียนก่อน  | ปลุกพลังครบหกขั้น ขั้น 6 ยังล็อกแต่จอแสดงคำอธิบายไว้ ช่อง effects เติมเฉพาะขั้นที่แปลงเป็นโครงข้อมูลได้ตรง ๆ (ขั้น 5) ขั้นอื่นมีเงื่อนไขซ้อนหรืออ้างถึงสถานะที่ยังไม่มีคำนิยาม จึงเก็บเป็นข้อความตามจอไปก่อน  | คำอธิบายตรงของ \"เวทีสุดตระการตา\" อ่านได้แล้ว: อัตราคริติคอล 5% + ดาเมจธาตุไฟ 20% ซึ่งแก้ความเข้าใจที่เดาไว้จากปลุกพลังขั้น 2 — ขั้น 2 ไม่ได้ \"เพิ่มคริติคอลให้ใหม่\" แต่ดันของเดิม 5%→10% และ 20%→60%  | statuses ใส่ effects เฉพาะอันที่คำอธิบายถูกครอบได้หมด (เวทีสุดตระการตา) อีกสามอันมีกลไกที่โครง effect ยังเขียนไม่ได้ จึงปล่อยว่างและอ่านจาก desc | อ่านอังกฤษแล้วสองจอ: ค่าพลัง (Detailed Stats) และสกิลโจมตีพื้นฐาน/สกิลพิเศษ ยังไม่ได้อ่านอังกฤษของปลุกพลังขั้น 4-6 และสถานะ \"การแสดงสุดร้อนแรง\" | จอ Info ยืนยัน \"Fire Melee\" ตรงกับ element fire + range melee ที่เก็บไว้ | ข้อความแนะนำตัวละคร (lore) อยู่นอกขอบเขต ไม่เก็บ | ชื่ออังกฤษของสกิลสับเปลี่ยนสะกดซ้ำตัว i ตามสไตล์เกม บันทึกตามที่อ่านจากจอ | \"ค่าพลังสนับสนุน 1,078\" จอ Detailed Stats เรียกว่า \"Support\" ตรงกับชื่อบทบาท จึงถอดธงออก ความหมายอธิบายไว้ในทูลทิปแล้ว | ช่อง line ของบรรทัดค่าสกิล จับคู่ตัวเลขเข้ากับคำอธิบายทีละท่อน เป็นการอ่านของคนกรอก ไม่ใช่สิ่งที่จอเขียน ใส่เฉพาะคู่ที่ใช้คำเฉพาะร่วมกันจนไม่มีทางตีความเป็นอย่างอื่น (มายากลไฟ→ท่อนบอส, โพลแดนซ์/แววตาแห่งความปรารถนา→ท่อนไม่มีบอส, อ่อนแอต่อไฟ/คูลดาวน์สกิลสนับสนุน→ท่อนสกิลสนับสนุน) ส่วน \"คูลดาวน์\" ของสกิลพิเศษเป็นค่าของทั้งสกิล ไม่ผูกกับท่อนไหน จึงไม่ใส่ line | ท่อนที่ 3 ของสกิลสับเปลี่ยนไม่มีตัวเลขของตัวเอง เพราะเป็นประโยคเกริ่นว่าการกระทำจะเปลี่ยนตามศัตรูที่อยู่ใกล้"
-  },
   "skills": {
     "basic": {
       "name": {
@@ -196,7 +186,7 @@
             27.8,
             null,
             null,
-            null,
+            32.6,
             null,
             null,
             null,
@@ -222,7 +212,7 @@
             69.5,
             null,
             null,
-            null,
+            81.6,
             null,
             null,
             null,
@@ -248,7 +238,7 @@
             49.6,
             null,
             null,
-            null,
+            58.3,
             null,
             null,
             null,
@@ -274,7 +264,7 @@
             65.5,
             null,
             null,
-            null,
+            77,
             null,
             null,
             null,
@@ -300,7 +290,7 @@
             85.4,
             null,
             null,
-            null,
+            100.3,
             null,
             null,
             null,
@@ -326,7 +316,516 @@
             194.8,
             null,
             null,
+            228.9,
             null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "switch": {
+      "name": {
+        "th": "เริ่มต้นโชว์แห่งจินตนาการ",
+        "en": "Iiiiiit's Showtime!"
+      },
+      "desc": {
+        "th": "วิเวียนจะปรากฏตัวพร้อมกับไฟ รวบรวมและดึงศัตรูเข้ามายังตำแหน่งของไฟ สร้างดาเมจธาตุไฟ / [สกิลสนับสนุน] เมื่อการโจมตีของสมาชิกทีมโดนศัตรู วิเวียนจะปรากฏตัวรอบศัตรู สร้างดาเมจธาตุไฟและมอบเอฟเฟกต์อ่อนแอต่อไฟ ซึ่งหลังจากสกิลสนับสนุนทำงาน เมื่อเปลี่ยนเป็นวิเวียนอีกครั้ง จำนวนครั้งที่สกิลสนับสนุนสามารถทำงานจะถูกรีเซต / เมื่อสกิลสนับสนุนทำงาน การกระทำของวิเวียนจะเปลี่ยนไปตามศัตรูที่อยู่ใกล้สมาชิกในทีมที่กำลังควบคุมอยู่ และจะเกิดเอฟเฟกต์เพิ่มเติมแตกต่างกันไปตามการกระทำนั้น / หากมีมอนสเตอร์บอสอยู่ใกล้ วิเวียนจะใช้มายากลไฟหลากหลายรูปแบบ เมื่อการโจมตีโดนศัตรู ดาเมจที่ศัตรูได้รับจะถูกเปลี่ยนเป็นดาเมจกดขี่ และเพิ่มดาเมจกดขี่ของสมาชิกทีมทั้งหมด / หากไม่มีมอนสเตอร์บอสอยู่ใกล้ วิเวียนจะเต้นโพลแดนซ์ มอบเอฟเฟกต์แววตาแห่งความปรารถนาแก่มอนสเตอร์ทั่วไปที่โดนโจมตี",
+        "en": "Vivian appears with a card and pulls the enemy to the card's location, dealing Fire DMG. / [Support Skill] When a teammate's attack hits an enemy, Vivian appears near that enemy, deals Fire DMG, and inflicts Fire Affliction. Switching to Vivian after her Support Skill is triggered resets the number of times her Support Skill can be triggered. / When her Support Skill is triggered, Vivian's actions change based on the enemy nearest to the teammate being controlled, and bonus effects are triggered based on each action. / If a boss enemy is nearby, she performs various Card Tricks, converting the hit enemy's DMG Taken to Suppression DMG and increasing all teammates' Suppression DMG. / If a boss is not nearby, she performs a Pole Dance, inflicting Yearning Gaze on hit normal enemies."
+      },
+      "damageType": "fire",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "th": "ดาเมจสกิลสับเปลี่ยน",
+            "en": "Switch Skill DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            179.7,
+            null,
+            null,
+            211.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "th": "จำนวนครั้งที่สกิลสนับสนุนสามารถทำงาน",
+            "en": "Support Skill Trigger Limit"
+          },
+          "unit": "times",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1,
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "th": "ดาเมจมายากลไฟของสกิลสนับสนุน",
+            "en": "Support Skill Card Tricks DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            293,
+            null,
+            null,
+            344.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 4
+        },
+        {
+          "label": {
+            "th": "เวลาแสดงผลเอฟเฟกต์เปลี่ยนดาเมจที่ได้รับ",
+            "en": "DMG Taken Conversion Effect Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            2,
+            null,
+            null,
+            2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 4
+        },
+        {
+          "label": {
+            "th": "เพิ่มดาเมจกดขี่",
+            "en": "Suppression DMG Boost"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            10,
+            null,
+            null,
+            10,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 4
+        },
+        {
+          "label": {
+            "th": "เวลาแสดงผลเพิ่มดาเมจกดขี่",
+            "en": "Suppression DMG Boost Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            3,
+            null,
+            null,
+            3,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 4
+        },
+        {
+          "label": {
+            "th": "ดาเมจโพลแดนซ์จากสกิลสนับสนุน",
+            "en": "Support Skill Pole Dance DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            321.8,
+            null,
+            null,
+            378,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 5
+        },
+        {
+          "label": {
+            "th": "เวลาแสดงผลแววตาแห่งความปรารถนา",
+            "en": "Yearning Gaze Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1,
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 5
+        },
+        {
+          "label": {
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อไฟ",
+            "en": "Fire Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "th": "คูลดาวน์สกิลสนับสนุน",
+            "en": "Support Skill Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            2,
+            null,
+            null,
+            2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "special": {
+      "name": {
+        "th": "เสน่ห์ปลายนิ้ว",
+        "en": "Alluring Gesture"
+      },
+      "desc": {
+        "th": "เต้นรำอย่างพลิ้วไหว สร้างดาเมจธาตุไฟแก่ศัตรู และมอบเอฟเฟกต์เวทีสุดตระการตาให้กับสมาชิกทีมทั้งหมด / อีกทั้งลดดาเมจที่สมาชิกทีมทั้งหมดได้รับ และฟื้นฟูพลังชีวิตตามอัตราที่กำหนดของพลังชีวิตสูงสุดของวิเวียน",
+        "en": "Vivian performs a graceful dance, dealing Fire DMG and granting all teammates Spectacular Stage. / All teammates' DMG Taken decreases and HP is restored by a portion of Vivian's Max HP."
+      },
+      "damageType": "fire",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "th": "ดาเมจ",
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            338.7,
+            null,
+            null,
+            397.8,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "th": "เวลาแสดงผลเอฟเฟกต์เวทีสุดตระการตา",
+            "en": "Spectacular Stage Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            12,
+            null,
+            null,
+            12,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "th": "ปริมาณฟื้นฟูตามสัดส่วนพลังชีวิตสูงสุด",
+            "en": "Max HP-Based Healing"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            30,
+            null,
+            null,
+            33.7,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "th": "ลดดาเมจที่ได้รับ",
+            "en": "DMG Taken Reduction"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            50,
+            null,
+            null,
+            50,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "th": "เวลาแสดงผลลดดาเมจที่ได้รับ",
+            "en": "DMG Taken Reduction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "th": "คูลดาวน์",
+            "en": "Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            11.8,
+            null,
+            null,
+            11.8,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "ultimate": {
+      "name": {
+        "th": "ที่นี่คือเวทีของฉัน",
+        "en": "Starring Role"
+      },
+      "desc": {
+        "th": "ดึงดูดสายตาด้วยการแสดงบนเวทีอันเจิดจ้า ประดับฉากไฮไลต์ สร้างดาเมจธาตุไฟแก่ศัตรู และมอบเอฟเฟกต์อ่อนแอต่อไฟ",
+        "en": "Vivian captivates the enemy with a fabulous stage performance and steals the spotlight, dealing Fire DMG and inflicting Fire Affliction."
+      },
+      "damageType": "fire",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "th": "ดาเมจ",
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            982.6,
+            null,
+            null,
+            1154.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อไฟ",
+            "en": "Fire Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            5,
             null,
             null,
             null,
@@ -479,514 +978,15 @@
         }
       ]
     },
-    "switch": {
+    "elemental": {
       "name": {
-        "th": "เริ่มต้นโชว์แห่งจินตนาการ",
-        "en": "Iiiiiit's Showtime!"
+        "en": "An Invitation to the Show"
       },
       "desc": {
-        "th": "วิเวียนจะปรากฏตัวพร้อมกับไฟ รวบรวมและดึงศัตรูเข้ามายังตำแหน่งของไฟ สร้างดาเมจธาตุไฟ / [สกิลสนับสนุน] เมื่อการโจมตีของสมาชิกทีมโดนศัตรู วิเวียนจะปรากฏตัวรอบศัตรู สร้างดาเมจธาตุไฟและมอบเอฟเฟกต์อ่อนแอต่อไฟ ซึ่งหลังจากสกิลสนับสนุนทำงาน เมื่อเปลี่ยนเป็นวิเวียนอีกครั้ง จำนวนครั้งที่สกิลสนับสนุนสามารถทำงานจะถูกรีเซต / เมื่อสกิลสนับสนุนทำงาน การกระทำของวิเวียนจะเปลี่ยนไปตามศัตรูที่อยู่ใกล้สมาชิกในทีมที่กำลังควบคุมอยู่ และจะเกิดเอฟเฟกต์เพิ่มเติมแตกต่างกันไปตามการกระทำนั้น / หากมีมอนสเตอร์บอสอยู่ใกล้ วิเวียนจะใช้มายากลไฟหลากหลายรูปแบบ เมื่อการโจมตีโดนศัตรู ดาเมจที่ศัตรูได้รับจะถูกเปลี่ยนเป็นดาเมจกดขี่ และเพิ่มดาเมจกดขี่ของสมาชิกทีมทั้งหมด / หากไม่มีมอนสเตอร์บอสอยู่ใกล้ วิเวียนจะเต้นโพลแดนซ์ มอบเอฟเฟกต์แววตาแห่งความปรารถนาแก่มอนสเตอร์ทั่วไปที่โดนโจมตี",
-        "en": "Vivian appears with a card and pulls the enemy to the card's location, dealing Fire DMG. / [Support Skill] When a teammate's attack hits an enemy, Vivian appears near that enemy, deals Fire DMG, and inflicts Fire Affliction. Switching to Vivian after her Support Skill is triggered resets the number of times her Support Skill can be triggered. / When her Support Skill is triggered, Vivian's actions change based on the enemy nearest to the teammate being controlled, and bonus effects are triggered based on each action. / If a boss enemy is nearby, she performs various Card Tricks, converting the hit enemy's DMG Taken to Suppression DMG and increasing all teammates' Suppression DMG. / If a boss is not nearby, she performs a Pole Dance, inflicting Yearning Gaze on hit normal enemies."
+        "en": "Recovers 42 Stamina upon triggering Vivian's Support Skill."
       },
-      "damageType": "fire",
       "effects": [],
-      "values": [
-        {
-          "label": {
-            "th": "ดาเมจสกิลสับเปลี่ยน",
-            "en": "Switch Skill DMG"
-          },
-          "unit": "percent",
-          "scaling": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            179.7,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "line": 1
-        },
-        {
-          "label": {
-            "th": "จำนวนครั้งที่สกิลสนับสนุนสามารถทำงาน",
-            "en": "Support Skill Trigger Limit"
-          },
-          "unit": "times",
-          "scaling": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            1,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "line": 2
-        },
-        {
-          "label": {
-            "th": "ดาเมจมายากลไฟของสกิลสนับสนุน",
-            "en": "Support Skill Card Tricks DMG"
-          },
-          "unit": "percent",
-          "scaling": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            293,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "line": 4
-        },
-        {
-          "label": {
-            "th": "เวลาแสดงผลเอฟเฟกต์เปลี่ยนดาเมจที่ได้รับ",
-            "en": "DMG Taken Conversion Effect Duration"
-          },
-          "unit": "seconds",
-          "scaling": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            2,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "line": 4
-        },
-        {
-          "label": {
-            "th": "เพิ่มดาเมจกดขี่",
-            "en": "Suppression DMG Boost"
-          },
-          "unit": "percent",
-          "scaling": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            10,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "line": 4
-        },
-        {
-          "label": {
-            "th": "เวลาแสดงผลเพิ่มดาเมจกดขี่",
-            "en": "Suppression DMG Boost Duration"
-          },
-          "unit": "seconds",
-          "scaling": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            3,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "line": 4
-        },
-        {
-          "label": {
-            "th": "ดาเมจโพลแดนซ์จากสกิลสนับสนุน",
-            "en": "Support Skill Pole Dance DMG"
-          },
-          "unit": "percent",
-          "scaling": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            321.8,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "line": 5
-        },
-        {
-          "label": {
-            "th": "เวลาแสดงผลแววตาแห่งความปรารถนา",
-            "en": "Yearning Gaze Duration"
-          },
-          "unit": "seconds",
-          "scaling": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            1,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "line": 5
-        },
-        {
-          "label": {
-            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อไฟ",
-            "en": "Fire Affliction Duration"
-          },
-          "unit": "seconds",
-          "scaling": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            5,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "line": 2
-        },
-        {
-          "label": {
-            "th": "คูลดาวน์สกิลสนับสนุน",
-            "en": "Support Skill Cooldown"
-          },
-          "unit": "seconds",
-          "scaling": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            2,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "line": 2
-        }
-      ]
-    },
-    "special": {
-      "name": {
-        "th": "เสน่ห์ปลายนิ้ว",
-        "en": "Alluring Gesture"
-      },
-      "desc": {
-        "th": "เต้นรำอย่างพลิ้วไหว สร้างดาเมจธาตุไฟแก่ศัตรู และมอบเอฟเฟกต์เวทีสุดตระการตาให้กับสมาชิกทีมทั้งหมด / อีกทั้งลดดาเมจที่สมาชิกทีมทั้งหมดได้รับ และฟื้นฟูพลังชีวิตตามอัตราที่กำหนดของพลังชีวิตสูงสุดของวิเวียน",
-        "en": "Vivian performs a graceful dance, dealing Fire DMG and granting all teammates Spectacular Stage. / All teammates' DMG Taken decreases and HP is restored by a portion of Vivian's Max HP."
-      },
-      "damageType": "fire",
-      "effects": [],
-      "values": [
-        {
-          "label": {
-            "th": "ดาเมจ",
-            "en": "DMG"
-          },
-          "unit": "percent",
-          "scaling": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            338.7,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "line": 1
-        },
-        {
-          "label": {
-            "th": "เวลาแสดงผลเอฟเฟกต์เวทีสุดตระการตา",
-            "en": "Spectacular Stage Duration"
-          },
-          "unit": "seconds",
-          "scaling": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            12,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "line": 1
-        },
-        {
-          "label": {
-            "th": "ปริมาณฟื้นฟูตามสัดส่วนพลังชีวิตสูงสุด",
-            "en": "Max HP-Based Healing"
-          },
-          "unit": "percent",
-          "scaling": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            30,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "line": 2
-        },
-        {
-          "label": {
-            "th": "ลดดาเมจที่ได้รับ",
-            "en": "DMG Taken Reduction"
-          },
-          "unit": "percent",
-          "scaling": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            50,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "line": 2
-        },
-        {
-          "label": {
-            "th": "เวลาแสดงผลลดดาเมจที่ได้รับ",
-            "en": "DMG Taken Reduction Duration"
-          },
-          "unit": "seconds",
-          "scaling": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            5,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "line": 2
-        },
-        {
-          "label": {
-            "th": "คูลดาวน์",
-            "en": "Cooldown"
-          },
-          "unit": "seconds",
-          "scaling": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            11.8,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
-        }
-      ]
-    },
-    "ultimate": {
-      "name": {
-        "th": "ที่นี่คือเวทีของฉัน",
-        "en": "Starring Role"
-      },
-      "desc": {
-        "th": "ดึงดูดสายตาด้วยการแสดงบนเวทีอันเจิดจ้า ประดับฉากไฮไลต์ สร้างดาเมจธาตุไฟแก่ศัตรู และมอบเอฟเฟกต์อ่อนแอต่อไฟ",
-        "en": "Vivian captivates the enemy with a fabulous stage performance and steals the spotlight, dealing Fire DMG and inflicting Fire Affliction."
-      },
-      "damageType": "fire",
-      "effects": [],
-      "values": [
-        {
-          "label": {
-            "th": "ดาเมจ",
-            "en": "DMG"
-          },
-          "unit": "percent",
-          "scaling": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            982.6,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "line": 1
-        },
-        {
-          "label": {
-            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อไฟ",
-            "en": "Fire Affliction Duration"
-          },
-          "unit": "seconds",
-          "scaling": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            5,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "line": 1
-        }
-      ]
+      "values": []
     }
   },
   "statuses": [
@@ -1052,5 +1052,18 @@
       },
       "effects": []
     }
-  ]
+  ],
+  "images": {
+    "portrait": "vivian-portrait.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-09-13",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "ชื่ออังกฤษคือ \"Vivian\" ไม่ใช่ Vivienne — id จึงเป็น vivian ตามจอเกม | ค่าพลังเปล่า อ่านจากจอ \"ข้อมูลรายละเอียดค่าพลัง\" ตอนถอดอุปกรณ์ออกหมดแล้ว ที่เลเวล 60 ซึ่งจอบอกว่าสูงสุด — เกมไม่มีระบบทะลุจำกัดแยกต่างหาก ระบบเสริมพลังคือปลุกพลังด้วยตัวซ้ำ ซึ่งเก็บครบหกขั้นแล้ว | สกิลครบทั้งห้าท่าแล้ว: สี่ท่าอ่านที่เลเวล 9 แพสซีฟที่เลเวล 1 จึงเติม scaling แค่ช่องนั้น ช่องอื่นเป็น null  | \"คูลดาวน์\" ของสกิลพิเศษอยู่ในตารางค่าที่เลื่อนตามเลเวล จึงเก็บเป็นบรรทัด values ไม่ใช่ช่องคงที่  | แพสซีฟแปลงค่าจาก stat ของตัวเองไปเป็นบัฟให้ทีม (ดาเมจสนับสนุน→ดาเมจธาตุไฟของเพื่อนระยะใกล้ 25% เพดาน 15% / ดาเมจกดขี่→พลังโจมตีทีม 18% เพดาน 9%) ซึ่งโครง effect ยังไม่มีวิธีเก็บ \"แปลงจาก stat อื่น\" จึงเก็บไว้ในบรรทัด values ตามที่จอเขียนก่อน  | ปลุกพลังครบหกขั้น ขั้น 6 ยังล็อกแต่จอแสดงคำอธิบายไว้ ช่อง effects เติมเฉพาะขั้นที่แปลงเป็นโครงข้อมูลได้ตรง ๆ (ขั้น 5) ขั้นอื่นมีเงื่อนไขซ้อนหรืออ้างถึงสถานะที่ยังไม่มีคำนิยาม จึงเก็บเป็นข้อความตามจอไปก่อน  | คำอธิบายตรงของ \"เวทีสุดตระการตา\" อ่านได้แล้ว: อัตราคริติคอล 5% + ดาเมจธาตุไฟ 20% ซึ่งแก้ความเข้าใจที่เดาไว้จากปลุกพลังขั้น 2 — ขั้น 2 ไม่ได้ \"เพิ่มคริติคอลให้ใหม่\" แต่ดันของเดิม 5%→10% และ 20%→60%  | statuses ใส่ effects เฉพาะอันที่คำอธิบายถูกครอบได้หมด (เวทีสุดตระการตา) อีกสามอันมีกลไกที่โครง effect ยังเขียนไม่ได้ จึงปล่อยว่างและอ่านจาก desc | อ่านอังกฤษแล้วสองจอ: ค่าพลัง (Detailed Stats) และสกิลโจมตีพื้นฐาน/สกิลพิเศษ ยังไม่ได้อ่านอังกฤษของปลุกพลังขั้น 4-6 และสถานะ \"การแสดงสุดร้อนแรง\" | จอ Info ยืนยัน \"Fire Melee\" ตรงกับ element fire + range melee ที่เก็บไว้ | ข้อความแนะนำตัวละคร (lore) อยู่นอกขอบเขต ไม่เก็บ | ชื่ออังกฤษของสกิลสับเปลี่ยนสะกดซ้ำตัว i ตามสไตล์เกม บันทึกตามที่อ่านจากจอ | \"ค่าพลังสนับสนุน 1,078\" จอ Detailed Stats เรียกว่า \"Support\" ตรงกับชื่อบทบาท จึงถอดธงออก ความหมายอธิบายไว้ในทูลทิปแล้ว | ช่อง line ของบรรทัดค่าสกิล จับคู่ตัวเลขเข้ากับคำอธิบายทีละท่อน เป็นการอ่านของคนกรอก ไม่ใช่สิ่งที่จอเขียน ใส่เฉพาะคู่ที่ใช้คำเฉพาะร่วมกันจนไม่มีทางตีความเป็นอย่างอื่น (มายากลไฟ→ท่อนบอส, โพลแดนซ์/แววตาแห่งความปรารถนา→ท่อนไม่มีบอส, อ่อนแอต่อไฟ/คูลดาวน์สกิลสนับสนุน→ท่อนสกิลสนับสนุน) ส่วน \"คูลดาวน์\" ของสกิลพิเศษเป็นค่าของทั้งสกิล ไม่ผูกกับท่อนไหน จึงไม่ใส่ line | ท่อนที่ 3 ของสกิลสับเปลี่ยนไม่มีตัวเลขของตัวเอง เพราะเป็นประโยคเกริ่นว่าการกระทำจะเปลี่ยนตามศัตรูที่อยู่ใกล้ | **2026-10-22 จอสกิลภาษาอังกฤษที่เลเวล 12 (สูงสุด)** เติม scaling ช่องที่ 12 ของสี่ท่าครบทุกบรรทัด (โจมตีพื้นฐาน 6 · สับเปลี่ยน 10 · พิเศษ 6 · อัลติเมต 2) ชื่อบรรทัดตรงกับที่เก็บไว้ทุกบรรทัด · ช่องที่ 9 เดิมยังอยู่ · แพสซีฟ Lv.1 ห้าค่าตรงกับที่เก็บไว้ | ค่าที่เลเวล 12 ส่วนใหญ่สูงขึ้น แต่บางบรรทัดคงที่ (ระยะเวลา · จำนวนครั้ง · DMG Taken Reduction 50% · Suppression DMG Boost 10%) และคูลดาวน์สกิลพิเศษ 11.8 เท่ากันทั้งสองเลเวล | **ช่องที่หก Guidance of Fire: An Invitation to the Show** Lv.2 ฟื้นฟูสเตมินา 42 เมื่อสกิลสนับสนุนทำงาน · ป๊อปอัปบอก Lv.12 = 62 (จดไว้ ไม่ใส่) · effects ว่าง เพราะโครง effect ยังไม่มีคำว่า \"ฟื้นฟูสเตมินา\" (stat stamina คือสเตมินาสูงสุด คนละอย่าง) · ชื่อไทยยังไม่เห็น | รูป portrait ตัดจากภาพในฉากที่ผู้เล่นส่งมา 2026-10-22 (1920x1080) 500x500 ช่วงหัวถึงอก"
+  }
 }

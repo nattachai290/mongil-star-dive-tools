@@ -183,6 +183,9 @@
     "melee": {
       "th": "ระยะใกล้",
       "en": "Melee"
+    },
+    "ranged": {
+      "en": "Ranged"
     }
   },
   "role": {
@@ -263,6 +266,12 @@
     "supportPower": {
       "th": "ค่าพลังสนับสนุน",
       "en": "Support"
+    },
+    "fighterPower": {
+      "en": "Fighter"
+    },
+    "assassinPower": {
+      "en": "Assassin"
     },
     "roleMastery": {
       "th": "ความเชี่ยวชาญตามบทบาท"

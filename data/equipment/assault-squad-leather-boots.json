@@ -9,10 +9,6 @@
   "slot": "footwear",
   "setId": "assault-squad-leader",
   "effects": [],
-  "desc": {
-    "th": "รองเท้าที่ให้ความรู้สึกมั่นคงราวกับฝังติดอยู่กับพื้น ทำให้วิ่งบนเส้นทางที่ขรุขระได้ทุกประเภท",
-    "en": "These boots provide a sense of grounded stability, making even the roughest paths easy to charge through."
-  },
   "source": {
     "verifiedAt": "2026-09-21",
     "gameVersion": "unknown",

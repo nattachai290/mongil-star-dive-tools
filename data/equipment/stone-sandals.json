@@ -9,10 +9,6 @@
   "slot": "footwear",
   "setId": "stone-heart",
   "effects": [],
-  "desc": {
-    "th": "รองเท้าที่อาจจะดูแข็งและใส่ไม่สบาย แต่จริงๆ แล้วก็แข็งแรงและรองรับเท้าได้อย่างมั่นคง",
-    "en": "Although they look rigid and uncomfortable, they provide excellent support and stability for the feet."
-  },
   "source": {
     "verifiedAt": "2026-09-21",
     "gameVersion": "unknown",

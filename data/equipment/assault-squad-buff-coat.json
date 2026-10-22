@@ -9,10 +9,6 @@
   "slot": "chestpiece",
   "setId": "assault-squad-leader",
   "effects": [],
-  "desc": {
-    "th": "อุปกรณ์ที่ต้องสวมใส่หากต้องการบุกทะลวงโดยไม่ต้องหลบการโจมตีของศัตรู",
-    "en": "Essential equipment for those who prefer to power through enemy attacks rather than evade them."
-  },
   "source": {
     "verifiedAt": "2026-09-21",
     "gameVersion": "unknown",

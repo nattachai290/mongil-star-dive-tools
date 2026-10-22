@@ -9,10 +9,6 @@
   "slot": "chestpiece",
   "setId": "silent-dismantler",
   "effects": [],
-  "desc": {
-    "th": "เกราะที่ตัดแผ่นเกราะทรงกลมของกาเบจมาติดเสริม สามารถสะท้อนแรงกระแทกได้ทุกชนิดโดยไม่ทิ้งแม้แต่รอยขีดข่วน",
-    "en": "A chestplate reinforced with pieces cut from Garbinator's spherical housing. It reflects any impact, leaving not even single scratch."
-  },
   "source": {
     "verifiedAt": "2026-10-03",
     "gameVersion": "unknown",
