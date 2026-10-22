@@ -9,10 +9,6 @@
   "slot": "chestpiece",
   "setId": "gourmands-grand-banquet",
   "effects": [],
-  "desc": {
-    "th": "ผ้ากันเปื้อนที่เหมาะสำหรับสวมใส่เมื่อเตรียมงานเลี้ยงอันยิ่งใหญ่ ทำให้เกิดความมั่นใจว่าสามารถทำอาหารได้ทุกชนิด แน่นอนว่ารสชาตินั้นไม่รับประกัน",
-    "en": "A great apron to wear while preparing a grand feast. It fills you with the confidence that you can make any dish. The taste, of course, is not guaranteed."
-  },
   "source": {
     "verifiedAt": "2026-09-22",
     "gameVersion": "unknown",

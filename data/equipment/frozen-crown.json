@@ -9,10 +9,6 @@
   "slot": "headgear",
   "setId": "ice-heart",
   "effects": [],
-  "desc": {
-    "th": "มงกุฎที่ประดับด้วยลูกปัดซึ่งส่งลมเย็นออกมาอย่างไม่สิ้นสุด ผู้สวมใส่มักจะรู้สึกราวกับได้รับสืบทอดอะไรบางอย่าง",
-    "en": "A crown adorned with a jewel that emits an endless chill. Wearing will compel you to seek succession."
-  },
   "source": {
     "verifiedAt": "2026-09-21",
     "gameVersion": "unknown",

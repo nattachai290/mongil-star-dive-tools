@@ -9,10 +9,6 @@
   "slot": "headgear",
   "setId": "gourmands-grand-banquet",
   "effects": [],
-  "desc": {
-    "th": "หมวกที่อัดแน่นไปด้วยความตะกละไม่รู้จบ ผู้ที่สวมหมวกใบนี้จะต้องทนทุกข์กับความหิวอยู่เสมอ หากกำลังควบคุมอาหารอยู่ แนะนำให้คิดให้ดีก่อนสวมมัน",
-    "en": "A hat with an insatiable appetite that is shared with all who wear it. So if you're watching your diet, maybe... think twice, before you try it on."
-  },
   "source": {
     "verifiedAt": "2026-09-22",
     "gameVersion": "unknown",

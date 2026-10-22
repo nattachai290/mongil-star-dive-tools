@@ -9,10 +9,6 @@
   "slot": "gloves",
   "setId": "ice-heart",
   "effects": [],
-  "desc": {
-    "th": "ถุงมือที่ตกแต่งด้วยลูกปัดซึ่งเป่าลมเย็นออกมาอย่างไม่มีที่สิ้นสุด ผู้ที่มีมือและเท้าเย็นควรระมัดระวังให้ดีเมื่อสวมใส่เป็นเวลานาน",
-    "en": "Gloves adorned with a jewel that emits an endless chill. Prolonged wear is not recommended for those with cold hands and feet."
-  },
   "source": {
     "verifiedAt": "2026-09-21",
     "gameVersion": "unknown",

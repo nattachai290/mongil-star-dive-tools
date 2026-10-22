@@ -234,10 +234,15 @@ export const equipment = z.object({
    * ไม่ใช่ในไฟล์ของแต่ละชิ้น — ไม่งั้นต้องเขียนเลขเดียวกันซ้ำ 100 ไฟล์
    */
   effects: z.array(effect).default([]),
-  desc: text.optional(),
+  /**
+   * ไม่มีช่อง desc (คำบรรยายของชิ้น) — ตัดออกจากขอบเขตตามคำสั่งผู้เล่น 2026-10-22
+   * "เก็บแค่ set effect คำบรรยายไม่เอา" ดู PLAN §13.7.1
+   * ตัดออกจาก schema เลย ไม่ใช่แค่ลบข้อมูล ไฟล์ที่ใส่ desc กลับมาจะไม่ผ่าน validate
+   * (คำอธิบายใต้ [Set Effect] ยังเก็บอยู่ที่ sets.json bonuses[].desc คนละเรื่องกัน)
+   */
   images: z.object({ icon: z.string().optional() }).optional(),
   source,
-});
+}).strict();
 
 /** โบนัสเซ็ต อยู่ใน data/meta/sets.json เพราะเป็นของกลางที่ equipment หลายชิ้นอ้างถึง */
 export const equipmentSet = z.object({

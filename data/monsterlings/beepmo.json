@@ -1,0 +1,43 @@
+{
+  "id": "beepmo",
+  "name": {
+    "th": "บีปโม",
+    "en": "Beepmo"
+  },
+  "dex": {
+    "book": "field",
+    "no": 173
+  },
+  "speciesEffects": [
+    {
+      "kind": "buff",
+      "stat": "def",
+      "value": 4.69,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "onHit",
+      "durationSec": 5,
+      "condition": {
+        "hitCount": 10,
+        "triggerEnemyType": "ice"
+      }
+    }
+  ],
+  "effectsRank": "gold",
+  "images": {
+    "icon": "beepmo-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "fieldsUnverified": [
+      "effectsRank"
+    ],
+    "note": "อ่านจากจอกระเป๋า > Monsterlings **ภาษาอังกฤษ** 2026-10-22 · ชื่อไทย (บีปโม) กับเลขได้จากสมุดภาพ · **ยังไม่มีจอไทยของ Rank Effect** | effectsRank เก็บเป็น gold ตามที่ทั้งไฟล์ใช้ **แต่ติดธงไว้** หัวพาเนลเขียนว่า \"Prime\" ซึ่งไม่ใช่ชื่อสีของแรง | จอเขียน \"DEF +4.69% for 5s upon attacking Ice enemy 10 times\" — ธาตุน้ำแข็งเป็นธาตุของศัตรูที่ต้องไปตี จึงเป็น triggerEnemyType แบบไททัส (183) ที่ใช้ประโยคเดียวกันกับธาตุสายฟ้า | จอไม่ได้แสดงบล็อกลิงก์เชน และจอลิงก์เชนไม่มีการ์ดของตัวนี้ (ไม่มีลิงก์เชน) | ลักษณะสี่ค่าบนชิปตรงกับตาราง"
+  }
+}

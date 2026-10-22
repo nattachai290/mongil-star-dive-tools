@@ -9,10 +9,6 @@
   "slot": "headgear",
   "setId": "gluttons-visage",
   "effects": [],
-  "desc": {
-    "th": "หมวกที่เป็นสัญลักษณ์แห่งความตะกละที่ไม่สิ้นสุด หมวกมีกลิ่นแปลกๆ ลอยออกมา",
-    "en": "A hat representing endless hunger. It has an odd lingering odor."
-  },
   "source": {
     "verifiedAt": "2026-09-21",
     "gameVersion": "unknown",

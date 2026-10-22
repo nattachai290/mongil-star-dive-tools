@@ -9,10 +9,6 @@
   "slot": "gloves",
   "setId": "silent-dismantler",
   "effects": [],
-  "desc": {
-    "th": "ถุงมือที่นำตะขอของกาเบจมาติดไว้บริเวณปลายนิ้ว สิ่งใดก็ตามที่ถูกกำไว้จะถูกฉีกกระชากออกจนไม่เหลือ",
-    "en": "Gloves with Garbinator's hooks attached to the fingertips. Just one grasp will cleave flesh clean from bone."
-  },
   "source": {
     "verifiedAt": "2026-10-03",
     "gameVersion": "unknown",

@@ -9,10 +9,6 @@
   "slot": "gloves",
   "setId": "onsaes-dance",
   "effects": [],
-  "desc": {
-    "th": "ถุงมือที่ทำจากขนที่คัดเลือกเฉพาะส่วนที่นุ่มที่สุดมา แต่ถึงแม้จะนุ่ม ก็อัดแน่นไปด้วยพลังที่เปี่ยมล้น",
-    "en": "These gloves are crafted from only the softest fur. They may feel gentle to the touch, but they brim with youkai energy."
-  },
   "source": {
     "verifiedAt": "2026-09-21",
     "gameVersion": "unknown",

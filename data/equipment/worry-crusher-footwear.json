@@ -9,10 +9,6 @@
   "slot": "footwear",
   "setId": "thought-shredder",
   "effects": [],
-  "desc": {
-    "th": "รองเท้าบูตหนาที่แข็งแรงจนเดินเหยียบกองเศษเหล็กก็ไม่เป็นอะไร ไม่ต้องคอยระวังว่ากำลังเหยียบอะไรอยู่ใต้เท้าอีกต่อไป",
-    "en": "A pair of thick boots that can withstand walking over piles of scrap metal, so you can walk safely without concern for the soles of your feet."
-  },
   "source": {
     "verifiedAt": "2026-10-03",
     "gameVersion": "unknown",

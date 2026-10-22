@@ -9,10 +9,6 @@
   "slot": "chestpiece",
   "setId": "mystical-jade-odong",
   "effects": [],
-  "desc": {
-    "th": "เครื่องประดับต้นสนถูกผลิตขึ้นเป็นเครื่องรางเพื่ออวยพรให้ปลอดภัยจากการต่อสู้ และดูเหมือนว่าเครื่องรางนี้จะได้ผลจริงๆ!",
-    "en": "This piece of armor is decorated with protective Jade Odong charms meant to safeguard you in battle. Surprisingly, the charms seem to actually work!"
-  },
   "source": {
     "verifiedAt": "2026-09-21",
     "gameVersion": "unknown",
