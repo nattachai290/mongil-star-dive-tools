@@ -60,7 +60,82 @@
       "trigger": "passive"
     }
   ],
-  "awaken": [],
+  "awaken": [
+    {
+      "stage": 1,
+      "name": {
+        "en": "Feel This"
+      },
+      "desc": {
+        "en": "Enemies hit with Francis's Special Skill fall into the Elixir of Love state for 3s."
+      },
+      "effects": []
+    },
+    {
+      "stage": 2,
+      "name": {
+        "en": "Spare Nothing!"
+      },
+      "desc": {
+        "en": "When Francis uses her Special Skill during combat, she gains On-the-Fly Diagnosis. Love Frenzy inflicts Earth Affliction on enemies while On-the-Fly Diagnosis is active."
+      },
+      "effects": []
+    },
+    {
+      "stage": 3,
+      "name": {
+        "en": "Honesty, Please?"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Special Skill's cooldown decreases by 4.5%."
+      },
+      "effects": [],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 4,
+      "name": {
+        "en": "No Comparisons!"
+      },
+      "desc": {
+        "en": "The ATK Boost of On-the-Fly Diagnosis is enhanced to 35%. Taking a hit while this effect is active triggers Healing Over Time, which restores HP equal to 10% of Francis's ATK for 5s."
+      },
+      "effects": []
+    },
+    {
+      "stage": 5,
+      "name": {
+        "en": "Hotter and More Intense"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 6,
+      "name": {
+        "en": "Love Overcomes Pain!"
+      },
+      "desc": {
+        "en": "If a Vial falls within the Experimental Drug Field created by Francis's Ultimate Skill, a Massive Explosion is triggered 1 time(s). / Massive Explosion: Deals Earth DMG equal to 100% of Francis's Ultimate Skill DMG and increases the Elemental Weakness DMG taken by enemies by 30% for 10s."
+      },
+      "effects": []
+    }
+  ],
   "skills": {
     "basic": {
       "name": {
@@ -393,7 +468,169 @@
       },
       "damageType": "earth",
       "effects": [],
-      "values": []
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            451.4,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "ATK-Based Healing"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            13.8,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Earth Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Experimental Drug Field Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            15,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "passive": {
+      "name": {
+        "en": "Preventative Care"
+      },
+      "desc": {
+        "en": "Francis's ATK increases by an amount equal to any received Earth DMG Boosts, but doesn't increase beyond the max conversion ratio. / Hitting an enemy with her Basic Attack has a chance of generating Love Frenzy, and it is always generated when hitting an enemy with inflicted with Earth Affliction."
+      },
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Earth DMG Boost Max Conversion Ratio"
+          },
+          "unit": "percent",
+          "scaling": [
+            20,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Chance of Triggering Love Frenzy"
+          },
+          "unit": "percent",
+          "scaling": [
+            20,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
     },
     "elemental": {
       "name": {
@@ -438,6 +675,15 @@
         "en": "Afflicted targets take Earth DMG over time, and Earth and Physical RES decrease by 15%."
       },
       "effects": []
+    },
+    {
+      "name": {
+        "en": "Elixir of Love"
+      },
+      "desc": {
+        "en": "Afflicted targets fall in love and cannot move."
+      },
+      "effects": []
     }
   ],
   "images": {
@@ -450,6 +696,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Support · Earth · Ranged · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวปกติ ไม่ใช่ Francis: Summer Dive! (คนละไฟล์ francis-summer-dive) | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 1,866 · DEF 686 · HP 10,662 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,678 · DEF 609 · HP 9,272 · Crit 5% / 50%** — ตรงกับ Daisy (Earth Support 4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 11.59% · Support 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · ไม่มีบรรทัดธาตุ · **Special Skill Cooldown Reduction 4.5% ไม่เก็บ** (แบบ Sera — มาจากปลุกพลัง ยืนยันเมื่อเห็นจอปลุกพลัง) | **สกิลบนจอบัญชีนี้ Lv.13 ทั้งสี่ช่อง (\"Level 9 +4\")** · Passive Lv.1 · Guidance of Earth Inactive Lv.1 | Switch Outpatient Check-up (Physical · Lv.13 · สามท่อน Switch / Tag-out / Support) | Guidance of Earth Do You Need a New Prescription?: **ค่า Lv.12 = 20.5% จากป๊อปอัป Skill Info (Lv. 1 >> Lv. 12)** จอหลัก Lv.1 = 15% · ฟื้น HP ตัวที่สลับเข้ามา 20.5% ของ ATK ของ Francis → kind heal target ally onSwitchOut + note (ไม่ใช่ % ของ Max HP แบบ Daisy) | **2026-10-22 รอบสาม** ตาราง Switch ครบหกแถว (Earth Affliction 5 วินาที · Support Skill Cooldown 16 วินาที) · Effect Details: On-the-Fly Diagnosis (ATK +17% · ฟื้น HP 12% ของ ATK) · Earth Affliction | On-the-Fly Diagnosis ไม่ใส่เป็น effect ใน Switch — ท่อน Tag-out ไม่บอกผู้รับ และ Tag-out คือตอนสลับออก จึงไม่ชัดว่ากฎ \"ไม่บอก = ตัวเอง\" ใช้ได้ไหม เก็บเป็นสถานะไว้ก่อน | Basic This Might Pinch! (Lv.13 · หกแถว) · Ultimate An Exciting New Trial! (Lv.13): **คำอธิบายครบ แต่ตารางค่าอยู่ใต้ขอบ (เห็นแค่ขอบตัวอักษร \"DMG\") → values ว่าง** | ยังไม่ได้อ่าน: ตาราง Ultimate · Special · Passive · ปลุกพลัง · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Support · Earth · Ranged · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวปกติ ไม่ใช่ Francis: Summer Dive! (คนละไฟล์ francis-summer-dive) | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 1,866 · DEF 686 · HP 10,662 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,678 · DEF 609 · HP 9,272 · Crit 5% / 50%** — ตรงกับ Daisy (Earth Support 4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 11.59% · Support 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · ไม่มีบรรทัดธาตุ · **Special Skill Cooldown Reduction 4.5% ไม่เก็บ** (แบบ Sera — มาจากปลุกพลัง ยืนยันเมื่อเห็นจอปลุกพลัง) | **สกิลบนจอบัญชีนี้ Lv.13 ทั้งสี่ช่อง (\"Level 9 +4\")** · Passive Lv.1 · Guidance of Earth Inactive Lv.1 | Switch Outpatient Check-up (Physical · Lv.13 · สามท่อน Switch / Tag-out / Support) | Guidance of Earth Do You Need a New Prescription?: **ค่า Lv.12 = 20.5% จากป๊อปอัป Skill Info (Lv. 1 >> Lv. 12)** จอหลัก Lv.1 = 15% · ฟื้น HP ตัวที่สลับเข้ามา 20.5% ของ ATK ของ Francis → kind heal target ally onSwitchOut + note (ไม่ใช่ % ของ Max HP แบบ Daisy) | **2026-10-22 รอบสาม** ตาราง Switch ครบหกแถว (Earth Affliction 5 วินาที · Support Skill Cooldown 16 วินาที) · Effect Details: On-the-Fly Diagnosis (ATK +17% · ฟื้น HP 12% ของ ATK) · Earth Affliction | On-the-Fly Diagnosis ไม่ใส่เป็น effect ใน Switch — ท่อน Tag-out ไม่บอกผู้รับ และ Tag-out คือตอนสลับออก จึงไม่ชัดว่ากฎ \"ไม่บอก = ตัวเอง\" ใช้ได้ไหม เก็บเป็นสถานะไว้ก่อน | Basic This Might Pinch! (Lv.13 · หกแถว) · Ultimate An Exciting New Trial! (Lv.13): **คำอธิบายครบ แต่ตารางค่าอยู่ใต้ขอบ (เห็นแค่ขอบตัวอักษร \"DMG\") → values ว่าง** | **2026-10-22 รอบสี่** ตาราง Ultimate (Lv.13 · 451.4% · ฮีล 13.8% · Experimental Drug Field 15 วินาที) · Passive Preventative Care (\"with inflicted with\" ซ้ำคำตามจอ) · ปลุกพลังครบหกขั้น · Effect Details Elixir of Love (ขั้น 1) | **ยืนยันแล้ว: Special Skill Cooldown Reduction 4.5% มาจากปลุกพลังขั้น 3 (แบบ Sera)** — ไม่เก็บใน otherStats ถูกต้อง | **On-the-Fly Diagnosis สองจอไม่ตรงกัน: ปุ่ม Effects ของ Switch (Lv.13) ขึ้น \"HP restored 12% of Francis's ATK\" แต่ปุ่ม Effects ของปลุกพลังขั้น 2 ขึ้น \"6%\"** (ATK +17% เท่ากัน) — เก็บข้อความจาก Switch ไว้ในสถานะ อาจโตตามเลเวล Switch · ไม่เดา | effects: ขั้น 5 Basic +6% · ขั้นอื่นเก็บเป็นข้อความ | ยังไม่ได้อ่าน: Special · จอไทยทั้งหมด"
   }
 }
