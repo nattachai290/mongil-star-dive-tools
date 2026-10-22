@@ -1,0 +1,31 @@
+{
+  "id": "reina",
+  "name": {
+    "en": "Reina"
+  },
+  "rarity": 4,
+  "element": "lightning",
+  "role": "destroyer",
+  "range": "melee",
+  "stats": {
+    "atLevel": 60,
+    "hp": 8389,
+    "atk": 1908,
+    "def": 598,
+    "critRate": 5,
+    "critDmg": 50
+  },
+  "awaken": [],
+  "images": {
+    "portrait": "reina-portrait.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Destroyer · **Lightning** (ธาตุที่สี่) · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลักจากจอ Info: ATK 1,908 · DEF 598 · HP 8,389 · Crit 5% / 50% — จอตัวอย่างไม่มีของติด (ตัวอื่นที่เปิดจอ Detailed Stats คู่กันตรงกันทุกตัว) · **ยังไม่ได้เปิด Detailed Stats** จึงยังไม่มี otherStats (คาดว่าจะมี Neutralization DMG Boost 11.59% และ Destroyer 1,026 ตามแบบตัว 4 ดาว Destroyer แต่ไม่ใส่จากการคาด) | รูป portrait ตัดจากจอ Info 420x420 | ยังไม่ได้อ่าน: Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลัง · จอไทยทั้งหมด"
+  }
+}
