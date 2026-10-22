@@ -1,0 +1,31 @@
+{
+  "id": "sera",
+  "name": {
+    "en": "Sera"
+  },
+  "rarity": 4,
+  "element": "ice",
+  "role": "fighter",
+  "range": "melee",
+  "stats": {
+    "atLevel": 60,
+    "hp": 9272,
+    "atk": 1766,
+    "def": 580,
+    "critRate": 5,
+    "critDmg": 50
+  },
+  "awaken": [],
+  "images": {
+    "portrait": "sera-portrait.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Fighter · Ice · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 1,964 · DEF 653 · HP 10,662 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,766 · DEF 580 · HP 9,272 · Crit 5% / 50%** — DEF 580 แบบ 4 ดาวตัวอื่น · HP 9,272 เท่า Daisy · **ATK 1,766 ยังไม่ซ้ำกับตัวไหน** | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | ยังไม่ได้อ่าน: Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลัง · จอไทยทั้งหมด"
+  }
+}
