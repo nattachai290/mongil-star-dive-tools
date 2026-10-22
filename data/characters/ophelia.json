@@ -737,6 +737,15 @@
         "en": "Ophelia's attack element changes to Ice. Crit Rate increases by 15%."
       },
       "effects": []
+    },
+    {
+      "name": {
+        "en": "Ice Affliction"
+      },
+      "desc": {
+        "en": "Afflicted targets take Ice DMG over time, and Ice RES decreases by 15%."
+      },
+      "effects": []
     }
   ],
   "images": {
@@ -749,6 +758,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Fighter · Ice · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,943 · DEF 638 · HP 10,243 · Crit 5% / 50% อ่านจากจอตรง ๆ — เท่ากับ Vivian ทุกค่า | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Brawl DMG Boost 12.18% · Fighter 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Switch Crystalline Leap (211.1%) · Special Flowing Frost (ตารางแปดแถว อ่านจากจอที่เลื่อนลง) | **2026-10-22 รอบสาม** Basic Achouffe Swordsmanship (Physical, แปดแถว) · Ultimate Judgment (882%) · Passive Amethyst Witch (4 วินาที) · Effect Details ของ Amethyst Witch (จากปุ่ม Effects ของ Basic) · Guidance of Ice Frost-Wave Blade Swordsman (ดาเมจโจมตีพื้นฐาน +36% เมื่อใช้ Switch Skill, 15 วินาที) · ปลุกพลังครบหกขั้น | ปลุกพลัง: จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส · effects: ขั้น 3 Special +6% · ขั้น 5 Basic +6% · ขั้นอื่นเก็บเป็นข้อความ | **ชื่อขั้น 1–5 ลงท้ายด้วย \"...\" ตามจอ** (ขั้น 6 ไม่มี) | ปุ่ม Effects ของ Ultimate ยังไม่ได้เปิด → ยังไม่มีสถานะ Ice Affliction | ยังไม่ได้อ่าน: Effect Details ของ Ultimate · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Fighter · Ice · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,943 · DEF 638 · HP 10,243 · Crit 5% / 50% อ่านจากจอตรง ๆ — เท่ากับ Vivian ทุกค่า | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Brawl DMG Boost 12.18% · Fighter 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Switch Crystalline Leap (211.1%) · Special Flowing Frost (ตารางแปดแถว อ่านจากจอที่เลื่อนลง) | **2026-10-22 รอบสาม** Basic Achouffe Swordsmanship (Physical, แปดแถว) · Ultimate Judgment (882%) · Passive Amethyst Witch (4 วินาที) · Effect Details ของ Amethyst Witch (จากปุ่ม Effects ของ Basic) · Guidance of Ice Frost-Wave Blade Swordsman (ดาเมจโจมตีพื้นฐาน +36% เมื่อใช้ Switch Skill, 15 วินาที) · ปลุกพลังครบหกขั้น | ปลุกพลัง: จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส · effects: ขั้น 3 Special +6% · ขั้น 5 Basic +6% · ขั้นอื่นเก็บเป็นข้อความ | **ชื่อขั้น 1–5 ลงท้ายด้วย \"...\" ตามจอ** (ขั้น 6 ไม่มี) | Effect Details ของ Ultimate: Ice Affliction (อ่านจากจอ) | ยังไม่ได้อ่าน: จอไทยทั้งหมด"
   }
 }
