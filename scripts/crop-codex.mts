@@ -21,11 +21,17 @@ import { existsSync, mkdirSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import sharp from "sharp";
 
+/** เลื่อนกรอบทั้งชุด หน่วยเป็น px ของภาพกว้าง referenceWidth — ใส่เฉพาะทิศที่ใช้ก็ได้ */
+type Shift = { up?: number; down?: number; left?: number; right?: number };
 type CropConfig = {
   referenceWidth: number;
   box: { width: number; height: number };
   columnsX: number[];
   rowsY: number[];
+  /** เลื่อนทุกภาพ — แก้ตรงนี้แทนการไล่ลบเลขใน columnsX / rowsY */
+  shift?: Shift;
+  /** เลื่อนเพิ่มเฉพาะภาพ เช่น { "183.png": { "up": 15 } } บวกต่อจาก shift */
+  shiftBySheet?: Record<string, Shift>;
   output: { size: number; quality: number };
 };
 type DexEntry = { book: string; no: number; slug: string | null };
@@ -40,6 +46,43 @@ const config = readJson<CropConfig>(join(ROOT, "assets-src", "codex-crop.json"))
 const dex = readJson<{ entries: DexEntry[] }>(join(ROOT, "data", "meta", "monster-dex.json"));
 
 const preview = process.argv.includes("--preview");
+
+/**
+ * แปลง { up, down, left, right } เป็นระยะเลื่อน dx, dy
+ * พิมพ์ทิศผิด (เช่น "upp") ต้องหยุด ไม่งั้นกรอบไม่ขยับแล้วจะงงว่าทำไม
+ */
+const SHIFT_KEYS = new Set(["up", "down", "left", "right"]);
+function toOffset(shift: Shift | undefined, where: string): { dx: number; dy: number } {
+  if (!shift) return { dx: 0, dy: 0 };
+  for (const [k, v] of Object.entries(shift)) {
+    if (k.startsWith("_")) continue;
+    if (!SHIFT_KEYS.has(k)) {
+      console.error(`${where}: ไม่รู้จักทิศ "${k}" — ใช้ได้แค่ up / down / left / right`);
+      process.exit(1);
+    }
+    if (typeof v !== "number" || !Number.isFinite(v)) {
+      console.error(`${where}.${k} ต้องเป็นตัวเลข (ได้ ${JSON.stringify(v)})`);
+      process.exit(1);
+    }
+  }
+  return {
+    dx: (shift.right ?? 0) - (shift.left ?? 0),
+    dy: (shift.down ?? 0) - (shift.up ?? 0),
+  };
+}
+const globalShift = toOffset(config.shift, "shift");
+function describeShift(dx: number, dy: number): string {
+  const parts: string[] = [];
+  if (dy) parts.push(dy < 0 ? `ขึ้น ${-dy}` : `ลง ${dy}`);
+  if (dx) parts.push(dx < 0 ? `ซ้าย ${-dx}` : `ขวา ${dx}`);
+  return parts.join(" ");
+}
+// ชื่อภาพใน shiftBySheet ที่ไม่มีอยู่จริง = พิมพ์ชื่อไฟล์ผิด กรอบจะไม่ขยับโดยไม่มีใครรู้
+for (const name of Object.keys(config.shiftBySheet ?? {})) {
+  if (!name.startsWith("_") && !existsSync(join(INPUT, name))) {
+    console.warn(`⚠ shiftBySheet มี "${name}" แต่ไม่มีไฟล์นี้ใน assets-src/codex/ — ชื่อตรงกันไหม`);
+  }
+}
 const perSheet = config.columnsX.length * config.rowsY.length;
 
 // คีย์เป็น book+no เพราะแต่ละเล่มเริ่มนับ No.1 ใหม่ เลขอย่างเดียวชี้ตัวไม่ได้
@@ -115,6 +158,11 @@ for (const { file, book, startNo } of parsed.sort((a, b) => a.book.localeCompare
   // ภาพกว้างไม่เท่า 1920 ก็ใช้ได้ พิกัดถูกย่อ/ขยายตามอัตราส่วน
   const k = width / config.referenceWidth;
   const s = (n: number) => Math.round(n * k);
+  const own = toOffset(config.shiftBySheet?.[file], `shiftBySheet["${file}"]`);
+  const dx = globalShift.dx + own.dx;
+  const dy = globalShift.dy + own.dy;
+  const imgW = meta.width ?? 0;
+  const imgH = meta.height ?? 0;
 
   let i = 0;
   for (const y of config.rowsY) {
@@ -132,8 +180,19 @@ for (const { file, book, startNo } of parsed.sort((a, b) => a.book.localeCompare
         skipped.push(`${book} No.${no} — ยังไม่มี slug (รอชื่ออังกฤษ)`);
         continue;
       }
+      const left = s(x + dx);
+      const top = s(y + dy);
+      const bw = s(config.box.width);
+      const bh = s(config.box.height);
+      // เลื่อนมากไปจนกรอบหลุดขอบภาพ sharp จะโยน error ที่อ่านไม่รู้เรื่อง — บอกเองดีกว่า
+      if (left < 0 || top < 0 || (imgW && left + bw > imgW) || (imgH && top + bh > imgH)) {
+        console.error(
+          `${file}: กรอบของ No.${no} หลุดขอบภาพ (เลื่อนรวม ${describeShift(dx, dy)}) — ลดค่าใน shift / shiftBySheet`,
+        );
+        process.exit(1);
+      }
       const pipeline = sharp(path)
-        .extract({ left: s(x), top: s(y), width: s(config.box.width), height: s(config.box.height) })
+        .extract({ left, top, width: bw, height: bh })
         .resize(config.output.size, config.output.size, {
           fit: "contain",
           background: { r: 0, g: 0, b: 0, alpha: 0 },
@@ -148,7 +207,8 @@ for (const { file, book, startNo } of parsed.sort((a, b) => a.book.localeCompare
       written += 1;
     }
   }
-  console.log(`${file}: ${book} No.${startNo}–${startNo + perSheet - 1}`);
+  const moved = dx || dy ? ` (เลื่อน ${describeShift(dx, dy)})` : "";
+  console.log(`${file}: ${book} No.${startNo}–${startNo + perSheet - 1}${moved}`);
 }
 
 console.log(`\nตัดแล้ว ${written} ครั้ง ได้ไฟล์จริง ${writtenBy.size} รูป -> ${preview ? PREVIEW : OUTPUT}`);
@@ -194,4 +254,4 @@ if (maybeSilhouette.length) {
   for (const line of maybeSilhouette) console.log(`  ? ${line}`);
   console.log("  (มอนบางตัวสีเทาจริง ๆ ก็ติดรายการนี้ได้ ดูรูปก่อนตัดสิน)");
 }
-if (preview) console.log("\nเปิดดูใน assets-src/preview/ ว่ากรอบตรงไหม ถ้าเบี้ยวแก้ตัวเลขใน assets-src/codex-crop.json");
+if (preview) console.log("\nเปิดดูใน assets-src/preview/ ว่ากรอบตรงไหม ถ้าเบี้ยวใส่ตัวเลขใน shift (up / down / left / right) ของ assets-src/codex-crop.json");

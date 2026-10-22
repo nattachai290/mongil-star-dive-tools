@@ -1,8 +1,16 @@
 {
-  "_note": "พิกัดกรอบรูปมอนในหน้า Monster Codex อ้างอิงภาพกว้าง 1920px ถ้าภาพกว้างอื่นสคริปต์จะย่อ/ขยายพิกัดให้เอง ปรับตัวเลขที่นี่ได้เลยไม่ต้องแก้โค้ด",
+  "_note": "พิกัดกรอบรูปมอนในหน้า Monster Codex อ้างอิงภาพกว้าง 1920px ถ้าภาพกว้างอื่นสคริปต์จะย่อ/ขยายให้เอง",
+  "_howto": "กรอบเบี้ยว? ไม่ต้องแก้ columnsX / rowsY — ใส่ตัวเลขใน shift แทน เช่น \"up\": 15 = เลื่อนกรอบขึ้น 15px · ใช้ up / down / left / right · เบี้ยวแค่บางภาพ ใส่ใน shiftBySheet ตามชื่อไฟล์ ค่าจะบวกต่อจาก shift · แล้วรัน npm run crop:codex -- --preview ดูผลใน assets-src/preview/",
   "referenceWidth": 1920,
   "box": { "width": 168, "height": 140 },
   "columnsX": [768, 1038, 1308, 1578],
   "rowsY": [208, 532],
+
+  "shift": { "up": 0, "down": 0, "left": 0, "right": 0 },
+
+  "shiftBySheet": {
+    "_example": { "183.png": { "up": 15 } }
+  },
+
   "output": { "size": 256, "quality": 88 }
 }
