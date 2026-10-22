@@ -1,0 +1,31 @@
+{
+  "id": "nagi",
+  "name": {
+    "en": "Nagi"
+  },
+  "rarity": 5,
+  "element": "wind",
+  "role": "destroyer",
+  "range": "ranged",
+  "stats": {
+    "atLevel": 60,
+    "hp": 9537,
+    "atk": 2049,
+    "def": 656,
+    "critRate": 5,
+    "critDmg": 50
+  },
+  "awaken": [],
+  "images": {
+    "portrait": "nagi-portrait.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Destroyer · Wind · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** — Destroyer 5 ดาวตัวแรก | ค่าพลังห้าค่าหลัก: ATK 2,049 · DEF 656 · HP 9,537 · Crit 5% / 50% — เท่ากับ Esther ทุกตัว (5 ดาว Wind เหมือนกัน) อ่านจากจอตรง ๆ · ยังไม่ได้เปิด Detailed Stats | **ชื่อซ้ำกับมอนสเตอร์ลิง Nagi (field 166)** — id \"nagi\" ใช้ได้ทั้งคู่เพราะอยู่คนละหมวด (characters / monsterlings) และ URL ต่างกัน · คำบรรยายตัวละครบอกว่าเป็นผู้นำเผ่างู ส่วนมอนสเตอร์ลิง Nagi เป็นหุ่นยนต์เซกเตอร์ 3 — ไม่มีหลักฐานว่าเกี่ยวกัน จึงไม่ได้ผูกถึงกัน | รูป portrait ตัดจากจอ Info 380x380 | ยังไม่ได้อ่าน: Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลัง · จอไทยทั้งหมด"
+  }
+}
