@@ -15,7 +15,796 @@
     "critRate": 5,
     "critDmg": 50
   },
-  "awaken": [],
+  "otherStats": [
+    {
+      "kind": "buff",
+      "stat": "neutralizationDmg",
+      "value": 12.18,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "weaknessHit"
+      ],
+      "value": 125,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "energyGain",
+      "value": 100,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "stamina",
+      "value": 100,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "destroyerPower",
+      "value": 1078,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
+  "awaken": [
+    {
+      "stage": 1,
+      "name": {
+        "en": "Birth of a Genius Magus"
+      },
+      "desc": {
+        "en": "The amount of strikes in Dragon's Ambush increases to 12 while Dragon's Ambush is active. / Also, Dragon's Mark's DEF Reduction Rate increases to 15%."
+      },
+      "effects": []
+    },
+    {
+      "stage": 2,
+      "name": {
+        "en": "Noble Daughter of the Scarlet House"
+      },
+      "desc": {
+        "en": "Dragon's Breath's Fire DMG Boost increases to 40% and its duration increases to 15s. / Also, when Flare gains Dragon's Breath, the same effect will be granted to her teammates."
+      },
+      "effects": []
+    },
+    {
+      "stage": 3,
+      "name": {
+        "en": "Explosion Junkie"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Tag-out Skill DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "tagOutSkill"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 4,
+      "name": {
+        "en": "Firepower Specialist of the 9th Brigade"
+      },
+      "desc": {
+        "en": "Flare's Passive Trait is enhanced, increasing Blaze Zone's DMG Ratio to 69% and its duration to 5s. / Also, the Blaze Zone spreads across the surrounding ground 1 time."
+      },
+      "effects": []
+    },
+    {
+      "stage": 5,
+      "name": {
+        "en": "Burn It All!"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Ultimate Skill DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "ultimate"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 6,
+      "name": {
+        "en": "Dragon Power, Awaken!"
+      },
+      "desc": {
+        "en": "The Fire dragon wraps itself in a blaze, awakening into a Blazing Dragon. / Flare's Special Skill unleashes an even more powerful breath, increasing its total DMG by 248%. / Her Ultimate Skill expands its attack range, and while Dragon's Ambush is active, its total DMG increases by 174%. / Upon using her Tag-out Skill, a Blasting Blazeball with increased blast range is launched, knocking hit enemies Airborne."
+      },
+      "effects": []
+    }
+  ],
+  "skills": {
+    "basic": {
+      "name": {
+        "en": "Fire Blast"
+      },
+      "desc": {
+        "en": "Flare deals Fire DMG by launching a fireball at an enemy."
+      },
+      "damageType": "fire",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            13,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            28,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "3rd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            72.3,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "4th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            72.8,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Air Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            100.5,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Evasion Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            227.5,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "switch": {
+      "name": {
+        "en": "Wings of Fire"
+      },
+      "desc": {
+        "en": "Flare appears near a teammate, spreading dragon wings that deal Fire DMG to nearby enemies and unleashing multiple homing fireballs at random targets to deal bonus Fire DMG. / [Tag-out Skill] Flare summons a Fire dragon that launches a Fire Sphere, piercing through enemies, dealing Fire DMG, and inflicting Fire Affliction."
+      },
+      "damageType": "fire",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Melee DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            36.3,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Fireball DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            326.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Fire Sphere DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            197.9,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Fire Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "special": {
+      "name": {
+        "en": "Dragon's Breath"
+      },
+      "desc": {
+        "en": "Flare summons a Fire dragon at an enemy's location. The Fire dragon unleashes powerful breath, dealing Fire DMG."
+      },
+      "damageType": "fire",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            654.7,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            12.1,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "ultimate": {
+      "name": {
+        "en": "Dragon Storm"
+      },
+      "desc": {
+        "en": "Flare sends a Fire dragon flying toward the enemy. The dragon sweeps forward, knocking enemies Airborne, deals Fire DMG, and inflicts Fire Affliction. / Flare enters Dragon's Ambush for a set duration. / Dragon's Ambush: For the duration of Dragon's Ambush, the Fire dragon flies across the sky and swoops down on enemies, dealing Fire DMG and inflicting Fire Affliction. Hit enemies are inflicted with Dragon's Mark, decreasing their DEF."
+      },
+      "damageType": "fire",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            706.7,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Dragon Ambush DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            116.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "Dragon Ambush Count"
+          },
+          "unit": "times",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            9,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "Dragon Ambush Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            11,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "DEF Reduction Rate"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "DEF Reduction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            8,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "Fire Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "passive": {
+      "name": {
+        "en": "Fire Zone"
+      },
+      "desc": {
+        "en": "Flare's attacks create a Blaze Zone that deals Fire DMG equal to a portion of her ATK. / When Flare enters the Blaze Zone, she gains Dragon's Breath, which grants a Fire DMG Boost."
+      },
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Blaze Zone DMG Ratio"
+          },
+          "unit": "percent",
+          "scaling": [
+            8,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Blaze Zone Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            3,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Fire DMG Boost Rate"
+          },
+          "unit": "percent",
+          "scaling": [
+            7,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Fire DMG Boost Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            3,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "elemental": {
+      "name": {
+        "en": "Dragon Blood"
+      },
+      "desc": {
+        "en": "Using a Switch Skill increases all Fire teammates' ATK by 28.8%. (Duration: 10s)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "atk",
+          "value": 28.8,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onSwitch",
+          "durationSec": 10,
+          "condition": {
+            "note": {
+              "en": "all Fire teammates"
+            }
+          }
+        }
+      ],
+      "values": []
+    }
+  },
   "images": {
     "portrait": "flare-portrait.webp"
   },
@@ -26,6 +815,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Destroyer · Fire · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 2,155 · DEF 638 · HP 9,272 · Crit 5% / 50% อ่านจากจอตรง ๆ — **ATK สูงกว่าตัว 5 ดาวอื่นที่ลงไว้ (2,049 / 1,943) และ HP ต่ำกว่า** ไม่ได้ปรับให้เข้าแบบ | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | ยังไม่ได้อ่าน: Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลัง · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Destroyer · Fire · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 2,155 · DEF 638 · HP 9,272 · Crit 5% / 50% อ่านจากจอตรง ๆ — **ATK สูงกว่าตัว 5 ดาวอื่นที่ลงไว้ (2,049 / 1,943) และ HP ต่ำกว่า** ไม่ได้ปรับให้เข้าแบบ | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Neutralization DMG Boost 12.18% · Destroyer 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Basic Fire Blast · Ultimate Dragon Storm (706.7%, Dragon Ambush 116.6% x 9 ครั้ง) · Passive Fire Zone · Guidance of Fire Dragon Blood (ATK +28.8% ให้เพื่อนธาตุไฟทั้งทีม → target team + note) | ปลุกพลัง (จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส) · effects: ขั้น 3 Tag-out +6% · ขั้น 5 Ultimate +6% · ขั้นอื่นเก็บเป็นข้อความ | **2026-10-22 รอบสาม** Switch Wings of Fire · Special Dragon's Breath (654.7%, คูลดาวน์ 12.1 วินาที) · ตาราง Ultimate ที่เลื่อนลงครบเจ็ดแถว (Dragon Ambush Duration 11s · DEF Reduction 5% / 8s · Fire Affliction 5s) · ปลุกพลังขั้น 1 Birth of a Genius Magus → ครบหกขั้น | **สกิลพิเศษชื่อ \"Dragon's Breath\" ซ้ำกับชื่อบัฟของ Passive** — ตามจอทั้งสองที่ | ปุ่ม Effects ของ Switch / Ultimate ยังไม่ได้เปิด → ยังไม่มี statuses (Fire Affliction / Dragon's Mark) | ยังไม่ได้อ่าน: Effect Details · จอไทยทั้งหมด"
   }
 }
