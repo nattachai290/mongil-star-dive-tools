@@ -1,0 +1,23 @@
+{
+  "id": "narae",
+  "name": {
+    "en": "Narae"
+  },
+  "rarity": 5,
+  "element": "ice",
+  "role": "supporter",
+  "range": "ranged",
+  "awaken": [],
+  "images": {
+    "portrait": "narae-portrait.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (มีปุ่ม Quick Power Up / Max Level — ไม่ใช่จอ Character Preview) · **ยังไม่มีจอไทย** | Support · Ice · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | **ไม่เก็บค่าพลัง** — จอขึ้น ATK 2,063 · DEF 719 · HP 12,388 · Crit 12.5% / 92.5% ซึ่ง Crit ไม่ใช่ฐาน 5% / 50% แปลว่าติดอุปกรณ์หรือมอนอยู่ (กฎ: stats ต้องเป็นค่าเปล่า) · รอจอ Character Preview หรือจอที่ถอดของแล้ว | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | ยังไม่ได้อ่าน: ค่าพลังเปล่า · Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลัง · จอไทยทั้งหมด"
+  }
+}
