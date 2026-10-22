@@ -60,14 +60,280 @@
       "trigger": "passive"
     }
   ],
-  "awaken": [],
+  "awaken": [
+    {
+      "stage": 2,
+      "name": {
+        "en": "Let's Get Drenched!"
+      },
+      "desc": {
+        "en": "When Francis's Support Skill is triggered, all teammates are granted a 6% DMG Boost against boss enemies. The effect is granted at max stacks upon using her Ultimate Skill. (Max Stacks: 3, Duration: 6s, New stacks reset the duration) / Also, if the target is a melee type, the duration of Summer's Vitality increases to 4s."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "value": 6,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onSupportSkill",
+          "durationSec": 6,
+          "maxStacks": 3,
+          "condition": {
+            "vsBoss": true,
+            "note": {
+              "en": "granted at max stacks upon using her Ultimate Skill · New stacks reset the duration"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "stage": 3,
+      "name": {
+        "en": "With Love Hotter than the Sun"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 4,
+      "name": {
+        "en": "A Summer Festival for Everyone"
+      },
+      "desc": {
+        "en": "Francis: Summer Dive!'s Ultimate Skill DMG increases by 100%. / Her Ultimate Skill gains effects identical to her Support Skill: all teammates are granted a Healing Over Time effect, and melee type teammates on the field are additionally granted Summer's Vitality. / Francis: Summer Dive!'s Ultimate Gauge increases by 100% when a Burst is triggered."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "ultimate"
+          ],
+          "value": 100,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ]
+    },
+    {
+      "stage": 5,
+      "name": {
+        "en": "Beach Volleyball, a Summer Festival, and...♡"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Ultimate Skill DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "ultimate"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 6,
+      "name": {
+        "en": "Unforgettable Midsummer Night"
+      },
+      "desc": {
+        "en": "The ATK Boost from Summer On-the-Fly Diagnosis increases to 40%. Also, the Earth DMG Boost granted to Earth teammates increases to 60%."
+      },
+      "effects": []
+    }
+  ],
   "skills": {
+    "basic": {
+      "name": {
+        "en": "Refreshing Swim"
+      },
+      "desc": {
+        "en": "Francis deals Earth DMG by shooting a water gun and throwing a beach volleyball at an enemy. / Summer Frenzy is generated at a set rate and explodes upon touching the ground, dealing Earth DMG equal to a portion of her Basic Attack."
+      },
+      "damageType": "earth",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            18.2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            33.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "3rd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            65.3,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Summer Frenzy DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            25,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Air Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            97.9,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Evasion Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            227.5,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
     "switch": {
       "name": {
         "en": "How to Enjoy Summer"
       },
       "desc": {
-        "en": "… / [Support Skill] Francis: Summer Dive!'s Support Skill triggers when a teammate lands their Special Skill on the enemy. She appears near the enemy, deals Earth DMG, and inflicts Earth Affliction. / All teammates' HP is restored over time based on Francis: Summer Dive!'s ATK. She also grants Summer's Vitality to melee-type teammates on the field."
+        "en": "Francis: Summer Dive! appears near the enemy and stretches casually, triggering a water bucket that dumps water on the enemy and deals Earth DMG. / If the Special Skill button is pressed at the right time, a photo of Francis: Summer Dive! is taken. Then, her Special Skill activates immediately. This Special Skill activates regardless of its cooldown. Attack Speed Boost and Reduction effects do not apply while photos are being taken. / [Support Skill] Francis: Summer Dive!'s Support Skill triggers when a teammate lands their Special Skill on the enemy. She appears near the enemy, deals Earth DMG, and inflicts Earth Affliction. / All teammates' HP is restored over time based on Francis: Summer Dive!'s ATK. She also grants Summer's Vitality to melee-type teammates on the field."
       },
       "damageType": "earth",
       "effects": [],
@@ -94,7 +360,8 @@
             null,
             null,
             null
-          ]
+          ],
+          "line": 1
         },
         {
           "label": {
@@ -119,7 +386,7 @@
             null,
             null
           ],
-          "line": 2
+          "line": 3
         },
         {
           "label": {
@@ -144,7 +411,7 @@
             null,
             null
           ],
-          "line": 2
+          "line": 3
         },
         {
           "label": {
@@ -169,7 +436,7 @@
             null,
             null
           ],
-          "line": 3
+          "line": 4
         },
         {
           "label": {
@@ -194,7 +461,7 @@
             null,
             null
           ],
-          "line": 3
+          "line": 4
         },
         {
           "label": {
@@ -219,7 +486,7 @@
             null,
             null
           ],
-          "line": 3
+          "line": 4
         },
         {
           "label": {
@@ -244,7 +511,7 @@
             null,
             null
           ],
-          "line": 2
+          "line": 3
         }
       ]
     },
@@ -449,6 +716,149 @@
           ]
         }
       ]
+    },
+    "ultimate": {
+      "name": {
+        "en": "Cool Summer Vacation"
+      },
+      "desc": {
+        "en": "Francis unleashes powerful attacks with her water gun, dealing Earth DMG and inflicting Earth Affliction."
+      },
+      "damageType": "earth",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            482.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Earth Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "passive": {
+      "name": {
+        "en": "Preventative Care on Summer Vacation"
+      },
+      "desc": {
+        "en": "Francis's ATK increases by an amount equal to any received Earth DMG Boosts, but doesn't increase beyond the max conversion ratio. / Hitting an enemy with her Basic Attack has a chance of generating Summer Frenzy, and it's always generated when Summer On-the-Fly Diagnosis is active."
+      },
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Earth DMG Boost Max Conversion Ratio"
+          },
+          "unit": "percent",
+          "scaling": [
+            25,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Summer Frenzy Generation Rate"
+          },
+          "unit": "percent",
+          "scaling": [
+            25,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "elemental": {
+      "name": {
+        "en": "The Return of Summer"
+      },
+      "desc": {
+        "en": "DMG Taken by all teammates decreases by 26% upon triggering Francis: Summer Dive!'s Support Skill. (Duration: 6s)"
+      },
+      "effects": [
+        {
+          "kind": "debuff",
+          "stat": "dmgTaken",
+          "value": 26,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onSupportSkill",
+          "durationSec": 6
+        }
+      ],
+      "values": []
     }
   },
   "statuses": [
@@ -481,6 +891,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Support · Earth · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** · id ตามชื่ออังกฤษ \"Francis: Summer Dive!\" แบบ verna-summer-dive | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับ Narae / Isabella / Brisshell: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,063 · DEF 758 · HP 11,779 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,855 · DEF 673 · HP 10,243 · Crit 5% / 50%** — ทั้งสามค่าเคยเห็นแล้ว (ATK 1,855 เท่า Jiwon / Narae · DEF 673 เท่า Gabi · HP 10,243 เท่า Vivian / Ophelia) | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 12.18% · Support 1,078 · Ultimate 100% · Stamina 100 · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · ไม่มีบรรทัดธาตุ | **Switch How to Enjoy Summer: จอที่ส่งมาเลื่อนลงแล้ว ท่อนแรก (คำอธิบาย Switch Skill) พ้นจอ → desc ขึ้นต้นด้วย \"…\"** · ตารางเจ็ดแถวครบ · Switch Skill DMG ไม่ใส่ line เพราะยังไม่เห็นท่อนแรก | Special Summer's Herald of Love (ตารางเจ็ดแถวจากสองจอ · เพื่อนธาตุดินได้ Earth DMG +40% 15 วินาที → effect target team + note) · Effect Details: Summer's Vitality · Earth Affliction · ปุ่ม Effects ของ Special ยังไม่ได้เปิด (Summer On-the-Fly Diagnosis) | **Guidance of Earth ขึ้น \"Inactive\"** บนจอบัญชีนี้ | ยังไม่ได้อ่าน: Switch ท่อนแรก · Basic · Ultimate · Passive · Guidance of Earth · Summer On-the-Fly Diagnosis · ปลุกพลัง · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Support · Earth · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** · id ตามชื่ออังกฤษ \"Francis: Summer Dive!\" แบบ verna-summer-dive | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับ Narae / Isabella / Brisshell: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,063 · DEF 758 · HP 11,779 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,855 · DEF 673 · HP 10,243 · Crit 5% / 50%** — ทั้งสามค่าเคยเห็นแล้ว (ATK 1,855 เท่า Jiwon / Narae · DEF 673 เท่า Gabi · HP 10,243 เท่า Vivian / Ophelia) | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 12.18% · Support 1,078 · Ultimate 100% · Stamina 100 · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · ไม่มีบรรทัดธาตุ | Special Summer's Herald of Love (ตารางเจ็ดแถวจากสองจอ · เพื่อนธาตุดินได้ Earth DMG +40% 15 วินาที → effect target team + note) · Effect Details: Summer's Vitality · Earth Affliction · ปุ่ม Effects ของ Special ยังไม่ได้เปิด (Summer On-the-Fly Diagnosis) | **Guidance of Earth ขึ้น \"Inactive\"** บนจอบัญชีนี้ | **2026-10-22 รอบสาม** Switch ท่อนแรกครบแล้ว (จอบนสุด) · Basic Refreshing Swim · Ultimate Cool Summer Vacation (482.6%) · Passive Preventative Care on Summer Vacation · Guidance of Earth The Return of Summer: **ค่า Lv.12 = 26% จากป๊อปอัป Skill Info (Lv. 1 >> Lv. 12)** — จอหลักขึ้น Inactive Lv.1 = 15% | ปลุกพลังขั้น 2–6 (ล็อกทุกขั้นในบัญชีนี้) · effects: ขั้น 2 ทีมดาเมจใส่บอส +6% ซ้อน 3 ชั้น · ขั้น 3 Basic +6% · ขั้น 4 Ultimate +100% · ขั้น 5 Ultimate +6% · ขั้น 6 เก็บเป็นข้อความ (เปลี่ยนค่าของสถานะ) · ชื่อขั้น 5 มี \"♡\" ตามจอ | ยังไม่ได้อ่าน: ปลุกพลังขั้น 1 · Effect Details Summer On-the-Fly Diagnosis · จอไทยทั้งหมด"
   }
 }
