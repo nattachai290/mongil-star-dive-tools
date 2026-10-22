@@ -15,7 +15,462 @@
     "critRate": 5,
     "critDmg": 50
   },
+  "otherStats": [
+    {
+      "kind": "buff",
+      "stat": "supportDmg",
+      "value": 12.18,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "weaknessHit"
+      ],
+      "value": 125,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "energyGain",
+      "value": 100,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "stamina",
+      "value": 100,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "supportPower",
+      "value": 1078,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
   "awaken": [],
+  "skills": {
+    "switch": {
+      "name": {
+        "en": "How to Enjoy Summer"
+      },
+      "desc": {
+        "en": "… / [Support Skill] Francis: Summer Dive!'s Support Skill triggers when a teammate lands their Special Skill on the enemy. She appears near the enemy, deals Earth DMG, and inflicts Earth Affliction. / All teammates' HP is restored over time based on Francis: Summer Dive!'s ATK. She also grants Summer's Vitality to melee-type teammates on the field."
+      },
+      "damageType": "earth",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Switch Skill DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            112.7,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Support Skill DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            162,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Support Skill Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            12,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Healing Over Time ATK-Based Healing"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            10.8,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "Healing Over Time Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "Summer's Vitality Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            3,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "Earth Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "special": {
+      "name": {
+        "en": "Summer's Herald of Love"
+      },
+      "desc": {
+        "en": "Francis boldly flaunts her attractiveness in her swimsuit as camera flashes burst around her, dealing Earth DMG and inflicting Earth Affliction. / She grants all teammates Summer On-the-Fly Diagnosis and additionally grants Earth DMG Boosts to Earth teammates. Summer On-the-Fly Diagnosis does not stack with other On-the-Fly Diagnosis effects. / After her Switch Skill photo, even more camera flashes go off, and Francis strikes a final heart pose, dealing even more Earth DMG to enemies."
+      },
+      "damageType": "earth",
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "damageType": "earth",
+          "value": 40,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onSpecialSkill",
+          "durationSec": 15,
+          "condition": {
+            "note": {
+              "en": "Earth teammates"
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            81.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Post-Shot DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            178.5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "ATK-Based Healing"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5.2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Summer On-the-Fly Diagnosis Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            15,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Earth DMG Boost"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            40,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Earth DMG Boost Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            15,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            13.2,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    }
+  },
+  "statuses": [
+    {
+      "name": {
+        "en": "Summer's Vitality"
+      },
+      "desc": {
+        "en": "Movement Speed and Attack Speed increase by 30%."
+      },
+      "effects": []
+    },
+    {
+      "name": {
+        "en": "Earth Affliction"
+      },
+      "desc": {
+        "en": "Afflicted targets take Earth DMG over time, and Earth and Physical RES decrease by 15%."
+      },
+      "effects": []
+    }
+  ],
   "images": {
     "portrait": "francis-summer-dive-portrait.webp"
   },
@@ -26,6 +481,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Support · Earth · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** · id ตามชื่ออังกฤษ \"Francis: Summer Dive!\" แบบ verna-summer-dive | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับ Narae / Isabella / Brisshell: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,063 · DEF 758 · HP 11,779 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,855 · DEF 673 · HP 10,243 · Crit 5% / 50%** — ทั้งสามค่าเคยเห็นแล้ว (ATK 1,855 เท่า Jiwon / Narae · DEF 673 เท่า Gabi · HP 10,243 เท่า Vivian / Ophelia) | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | ยังไม่ได้อ่าน: Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลัง · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Support · Earth · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** · id ตามชื่ออังกฤษ \"Francis: Summer Dive!\" แบบ verna-summer-dive | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับ Narae / Isabella / Brisshell: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,063 · DEF 758 · HP 11,779 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,855 · DEF 673 · HP 10,243 · Crit 5% / 50%** — ทั้งสามค่าเคยเห็นแล้ว (ATK 1,855 เท่า Jiwon / Narae · DEF 673 เท่า Gabi · HP 10,243 เท่า Vivian / Ophelia) | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 12.18% · Support 1,078 · Ultimate 100% · Stamina 100 · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · ไม่มีบรรทัดธาตุ | **Switch How to Enjoy Summer: จอที่ส่งมาเลื่อนลงแล้ว ท่อนแรก (คำอธิบาย Switch Skill) พ้นจอ → desc ขึ้นต้นด้วย \"…\"** · ตารางเจ็ดแถวครบ · Switch Skill DMG ไม่ใส่ line เพราะยังไม่เห็นท่อนแรก | Special Summer's Herald of Love (ตารางเจ็ดแถวจากสองจอ · เพื่อนธาตุดินได้ Earth DMG +40% 15 วินาที → effect target team + note) · Effect Details: Summer's Vitality · Earth Affliction · ปุ่ม Effects ของ Special ยังไม่ได้เปิด (Summer On-the-Fly Diagnosis) | **Guidance of Earth ขึ้น \"Inactive\"** บนจอบัญชีนี้ | ยังไม่ได้อ่าน: Switch ท่อนแรก · Basic · Ultimate · Passive · Guidance of Earth · Summer On-the-Fly Diagnosis · ปลุกพลัง · จอไทยทั้งหมด"
   }
 }
