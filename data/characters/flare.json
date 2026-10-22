@@ -805,6 +805,17 @@
       "values": []
     }
   },
+  "statuses": [
+    {
+      "name": {
+        "en": "Fire Affliction"
+      },
+      "desc": {
+        "en": "Afflicted targets take Fire DMG over time, and Fire RES decreases by 15%."
+      },
+      "effects": []
+    }
+  ],
   "images": {
     "portrait": "flare-portrait.webp"
   },
@@ -815,6 +826,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Destroyer · Fire · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 2,155 · DEF 638 · HP 9,272 · Crit 5% / 50% อ่านจากจอตรง ๆ — **ATK สูงกว่าตัว 5 ดาวอื่นที่ลงไว้ (2,049 / 1,943) และ HP ต่ำกว่า** ไม่ได้ปรับให้เข้าแบบ | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Neutralization DMG Boost 12.18% · Destroyer 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Basic Fire Blast · Ultimate Dragon Storm (706.7%, Dragon Ambush 116.6% x 9 ครั้ง) · Passive Fire Zone · Guidance of Fire Dragon Blood (ATK +28.8% ให้เพื่อนธาตุไฟทั้งทีม → target team + note) | ปลุกพลัง (จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส) · effects: ขั้น 3 Tag-out +6% · ขั้น 5 Ultimate +6% · ขั้นอื่นเก็บเป็นข้อความ | **2026-10-22 รอบสาม** Switch Wings of Fire · Special Dragon's Breath (654.7%, คูลดาวน์ 12.1 วินาที) · ตาราง Ultimate ที่เลื่อนลงครบเจ็ดแถว (Dragon Ambush Duration 11s · DEF Reduction 5% / 8s · Fire Affliction 5s) · ปลุกพลังขั้น 1 Birth of a Genius Magus → ครบหกขั้น | **สกิลพิเศษชื่อ \"Dragon's Breath\" ซ้ำกับชื่อบัฟของ Passive** — ตามจอทั้งสองที่ | ปุ่ม Effects ของ Switch / Ultimate ยังไม่ได้เปิด → ยังไม่มี statuses (Fire Affliction / Dragon's Mark) | ยังไม่ได้อ่าน: Effect Details · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Destroyer · Fire · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 2,155 · DEF 638 · HP 9,272 · Crit 5% / 50% อ่านจากจอตรง ๆ — **ATK สูงกว่าตัว 5 ดาวอื่นที่ลงไว้ (2,049 / 1,943) และ HP ต่ำกว่า** ไม่ได้ปรับให้เข้าแบบ | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Neutralization DMG Boost 12.18% · Destroyer 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Basic Fire Blast · Ultimate Dragon Storm (706.7%, Dragon Ambush 116.6% x 9 ครั้ง) · Passive Fire Zone · Guidance of Fire Dragon Blood (ATK +28.8% ให้เพื่อนธาตุไฟทั้งทีม → target team + note) | ปลุกพลัง (จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส) · effects: ขั้น 3 Tag-out +6% · ขั้น 5 Ultimate +6% · ขั้นอื่นเก็บเป็นข้อความ | **2026-10-22 รอบสาม** Switch Wings of Fire · Special Dragon's Breath (654.7%, คูลดาวน์ 12.1 วินาที) · ตาราง Ultimate ที่เลื่อนลงครบเจ็ดแถว (Dragon Ambush Duration 11s · DEF Reduction 5% / 8s · Fire Affliction 5s) · ปลุกพลังขั้น 1 Birth of a Genius Magus → ครบหกขั้น | **สกิลพิเศษชื่อ \"Dragon's Breath\" ซ้ำกับชื่อบัฟของ Passive** — ตามจอทั้งสองที่ | Effect Details จากปุ่ม Effects ของ Switch: Fire Affliction (อ่านจากจอ) · ปุ่ม Effects ของ Ultimate ยังไม่ได้เปิด — Dragon's Mark อาจมีคำอธิบายแยก ยังไม่เก็บ | ยังไม่ได้อ่าน: Effect Details ของ Ultimate · จอไทยทั้งหมด"
   }
 }
