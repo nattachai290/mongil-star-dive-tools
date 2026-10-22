@@ -15,7 +15,96 @@
     "critRate": 5,
     "critDmg": 50
   },
-  "awaken": [],
+  "otherStats": [
+    {
+      "kind": "buff",
+      "stat": "brawlDmg",
+      "value": 11.59,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "weaknessHit"
+      ],
+      "value": 125,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "energyGain",
+      "value": 100,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "stamina",
+      "value": 100,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "fighterPower",
+      "value": 1026,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
+  "awaken": [
+    {
+      "stage": 1,
+      "name": {
+        "en": "Zero Tolerance of Injustice"
+      },
+      "desc": {
+        "en": "Using Verna's Special Skill immediately activates her Passive Trait effects. / Her Special Skill's range changes, and its total DMG increases by 20%."
+      },
+      "effects": []
+    },
+    {
+      "stage": 2,
+      "name": {
+        "en": "Running Ever Forward!"
+      },
+      "desc": {
+        "en": "A 20% Crit Rate boost is added to Verna's Passive Trait effects and their duration increases by 2s."
+      },
+      "effects": []
+    },
+    {
+      "stage": 3,
+      "name": {
+        "en": "Fervent Heart"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    }
+  ],
   "images": {
     "portrait": "verna-portrait.webp"
   },
@@ -26,6 +115,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Fighter · Fire · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวปกติ ไม่ใช่ Verna: Summer Dive! (คนละไฟล์ verna-summer-dive) | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,063 · DEF 653 · HP 10,154 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,855 · DEF 580 · HP 8,830 · Crit 5% / 50%** — ตรงกับ Cloud (4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | ยังไม่ได้อ่าน: Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลัง · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Fighter · Fire · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวปกติ ไม่ใช่ Verna: Summer Dive! (คนละไฟล์ verna-summer-dive) | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,063 · DEF 653 · HP 10,154 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,855 · DEF 580 · HP 8,830 · Crit 5% / 50%** — ตรงกับ Cloud (4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Brawl DMG Boost 11.59% · Fighter 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · **Fire DMG Boost 0.7% ไม่เก็บ** (ไม่ได้มาจากอาหาร ตัว Preview ไม่มีบรรทัดนี้ — แบบเดียวกับ Ice DMG 1.3% ของ Narae / Isabella) | ปลุกพลังขั้น 1–3 · **บัญชีนี้ปลุกพลังครบหกขั้นแล้ว (\"Awakening Complete\" ทุกขั้น) → สกิลบนจอบัญชีจะเป็นเลเวล 16 ไม่ใช่ 12** ต้องเก็บค่าลงช่อง scaling 16 | ยังไม่ได้อ่าน: สกิลทั้งหกช่อง · ปลุกพลังขั้น 4–6 · จอไทยทั้งหมด"
   }
 }
