@@ -62,6 +62,16 @@
   ],
   "awaken": [
     {
+      "stage": 1,
+      "name": {
+        "en": "Tiger Hunter's Instinct"
+      },
+      "desc": {
+        "en": "All enemies caught by Leeho's Special Skill's net are inflicted with a Prey Mark. (Only activates when Leeho is being controlled)"
+      },
+      "effects": []
+    },
+    {
       "stage": 2,
       "name": {
         "en": "Unyielding Spirit"
@@ -534,11 +544,285 @@
         "en": "A Whopper!"
       },
       "desc": {
-        "en": "Leeho throws his net forward, dealing Fire DMG and pulling in hit enemies. If Leeho is being controlled, all hit enemies are inflicted with Prey Mark. / [Support Skill] When a teammate uses a Special Skill during combat, Leeho descends from above the nearest enemy, dealing Fire DMG and inflicting Fire Affliction. After the attack, Leeho enters Hunting Stance for a set duration. / …"
+        "en": "Leeho throws his net forward, dealing Fire DMG and pulling in hit enemies. If Leeho is being controlled, all hit enemies are inflicted with Prey Mark. / [Support Skill] When a teammate uses a Special Skill during combat, Leeho descends from above the nearest enemy, dealing Fire DMG and inflicting Fire Affliction. After the attack, Leeho enters Hunting Stance for a set duration. / Switching to Leeho while he's in Hunting Stance unleashes Blazing Flash, dealing powerful Fire DMG to all enemies in front of him and inflicting Prey Mark effect on hit enemies."
       },
       "damageType": "fire",
       "effects": [],
-      "values": []
+      "values": [
+        {
+          "label": {
+            "en": "Net Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            54.5,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Support Skill DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            197.5,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Support Skill Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            12,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Fire Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Blazing Flash DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            309.2,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        }
+      ]
+    },
+    "special": {
+      "name": {
+        "en": "Commence Hunt"
+      },
+      "desc": {
+        "en": "Leeho charges at the enemy, stabs with his spear, and spins around while swinging his spear, dealing Fire DMG. / If the button is pressed again within a set time after using the skill, he will throw a Net, dealing Fire DMG and dragging in hit enemies."
+      },
+      "damageType": "fire",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Spear Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            132,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Net Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            33,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            11.8,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "ultimate": {
+      "name": {
+        "en": "Crimson Meteor"
+      },
+      "desc": {
+        "en": "Leeho soars into the air and stalks his prey for a set duration. After that duration passes, or when the skill button is pressed again, he slams down on the targeted location, dealing powerful Fire DMG and inflicting Fire Affliction."
+      },
+      "damageType": "fire",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Descending Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            756.2,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Fire Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
     },
     "passive": {
       "name": {
@@ -643,6 +927,17 @@
       "values": []
     }
   },
+  "statuses": [
+    {
+      "name": {
+        "en": "Fire Affliction"
+      },
+      "desc": {
+        "en": "Afflicted targets take Fire DMG over time, and Fire RES decreases by 15%."
+      },
+      "effects": []
+    }
+  ],
   "images": {
     "portrait": "leeho-portrait.webp"
   },
@@ -653,6 +948,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Assassin · Fire · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวละครชายตัวที่สาม | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,181 · DEF 653 · HP 9,647 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,961 · DEF 580 · HP 8,389 · Crit 5% / 50%** — ตรงกับ Angel (Fire Assassin 4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 11.59% · Assassin 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · Fire DMG Boost 0.7% ไม่เก็บ (แบบ Verna) | **สกิลบนจอบัญชีนี้: Basic / Special / Ultimate Lv.5 (\"Level 1 +4\") · Switch Lv.13 · Guidance of Fire Lv.2** — Basic Wild Spear เก็บลงช่อง scaling 5 | **2026-10-22 รอบสาม** ตาราง Basic ส่วนที่เลื่อนลง +6 แถว (Tiger Hunter · Enhanced Basic Attack) → 15 แถว · แถวสุดท้ายที่เห็นคือ Enhanced Basic Attack Slam DMG ก่อนกล่อง Material Used — ถ้ามีต่ออีกยังไม่เห็น | Passive Hunter (Prey Mark ลด Fire RES ศัตรู 5% 15 วินาที → effect debuff res fire) · Guidance of Fire My Grand Entrance!: **ค่า Lv.12 = 6.9% จากป๊อปอัป Skill Info (Lv. 2 >> Lv. 12)** จอหลัก Lv.2 = 5.9% | **Switch A Whopper! (\"Level 9 +4\" = Lv.13)**: เห็นคำอธิบายสองท่อนแรก ส่วนที่เหลือและตารางอยู่ใต้กล่อง Material Used → desc ลงท้ายด้วย \"…\" · values ว่าง | **2026-10-22 รอบสี่** ปลุกพลังขั้น 2–6 (บัญชีนี้ปลุกครบหกขั้น) · effects: ขั้น 2 Basic +10% 3 วินาที · ขั้น 3 Basic +6% · ขั้น 5 ลดคูลดาวน์ Support 4.5% เก็บเป็นข้อความ · ขั้น 4 / 6 เก็บเป็นข้อความ | ยังไม่ได้อ่าน: ปลุกพลังขั้น 1 · Switch ส่วนที่เลื่อนลง + ตาราง · Special · Ultimate · Effect Details · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Assassin · Fire · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวละครชายตัวที่สาม | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,181 · DEF 653 · HP 9,647 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,961 · DEF 580 · HP 8,389 · Crit 5% / 50%** — ตรงกับ Angel (Fire Assassin 4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 11.59% · Assassin 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · Fire DMG Boost 0.7% ไม่เก็บ (แบบ Verna) | **สกิลบนจอบัญชีนี้: Basic / Special / Ultimate Lv.5 (\"Level 1 +4\") · Switch Lv.13 · Guidance of Fire Lv.2** — Basic Wild Spear เก็บลงช่อง scaling 5 | **2026-10-22 รอบสาม** ตาราง Basic ส่วนที่เลื่อนลง +6 แถว (Tiger Hunter · Enhanced Basic Attack) → 15 แถว · แถวสุดท้ายที่เห็นคือ Enhanced Basic Attack Slam DMG ก่อนกล่อง Material Used — ถ้ามีต่ออีกยังไม่เห็น | Passive Hunter (Prey Mark ลด Fire RES ศัตรู 5% 15 วินาที → effect debuff res fire) · Guidance of Fire My Grand Entrance!: **ค่า Lv.12 = 6.9% จากป๊อปอัป Skill Info (Lv. 2 >> Lv. 12)** จอหลัก Lv.2 = 5.9% | **2026-10-22 รอบสี่** ปลุกพลังขั้น 2–6 (บัญชีนี้ปลุกครบหกขั้น) · effects: ขั้น 2 Basic +10% 3 วินาที · ขั้น 3 Basic +6% · ขั้น 5 ลดคูลดาวน์ Support 4.5% เก็บเป็นข้อความ · ขั้น 4 / 6 เก็บเป็นข้อความ | **2026-10-22 รอบห้า** Switch A Whopper! ครบสามท่อน + ตารางห้าแถว (**Lv.13 — \"Level 9 +4\" → scaling ช่อง 13**) · Special Commence Hunt (Lv.5 · 132% · คูลดาวน์ 11.8 วินาที) · Ultimate Crimson Meteor (Lv.5 · 756.2%) · Effect Details Fire Affliction · ปลุกพลังขั้น 1 → ครบหกขั้น | **หน้าเว็บแสดงเลเวลสูงสุดที่มีค่าของแต่ละสกิล — Leeho จะขึ้น Basic / Special / Ultimate ที่ Lv.5 และ Switch ที่ Lv.13** · ค่า Lv.12 ยังต้องใช้จอ Preview | ยังไม่ได้อ่าน: ค่า Lv.12 ของ Basic / Special / Ultimate · จอไทยทั้งหมด"
   }
 }
