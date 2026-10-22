@@ -62,6 +62,16 @@
   ],
   "awaken": [
     {
+      "stage": 1,
+      "name": {
+        "en": "Overture of a Love-Filled Festival"
+      },
+      "desc": {
+        "en": "When Francis: Summer Dive!'s Support Skill is triggered while Summer On-the-Fly Diagnosis is active, the skill's cooldown decreases by 7s. This effect can be triggered up to 2 time(s). / A new trigger condition is added to the Support Skill, and it now also triggers when a teammate's Basic Attack hits the enemy."
+      },
+      "effects": []
+    },
+    {
       "stage": 2,
       "name": {
         "en": "Let's Get Drenched!"
@@ -526,6 +536,20 @@
       "effects": [
         {
           "kind": "buff",
+          "stat": "atk",
+          "value": 20,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onSpecialSkill",
+          "durationSec": 15,
+          "condition": {
+            "note": {
+              "en": "Summer On-the-Fly Diagnosis · does not stack with other On-the-Fly Diagnosis effects"
+            }
+          }
+        },
+        {
+          "kind": "buff",
           "stat": "dmgDealt",
           "damageType": "earth",
           "value": 40,
@@ -864,6 +888,15 @@
   "statuses": [
     {
       "name": {
+        "en": "Summer On-the-Fly Diagnosis"
+      },
+      "desc": {
+        "en": "ATK increases by 20%, and HP is restored by an amount equal to 3% of Francis: Summer Dive!'s ATK."
+      },
+      "effects": []
+    },
+    {
+      "name": {
         "en": "Summer's Vitality"
       },
       "desc": {
@@ -891,6 +924,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Support · Earth · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** · id ตามชื่ออังกฤษ \"Francis: Summer Dive!\" แบบ verna-summer-dive | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับ Narae / Isabella / Brisshell: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,063 · DEF 758 · HP 11,779 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,855 · DEF 673 · HP 10,243 · Crit 5% / 50%** — ทั้งสามค่าเคยเห็นแล้ว (ATK 1,855 เท่า Jiwon / Narae · DEF 673 เท่า Gabi · HP 10,243 เท่า Vivian / Ophelia) | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 12.18% · Support 1,078 · Ultimate 100% · Stamina 100 · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · ไม่มีบรรทัดธาตุ | Special Summer's Herald of Love (ตารางเจ็ดแถวจากสองจอ · เพื่อนธาตุดินได้ Earth DMG +40% 15 วินาที → effect target team + note) · Effect Details: Summer's Vitality · Earth Affliction · ปุ่ม Effects ของ Special ยังไม่ได้เปิด (Summer On-the-Fly Diagnosis) | **Guidance of Earth ขึ้น \"Inactive\"** บนจอบัญชีนี้ | **2026-10-22 รอบสาม** Switch ท่อนแรกครบแล้ว (จอบนสุด) · Basic Refreshing Swim · Ultimate Cool Summer Vacation (482.6%) · Passive Preventative Care on Summer Vacation · Guidance of Earth The Return of Summer: **ค่า Lv.12 = 26% จากป๊อปอัป Skill Info (Lv. 1 >> Lv. 12)** — จอหลักขึ้น Inactive Lv.1 = 15% | ปลุกพลังขั้น 2–6 (ล็อกทุกขั้นในบัญชีนี้) · effects: ขั้น 2 ทีมดาเมจใส่บอส +6% ซ้อน 3 ชั้น · ขั้น 3 Basic +6% · ขั้น 4 Ultimate +100% · ขั้น 5 Ultimate +6% · ขั้น 6 เก็บเป็นข้อความ (เปลี่ยนค่าของสถานะ) · ชื่อขั้น 5 มี \"♡\" ตามจอ | ยังไม่ได้อ่าน: ปลุกพลังขั้น 1 · Effect Details Summer On-the-Fly Diagnosis · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Support · Earth · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** · id ตามชื่ออังกฤษ \"Francis: Summer Dive!\" แบบ verna-summer-dive | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับ Narae / Isabella / Brisshell: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,063 · DEF 758 · HP 11,779 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,855 · DEF 673 · HP 10,243 · Crit 5% / 50%** — ทั้งสามค่าเคยเห็นแล้ว (ATK 1,855 เท่า Jiwon / Narae · DEF 673 เท่า Gabi · HP 10,243 เท่า Vivian / Ophelia) | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 12.18% · Support 1,078 · Ultimate 100% · Stamina 100 · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · ไม่มีบรรทัดธาตุ | Special Summer's Herald of Love (ตารางเจ็ดแถวจากสองจอ · เพื่อนธาตุดินได้ Earth DMG +40% 15 วินาที → effect target team + note) · Effect Details: Summer's Vitality · Earth Affliction · ปุ่ม Effects ของ Special ยังไม่ได้เปิด (Summer On-the-Fly Diagnosis) | **Guidance of Earth ขึ้น \"Inactive\"** บนจอบัญชีนี้ | **2026-10-22 รอบสาม** Switch ท่อนแรกครบแล้ว (จอบนสุด) · Basic Refreshing Swim · Ultimate Cool Summer Vacation (482.6%) · Passive Preventative Care on Summer Vacation · Guidance of Earth The Return of Summer: **ค่า Lv.12 = 26% จากป๊อปอัป Skill Info (Lv. 1 >> Lv. 12)** — จอหลักขึ้น Inactive Lv.1 = 15% | ปลุกพลังขั้น 2–6 (ล็อกทุกขั้นในบัญชีนี้) · effects: ขั้น 2 ทีมดาเมจใส่บอส +6% ซ้อน 3 ชั้น · ขั้น 3 Basic +6% · ขั้น 4 Ultimate +100% · ขั้น 5 Ultimate +6% · ขั้น 6 เก็บเป็นข้อความ (เปลี่ยนค่าของสถานะ) · ชื่อขั้น 5 มี \"♡\" ตามจอ | **2026-10-22 รอบสี่** ปลุกพลังขั้น 1 Overture of a Love-Filled Festival → ครบหกขั้น (\"2 time(s)\" ตามจอ) · Effect Details Summer On-the-Fly Diagnosis (ATK +20% · ฟื้น HP 3% ของ ATK) → ใส่ effect ทีม ATK +20% 15 วินาทีใน Special (ระยะเวลาจากแถว Summer On-the-Fly Diagnosis Duration) | ยังไม่ได้อ่าน: จอไทยทั้งหมด"
   }
 }
