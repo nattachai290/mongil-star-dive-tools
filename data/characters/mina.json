@@ -1,0 +1,864 @@
+{
+  "id": "mina",
+  "name": {
+    "en": "Mina"
+  },
+  "element": "fire",
+  "role": "fighter",
+  "range": "ranged",
+  "stats": {
+    "atLevel": 60,
+    "hp": 9713,
+    "atk": 2049,
+    "def": 638,
+    "critRate": 5,
+    "critDmg": 50
+  },
+  "otherStats": [
+    {
+      "kind": "buff",
+      "stat": "brawlDmg",
+      "value": 12.18,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "weaknessHit"
+      ],
+      "value": 125,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "damageType": "fire",
+      "value": 0.7,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "energyGain",
+      "value": 100,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "stamina",
+      "value": 100,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "fighterPower",
+      "value": 1078,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
+  "awaken": [],
+  "skills": {
+    "basic": {
+      "name": {
+        "en": "Foxfire Orb"
+      },
+      "desc": {
+        "en": "Mina deals Fire DMG by launching Foxfire Orbs at an enemy. On her final attack, she flourishes her tails to deal Fire DMG and gains a stack of Essence. / When Mina has 1 or more stacks of Essence, holding the Basic Attack button triggers Luminous Rush, dealing Fire DMG and consuming Essence. / When Luminous Rush triggers 3 times, using her Basic Attack again triggers its 4th Hit without consuming Essence."
+      },
+      "damageType": "fire",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            36.4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            41.7,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "3rd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            91,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "4th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            182,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Luminous Rush 1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            161.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Luminous Rush 2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            291.9,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Luminous Rush 3rd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            446.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Luminous Rush 4th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            255.9,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Air Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            99.9,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Evasion Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            355.9,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "switch": {
+      "name": {
+        "en": "Sparkling Flourish"
+      },
+      "desc": {
+        "en": "Mina appears near an enemy and swings her tails, creating a vortex that pulls in enemies, dealing Fire DMG and gaining a stack of Essence. After, she creates an explosion at its center, dealing additional Fire DMG."
+      },
+      "damageType": "fire",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Spin Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            128.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Bonus Explosion DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            128.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "special": {
+      "name": {
+        "en": "Foxfire Blast"
+      },
+      "desc": {
+        "en": "Mina throws an enhanced Foxfire Orb at an enemy and gains a stack of Essence. The orb deals Fire DMG as it pulls in nearby enemies, then explodes to deal bonus Fire DMG."
+      },
+      "damageType": "fire",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Foxfire Orb (Pull-in) DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            10.8,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Bonus Explosion DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            108.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            8.4,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "ultimate": {
+      "name": {
+        "en": "Foxfire Clone"
+      },
+      "desc": {
+        "en": "Mina summons a clone, and the two of them gather energy to throw a powerful Foxfire Orb at an enemy, dealing Fire DMG, inflicting Fire Affliction, and gaining a stack of Essence. / The clone follows Mina around and mimics her skills to attack enemies for a set duration. While Mina has clones active, the number of Essence stacks gained from her Basic Attack's 4th Hit increases by the number of active clones."
+      },
+      "damageType": "fire",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            448.8,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Clone Summon Count"
+          },
+          "unit": "times",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Clone Stat Ratio"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            50,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Clone Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            11.5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Fire Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "passive": {
+      "name": {
+        "en": "Essence of Fire"
+      },
+      "desc": {
+        "en": "Mina gains a stack of Essence upon using certain attacks and inflicts Charm onto enemies who've lost their Essence. / Essence stacks can be consumed by holding the Basic Attack button."
+      },
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Essence Gained by Landing 4th Basic Attack Hit"
+          },
+          "unit": "times",
+          "scaling": [
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Essence Gained by Landing Switch Skill"
+          },
+          "unit": "times",
+          "scaling": [
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Essence Gained by Using Special Skill"
+          },
+          "unit": "times",
+          "scaling": [
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Essence Gained by Using Ultimate Skill"
+          },
+          "unit": "times",
+          "scaling": [
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Essence Gained by Using Air Counter"
+          },
+          "unit": "times",
+          "scaling": [
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Essence Gained upon Using Evasion Counter"
+          },
+          "unit": "times",
+          "scaling": [
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Charm Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            5,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "elemental": {
+      "name": {
+        "en": "Resonating Essence of Fire"
+      },
+      "desc": {
+        "en": "Using Mina's Switch Skill increases Fire DMG by 23.9%. (Duration: 15s)"
+      },
+      "effects": [],
+      "values": []
+    }
+  },
+  "images": {
+    "portrait": "mina-portrait.webp"
+  },
+  "statuses": [
+    {
+      "name": {
+        "en": "Charm"
+      },
+      "desc": {
+        "en": "ATK decreases by 10% and DEF decreases by 10%."
+      },
+      "effects": [
+        {
+          "kind": "debuff",
+          "stat": "atk",
+          "value": 10,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        },
+        {
+          "kind": "debuff",
+          "stat": "def",
+          "value": 10,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ]
+    },
+    {
+      "name": {
+        "en": "Fire Affliction"
+      },
+      "desc": {
+        "en": "Afflicted targets take Fire DMG over time, and Fire RES decreases by 15%."
+      },
+      "effects": []
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอตัวละครภาษาอังกฤษ 2026-10-22 (Info · Detailed Stats · Passive Trait · Guidance of Fire) · **ยังไม่มีจอไทย** ทุกช่องภาษาไทยว่าง | Fighter · Fire · **Ranged** (คำใหม่ในพจนานุกรม range เดิมมีแต่ Melee) · เลเวล 60 สูงสุด | **ไม่ใส่ rarity** — ดาวสี่ดวงบนจอ Info คือดาวอัปเลเวล ไม่ใช่แรงก์ (ผู้เล่นบอกตอน Verna: Summer Dive!) จึงยังไม่รู้แรงก์ · schema ปรับให้ rarity ว่างได้ | ค่าพลังเปล่าจากจอ Detailed Stats (ATK 2,049 ฯลฯ — จอ Info ที่ติดของอยู่เขียน 4,428) · **ตัวเลขเท่ากับ Verna: Summer Dive! ทุกบรรทัด** ยกเว้น Fire DMG Boost (Mina 0.7% · Verna 13.72%) — อ่านจากจอตรง ๆ ไม่ได้คัดลอก ดูเหมือนตัวละคร 5 ดาวบทบาทเดียวกันใช้ค่าฐานชุดเดียวกัน | Passive (Lv.1) บรรทัด Essence ทั้งหมดกับ Charm Duration ผูกท่อนที่ 1 · ท่อนที่ 2 (กดค้างโจมตีพื้นฐานเพื่อใช้ Essence) ไม่มีตัวเลข | Guidance of Fire: Resonating Essence of Fire Lv.2 = Fire DMG +23.9% 15 วินาที เมื่อใช้สกิลสับเปลี่ยน · ป๊อปอัปบอก Lv.12 = 32.9% (จดไว้ ไม่ใส่) · effects ว่าง เพราะจอไม่ได้บอกว่าบัฟลงที่ใคร (ตัวเอง / ทีม) | รูป portrait ตัดจากจอ Info 340x340 ช่วงหน้า | **2026-10-22 รอบสอง** Basic Attack · Switch Skill · Special Skill · Ultimate Skill ที่ Lv.12 (สูงสุด) และ Effect Details ของ Charm กับ Fire Affliction · **ครบทั้งหกช่องสกิลแล้ว** ทุกท่าเป็นธาตุไฟ (จอเขียน Fire DMG ทุกท่า) | line: โจมตีพื้นฐาน 1st-4th = ท่อน 1 · Luminous Rush = ท่อน 2 · Air/Evasion Counter ไม่ถูกพูดถึง ไม่ใส่ · อัลติเมต DMG กับ Fire Affliction = ท่อน 1 · บรรทัดโคลนสามบรรทัด = ท่อน 2 | Charm ใส่ effects ได้ครบ (ลดพลังโจมตี 10% · ลดพลังป้องกัน 10% ของตัวที่ติดสถานะ) · Fire Affliction ข้อความตรงกับของวิเวียนและ Verna ทุกตัวอักษร เก็บเป็นข้อความ | Essence ไม่มีหน้าต่าง Effect Details ของตัวเอง (จอไม่ได้ขีดเส้นใต้) จึงไม่มีในสถานะ | ยังไม่ได้อ่าน: ปลุกพลัง · แรงก์ · จอไทยทั้งหมด"
+  }
+}

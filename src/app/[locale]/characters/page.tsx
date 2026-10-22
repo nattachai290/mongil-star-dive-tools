@@ -71,12 +71,14 @@ export default async function CharactersPage({
                     <p className="font-display text-sm font-semibold">
                       <Text value={c.name} locale={locale} />
                     </p>
-                    <p className="mt-1 text-xs text-gold">
-                      {"★".repeat(c.rarity)}{" "}
-                      <span className="text-muted">
-                        {c.rarity} {t("character.stars")}
-                      </span>
-                    </p>
+                    {c.rarity !== undefined && (
+                      <p className="mt-1 text-xs text-gold">
+                        {"★".repeat(c.rarity)}{" "}
+                        <span className="text-muted">
+                          {c.rarity} {t("character.stars")}
+                        </span>
+                      </p>
+                    )}
                     <ul className="mt-2 flex flex-wrap gap-1">
                       {[
                         label("element", c.element, locale),

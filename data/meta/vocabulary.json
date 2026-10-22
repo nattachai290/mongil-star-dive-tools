@@ -183,6 +183,9 @@
     "melee": {
       "th": "ระยะใกล้",
       "en": "Melee"
+    },
+    "ranged": {
+      "en": "Ranged"
     }
   },
   "role": {
