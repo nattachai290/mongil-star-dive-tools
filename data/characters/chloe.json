@@ -1,0 +1,531 @@
+{
+  "id": "chloe",
+  "name": {
+    "en": "Chloe"
+  },
+  "element": "wind",
+  "role": "fighter",
+  "range": "melee",
+  "stats": {
+    "atLevel": 60,
+    "hp": 9978,
+    "atk": 1943,
+    "def": 656,
+    "critRate": 5,
+    "critDmg": 50
+  },
+  "otherStats": [
+    {
+      "kind": "buff",
+      "stat": "brawlDmg",
+      "value": 12.18,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "weaknessHit"
+      ],
+      "value": 125,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "energyGain",
+      "value": 100,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "stamina",
+      "value": 100,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "fighterPower",
+      "value": 1078,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
+  "awaken": [],
+  "skills": {
+    "basic": {
+      "name": {
+        "en": "Light Jabs! One, two!"
+      },
+      "desc": {
+        "en": "Chloe unleashes a rapid series of attacks with whirlwind-like movements, dealing Wind DMG to enemies. / Basic Attack is enhanced when High Tempo is active. Generates a Gust upon Enhanced Basic Attack's 5th Hit, dealing additional Wind DMG. / Holding the Basic Attack button while It's... Not Over Yet! is active converts the Basic Attack to Hyper Punch, and Chloe unleashes a flurry of punches at overwhelming speed."
+      },
+      "damageType": "wind",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            31.7,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            70.5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "3rd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            88.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "4th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            52.8,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "5th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            88.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Enhanced Basic Attack 1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            38,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Enhanced Basic Attack 2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            84.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Enhanced Basic Attack 3rd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            105.7,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Enhanced Basic Attack 4th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            63.3,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Enhanced Basic Attack 5th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            105.7,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Enhanced Basic Attack 5th Hit Gust DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            26.4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Hyper Punch Attack 1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            311.9,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "Hyper Punch Attack 2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            574.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "Hyper Punch Attack 3rd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            295.5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "Charge Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            42.3,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Air Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            92.7,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Evasion Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            211.5,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    }
+  },
+  "statuses": [
+    {
+      "name": {
+        "en": "High Tempo"
+      },
+      "desc": {
+        "en": "ATK increases by 12%, damage taken decreases by 60%, and your stance is not broken by enemy attacks. The number of hits in the Enhanced Basic Attack increases by 1, increasing total damage by 20%. The effect is removed when switching to another character."
+      },
+      "effects": []
+    },
+    {
+      "name": {
+        "en": "It's... Not Over Yet!"
+      },
+      "desc": {
+        "en": "Basic Attack changes to a [High-Speed Punch] attack, Penetration Rate increases by 12%, and you become immune to attacks for the duration. The effect is removed when switching to another character."
+      },
+      "effects": []
+    }
+  ],
+  "images": {
+    "portrait": "chloe-portrait.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (ผู้เล่นยังไม่มีตัวนี้ จอตัวอย่างเปิดดูได้) · Info · Detailed Stats · Basic Attack · Effect Details · **ยังไม่มีจอไทย** | Fighter · **Wind** · Melee · เลเวล 60 · **ไม่ใส่ rarity** ดาวบนจอ Info คือดาวอัปเลเวล | ค่าพลังจากจอตัวอย่าง (ไม่มีของติด จอ Info กับ Detailed Stats ตรงกัน): ATK 1,943 (เท่ากับวิเวียน) · DEF 656 · HP 9,978 · ไม่มีบรรทัด Wind DMG Boost บนจอ (ตัวอื่นมี Fire DMG Boost) · Fighter 1,078 เท่ากับ Verna / Mina | Basic Attack Lv.12 ครบ 17 บรรทัด (จอที่สองเลื่อนลงจนเห็นทั้งตาราง) · line: Hit 1-5 = ท่อน 1 · Enhanced ทั้งหมดรวม Gust = ท่อน 2 · Hyper Punch = ท่อน 3 · Charge / Air / Evasion ไม่ใส่ | statuses เก็บเป็นข้อความ: High Tempo มีหลายผลปนกัน (ATK · ลดดาเมจที่ได้รับ · กันกระเด็น · จำนวนครั้งตี) · It's... Not Over Yet! พูดถึง **\"Penetration Rate\"** ซึ่งยังไม่มีในพจนานุกรม (Verna ปลุกพลังขั้น 6 เขียน \"Pierce Rate\" — ยังไม่รู้ว่าเป็นค่าเดียวกันไหม) | ช่องที่หกชื่อ **Guidance of Wind** (Lv.12 บนจอตัวอย่าง) — ยืนยันว่าหัวช่องเปลี่ยนตามธาตุ | รูป portrait ตัดจากจอ Info 380x380 | ยังไม่ได้อ่าน: Switch · Special · Ultimate · Passive · Guidance of Wind · ปลุกพลัง · แรงก์ · จอไทยทั้งหมด"
+  }
+}
