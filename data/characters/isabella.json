@@ -1,0 +1,34 @@
+{
+  "id": "isabella",
+  "name": {
+    "en": "Isabella"
+  },
+  "rarity": 5,
+  "element": "ice",
+  "role": "destroyer",
+  "range": "ranged",
+  "stats": {
+    "atLevel": 60,
+    "hp": 11169,
+    "atk": 2279,
+    "def": 719,
+    "critRate": 12.5,
+    "critDmg": 92.5
+  },
+  "awaken": [],
+  "images": {
+    "portrait": "isabella-portrait.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "fieldsUnverified": [
+      "stats"
+    ],
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max · มีปุ่ม Quick Power Up — ไม่ใช่ Character Preview) · **ยังไม่มีจอไทย** | Destroyer · Ice · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลัง ATK 2,279 · DEF 719 · HP 11,169 · Crit 12.5% / 92.5% — เก็บตามแบบ Narae ที่ผู้เล่นยืนยันว่าจอบัญชีไม่ติดของ · **Crit 12.5 / 92.5 เท่า Narae และไม่ตรงกับตัว Preview ทั้งหมด (5 / 50)** → fieldsUnverified จนกว่าจะเทียบจอ Preview | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | ยังไม่ได้อ่าน: Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลัง · จอไทยทั้งหมด"
+  }
+}
