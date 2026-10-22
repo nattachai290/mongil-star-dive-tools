@@ -1,0 +1,31 @@
+{
+  "id": "francis-summer-dive",
+  "name": {
+    "en": "Francis: Summer Dive!"
+  },
+  "rarity": 5,
+  "element": "earth",
+  "role": "supporter",
+  "range": "ranged",
+  "stats": {
+    "atLevel": 60,
+    "hp": 10243,
+    "atk": 1855,
+    "def": 673,
+    "critRate": 5,
+    "critDmg": 50
+  },
+  "awaken": [],
+  "images": {
+    "portrait": "francis-summer-dive-portrait.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Support · Earth · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** · id ตามชื่ออังกฤษ \"Francis: Summer Dive!\" แบบ verna-summer-dive | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับ Narae / Isabella / Brisshell: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,063 · DEF 758 · HP 11,779 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,855 · DEF 673 · HP 10,243 · Crit 5% / 50%** — ทั้งสามค่าเคยเห็นแล้ว (ATK 1,855 เท่า Jiwon / Narae · DEF 673 เท่า Gabi · HP 10,243 เท่า Vivian / Ophelia) | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | ยังไม่ได้อ่าน: Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลัง · จอไทยทั้งหมด"
+  }
+}
