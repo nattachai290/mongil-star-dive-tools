@@ -69,7 +69,82 @@
       "trigger": "passive"
     }
   ],
-  "awaken": [],
+  "awaken": [
+    {
+      "stage": 1,
+      "name": {
+        "en": "Brutal Honesty"
+      },
+      "desc": {
+        "en": "Increases the number of projectiles from Daisy's Basic Attack, increasing its total DMG by 75%."
+      },
+      "effects": []
+    },
+    {
+      "stage": 2,
+      "name": {
+        "en": "Blessing of Mother Nature"
+      },
+      "desc": {
+        "en": "Daisy's Support Skill is enhanced, and every 7s it heals teammates whose HP has fallen to 90% or below during combat for 7s, based on Daisy's Max HP."
+      },
+      "effects": []
+    },
+    {
+      "stage": 3,
+      "name": {
+        "en": "Healing Earth"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Special Skill's cooldown decreases by 4.5%."
+      },
+      "effects": [],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 4,
+      "name": {
+        "en": "Always Together"
+      },
+      "desc": {
+        "en": "Daisy's Passive Trait is enhanced, increasing All Elemental RES by 10% for all teammates."
+      },
+      "effects": []
+    },
+    {
+      "stage": 5,
+      "name": {
+        "en": "A Happy Elf"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 6,
+      "name": {
+        "en": "Worthy to Be Queen"
+      },
+      "desc": {
+        "en": "Upon using Daisy's Ultimate Skill, her movement Speed increases by 20% and a fallen teammate is revived with 20% of their Max HP."
+      },
+      "effects": []
+    }
+  ],
   "skills": {
     "basic": {
       "name": {
@@ -206,6 +281,253 @@
         }
       ]
     },
+    "switch": {
+      "name": {
+        "en": "Fly, Flowers!"
+      },
+      "desc": {
+        "en": "Daisy sends 5 magical flowers towards the enemy, dealing Earth DMG. / [Support Skill] When a teammate's HP falls to 75% or below, Daisy appears by their side and grants the teammate Healing Over Time based on Daisy's Max HP."
+      },
+      "damageType": "earth",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            189,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Support Skill's Max HP-Based Healing"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            3,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Support Skill Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Support Skill Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            12,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "special": {
+      "name": {
+        "en": "This Is My Flower Garden!"
+      },
+      "desc": {
+        "en": "Daisy creates a field of flowers at her feet. Teammates within the Flower Field are granted Healing Over Time based on her Max HP, and enemies within the Flower Field have their Movement Speed decreased and are inflicted with Earth Affliction."
+      },
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Max HP-Based Healing"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            7.7,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Movement Speed Reduction"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            52,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Earth Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Flower Field Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            11,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
     "ultimate": {
       "name": {
         "en": "Help Us, Mr. Flower!"
@@ -316,6 +638,62 @@
           "line": 1
         }
       ]
+    },
+    "passive": {
+      "name": {
+        "en": "Mr. Flower's Aid"
+      },
+      "desc": {
+        "en": "Increases all teammates' Earth RES."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "res",
+          "damageType": "earth",
+          "value": 10,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "passive"
+        }
+      ],
+      "values": [
+        {
+          "label": {
+            "en": "Earth RES Boost"
+          },
+          "unit": "percent",
+          "scaling": [
+            10,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "elemental": {
+      "name": {
+        "en": "Fresh Flowers"
+      },
+      "desc": {
+        "en": "Upon switching to another teammate, all teammates' HP is restored by 6.2% of Daisy's Max HP. / If there are 3 or more Earth teammates on the team, an additional 6.6% ATK Boost is granted. (Duration: 10s)"
+      },
+      "effects": [],
+      "values": []
     }
   },
   "statuses": [
@@ -339,6 +717,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Support · **Earth** (ธาตุที่ห้า — ครบห้าธาตุรบแล้ว) · Ranged · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลักจากจอ Info: ATK 1,678 (เท่ากับ Bonnie ซึ่งเป็น Support 4 ดาวเหมือนกัน) · DEF 609 · HP 9,272 · Crit 5% / 50% | รูป portrait ตัดจากจอ Info 360x360 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 11.59% · Support 1,026 · Elemental Weakness 125% · gauge 100% · stamina 100 และ **Earth RES 10%** — บรรทัดต้านทานธาตุบนจอค่าพลังตัวละคร เห็นครั้งแรก เก็บเป็น stat res + damageType earth | Basic Go, Mr. Seeds! · Ultimate Help Us, Mr. Flower! (Lv.12) · Effect Details ของ Earth Affliction | ultimate: Max HP-Based Healing ไม่ใส่ line เพราะท่อน 1 และ 2 ต่างพูดถึงการฮีล · **DoT กับ Bonus DMG เป็น 586.2% เท่ากันพอดี** อ่านจากจอซ้ำสองจอแล้ว | **Earth Affliction ต่างจากอีกสี่ธาตุ: ลดต้านทาน \"ทั้งดินและกายภาพ\" 15%** (\"Earth and Physical RES decrease by 15%\") ส่วนธาตุอื่นลดแค่ธาตุตัวเอง | ยังไม่ได้อ่าน: Switch · Special · Passive · Guidance of Earth · ปลุกพลัง · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Support · **Earth** (ธาตุที่ห้า — ครบห้าธาตุรบแล้ว) · Ranged · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลักจากจอ Info: ATK 1,678 (เท่ากับ Bonnie ซึ่งเป็น Support 4 ดาวเหมือนกัน) · DEF 609 · HP 9,272 · Crit 5% / 50% | รูป portrait ตัดจากจอ Info 360x360 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 11.59% · Support 1,026 · Elemental Weakness 125% · gauge 100% · stamina 100 และ **Earth RES 10%** — บรรทัดต้านทานธาตุบนจอค่าพลังตัวละคร เห็นครั้งแรก เก็บเป็น stat res + damageType earth | Basic Go, Mr. Seeds! · Ultimate Help Us, Mr. Flower! (Lv.12) · Effect Details ของ Earth Affliction | ultimate: Max HP-Based Healing ไม่ใส่ line เพราะท่อน 1 และ 2 ต่างพูดถึงการฮีล · **DoT กับ Bonus DMG เป็น 586.2% เท่ากันพอดี** อ่านจากจอซ้ำสองจอแล้ว | **Earth Affliction ต่างจากอีกสี่ธาตุ: ลดต้านทาน \"ทั้งดินและกายภาพ\" 15%** (\"Earth and Physical RES decrease by 15%\") ส่วนธาตุอื่นลดแค่ธาตุตัวเอง | **2026-10-22 รอบสาม** Switch Fly, Flowers! · Special This Is My Flower Garden! (Lv.12) · Passive Mr. Flower's Aid (Lv.1) · Guidance of Earth: Fresh Flowers (Lv.12) · ปลุกพลังครบหกขั้น — **ครบทั้งหกช่องสกิลแล้ว** | special ไม่ใส่ damageType — จอไม่ได้เขียนว่าสร้างดาเมจ (มีแต่ฮีล · ลดความเร็ว · Earth Affliction) | **passive ใส่ effect ได้ครบ**: Earth RES +10% ให้ทั้งทีม (จอบอกเป้าหมายชัด) · **Earth RES 10% บนจอ Detailed Stats น่าจะมาจาก passive นี้** แบบเดียวกับที่ 19.97% ของ Reina รวม passive ไว้ — จดไว้เป็นข้อสังเกต ค่าที่เก็บยังตามจอ | Guidance of Earth: ฮีลทีม 6.2% เมื่อสลับตัว และ ATK +6.6% ถ้ามีเพื่อนธาตุดิน 3 คนขึ้นไป — ส่วนหลังเป็นเงื่อนไของค์ประกอบทีม effect เขียนไม่ได้ จึงไม่เติมทั้งก้อน (ไม่เติมบางส่วน) | ปลุกพลัง: ขั้น 5 เติม effects (ดาเมจโจมตีพื้นฐาน +6%) · ขั้น 3 ลดคูลดาวน์ 4.5% เก็บเป็นข้อความตามแบบเดิม · ขั้น 6 มีการชุบชีวิตเพื่อน | ยังไม่ได้อ่าน: จอไทยทั้งหมด"
   }
 }
