@@ -1,0 +1,462 @@
+{
+  "id": "verna-summer-dive",
+  "name": {
+    "en": "Verna: Summer Dive!"
+  },
+  "rarity": 4,
+  "element": "fire",
+  "role": "fighter",
+  "range": "melee",
+  "awaken": [],
+  "skills": {
+    "basic": {
+      "name": {
+        "en": "Sword of Justice"
+      },
+      "desc": {
+        "en": "Verna deals Physical DMG to enemies by consecutively striking them with her sword. / When Flaming Will is active, all attacks except for her 1st Hit are enhanced, and a 5th Hit can be triggered."
+      },
+      "damageType": "physical",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            36.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            56.7,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "3rd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            100.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "4th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            179.3,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Charge Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            37.5,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Enhanced 2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            103.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Enhanced 3rd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            191.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Enhanced 4th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            236.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Enhanced 5th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            279,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Air Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            98.1,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Evasion Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            581,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Enhanced Air Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            137.3,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Enhanced Evasion Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            813.4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "special": {
+      "name": {
+        "en": "Manifestation of Will"
+      },
+      "desc": {
+        "en": "Verna releases fire energy around herself, dealing Fire DMG. / Using her Special Skill while Flaming Will is active triggers an enhanced skill, dealing powerful Fire DMG and refreshing the duration of Flaming Will."
+      },
+      "damageType": "fire",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            124.7,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Enhanced DMG When Flaming Will Is Active"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            601.4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            11.5,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    }
+  },
+  "statuses": [
+    {
+      "name": {
+        "en": "Flaming Will"
+      },
+      "desc": {
+        "en": "Converts the element of all attacks to Fire, and decreases DMG Taken by 35%. The duration does not decrease while Verna: Summer Dive! is not being actively controlled in combat. / Landing a Fire attack during this duration grants Ember."
+      },
+      "effects": []
+    },
+    {
+      "name": {
+        "en": "Ember"
+      },
+      "desc": {
+        "en": "Fire DMG increases by 2%. (Max Stacks: 5, new stacks reset the duration) / When Verna: Summer Dive! is not being controlled, the effect value of Ember is doubled."
+      },
+      "effects": []
+    }
+  ],
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอตัวละครภาษาอังกฤษ 2026-10-22 (Info · Skills: Basic Attack / Special Skill · Effect Details) · **ยังไม่มีจอไทยเลย** ชื่อไทยและข้อความไทยทุกช่องจึงว่าง ไม่ได้แปลเอง | id มาจากชื่ออังกฤษ \"Verna: Summer Dive!\" -> verna-summer-dive ตามแบบมอนชุด Summer Dive (cappy-summer-dive ฯลฯ) — **เป็นตัวละครคนละตัวกับ Verna ปกติ** จอเรียกตัวเองเต็มชื่อทุกที่ (\"Verna: Summer Dive! is not being controlled\") | Fighter · Fire · Melee · 4 ดาว · เลเวล 60 สูงสุด | **ไม่เก็บค่าพลัง** จอ Info แสดง ATK 5,409 · DEF 5,877 · HP 20,893 · Crit Rate 15% · Crit DMG 110% แต่ตัวละครอยู่ในทีม (On Team) และตัวเลขสูงกว่าค่าเปล่าของวิเวียนที่เลเวลเดียวกันหลายเท่า แปลว่ารวมอุปกรณ์/มอนสเตอร์ลิงแล้ว schema ห้ามเก็บค่าที่ติดของอยู่ | สกิลทุกท่าเลเวล 12 (Max level reached) เติม scaling เฉพาะช่องที่ 12 · โจมตีพื้นฐานเป็น**กายภาพ** แต่ระหว่าง Flaming Will การโจมตีทั้งหมดเปลี่ยนเป็นธาตุไฟ (จอ Effect Details) — changesBasicAttackTo ไม่ได้ใส่ เพราะช่องนั้นหมายถึงสกิลที่ใช้แล้วเปลี่ยน ส่วนนี่คือสถานะ ดู statuses | line: บรรทัด Enhanced ทั้งหมดผูกกับท่อนที่ 2 (\"When Flaming Will is active ... enhanced\") ส่วน 1st-4th ผูกท่อนที่ 1 · Charge Attack / Air Counter / Evasion Counter ไม่ได้ถูกพูดถึงในท่อนไหน จึงไม่ใส่ line | statuses ไม่ใส่ effects เพราะครอบคำอธิบายไม่ได้ทั้งหมด (แปลงธาตุ · ไม่ลดเวลาตอนไม่ได้บังคับ · Ember เพิ่มเป็นสองเท่าตอนไม่ได้บังคับ) | ยังไม่ได้อ่าน: Switch Skill · Ultimate Skill · Passive Trait (Lv.1) · \"Guidance of Fire Lv.2\" ซึ่งเป็นปุ่มที่หกบนจอสกิล ยังไม่รู้ว่าคืออะไร · ปลุกพลัง · ค่าพลังเปล่า"
+  }
+}
