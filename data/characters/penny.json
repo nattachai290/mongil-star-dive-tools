@@ -1,0 +1,31 @@
+{
+  "id": "penny",
+  "name": {
+    "en": "Penny"
+  },
+  "rarity": 5,
+  "element": "lightning",
+  "role": "fighter",
+  "range": "ranged",
+  "stats": {
+    "atLevel": 60,
+    "hp": 9713,
+    "atk": 1996,
+    "def": 656,
+    "critRate": 5,
+    "critDmg": 50
+  },
+  "awaken": [],
+  "images": {
+    "portrait": "penny-portrait.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Fighter · Lightning · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,996 · DEF 656 · HP 9,713 · Crit 5% / 50% อ่านจากจอตรง ๆ — ชุดตัวเลขนี้ยังไม่ซ้ำกับตัวไหนที่ลงไว้ | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | ยังไม่ได้อ่าน: Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลัง · จอไทยทั้งหมด"
+  }
+}
