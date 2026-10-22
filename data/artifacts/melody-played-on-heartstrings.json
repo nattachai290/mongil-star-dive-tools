@@ -1,0 +1,101 @@
+{
+  "id": "melody-played-on-heartstrings",
+  "name": {
+    "en": "Melody Played on Heartstrings"
+  },
+  "stars": 5,
+  "role": "supporter",
+  "level": 60,
+  "stats": [
+    {
+      "stat": "atk",
+      "value": 883,
+      "unit": "flat"
+    },
+    {
+      "stat": "energyGain",
+      "value": 15,
+      "unit": "percent"
+    }
+  ],
+  "fusion": [
+    {
+      "artifactLevel": 1,
+      "level": 1,
+      "name": {
+        "en": "Bloom into a Flower I"
+      },
+      "desc": {
+        "en": "When equipped by a [Support] character, grants the following effect. / Using a Switch Skill grants Vitality to self and teammates. / Vitality: Increases Basic Attack, Special Skill, and Ultimate Skill DMG by 2.5% per second when Stamina is 90% or higher. (Max Stacks: 20, Cooldown: 60s, Duration: 30s) / Fusion Level 3: Gains 0.06% Ultimate Gauge Charge Boost for every 10 points of Support proficiency. (Max: 15%) / Fusion Level 5: Gains 0.06% Wind DMG Boost for every 10 points of Support proficiency. (Max: 15%)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack",
+            "specialSkill",
+            "ultimate"
+          ],
+          "value": 2.5,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onSwitch",
+          "durationSec": 30,
+          "internalCooldownSec": 60,
+          "maxStacks": 20,
+          "condition": {
+            "note": {
+              "en": "Vitality · per second when Stamina is 90% or higher"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "artifactLevel": 60,
+      "level": 5,
+      "name": {
+        "en": "Bloom into a Flower V"
+      },
+      "desc": {
+        "en": "When equipped by a [Support] character, grants the following effect. / Using a Switch Skill grants Vitality to self and teammates. / Vitality: Increases Basic Attack, Special Skill, and Ultimate Skill DMG by 5% per second when Stamina is 90% or higher. (Max Stacks: 20, Cooldown: 60s, Duration: 30s) / Fusion Level 3: Gains 0.06% Ultimate Gauge Charge Boost for every 10 points of Support proficiency. (Max: 15%) / Fusion Level 5: Gains 0.06% Wind DMG Boost for every 10 points of Support proficiency. (Max: 15%)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack",
+            "specialSkill",
+            "ultimate"
+          ],
+          "value": 5,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onSwitch",
+          "durationSec": 30,
+          "internalCooldownSec": 60,
+          "maxStacks": 20,
+          "condition": {
+            "note": {
+              "en": "Vitality · per second when Stamina is 90% or higher"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "images": {
+    "icon": "melody-played-on-heartstrings-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **5 ดาว (ผู้เล่นบอก 2026-10-22)** ตรงกับเพชร 5 เม็ดบนการ์ดสีส้ม | เก็บ Fusion 1 (จอ Lv.01) กับ Fusion 5 (จอ Lv.60) และค่าสเตตัสที่ Lv.60 ตามที่ผู้เล่นกำหนด 2026-10-22 | บรรทัด Fusion Level 3 / 5 (ตามความชำนาญ สูงสุด 15%) เก็บเป็นข้อความ | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | บรรทัด Fusion Level 3 / 5 ของ desc อ่านครบจากจอ Lv.60 ที่เลื่อนลง (จอ Lv.01 ตัดขอบล่างที่บรรทัด Fusion 3) | Ultimate Gauge Charge → energyGain | ไอคอนตัดจากจอ Lv.60 ที่ส่งมารอบหลัง"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "id": "held-close-by-nature",
+  "name": {
+    "en": "Held Close by Nature"
+  },
+  "stars": 5,
+  "role": "fighter",
+  "level": 60,
+  "stats": [
+    {
+      "stat": "atk",
+      "value": 883,
+      "unit": "flat"
+    },
+    {
+      "stat": "critRate",
+      "value": 21,
+      "unit": "percent"
+    }
+  ],
+  "fusion": [
+    {
+      "artifactLevel": 1,
+      "level": 1,
+      "name": {
+        "en": "Beneath the Sky Stands Mount Tai I"
+      },
+      "desc": {
+        "en": "When equipped by a [Fighter] character, grants the following effect. / Tigerquake is gained upon counterattacking. / Tigerquake: Wind DMG increases by 2.5% upon landing a Basic Wind Attack 3 time(s). (Max Stacks: 25, Duration: 20s) / Fusion Level 3: Gains 0.06% Wind DMG Boost for every 10 points of Fighter proficiency. (Max: 15%) / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Fighter proficiency. (Max: 15%)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "damageType": "wind",
+          "value": 2.5,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onBasicAttackHit",
+          "durationSec": 20,
+          "maxStacks": 25,
+          "condition": {
+            "hitCount": 3,
+            "triggerDamageType": "wind",
+            "note": {
+              "en": "Tigerquake · Tigerquake is gained upon counterattacking"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "artifactLevel": 60,
+      "level": 5,
+      "name": {
+        "en": "Beneath the Sky Stands Mount Tai V"
+      },
+      "desc": {
+        "en": "When equipped by a [Fighter] character, grants the following effect. / Tigerquake is gained upon counterattacking. / Tigerquake: Wind DMG increases by 5% upon landing a Basic Wind Attack 3 time(s). (Max Stacks: 25, Duration: 20s) / Fusion Level 3: Gains 0.06% Wind DMG Boost for every 10 points of Fighter proficiency. (Max: 15%) / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Fighter proficiency. (Max: 15%)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "damageType": "wind",
+          "value": 5,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onBasicAttackHit",
+          "durationSec": 20,
+          "maxStacks": 25,
+          "condition": {
+            "hitCount": 3,
+            "triggerDamageType": "wind",
+            "note": {
+              "en": "Tigerquake · Tigerquake is gained upon counterattacking"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "images": {
+    "icon": "held-close-by-nature-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **5 ดาว (ผู้เล่นบอก 2026-10-22)** ตรงกับเพชร 5 เม็ดบนการ์ดสีส้ม | เก็บ Fusion 1 (จอ Lv.01) กับ Fusion 5 (จอ Lv.60) และค่าสเตตัสที่ Lv.60 ตามที่ผู้เล่นกำหนด 2026-10-22 | บรรทัด Fusion Level 3 / 5 (ตามความชำนาญ สูงสุด 15%) เก็บเป็นข้อความ | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | \"time(s)\" ตามจอ"
+  }
+}

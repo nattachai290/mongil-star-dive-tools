@@ -1,0 +1,146 @@
+{
+  "id": "exquisite-dragon-fire",
+  "name": {
+    "en": "Exquisite Dragon Fire"
+  },
+  "stars": 5,
+  "role": "destroyer",
+  "level": 60,
+  "stats": [
+    {
+      "stat": "atk",
+      "value": 883,
+      "unit": "flat"
+    },
+    {
+      "stat": "dmgDealt",
+      "damageType": "fire",
+      "value": 27,
+      "unit": "percent"
+    }
+  ],
+  "fusion": [
+    {
+      "artifactLevel": 1,
+      "level": 1,
+      "name": {
+        "en": "Flame Dragon's Blessing I"
+      },
+      "desc": {
+        "en": "When equipped by a [Destroyer] character, grants the following effect. / Using a Switch Attack grants Flamestone. / Flamestone: Neutralization DMG increases by 5%. (Cooldown: 5s. Duration: 5s) / While Flamestone is active, gaining a Fire DMG Boost upgrades Flamestone to Inscribed Flamestone. / Inscribed Flamestone: Neutralization DMG increases by 15% and ATK increases by 30%. (Duration: 10s) / Fusion Level 3: Gains 0.06% ATK Boost for every 10 points of Destroyer proficiency. (Max: 15%) / Fusion Level 5: Gains 0.06% Fire DMG Boost for every 10 points of Destroyer proficiency. (Max: 15%)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "neutralizationDmg",
+          "value": 5,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSwitch",
+          "durationSec": 5,
+          "internalCooldownSec": 5,
+          "condition": {
+            "note": {
+              "en": "Flamestone · Using a Switch Attack"
+            }
+          }
+        },
+        {
+          "kind": "buff",
+          "stat": "neutralizationDmg",
+          "value": 15,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive",
+          "durationSec": 10,
+          "condition": {
+            "note": {
+              "en": "Inscribed Flamestone · gaining a Fire DMG Boost while Flamestone is active"
+            }
+          }
+        },
+        {
+          "kind": "buff",
+          "stat": "atk",
+          "value": 30,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive",
+          "durationSec": 10,
+          "condition": {
+            "note": {
+              "en": "Inscribed Flamestone · gaining a Fire DMG Boost while Flamestone is active"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "artifactLevel": 60,
+      "level": 5,
+      "name": {
+        "en": "Flame Dragon's Blessing V"
+      },
+      "desc": {
+        "en": "When equipped by a [Destroyer] character, grants the following effect. / Using a Switch Attack grants Flamestone. / Flamestone: Neutralization DMG increases by 10%. (Cooldown: 5s. Duration: 5s) / While Flamestone is active, gaining a Fire DMG Boost upgrades Flamestone to Inscribed Flamestone. / Inscribed Flamestone: Neutralization DMG increases by 30% and ATK increases by 60%. (Duration: 10s) / Fusion Level 3: Gains 0.06% ATK Boost for every 10 points of Destroyer proficiency. (Max: 15%) / Fusion Level 5: Gains 0.06% Fire DMG Boost for every 10 points of Destroyer proficiency. (Max: 15%)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "neutralizationDmg",
+          "value": 10,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSwitch",
+          "durationSec": 5,
+          "internalCooldownSec": 5,
+          "condition": {
+            "note": {
+              "en": "Flamestone · Using a Switch Attack"
+            }
+          }
+        },
+        {
+          "kind": "buff",
+          "stat": "neutralizationDmg",
+          "value": 30,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive",
+          "durationSec": 10,
+          "condition": {
+            "note": {
+              "en": "Inscribed Flamestone · gaining a Fire DMG Boost while Flamestone is active"
+            }
+          }
+        },
+        {
+          "kind": "buff",
+          "stat": "atk",
+          "value": 60,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive",
+          "durationSec": 10,
+          "condition": {
+            "note": {
+              "en": "Inscribed Flamestone · gaining a Fire DMG Boost while Flamestone is active"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "images": {
+    "icon": "exquisite-dragon-fire-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **5 ดาว (ผู้เล่นบอก 2026-10-22)** ตรงกับเพชร 5 เม็ดบนการ์ดสีส้ม | เก็บ Fusion 1 (จอ Lv.01) กับ Fusion 5 (จอ Lv.60) และค่าสเตตัสที่ Lv.60 ตามที่ผู้เล่นกำหนด 2026-10-22 | บรรทัด Fusion Level 3 / 5 (ตามความชำนาญ สูงสุด 15%) เก็บเป็นข้อความ | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | จอเขียน \"Switch Attack\" (ไม่ใช่ Switch Skill) เก็บตามจอ ใช้ trigger onSwitch | ค่าสเตตัสบรรทัดสอง \"Fire DMG Boost 27%\" → dmgDealt + damageType fire | \"(Cooldown: 5s. Duration: 5s)\" มีจุดคั่นตามจอ | ไอคอนตัดจากจอ Lv.60 ที่ส่งมารอบหลัง"
+  }
+}

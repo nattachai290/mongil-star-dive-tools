@@ -59,7 +59,11 @@ function ArtifactCard({ a, locale, t }: { a: Artifact; locale: Locale; t: T }) {
         <tbody>
           {a.stats.map((s, i) => (
             <tr key={i} className="border-t border-line">
-              <td className="py-1.5 text-ink-2">{label("stat", s.stat, locale)}</td>
+              <td className="py-1.5 text-ink-2">
+                {s.damageType
+                  ? `${label("stat", s.stat, locale)} ${label("damageType", s.damageType, locale)}`
+                  : label("stat", s.stat, locale)}
+              </td>
               <td className="py-1.5 text-end font-mono tabular-nums text-ink">
                 {fmt(s.value)}
                 {s.unit === "percent" ? "%" : ""}
@@ -69,34 +73,45 @@ function ArtifactCard({ a, locale, t }: { a: Artifact; locale: Locale; t: T }) {
         </tbody>
       </table>
 
-      {a.fusion && (
-        <section className="mt-3 border-s-2 border-line ps-2.5">
-          <p className="font-mono text-[11px] text-gold">
-            {t("artifacts.fusion")} {a.fusion.level}
-          </p>
-          <h3 className="mt-0.5 text-sm font-semibold">
-            <Text value={a.fusion.name} locale={locale} showFallbackBadge={false} />
-          </h3>
-          <p className="mt-0.5 text-[11px] text-muted">
-            {t("artifacts.roleOnly")}: {label("role", a.role, locale)}
-          </p>
-          {a.fusion.effects.length > 0 && (
-            <div className="mt-2 space-y-2">
-              {a.fusion.effects.map((e, i) => (
-                <EffectLine key={i} effect={e} locale={locale} />
-              ))}
-            </div>
-          )}
-          {/* ข้อความตามจอเต็ม ๆ — บางบรรทัด (เช่นโบนัสตามความชำนาญ) ยังแปลงเป็นเอฟเฟกต์ไม่ได้ */}
-          <div className="mt-2 space-y-1 text-xs leading-relaxed text-ink-2">
-            {(a.fusion.desc[locale] ?? a.fusion.desc.en ?? a.fusion.desc.th ?? "")
-              .split(" / ")
-              .map((line, i) => (
-                <p key={i}>{line}</p>
-              ))}
-          </div>
-        </section>
+      {a.fusion.length > 0 && (
+        <p className="mt-3 text-[11px] text-muted">
+          {t("artifacts.roleOnly")}: {label("role", a.role, locale)}
+        </p>
       )}
+      {/* จอ Lv.60 ก่อน — คนส่วนใหญ่อยากรู้ค่าตอนอัปเต็ม */}
+      {[...a.fusion]
+        .sort((x, y) => y.artifactLevel - x.artifactLevel)
+        .map((f, i) => (
+          <section key={i} className="mt-3 border-s-2 border-line ps-2.5">
+            <p className="font-mono text-[11px] text-gold">
+              {f.level !== undefined ? `${t("artifacts.fusion")} ${f.level}` : t("artifacts.fusionUnread")}
+              <span className="text-muted">
+                {" · "}
+                {t("artifacts.atLevel")} {f.artifactLevel}
+              </span>
+            </p>
+            {f.name && (
+              <h3 className="mt-0.5 text-sm font-semibold">
+                <Text value={f.name} locale={locale} showFallbackBadge={false} />
+              </h3>
+            )}
+            {f.effects.length > 0 && (
+              <div className="mt-2 space-y-2">
+                {f.effects.map((e, j) => (
+                  <EffectLine key={j} effect={e} locale={locale} />
+                ))}
+              </div>
+            )}
+            {/* ข้อความตามจอเต็ม ๆ — บางบรรทัด (เช่นโบนัสตามความชำนาญ) ยังแปลงเป็นเอฟเฟกต์ไม่ได้ */}
+            <div className="mt-2 space-y-1 text-xs leading-relaxed text-ink-2">
+              {(f.desc[locale] ?? f.desc.en ?? f.desc.th ?? "")
+                .split(" / ")
+                .map((line, j) => (
+                  <p key={j}>{line}</p>
+                ))}
+            </div>
+          </section>
+        ))}
     </li>
   );
 }

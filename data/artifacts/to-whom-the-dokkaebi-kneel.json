@@ -1,0 +1,113 @@
+{
+  "id": "to-whom-the-dokkaebi-kneel",
+  "name": {
+    "en": "To Whom the Dokkaebi Kneel"
+  },
+  "stars": 5,
+  "role": "fighter",
+  "level": 60,
+  "stats": [
+    {
+      "stat": "atk",
+      "value": 883,
+      "unit": "flat"
+    },
+    {
+      "stat": "critRate",
+      "value": 21,
+      "unit": "percent"
+    }
+  ],
+  "fusion": [
+    {
+      "artifactLevel": 1,
+      "level": 1,
+      "name": {
+        "en": "Surging Energy I"
+      },
+      "desc": {
+        "en": "When equipped by a [Fighter] character, grants the following effect. / Basic Attack DMG increases by 10%. / Earth DMG increases by 30% upon using a Basic Earth Attack. (Duration: 4s) / Fusion Level 3: Gains 0.06% Crit DMG Boost for every 10 points of Fighter proficiency. (Max: 15%) / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Fighter proficiency. (Max: 15%)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 10,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        },
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "damageType": "earth",
+          "value": 30,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onBasicAttack",
+          "durationSec": 4,
+          "condition": {
+            "triggerDamageType": "earth",
+            "note": {
+              "en": "upon using a Basic Earth Attack"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "artifactLevel": 60,
+      "level": 5,
+      "name": {
+        "en": "Surging Energy V"
+      },
+      "desc": {
+        "en": "When equipped by a [Fighter] character, grants the following effect. / Basic Attack DMG increases by 20%. / Earth DMG increases by 60% upon using a Basic Earth Attack. (Duration: 4s) / Fusion Level 3: Gains 0.06% Crit DMG Boost for every 10 points of Fighter proficiency. (Max: 15%) / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Fighter proficiency. (Max: 15%)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 20,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        },
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "damageType": "earth",
+          "value": 60,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onBasicAttack",
+          "durationSec": 4,
+          "condition": {
+            "triggerDamageType": "earth",
+            "note": {
+              "en": "upon using a Basic Earth Attack"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "images": {
+    "icon": "to-whom-the-dokkaebi-kneel-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **5 ดาว (ผู้เล่นบอก 2026-10-22)** ตรงกับเพชร 5 เม็ดบนการ์ดสีส้ม | เก็บ Fusion 1 (จอ Lv.01) กับ Fusion 5 (จอ Lv.60) และค่าสเตตัสที่ Lv.60 ตามที่ผู้เล่นกำหนด 2026-10-22 | บรรทัด Fusion Level 3 / 5 (ตามความชำนาญ สูงสุด 15%) เก็บเป็นข้อความ | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1)"
+  }
+}

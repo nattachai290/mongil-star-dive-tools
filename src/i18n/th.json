@@ -100,6 +100,8 @@
   "artifacts.empty": "ยังไม่มี Artifact ในฐานข้อมูล",
   "artifacts.level": "เลเวล",
   "artifacts.fusion": "Fusion เลเวล",
+  "artifacts.fusionUnread": "Fusion (หัวกล่องไม่อยู่ในจอที่อ่าน)",
+  "artifacts.atLevel": "ที่ Artifact เลเวล",
   "artifacts.roleOnly": "ทำงานเฉพาะตอนตัวละครบทบาทนี้ใส่",
   "artifacts.enOnlyNote": "ชื่อและข้อความบนหน้านี้ยังมีแต่ภาษาอังกฤษ เพราะยังไม่เคยเปิดจอ Artifact ด้วยไคลเอนต์ไทย และจะไม่แปลเอง",
   "equipment.title": "อุปกรณ์",

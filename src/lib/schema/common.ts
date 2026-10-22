@@ -172,6 +172,8 @@ export const effect = z
 
 export const statValue = z.object({
   stat: vocabEnum("stat"),
+  /** ธาตุของสเตตัสแบบ "Fire DMG Boost" — stat เป็น dmgDealt แล้วระบุธาตุตรงนี้ */
+  damageType: vocabEnum("damageType").optional(),
   value: z.number(),
   unit: vocabEnum("unit"),
 });

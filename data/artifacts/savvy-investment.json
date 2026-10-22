@@ -1,0 +1,129 @@
+{
+  "id": "savvy-investment",
+  "name": {
+    "en": "Savvy Investment"
+  },
+  "stars": 5,
+  "role": "fighter",
+  "level": 60,
+  "stats": [
+    {
+      "stat": "atk",
+      "value": 883,
+      "unit": "flat"
+    },
+    {
+      "stat": "energyGain",
+      "value": 15,
+      "unit": "percent"
+    }
+  ],
+  "fusion": [
+    {
+      "artifactLevel": 1,
+      "level": 1,
+      "name": {
+        "en": "Money is Power I"
+      },
+      "desc": {
+        "en": "When equipped by a [Fighter] character, grants the following effect. / The equipping character's Crit Rate increases by 6%. / Using a Special Skill increases the caster's Basic Attack DMG by 15%. (Duration: 5s) / Lightning DMG increases by 40% upon gaining a Skill DMG Boost effect while using a Basic Attack. (Duration: 3s) / Fusion Level 3: Gains 0.06% Crit DMG Boost for every 10 points of Fighter proficiency. (Max: 15%) / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Fighter proficiency. (Max: 15%)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "critRate",
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        },
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 15,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSpecialSkill",
+          "durationSec": 5
+        },
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "damageType": "lightning",
+          "value": 40,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive",
+          "durationSec": 3,
+          "condition": {
+            "note": {
+              "en": "upon gaining a Skill DMG Boost effect while using a Basic Attack"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "artifactLevel": 60,
+      "level": 5,
+      "name": {
+        "en": "Money is Power V"
+      },
+      "desc": {
+        "en": "When equipped by a [Fighter] character, grants the following effect. / The equipping character's Crit Rate increases by 12%. / Using a Special Skill increases the caster's Basic Attack DMG by 30%. (Duration: 5s) / Lightning DMG increases by 80% upon gaining a Skill DMG Boost effect while using a Basic Attack. (Duration: 3s) / Fusion Level 3: Gains 0.06% Crit DMG Boost for every 10 points of Fighter proficiency. (Max: 15%) / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Fighter proficiency. (Max: 15%)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "critRate",
+          "value": 12,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        },
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 30,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSpecialSkill",
+          "durationSec": 5
+        },
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "damageType": "lightning",
+          "value": 80,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive",
+          "durationSec": 3,
+          "condition": {
+            "note": {
+              "en": "upon gaining a Skill DMG Boost effect while using a Basic Attack"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "images": {
+    "icon": "savvy-investment-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **5 ดาว (ผู้เล่นบอก 2026-10-22)** ตรงกับเพชร 5 เม็ดบนการ์ดสีส้ม | เก็บ Fusion 1 (จอ Lv.01) กับ Fusion 5 (จอ Lv.60) และค่าสเตตัสที่ Lv.60 ตามที่ผู้เล่นกำหนด 2026-10-22 | บรรทัด Fusion Level 3 / 5 (ตามความชำนาญ สูงสุด 15%) เก็บเป็นข้อความ | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | บรรทัด Fusion Level 5 ของ desc อ่านจากจอ Lv.60 ที่เลื่อนลง (จอ Lv.01 / หัวกล่อง Lv.60 ตัดก่อนถึงบรรทัดนั้น) | Ultimate Gauge Charge → energyGain ตามแบบ Detailed Stats ของตัวละคร | ไอคอนตัดจากจอ Lv.60 ที่ส่งมารอบหลัง"
+  }
+}

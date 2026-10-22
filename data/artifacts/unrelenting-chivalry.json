@@ -18,51 +18,54 @@
       "unit": "flat"
     }
   ],
-  "fusion": {
-    "level": 5,
-    "name": {
-      "en": "Firm Resolve, Unwavering Vow V"
-    },
-    "desc": {
-      "en": "When equipped by a [Destroyer] character, grants the following effect. / Spirit of Chivalry is granted in the following situations. (Max Stacks: 3) / - Using a Tag-out Skill / - Using a Switch Skill / - Using a Special Skill / - Grants 3 stacks upon using an Ultimate Skill / Spirit of Chivalry: Upon using a Basic Attack, all stacks are consumed, Lightning DMG increases by 6%, and Basic Attack DMG increases by 6% per stack. (Max Stacks: 3, Duration: 4s, New stacks reset the duration). / All stacks are removed at the end of combat. / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Destroyer proficiency. (Max: 5%)"
-    },
-    "effects": [
-      {
-        "kind": "buff",
-        "stat": "dmgDealt",
-        "damageType": "lightning",
-        "value": 6,
-        "unit": "percent",
-        "target": "self",
-        "trigger": "onBasicAttack",
-        "durationSec": 4,
-        "maxStacks": 3,
-        "condition": {
-          "note": {
-            "en": "Spirit of Chivalry · all stacks are consumed upon using a Basic Attack"
-          }
-        }
+  "fusion": [
+    {
+      "artifactLevel": 60,
+      "level": 5,
+      "name": {
+        "en": "Firm Resolve, Unwavering Vow V"
       },
-      {
-        "kind": "buff",
-        "stat": "dmgDealt",
-        "scopes": [
-          "basicAttack"
-        ],
-        "value": 6,
-        "unit": "percent",
-        "target": "self",
-        "trigger": "onBasicAttack",
-        "durationSec": 4,
-        "maxStacks": 3,
-        "condition": {
-          "note": {
-            "en": "Spirit of Chivalry · all stacks are consumed upon using a Basic Attack"
+      "desc": {
+        "en": "When equipped by a [Destroyer] character, grants the following effect. / Spirit of Chivalry is granted in the following situations. (Max Stacks: 3) / - Using a Tag-out Skill / - Using a Switch Skill / - Using a Special Skill / - Grants 3 stacks upon using an Ultimate Skill / Spirit of Chivalry: Upon using a Basic Attack, all stacks are consumed, Lightning DMG increases by 6%, and Basic Attack DMG increases by 6% per stack. (Max Stacks: 3, Duration: 4s, New stacks reset the duration). / All stacks are removed at the end of combat. / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Destroyer proficiency. (Max: 5%)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "damageType": "lightning",
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onBasicAttack",
+          "durationSec": 4,
+          "maxStacks": 3,
+          "condition": {
+            "note": {
+              "en": "Spirit of Chivalry · all stacks are consumed upon using a Basic Attack"
+            }
+          }
+        },
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onBasicAttack",
+          "durationSec": 4,
+          "maxStacks": 3,
+          "condition": {
+            "note": {
+              "en": "Spirit of Chivalry · all stacks are consumed upon using a Basic Attack"
+            }
           }
         }
-      }
-    ]
-  },
+      ]
+    }
+  ],
   "images": {
     "icon": "unrelenting-chivalry-icon.webp"
   },
