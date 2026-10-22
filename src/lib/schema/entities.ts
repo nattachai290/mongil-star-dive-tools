@@ -441,13 +441,14 @@ export const food = z.object({
   effects: z.array(effect).default([]),
   durationSec: z.number().positive(),
   exquisite: z.object({ effects: z.array(effect).default([]) }).optional(),
-  ingredients: z
-    .array(z.object({ name: text, qty: z.number().int().positive(), swappable: z.boolean().default(false) }))
-    .default([]),
   unlock: z.object({ method: vocabEnum("obtainMethod"), note: text.optional() }).optional(),
   images: z.object({ icon: z.string().optional() }).optional(),
+  /**
+   * ไม่มีช่อง ingredients — ตัดออกจากขอบเขตตามคำสั่งผู้เล่น 2026-10-22 "ชื่อวัตถุดิบ ไม่เก็บ"
+   * ดู PLAN §13.7.2 · schema ตั้งเป็น .strict() ไฟล์ที่ใส่วัตถุดิบกลับมาจะไม่ผ่าน validate
+   */
   source,
-});
+}).strict();
 
 export const build = z.object({
   id: slug,

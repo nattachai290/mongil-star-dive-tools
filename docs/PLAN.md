@@ -120,7 +120,7 @@ mongil-star-dive-tools/
 
 ### 4.4 Food
 `id, name, category: "entree"|"side", buff{ stat, value, isPercent }, durationMinutes: 30,
-exquisite{ buff }, ingredients[{ itemId, qty, swappable: bool }], unlock{ from: "brownie-shop"|"event"|"quest" }, images.icon, source`
+exquisite{ buff }, unlock{ from: "brownie-shop"|"event"|"quest" }, images.icon, source`
 
 ### 4.5 Build
 `id, characterId, title{}, contentType: "boss"|"pvp"|"story"|"farming", author, updatedAt,
@@ -444,6 +444,14 @@ JSON แก้ยากสำหรับคนไม่เขียนโค้
 - **ยังเก็บ**: ชื่อชิ้น · ช่อง · ระดับ/ดาว · เซ็ต · โบนัสเซ็ตใน `sets.json` รวมข้อความใต้ [Set Effect] (`bonuses[].desc`)
   ซึ่งเป็นตัวเอฟเฟกต์จริง ไม่ใช่คำบรรยาย
 - ค่าหลักและออปชันรองอยู่ที่ `gear-main-stats.json` / `gear-substats.json` เหมือนเดิม
+
+### 13.7.2 วัตถุดิบของอาหาร — ตัดออกจากขอบเขต
+
+ผู้เล่นสั่ง 2026-10-22: **"ชื่อวัตถุดิบ ไม่เก็บ"**
+
+- จอ Cooking แสดงวัตถุดิบเป็นรูป ดาว และจำนวน ไม่มีชื่อ — ไม่เก็บทั้งรายการ ไม่ใช่แค่ชื่อ
+- ช่อง `ingredients` ถูกตัดออกจาก schema ของ food และ schema ตั้งเป็น `.strict()`
+- **ยังเก็บ**: ชื่อจาน · หมวด (entree / side) · ดาว · ทองที่ใช้ทำ · ระยะเวลา · บัฟ
 
 ### 13.8 ป้าย "ใส่ลิงก์เชนได้" — คำนวณเอา ไม่เก็บซ้ำ
 
