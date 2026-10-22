@@ -1,0 +1,31 @@
+{
+  "id": "benjamin",
+  "name": {
+    "en": "Benjamin"
+  },
+  "rarity": 4,
+  "element": "lightning",
+  "role": "assassin",
+  "range": "melee",
+  "stats": {
+    "atLevel": 60,
+    "hp": 8389,
+    "atk": 1908,
+    "def": 598,
+    "critRate": 5,
+    "critDmg": 50
+  },
+  "awaken": [],
+  "images": {
+    "portrait": "benjamin-portrait.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Assassin · Lightning · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวละครชายตัวที่สอง | ค่าพลังห้าค่าหลัก: ATK 1,908 · DEF 598 · HP 8,389 · Crit 5% / 50% — เท่ากับ Reina และ Yeonhwa ทุกตัว (Lightning Melee 4 ดาว) อ่านจากจอตรง ๆ · ยังไม่ได้เปิด Detailed Stats | รูป portrait ตัดจากจอ Info 400x400 | ยังไม่ได้อ่าน: Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลัง · จอไทยทั้งหมด"
+  }
+}
