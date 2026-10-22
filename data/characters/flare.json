@@ -1,0 +1,31 @@
+{
+  "id": "flare",
+  "name": {
+    "en": "Flare"
+  },
+  "rarity": 5,
+  "element": "fire",
+  "role": "destroyer",
+  "range": "ranged",
+  "stats": {
+    "atLevel": 60,
+    "hp": 9272,
+    "atk": 2155,
+    "def": 638,
+    "critRate": 5,
+    "critDmg": 50
+  },
+  "awaken": [],
+  "images": {
+    "portrait": "flare-portrait.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Destroyer · Fire · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 2,155 · DEF 638 · HP 9,272 · Crit 5% / 50% อ่านจากจอตรง ๆ — **ATK สูงกว่าตัว 5 ดาวอื่นที่ลงไว้ (2,049 / 1,943) และ HP ต่ำกว่า** ไม่ได้ปรับให้เข้าแบบ | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | ยังไม่ได้อ่าน: Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลัง · จอไทยทั้งหมด"
+  }
+}
