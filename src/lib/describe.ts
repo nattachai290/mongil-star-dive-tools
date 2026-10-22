@@ -198,7 +198,20 @@ function healHeadline(e: Effect, locale: Locale): string | null {
   return `Recovers ${e.value}% of ${whose}Max HP`;
 }
 
+/**
+ * ฟื้นฟูสเตมินา — ผู้เล่นยืนยัน 2026-10-22 ว่าเป็นการเติมเกจ Max Stamina เดียวกัน
+ * จึงใช้ stat stamina คู่กับ kind heal แต่ต้องเขียนเป็น "ฟื้นฟูสเตมินา 42"
+ * ไม่ใช่ "สเตมินาสูงสุด +42" ซึ่งอ่านเหมือนเพดานเพิ่ม
+ * คำไทยตามจอเกม (ลิงก์เชนช้อนแห่งการกินจุ "ฟื้นฟูสเตมินา 40")
+ */
+function staminaHeadline(e: Effect, locale: Locale): string | null {
+  if (e.kind !== "heal" || e.stat !== "stamina" || e.unit !== "flat" || e.value === undefined) return null;
+  return locale === "th" ? `ฟื้นฟูสเตมินา ${e.value}` : `Recovers ${e.value} Stamina`;
+}
+
 export function describeEffect(e: Effect, locale: Locale): EffectDescription {
+  const stamina = staminaHeadline(e, locale);
+  if (stamina) return { headline: stamina, qualifiers: qualifiers(e, locale) };
   const heal = healHeadline(e, locale);
   if (heal) return { headline: heal, qualifiers: qualifiers(e, locale) };
 
