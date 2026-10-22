@@ -15,7 +15,406 @@
     "critRate": 5,
     "critDmg": 50
   },
+  "otherStats": [
+    {
+      "kind": "buff",
+      "stat": "suppressionDmg",
+      "value": 11.59,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "weaknessHit"
+      ],
+      "value": 125,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "energyGain",
+      "value": 100,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "stamina",
+      "value": 100,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "assassinPower",
+      "value": 1026,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
   "awaken": [],
+  "skills": {
+    "basic": {
+      "name": {
+        "en": "Sardonic Swordplay"
+      },
+      "desc": {
+        "en": "Benjamin deals consecutive Physical DMG by advancing forward and striking enemies with his dual swords. / Upon using his Basic Attack's 3th Hit, the element of all attacks is converted to Lightning for a set duration."
+      },
+      "damageType": "physical",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            18.4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            59.5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "3rd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            36.9,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "4th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            94.9,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Charge Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            38.5,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Air Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            107.8,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Evasion Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            228.9,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "ultimate": {
+      "name": {
+        "en": "Dimensional Annihilation Slash"
+      },
+      "desc": {
+        "en": "Benjamin swiftly swings his sword, slicing through dimensions and slashing countless enemies, dealing Lightning DMG and rendering enemies Airborne. Hit enemies are inflicted with Lightning Affliction."
+      },
+      "damageType": "lightning",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            921.2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Lightning Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "passive": {
+      "name": {
+        "en": "Sleepless Torrent"
+      },
+      "desc": {
+        "en": "If Benjamin doesn't take any DMG for 3s when using his Special Skill, he gains Nightmare Sprint."
+      },
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Nightmare Sprint Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            15,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Nightmare Sprint Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            20,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    }
+  },
+  "statuses": [
+    {
+      "name": {
+        "en": "Lightning Affliction"
+      },
+      "desc": {
+        "en": "Afflicted targets take Lightning DMG over time, and Lightning RES decreases by 15%."
+      },
+      "effects": []
+    },
+    {
+      "name": {
+        "en": "Nightmare Sprint"
+      },
+      "desc": {
+        "en": "Enhanced Special Skills and Tag-out Skills can be used during the effect's duration. The effect is removed immediately after use."
+      },
+      "effects": []
+    }
+  ],
   "images": {
     "portrait": "benjamin-portrait.webp"
   },
@@ -26,6 +425,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Assassin · Lightning · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวละครชายตัวที่สอง | ค่าพลังห้าค่าหลัก: ATK 1,908 · DEF 598 · HP 8,389 · Crit 5% / 50% — เท่ากับ Reina และ Yeonhwa ทุกตัว (Lightning Melee 4 ดาว) อ่านจากจอตรง ๆ · ยังไม่ได้เปิด Detailed Stats | รูป portrait ตัดจากจอ Info 400x400 | ยังไม่ได้อ่าน: Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลัง · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Assassin · Lightning · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวละครชายตัวที่สอง | ค่าพลังห้าค่าหลัก: ATK 1,908 · DEF 598 · HP 8,389 · Crit 5% / 50% — เท่ากับ Reina และ Yeonhwa ทุกตัว (Lightning Melee 4 ดาว) อ่านจากจอตรง ๆ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 11.59% · Assassin 1,026 · Elemental Weakness 125% (แบบ Assassin 4 ดาว) · Basic Sardonic Swordplay · Ultimate Dimensional Annihilation Slash (921.2%) · Passive Sleepless Torrent · Effect Details ของ Lightning Affliction และ Nightmare Sprint | basic: ดาเมจกายภาพตามท่อนแรก ท่อนสองเปลี่ยนธาตุของทุกการโจมตีเป็นสายฟ้า 4 วินาทีหลังจังหวะที่ 3 · **จอเขียน \"3th Hit\" (ไวยากรณ์ผิดในเกม) เก็บตามจอ** | ยังไม่ได้อ่าน: Switch · Special · Guidance of Lightning · ปลุกพลัง · จอไทยทั้งหมด"
   }
 }
