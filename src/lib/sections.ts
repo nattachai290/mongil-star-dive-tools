@@ -25,10 +25,10 @@ export const SECTIONS: Section[] = [
     slug: "artifacts",
     title: { th: "Artifact", en: "Artifacts" },
     blurb: {
-      th: "ค่าสเตตัสตายตัวและเอฟเฟกต์ประจำชิ้น พร้อมบอกว่าตัวละครไหนควรใส่",
-      en: "Fixed stats and per-piece effects, with who should equip them",
+      th: "ค่าสเตตัสตายตัว บทบาทที่ใส่ได้ และเอฟเฟกต์ Fusion ประจำชิ้น",
+      en: "Fixed stats, the role that can equip each one, and its Fusion effect",
     },
-    ready: false,
+    ready: true,
   },
   {
     slug: "equipment",

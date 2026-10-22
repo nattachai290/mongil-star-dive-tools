@@ -206,23 +206,44 @@ export const character = z.object({
   source,
 });
 
+/**
+ * Artifact — โครงตามจอ Artifact Preview จริง (เห็นครั้งแรก 2026-10-22)
+ *
+ * ร่างแรกยืม grade / mainStat ของอุปกรณ์มาก่อนเห็นจอ แต่จอจริงไม่มีระดับสี
+ * มีดาวบนการ์ด บทบาทที่ใส่ได้ ค่าสเตตัสสองบรรทัด และเอฟเฟกต์ที่ผูกกับระดับ Fusion
+ */
 export const artifact = z.object({
   id: slug,
   name: text,
+  /** เพชรเล็กบนการ์ด ผู้เล่นเรียกว่าดาว ("artifact 4 ดาว") */
+  stars: z.number().int().min(1).max(5).optional(),
+  /** บทบาทใต้คำว่า Artifacts บนการ์ด — เอฟเฟกต์ทำงานเฉพาะตอนตัวละครบทบาทนี้ใส่ */
+  role: vocabEnum("role"),
+  /** เลเวลของ Artifact ตอนอ่านค่า stats */
+  level: z.number().int().positive(),
+  /** ค่าสเตตัสใต้กล่องเอฟเฟกต์ ตามลำดับบนจอ — บรรทัดแรกเป็น ATK แบบค่าคงที่ทุกชิ้นเท่าที่เห็น */
+  stats: z.array(statValue).min(1),
   /**
-   * ยังไม่เคยเปิดจอ Artifact จริง จึงยังไม่รู้ว่าเกมแบ่งระดับยังไง
-   * ยืมคำของอุปกรณ์มาใช้ไปก่อนเพราะยังไม่มีข้อมูล Artifact สักชิ้น
-   * ถ้าจอจริงใช้คนละระบบ ให้เปลี่ยนตรงนี้ก่อนลงข้อมูล
+   * กล่อง "Fusion Level N" — ชื่อเอฟเฟกต์ลงท้ายด้วยเลขโรมันตามจอ ("Fanfare! V")
+   * เก็บชื่อตามที่พิมพ์ ไม่ตัดเลขโรมันออก เพราะยังไม่เคยเห็นระดับอื่นมายืนยัน
    */
-  grade: vocabEnum("gearGrade"),
-  mainStat: statValue,
-  effects: z.array(effect).default([]),
-  desc: text.optional(),
+  fusion: z
+    .object({
+      level: z.number().int().positive(),
+      name: text,
+      desc: text,
+      effects: z.array(effect).default([]),
+    })
+    .optional(),
   obtain: z.object({ method: vocabEnum("obtainMethod"), note: text.optional() }).optional(),
   recommendedFor: z.array(slug).default([]),
   images: z.object({ icon: z.string().optional() }).optional(),
+  /**
+   * ไม่มีช่อง desc — คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ
+   * ตามคำสั่งเดียวกับอุปกรณ์ "เก็บแค่ set effect คำบรรยายไม่เอา" (PLAN §13.7.1)
+   */
   source,
-});
+}).strict();
 
 export const equipment = z.object({
   id: slug,
@@ -577,6 +598,7 @@ export type LinkChain = z.infer<typeof linkChain>;
 export type Monsterling = z.infer<typeof monsterling>;
 export type Skill = z.infer<typeof skill>;
 export type Equipment = z.infer<typeof equipment>;
+export type Artifact = z.infer<typeof artifact>;
 export type GearMainStat = z.infer<typeof gearMainStat>;
 export type GearSubstat = z.infer<typeof gearSubstat>;
 export type EquipmentSet = z.infer<typeof equipmentSet>;
