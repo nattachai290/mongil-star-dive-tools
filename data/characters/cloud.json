@@ -590,15 +590,6 @@
       "values": []
     }
   },
-  "source": {
-    "verifiedAt": "2026-10-22",
-    "gameVersion": "unknown",
-    "by": "in-game",
-    "readIn": [
-      "en"
-    ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 · Info · Detailed Stats · Basic Attack · Passive · Guidance of Ice · **ยังไม่มีจอไทย** | **ตัวละครชายตัวแรก** · Destroyer · **Ice** (ธาตุที่สาม) · Ranged · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลัง (จอ Info กับ Detailed Stats ตรงกัน): ATK 1,855 · DEF 580 (เท่ากับ Angel) · HP 8,830 · **Neutralization DMG Boost 11.59%** · **Destroyer 1,026 → stat ใหม่ destroyerPower** — ครบสี่บทบาทแล้ว (support · fighter · assassin · destroyer) และ 1,026 / 11.59% ตรงกับแบบของตัว 4 ดาว | basic: ดาเมจ**กายภาพ** (ท่อน 1) ส่วน Rapid-Fire เป็นธาตุน้ำแข็ง (ท่อน 2) — เก็บ damageType physical ตามท่อนแรก แบบเดียวกับ Verna | **Guidance of Ice: Frost Chain — ข้อความในเกมเขียนว่า \"Using Verna's Switch Skill\" ทั้งที่เป็นสกิลของ Cloud** เก็บตามที่จอเขียน ไม่ได้แก้ (น่าจะเป็นข้อความผิดในเกม คัดลอกมาจากของ Verna) · Lv.12 ATK +7.7% 15 วินาที · effects ว่าง เพราะจอไม่ได้บอกว่าบัฟลงที่ใคร | ช่องที่หกชื่อ **Guidance of Ice** — ชื่อเปลี่ยนตามธาตุครบสามธาตุแล้ว (Fire · Wind · Ice) | ยังไม่มีรูป: ภาพจอ Info ส่งมากลางคัน ไม่ได้บันทึกเป็นไฟล์ | **2026-10-22 รอบสอง** Switch Frost Wave · Special Piercing Ice · Ultimate Frost Burst (Lv.12) · Effect Details ของ Ice Affliction · ปลุกพลังครบหกขั้น (ยังล็อกบนจอตัวอย่าง) — **ครบทั้งหกช่องสกิลแล้ว** | ultimate: Ice Affliction Duration ไม่ใส่ line เพราะทั้งสองท่อนพูดถึง Ice Affliction · **Ice Affliction ข้อความรูปแบบเดียวกับ Fire / Wind Affliction ทุกคำ** ครบสามธาตุแล้ว | ปลุกพลัง: effects เติมขั้น 3 (ดาเมจสกิลพิเศษ +6%) และขั้น 5 (ดาเมจโจมตีพื้นฐาน +6%) พร้อมเลเวลสกิล +2 · ขั้นอื่นปรับกลไกเดิม เก็บเป็นข้อความ · ขั้น 1 อ้างถึง Freeze (มีปุ่ม Effects แต่ยังไม่เห็นหน้าต่าง) | ยังไม่ได้อ่าน: รูป · จอไทยทั้งหมด"
-  },
   "statuses": [
     {
       "name": {
@@ -609,5 +600,17 @@
       },
       "effects": []
     }
-  ]
+  ],
+  "images": {
+    "portrait": "cloud-portrait.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 · Info · Detailed Stats · Basic Attack · Passive · Guidance of Ice · **ยังไม่มีจอไทย** | **ตัวละครชายตัวแรก** · Destroyer · **Ice** (ธาตุที่สาม) · Ranged · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลัง (จอ Info กับ Detailed Stats ตรงกัน): ATK 1,855 · DEF 580 (เท่ากับ Angel) · HP 8,830 · **Neutralization DMG Boost 11.59%** · **Destroyer 1,026 → stat ใหม่ destroyerPower** — ครบสี่บทบาทแล้ว (support · fighter · assassin · destroyer) และ 1,026 / 11.59% ตรงกับแบบของตัว 4 ดาว | basic: ดาเมจ**กายภาพ** (ท่อน 1) ส่วน Rapid-Fire เป็นธาตุน้ำแข็ง (ท่อน 2) — เก็บ damageType physical ตามท่อนแรก แบบเดียวกับ Verna | **Guidance of Ice: Frost Chain — ข้อความในเกมเขียนว่า \"Using Verna's Switch Skill\" ทั้งที่เป็นสกิลของ Cloud** เก็บตามที่จอเขียน ไม่ได้แก้ (น่าจะเป็นข้อความผิดในเกม คัดลอกมาจากของ Verna) · Lv.12 ATK +7.7% 15 วินาที · effects ว่าง เพราะจอไม่ได้บอกว่าบัฟลงที่ใคร | ช่องที่หกชื่อ **Guidance of Ice** — ชื่อเปลี่ยนตามธาตุครบสามธาตุแล้ว (Fire · Wind · Ice) | รูป portrait ตัดจากจอ Info 400x400 (ผู้เล่นส่งภาพมาใหม่ 2026-10-22) | **2026-10-22 รอบสอง** Switch Frost Wave · Special Piercing Ice · Ultimate Frost Burst (Lv.12) · Effect Details ของ Ice Affliction · ปลุกพลังครบหกขั้น (ยังล็อกบนจอตัวอย่าง) — **ครบทั้งหกช่องสกิลแล้ว** | ultimate: Ice Affliction Duration ไม่ใส่ line เพราะทั้งสองท่อนพูดถึง Ice Affliction · **Ice Affliction ข้อความรูปแบบเดียวกับ Fire / Wind Affliction ทุกคำ** ครบสามธาตุแล้ว | ปลุกพลัง: effects เติมขั้น 3 (ดาเมจสกิลพิเศษ +6%) และขั้น 5 (ดาเมจโจมตีพื้นฐาน +6%) พร้อมเลเวลสกิล +2 · ขั้นอื่นปรับกลไกเดิม เก็บเป็นข้อความ · ขั้น 1 อ้างถึง Freeze (มีปุ่ม Effects แต่ยังไม่เห็นหน้าต่าง) | ยังไม่ได้อ่าน: จอไทยทั้งหมด"
+  }
 }
