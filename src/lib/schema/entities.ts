@@ -146,6 +146,13 @@ export const character = z.object({
       ultimate: skill,
       /** ช่องที่ห้าบนจอสกิล ไม่ได้กดใช้เอง ทำงานเองตลอด */
       passive: skill.optional(),
+      /**
+       * ช่องที่หก — สกิลธาตุ เห็นครั้งแรกที่ Verna: Summer Dive! (2026-10-22)
+       * จอเรียกหัวช่องตามธาตุ ("Guidance of Fire") เลเวลขึ้นตาม Elemental Blessing
+       * ("Every time the Elemental Blessing reaches a specific level, your skill level increases.")
+       * ไม่มีตารางค่า ตัวเลขอยู่ในประโยคเลย จึงเก็บเป็น effects ของเลเวลที่เห็น
+       */
+      elemental: skill.optional(),
     })
     .partial()
     .optional(),

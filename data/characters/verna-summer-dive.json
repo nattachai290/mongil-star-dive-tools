@@ -343,6 +343,68 @@
         }
       ]
     },
+    "switch": {
+      "name": {
+        "en": "Sword Uppercut"
+      },
+      "desc": {
+        "en": "Verna: Summer Dive! appears near the enemy and generates a powerful blade of fire beneath them, striking upward to deal Fire DMG. / Using her Switch Skill while Flaming Will is active triggers an enhanced skill, dealing powerful Fire DMG. / If the Special Skill button is pressed at the right time during her Enhanced Switch Skill, a photo of Verna: Summer Dive! is taken. Then, it ends the Switch Skill sooner and activates her Special Skill. This Special Skill activates regardless of its cooldown. Attack Speed Boost and Reduction effects do not apply while photos are being taken."
+      },
+      "damageType": "fire",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            151.7,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Enhanced DMG When Flaming Will Is Active"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            607,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
     "special": {
       "name": {
         "en": "Manifestation of Will"
@@ -428,9 +490,214 @@
           ]
         }
       ]
+    },
+    "ultimate": {
+      "name": {
+        "en": "Flame Spear"
+      },
+      "desc": {
+        "en": "Verna gathers a large amount of fire energy and unleashes a powerful thrust forward, inflicting Fire Affliction. / If she uses her Ultimate Skill while Flaming Will is active, a blade of fire is generated, dealing bonus Fire DMG and refreshing the duration of Flaming Will."
+      },
+      "damageType": "fire",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1287.5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Fire Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Bonus DMG When Flaming Will Is Active"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            386.2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "passive": {
+      "name": {
+        "en": "Flaming Will"
+      },
+      "desc": {
+        "en": "Using any of Verna: Summer Dive!'s skills except her Basic Attack, including Evasion Counter and Air Counter, converts the element of all her attacks to Fire and decreases DMG Taken for a set duration. The duration does not decrease while Verna: Summer Dive! is not being actively controlled in combat. / Landing a Fire attack during this duration grants Ember."
+      },
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Flaming Will Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            9,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Ember Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            2,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "DMG Taken Reduction"
+          },
+          "unit": "percent",
+          "scaling": [
+            35,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "elemental": {
+      "name": {
+        "en": "Burning Hostility"
+      },
+      "desc": {
+        "en": "Hitting an enemy with a Fire attack decreases the target's DEF by 15.5% for 4s."
+      },
+      "effects": [
+        {
+          "kind": "debuff",
+          "stat": "def",
+          "value": 15.5,
+          "unit": "percent",
+          "target": "enemy",
+          "trigger": "onHit",
+          "durationSec": 4,
+          "condition": {
+            "triggerDamageType": "fire"
+          }
+        }
+      ],
+      "values": []
     }
   },
   "statuses": [
+    {
+      "name": {
+        "en": "Fire Affliction"
+      },
+      "desc": {
+        "en": "Afflicted targets take Fire DMG over time, and Fire RES decreases by 15%."
+      },
+      "effects": []
+    },
     {
       "name": {
         "en": "Flaming Will"
@@ -457,6 +724,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอตัวละครภาษาอังกฤษ 2026-10-22 (Info · Skills: Basic Attack / Special Skill · Effect Details) · **ยังไม่มีจอไทยเลย** ชื่อไทยและข้อความไทยทุกช่องจึงว่าง ไม่ได้แปลเอง | id มาจากชื่ออังกฤษ \"Verna: Summer Dive!\" -> verna-summer-dive ตามแบบมอนชุด Summer Dive (cappy-summer-dive ฯลฯ) — **เป็นตัวละครคนละตัวกับ Verna ปกติ** จอเรียกตัวเองเต็มชื่อทุกที่ (\"Verna: Summer Dive! is not being controlled\") | Fighter · Fire · Melee · 4 ดาว · เลเวล 60 สูงสุด | **ไม่เก็บค่าพลัง** จอ Info แสดง ATK 5,409 · DEF 5,877 · HP 20,893 · Crit Rate 15% · Crit DMG 110% แต่ตัวละครอยู่ในทีม (On Team) และตัวเลขสูงกว่าค่าเปล่าของวิเวียนที่เลเวลเดียวกันหลายเท่า แปลว่ารวมอุปกรณ์/มอนสเตอร์ลิงแล้ว schema ห้ามเก็บค่าที่ติดของอยู่ | สกิลทุกท่าเลเวล 12 (Max level reached) เติม scaling เฉพาะช่องที่ 12 · โจมตีพื้นฐานเป็น**กายภาพ** แต่ระหว่าง Flaming Will การโจมตีทั้งหมดเปลี่ยนเป็นธาตุไฟ (จอ Effect Details) — changesBasicAttackTo ไม่ได้ใส่ เพราะช่องนั้นหมายถึงสกิลที่ใช้แล้วเปลี่ยน ส่วนนี่คือสถานะ ดู statuses | line: บรรทัด Enhanced ทั้งหมดผูกกับท่อนที่ 2 (\"When Flaming Will is active ... enhanced\") ส่วน 1st-4th ผูกท่อนที่ 1 · Charge Attack / Air Counter / Evasion Counter ไม่ได้ถูกพูดถึงในท่อนไหน จึงไม่ใส่ line | statuses ไม่ใส่ effects เพราะครอบคำอธิบายไม่ได้ทั้งหมด (แปลงธาตุ · ไม่ลดเวลาตอนไม่ได้บังคับ · Ember เพิ่มเป็นสองเท่าตอนไม่ได้บังคับ) | ยังไม่ได้อ่าน: Switch Skill · Ultimate Skill · Passive Trait (Lv.1) · \"Guidance of Fire Lv.2\" ซึ่งเป็นปุ่มที่หกบนจอสกิล ยังไม่รู้ว่าคืออะไร · ปลุกพลัง · ค่าพลังเปล่า"
+    "note": "อ่านจากจอตัวละครภาษาอังกฤษ 2026-10-22 (Info · Skills: Basic Attack / Special Skill · Effect Details) · **ยังไม่มีจอไทยเลย** ชื่อไทยและข้อความไทยทุกช่องจึงว่าง ไม่ได้แปลเอง | id มาจากชื่ออังกฤษ \"Verna: Summer Dive!\" -> verna-summer-dive ตามแบบมอนชุด Summer Dive (cappy-summer-dive ฯลฯ) — **เป็นตัวละครคนละตัวกับ Verna ปกติ** จอเรียกตัวเองเต็มชื่อทุกที่ (\"Verna: Summer Dive! is not being controlled\") | Fighter · Fire · Melee · 4 ดาว · เลเวล 60 สูงสุด | **ไม่เก็บค่าพลัง** จอ Info แสดง ATK 5,409 · DEF 5,877 · HP 20,893 · Crit Rate 15% · Crit DMG 110% แต่ตัวละครอยู่ในทีม (On Team) และตัวเลขสูงกว่าค่าเปล่าของวิเวียนที่เลเวลเดียวกันหลายเท่า แปลว่ารวมอุปกรณ์/มอนสเตอร์ลิงแล้ว schema ห้ามเก็บค่าที่ติดของอยู่ | สกิลทุกท่าเลเวล 12 (Max level reached) เติม scaling เฉพาะช่องที่ 12 · โจมตีพื้นฐานเป็น**กายภาพ** แต่ระหว่าง Flaming Will การโจมตีทั้งหมดเปลี่ยนเป็นธาตุไฟ (จอ Effect Details) — changesBasicAttackTo ไม่ได้ใส่ เพราะช่องนั้นหมายถึงสกิลที่ใช้แล้วเปลี่ยน ส่วนนี่คือสถานะ ดู statuses | line: บรรทัด Enhanced ทั้งหมดผูกกับท่อนที่ 2 (\"When Flaming Will is active ... enhanced\") ส่วน 1st-4th ผูกท่อนที่ 1 · Charge Attack / Air Counter / Evasion Counter ไม่ได้ถูกพูดถึงในท่อนไหน จึงไม่ใส่ line | statuses ไม่ใส่ effects เพราะครอบคำอธิบายไม่ได้ทั้งหมด (แปลงธาตุ · ไม่ลดเวลาตอนไม่ได้บังคับ · Ember เพิ่มเป็นสองเท่าตอนไม่ได้บังคับ) | **2026-10-22 รอบสอง** Switch Skill (Lv.12) · Passive Trait (Lv.1) · Guidance of Fire (Lv.2) ภาษาอังกฤษ | **ช่องที่หก \"Guidance of Fire\" คือสกิลธาตุ** ชื่อท่า Burning Hostility · เลเวลขึ้นตาม Elemental Blessing (ปุ่ม Elemental Sanctum) · Lv.2: ตีโดนด้วยการโจมตีธาตุไฟ ลดพลังป้องกันเป้าหมาย 15.5% นาน 4 วินาที · **ป๊อปอัป Skill Info แสดง Lv.12 = 20.5%** เก็บไว้ในโน้ต ไม่ใส่เป็น effect เพราะยังไม่ได้ถึงเลเวลนั้น และไม่คำนวณเลเวลระหว่างกลาง · เพิ่มช่อง skills.elemental ใน schema และหน้าเว็บ | Passive: line 1 = Flaming Will Duration และ DMG Taken Reduction (ท่อนแรกพูดถึงระยะเวลาและการลดดาเมจที่ได้รับ) · line 2 = Ember Duration | Switch Skill ท่อนที่สามเรื่องถ่ายรูป (กดสกิลพิเศษถูกจังหวะระหว่าง Enhanced Switch Skill จะเปิดสกิลพิเศษโดยไม่สนคูลดาวน์) ไม่มีตัวเลข เก็บเป็นข้อความ | **2026-10-22 รอบสาม** Ultimate Skill Flame Spear (Lv.12) และ Effect Details ที่มี Fire Affliction · ครบทั้งหกช่องสกิลแล้ว (ภาษาอังกฤษ) | ultimate damageType fire: ท่อนแรกไม่ได้เขียนชนิดดาเมจตรง ๆ แต่สร้าง Fire Affliction และอีกสี่ท่าของเวอร์ชันนี้เป็นไฟหมดยกเว้นโจมตีพื้นฐาน — **ติดไว้ในโน้ตว่าเป็นการอ่านจากบริบท** ท่อนสองเขียน bonus Fire DMG ชัด | **Fire Affliction ข้อความอังกฤษตรงกับของวิเวียนทุกตัวอักษร** วิเวียนมีชื่อไทย \"เอฟเฟกต์อ่อนแอต่อไฟ\" อยู่แล้ว แต่ไม่ได้ยกมาใส่ที่นี่ เพราะยังไม่เห็นจอไทยของตัวนี้ (ผู้เล่นสั่ง: อ่านจากภาพเท่านั้น) | ยังไม่ได้อ่าน: ปลุกพลัง · ค่าพลังเปล่า · จอไทยทั้งหมด"
   }
 }

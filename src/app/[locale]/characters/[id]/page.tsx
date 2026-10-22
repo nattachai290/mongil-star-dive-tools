@@ -29,13 +29,14 @@ export async function generateMetadata({
   return { title: name, description: createTranslate(locale)("characters.lede") };
 }
 
-/** ห้าช่องบนจอสกิล เรียงตามที่เกมเรียง ไม่ใช่ตามลำดับตัวอักษร */
+/** หกช่องบนจอสกิล เรียงตามที่เกมเรียง ไม่ใช่ตามลำดับตัวอักษร */
 const SKILL_SLOTS = [
   ["basic", "skill.basic"],
   ["switch", "skill.switch"],
   ["special", "skill.special"],
   ["ultimate", "skill.ultimate"],
   ["passive", "skill.passive"],
+  ["elemental", "skill.elemental"],
 ] as const;
 
 function EffectList({ effects, locale }: { effects: Effect[]; locale: Locale }) {
