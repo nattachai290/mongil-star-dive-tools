@@ -16,6 +16,334 @@
     "critDmg": 50
   },
   "awaken": [],
+  "skills": {
+    "switch": {
+      "name": {
+        "en": "Tiger Strike"
+      },
+      "desc": {
+        "en": "Sangun emerges near an enemy, spins rapidly, and hurls the Tiger's Howl forward, dealing Wind DMG. / Landing a hit pulls the target to the point of attack."
+      },
+      "damageType": "wind",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            77.4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            116.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "special": {
+      "name": {
+        "en": "Fearsome Tiger"
+      },
+      "desc": {
+        "en": "When enemies are at a distance, Sangun swiftly leaps and charges at them, then strikes down mightily with the Tiger's Howl, dealing Wind DMG. / Landing a hit pulls the target to the point of attack."
+      },
+      "damageType": "wind",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            293.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            8.6,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "ultimate": {
+      "name": {
+        "en": "Cataclysm"
+      },
+      "desc": {
+        "en": "Sangun channels the power of the wind to summon a tiger, dealing Wind DMG, inflicting Wind Affliction, and knocking enemies back. The summoned tiger grants Sangun the ground-shaking power of Wind Tiger Strike. / While Wind Tiger Strike is active, its tier increases along with the strike count."
+      },
+      "damageType": "wind",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            173.5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            260.2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Wind Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Wind Tiger Strike Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            20,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "passive": {
+      "name": {
+        "en": "Aura of Harmony"
+      },
+      "desc": {
+        "en": "Sangun gains Wild Fervor upon using a counterattack."
+      },
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Wild Fervor Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            6,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "elemental": {
+      "name": {
+        "en": "Drunken Tiger Ascends"
+      },
+      "desc": {
+        "en": "Wind DMG increases by 23.15% upon using a Switch Skill. (Duration: 10s) / Landing a successful Evasion Counter while the effect is active resets its duration."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "damageType": "wind",
+          "value": 23.15,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSwitch",
+          "durationSec": 10,
+          "condition": {
+            "note": {
+              "en": "Landing a successful Evasion Counter while the effect is active resets its duration."
+            }
+          }
+        }
+      ],
+      "values": []
+    }
+  },
+  "statuses": [
+    {
+      "name": {
+        "en": "Wind Tiger Strike (Tier 2)"
+      },
+      "desc": {
+        "en": "Basic Attack Range and Wind DMG increase by 25%. The effect expires when Wind Tiger Strike (Tier 1) expires, regardless of duration."
+      },
+      "effects": []
+    },
+    {
+      "name": {
+        "en": "Wind Tiger Strike (Tier 3)"
+      },
+      "desc": {
+        "en": "Basic Attack Range and Wind DMG increase by 40%. The effect expires when Wind Tiger Strike (Tier 1) expires, regardless of duration."
+      },
+      "effects": []
+    },
+    {
+      "name": {
+        "en": "Wind Affliction"
+      },
+      "desc": {
+        "en": "Afflicted targets take Wind DMG over time, and Wind RES decreases by 15%."
+      },
+      "effects": []
+    }
+  ],
   "images": {
     "portrait": "sangun-portrait.webp"
   },
@@ -26,6 +354,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Fighter · Wind · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,943 · DEF 656 · HP 9,978 · Crit 5% / 50% อ่านจากจอตรง ๆ — เท่ากับ Chloe ทุกค่า (Wind Fighter Melee 5 ดาว) | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 380x380 ขยายเป็น 400x400 (เลี่ยงป้าย Info ด้านบน) | ยังไม่ได้อ่าน: Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลัง · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Fighter · Wind · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,943 · DEF 656 · HP 9,978 · Crit 5% / 50% อ่านจากจอตรง ๆ — เท่ากับ Chloe ทุกค่า (Wind Fighter Melee 5 ดาว) | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 380x380 ขยายเป็น 400x400 (เลี่ยงป้าย Info ด้านบน) | **2026-10-22 รอบสอง** Switch Tiger Strike · Special Fearsome Tiger (293.6%, 8.6 วินาที) · Ultimate Cataclysm (คำอธิบายและตารางอ่านจากพื้นหลังจาง ๆ ของป๊อปอัป Effect Details — อ่านออกครบ) · Passive Aura of Harmony (Wild Fervor 6 วินาที) · Guidance of Wind Drunken Tiger Ascends (ดาเมจลม +23.15% 10 วินาที) | Effect Details ของ Ultimate ถูกเลื่อนลง: เห็น Tier 2 / Tier 3 / Wind Affliction · **Wind Tiger Strike (Tier 1) อยู่เหนือขอบ อ่านไม่ได้ ยังไม่เก็บ** | ปุ่ม Effects ของ Passive ยังไม่ได้เปิด → ยังไม่มีคำอธิบาย Wild Fervor | ยังไม่ได้อ่าน: Detailed Stats · Basic · Wind Tiger Strike (Tier 1) · Wild Fervor · ปลุกพลัง · จอไทยทั้งหมด"
   }
 }
