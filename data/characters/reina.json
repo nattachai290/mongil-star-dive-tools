@@ -15,7 +15,96 @@
     "critRate": 5,
     "critDmg": 50
   },
-  "awaken": [],
+  "otherStats": [
+    {
+      "kind": "buff",
+      "stat": "neutralizationDmg",
+      "value": 19.97,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "weaknessHit"
+      ],
+      "value": 125,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "energyGain",
+      "value": 100,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "stamina",
+      "value": 100,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "destroyerPower",
+      "value": 1026,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
+  "awaken": [
+    {
+      "stage": 1,
+      "name": {
+        "en": "Charge Forward"
+      },
+      "desc": {
+        "en": "Using a Basic Attack quickly after Reina's Special Skill triggers a bonus attack that pierces through the enemy and deals Lightning DMG. This attack is considered a Basic Attack and generates 2 extra charge(s) of Lightning Energy."
+      },
+      "effects": []
+    },
+    {
+      "stage": 2,
+      "name": {
+        "en": "Knight of Colossal Power"
+      },
+      "desc": {
+        "en": "Each Variant Attack's number of Lightning Energy charges consumed decreases by 2. / The effect values of Steel Retaliation are multiplied by 2, and using a 2 or 3-Hit Variant Attack grants Steel Retaliation even when Reina doesn't take a hit. / Using a Variant Attack's 3rd Hit triggers additional lightning strikes to increase the total DMG by 20%."
+      },
+      "effects": []
+    },
+    {
+      "stage": 3,
+      "name": {
+        "en": "Might Makes Knight"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    }
+  ],
   "images": {
     "portrait": "reina-portrait.webp"
   },
@@ -26,6 +115,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Destroyer · **Lightning** (ธาตุที่สี่) · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลักจากจอ Info: ATK 1,908 · DEF 598 · HP 8,389 · Crit 5% / 50% — จอตัวอย่างไม่มีของติด (ตัวอื่นที่เปิดจอ Detailed Stats คู่กันตรงกันทุกตัว) · **ยังไม่ได้เปิด Detailed Stats** จึงยังไม่มี otherStats (คาดว่าจะมี Neutralization DMG Boost 11.59% และ Destroyer 1,026 ตามแบบตัว 4 ดาว Destroyer แต่ไม่ใส่จากการคาด) | รูป portrait ตัดจากจอ Info 420x420 | ยังไม่ได้อ่าน: Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลัง · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Destroyer · **Lightning** (ธาตุที่สี่) · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลักจากจอ Info: ATK 1,908 · DEF 598 · HP 8,389 · Crit 5% / 50% — จอตัวอย่างไม่มีของติด (ตัวอื่นที่เปิดจอ Detailed Stats คู่กันตรงกันทุกตัว) | รูป portrait ตัดจากจอ Info 420x420 | **2026-10-22 รอบสอง** Detailed Stats: ห้าค่าหลักตรงกับจอ Info · Neutralization DMG Boost **19.97%** · Destroyer 1,026 · Elemental Weakness 125% · gauge 100% · stamina 100 | **19.97% ไม่ใช่ 11.59% ตามแบบตัว 4 ดาวที่เห็นมาก่อน** (Angel · Bonnie · Cloud) — ถ้าใส่ตามที่คาดไว้รอบก่อนจะผิด · ค่าบทบาท 1,026 ยังตรงแบบ 4 ดาว · ยังไม่มีบรรทัด Lightning DMG Boost | ปลุกพลังขั้น 1-3 (ยังล็อกบนจอตัวอย่าง) · **ขั้น 3 ของ Reina เพิ่มดาเมจโจมตีพื้นฐาน** (ตัวอื่นขั้น 3 มักเป็นสกิลพิเศษ) เติม effects + skillLevelBonus 2 · ขั้น 1-2 อ้างกลไก Lightning Energy · Variant Attack · Steel Retaliation เก็บเป็นข้อความ | ยังไม่ได้อ่าน: สกิลทั้งหกช่อง · ปลุกพลังขั้น 4-6 · จอไทยทั้งหมด"
   }
 }
