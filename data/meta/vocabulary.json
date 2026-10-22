@@ -264,6 +264,9 @@
       "th": "ค่าพลังสนับสนุน",
       "en": "Support"
     },
+    "fighterPower": {
+      "en": "Fighter"
+    },
     "roleMastery": {
       "th": "ความเชี่ยวชาญตามบทบาท"
     },
