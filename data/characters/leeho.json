@@ -15,7 +15,288 @@
     "critRate": 5,
     "critDmg": 50
   },
+  "otherStats": [
+    {
+      "kind": "buff",
+      "stat": "suppressionDmg",
+      "value": 11.59,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "weaknessHit"
+      ],
+      "value": 125,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "energyGain",
+      "value": 100,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "stamina",
+      "value": 100,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "assassinPower",
+      "value": 1026,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
   "awaken": [],
+  "skills": {
+    "basic": {
+      "name": {
+        "en": "Wild Spear"
+      },
+      "desc": {
+        "en": "Leeho deals Physical DMG by stabbing and slashing enemies with his spear. / Holding the Basic Attack button will make Leeho throw his spear at an enemy, dealing Fire DMG. Holding the Basic Attack button for longer will make Leeho throw a more powerful Flash Spear, piercing and dealing Fire DMG to all enemies in front of him. / If the enemy he targets has Prey Mark, Flash Spear does not need time to charge. When DMG is dealt to an enemy with Prey Mark using Flash Spear, Prey Mark is removed and Leeho is granted Tiger Hunter. / Tiger Hunter: Increases Basic Attack DMG. Also, Leeho's Basic Attack is enhanced during the effect's duration, dealing powerful Fire DMG. If Tiger Hunter ends during an Enhanced Basic Attack, Leeho strikes the ground in front of him, dealing Fire DMG. If an Evasion Counter is successfully used within the duration of Tiger Hunter, its duration is reset."
+      },
+      "damageType": "physical",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            22.7,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            21.2,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "3rd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            24.8,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "4th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            70.9,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Spear Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            43.5,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Flash Spear Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            50.3,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Charge Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            17.7,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Air Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            68.6,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Evasion Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            153.2,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    }
+  },
   "images": {
     "portrait": "leeho-portrait.webp"
   },
@@ -26,6 +307,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Assassin · Fire · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวละครชายตัวที่สาม | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,181 · DEF 653 · HP 9,647 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,961 · DEF 580 · HP 8,389 · Crit 5% / 50%** — ตรงกับ Angel (Fire Assassin 4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | ยังไม่ได้อ่าน: Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลัง · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Assassin · Fire · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวละครชายตัวที่สาม | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,181 · DEF 653 · HP 9,647 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,961 · DEF 580 · HP 8,389 · Crit 5% / 50%** — ตรงกับ Angel (Fire Assassin 4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 11.59% · Assassin 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · Fire DMG Boost 0.7% ไม่เก็บ (แบบ Verna) | **สกิลบนจอบัญชีนี้: Basic / Special / Ultimate Lv.5 (\"Level 1 +4\") · Switch Lv.13 · Guidance of Fire Lv.2** — Basic Wild Spear เก็บลงช่อง scaling 5 | **ตาราง Basic ยังไม่ครบ** — จอสุดท้ายตัดที่แถวใต้ Evasion Counter (เห็นแค่ขอบตัวอักษร) อาจเหลือแถว Tiger Hunter อีก · เก็บเก้าแถวที่อ่านได้ | ยังไม่ได้อ่าน: ตาราง Basic ส่วนที่เหลือ · Switch · Special · Ultimate · Passive · Guidance of Fire · ปลุกพลัง · จอไทยทั้งหมด"
   }
 }
