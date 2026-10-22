@@ -1,0 +1,31 @@
+{
+  "id": "ophelia",
+  "name": {
+    "en": "Ophelia"
+  },
+  "rarity": 5,
+  "element": "ice",
+  "role": "fighter",
+  "range": "melee",
+  "stats": {
+    "atLevel": 60,
+    "hp": 10243,
+    "atk": 1943,
+    "def": 638,
+    "critRate": 5,
+    "critDmg": 50
+  },
+  "awaken": [],
+  "images": {
+    "portrait": "ophelia-portrait.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Fighter · Ice · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,943 · DEF 638 · HP 10,243 · Crit 5% / 50% อ่านจากจอตรง ๆ — เท่ากับ Vivian ทุกค่า | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | ยังไม่ได้อ่าน: Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลัง · จอไทยทั้งหมด"
+  }
+}
