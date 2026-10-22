@@ -490,7 +490,22 @@
         "en": "Flare sends a Fire dragon flying toward the enemy. The dragon sweeps forward, knocking enemies Airborne, deals Fire DMG, and inflicts Fire Affliction. / Flare enters Dragon's Ambush for a set duration. / Dragon's Ambush: For the duration of Dragon's Ambush, the Fire dragon flies across the sky and swoops down on enemies, dealing Fire DMG and inflicting Fire Affliction. Hit enemies are inflicted with Dragon's Mark, decreasing their DEF."
       },
       "damageType": "fire",
-      "effects": [],
+      "effects": [
+        {
+          "kind": "debuff",
+          "stat": "def",
+          "value": 5,
+          "unit": "percent",
+          "target": "enemy",
+          "trigger": "onUltimateHit",
+          "durationSec": 8,
+          "condition": {
+            "note": {
+              "en": "Dragon's Mark · Hit enemies are inflicted with Dragon's Mark, decreasing their DEF."
+            }
+          }
+        }
+      ],
       "values": [
         {
           "label": {
@@ -826,6 +841,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Destroyer · Fire · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 2,155 · DEF 638 · HP 9,272 · Crit 5% / 50% อ่านจากจอตรง ๆ — **ATK สูงกว่าตัว 5 ดาวอื่นที่ลงไว้ (2,049 / 1,943) และ HP ต่ำกว่า** ไม่ได้ปรับให้เข้าแบบ | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Neutralization DMG Boost 12.18% · Destroyer 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Basic Fire Blast · Ultimate Dragon Storm (706.7%, Dragon Ambush 116.6% x 9 ครั้ง) · Passive Fire Zone · Guidance of Fire Dragon Blood (ATK +28.8% ให้เพื่อนธาตุไฟทั้งทีม → target team + note) | ปลุกพลัง (จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส) · effects: ขั้น 3 Tag-out +6% · ขั้น 5 Ultimate +6% · ขั้นอื่นเก็บเป็นข้อความ | **2026-10-22 รอบสาม** Switch Wings of Fire · Special Dragon's Breath (654.7%, คูลดาวน์ 12.1 วินาที) · ตาราง Ultimate ที่เลื่อนลงครบเจ็ดแถว (Dragon Ambush Duration 11s · DEF Reduction 5% / 8s · Fire Affliction 5s) · ปลุกพลังขั้น 1 Birth of a Genius Magus → ครบหกขั้น | **สกิลพิเศษชื่อ \"Dragon's Breath\" ซ้ำกับชื่อบัฟของ Passive** — ตามจอทั้งสองที่ | Effect Details จากปุ่ม Effects ของ Switch: Fire Affliction (อ่านจากจอ) · ปุ่ม Effects ของ Ultimate ยังไม่ได้เปิด — Dragon's Mark อาจมีคำอธิบายแยก ยังไม่เก็บ | ยังไม่ได้อ่าน: Effect Details ของ Ultimate · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Destroyer · Fire · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 2,155 · DEF 638 · HP 9,272 · Crit 5% / 50% อ่านจากจอตรง ๆ — **ATK สูงกว่าตัว 5 ดาวอื่นที่ลงไว้ (2,049 / 1,943) และ HP ต่ำกว่า** ไม่ได้ปรับให้เข้าแบบ | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Neutralization DMG Boost 12.18% · Destroyer 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Basic Fire Blast · Ultimate Dragon Storm (706.7%, Dragon Ambush 116.6% x 9 ครั้ง) · Passive Fire Zone · Guidance of Fire Dragon Blood (ATK +28.8% ให้เพื่อนธาตุไฟทั้งทีม → target team + note) | ปลุกพลัง (จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส) · effects: ขั้น 3 Tag-out +6% · ขั้น 5 Ultimate +6% · ขั้นอื่นเก็บเป็นข้อความ | **2026-10-22 รอบสาม** Switch Wings of Fire · Special Dragon's Breath (654.7%, คูลดาวน์ 12.1 วินาที) · ตาราง Ultimate ที่เลื่อนลงครบเจ็ดแถว (Dragon Ambush Duration 11s · DEF Reduction 5% / 8s · Fire Affliction 5s) · ปลุกพลังขั้น 1 Birth of a Genius Magus → ครบหกขั้น | **สกิลพิเศษชื่อ \"Dragon's Breath\" ซ้ำกับชื่อบัฟของ Passive** — ตามจอทั้งสองที่ | Effect Details จากปุ่ม Effects ของ Switch: Fire Affliction (อ่านจากจอ) · **Dragon's Mark ไม่มีคำอธิบายแยก — ผู้เล่นบอก 2026-10-22 \"dargon mark เขียนตรงนี้เลย\"** ใช้ข้อความในคำอธิบาย Ultimate + แถว DEF Reduction Rate 5% / Duration 8s → effect debuff DEF 5% ใส่ใน Ultimate (target enemy, onUltimateHit) · ไม่ทำเป็น statuses | ยังไม่ได้อ่าน: จอไทยทั้งหมด"
   }
 }
