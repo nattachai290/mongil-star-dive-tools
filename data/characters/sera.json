@@ -271,6 +271,154 @@
         }
       ]
     },
+    "switch": {
+      "name": {
+        "en": "Arkarion: Restricted"
+      },
+      "desc": {
+        "en": "Sera deals Physical DMG by quickly approaching the enemy and swinging Arkarion, gaining Laxima Energy."
+      },
+      "damageType": "physical",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            102,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Laxima Energy Charge Ratio"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "special": {
+      "name": {
+        "en": "Laxima: Sealed"
+      },
+      "desc": {
+        "en": "Sera spins with Laxima in hand, dealing Ice DMG and gaining Arkarion Energy. / While spinning, enemies within range are pulled towards her. Upon releasing the Special Skill button, she raises Laxima to render enemies Airborne. (Total DMG remains the same regardless of when the button is released.) / If enemies are too far, she approaches them quickly before spinning. Sera can move slowly while spinning."
+      },
+      "damageType": "ice",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            517.2,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Arkarion Energy Charge per DMG Ratio"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            12.5,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            14.9,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
     "ultimate": {
       "name": {
         "en": "Arkarion Laxima: Unleashed"
@@ -357,6 +505,155 @@
           "line": 1
         }
       ]
+    },
+    "passive": {
+      "name": {
+        "en": "Lock Shard"
+      },
+      "desc": {
+        "en": "Using a Basic Attack or Switch Skill while controlling Sera consumes Arkarion Energy, dealing Ice DMG and triggering an additional strike. Sera's Crit DMG increases for a set duration upon attacking enemies afflicted with Ice Affliction. / Using a Special Skill in the Laxima Unleashed state completely consumes Sera's Laxima Energy to increase her Special Skill DMG. / Laxima Unleashed: Once Sera's Laxima Gauge is fully charged with Laxima Energy, she enters the Laxima Unleashed state. / Arkarion Unleashed: Once Sera's Arkarion Gauge is fully charged with Arkarion Energy, she enters the Arkarion Unleashed state."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "critDmg",
+          "value": 20,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onHit",
+          "durationSec": 7,
+          "condition": {
+            "triggerEnemyAffliction": "ice"
+          }
+        }
+      ],
+      "values": [
+        {
+          "label": {
+            "en": "Bonus DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            30,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Arkarion Energy Drain Ratio"
+          },
+          "unit": "percent",
+          "scaling": [
+            6.25,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Crit DMG Boost"
+          },
+          "unit": "percent",
+          "scaling": [
+            20,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Crit DMG Boost Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            7,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Special Skill DMG Boost"
+          },
+          "unit": "percent",
+          "scaling": [
+            32,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
     }
   },
   "statuses": [
@@ -389,6 +686,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Fighter · Ice · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 1,964 · DEF 653 · HP 10,662 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,766 · DEF 580 · HP 9,272 · Crit 5% / 50%** — DEF 580 แบบ 4 ดาวตัวอื่น · HP 9,272 เท่า Daisy · **ATK 1,766 ยังไม่ซ้ำกับตัวไหน** | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Brawl DMG Boost 11.59% · Fighter 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · Ice DMG 1.3% ไม่เก็บ | **\"Special Skill Cooldown Reduction 4.5%\" ไม่เก็บ** — ตัวอื่นที่อ่านจาก Preview ไม่มีบรรทัดนี้ และ 4.5% ตรงกับปลุกพลังขั้น 5 ของหลายตัว (\"Special Skill's cooldown decreases by 4.5%\") น่าจะมาจากปลุกพลังของบัญชีนี้ — ยืนยันเมื่อเห็นจอปลุกพลัง | **เลเวลสกิลบนจอบัญชี: Basic Lv.7 (\"Level 3 +4\") · Switch / Ultimate Lv.5 · Special Lv.13 · Guidance of Ice Lv.3** — เก็บตามเลเวลบนจอ | Basic Arkarion: Bound (Physical · Lv.7 · แปดแถว) · Ultimate Arkarion Laxima: Unleashed (Lv.5 · 317.9% · Freeze 10 วินาที) · Effect Details: Ice Affliction · Freeze · ปุ่ม Effects ไม่มีคำอธิบาย Arkarion Unleashed (ยังไม่เห็น) | ยังไม่ได้อ่าน: Switch · Special · Passive · Guidance of Ice · Arkarion Unleashed · ปลุกพลัง · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Fighter · Ice · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 1,964 · DEF 653 · HP 10,662 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,766 · DEF 580 · HP 9,272 · Crit 5% / 50%** — DEF 580 แบบ 4 ดาวตัวอื่น · HP 9,272 เท่า Daisy · **ATK 1,766 ยังไม่ซ้ำกับตัวไหน** | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Brawl DMG Boost 11.59% · Fighter 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · Ice DMG 1.3% ไม่เก็บ | **\"Special Skill Cooldown Reduction 4.5%\" ไม่เก็บ** — ตัวอื่นที่อ่านจาก Preview ไม่มีบรรทัดนี้ และ 4.5% ตรงกับปลุกพลังขั้น 5 ของหลายตัว (\"Special Skill's cooldown decreases by 4.5%\") น่าจะมาจากปลุกพลังของบัญชีนี้ — ยืนยันเมื่อเห็นจอปลุกพลัง | **เลเวลสกิลบนจอบัญชี: Basic Lv.7 (\"Level 3 +4\") · Switch / Ultimate Lv.5 · Special Lv.13 · Guidance of Ice Lv.3** — เก็บตามเลเวลบนจอ | Basic Arkarion: Bound (Physical · Lv.7 · แปดแถว) · Ultimate Arkarion Laxima: Unleashed (Lv.5 · 317.9% · Freeze 10 วินาที) · Effect Details: Ice Affliction · Freeze · ปุ่ม Effects ไม่มีคำอธิบาย Arkarion Unleashed (ยังไม่เห็น) | **2026-10-22 รอบสาม** Switch Arkarion: Restricted (Physical · Lv.5 · 102%) · Special Laxima: Sealed (**Lv.13 \"Level 9 +4\"** · 517.2% · คูลดาวน์ 14.9 วินาที) · Passive Lock Shard (คำอธิบายสี่ท่อน รวมหัวข้อ Laxima Unleashed / Arkarion Unleashed · Crit DMG +20% 7 วินาทีเมื่อตีศัตรูที่ติด Ice Affliction → effect onHit + triggerEnemyAffliction ice) | Arkarion Unleashed มีคำอธิบายใน Passive แล้ว (ไม่ทำเป็น statuses แยก) | ยังไม่ได้อ่าน: Guidance of Ice (ป๊อปอัป Lv.12) · Effect Details ของ Passive · ปลุกพลัง · จอไทยทั้งหมด"
   }
 }
