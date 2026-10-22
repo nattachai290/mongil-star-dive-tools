@@ -1,0 +1,31 @@
+{
+  "id": "brisshell",
+  "name": {
+    "en": "Brisshell"
+  },
+  "rarity": 5,
+  "element": "earth",
+  "role": "assassin",
+  "range": "melee",
+  "stats": {
+    "atLevel": 60,
+    "hp": 9272,
+    "atk": 2049,
+    "def": 673,
+    "critRate": 5,
+    "critDmg": 50
+  },
+  "awaken": [],
+  "images": {
+    "portrait": "brisshell-portrait.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Assassin · Earth · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | **ค่าพลังหักบัฟอาหารแล้ว** (ผู้เล่นบอก \"ตอนนี้ยังมีบัพอาหารออกลบตัวเลขออกด้วย\" — อาหารชุดเดียวกับ Narae / Isabella: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,279 · DEF 758 · HP 10,662 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 2,049 · DEF 673 · HP 9,272 · Crit 5% / 50%** — ทั้งสามค่าเคยเห็นในตัว Preview แล้ว (ATK 2,049 แบบ 5 ดาวหลายตัว · DEF 673 เท่า Gabi · HP 9,272 เท่า Flare) | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | ยังไม่ได้อ่าน: Detailed Stats · สกิลทั้งหกช่อง · ปลุกพลัง · จอไทยทั้งหมด"
+  }
+}
