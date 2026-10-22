@@ -1,0 +1,93 @@
+{
+  "id": "hawks-flight",
+  "name": {
+    "en": "Hawk's Flight"
+  },
+  "stars": 4,
+  "role": "assassin",
+  "level": 60,
+  "stats": [
+    {
+      "stat": "atk",
+      "value": 663,
+      "unit": "flat"
+    },
+    {
+      "stat": "atk",
+      "value": 20.25,
+      "unit": "percent"
+    }
+  ],
+  "fusion": {
+    "level": 5,
+    "name": {
+      "en": "Cage of Nightmares V"
+    },
+    "desc": {
+      "en": "When equipped by an [Assassin] character, grants the following effect. / Using a Special Skill grants Nightmare. / Nightmare: Upon gaining Nightmare, Lightning DMG increases by 6%. Upon using a Support Skill or Tag-out Skill, Lightning DMG increases by an additional 6%. (Max Stacks: 3, Duration: 20s) / If the max of 3 Nightmare stacks is reached during the effect's duration, it grants Pulse. / Pulse: Special Skill DMG increases by 20%. Using a Special Skill will remove Pulse. (Duration: 15s) / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Assassin proficiency. (Max: 5%)"
+    },
+    "effects": [
+      {
+        "kind": "buff",
+        "stat": "dmgDealt",
+        "damageType": "lightning",
+        "value": 6,
+        "unit": "percent",
+        "target": "self",
+        "trigger": "onSpecialSkill",
+        "durationSec": 20,
+        "maxStacks": 3,
+        "condition": {
+          "note": {
+            "en": "Nightmare"
+          }
+        }
+      },
+      {
+        "kind": "buff",
+        "stat": "dmgDealt",
+        "damageType": "lightning",
+        "value": 6,
+        "unit": "percent",
+        "target": "self",
+        "trigger": "onSupportSkill",
+        "durationSec": 20,
+        "maxStacks": 3,
+        "condition": {
+          "note": {
+            "en": "Nightmare · Upon using a Support Skill or Tag-out Skill, an additional 6%"
+          }
+        }
+      },
+      {
+        "kind": "buff",
+        "stat": "dmgDealt",
+        "scopes": [
+          "specialSkill"
+        ],
+        "value": 20,
+        "unit": "percent",
+        "target": "self",
+        "trigger": "passive",
+        "durationSec": 15,
+        "condition": {
+          "note": {
+            "en": "Pulse · If the max of 3 Nightmare stacks is reached · Using a Special Skill will remove Pulse"
+          }
+        }
+      }
+    ]
+  },
+  "images": {
+    "icon": "hawks-flight-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **4 ดาว (ผู้เล่นบอก 2026-10-22 \"artifact 4 ดาวหมด\")** ตรงกับเพชร 4 เม็ดบนการ์ด · เลเวล 60 (Max) · Fusion Level 5 | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | ข้อความ Fusion อ่านสองจอต่อกัน | Nightmare: Special Skill ให้ 1 ชั้น และ Support/Tag-out ให้เพิ่มอีก 6% (trigger เก็บได้ช่องเดียว ใส่ onSupportSkill แล้วเขียน Tag-out ไว้ใน note) · จอไม่บอกว่า Support/Tag-out นับเป็นชั้นเดียวกันหรือไม่ | Pulse ได้เมื่อ Nightmare ครบ 3 ชั้น ไม่มี trigger ตรง ๆ จึงใส่ passive + note | Fusion Level 5 (ATK ตามความชำนาญ Assassin) เก็บเป็นข้อความ"
+  }
+}
