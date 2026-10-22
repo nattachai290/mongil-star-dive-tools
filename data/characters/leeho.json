@@ -60,7 +60,90 @@
       "trigger": "passive"
     }
   ],
-  "awaken": [],
+  "awaken": [
+    {
+      "stage": 2,
+      "name": {
+        "en": "Unyielding Spirit"
+      },
+      "desc": {
+        "en": "Prey Mark is inflicted on all enemies hit by Leeho's Basic Attack's 4th Hit. (Only activates when Leeho is being controlled) / Leeho's Basic Attack DMG increases by 10% upon landing an Enhanced Basic Attack while Tiger Hunter is active. (Duration: 3s)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 10,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onBasicAttackHit",
+          "durationSec": 3,
+          "condition": {
+            "note": {
+              "en": "upon landing an Enhanced Basic Attack while Tiger Hunter is active"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "stage": 3,
+      "name": {
+        "en": "No Limits"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 4,
+      "name": {
+        "en": "Awakened Instinct"
+      },
+      "desc": {
+        "en": "The duration of Tiger Hunter increases by 2s, and while Tiger Hunter is active, Leeho's Enhanced Basic Attack's total DMG increases by 30%. / Also, the range of his Enhanced Basic Attack's 1st and 2nd Hit increases."
+      },
+      "effects": []
+    },
+    {
+      "stage": 5,
+      "name": {
+        "en": "Beast Heart"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Support Skill's cooldown decreases by 4.5%."
+      },
+      "effects": [],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 6,
+      "name": {
+        "en": "Ferocity Unleashed"
+      },
+      "desc": {
+        "en": "Prey Mark decreases Fire RES by an additional 10%. / When the target's Prey Mark is removed by Flash Spear, all enemies hit with Flash Spear are newly inflicted with Prey Mark. This effect is triggered every 15s."
+      },
+      "effects": []
+    }
+  ],
   "skills": {
     "basic": {
       "name": {
@@ -570,6 +653,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Assassin · Fire · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวละครชายตัวที่สาม | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,181 · DEF 653 · HP 9,647 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,961 · DEF 580 · HP 8,389 · Crit 5% / 50%** — ตรงกับ Angel (Fire Assassin 4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 11.59% · Assassin 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · Fire DMG Boost 0.7% ไม่เก็บ (แบบ Verna) | **สกิลบนจอบัญชีนี้: Basic / Special / Ultimate Lv.5 (\"Level 1 +4\") · Switch Lv.13 · Guidance of Fire Lv.2** — Basic Wild Spear เก็บลงช่อง scaling 5 | **2026-10-22 รอบสาม** ตาราง Basic ส่วนที่เลื่อนลง +6 แถว (Tiger Hunter · Enhanced Basic Attack) → 15 แถว · แถวสุดท้ายที่เห็นคือ Enhanced Basic Attack Slam DMG ก่อนกล่อง Material Used — ถ้ามีต่ออีกยังไม่เห็น | Passive Hunter (Prey Mark ลด Fire RES ศัตรู 5% 15 วินาที → effect debuff res fire) · Guidance of Fire My Grand Entrance!: **ค่า Lv.12 = 6.9% จากป๊อปอัป Skill Info (Lv. 2 >> Lv. 12)** จอหลัก Lv.2 = 5.9% | **Switch A Whopper! (\"Level 9 +4\" = Lv.13)**: เห็นคำอธิบายสองท่อนแรก ส่วนที่เหลือและตารางอยู่ใต้กล่อง Material Used → desc ลงท้ายด้วย \"…\" · values ว่าง | ยังไม่ได้อ่าน: Switch ส่วนที่เลื่อนลง + ตาราง · Special · Ultimate · Effect Details · ปลุกพลัง · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Assassin · Fire · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวละครชายตัวที่สาม | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,181 · DEF 653 · HP 9,647 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,961 · DEF 580 · HP 8,389 · Crit 5% / 50%** — ตรงกับ Angel (Fire Assassin 4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 11.59% · Assassin 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · Fire DMG Boost 0.7% ไม่เก็บ (แบบ Verna) | **สกิลบนจอบัญชีนี้: Basic / Special / Ultimate Lv.5 (\"Level 1 +4\") · Switch Lv.13 · Guidance of Fire Lv.2** — Basic Wild Spear เก็บลงช่อง scaling 5 | **2026-10-22 รอบสาม** ตาราง Basic ส่วนที่เลื่อนลง +6 แถว (Tiger Hunter · Enhanced Basic Attack) → 15 แถว · แถวสุดท้ายที่เห็นคือ Enhanced Basic Attack Slam DMG ก่อนกล่อง Material Used — ถ้ามีต่ออีกยังไม่เห็น | Passive Hunter (Prey Mark ลด Fire RES ศัตรู 5% 15 วินาที → effect debuff res fire) · Guidance of Fire My Grand Entrance!: **ค่า Lv.12 = 6.9% จากป๊อปอัป Skill Info (Lv. 2 >> Lv. 12)** จอหลัก Lv.2 = 5.9% | **Switch A Whopper! (\"Level 9 +4\" = Lv.13)**: เห็นคำอธิบายสองท่อนแรก ส่วนที่เหลือและตารางอยู่ใต้กล่อง Material Used → desc ลงท้ายด้วย \"…\" · values ว่าง | **2026-10-22 รอบสี่** ปลุกพลังขั้น 2–6 (บัญชีนี้ปลุกครบหกขั้น) · effects: ขั้น 2 Basic +10% 3 วินาที · ขั้น 3 Basic +6% · ขั้น 5 ลดคูลดาวน์ Support 4.5% เก็บเป็นข้อความ · ขั้น 4 / 6 เก็บเป็นข้อความ | ยังไม่ได้อ่าน: ปลุกพลังขั้น 1 · Switch ส่วนที่เลื่อนลง + ตาราง · Special · Ultimate · Effect Details · จอไทยทั้งหมด"
   }
 }
