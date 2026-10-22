@@ -372,15 +372,226 @@
         }
       ]
     },
+    "switch": {
+      "name": {
+        "en": "Tempest Arrow"
+      },
+      "desc": {
+        "en": "Penny appears near a teammate and fires an arrow into the air. This arrow then splits into falling shards that rain down on enemies, dealing Lightning DMG."
+      },
+      "damageType": "lightning",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Arrow Rain DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            186.2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "special": {
+      "name": {
+        "en": "Electric Overload"
+      },
+      "desc": {
+        "en": "Penny leaps back and fires multiple arrows forward, dealing Lightning DMG. / Using her Special Skill when she has a Coin consumes the Coin and triggers an enhanced attack. Penny fires electric arrows in front of her to deal Lightning DMG. Penny channels more power and shoots an overloaded arrow that deals Lightning DMG. This enhanced attack triggers a Lightning Explosion at the enemy's location, and Lightning Bolts strike the surrounding area, also dealing Lightning DMG. / During the enhanced attack, Penny leaps forward or backward depending on her distance from the enemy."
+      },
+      "damageType": "lightning",
+      "effects": [],
+      "values": []
+    },
+    "ultimate": {
+      "name": {
+        "en": "Thunderstorm Shot"
+      },
+      "desc": {
+        "en": "Penny gathers power via her energy source, then fires an electric arrow that deals Lightning DMG and inflicts Lightning Affliction. The arrow causes explosions as it flies past, dealing Lightning DMG and inflicting Lightning Affliction."
+      },
+      "damageType": "lightning",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Electric Arrow DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            783.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Explosion DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            24.5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Lightning Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
     "passive": {
       "name": {
         "en": "Electric Charge"
       },
       "desc": {
-        "en": "Penny's Crit Rate increases by a portion of her Lightning DMG Boost, but it doesn't increase above a set maximum. / When Penny lands her Basic Attack's 3rd Hit, a Coin is generated. No Coin will generate if Penny already has a Coin or if there is already a Coin on the field. Coins that are not picked up will be automatically collected after a set duration passes or will disappear upon switching to another character. / Penny gains a Coin upon a successful Critical Dodge if there are none generated or if she doesn't have a Coin. / Coin: …"
+        "en": "Penny's Crit Rate increases by a portion of her Lightning DMG Boost, but it doesn't increase above a set maximum. / When Penny lands her Basic Attack's 3rd Hit, a Coin is generated. No Coin will generate if Penny already has a Coin or if there is already a Coin on the field. Coins that are not picked up will be automatically collected after a set duration passes or will disappear upon switching to another character. / Penny gains a Coin upon a successful Critical Dodge if there are none generated or if she doesn't have a Coin. / Coin: Picking up a Coin enhances Penny's Special Skill and allows her to use a Charge Attack."
       },
       "effects": [],
-      "values": []
+      "values": [
+        {
+          "label": {
+            "en": "Lightning DMG Boost Conversion Ratio"
+          },
+          "unit": "percent",
+          "scaling": [
+            30,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Crit Rate Boost Max"
+          },
+          "unit": "percent",
+          "scaling": [
+            30,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Max Coins"
+          },
+          "unit": "flat",
+          "scaling": [
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
     },
     "elemental": {
       "name": {
@@ -408,6 +619,17 @@
       "values": []
     }
   },
+  "statuses": [
+    {
+      "name": {
+        "en": "Lightning Affliction"
+      },
+      "desc": {
+        "en": "Afflicted targets take Lightning DMG over time, and Lightning RES decreases by 15%."
+      },
+      "effects": []
+    }
+  ],
   "images": {
     "portrait": "penny-portrait.webp"
   },
@@ -418,6 +640,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Fighter · Lightning · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,996 · DEF 656 · HP 9,713 · Crit 5% / 50% อ่านจากจอตรง ๆ — ชุดตัวเลขนี้ยังไม่ซ้ำกับตัวไหนที่ลงไว้ | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Brawl DMG Boost 12.18% · Fighter 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Basic Titanium Bow (ตาราง 12 แถว อ่านจากจอที่เลื่อนลง · Stamina Recovery 40 เป็นค่าคงที่) · Guidance of Lightning A Generous Quest Reward (ATK +15.5% เป็น effect · Pierce Rate +5.6% อยู่ใน note เพราะพจนานุกรมยังไม่มี Pierce Rate — ดูโน้ตของ Chloe) | **Passive Electric Charge อ่านได้ไม่ครบ** — จอตัดที่หัวข้อ \"Coin\" ท้ายกล่อง desc จึงลงท้ายด้วย \"Coin: …\" และยังไม่เห็นตารางค่า | ยังไม่ได้อ่าน: Switch · Special · Ultimate · Passive ส่วนที่เลื่อนลง · ปลุกพลัง · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Fighter · Lightning · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,996 · DEF 656 · HP 9,713 · Crit 5% / 50% อ่านจากจอตรง ๆ — ชุดตัวเลขนี้ยังไม่ซ้ำกับตัวไหนที่ลงไว้ | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Brawl DMG Boost 12.18% · Fighter 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Basic Titanium Bow (ตาราง 12 แถว อ่านจากจอที่เลื่อนลง · Stamina Recovery 40 เป็นค่าคงที่) · Guidance of Lightning A Generous Quest Reward (ATK +15.5% เป็น effect · Pierce Rate +5.6% อยู่ใน note เพราะพจนานุกรมยังไม่มี Pierce Rate — ดูโน้ตของ Chloe) | **2026-10-22 รอบสาม** Passive ส่วนที่เลื่อนลง (หัวข้อ Coin + ตารางสามแถว · Max Coins 1 เป็นค่าคงที่) · Switch Tempest Arrow (186.2%) · Ultimate Thunderstorm Shot (783.6%) · Effect Details Lightning Affliction | **Special Electric Overload: จอเห็นแค่คำอธิบาย ตารางค่าอยู่ใต้เส้นท้ายกล่อง ยังไม่ได้อ่าน** → values ว่าง | ยังไม่ได้อ่าน: ตารางค่าของ Special · ปลุกพลัง · จอไทยทั้งหมด"
   }
 }
