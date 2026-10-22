@@ -41,7 +41,62 @@
       "trigger": "passive"
     }
   ],
-  "awaken": [],
+  "awaken": [
+    {
+      "stage": 3,
+      "name": {
+        "en": "Fruit of Secret Training"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Ultimate Skill DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "ultimate"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 4,
+      "name": {
+        "en": "Scattering Morning Dew"
+      },
+      "desc": {
+        "en": "The effect granted by Narae's Special Skill is enhanced, increasing the Ice DMG Boost granted to Ice-type teammates to 90% and the Special Skill DMG Boost to 60%. / The Special Skill DMG Boost granted to Ranged type teammates who are not Ice-type increases to 150%. / The additional Shield HP increase effect increases to 200% of Narae's ATK."
+      },
+      "effects": []
+    },
+    {
+      "stage": 5,
+      "name": {
+        "en": "Mother's Legacy"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Special Skill's cooldown decreases by 4.5%."
+      },
+      "effects": [],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 6,
+      "name": {
+        "en": "Tide Against Fate"
+      },
+      "desc": {
+        "en": "Using Narae's Special Skill summons a clone. The summoned clone unleashes butterflies toward nearby enemies, dealing Ice DMG equal to 80% of her Special Skill damage. / Narae also unleashes butterflies imbued with energy of water, dealing Ice DMG equal to 200% of her Special Skill damage and inflicting Freeze. Freeze lasts for 3s."
+      },
+      "effects": []
+    }
+  ],
   "skills": {
     "special": {
       "name": {
@@ -571,6 +626,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (มีปุ่ม Quick Power Up / Max Level — ไม่ใช่จอ Character Preview) · **ยังไม่มีจอไทย** | Support · Ice · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | **ไม่เก็บค่าพลัง** — จอขึ้น ATK 2,063 · DEF 719 · HP 12,388 · Crit 12.5% / 92.5% ซึ่ง Crit ไม่ใช่ฐาน 5% / 50% แปลว่าติดอุปกรณ์หรือมอนอยู่ (กฎ: stats ต้องเป็นค่าเปล่า) · รอจอ Character Preview หรือจอที่ถอดของแล้ว | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats ของจอตัวละครผู้เล่น (ติดของ): เก็บเฉพาะบรรทัดที่ตรงกับแบบ Support 5 ดาว — Support DMG Boost 12.18% · Support 1,078 · Ultimate Gauge Charge 100% · Max Stamina 100 · **ไม่เก็บ Elemental Weakness 150.5% (ฐาน 125%) และ Ice DMG Boost 1.3% เพราะมาจากของ/มอน** | สกิล Lv.12 ทั้งสี่ช่องหลัก (จอผู้เล่นขึ้น Lv.12 เท่า Preview) · Special Dew Blankets All (ตาราง 12 แถว จากสองจอ · effects ทีม: ดาเมจน้ำแข็ง +50% / สกิลพิเศษ +30% ให้เพื่อนน้ำแข็ง · สกิลพิเศษ +80% ให้เพื่อนระยะไกลที่ไม่ใช่น้ำแข็ง · 14 วินาที) · Ultimate Bubble Spout (**\"Waster Stream DMG\" สะกดผิดในเกม เก็บตามจอ**) · Passive Blessings of the Morning Dew (ATK +15% 8 วินาทีเมื่อให้โล่ตัวเอง → onGrantShield) | ATK-Based Healing 5.3% ไม่มีประโยคบอกท่อน ไม่ใส่ line | **Guidance of Ice บนจอนี้ Lv.3 ไม่ใช่ 12** (ตัวของผู้เล่นยังอัปไม่เต็ม) — ยังไม่ได้อ่าน ต้องใช้จอ Preview ถ้าจะเก็บค่าที่ Lv.12 | ยังไม่ได้อ่าน: ค่าพลังเปล่า · Basic · Switch · Guidance of Ice · Effect Details · ปลุกพลัง · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (มีปุ่ม Quick Power Up / Max Level — ไม่ใช่จอ Character Preview) · **ยังไม่มีจอไทย** | Support · Ice · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | **ไม่เก็บค่าพลัง** — จอขึ้น ATK 2,063 · DEF 719 · HP 12,388 · Crit 12.5% / 92.5% ซึ่ง Crit ไม่ใช่ฐาน 5% / 50% แปลว่าติดอุปกรณ์หรือมอนอยู่ (กฎ: stats ต้องเป็นค่าเปล่า) · รอจอ Character Preview หรือจอที่ถอดของแล้ว | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats ของจอตัวละครผู้เล่น (ติดของ): เก็บเฉพาะบรรทัดที่ตรงกับแบบ Support 5 ดาว — Support DMG Boost 12.18% · Support 1,078 · Ultimate Gauge Charge 100% · Max Stamina 100 · **ไม่เก็บ Elemental Weakness 150.5% (ฐาน 125%) และ Ice DMG Boost 1.3% เพราะมาจากของ/มอน** | สกิล Lv.12 ทั้งสี่ช่องหลัก (จอผู้เล่นขึ้น Lv.12 เท่า Preview) · Special Dew Blankets All (ตาราง 12 แถว จากสองจอ · effects ทีม: ดาเมจน้ำแข็ง +50% / สกิลพิเศษ +30% ให้เพื่อนน้ำแข็ง · สกิลพิเศษ +80% ให้เพื่อนระยะไกลที่ไม่ใช่น้ำแข็ง · 14 วินาที) · Ultimate Bubble Spout (**\"Waster Stream DMG\" สะกดผิดในเกม เก็บตามจอ**) · Passive Blessings of the Morning Dew (ATK +15% 8 วินาทีเมื่อให้โล่ตัวเอง → onGrantShield) | ATK-Based Healing 5.3% ไม่มีประโยคบอกท่อน ไม่ใส่ line | **Guidance of Ice บนจอนี้ Lv.3 ไม่ใช่ 12** (ตัวของผู้เล่นยังอัปไม่เต็ม) — ยังไม่ได้อ่าน ต้องใช้จอ Preview ถ้าจะเก็บค่าที่ Lv.12 | **2026-10-22 รอบสาม** ปลุกพลังขั้น 3–6 จากจอตัวละครผู้เล่น (ขั้น 1 ปลดแล้ว ขั้น 2–6 ล็อก — ข้อความยังอ่านได้) · effects: ขั้น 3 Ultimate +6% · ขั้น 5 ลดคูลดาวน์ Special 4.5% เก็บเป็นข้อความ · ขั้น 4 / 6 เปลี่ยนค่าและกลไก เก็บเป็นข้อความ | **ขั้น 1 ของบัญชีนี้ปลดแล้ว แต่ไม่ได้เพิ่มเลเวลสกิล — ค่าสกิล Lv.12 ที่เก็บยังเป็นค่าไม่มีโบนัส** | ยังไม่ได้อ่าน: ค่าพลังเปล่า · Basic · Switch · Guidance of Ice (Lv.12) · Effect Details · ปลุกพลังขั้น 1–2 · จอไทยทั้งหมด"
   }
 }
