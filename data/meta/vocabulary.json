@@ -688,6 +688,9 @@
       "th": "สกิลสับเปลี่ยน",
       "en": "Switch Skill"
     },
+    "tagOutSkill": {
+      "en": "Tag-out Skill"
+    },
     "ultimate": {
       "th": "สกิลอัลติเมต",
       "en": "Ultimate Skill"
