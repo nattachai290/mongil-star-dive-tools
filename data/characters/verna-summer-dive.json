@@ -7,7 +7,51 @@
   "element": "fire",
   "role": "fighter",
   "range": "melee",
-  "awaken": [],
+  "awaken": [
+    {
+      "stage": 1,
+      "name": {
+        "en": "All or Nothing Fun!"
+      },
+      "desc": {
+        "en": "When Flaming Will is triggered, Verna: Summer Dive!'s ATK increases by 5% and her Crit Rate increases by 10%. (Max Stacks: 2, Duration: 15s, new stacks reset the duration) / The Fire DMG Boost of Ember changes to 4%."
+      },
+      "effects": []
+    },
+    {
+      "stage": 2,
+      "name": {
+        "en": "Until You Forget the Heat"
+      },
+      "desc": {
+        "en": "Upon switching to another teammate during combat, Verna's Support DMG increases by 10% for 15s, and the duration she remains on the field for increases by 4s. / Also, she uses her Special Skill once upon switching to another teammate. This Special Skill is used regardless of cooldown and does not trigger its cooldown after use."
+      },
+      "effects": []
+    },
+    {
+      "stage": 3,
+      "name": {
+        "en": "Hotter and Harder"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    }
+  ],
   "skills": {
     "basic": {
       "name": {
@@ -724,6 +768,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอตัวละครภาษาอังกฤษ 2026-10-22 (Info · Skills: Basic Attack / Special Skill · Effect Details) · **ยังไม่มีจอไทยเลย** ชื่อไทยและข้อความไทยทุกช่องจึงว่าง ไม่ได้แปลเอง | id มาจากชื่ออังกฤษ \"Verna: Summer Dive!\" -> verna-summer-dive ตามแบบมอนชุด Summer Dive (cappy-summer-dive ฯลฯ) — **เป็นตัวละครคนละตัวกับ Verna ปกติ** จอเรียกตัวเองเต็มชื่อทุกที่ (\"Verna: Summer Dive! is not being controlled\") | Fighter · Fire · Melee · เลเวล 60 สูงสุด · **5 ดาว (ผู้เล่นบอก 2026-10-22)** — ดาวสี่ดวงบนจอ Info ใต้ชื่อ **ไม่ใช่แรงก์** แต่เป็นดาวของการอัปเลเวล (อัปเต็มแล้ว) เคยเก็บผิดเป็น 4 | **ไม่เก็บค่าพลัง** จอ Info แสดง ATK 5,409 · DEF 5,877 · HP 20,893 · Crit Rate 15% · Crit DMG 110% แต่ตัวละครอยู่ในทีม (On Team) และตัวเลขสูงกว่าค่าเปล่าของวิเวียนที่เลเวลเดียวกันหลายเท่า แปลว่ารวมอุปกรณ์/มอนสเตอร์ลิงแล้ว schema ห้ามเก็บค่าที่ติดของอยู่ | สกิลทุกท่าเลเวล 12 (Max level reached) เติม scaling เฉพาะช่องที่ 12 · โจมตีพื้นฐานเป็น**กายภาพ** แต่ระหว่าง Flaming Will การโจมตีทั้งหมดเปลี่ยนเป็นธาตุไฟ (จอ Effect Details) — changesBasicAttackTo ไม่ได้ใส่ เพราะช่องนั้นหมายถึงสกิลที่ใช้แล้วเปลี่ยน ส่วนนี่คือสถานะ ดู statuses | line: บรรทัด Enhanced ทั้งหมดผูกกับท่อนที่ 2 (\"When Flaming Will is active ... enhanced\") ส่วน 1st-4th ผูกท่อนที่ 1 · Charge Attack / Air Counter / Evasion Counter ไม่ได้ถูกพูดถึงในท่อนไหน จึงไม่ใส่ line | statuses ไม่ใส่ effects เพราะครอบคำอธิบายไม่ได้ทั้งหมด (แปลงธาตุ · ไม่ลดเวลาตอนไม่ได้บังคับ · Ember เพิ่มเป็นสองเท่าตอนไม่ได้บังคับ) | **2026-10-22 รอบสอง** Switch Skill (Lv.12) · Passive Trait (Lv.1) · Guidance of Fire (Lv.2) ภาษาอังกฤษ | **ช่องที่หก \"Guidance of Fire\" คือสกิลธาตุ** ชื่อท่า Burning Hostility · เลเวลขึ้นตาม Elemental Blessing (ปุ่ม Elemental Sanctum) · Lv.2: ตีโดนด้วยการโจมตีธาตุไฟ ลดพลังป้องกันเป้าหมาย 15.5% นาน 4 วินาที · **ป๊อปอัป Skill Info แสดง Lv.12 = 20.5%** เก็บไว้ในโน้ต ไม่ใส่เป็น effect เพราะยังไม่ได้ถึงเลเวลนั้น และไม่คำนวณเลเวลระหว่างกลาง · เพิ่มช่อง skills.elemental ใน schema และหน้าเว็บ | Passive: line 1 = Flaming Will Duration และ DMG Taken Reduction (ท่อนแรกพูดถึงระยะเวลาและการลดดาเมจที่ได้รับ) · line 2 = Ember Duration | Switch Skill ท่อนที่สามเรื่องถ่ายรูป (กดสกิลพิเศษถูกจังหวะระหว่าง Enhanced Switch Skill จะเปิดสกิลพิเศษโดยไม่สนคูลดาวน์) ไม่มีตัวเลข เก็บเป็นข้อความ | **2026-10-22 รอบสาม** Ultimate Skill Flame Spear (Lv.12) และ Effect Details ที่มี Fire Affliction · ครบทั้งหกช่องสกิลแล้ว (ภาษาอังกฤษ) | ultimate damageType fire: ท่อนแรกไม่ได้เขียนชนิดดาเมจตรง ๆ แต่สร้าง Fire Affliction และอีกสี่ท่าของเวอร์ชันนี้เป็นไฟหมดยกเว้นโจมตีพื้นฐาน — **ติดไว้ในโน้ตว่าเป็นการอ่านจากบริบท** ท่อนสองเขียน bonus Fire DMG ชัด | **Fire Affliction ข้อความอังกฤษตรงกับของวิเวียนทุกตัวอักษร** วิเวียนมีชื่อไทย \"เอฟเฟกต์อ่อนแอต่อไฟ\" อยู่แล้ว แต่ไม่ได้ยกมาใส่ที่นี่ เพราะยังไม่เห็นจอไทยของตัวนี้ (ผู้เล่นสั่ง: อ่านจากภาพเท่านั้น) | ยังไม่ได้อ่าน: ปลุกพลัง · ค่าพลังเปล่า · จอไทยทั้งหมด"
+    "note": "อ่านจากจอตัวละครภาษาอังกฤษ 2026-10-22 (Info · Skills: Basic Attack / Special Skill · Effect Details) · **ยังไม่มีจอไทยเลย** ชื่อไทยและข้อความไทยทุกช่องจึงว่าง ไม่ได้แปลเอง | id มาจากชื่ออังกฤษ \"Verna: Summer Dive!\" -> verna-summer-dive ตามแบบมอนชุด Summer Dive (cappy-summer-dive ฯลฯ) — **เป็นตัวละครคนละตัวกับ Verna ปกติ** จอเรียกตัวเองเต็มชื่อทุกที่ (\"Verna: Summer Dive! is not being controlled\") | Fighter · Fire · Melee · เลเวล 60 สูงสุด · **5 ดาว (ผู้เล่นบอก 2026-10-22)** — ดาวสี่ดวงบนจอ Info ใต้ชื่อ **ไม่ใช่แรงก์** แต่เป็นดาวของการอัปเลเวล (อัปเต็มแล้ว) เคยเก็บผิดเป็น 4 | **ไม่เก็บค่าพลัง** จอ Info แสดง ATK 5,409 · DEF 5,877 · HP 20,893 · Crit Rate 15% · Crit DMG 110% แต่ตัวละครอยู่ในทีม (On Team) และตัวเลขสูงกว่าค่าเปล่าของวิเวียนที่เลเวลเดียวกันหลายเท่า แปลว่ารวมอุปกรณ์/มอนสเตอร์ลิงแล้ว schema ห้ามเก็บค่าที่ติดของอยู่ | สกิลทุกท่าเลเวล 12 (Max level reached) เติม scaling เฉพาะช่องที่ 12 · โจมตีพื้นฐานเป็น**กายภาพ** แต่ระหว่าง Flaming Will การโจมตีทั้งหมดเปลี่ยนเป็นธาตุไฟ (จอ Effect Details) — changesBasicAttackTo ไม่ได้ใส่ เพราะช่องนั้นหมายถึงสกิลที่ใช้แล้วเปลี่ยน ส่วนนี่คือสถานะ ดู statuses | line: บรรทัด Enhanced ทั้งหมดผูกกับท่อนที่ 2 (\"When Flaming Will is active ... enhanced\") ส่วน 1st-4th ผูกท่อนที่ 1 · Charge Attack / Air Counter / Evasion Counter ไม่ได้ถูกพูดถึงในท่อนไหน จึงไม่ใส่ line | statuses ไม่ใส่ effects เพราะครอบคำอธิบายไม่ได้ทั้งหมด (แปลงธาตุ · ไม่ลดเวลาตอนไม่ได้บังคับ · Ember เพิ่มเป็นสองเท่าตอนไม่ได้บังคับ) | **2026-10-22 รอบสอง** Switch Skill (Lv.12) · Passive Trait (Lv.1) · Guidance of Fire (Lv.2) ภาษาอังกฤษ | **ช่องที่หก \"Guidance of Fire\" คือสกิลธาตุ** ชื่อท่า Burning Hostility · เลเวลขึ้นตาม Elemental Blessing (ปุ่ม Elemental Sanctum) · Lv.2: ตีโดนด้วยการโจมตีธาตุไฟ ลดพลังป้องกันเป้าหมาย 15.5% นาน 4 วินาที · **ป๊อปอัป Skill Info แสดง Lv.12 = 20.5%** เก็บไว้ในโน้ต ไม่ใส่เป็น effect เพราะยังไม่ได้ถึงเลเวลนั้น และไม่คำนวณเลเวลระหว่างกลาง · เพิ่มช่อง skills.elemental ใน schema และหน้าเว็บ | Passive: line 1 = Flaming Will Duration และ DMG Taken Reduction (ท่อนแรกพูดถึงระยะเวลาและการลดดาเมจที่ได้รับ) · line 2 = Ember Duration | Switch Skill ท่อนที่สามเรื่องถ่ายรูป (กดสกิลพิเศษถูกจังหวะระหว่าง Enhanced Switch Skill จะเปิดสกิลพิเศษโดยไม่สนคูลดาวน์) ไม่มีตัวเลข เก็บเป็นข้อความ | **2026-10-22 รอบสาม** Ultimate Skill Flame Spear (Lv.12) และ Effect Details ที่มี Fire Affliction · ครบทั้งหกช่องสกิลแล้ว (ภาษาอังกฤษ) | ultimate damageType fire: ท่อนแรกไม่ได้เขียนชนิดดาเมจตรง ๆ แต่สร้าง Fire Affliction และอีกสี่ท่าของเวอร์ชันนี้เป็นไฟหมดยกเว้นโจมตีพื้นฐาน — **ติดไว้ในโน้ตว่าเป็นการอ่านจากบริบท** ท่อนสองเขียน bonus Fire DMG ชัด | **Fire Affliction ข้อความอังกฤษตรงกับของวิเวียนทุกตัวอักษร** วิเวียนมีชื่อไทย \"เอฟเฟกต์อ่อนแอต่อไฟ\" อยู่แล้ว แต่ไม่ได้ยกมาใส่ที่นี่ เพราะยังไม่เห็นจอไทยของตัวนี้ (ผู้เล่นสั่ง: อ่านจากภาพเท่านั้น) | **2026-10-22 รอบสี่** ปลุกพลังขั้น 1-3 ภาษาอังกฤษ (ทุกขั้นยังล็อก แต่จอแสดงคำอธิบาย) · ขั้น 3 เติม effects ได้ตรง (ดาเมจโจมตีพื้นฐาน +6% + skillLevelBonus 2) · ขั้น 1-2 มีเงื่อนไขซ้อน (ซ้อนได้ 2 ชั้น · เปลี่ยนค่า Ember · อยู่ในสนามนานขึ้น · ใช้สกิลพิเศษฟรี) จึงเก็บเป็นข้อความ ตามแบบวิเวียน · ขั้น 2 จอเขียน \"Verna's\" ไม่ใช่ชื่อเต็ม เก็บตามจอ | **จอ Detailed Stats รอบนี้ยังเป็นค่าที่ติดอุปกรณ์อยู่** (ATK 5,409 · DEF 5,877 · HP 20,893 ตรงกับจอ Info) จึงยังไม่เก็บทั้งห้าค่าหลักและบรรทัดอื่น (Brawl DMG Boost 12.18% · DMG vs boss 50% · Special Skill Cooldown Reduction 15% · Fighter 1,078 · Elemental Weakness DMG Boost 175% · Physical 9% · Fire 13.72%) — บางบรรทัดน่าจะเป็นค่าเปล่าแต่แยกไม่ออกว่าบรรทัดไหนมีของบวก | ยังไม่ได้อ่าน: ปลุกพลังขั้น 4-6 · ค่าพลังเปล่า (ถอดของก่อน) · จอไทยทั้งหมด"
   }
 }
