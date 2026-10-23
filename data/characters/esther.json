@@ -1,6 +1,7 @@
 {
   "id": "esther",
   "name": {
+    "th": "เอสเด",
     "en": "Esther"
   },
   "rarity": 5,
@@ -149,9 +150,11 @@
   "skills": {
     "basic": {
       "name": {
+        "th": "เมดสองหน้า",
         "en": "Maid's Double Life"
       },
       "desc": {
+        "th": "ใช้ไม้กวาดตีศัตรู สร้างดาเมจกายภาพ และเมื่อโจมตีครั้งสุดท้ายจะฟันศัตรูนับครั้งไม่ถ้วนด้วยดาบในไม้กวาด สร้างดาเมจธาตุลม / เมื่อใช้ในม่านควันของสกิลพิเศษ จะฟาดฟันอย่างรวดเร็วด้วยดาบที่เสริมพลัง สร้างดาเมจธาตุลมแก่ศัตรู",
         "en": "Esther deals Physical DMG by hitting enemies with a broom, then finishes with a flurry of slashes from a sword hidden inside it, dealing Wind DMG. / This skill is enhanced when used within the Dust Cloud from her Special Skill, unleashing rapid sword strikes that deal Wind DMG to enemies."
       },
       "damageType": "physical",
@@ -159,6 +162,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 1",
             "en": "1st Hit DMG"
           },
           "unit": "percent",
@@ -184,6 +188,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 2",
             "en": "2nd Hit DMG"
           },
           "unit": "percent",
@@ -209,6 +214,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 3",
             "en": "3rd Hit DMG"
           },
           "unit": "percent",
@@ -234,6 +240,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 4",
             "en": "4th Hit DMG"
           },
           "unit": "percent",
@@ -259,6 +266,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีชาร์จ",
             "en": "Charge Attack DMG"
           },
           "unit": "percent",
@@ -283,6 +291,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีฉับพลัน",
             "en": "Air Counter DMG"
           },
           "unit": "percent",
@@ -307,6 +316,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจหลบหลีกโต้กลับ",
             "en": "Evasion Counter DMG"
           },
           "unit": "percent",
@@ -331,6 +341,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีเสริมพลัง ขั้น 1",
             "en": "1st Enhanced Hit DMG"
           },
           "unit": "percent",
@@ -356,6 +367,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีเสริมพลัง ขั้น 2",
             "en": "2nd Enhanced Hit DMG"
           },
           "unit": "percent",
@@ -381,6 +393,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีเสริมพลัง ขั้น 3",
             "en": "3rd Enhanced Hit DMG"
           },
           "unit": "percent",
@@ -408,9 +421,11 @@
     },
     "switch": {
       "name": {
+        "th": "จัดการคนก่อกวน",
         "en": "Taking Out the Trash"
       },
       "desc": {
+        "th": "ใช้ไม้กวาดก่อลมหมุน สร้างดาเมจธาตุลมแก่ศัตรูและทำให้ลอยขึ้นไปบนอากาศ ลมหมุนจะลากศัตรูที่สร้างดาเมจ / [สกิลสนับสนุน] ในระหว่างต่อสู้ เมื่อสมาชิกทีมโจมตีศัตรูโดน จะปรากฏตัวข้างสมาชิกทีมและเข้าสู่สถานะซ่อนตัว หากศัตรูเข้ามาในระยะขณะอยู่ในสถานะซ่อนตัว จะฟันศัตรูนับครั้งไม่ถ้วน สร้างดาเมจธาตุลมและมอบเอฟเฟกต์อ่อนแอต่อลมแก่เป้าหมายที่โดนโจมตี / หากออกจากสถานะซ่อนตัวโดยไม่สร้างดาเมจแก่ศัตรู คูลดาวน์ของสกิลสนับสนุนจะลดลงครึ่งหนึ่ง และในขณะที่มีเอฟเฟกต์คมกริบ คูลดาวน์สกิลสนับสนุนจะลดลง",
         "en": "Esther uses her broom to start a whirlwind, dealing Wind DMG to enemies and knocking them Airborne. The whirlwind pulls in hit enemies. / [Support Skill] If a teammate lands an attack on an enemy while in combat, Esther appears near them and prepares for an ambush. If an enemy comes within Esther's attack range while she's preparing, she unleashes a flurry of slashes on them, dealing Wind DMG. She inflicts hit enemies with Wind Affliction. / If Esther returns without dealing DMG to any enemy while in ambush preparation, her Support Skill cooldown is reduced by half. Esther's Support Skill cooldown decreases when Sharpness is active."
       },
       "damageType": "wind",
@@ -804,9 +819,11 @@
     },
     "elemental": {
       "name": {
+        "th": "เมดและดาบแสงเงิน",
         "en": "Maid and Silver Flash"
       },
       "desc": {
+        "th": "เมื่อได้รับเอฟเฟกต์คมกริบ จะเพิ่มพลังโจมตี 40.1% (เวลาแสดงผล 10 วินาที)",
         "en": "ATK increases by 40.1% upon gaining Sharpness. (Duration: 10s)"
       },
       "effects": [
@@ -856,9 +873,10 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Assassin · Wind · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** — Assassin 5 ดาวตัวแรก | ค่าพลังห้าค่าหลักจากจอ Info: ATK 2,049 (เท่ากับ Verna / Mina ซึ่งเป็น 5 ดาวเหมือนกัน) · DEF 656 (เท่ากับ Chloe) · HP 9,537 · Crit 5% / 50% | รูป portrait ตัดจากจอ Info 360x360 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 12.18% · Assassin 1,078 · Elemental Weakness 125% — ตรงแบบตัว 5 ดาว (12.18% / 1,078) | Basic Maid's Double Life (Lv.12 ครบสิบบรรทัด จากจอที่เลื่อนลง · ดาเมจกายภาพตามท่อนแรก ท่อนเดียวกันจบด้วย Wind DMG) · Ultimate The Maid & Clover Inn's Peacekeeper (1,312.5%) · Passive (Lv.1) · Wind Affliction | **Passive Trait กับ Basic Attack ใช้ชื่อเดียวกัน \"Maid's Double Life\"** ตามที่สองจอเขียน — เก็บตามจอ ไม่ได้พิมพ์ซ้ำผิด | ปลุกพลัง: ครบหกขั้น (ขั้น 1-2 มารอบสาม) · ขั้น 4 เติม effect (ใช้สกิลพิเศษ → Crit DMG ตัวเอง +50% 10 วินาที) · ขั้น 5 (ดาเมจโจมตีพื้นฐาน +6%) · ขั้น 3 ลดคูลดาวน์สกิลสนับสนุน 4.5% และขั้น 6 Enhanced Basic Attack +125% เก็บเป็นข้อความ | **2026-10-22 รอบสาม** Switch Taking Out the Trash (ครบห้าบรรทัดจากจอที่เลื่อนลง) · Special Housekeeping! · Guidance of Wind: Maid and Silver Flash (Lv.12 ATK +40.1% 10 วินาที เมื่อได้ Sharpness · ไม่ระบุเป้าหมาย เก็บเป็นข้อความ) · ปลุกพลังขั้น 1-2 — **ครบทั้งหกช่องสกิลและหกขั้นปลุกพลังแล้ว** | special: ย่อหน้าที่สองคือคำอธิบายย่อยของ Dust Cloud (หัวข้อสีเหลือง) เก็บพร้อม \"Dust Cloud:\" · Dust Cloud DMG ผูกท่อน 1 (\"dealing Wind DMG\") · มีลิงก์สถานะ Confused แต่ยังไม่เห็นหน้าต่างรายละเอียด | ยังไม่ได้อ่าน: จอไทยทั้งหมด | **สกิลธาตุเติม effect แล้ว** (ผู้เล่นกำหนด 2026-10-22: \"ถ้าไม่บอกว่าใครก็คือตัวเอง\" — ข้อความที่ไม่ระบุผู้รับบัฟ ให้ target self) · ตัวกระตุ้นจริงคือ \"ได้ Sharpness\" ซึ่งคำอธิบายสกิลพิเศษบอกว่าได้จากสกิลพิเศษ (Sharpness Obtained 2) จึงเก็บเป็น onSpecialSkill + condition.note และติดธง trigger ไว้ เพราะยังไม่รู้ว่ามีทางอื่นที่ได้ Sharpness หรือไม่ | Effect Details ของ **Confused**: \"Afflicted targets cannot identify enemies.\" (จอนี้เปิดที่ Lv.1 — Dust Cloud DMG 60.4% ที่ Lv.1 ไม่เก็บ เพราะหน้าเว็บโชว์เลเวลสูงสุดเท่านั้น และค่าที่เก็บไว้คือ Lv.12)",
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Assassin · Wind · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** — Assassin 5 ดาวตัวแรก | ค่าพลังห้าค่าหลักจากจอ Info: ATK 2,049 (เท่ากับ Verna / Mina ซึ่งเป็น 5 ดาวเหมือนกัน) · DEF 656 (เท่ากับ Chloe) · HP 9,537 · Crit 5% / 50% | รูป portrait ตัดจากจอ Info 360x360 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 12.18% · Assassin 1,078 · Elemental Weakness 125% — ตรงแบบตัว 5 ดาว (12.18% / 1,078) | Basic Maid's Double Life (Lv.12 ครบสิบบรรทัด จากจอที่เลื่อนลง · ดาเมจกายภาพตามท่อนแรก ท่อนเดียวกันจบด้วย Wind DMG) · Ultimate The Maid & Clover Inn's Peacekeeper (1,312.5%) · Passive (Lv.1) · Wind Affliction | **Passive Trait กับ Basic Attack ใช้ชื่อเดียวกัน \"Maid's Double Life\"** ตามที่สองจอเขียน — เก็บตามจอ ไม่ได้พิมพ์ซ้ำผิด | ปลุกพลัง: ครบหกขั้น (ขั้น 1-2 มารอบสาม) · ขั้น 4 เติม effect (ใช้สกิลพิเศษ → Crit DMG ตัวเอง +50% 10 วินาที) · ขั้น 5 (ดาเมจโจมตีพื้นฐาน +6%) · ขั้น 3 ลดคูลดาวน์สกิลสนับสนุน 4.5% และขั้น 6 Enhanced Basic Attack +125% เก็บเป็นข้อความ | **2026-10-22 รอบสาม** Switch Taking Out the Trash (ครบห้าบรรทัดจากจอที่เลื่อนลง) · Special Housekeeping! · Guidance of Wind: Maid and Silver Flash (Lv.12 ATK +40.1% 10 วินาที เมื่อได้ Sharpness · ไม่ระบุเป้าหมาย เก็บเป็นข้อความ) · ปลุกพลังขั้น 1-2 — **ครบทั้งหกช่องสกิลและหกขั้นปลุกพลังแล้ว** | special: ย่อหน้าที่สองคือคำอธิบายย่อยของ Dust Cloud (หัวข้อสีเหลือง) เก็บพร้อม \"Dust Cloud:\" · Dust Cloud DMG ผูกท่อน 1 (\"dealing Wind DMG\") · มีลิงก์สถานะ Confused แต่ยังไม่เห็นหน้าต่างรายละเอียด | **สกิลธาตุเติม effect แล้ว** (ผู้เล่นกำหนด 2026-10-22: \"ถ้าไม่บอกว่าใครก็คือตัวเอง\" — ข้อความที่ไม่ระบุผู้รับบัฟ ให้ target self) · ตัวกระตุ้นจริงคือ \"ได้ Sharpness\" ซึ่งคำอธิบายสกิลพิเศษบอกว่าได้จากสกิลพิเศษ (Sharpness Obtained 2) จึงเก็บเป็น onSpecialSkill + condition.note และติดธง trigger ไว้ เพราะยังไม่รู้ว่ามีทางอื่นที่ได้ Sharpness หรือไม่ | Effect Details ของ **Confused**: \"Afflicted targets cannot identify enemies.\" (จอนี้เปิดที่ Lv.1 — Dust Cloud DMG 60.4% ที่ Lv.1 ไม่เก็บ เพราะหน้าเว็บโชว์เลเวลสูงสุดเท่านั้น และค่าที่เก็บไว้คือ Lv.12) | **2026-10-23 จอไทย (พรีวิวตัวละคร)** ชื่อ เอสเด · ค่าพลังห้าค่าตรงจออังกฤษ · โจมตีพื้นฐาน เมดสองหน้า (ตารางสิบแถวตรงทุกค่า) · สกิลสับเปลี่ยน จัดการคนก่อกวน (เห็นแค่คำอธิบาย ตารางอยู่ใต้ขอบ — ชื่อแถวไทยยังไม่มี) · การชี้นำแห่งลม เมดและดาบแสงเงิน | สกิลสับเปลี่ยน: จอไทยวาง \"[สกิลสนับสนุน]\" ไว้บรรทัดเดียวโดด ๆ — ต่อกับย่อหน้าถัดไปเป็นท่อนที่ 2 ตามรูปแบบจออังกฤษ \"[Support Skill] …\" | ยังไม่ได้อ่าน (ไทย): ชื่อแถวตารางสกิลสับเปลี่ยน · สกิลพิเศษ · สกิลอัลติเมต · แพสซีฟ · สถานะ · ปลุกพลัง",
     "fieldsUnverified": [
       "skills.elemental.effects.0.trigger"
     ]
