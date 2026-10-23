@@ -277,6 +277,7 @@
       "en": "Destroyer"
     },
     "captureProficiency": {
+      "th": "ระดับความชำนาญจับ",
       "en": "Capture Proficiency"
     },
     "staminaConsumption": {
@@ -614,7 +615,7 @@
       "en": "Entree"
     },
     "side": {
-      "th": "จานเคียง",
+      "th": "จานรอง",
       "en": "Side"
     }
   },
