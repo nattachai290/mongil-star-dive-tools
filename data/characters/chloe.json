@@ -1,6 +1,7 @@
 {
   "id": "chloe",
   "name": {
+    "th": "โคลอี้",
     "en": "Chloe"
   },
   "rarity": 5,
@@ -151,9 +152,11 @@
   "skills": {
     "basic": {
       "name": {
+        "th": "เบาๆ หนึ่ง สอง!",
         "en": "Light Jabs! One, two!"
       },
       "desc": {
+        "th": "ใช้ร่างกายที่ห่อหุ้มด้วยสายลมเคลื่อนไหวโจมตีต่อเนื่องอย่างรวดเร็ว สร้างดาเมจธาตุลมแก่ศัตรู / ในขณะที่มีเอฟเฟกต์ไฮเทมโป โจมตีพื้นฐานจะถูกเสริมพลัง ในการโจมตีขั้น 5 ของโจมตีพื้นฐานเสริมพลัง จะสร้างลมกรรโชกเพื่อสร้างดาเมจธาตุลมเพิ่มเติม / ในขณะที่มีเอฟเฟกต์ยัง... ไม่จบหรอก! หากกดโจมตีพื้นฐานค้างไว้ จะเปลี่ยนการโจมตีเป็นหมัดทะลวงซึ่งจะรัวหมัดออกไปด้วยความเร็วเหนือชั้น",
         "en": "Chloe unleashes a rapid series of attacks with whirlwind-like movements, dealing Wind DMG to enemies. / Basic Attack is enhanced when High Tempo is active. Generates a Gust upon Enhanced Basic Attack's 5th Hit, dealing additional Wind DMG. / Holding the Basic Attack button while It's... Not Over Yet! is active converts the Basic Attack to Hyper Punch, and Chloe unleashes a flurry of punches at overwhelming speed."
       },
       "damageType": "wind",
@@ -161,6 +164,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 1",
             "en": "1st Hit DMG"
           },
           "unit": "percent",
@@ -186,6 +190,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 2",
             "en": "2nd Hit DMG"
           },
           "unit": "percent",
@@ -211,6 +216,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 3",
             "en": "3rd Hit DMG"
           },
           "unit": "percent",
@@ -236,6 +242,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 4",
             "en": "4th Hit DMG"
           },
           "unit": "percent",
@@ -261,6 +268,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 5",
             "en": "5th Hit DMG"
           },
           "unit": "percent",
@@ -286,6 +294,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจพุ่งใส่จากการโจมตีพื้นฐานเสริมพลัง ขั้น 1",
             "en": "Enhanced Basic Attack 1st Hit DMG"
           },
           "unit": "percent",
@@ -311,6 +320,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจพุ่งใส่จากการโจมตีพื้นฐานเสริมพลัง ขั้น 2",
             "en": "Enhanced Basic Attack 2nd Hit DMG"
           },
           "unit": "percent",
@@ -336,6 +346,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีพื้นฐานขั้น 3 เสริมพลัง",
             "en": "Enhanced Basic Attack 3rd Hit DMG"
           },
           "unit": "percent",
@@ -361,6 +372,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีพื้นฐานขั้น 4 เสริมพลัง",
             "en": "Enhanced Basic Attack 4th Hit DMG"
           },
           "unit": "percent",
@@ -386,6 +398,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีพื้นฐานขั้น 5 เสริมพลัง",
             "en": "Enhanced Basic Attack 5th Hit DMG"
           },
           "unit": "percent",
@@ -411,6 +424,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจลมกรรโชกจากการโจมตีพื้นฐานขั้น 5 เสริมพลัง",
             "en": "Enhanced Basic Attack 5th Hit Gust DMG"
           },
           "unit": "percent",
@@ -436,6 +450,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีหมัดทะลวงขั้น 1",
             "en": "Hyper Punch Attack 1st Hit DMG"
           },
           "unit": "percent",
@@ -461,6 +476,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีหมัดทะลวงขั้น 2",
             "en": "Hyper Punch Attack 2nd Hit DMG"
           },
           "unit": "percent",
@@ -486,6 +502,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีหมัดทะลวงขั้น 3",
             "en": "Hyper Punch Attack 3rd Hit DMG"
           },
           "unit": "percent",
@@ -511,6 +528,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีชาร์จ",
             "en": "Charge Attack DMG"
           },
           "unit": "percent",
@@ -535,6 +553,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีฉับพลัน",
             "en": "Air Counter DMG"
           },
           "unit": "percent",
@@ -559,6 +578,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจหลบหลีกโต้กลับ",
             "en": "Evasion Counter DMG"
           },
           "unit": "percent",
@@ -833,9 +853,11 @@
     },
     "ultimate": {
       "name": {
+        "th": "ซัดให้กระจุยไปเลย!",
         "en": "Blow It All Up!"
       },
       "desc": {
+        "th": "กระโจนเข้าไปอย่างว่องไว ก่อนปล่อยหมัดหนักอันทรงพลังที่ร้อนระอุจนเป็นสีแดง สร้างดาเมจธาตุลมและมอบเอฟเฟกต์อ่อนแอต่อลมแก่ศัตรู พร้อมทั้งมอบเอฟเฟกต์ยัง... ไม่จบหรอก!ให้กับตนเอง / เมื่อเอฟเฟกต์ยัง... ไม่จบหรอก!ปรับใช้ คูลดาวน์สกิลพิเศษจะถูกรีเซต และในขณะที่มีเอฟเฟกต์ จะสามารถใช้วินด์มิลล์คิกของสกิลพิเศษได้ทันที / เมื่อเวลาแสดงผลเอฟเฟกต์ยัง... ไม่จบหรอก!สิ้นสุด คูลดาวน์สกิลพิเศษจะถูกรีเซตอีกครั้ง",
         "en": "Chloe nimbly jumps in and throws a heavy, superheated punch. She deals Wind DMG and inflicts Wind Affliction on the enemy and grants herself It's... Not Over Yet!. / Chloe's Special Skill cooldown is reset when It's... Not Over Yet! is applied, and Special Skill's Windmill Kick can be used immediately while the effect is active. / Special Skill cooldown is reset again when the effect duration of It's... Not Over Yet! ends."
       },
       "damageType": "wind",
@@ -843,6 +865,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจ",
             "en": "DMG"
           },
           "unit": "percent",
@@ -868,6 +891,7 @@
         },
         {
           "label": {
+            "th": "เวลาแสดงผลยัง... ไม่จบหรอก!",
             "en": "It's... Not Over Yet! Duration"
           },
           "unit": "seconds",
@@ -893,6 +917,7 @@
         },
         {
           "label": {
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อลม",
             "en": "Wind Affliction Duration"
           },
           "unit": "seconds",
@@ -1146,18 +1171,22 @@
   "statuses": [
     {
       "name": {
+        "th": "ไฮเทมโป",
         "en": "High Tempo"
       },
       "desc": {
+        "th": "พลังโจมตีเพิ่มขึ้น 12% ดาเมจที่ได้รับลดลง 60% และท่วงท่าจะไม่พังทลายจากการโจมตีของศัตรู จำนวนครั้งที่โจมตีของโจมตีพื้นฐานที่เสริมพลังเพิ่มขึ้น 1 ครั้ง ทำให้ดาเมจรวมเพิ่มขึ้น 20% เมื่อเปลี่ยนไปใช้ตัวละครอื่น เอฟเฟกต์จะถูกยกเลิก",
         "en": "ATK increases by 12%, damage taken decreases by 60%, and your stance is not broken by enemy attacks. The number of hits in the Enhanced Basic Attack increases by 1, increasing total damage by 20%. The effect is removed when switching to another character."
       },
       "effects": []
     },
     {
       "name": {
+        "th": "ยัง... ไม่จบหรอก!",
         "en": "It's... Not Over Yet!"
       },
       "desc": {
+        "th": "โจมตีพื้นฐานจะเปลี่ยนเป็นการโจมตีแบบ [หมัดความเร็วสูง] อัตราการเจาะทะลุเพิ่มขึ้น 12% และจะไม่ได้รับการโจมตีตลอดระยะเวลา เมื่อเปลี่ยนไปใช้ตัวละครอื่น เอฟเฟกต์จะถูกยกเลิก",
         "en": "Basic Attack changes to a [High-Speed Punch] attack, Penetration Rate increases by 12%, and you become immune to attacks for the duration. The effect is removed when switching to another character."
       },
       "effects": []
@@ -1180,8 +1209,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (ผู้เล่นยังไม่มีตัวนี้ จอตัวอย่างเปิดดูได้) · Info · Detailed Stats · Basic Attack · Effect Details · **ยังไม่มีจอไทย** | Fighter · **Wind** · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** ดาวบนจอ Info คือดาวอัปเลเวล | ค่าพลังจากจอตัวอย่าง (ไม่มีของติด จอ Info กับ Detailed Stats ตรงกัน): ATK 1,943 (เท่ากับวิเวียน) · DEF 656 · HP 9,978 · ไม่มีบรรทัด Wind DMG Boost บนจอ (ตัวอื่นมี Fire DMG Boost) · Fighter 1,078 เท่ากับ Verna / Mina | Basic Attack Lv.12 ครบ 17 บรรทัด (จอที่สองเลื่อนลงจนเห็นทั้งตาราง) · line: Hit 1-5 = ท่อน 1 · Enhanced ทั้งหมดรวม Gust = ท่อน 2 · Hyper Punch = ท่อน 3 · Charge / Air / Evasion ไม่ใส่ | statuses เก็บเป็นข้อความ: High Tempo มีหลายผลปนกัน (ATK · ลดดาเมจที่ได้รับ · กันกระเด็น · จำนวนครั้งตี) · It's... Not Over Yet! พูดถึง **\"Penetration Rate\"** ซึ่งยังไม่มีในพจนานุกรม (Verna ปลุกพลังขั้น 6 เขียน \"Pierce Rate\" — ยังไม่รู้ว่าเป็นค่าเดียวกันไหม) | ช่องที่หกชื่อ **Guidance of Wind** (Lv.12 บนจอตัวอย่าง) — ยืนยันว่าหัวช่องเปลี่ยนตามธาตุ | รูป portrait ตัดจากจอ Character Preview (เลเวล 1 หน้าตรง) ที่ผู้เล่นส่งมา 2026-10-22 ขนาด 400x400 แทนรูปเดิมที่หลับตา | **2026-10-22 รอบสอง** Switch Skill Substitution · Ultimate Skill Blow It All Up! (Lv.12) · Passive Trait Overheat (Lv.1) · Guidance of Wind Time to Lock In! (**Lv.12 บนจอตัวอย่าง** = Wind DMG +24.6% 15 วินาที เมื่อใช้สกิลสับเปลี่ยน · effects ว่าง เพราะจอไม่ได้บอกว่าบัฟลงที่ใคร) · Effect Details ของ Wind Affliction | **Passive: คำอธิบายบนจอมีช่องว่างเหนือประโยคแรก** อาจเป็นเพราะพาเนลเลื่อนลงไปแล้ว มีท่อนก่อนหน้าที่ไม่เห็น — เก็บเฉพาะที่เห็น บรรทัดค่าทั้งแปดเป็นอัตราชาร์จพลังงานอัลติเมตตามท่า ไม่ใส่ line | **Wind Affliction ข้อความรูปแบบเดียวกับ Fire Affliction ทุกคำ** แค่เปลี่ยนธาตุ (Wind DMG over time · Wind RES −15%) | ultimate: บรรทัดค่าทั้งสามผูกท่อน 1 · switch: DMG = ท่อน 1 · High Tempo Duration = ท่อน 2 | **2026-10-22 รอบสาม** Special Skill Infighting (Lv.12 ครบเจ็ดบรรทัด จากจอที่เลื่อนลง) และปลุกพลังครบหกขั้น (ทุกขั้นยังล็อกบนจอตัวอย่าง) — **ครบทั้งหกช่องสกิลแล้ว** | special: ท่อนแรกของคำอธิบายยาวและยังไม่มี \"/\" คั่น เพราะจอขึ้นบรรทัดใหม่ภายในย่อหน้าเดียว — แบ่งท่อนตามย่อหน้าบนจอ (สามย่อหน้า) · บรรทัดค่าทั้งหมดยกเว้น Cooldown ผูกท่อน 1 | ปลุกพลัง: effects เติมขั้น 3 (ดาเมจสกิลพิเศษ +6%) และขั้น 5 (ดาเมจโจมตีพื้นฐาน +6%) · ขั้นอื่นเปลี่ยนค่าในสถานะ/สกิลเดิม เก็บเป็นข้อความ | **\"Pierce Rate\" กับ \"Penetration Rate\" คือค่าเดียวกัน** — ปลุกพลังขั้น 1 เขียน \"It's... Not Over Yet! effect's Pierce Rate increases to 22%\" ซึ่งอ้างถึงค่า 12% ที่หน้าต่างสถานะเดียวกันเรียกว่า \"Penetration Rate\" เกมใช้สองคำกับค่าเดียว (Verna ปลุกพลังขั้น 6 ใช้ Pierce Rate) ยังไม่เพิ่มเข้าพจนานุกรมเพราะไม่มีที่ใช้เป็น effect | ยังไม่ได้อ่าน: จอไทยทั้งหมด | จอ Preview ที่เลเวล 1 แสดง ATK 53 · DEF 15 · HP 407 · Crit 5% / 50% — **ไม่เก็บ** schema เก็บค่าพลังที่เลเวลเดียว (60) และห้ามคำนวณเลเวลอื่น จดไว้ตรงนี้เท่านั้น | **สกิลธาตุเติม effect แล้ว** (ผู้เล่นกำหนด 2026-10-22: \"ถ้าไม่บอกว่าใครก็คือตัวเอง\" — ข้อความที่ไม่ระบุผู้รับบัฟ ให้ target self)"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (ผู้เล่นยังไม่มีตัวนี้ จอตัวอย่างเปิดดูได้) · Info · Detailed Stats · Basic Attack · Effect Details · **ยังไม่มีจอไทย** | Fighter · **Wind** · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** ดาวบนจอ Info คือดาวอัปเลเวล | ค่าพลังจากจอตัวอย่าง (ไม่มีของติด จอ Info กับ Detailed Stats ตรงกัน): ATK 1,943 (เท่ากับวิเวียน) · DEF 656 · HP 9,978 · ไม่มีบรรทัด Wind DMG Boost บนจอ (ตัวอื่นมี Fire DMG Boost) · Fighter 1,078 เท่ากับ Verna / Mina | Basic Attack Lv.12 ครบ 17 บรรทัด (จอที่สองเลื่อนลงจนเห็นทั้งตาราง) · line: Hit 1-5 = ท่อน 1 · Enhanced ทั้งหมดรวม Gust = ท่อน 2 · Hyper Punch = ท่อน 3 · Charge / Air / Evasion ไม่ใส่ | statuses เก็บเป็นข้อความ: High Tempo มีหลายผลปนกัน (ATK · ลดดาเมจที่ได้รับ · กันกระเด็น · จำนวนครั้งตี) · It's... Not Over Yet! พูดถึง **\"Penetration Rate\"** ซึ่งยังไม่มีในพจนานุกรม (Verna ปลุกพลังขั้น 6 เขียน \"Pierce Rate\" — ยังไม่รู้ว่าเป็นค่าเดียวกันไหม) | ช่องที่หกชื่อ **Guidance of Wind** (Lv.12 บนจอตัวอย่าง) — ยืนยันว่าหัวช่องเปลี่ยนตามธาตุ | รูป portrait ตัดจากจอ Character Preview (เลเวล 1 หน้าตรง) ที่ผู้เล่นส่งมา 2026-10-22 ขนาด 400x400 แทนรูปเดิมที่หลับตา | **2026-10-22 รอบสอง** Switch Skill Substitution · Ultimate Skill Blow It All Up! (Lv.12) · Passive Trait Overheat (Lv.1) · Guidance of Wind Time to Lock In! (**Lv.12 บนจอตัวอย่าง** = Wind DMG +24.6% 15 วินาที เมื่อใช้สกิลสับเปลี่ยน · effects ว่าง เพราะจอไม่ได้บอกว่าบัฟลงที่ใคร) · Effect Details ของ Wind Affliction | **Passive: คำอธิบายบนจอมีช่องว่างเหนือประโยคแรก** อาจเป็นเพราะพาเนลเลื่อนลงไปแล้ว มีท่อนก่อนหน้าที่ไม่เห็น — เก็บเฉพาะที่เห็น บรรทัดค่าทั้งแปดเป็นอัตราชาร์จพลังงานอัลติเมตตามท่า ไม่ใส่ line | **Wind Affliction ข้อความรูปแบบเดียวกับ Fire Affliction ทุกคำ** แค่เปลี่ยนธาตุ (Wind DMG over time · Wind RES −15%) | ultimate: บรรทัดค่าทั้งสามผูกท่อน 1 · switch: DMG = ท่อน 1 · High Tempo Duration = ท่อน 2 | **2026-10-22 รอบสาม** Special Skill Infighting (Lv.12 ครบเจ็ดบรรทัด จากจอที่เลื่อนลง) และปลุกพลังครบหกขั้น (ทุกขั้นยังล็อกบนจอตัวอย่าง) — **ครบทั้งหกช่องสกิลแล้ว** | special: ท่อนแรกของคำอธิบายยาวและยังไม่มี \"/\" คั่น เพราะจอขึ้นบรรทัดใหม่ภายในย่อหน้าเดียว — แบ่งท่อนตามย่อหน้าบนจอ (สามย่อหน้า) · บรรทัดค่าทั้งหมดยกเว้น Cooldown ผูกท่อน 1 | ปลุกพลัง: effects เติมขั้น 3 (ดาเมจสกิลพิเศษ +6%) และขั้น 5 (ดาเมจโจมตีพื้นฐาน +6%) · ขั้นอื่นเปลี่ยนค่าในสถานะ/สกิลเดิม เก็บเป็นข้อความ | **\"Pierce Rate\" กับ \"Penetration Rate\" คือค่าเดียวกัน** — ปลุกพลังขั้น 1 เขียน \"It's... Not Over Yet! effect's Pierce Rate increases to 22%\" ซึ่งอ้างถึงค่า 12% ที่หน้าต่างสถานะเดียวกันเรียกว่า \"Penetration Rate\" เกมใช้สองคำกับค่าเดียว (Verna ปลุกพลังขั้น 6 ใช้ Pierce Rate) ยังไม่เพิ่มเข้าพจนานุกรมเพราะไม่มีที่ใช้เป็น effect | จอ Preview ที่เลเวล 1 แสดง ATK 53 · DEF 15 · HP 407 · Crit 5% / 50% — **ไม่เก็บ** schema เก็บค่าพลังที่เลเวลเดียว (60) และห้ามคำนวณเลเวลอื่น จดไว้ตรงนี้เท่านั้น | **สกิลธาตุเติม effect แล้ว** (ผู้เล่นกำหนด 2026-10-22: \"ถ้าไม่บอกว่าใครก็คือตัวเอง\" — ข้อความที่ไม่ระบุผู้รับบัฟ ให้ target self) | **2026-10-23 จอไทย (พรีวิวตัวละคร)** ชื่อ โคลอี้ · ค่าพลังห้าค่าตรงจออังกฤษ · โจมตีพื้นฐาน เบาๆ หนึ่ง สอง! (ตาราง 17 แถวตรงทุกค่า) · สกิลอัลติเมต ซัดให้กระจุยไปเลย! · รายละเอียดเอฟเฟกต์ ไฮเทมโป / ยัง... ไม่จบหรอก! | desc ไทยของโจมตีพื้นฐาน: จอแยก \"ไฮเทมโป…เสริมพลัง\" กับ \"ในการโจมตีขั้น 5…\" เป็นสองบรรทัดติดกันไม่เว้นย่อหน้า — รวมเป็นท่อนเดียวให้ตรงกับท่อนที่ 2 ของจออังกฤษ (line ของตารางอ้างตามท่อน) · ข้อความสถานะที่จอตัดบรรทัด ต่อเป็นประโยคเดียว | จอไทยเรียก Pierce/Penetration Rate ว่า \"อัตราการเจาะทะลุ\" · Air Counter = \"ดาเมจโจมตีฉับพลัน\" · Evasion Counter = \"ดาเมจหลบหลีกโต้กลับ\" | ยังไม่ได้อ่าน (ไทย): สกิลสับเปลี่ยน · สกิลพิเศษ · แพสซีฟ · การชี้นำแห่งลม · อ่อนแอต่อลม (Effect Details) · ปลุกพลัง"
   }
 }
