@@ -1,11 +1,14 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { FilteredList, type FilteredRow } from "@/components/FilteredList";
 import { Text } from "@/components/Text";
 import { createTranslate } from "@/i18n";
 import { LOCALES, isLocale, type Locale } from "@/lib/i18n";
 import { DEX, LINK_CHAINS, chainsSorted, monsterlingImage } from "@/lib/data";
+import { byNumberDesc, haystackOf, optionsFrom } from "@/lib/facets";
 import { label } from "@/lib/vocabulary";
+import type { LinkChain } from "@/lib/schema/entities";
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
@@ -29,6 +32,102 @@ function isUnverified(paths: string[] | undefined, needle: string): boolean {
   return (paths ?? []).some((p) => p.includes(needle));
 }
 
+type T = ReturnType<typeof createTranslate>;
+
+function ChainCard({ chain, locale, t }: { chain: LinkChain; locale: Locale; t: T }) {
+  const owner = DEX_BY_SLUG.get(chain.monsterlingId);
+  const image = monsterlingImage(chain.monsterlingId);
+
+  return (
+    <li className="rounded-lg border border-line bg-surface p-4">
+      <div className="flex items-center gap-3">
+        {image && (
+          <Image
+            src={image}
+            alt=""
+            width={40}
+            height={40}
+            className="size-10 shrink-0 rounded bg-surface-2 object-contain"
+          />
+        )}
+        <div className="min-w-0">
+          <h2 className="font-display text-sm font-semibold">
+            <Text value={chain.name} locale={locale} />
+          </h2>
+          {owner && (
+            <p className="text-xs text-muted">
+              {t("linkChains.owner")}:{" "}
+              <Text value={owner.name} locale={locale} showFallbackBadge={false} />
+            </p>
+          )}
+        </div>
+      </div>
+
+      {chain.levels.map((level) => {
+        const unverified = chain.source.fieldsUnverified;
+        return (
+          <div key={level.level} className="mt-3 border-t border-line pt-3">
+            <p className="font-mono text-xs text-gold">
+              {t("linkChains.level")} {level.level}
+            </p>
+
+            <dl className="mt-2 grid gap-x-6 gap-y-1.5 text-sm sm:grid-cols-2">
+              <div>
+                <dt className="text-xs text-muted">{t("linkChains.condition")}</dt>
+                <dd className="text-ink">
+                  {level.appearanceConditions
+                    .map((c) => label("appearanceCondition", c, locale))
+                    .join(" · ")}
+                </dd>
+              </div>
+
+              <div>
+                <dt className="text-xs text-muted">{t("linkChains.info")}</dt>
+                <dd className="text-ink">
+                  {level.appearanceInfo.dmgPercentOfAtk !== undefined ? (
+                    <>
+                      {t("linkChains.dmgOfAtk")}: {level.appearanceInfo.dmgPercentOfAtk}%
+                    </>
+                  ) : (
+                    <span className="text-muted">{t("linkChains.noDamage")}</span>
+                  )}
+                  {level.appearanceInfo.cooldownSec !== undefined && (
+                    <>
+                      {" · "}
+                      {t("linkChains.cooldown")}: {level.appearanceInfo.cooldownSec}s
+                    </>
+                  )}
+                </dd>
+              </div>
+            </dl>
+
+            {level.bonusEffects && level.bonusEffects.length > 0 && (
+              <div className="mt-2">
+                <p className="text-xs text-muted">{t("linkChains.bonus")}</p>
+                <ul className="mt-1 space-y-0.5">
+                  {level.bonusEffects.map((b, i) => (
+                    <li key={i} className="text-sm text-ink">
+                      <Text value={b} locale={locale} />
+                      {isUnverified(unverified, `bonusEffects[${i}]`) && (
+                        <span
+                          className="ms-1.5 rounded bg-surface-2 px-1.5 py-0.5 align-middle font-mono text-[10px] text-muted"
+                          title={t("data.unverifiedTitle")}
+                        >
+                          {t("data.unverified")}
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </li>
+  );
+}
+
 export default async function LinkChainsPage({
   params,
 }: {
@@ -38,6 +137,43 @@ export default async function LinkChainsPage({
   if (!isLocale(locale)) notFound();
   const t = createTranslate(locale as Locale);
 
+  const rows: FilteredRow[] = chainsSorted(locale).map((chain) => {
+    const owner = DEX_BY_SLUG.get(chain.monsterlingId);
+    const conditions = [...new Set(chain.levels.flatMap((l) => l.appearanceConditions))];
+    return {
+      key: chain.id,
+      facets: {
+        rarity: chain.rarity !== undefined ? [String(chain.rarity)] : [],
+        // ไม่มีชนิดดาเมจ = ลิงก์เชนที่ไม่ทำดาเมจเอง (บัฟ / ฮีล) — ให้กรองหาได้ด้วย
+        damageType: [...new Set(chain.levels.map((l) => l.damageType ?? "none"))],
+        condition: conditions,
+        kind: [chain.kind],
+      },
+      haystack: haystackOf([
+        chain.id,
+        chain.name.th,
+        chain.name.en,
+        owner?.name.th,
+        owner?.name.en,
+        ...chain.levels.flatMap((l) => (l.bonusEffects ?? []).flatMap((b) => [b.th, b.en])),
+        ...conditions.flatMap((c) => [label("appearanceCondition", c, "th"), label("appearanceCondition", c, "en")]),
+      ]),
+      card: <ChainCard key={chain.id} chain={chain} locale={locale as Locale} t={t} />,
+    };
+  });
+
+  const facets = [
+    { key: "rarity", param: "r", legend: t("filters.rarity"),
+      options: optionsFrom(rows, "rarity", (v) => `${"◆".repeat(Number(v))} ${v}`, byNumberDesc) },
+    { key: "damageType", param: "dmg", legend: t("filters.damageType"),
+      options: optionsFrom(rows, "damageType", (v) =>
+        v === "none" ? t("filters.noDamage") : label("damageType", v, locale)) },
+    { key: "condition", param: "when", legend: t("filters.condition"),
+      options: optionsFrom(rows, "condition", (v) => label("appearanceCondition", v, locale)) },
+    { key: "kind", param: "kind", legend: t("filters.kind"),
+      options: optionsFrom(rows, "kind", (v) => label("linkChainKind", v, locale)) },
+  ];
+
   return (
     <div className="mx-auto max-w-5xl px-5 py-8">
       <h1 className="font-display text-2xl font-semibold">{t("linkChains.title")}</h1>
@@ -46,101 +182,20 @@ export default async function LinkChainsPage({
         <strong className="text-ink">{LINK_CHAINS.length}</strong> · {t("linkChains.title")}
       </p>
 
-      <ul className="mt-6 space-y-3">
-        {chainsSorted(locale).map((chain) => {
-          const owner = DEX_BY_SLUG.get(chain.monsterlingId);
-          const image = monsterlingImage(chain.monsterlingId);
-
-          return (
-            <li key={chain.id} className="rounded-lg border border-line bg-surface p-4">
-              <div className="flex items-center gap-3">
-                {image && (
-                  <Image
-                    src={image}
-                    alt=""
-                    width={40}
-                    height={40}
-                    className="size-10 shrink-0 rounded bg-surface-2 object-contain"
-                  />
-                )}
-                <div className="min-w-0">
-                  <h2 className="font-display text-sm font-semibold">
-                    <Text value={chain.name} locale={locale} />
-                  </h2>
-                  {owner && (
-                    <p className="text-xs text-muted">
-                      {t("linkChains.owner")}:{" "}
-                      <Text value={owner.name} locale={locale} showFallbackBadge={false} />
-                    </p>
-                  )}
-                </div>
-              </div>
-
-              {chain.levels.map((level) => {
-                const unverified = chain.source.fieldsUnverified;
-                return (
-                  <div key={level.level} className="mt-3 border-t border-line pt-3">
-                    <p className="font-mono text-xs text-gold">
-                      {t("linkChains.level")} {level.level}
-                    </p>
-
-                    <dl className="mt-2 grid gap-x-6 gap-y-1.5 text-sm sm:grid-cols-2">
-                      <div>
-                        <dt className="text-xs text-muted">{t("linkChains.condition")}</dt>
-                        <dd className="text-ink">
-                          {level.appearanceConditions
-                            .map((c) => label("appearanceCondition", c, locale))
-                            .join(" · ")}
-                        </dd>
-                      </div>
-
-                      <div>
-                        <dt className="text-xs text-muted">{t("linkChains.info")}</dt>
-                        <dd className="text-ink">
-                          {level.appearanceInfo.dmgPercentOfAtk !== undefined ? (
-                            <>
-                              {t("linkChains.dmgOfAtk")}: {level.appearanceInfo.dmgPercentOfAtk}%
-                            </>
-                          ) : (
-                            <span className="text-muted">{t("linkChains.noDamage")}</span>
-                          )}
-                          {level.appearanceInfo.cooldownSec !== undefined && (
-                            <>
-                              {" · "}
-                              {t("linkChains.cooldown")}: {level.appearanceInfo.cooldownSec}s
-                            </>
-                          )}
-                        </dd>
-                      </div>
-                    </dl>
-
-                    {level.bonusEffects && level.bonusEffects.length > 0 && (
-                      <div className="mt-2">
-                        <p className="text-xs text-muted">{t("linkChains.bonus")}</p>
-                        <ul className="mt-1 space-y-0.5">
-                          {level.bonusEffects.map((b, i) => (
-                            <li key={i} className="text-sm text-ink">
-                              <Text value={b} locale={locale} />
-                              {isUnverified(unverified, `bonusEffects[${i}]`) && (
-                                <span
-                                  className="ms-1.5 rounded bg-surface-2 px-1.5 py-0.5 align-middle font-mono text-[10px] text-muted"
-                                  title={t("data.unverifiedTitle")}
-                                >
-                                  {t("data.unverified")}
-                                </span>
-                              )}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </li>
-          );
-        })}
-      </ul>
+      <FilteredList
+        idPrefix="link-chains"
+        rows={rows}
+        facets={facets}
+        listClassName="mt-6 space-y-3"
+        labels={{
+          search: t("linkChains.search"),
+          matches: t("linkChains.matches"),
+          noMatch: t("linkChains.noMatch"),
+          filters: t("filters.legend"),
+          any: t("filters.any"),
+          clear: t("filters.clear"),
+        }}
+      />
     </div>
   );
 }
