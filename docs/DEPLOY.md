@@ -45,26 +45,40 @@ npm audit              # ดูทุกระดับ รวม dev
 npm audit fix          # แก้อัตโนมัติเท่าที่ทำได้
 ```
 
-## Vercel
+## GitHub Pages
 
-`vercel.json` ตั้ง framework เป็น `nextjs` และบังคับให้ install ด้วย `npm ci`
-เพื่อให้ build บน Vercel ใช้เวอร์ชันตรงกับ `package-lock.json` เป๊ะ ๆ เหมือนใน CI
+เว็บ build เป็นไฟล์ static ล้วน (`output: "export"` ใน `next.config.ts`) ลงโฟลเดอร์ `out/`
+แล้ว `.github/workflows/pages.yml` อัปขึ้น GitHub Pages ทุกครั้งที่ push เข้า `main`
 
-### เชื่อม repo ครั้งแรก (ทำครั้งเดียว)
+ที่อยู่เว็บ: **https://nattachai290.github.io/mongil-star-dive-tools/**
 
-1. เข้า [vercel.com/new](https://vercel.com/new) → **Import Git Repository**
-2. เลือก `nattachai290/mongil-star-dive-tools`
-   (ถ้าไม่เห็น repo ให้กด **Adjust GitHub App Permissions** แล้วให้สิทธิ์ repo นี้)
-3. Framework Preset จะขึ้น **Next.js** เอง — ไม่ต้องแก้ Build/Output/Install command
-4. กด **Deploy**
+ย้ายมาจาก Vercel เมื่อ 2026-10-23 ตามที่เจ้าของ repo สั่ง (`vercel.json` ลบทิ้งแล้ว)
 
-หลังจากนั้น Vercel จะ deploy อัตโนมัติ:
+### เปิดใช้ครั้งแรก (ทำครั้งเดียว บนหน้าเว็บ GitHub)
 
-- push เข้า `main` → **Production**
-- ทุก branch และทุก PR → **Preview URL** แยกของตัวเอง (รีวิวข้อมูลจากหน้าเว็บจริงได้ก่อน merge)
+1. repo → **Settings → Pages**
+2. **Build and deployment → Source** เลือก **GitHub Actions**
+3. ไปแท็บ **Actions** → **Deploy to GitHub Pages** → **Run workflow** (หรือ push อะไรก็ได้เข้า `main`)
 
-### ถ้าอยากให้ deploy เฉพาะตอน CI ผ่าน
+repo ส่วนตัว (private) เปิด Pages ได้เฉพาะบัญชี GitHub Pro ขึ้นไป — บัญชีฟรีต้องเป็น repo สาธารณะ
 
-ตั้งใน Vercel: **Settings → Git → Ignored Build Step** แล้วใส่คำสั่งที่ exit 0 เมื่อควรข้าม build
-หรือใช้วิธีตรงกว่าคือเปิด branch protection บน `main` ให้ต้องผ่าน CI ก่อน merge
-งาน production จึงไม่มีวันได้โค้ดที่ CI ไม่ผ่าน
+### พาธนำหน้า (basePath)
+
+เว็บอยู่ใต้ `/mongil-star-dive-tools/` ไม่ใช่รากโดเมน workflow ส่ง `NEXT_PUBLIC_BASE_PATH` ให้ตอน build
+
+- `<Link>` และ `router.push` เติมพาธนำหน้าให้เอง
+- **src ของรูปไม่เติมให้** ต้องผ่าน `asset()` ใน `src/lib/base-path.ts` ทุกครั้ง
+  ลืมแล้วรูปจะขึ้นใน dev (ไม่มีพาธนำหน้า) แต่พังบนเว็บจริง
+- ถ้าวันหนึ่งใช้โดเมนของตัวเอง ให้ลบ `NEXT_PUBLIC_BASE_PATH` ออกจาก workflow และแก้ `NEXT_PUBLIC_SITE_URL`
+
+### สิ่งที่ไม่มีบน GitHub Pages
+
+- **redirect ฝั่งเซิร์ฟเวอร์** — หน้า `/` จึงพาไป `/th/` ด้วย meta refresh (`src/app/page.tsx`)
+- **การแปลงรูปตอนเปิดหน้า** — `images.unoptimized` เปิดไว้ รูปทุกรูปย่อเป็น webp มาแล้วตอนเตรียม
+- **preview URL ต่อ PR** — เห็นผลบนเว็บจริงหลัง merge เข้า `main` เท่านั้น
+  ดูก่อน merge ได้ในเครื่อง: `npm run build && npm run preview` แล้วเปิด http://localhost:3000
+
+### deploy เฉพาะตอนข้อมูลถูก
+
+workflow รัน `validate:data` ก่อน build — ข้อมูลผิด schema จะไม่ขึ้นเว็บ
+ถ้าอยากให้ต้องผ่าน CI ทั้งหมดก่อน ให้เปิด branch protection บน `main` ให้ต้องผ่าน job `check` ก่อน merge

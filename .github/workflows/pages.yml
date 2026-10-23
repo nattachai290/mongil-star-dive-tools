@@ -1,0 +1,56 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# deploy ทีละรอบ ไม่ยกเลิกรอบที่กำลังขึ้นอยู่ — กันหน้าเว็บค้างครึ่ง ๆ กลาง ๆ
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build static site
+    runs-on: ubuntu-latest
+    env:
+      # เว็บอยู่ใต้ https://<owner>.github.io/<repo>/ — ดู next.config.ts และ src/lib/base-path.ts
+      NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
+      NEXT_PUBLIC_SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # ไม่ deploy ข้อมูลที่ผิด schema — ด่านเดียวกับ CI
+      - name: ตรวจไฟล์ข้อมูล
+        run: npm run validate:data
+
+      - name: Build
+        run: npm run build
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: out
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

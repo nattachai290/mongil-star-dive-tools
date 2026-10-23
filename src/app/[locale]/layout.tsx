@@ -6,7 +6,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { createTranslate } from "@/i18n";
 import { DEFAULT_LOCALE, LOCALES, LOCALE_TAG, isLocale } from "@/lib/i18n";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mongil-star-dive-tools.vercel.app";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nattachai290.github.io/mongil-star-dive-tools";
 import "../globals.css";
 
 const chakraPetch = Chakra_Petch({

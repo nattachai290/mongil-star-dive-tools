@@ -5,6 +5,7 @@ import { Text } from "@/components/Text";
 import { createTranslate } from "@/i18n";
 import { LOCALES, isLocale, type Locale } from "@/lib/i18n";
 import { FOOD, foodSorted } from "@/lib/data";
+import { asset } from "@/lib/base-path";
 import { label } from "@/lib/vocabulary";
 import type { Food } from "@/lib/schema/entities";
 
@@ -35,7 +36,7 @@ function FoodCard({ f, locale, t }: { f: Food; locale: Locale; t: T }) {
         {f.images?.icon && (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={`/images/food/${f.images.icon}`}
+            src={asset(`/images/food/${f.images.icon}`)}
             alt=""
             width={56}
             height={56}

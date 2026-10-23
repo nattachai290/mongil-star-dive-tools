@@ -1,5 +1,6 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
+import { asset } from "./base-path";
 import { artifact, food, monsterDexEntry, linkChain, monsterling, character, equipment, equipmentSet, gearMainStat, gearSubstat, traitPool, dropSources } from "./schema/entities";
 import type { Artifact, Character, Food, Equipment, EquipmentSet, GearMainStat, GearSubstat, LinkChain, Monsterling, TraitPool, DropSources } from "./schema/entities";
 
@@ -70,7 +71,7 @@ export function characterById(id: string): Character | undefined {
 export function characterImage(id: string): string | null {
   for (const file of [`${id}-portrait.webp`, `${id}-icon.webp`]) {
     if (existsSync(join(process.cwd(), "public", "images", "characters", file))) {
-      return `/images/characters/${file}`;
+      return asset(`/images/characters/${file}`);
     }
   }
   return null;
@@ -148,6 +149,6 @@ export function piecesOfSet(setId: string): Equipment[] {
 export function monsterlingImage(slug: string): string | null {
   const file = `${slug}-icon.webp`;
   return existsSync(join(process.cwd(), "public", "images", "monsterlings", file))
-    ? `/images/monsterlings/${file}`
+    ? asset(`/images/monsterlings/${file}`)
     : null;
 }

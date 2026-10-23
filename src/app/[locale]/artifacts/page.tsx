@@ -7,6 +7,7 @@ import { createTranslate } from "@/i18n";
 import { LOCALES, isLocale, type Locale } from "@/lib/i18n";
 import { ARTIFACTS, artifactsSorted } from "@/lib/data";
 import { byNumberDesc, haystackOf, optionsFrom } from "@/lib/facets";
+import { asset } from "@/lib/base-path";
 import { label } from "@/lib/vocabulary";
 import type { Artifact } from "@/lib/schema/entities";
 
@@ -36,7 +37,7 @@ function ArtifactCard({ a, locale, t }: { a: Artifact; locale: Locale; t: T }) {
         {a.images?.icon && (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={`/images/artifacts/${a.images.icon}`}
+            src={asset(`/images/artifacts/${a.images.icon}`)}
             alt=""
             width={64}
             height={64}

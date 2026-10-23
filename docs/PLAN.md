@@ -18,7 +18,7 @@
 | Stack | Next.js (App Router) + TypeScript + Tailwind CSS |
 | ภาษา | ไทย + อังกฤษ (i18n ตั้งแต่แรก, ไทยเป็น default) |
 | ที่มาข้อมูล | กรอกเอง + แคปหน้าจอจากเกม |
-| Hosting | Vercel (หรือ GitHub Pages ถ้าอยากฟรี 100% — รองรับทั้งคู่ด้วย static export) |
+| Hosting | GitHub Pages ด้วย static export (ย้ายจาก Vercel 2026-10-23 — docs/DEPLOY.md) |
 
 ---
 
