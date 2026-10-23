@@ -1,6 +1,7 @@
 {
   "id": "nagi",
   "name": {
+    "th": "นากิ",
     "en": "Nagi"
   },
   "rarity": 5,
@@ -139,9 +140,11 @@
   "skills": {
     "basic": {
       "name": {
+        "th": "สังหารเทพอสูร",
         "en": "God-killing Slash"
       },
       "desc": {
+        "th": "ปล่อยคมดาบแห่งสายลมที่ถูกอัดแน่นและพุ่งเข้าใส่ศัตรู จากนั้นถอยกลับและใช้คลื่นกระแทกจากบุปผาเบ่งบาน ทำให้ศัตรูลอยขึ้นกลางอากาศ สร้างดาเมจธาตุลม / ขณะใช้หลบหลีกโต้กลับหรือโจมตีขั้น 4 หากกดโจมตีพื้นฐานค้าง จะเกิดวิถีแห่งเทพวิญญาณ สร้างดาเมจธาตุลม / ขณะใช้วิถีแห่งเทพวิญญาณ จะสามารถเคลื่อนที่ไปยังทิศทางที่กด และมนตร์ลวงแห่งเทพจะถูกอัดแน่นลงในพัด",
         "en": "Nagi swings her fan to unleash a series of tightly compressed blades of wind and charges at the enemy. She then quickly steps back and causes flowers to bloom, rendering enemies Airborne with a powerful shockwave and dealing Wind DMG. / Holding the Basic Attack button on her 4th Hit or Evasion Counter triggers Heavenly Orbit and deals Wind DMG. / Nagi can also be controlled while using Heavenly Orbit, and Divine Seduction accumulates in her fan."
       },
       "damageType": "wind",
@@ -149,6 +152,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 1",
             "en": "1st Hit DMG"
           },
           "unit": "percent",
@@ -174,6 +178,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 2",
             "en": "2nd Hit DMG"
           },
           "unit": "percent",
@@ -199,6 +204,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 3",
             "en": "3rd Hit DMG"
           },
           "unit": "percent",
@@ -224,6 +230,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 4",
             "en": "4th Hit DMG"
           },
           "unit": "percent",
@@ -249,6 +256,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีฉับพลัน",
             "en": "Air Counter DMG"
           },
           "unit": "percent",
@@ -273,6 +281,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจหลบหลีกโต้กลับ",
             "en": "Evasion Counter DMG"
           },
           "unit": "percent",
@@ -297,6 +306,7 @@
         },
         {
           "label": {
+            "th": "วิถีแห่งเทพวิญญาณ ขั้น 1",
             "en": "Heavenly Orbit 1st Hit DMG"
           },
           "unit": "percent",
@@ -322,6 +332,7 @@
         },
         {
           "label": {
+            "th": "วิถีแห่งเทพวิญญาณ ขั้น 2",
             "en": "Heavenly Orbit 2nd Hit DMG"
           },
           "unit": "percent",
@@ -347,6 +358,7 @@
         },
         {
           "label": {
+            "th": "จำนวนมนตร์ลวงแห่งเทพสูงสุดที่ได้รับขณะใช้วิถีแห่งเทพวิญญาณ",
             "en": "Max Divine Seduction When Using Heavenly Orbit"
           },
           "unit": "times",
@@ -684,6 +696,7 @@
     },
     "passive": {
       "name": {
+        "th": "สำแดงมนตร์ลวงแห่งเทพ",
         "en": "Divine Seduction Manifestation"
       },
       "desc": {
@@ -944,9 +957,11 @@
     },
     "elemental": {
       "name": {
+        "th": "ร่างมายาไร้เงา",
         "en": "Phantom Decoy"
       },
       "desc": {
+        "th": "เมื่อใช้สกิลสับเปลี่ยน จะเพิ่มดาเมจธาตุลมของสมาชิกทีมทั้งหมด 22.6% (เวลาแสดงผล 15 วินาที)",
         "en": "Using a Switch Skill increases all teammates' Wind DMG by 22.6%. (Duration: 15s)"
       },
       "effects": [
@@ -1019,8 +1034,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Destroyer · Wind · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** — Destroyer 5 ดาวตัวแรก | ค่าพลังห้าค่าหลัก: ATK 2,049 · DEF 656 · HP 9,537 · Crit 5% / 50% — เท่ากับ Esther ทุกตัว (5 ดาว Wind เหมือนกัน) อ่านจากจอตรง ๆ · ยังไม่ได้เปิด Detailed Stats | **ชื่อซ้ำกับมอนสเตอร์ลิง Nagi (field 166)** — id \"nagi\" ใช้ได้ทั้งคู่เพราะอยู่คนละหมวด (characters / monsterlings) และ URL ต่างกัน · คำบรรยายตัวละครบอกว่าเป็นผู้นำเผ่างู ส่วนมอนสเตอร์ลิง Nagi เป็นหุ่นยนต์เซกเตอร์ 3 — ไม่มีหลักฐานว่าเกี่ยวกัน จึงไม่ได้ผูกถึงกัน | รูป portrait ตัดจากจอ Info 380x380 | **2026-10-22 รอบสอง** ปลุกพลังขั้น 3-6 (ขั้น 1-2 มารอบสาม) และ Effect Details ของ Alluring Empress's Reign กับ Imperial Grace | **ลำดับโบนัสสลับจากตัวอื่น**: ขั้น 3 ได้ดาเมจโจมตีพื้นฐาน +6% (เติม effect) ส่วนขั้น 5 ได้ลดคูลดาวน์สกิลพิเศษ 4.5% (ข้อความ) — ตัวอื่นส่วนใหญ่กลับกัน เก็บตามจอ | ขั้น 6 ดัน Bonus DMG ของสองสถานะเป็น 350% และ 230% (ค่าฐานในหน้าต่างสถานะคือ 100% / 120%) · statuses เก็บเป็นข้อความ เพราะเป็นดาเมจเพิ่มตามดาเมจฐาน ยังไม่มีโครง effect รองรับ | **2026-10-22 รอบสาม** Switch Concealed Spirit · Special Alluring Bloom · Ultimate Abyss's Approach (Lv.12) · Passive Divine Seduction Manifestation (Lv.1 ครบสิบบรรทัด) · Guidance of Wind: Phantom Decoy · ปลุกพลังขั้น 1-2 (**ครบหกขั้นแล้ว**) · Wind Affliction | **Phantom Decoy ระบุผู้รับชัด \"all teammates' Wind DMG\" +22.6% 15 วินาที** เติม effect target team · สกิลธาตุตัวที่สามที่บอกเป้าหมายเอง (ต่อจาก Bonnie · Verna) | passive: ห้าย่อหน้า ย่อหน้าที่ห้าคือคำอธิบายย่อยของ Beguiling Scale (หัวข้อสีเหลือง) · line: Max Divine Seduction = ท่อน 1 · Beguiling Scale durations = ท่อน 3 · ATK Boost/Duration = ท่อน 4 (เพิ่มพลังโจมตีเพื่อน ไม่รวมตัวเอง) · ค่าบูสต์ของ Beguiling Scale = ท่อน 5 · Alluring Empress's Reign Duration ไม่ใส่ line เพราะท่อน 1 และ 2 ต่างให้สถานะนี้ | ultimate: จอแรกเห็นห้าบรรทัด — จอที่เลื่อนลงรอบหกได้ครบเจ็ดบรรทัด เพิ่ม Bonus Seed DMG 69.7% (ท่อน 2) และ Wind Affliction Duration 5s (ท่อน 1) | **2026-10-22 รอบสี่** Detailed Stats: Neutralization DMG Boost 12.18% · Destroyer 1,078 · Elemental Weakness 125% (แบบตัว 5 ดาว) · Basic Attack God-killing Slash — **ครบทั้งหกช่องสกิลแล้ว** | basic: ตารางเคยเห็นแค่สองบรรทัด — จอที่เลื่อนลงรอบห้าได้ครบเก้าบรรทัด (Hit 1-4 · Air/Evasion Counter · Heavenly Orbit 523.5% / 261.3% · Max Divine Seduction 10) · line: Hit = ท่อน 1 · Heavenly Orbit = ท่อน 2 · Max Divine Seduction = ท่อน 3 | Effect Details ของ **Beguiling Scale** และ **DMG Immunity** เพิ่มในสถานะแล้ว (ข้อความ) · ยังไม่ได้อ่าน: จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Destroyer · Wind · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** — Destroyer 5 ดาวตัวแรก | ค่าพลังห้าค่าหลัก: ATK 2,049 · DEF 656 · HP 9,537 · Crit 5% / 50% — เท่ากับ Esther ทุกตัว (5 ดาว Wind เหมือนกัน) อ่านจากจอตรง ๆ · ยังไม่ได้เปิด Detailed Stats | **ชื่อซ้ำกับมอนสเตอร์ลิง Nagi (field 166)** — id \"nagi\" ใช้ได้ทั้งคู่เพราะอยู่คนละหมวด (characters / monsterlings) และ URL ต่างกัน · คำบรรยายตัวละครบอกว่าเป็นผู้นำเผ่างู ส่วนมอนสเตอร์ลิง Nagi เป็นหุ่นยนต์เซกเตอร์ 3 — ไม่มีหลักฐานว่าเกี่ยวกัน จึงไม่ได้ผูกถึงกัน | รูป portrait ตัดจากจอ Info 380x380 | **2026-10-22 รอบสอง** ปลุกพลังขั้น 3-6 (ขั้น 1-2 มารอบสาม) และ Effect Details ของ Alluring Empress's Reign กับ Imperial Grace | **ลำดับโบนัสสลับจากตัวอื่น**: ขั้น 3 ได้ดาเมจโจมตีพื้นฐาน +6% (เติม effect) ส่วนขั้น 5 ได้ลดคูลดาวน์สกิลพิเศษ 4.5% (ข้อความ) — ตัวอื่นส่วนใหญ่กลับกัน เก็บตามจอ | ขั้น 6 ดัน Bonus DMG ของสองสถานะเป็น 350% และ 230% (ค่าฐานในหน้าต่างสถานะคือ 100% / 120%) · statuses เก็บเป็นข้อความ เพราะเป็นดาเมจเพิ่มตามดาเมจฐาน ยังไม่มีโครง effect รองรับ | **2026-10-22 รอบสาม** Switch Concealed Spirit · Special Alluring Bloom · Ultimate Abyss's Approach (Lv.12) · Passive Divine Seduction Manifestation (Lv.1 ครบสิบบรรทัด) · Guidance of Wind: Phantom Decoy · ปลุกพลังขั้น 1-2 (**ครบหกขั้นแล้ว**) · Wind Affliction | **Phantom Decoy ระบุผู้รับชัด \"all teammates' Wind DMG\" +22.6% 15 วินาที** เติม effect target team · สกิลธาตุตัวที่สามที่บอกเป้าหมายเอง (ต่อจาก Bonnie · Verna) | passive: ห้าย่อหน้า ย่อหน้าที่ห้าคือคำอธิบายย่อยของ Beguiling Scale (หัวข้อสีเหลือง) · line: Max Divine Seduction = ท่อน 1 · Beguiling Scale durations = ท่อน 3 · ATK Boost/Duration = ท่อน 4 (เพิ่มพลังโจมตีเพื่อน ไม่รวมตัวเอง) · ค่าบูสต์ของ Beguiling Scale = ท่อน 5 · Alluring Empress's Reign Duration ไม่ใส่ line เพราะท่อน 1 และ 2 ต่างให้สถานะนี้ | ultimate: จอแรกเห็นห้าบรรทัด — จอที่เลื่อนลงรอบหกได้ครบเจ็ดบรรทัด เพิ่ม Bonus Seed DMG 69.7% (ท่อน 2) และ Wind Affliction Duration 5s (ท่อน 1) | **2026-10-22 รอบสี่** Detailed Stats: Neutralization DMG Boost 12.18% · Destroyer 1,078 · Elemental Weakness 125% (แบบตัว 5 ดาว) · Basic Attack God-killing Slash — **ครบทั้งหกช่องสกิลแล้ว** | basic: ตารางเคยเห็นแค่สองบรรทัด — จอที่เลื่อนลงรอบห้าได้ครบเก้าบรรทัด (Hit 1-4 · Air/Evasion Counter · Heavenly Orbit 523.5% / 261.3% · Max Divine Seduction 10) · line: Hit = ท่อน 1 · Heavenly Orbit = ท่อน 2 · Max Divine Seduction = ท่อน 3 | Effect Details ของ **Beguiling Scale** และ **DMG Immunity** เพิ่มในสถานะแล้ว (ข้อความ) · ยังไม่ได้อ่าน: จอไทยทั้งหมด | **2026-10-23 จอไทย (พรีวิวตัวละคร)** ชื่อ นากิ · ค่าพลังห้าค่าตรงจออังกฤษ · โจมตีพื้นฐาน สังหารเทพอสูร (ตารางเก้าแถวตรงทุกค่า) · การชี้นำแห่งลม ร่างมายาไร้เงา · แพสซีฟ: ชื่อ สำแดงมนตร์ลวงแห่งเทพ | **คำอธิบายแพสซีฟไทยยังไม่เก็บ** — จอเห็นสามท่อนแรกเต็ม ท่อนที่ 4 ถูกตัดที่ขอบล่าง และท่อนที่ 5 (หัวข้อเกล็ดต้องมนตร์) ไม่อยู่ในจอ ตารางแพสซีฟก็ยังไม่เห็น · validate:data บังคับจำนวนท่อนเท่ากับอังกฤษ (5) จึงรอจอที่เลื่อนลง | คำไทยจากจอ: Heavenly Orbit = วิถีแห่งเทพวิญญาณ · Divine Seduction = มนตร์ลวงแห่งเทพ · Alluring Empress's Reign = การครองราชย์ของจักรพรรดินีผู้เย้ายวน · Beguiling Scale = เกล็ดต้องมนตร์ | ยังไม่ได้อ่าน (ไทย): คำอธิบายและตารางแพสซีฟ · สกิลสับเปลี่ยน · สกิลพิเศษ · สกิลอัลติเมต · สถานะ · ปลุกพลัง"
   }
 }
