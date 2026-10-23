@@ -1,6 +1,7 @@
 {
   "id": "spider-leg-royal-platter",
   "name": {
+    "th": "รอยัลแพลตเตอร์ขาแมงมุม",
     "en": "Spider Leg Royal Platter"
   },
   "category": "entree",
@@ -32,13 +33,17 @@
     }
   ],
   "durationSec": 1800,
+  "images": {
+    "icon": "spider-leg-royal-platter-icon.webp"
+  },
   "source": {
     "verifiedAt": "2026-10-22",
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **Cooking → Entrées** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | Duration 30m · ผู้รับบัฟไม่ระบุบนจอ → target self (PLAN §13.11) | **ไม่มีไอคอน** — ภาพชุดนี้ไม่ได้ถูกบันทึกเป็นไฟล์ในเครื่อง | Stamina Consumption −X% → kind debuff stat staminaConsumption (เพิ่มเข้าพจนานุกรม อังกฤษอย่างเดียว) | วัตถุดิบไม่เก็บ (ผู้เล่นกำหนด 2026-10-22 \"ชื่อวัตถุดิบ ไม่เก็บ\" — PLAN §13.7.2) | ทองที่ใช้ทำไม่เก็บ (ผู้เล่นกำหนด 2026-10-22)"
+    "note": "อ่านจากจอ **Cooking → Entrées** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | Duration 30m · ผู้รับบัฟไม่ระบุบนจอ → target self (PLAN §13.11) | Stamina Consumption −X% → kind debuff stat staminaConsumption (เพิ่มเข้าพจนานุกรม อังกฤษอย่างเดียว) | วัตถุดิบไม่เก็บ (ผู้เล่นกำหนด 2026-10-22 \"ชื่อวัตถุดิบ ไม่เก็บ\" — PLAN §13.7.2) | ทองที่ใช้ทำไม่เก็บ (ผู้เล่นกำหนด 2026-10-22) | **2026-10-23 จอไทย (ปรุงอาหาร → จานหลัก)** ชื่อไทยอ่านจากจอ · ค่าบัฟตรงกับจออังกฤษทุกบรรทัด · ไอคอนตัดจากกล่องรายละเอียดของจอนี้"
   }
 }
