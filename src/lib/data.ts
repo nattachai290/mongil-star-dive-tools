@@ -1,7 +1,8 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
-import { artifact, monsterDexEntry, linkChain, monsterling, character, equipment, equipmentSet, gearMainStat, gearSubstat, traitPool, dropSources } from "./schema/entities";
-import type { Artifact, Character, Equipment, EquipmentSet, GearMainStat, GearSubstat, LinkChain, Monsterling, TraitPool, DropSources } from "./schema/entities";
+import { asset } from "./base-path";
+import { artifact, food, monsterDexEntry, linkChain, monsterling, character, equipment, equipmentSet, gearMainStat, gearSubstat, traitPool, dropSources } from "./schema/entities";
+import type { Artifact, Character, Food, Equipment, EquipmentSet, GearMainStat, GearSubstat, LinkChain, Monsterling, TraitPool, DropSources } from "./schema/entities";
 
 /**
  * อ่านข้อมูลจาก data/ ตอน build — ไม่มี API ไม่มีฐานข้อมูล
@@ -70,7 +71,7 @@ export function characterById(id: string): Character | undefined {
 export function characterImage(id: string): string | null {
   for (const file of [`${id}-portrait.webp`, `${id}-icon.webp`]) {
     if (existsSync(join(process.cwd(), "public", "images", "characters", file))) {
-      return `/images/characters/${file}`;
+      return asset(`/images/characters/${file}`);
     }
   }
   return null;
@@ -87,6 +88,14 @@ export function artifactsSorted(locale: "th" | "en"): Artifact[] {
   return [...ARTIFACTS].sort(
     (a, b) => (b.stars ?? 0) - (a.stars ?? 0) || key(a).localeCompare(key(b), locale),
   );
+}
+
+/** อาหาร — เรียงตามดาวมากก่อน แล้วตามชื่อ เหมือน Artifact */
+export const FOOD: Food[] = readCollection("food", (raw) => food.parse(raw));
+
+export function foodSorted(locale: "th" | "en"): Food[] {
+  const key = (f: Food) => f.name[locale] ?? f.name.en ?? f.name.th ?? f.id;
+  return [...FOOD].sort((a, b) => (b.stars ?? 0) - (a.stars ?? 0) || key(a).localeCompare(key(b), locale));
 }
 
 /** ชิ้นอุปกรณ์ทั้งหมด — ผูกกับเซ็ตด้วย setId */
@@ -140,6 +149,6 @@ export function piecesOfSet(setId: string): Equipment[] {
 export function monsterlingImage(slug: string): string | null {
   const file = `${slug}-icon.webp`;
   return existsSync(join(process.cwd(), "public", "images", "monsterlings", file))
-    ? `/images/monsterlings/${file}`
+    ? asset(`/images/monsterlings/${file}`)
     : null;
 }

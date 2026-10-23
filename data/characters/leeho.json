@@ -1,0 +1,953 @@
+{
+  "id": "leeho",
+  "name": {
+    "en": "Leeho"
+  },
+  "rarity": 4,
+  "element": "fire",
+  "role": "assassin",
+  "range": "melee",
+  "stats": {
+    "atLevel": 60,
+    "hp": 8389,
+    "atk": 1961,
+    "def": 580,
+    "critRate": 5,
+    "critDmg": 50
+  },
+  "otherStats": [
+    {
+      "kind": "buff",
+      "stat": "suppressionDmg",
+      "value": 11.59,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "weaknessHit"
+      ],
+      "value": 125,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "energyGain",
+      "value": 100,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "stamina",
+      "value": 100,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "assassinPower",
+      "value": 1026,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
+  "awaken": [
+    {
+      "stage": 1,
+      "name": {
+        "en": "Tiger Hunter's Instinct"
+      },
+      "desc": {
+        "en": "All enemies caught by Leeho's Special Skill's net are inflicted with a Prey Mark. (Only activates when Leeho is being controlled)"
+      },
+      "effects": []
+    },
+    {
+      "stage": 2,
+      "name": {
+        "en": "Unyielding Spirit"
+      },
+      "desc": {
+        "en": "Prey Mark is inflicted on all enemies hit by Leeho's Basic Attack's 4th Hit. (Only activates when Leeho is being controlled) / Leeho's Basic Attack DMG increases by 10% upon landing an Enhanced Basic Attack while Tiger Hunter is active. (Duration: 3s)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 10,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onBasicAttackHit",
+          "durationSec": 3,
+          "condition": {
+            "note": {
+              "en": "upon landing an Enhanced Basic Attack while Tiger Hunter is active"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "stage": 3,
+      "name": {
+        "en": "No Limits"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 4,
+      "name": {
+        "en": "Awakened Instinct"
+      },
+      "desc": {
+        "en": "The duration of Tiger Hunter increases by 2s, and while Tiger Hunter is active, Leeho's Enhanced Basic Attack's total DMG increases by 30%. / Also, the range of his Enhanced Basic Attack's 1st and 2nd Hit increases."
+      },
+      "effects": []
+    },
+    {
+      "stage": 5,
+      "name": {
+        "en": "Beast Heart"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Support Skill's cooldown decreases by 4.5%."
+      },
+      "effects": [],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 6,
+      "name": {
+        "en": "Ferocity Unleashed"
+      },
+      "desc": {
+        "en": "Prey Mark decreases Fire RES by an additional 10%. / When the target's Prey Mark is removed by Flash Spear, all enemies hit with Flash Spear are newly inflicted with Prey Mark. This effect is triggered every 15s."
+      },
+      "effects": []
+    }
+  ],
+  "skills": {
+    "basic": {
+      "name": {
+        "en": "Wild Spear"
+      },
+      "desc": {
+        "en": "Leeho deals Physical DMG by stabbing and slashing enemies with his spear. / Holding the Basic Attack button will make Leeho throw his spear at an enemy, dealing Fire DMG. Holding the Basic Attack button for longer will make Leeho throw a more powerful Flash Spear, piercing and dealing Fire DMG to all enemies in front of him. / If the enemy he targets has Prey Mark, Flash Spear does not need time to charge. When DMG is dealt to an enemy with Prey Mark using Flash Spear, Prey Mark is removed and Leeho is granted Tiger Hunter. / Tiger Hunter: Increases Basic Attack DMG. Also, Leeho's Basic Attack is enhanced during the effect's duration, dealing powerful Fire DMG. If Tiger Hunter ends during an Enhanced Basic Attack, Leeho strikes the ground in front of him, dealing Fire DMG. If an Evasion Counter is successfully used within the duration of Tiger Hunter, its duration is reset."
+      },
+      "damageType": "physical",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            22.7,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            21.2,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "3rd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            24.8,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "4th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            70.9,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Spear Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            43.5,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Flash Spear Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            50.3,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Charge Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            17.7,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Air Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            68.6,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Evasion Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            153.2,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Tiger Hunter Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            3,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 4
+        },
+        {
+          "label": {
+            "en": "Tiger Hunter Basic Attack DMG Boost"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            25,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 4
+        },
+        {
+          "label": {
+            "en": "Enhanced Basic Attack Charge DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            26.2,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 4
+        },
+        {
+          "label": {
+            "en": "Enhanced Basic Attack 1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            36.6,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 4
+        },
+        {
+          "label": {
+            "en": "Enhanced Basic Attack 2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            34,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 4
+        },
+        {
+          "label": {
+            "en": "Enhanced Basic Attack Slam DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            102.2,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 4
+        }
+      ]
+    },
+    "switch": {
+      "name": {
+        "en": "A Whopper!"
+      },
+      "desc": {
+        "en": "Leeho throws his net forward, dealing Fire DMG and pulling in hit enemies. If Leeho is being controlled, all hit enemies are inflicted with Prey Mark. / [Support Skill] When a teammate uses a Special Skill during combat, Leeho descends from above the nearest enemy, dealing Fire DMG and inflicting Fire Affliction. After the attack, Leeho enters Hunting Stance for a set duration. / Switching to Leeho while he's in Hunting Stance unleashes Blazing Flash, dealing powerful Fire DMG to all enemies in front of him and inflicting Prey Mark effect on hit enemies."
+      },
+      "damageType": "fire",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Net Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            54.5,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Support Skill DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            197.5,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Support Skill Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            12,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Fire Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Blazing Flash DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            309.2,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        }
+      ]
+    },
+    "special": {
+      "name": {
+        "en": "Commence Hunt"
+      },
+      "desc": {
+        "en": "Leeho charges at the enemy, stabs with his spear, and spins around while swinging his spear, dealing Fire DMG. / If the button is pressed again within a set time after using the skill, he will throw a Net, dealing Fire DMG and dragging in hit enemies."
+      },
+      "damageType": "fire",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Spear Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            132,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Net Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            33,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            11.8,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "ultimate": {
+      "name": {
+        "en": "Crimson Meteor"
+      },
+      "desc": {
+        "en": "Leeho soars into the air and stalks his prey for a set duration. After that duration passes, or when the skill button is pressed again, he slams down on the targeted location, dealing powerful Fire DMG and inflicting Fire Affliction."
+      },
+      "damageType": "fire",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Descending Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            756.2,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Fire Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "passive": {
+      "name": {
+        "en": "Hunter"
+      },
+      "desc": {
+        "en": "Leeho will inflict Prey Mark on enemies hit by his Switch Skill, lowering their Fire RES."
+      },
+      "effects": [
+        {
+          "kind": "debuff",
+          "stat": "res",
+          "damageType": "fire",
+          "value": 5,
+          "unit": "percent",
+          "target": "enemy",
+          "trigger": "onSwitchSkillHit",
+          "durationSec": 15,
+          "condition": {
+            "note": {
+              "en": "Prey Mark"
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "label": {
+            "en": "Prey Mark Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            15,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Fire RES Reduction"
+          },
+          "unit": "percent",
+          "scaling": [
+            5,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "elemental": {
+      "name": {
+        "en": "My Grand Entrance!"
+      },
+      "desc": {
+        "en": "ATK increases by 6.9% upon switching to Leeho while he's in Hunting Stance and using Blazing Flash. (Duration: 15s)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "atk",
+          "value": 6.9,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSwitch",
+          "durationSec": 15,
+          "condition": {
+            "note": {
+              "en": "upon switching to Leeho while he's in Hunting Stance and using Blazing Flash"
+            }
+          }
+        }
+      ],
+      "values": []
+    }
+  },
+  "statuses": [
+    {
+      "name": {
+        "en": "Fire Affliction"
+      },
+      "desc": {
+        "en": "Afflicted targets take Fire DMG over time, and Fire RES decreases by 15%."
+      },
+      "effects": []
+    }
+  ],
+  "images": {
+    "portrait": "leeho-portrait.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Assassin · Fire · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวละครชายตัวที่สาม | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,181 · DEF 653 · HP 9,647 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,961 · DEF 580 · HP 8,389 · Crit 5% / 50%** — ตรงกับ Angel (Fire Assassin 4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 11.59% · Assassin 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · Fire DMG Boost 0.7% ไม่เก็บ (แบบ Verna) | **สกิลบนจอบัญชีนี้: Basic / Special / Ultimate Lv.5 (\"Level 1 +4\") · Switch Lv.13 · Guidance of Fire Lv.2** — Basic Wild Spear เก็บลงช่อง scaling 5 | **2026-10-22 รอบสาม** ตาราง Basic ส่วนที่เลื่อนลง +6 แถว (Tiger Hunter · Enhanced Basic Attack) → 15 แถว · แถวสุดท้ายที่เห็นคือ Enhanced Basic Attack Slam DMG ก่อนกล่อง Material Used — ถ้ามีต่ออีกยังไม่เห็น | Passive Hunter (Prey Mark ลด Fire RES ศัตรู 5% 15 วินาที → effect debuff res fire) · Guidance of Fire My Grand Entrance!: **ค่า Lv.12 = 6.9% จากป๊อปอัป Skill Info (Lv. 2 >> Lv. 12)** จอหลัก Lv.2 = 5.9% | **2026-10-22 รอบสี่** ปลุกพลังขั้น 2–6 (บัญชีนี้ปลุกครบหกขั้น) · effects: ขั้น 2 Basic +10% 3 วินาที · ขั้น 3 Basic +6% · ขั้น 5 ลดคูลดาวน์ Support 4.5% เก็บเป็นข้อความ · ขั้น 4 / 6 เก็บเป็นข้อความ | **2026-10-22 รอบห้า** Switch A Whopper! ครบสามท่อน + ตารางห้าแถว (**Lv.13 — \"Level 9 +4\" → scaling ช่อง 13**) · Special Commence Hunt (Lv.5 · 132% · คูลดาวน์ 11.8 วินาที) · Ultimate Crimson Meteor (Lv.5 · 756.2%) · Effect Details Fire Affliction · ปลุกพลังขั้น 1 → ครบหกขั้น | **หน้าเว็บแสดงเลเวลสูงสุดที่มีค่าของแต่ละสกิล — Leeho จะขึ้น Basic / Special / Ultimate ที่ Lv.5 และ Switch ที่ Lv.13** · ค่า Lv.12 ยังต้องใช้จอ Preview | ยังไม่ได้อ่าน: ค่า Lv.12 ของ Basic / Special / Ultimate · จอไทยทั้งหมด"
+  }
+}

@@ -1,0 +1,1241 @@
+{
+  "id": "isabella",
+  "name": {
+    "en": "Isabella"
+  },
+  "rarity": 5,
+  "element": "ice",
+  "role": "destroyer",
+  "range": "ranged",
+  "stats": {
+    "atLevel": 60,
+    "hp": 9713,
+    "atk": 2049,
+    "def": 638,
+    "critRate": 5,
+    "critDmg": 50
+  },
+  "otherStats": [
+    {
+      "kind": "buff",
+      "stat": "neutralizationDmg",
+      "value": 12.18,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "weaknessHit"
+      ],
+      "value": 125,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "energyGain",
+      "value": 100,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "stamina",
+      "value": 100,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "destroyerPower",
+      "value": 1078,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
+  "awaken": [
+    {
+      "stage": 1,
+      "name": {
+        "en": "Initiate Experiment"
+      },
+      "desc": {
+        "en": "After Isabella's Ultimate Skill explodes, Lingering Energy remains at the location for 10s. Landing an Ice attack on the Lingering Energy causes a chain reaction, dealing additional DMG equal to 100% of the Ultimate Skill."
+      },
+      "effects": []
+    },
+    {
+      "stage": 2,
+      "name": {
+        "en": "A Fresh Perspective"
+      },
+      "desc": {
+        "en": "Basic Attack's 4th Hit DMG increases by 182%. / Ice DMG increases by 9.1% for 4s upon gaining energy with Isabella's Basic Attack. (Max Stacks: 4) New stacks reset the duration. / Basic Attack DMG increases by 20% for 6s upon using Isabella's Tag-out Skill. After the on-field duration ends, the Tag-out Skill is triggered one more time, causing Isabella to remain on the field and attack the enemy."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "damageType": "ice",
+          "value": 9.1,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onBasicAttackHit",
+          "durationSec": 4,
+          "maxStacks": 4,
+          "condition": {
+            "note": {
+              "en": "upon gaining energy with Isabella's Basic Attack · New stacks reset the duration"
+            }
+          }
+        },
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 20,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onTagOutSkill",
+          "durationSec": 6
+        }
+      ]
+    },
+    {
+      "stage": 3,
+      "name": {
+        "en": "A Relaxing Cup of Coffee"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 4,
+      "name": {
+        "en": "Calculated Success and Failure"
+      },
+      "desc": {
+        "en": "Upon using Isabella's Switch Skill, a target appears at the location of the explosion, and supporting fire strikes the area, dealing additional DMG equal to 50% of the Switch Skill. / Also, enemies hit by the supporting fire become Embrittled for 8s."
+      },
+      "effects": []
+    },
+    {
+      "stage": 5,
+      "name": {
+        "en": "Caffeine for an All-Nighter"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Special Skill DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "specialSkill"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 6,
+      "name": {
+        "en": "Subtle Adjustment, Great Results"
+      },
+      "desc": {
+        "en": "Enhances the effect gained upon triggering Freeze with Isabella's Passive Trait, increasing ATK by 83.2% of Neutralization DMG Boost, up to 35.2%, and increasing Crit Rate by 24% and duration by 5s. / Additionally, triggering Freeze increases Pierce Rate by 17.89% for 10s."
+      },
+      "effects": []
+    }
+  ],
+  "skills": {
+    "basic": {
+      "name": {
+        "en": "Plasma Forge"
+      },
+      "desc": {
+        "en": "Isabella attacks the enemy with a plasma reflector, dealing Ice DMG and gaining energy. Energy cannot exceed maximum capacity. / Energy is also gained upon using Evasion Counter. However, energy can't be gained with Evasion Counter while Cooling Cycle is active. / When energy reaches a certain level, Isabella's Basic Attack's 4th Hit is triggered. While it's active, DMG Taken decreases and hit enemies are inflicted with Freeze. Also, Isabella's Charge Attack leads to Basic Attack's 4th Hit. / When Isabella remains on the field and attacks enemies after using her Tag-out Skill, she uses her Basic Attack's 3rd and 5th Hit. Enemies hit by her Basic Attack's 5th Hit have their Neutralization RES decreased. / Isabella cannot gain energy with her Basic Attack when she's not being actively controlled."
+      },
+      "damageType": "ice",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            36.4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            36.4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "3rd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            63.7,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Basic Attack Energy Gain"
+          },
+          "unit": "flat",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            20,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Max Energy Capacity"
+          },
+          "unit": "flat",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            100,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Energy Required to Trigger 4th Hit"
+          },
+          "unit": "flat",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            60,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "4th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            256.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "Basic Attack's 4th Hit Energy Gain"
+          },
+          "unit": "flat",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            40,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "DMG Taken Reduction"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            50,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "5th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            127.4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 4
+        },
+        {
+          "label": {
+            "en": "Incapacitate RES Decrease"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 4
+        },
+        {
+          "label": {
+            "en": "Neutralization RES Reduction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 4
+        },
+        {
+          "label": {
+            "en": "Charge Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            69.7,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Air Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            130.4,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Evasion Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            306.6,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Evasion Counter Energy Gain"
+          },
+          "unit": "flat",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            20,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Freeze Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        }
+      ]
+    },
+    "switch": {
+      "name": {
+        "en": "Repulsion"
+      },
+      "desc": {
+        "en": "Isabella causes an explosion on the ground with her plasma reflector, dealing Ice DMG, and then leaps backward. Hit enemies are inflicted with Freeze, and the remaining cooldown for Isabella's Special Skill immediately decreases. / [Tag-out Skill] Isabella's Tag-out Skill is triggered upon switching to another teammate while Cooling Cycle is active, and Isabella remains on the field for a set duration and attacks enemies with her Basic Attack."
+      },
+      "damageType": "ice",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Switch Skill DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            238.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Freeze Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Special Skill Cooldown Decrease"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            100,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "On-Field Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "special": {
+      "name": {
+        "en": "Energy Conversion"
+      },
+      "desc": {
+        "en": "Isabella fires a shell at the enemy, dealing Ice DMG and inflicting Freeze. / DMG Taken decreases and energy is consumed while using her Special Skill. Consuming energy increases Special Skill DMG, and consuming maximum energy all at once additionally increases the Pierce Rate. / The Special Skill DMG Boost and Pierce Rate Boost only apply while Isabella's Special Skill is being used."
+      },
+      "damageType": "ice",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1472,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Energy Consumption"
+          },
+          "unit": "flat",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            10,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Special Skill DMG Boost"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            3,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Special Skill DMG Boost Max Stacks"
+          },
+          "unit": "flat",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            10,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Penetration Rate Increase"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            15,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "DMG Taken Reduction"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            50,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Freeze Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            30,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "ultimate": {
+      "name": {
+        "en": "Kilonova"
+      },
+      "desc": {
+        "en": "Isabella shoots a sphere of condensed reactive energy forward, drawing enemies in. An explosion occurs at the end of the energy reaction, dealing Ice DMG and inflicting Ice Affliction."
+      },
+      "damageType": "ice",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1394.5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Ice Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "passive": {
+      "name": {
+        "en": "Reactivity Test"
+      },
+      "desc": {
+        "en": "Isabella's Crit Rate increases, and ATK increases by a portion of Neutralization DMG Boost upon triggering Freeze on the enemy, but it doesn't increase above a set maximum. / Isabella gains Cooling Cycle upon using her Switch Skill or Special Skill. Cooling Cycle ends immediately upon gaining energy. / All unconsumed energy is removed upon switching to Isabella."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "critRate",
+          "value": 10,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onApplyFreeze",
+          "durationSec": 5
+        }
+      ],
+      "values": [
+        {
+          "label": {
+            "en": "Crit Rate Boost"
+          },
+          "unit": "percent",
+          "scaling": [
+            10,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Crit Rate Boost Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            5,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Neutralization DMG Boost Conversion Ratio"
+          },
+          "unit": "percent",
+          "scaling": [
+            26,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "ATK Boost Max"
+          },
+          "unit": "percent",
+          "scaling": [
+            15,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "ATK Boost Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            5,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Cooling Cycle Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            7,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "elemental": {
+      "name": {
+        "en": "Support System Maintenance"
+      },
+      "desc": {
+        "en": "Using Isabella's Switch Skill increases Ice teammates' Basic Attack DMG by 40.1% (Duration: 12s)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 40.1,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onSwitch",
+          "durationSec": 12,
+          "condition": {
+            "note": {
+              "en": "Ice teammates"
+            }
+          }
+        }
+      ],
+      "values": []
+    }
+  },
+  "statuses": [
+    {
+      "name": {
+        "en": "Cooling Cycle"
+      },
+      "desc": {
+        "en": "Energy cycles through the plasma reflector, and Isabella's Tag-out Skill is triggered upon switching to another teammate while the effect is active."
+      },
+      "effects": []
+    },
+    {
+      "name": {
+        "en": "Embrittled"
+      },
+      "desc": {
+        "en": "Landing an attack with the Ice element deals additional DMG equal to 50% of the attack's DMG."
+      },
+      "effects": []
+    },
+    {
+      "name": {
+        "en": "Ice Affliction"
+      },
+      "desc": {
+        "en": "Afflicted targets take Ice DMG over time, and Ice RES decreases by 15%."
+      },
+      "effects": []
+    }
+  ],
+  "images": {
+    "portrait": "isabella-portrait.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max · มีปุ่ม Quick Power Up — ไม่ใช่ Character Preview) · **ยังไม่มีจอไทย** | Destroyer · Ice · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลัง ATK 2,279 · DEF 719 · HP 11,169 · Crit 12.5% / 92.5% — เก็บตามแบบ Narae ที่ผู้เล่นยืนยันว่าจอบัญชีไม่ติดของ · **Crit 12.5 / 92.5 เท่า Narae และไม่ตรงกับตัว Preview ทั้งหมด (5 / 50)** → fieldsUnverified จนกว่าจะเทียบจอ Preview | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats (จอบัญชี): Neutralization DMG Boost 12.18% · Destroyer 1,078 · Ultimate Gauge 100% · Stamina 100 · **Elemental Weakness 150.5% · Ice DMG Boost 1.3% เท่า Narae** (ไม่ตรงกับตัว Preview → fieldsUnverified) | Basic Plasma Forge (คำอธิบายห้าท่อน · ตาราง 17 แถว จากสามจอเลื่อนต่อกัน · พลังงานเป็นค่าคงที่) · **ตารางใช้สองคำกับค่าเดียว: \"Incapacitate RES Decrease\" กับ \"Neutralization RES Reduction Duration\" เก็บตามจอ** | **2026-10-22 รอบสาม** Switch Repulsion (238.1% + Tag-out) · Special Energy Conversion (1,472% · คูลดาวน์ 30 วินาที · ตารางแปดแถวจากสองจอ) · **คำอธิบายใช้ \"Pierce Rate\" แต่ตารางใช้ \"Penetration Rate Increase\" — ค่าเดียวกันตามโน้ตของ Chloe เก็บตามจอ** | Guidance of Ice Support System Maintenance: **ค่า Lv.12 = 40.1% อ่านจากป๊อปอัป Skill Info (Lv. 3 >> Lv. 12)** จอหลักขึ้น Lv.3 = 30.2% · ไม่มีจุดท้ายประโยคตามจอ | **2026-10-22 รอบสี่** Ultimate Kilonova (1,394.5%) · Passive Reactivity Test (Crit Rate +10% 5 วินาทีเมื่อติด Freeze → onApplyFreeze · ATK ตาม Neutralization สูงสุด 15% เก็บในตาราง) · Effect Details: Cooling Cycle · Embrittled (จากขั้น 4) · ปลุกพลังครบหกขั้น | **ปลุกพลังของบัญชีนี้ล็อกทุกขั้น แต่ Crit ยังขึ้น 12.5 / 92.5 — ส่วนต่างจากตัว Preview จึงไม่ได้มาจากปลุกพลัง** (ยังไม่รู้ว่ามาจากอะไร) | ปลุกพลัง effects: ขั้น 2 Ice DMG +9.1% ซ้อน 4 ชั้น 4 วินาที (ตอนได้พลังงานจาก Basic → onBasicAttackHit + note) และ Basic +20% 6 วินาทีเมื่อใช้ Tag-out · ขั้น 3 Basic +6% · ขั้น 5 Special +6% · ขั้น 1 / 4 / 6 เก็บเป็นข้อความ | Effect Details ของ Ultimate: Ice Affliction (อ่านจากจอ) | ยังไม่ได้อ่าน: จอไทยทั้งหมด | **2026-10-22 ค่าพลังแก้แล้ว — จอบัญชีมีบัฟอาหารติดอยู่** (ผู้เล่นบอก \"ตอนนี้กินอาหารอยู่ stat เลยสูงขึ้น\" + ส่งจอ Check Active Food): Green Cappy Forest Stew (Max HP +15% · ATK +11.25% · Stamina Consumption −18.75% · Crit Rate +7.5%) และ Exquisite Time to Celebrate (DEF +12.75% · Elemental Weakness DMG +25.5% · Capture Proficiency +1,275 · Crit DMG +42.5%) | หักออก: Crit 12.5 − 7.5 = 5 · 92.5 − 42.5 = 50 · Elemental Weakness 150.5 − 25.5 = 125 — ตรงกับตัว Preview ทุกตัว | ATK / DEF / HP: แก้สมการ floor(ฐาน × (1 + %)) = ค่าบนจอ ได้คำตอบจำนวนเต็มเดียวทุกค่า · **ตรวจกับ Isabella ได้ ATK 2,049 · DEF 638 · HP 9,713 ตรงกับค่า Preview ของ 5 ดาวตัวอื่นพอดี** จึงยืนยันวิธีคิด (คูณจากฐานแล้วปัดลง) | **Ice DMG Boost 1.3% ไม่ได้มาจากอาหาร และตัว Preview ไม่มีบรรทัดนี้ — ไม่ใช่ค่าตัวละคร เอาออกจาก otherStats** (ที่มายังไม่รู้) | ค่าบนจอเดิมก่อนหัก: ATK 2,279 · DEF 719 · HP 11,169 · Crit 12.5% / 92.5% · Elemental Weakness 150.5% · Ice DMG 1.3% | ผลหลังหัก: ATK 2,049 · DEF 638 · HP 9,713"
+  }
+}

@@ -1,6 +1,7 @@
 {
   "id": "chloe",
   "name": {
+    "th": "โคลอี้",
     "en": "Chloe"
   },
   "rarity": 5,
@@ -64,9 +65,11 @@
     {
       "stage": 1,
       "name": {
+        "th": "ฮึบ! เอาจริงแล้วลุย!",
         "en": "Get Pumped Up and Go!"
       },
       "desc": {
+        "th": "เพิ่มอัตราเจาะเกราะของเอฟเฟกต์ยัง...ยังไม่จบหรอก!เป็น 22% / ในขณะที่ควบคุมโคลอี้ หากโจมตีหมัดทะลวงขั้น 3 ในจังหวะที่ศัตรูกำลังใช้การโจมตีพิเศษ จะทำให้ศัตรูหมดฤทธิ์ชั่วคราว",
         "en": "It's... Not Over Yet! effect's Pierce Rate increases to 22%. / While controlling Chloe, landing Hyper Punch's 3rd Hit during the enemy's special attack temporarily neutralizes the enemy."
       },
       "effects": []
@@ -74,9 +77,11 @@
     {
       "stage": 2,
       "name": {
+        "th": "ฝ่าทุกอย่างไปให้ได้!",
         "en": "Breaking On Through!"
       },
       "desc": {
+        "th": "การเพิ่มพลังโจมตีของเอฟเฟกต์ไฮเทมโปเพิ่มขึ้นเป็น 45% และการลดดาเมจที่ได้รับเพิ่มขึ้นเป็น 90% / เมื่อมีโอเวอร์ฮีทเอเนอร์จีตั้งแต่ 50% ขึ้นไป ปริมาณดาเมจรวมของเตะกังหันลมจะเพิ่มขึ้น 50% และเมื่อมี 100% จะเพิ่มขึ้น 180%",
         "en": "High Tempo's ATK Boost increases to 45%, and DMG Taken Reduction increases to 90%. / While Overheat Energy is at 50% or higher, Windmill Kick's total DMG increases by 50%, and by 180% at 100%."
       },
       "effects": []
@@ -84,9 +89,11 @@
     {
       "stage": 3,
       "name": {
+        "th": "ปรับความทนทานของร่างเทียม",
         "en": "Prosthetics Strength Tuning"
       },
       "desc": {
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจสกิลพิเศษ 6%",
         "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Special Skill DMG by 6%."
       },
       "effects": [
@@ -107,9 +114,11 @@
     {
       "stage": 4,
       "name": {
+        "th": "ถึงจะล้ม ก็จงลุกขึ้นมาอีกครั้ง!",
         "en": "Pick Yourself Up!"
       },
       "desc": {
+        "th": "เพิ่มปริมาณดาเมจของหมัดทะลวง 50% / ในการโจมตีหมัดทะลวงขั้น 3 จะสร้างลมกรรโชกและสร้างดาเมจธาตุลม 30% ของการโจมตีหมัดทะลวงขั้น 3 ดังกล่าว / ดาเมจจากลมกรรโชกทั้งหมด จะมอบเอฟเฟกต์ลดพลังป้องกัน 15% นาน 4 วินาที",
         "en": "Hyper Punch's DMG increases by 50%. / Chloe generates a Gust with Hyper Punch's 3rd Hit and deals Wind DMG equal to 30% of Hyper Punch's 3rd Hit. / All Gust DMG inflicts a 15% DEF Reduction on enemies for 4s."
       },
       "effects": []
@@ -117,9 +126,11 @@
     {
       "stage": 5,
       "name": {
+        "th": "ทะลวงขีดจำกัดของร่างเทียม",
         "en": "Beyond Mechanical Limits"
       },
       "desc": {
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจโจมตีพื้นฐาน 6%",
         "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
       },
       "effects": [
@@ -140,9 +151,11 @@
     {
       "stage": 6,
       "name": {
+        "th": "จงก้าวข้ามสิ่งที่เป็นไปไม่ได้!",
         "en": "Overcome the Impossible!"
       },
       "desc": {
+        "th": "เมื่อมีโอเวอร์ฮีทเอเนอร์จีต่ำกว่า 50% ปริมาณดาเมจรวมของทักษะพิเศษที่ใช้ครั้งถัดไปจะเพิ่มขึ้น 80% และเมื่อมีตั้งแต่ 50% ขึ้นไปจะเพิ่มขึ้น 150% / เมื่อโคลอี้เข้าร่วมการต่อสู้ในขณะที่ไม่ได้ควบคุมโคลอี้ จะมอบเอฟเฟกต์ยัง... ไม่จบหรอก!ให้กับตนเอง และโจมตีพื้นฐานจะเปลี่ยนเป็นหมัดทะลวง",
         "en": "While Overheat Energy is below 50%, the total DMG of the next Special Skill used increases by 80%, and by 150% when it is 50% or higher. / If Chloe enters the battle without being controlled, she grants herself It's... Not Over Yet!, changing her Basic Attack to Hyper Punch."
       },
       "effects": []
@@ -151,9 +164,11 @@
   "skills": {
     "basic": {
       "name": {
+        "th": "เบาๆ หนึ่ง สอง!",
         "en": "Light Jabs! One, two!"
       },
       "desc": {
+        "th": "ใช้ร่างกายที่ห่อหุ้มด้วยสายลมเคลื่อนไหวโจมตีต่อเนื่องอย่างรวดเร็ว สร้างดาเมจธาตุลมแก่ศัตรู / ในขณะที่มีเอฟเฟกต์ไฮเทมโป โจมตีพื้นฐานจะถูกเสริมพลัง ในการโจมตีขั้น 5 ของโจมตีพื้นฐานเสริมพลัง จะสร้างลมกรรโชกเพื่อสร้างดาเมจธาตุลมเพิ่มเติม / ในขณะที่มีเอฟเฟกต์ยัง... ไม่จบหรอก! หากกดโจมตีพื้นฐานค้างไว้ จะเปลี่ยนการโจมตีเป็นหมัดทะลวงซึ่งจะรัวหมัดออกไปด้วยความเร็วเหนือชั้น",
         "en": "Chloe unleashes a rapid series of attacks with whirlwind-like movements, dealing Wind DMG to enemies. / Basic Attack is enhanced when High Tempo is active. Generates a Gust upon Enhanced Basic Attack's 5th Hit, dealing additional Wind DMG. / Holding the Basic Attack button while It's... Not Over Yet! is active converts the Basic Attack to Hyper Punch, and Chloe unleashes a flurry of punches at overwhelming speed."
       },
       "damageType": "wind",
@@ -161,6 +176,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 1",
             "en": "1st Hit DMG"
           },
           "unit": "percent",
@@ -186,6 +202,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 2",
             "en": "2nd Hit DMG"
           },
           "unit": "percent",
@@ -211,6 +228,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 3",
             "en": "3rd Hit DMG"
           },
           "unit": "percent",
@@ -236,6 +254,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 4",
             "en": "4th Hit DMG"
           },
           "unit": "percent",
@@ -261,6 +280,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 5",
             "en": "5th Hit DMG"
           },
           "unit": "percent",
@@ -286,6 +306,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจพุ่งใส่จากการโจมตีพื้นฐานเสริมพลัง ขั้น 1",
             "en": "Enhanced Basic Attack 1st Hit DMG"
           },
           "unit": "percent",
@@ -311,6 +332,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจพุ่งใส่จากการโจมตีพื้นฐานเสริมพลัง ขั้น 2",
             "en": "Enhanced Basic Attack 2nd Hit DMG"
           },
           "unit": "percent",
@@ -336,6 +358,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีพื้นฐานขั้น 3 เสริมพลัง",
             "en": "Enhanced Basic Attack 3rd Hit DMG"
           },
           "unit": "percent",
@@ -361,6 +384,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีพื้นฐานขั้น 4 เสริมพลัง",
             "en": "Enhanced Basic Attack 4th Hit DMG"
           },
           "unit": "percent",
@@ -386,6 +410,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีพื้นฐานขั้น 5 เสริมพลัง",
             "en": "Enhanced Basic Attack 5th Hit DMG"
           },
           "unit": "percent",
@@ -411,6 +436,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจลมกรรโชกจากการโจมตีพื้นฐานขั้น 5 เสริมพลัง",
             "en": "Enhanced Basic Attack 5th Hit Gust DMG"
           },
           "unit": "percent",
@@ -436,6 +462,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีหมัดทะลวงขั้น 1",
             "en": "Hyper Punch Attack 1st Hit DMG"
           },
           "unit": "percent",
@@ -461,6 +488,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีหมัดทะลวงขั้น 2",
             "en": "Hyper Punch Attack 2nd Hit DMG"
           },
           "unit": "percent",
@@ -486,6 +514,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีหมัดทะลวงขั้น 3",
             "en": "Hyper Punch Attack 3rd Hit DMG"
           },
           "unit": "percent",
@@ -511,6 +540,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีชาร์จ",
             "en": "Charge Attack DMG"
           },
           "unit": "percent",
@@ -535,6 +565,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีฉับพลัน",
             "en": "Air Counter DMG"
           },
           "unit": "percent",
@@ -559,6 +590,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจหลบหลีกโต้กลับ",
             "en": "Evasion Counter DMG"
           },
           "unit": "percent",
@@ -585,9 +617,11 @@
     },
     "switch": {
       "name": {
+        "th": "เปลี่ยนตัวนักกีฬา",
         "en": "Substitution"
       },
       "desc": {
+        "th": "ปรากฏรอบตัวศัตรู กระโดดขึ้นไปบนอากาศแล้วทุบลงพื้นอย่างรุนแรง ทำให้ศัตรูลอยขึ้นไปบนอากาศ สร้างดาเมจธาตุลม / มอบเอฟเฟกต์ไฮเทมโปให้กับตนเอง",
         "en": "Chloe appears near the enemy, jumps high into the sky, and powerfully strikes the ground, knocking the enemy airborne and dealing Wind DMG. / She grants herself High Tempo."
       },
       "damageType": "wind",
@@ -595,6 +629,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจ",
             "en": "DMG"
           },
           "unit": "percent",
@@ -620,6 +655,7 @@
         },
         {
           "label": {
+            "th": "เวลาแสดงผลไฮเทมโป",
             "en": "High Tempo Duration"
           },
           "unit": "seconds",
@@ -647,9 +683,11 @@
     },
     "special": {
       "name": {
+        "th": "ต่อสู้ระยะประชิด",
         "en": "Infighting"
       },
       "desc": {
+        "th": "โจมตีศัตรูต่อเนื่องได้สูงสุดถึงขั้น 3 สร้างดาเมจธาตุลม การโจมตีขั้น 1, ขั้น 2 จะมอบเอฟเฟกต์ไฮเทมโปให้กับตนเอง การโจมตีครั้งสุดท้ายด้วยวินด์มิลล์คิก จะเพิ่มปริมาณดาเมจตามปริมาณโอเวอร์ฮีทเอเนอร์จีที่มีอยู่ โดยแบ่งเป็น 50% ขึ้นไป และ 100% พร้อมทั้งใช้โอเวอร์ฮีทเอเนอร์จีทั้งหมด / เมื่อเปลี่ยนเป็นโคลอี้ การโจมตีที่กำลังไล่ขั้นของสกิลพิเศษจะถูกรีเซต / หากใช้วินด์มิลล์คิกในจังหวะที่ศัตรูกำลังใช้การโจมตีพิเศษ จะทำให้ศัตรูหมดฤทธิ์ชั่วคราว",
         "en": "Chloe delivers up to 3 consecutive attacks, dealing Wind DMG to the enemy. 1st and 2nd Hits grants Chloe High Tempo. She throws a Windmill Kick as her finishing attack, consuming all Overheat Energy to increase DMG based on whether Overheat Energy is at 50% or higher, or 100%. / Switching to Chloe resets her Special Skill progress. / Using Windmill Kick during the enemy's special attack temporarily neutralizes the enemy."
       },
       "damageType": "wind",
@@ -657,6 +695,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจหมัดขั้น 1",
             "en": "Punch 1st Hit DMG"
           },
           "unit": "percent",
@@ -682,6 +721,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจหมัดขั้น 2",
             "en": "Punch 2nd Hit DMG"
           },
           "unit": "percent",
@@ -707,6 +747,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจวินด์มิลล์คิกขั้น 3",
             "en": "Windmill Kick 3rd Hit DMG"
           },
           "unit": "percent",
@@ -732,6 +773,7 @@
         },
         {
           "label": {
+            "th": "เพิ่มดาเมจวินด์มิลล์คิก (50% ขึ้นไป)",
             "en": "Windmill Kick DMG Boost (50% or higher)"
           },
           "unit": "percent",
@@ -757,6 +799,7 @@
         },
         {
           "label": {
+            "th": "เพิ่มดาเมจวินด์มิลล์คิก (100%)",
             "en": "Windmill Kick DMG Boost (100%)"
           },
           "unit": "percent",
@@ -782,6 +825,7 @@
         },
         {
           "label": {
+            "th": "เวลาแสดงผลไฮเทมโป",
             "en": "High Tempo Duration"
           },
           "unit": "seconds",
@@ -807,6 +851,7 @@
         },
         {
           "label": {
+            "th": "คูลดาวน์",
             "en": "Cooldown"
           },
           "unit": "seconds",
@@ -833,9 +878,11 @@
     },
     "ultimate": {
       "name": {
+        "th": "ซัดให้กระจุยไปเลย!",
         "en": "Blow It All Up!"
       },
       "desc": {
+        "th": "กระโจนเข้าไปอย่างว่องไว ก่อนปล่อยหมัดหนักอันทรงพลังที่ร้อนระอุจนเป็นสีแดง สร้างดาเมจธาตุลมและมอบเอฟเฟกต์อ่อนแอต่อลมแก่ศัตรู พร้อมทั้งมอบเอฟเฟกต์ยัง... ไม่จบหรอก!ให้กับตนเอง / เมื่อเอฟเฟกต์ยัง... ไม่จบหรอก!ปรับใช้ คูลดาวน์สกิลพิเศษจะถูกรีเซต และในขณะที่มีเอฟเฟกต์ จะสามารถใช้วินด์มิลล์คิกของสกิลพิเศษได้ทันที / เมื่อเวลาแสดงผลเอฟเฟกต์ยัง... ไม่จบหรอก!สิ้นสุด คูลดาวน์สกิลพิเศษจะถูกรีเซตอีกครั้ง",
         "en": "Chloe nimbly jumps in and throws a heavy, superheated punch. She deals Wind DMG and inflicts Wind Affliction on the enemy and grants herself It's... Not Over Yet!. / Chloe's Special Skill cooldown is reset when It's... Not Over Yet! is applied, and Special Skill's Windmill Kick can be used immediately while the effect is active. / Special Skill cooldown is reset again when the effect duration of It's... Not Over Yet! ends."
       },
       "damageType": "wind",
@@ -843,6 +890,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจ",
             "en": "DMG"
           },
           "unit": "percent",
@@ -868,6 +916,7 @@
         },
         {
           "label": {
+            "th": "เวลาแสดงผลยัง... ไม่จบหรอก!",
             "en": "It's... Not Over Yet! Duration"
           },
           "unit": "seconds",
@@ -893,6 +942,7 @@
         },
         {
           "label": {
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อลม",
             "en": "Wind Affliction Duration"
           },
           "unit": "seconds",
@@ -920,15 +970,18 @@
     },
     "passive": {
       "name": {
+        "th": "โอเวอร์ฮีท",
         "en": "Overheat"
       },
       "desc": {
+        "th": "เมื่อโคลอี้เข้าร่วมการต่อสู้ในขณะที่ไม่ได้ควบคุมโคลอี้อยู่ จะมอบเอฟเฟกต์ไฮเทมโปและใช้โจมตีพื้นฐานเสริมพลัง",
         "en": "When Chloe joins the battle while not being controlled, she is granted High Tempo and uses Enhanced Basic Attack."
       },
       "effects": [],
       "values": [
         {
           "label": {
+            "th": "อัตราได้รับเอเนอร์จีต่อดาเมจโจมตีพื้นฐาน",
             "en": "Energy Charge per Basic Attack DMG Ratio"
           },
           "unit": "percent",
@@ -953,6 +1006,7 @@
         },
         {
           "label": {
+            "th": "อัตราการรับพลังงานต่อดาเมจสกิลพิเศษ",
             "en": "Energy Gain Rate per Special Skill DMG"
           },
           "unit": "percent",
@@ -977,6 +1031,7 @@
         },
         {
           "label": {
+            "th": "อัตราได้รับเอเนอร์จีต่อดาเมจโจมตีพื้นฐานเสริมพลัง",
             "en": "Energy Charge per Enhanced Basic Attack DMG Ratio"
           },
           "unit": "percent",
@@ -1001,6 +1056,7 @@
         },
         {
           "label": {
+            "th": "อัตราได้รับเอเนอร์จีจากโจมตีหมัดทะลวงขั้น 2",
             "en": "Energy Charge per Hyper Punch Attack 2nd Hit Ratio"
           },
           "unit": "percent",
@@ -1025,6 +1081,7 @@
         },
         {
           "label": {
+            "th": "อัตราได้รับเอเนอร์จีจากโจมตีหมัดทะลวงขั้น 3",
             "en": "Energy Charge per Hyper Punch Attack 3rd Hit Ratio"
           },
           "unit": "percent",
@@ -1049,6 +1106,7 @@
         },
         {
           "label": {
+            "th": "อัตราได้รับเอเนอร์จีจากโจมตีชาร์จ",
             "en": "Energy Charge per Charge Attack Ratio"
           },
           "unit": "percent",
@@ -1073,6 +1131,7 @@
         },
         {
           "label": {
+            "th": "อัตราได้รับเอเนอร์จีจากโจมตีฉับพลัน",
             "en": "Energy Charge per Air Counter Ratio"
           },
           "unit": "percent",
@@ -1097,6 +1156,7 @@
         },
         {
           "label": {
+            "th": "อัตราได้รับเอเนอร์จีจากหลบหลีกโต้กลับ",
             "en": "Energy Charge per Evasion Counter Ratio"
           },
           "unit": "percent",
@@ -1123,9 +1183,11 @@
     },
     "elemental": {
       "name": {
+        "th": "มาวัดกันให้รู้ไปเลย!",
         "en": "Time to Lock In!"
       },
       "desc": {
+        "th": "เมื่อใช้สกิลสับเปลี่ยน จะเพิ่มดาเมจธาตุลม 24.6% (เวลาแสดงผล 15 วินาที)",
         "en": "Using a Switch Skill increases Wind DMG by 24.6%. (Duration: 15s)"
       },
       "effects": [
@@ -1146,27 +1208,33 @@
   "statuses": [
     {
       "name": {
+        "th": "ไฮเทมโป",
         "en": "High Tempo"
       },
       "desc": {
+        "th": "พลังโจมตีเพิ่มขึ้น 12% ดาเมจที่ได้รับลดลง 60% และท่วงท่าจะไม่พังทลายจากการโจมตีของศัตรู จำนวนครั้งที่โจมตีของโจมตีพื้นฐานที่เสริมพลังเพิ่มขึ้น 1 ครั้ง ทำให้ดาเมจรวมเพิ่มขึ้น 20% เมื่อเปลี่ยนไปใช้ตัวละครอื่น เอฟเฟกต์จะถูกยกเลิก",
         "en": "ATK increases by 12%, damage taken decreases by 60%, and your stance is not broken by enemy attacks. The number of hits in the Enhanced Basic Attack increases by 1, increasing total damage by 20%. The effect is removed when switching to another character."
       },
       "effects": []
     },
     {
       "name": {
+        "th": "ยัง... ไม่จบหรอก!",
         "en": "It's... Not Over Yet!"
       },
       "desc": {
+        "th": "โจมตีพื้นฐานจะเปลี่ยนเป็นการโจมตีแบบ [หมัดความเร็วสูง] อัตราการเจาะทะลุเพิ่มขึ้น 12% และจะไม่ได้รับการโจมตีตลอดระยะเวลา เมื่อเปลี่ยนไปใช้ตัวละครอื่น เอฟเฟกต์จะถูกยกเลิก",
         "en": "Basic Attack changes to a [High-Speed Punch] attack, Penetration Rate increases by 12%, and you become immune to attacks for the duration. The effect is removed when switching to another character."
       },
       "effects": []
     },
     {
       "name": {
+        "th": "เอฟเฟกต์อ่อนแอต่อลม",
         "en": "Wind Affliction"
       },
       "desc": {
+        "th": "ได้รับดาเมจต่อเนื่องธาตุลมและลดพลังต้านทานธาตุลม 15%",
         "en": "Afflicted targets take Wind DMG over time, and Wind RES decreases by 15%."
       },
       "effects": []
@@ -1180,8 +1248,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (ผู้เล่นยังไม่มีตัวนี้ จอตัวอย่างเปิดดูได้) · Info · Detailed Stats · Basic Attack · Effect Details · **ยังไม่มีจอไทย** | Fighter · **Wind** · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** ดาวบนจอ Info คือดาวอัปเลเวล | ค่าพลังจากจอตัวอย่าง (ไม่มีของติด จอ Info กับ Detailed Stats ตรงกัน): ATK 1,943 (เท่ากับวิเวียน) · DEF 656 · HP 9,978 · ไม่มีบรรทัด Wind DMG Boost บนจอ (ตัวอื่นมี Fire DMG Boost) · Fighter 1,078 เท่ากับ Verna / Mina | Basic Attack Lv.12 ครบ 17 บรรทัด (จอที่สองเลื่อนลงจนเห็นทั้งตาราง) · line: Hit 1-5 = ท่อน 1 · Enhanced ทั้งหมดรวม Gust = ท่อน 2 · Hyper Punch = ท่อน 3 · Charge / Air / Evasion ไม่ใส่ | statuses เก็บเป็นข้อความ: High Tempo มีหลายผลปนกัน (ATK · ลดดาเมจที่ได้รับ · กันกระเด็น · จำนวนครั้งตี) · It's... Not Over Yet! พูดถึง **\"Penetration Rate\"** ซึ่งยังไม่มีในพจนานุกรม (Verna ปลุกพลังขั้น 6 เขียน \"Pierce Rate\" — ยังไม่รู้ว่าเป็นค่าเดียวกันไหม) | ช่องที่หกชื่อ **Guidance of Wind** (Lv.12 บนจอตัวอย่าง) — ยืนยันว่าหัวช่องเปลี่ยนตามธาตุ | รูป portrait ตัดจากจอ Character Preview (เลเวล 1 หน้าตรง) ที่ผู้เล่นส่งมา 2026-10-22 ขนาด 400x400 แทนรูปเดิมที่หลับตา | **2026-10-22 รอบสอง** Switch Skill Substitution · Ultimate Skill Blow It All Up! (Lv.12) · Passive Trait Overheat (Lv.1) · Guidance of Wind Time to Lock In! (**Lv.12 บนจอตัวอย่าง** = Wind DMG +24.6% 15 วินาที เมื่อใช้สกิลสับเปลี่ยน · effects ว่าง เพราะจอไม่ได้บอกว่าบัฟลงที่ใคร) · Effect Details ของ Wind Affliction | **Passive: คำอธิบายบนจอมีช่องว่างเหนือประโยคแรก** อาจเป็นเพราะพาเนลเลื่อนลงไปแล้ว มีท่อนก่อนหน้าที่ไม่เห็น — เก็บเฉพาะที่เห็น บรรทัดค่าทั้งแปดเป็นอัตราชาร์จพลังงานอัลติเมตตามท่า ไม่ใส่ line | **Wind Affliction ข้อความรูปแบบเดียวกับ Fire Affliction ทุกคำ** แค่เปลี่ยนธาตุ (Wind DMG over time · Wind RES −15%) | ultimate: บรรทัดค่าทั้งสามผูกท่อน 1 · switch: DMG = ท่อน 1 · High Tempo Duration = ท่อน 2 | **2026-10-22 รอบสาม** Special Skill Infighting (Lv.12 ครบเจ็ดบรรทัด จากจอที่เลื่อนลง) และปลุกพลังครบหกขั้น (ทุกขั้นยังล็อกบนจอตัวอย่าง) — **ครบทั้งหกช่องสกิลแล้ว** | special: ท่อนแรกของคำอธิบายยาวและยังไม่มี \"/\" คั่น เพราะจอขึ้นบรรทัดใหม่ภายในย่อหน้าเดียว — แบ่งท่อนตามย่อหน้าบนจอ (สามย่อหน้า) · บรรทัดค่าทั้งหมดยกเว้น Cooldown ผูกท่อน 1 | ปลุกพลัง: effects เติมขั้น 3 (ดาเมจสกิลพิเศษ +6%) และขั้น 5 (ดาเมจโจมตีพื้นฐาน +6%) · ขั้นอื่นเปลี่ยนค่าในสถานะ/สกิลเดิม เก็บเป็นข้อความ | **\"Pierce Rate\" กับ \"Penetration Rate\" คือค่าเดียวกัน** — ปลุกพลังขั้น 1 เขียน \"It's... Not Over Yet! effect's Pierce Rate increases to 22%\" ซึ่งอ้างถึงค่า 12% ที่หน้าต่างสถานะเดียวกันเรียกว่า \"Penetration Rate\" เกมใช้สองคำกับค่าเดียว (Verna ปลุกพลังขั้น 6 ใช้ Pierce Rate) ยังไม่เพิ่มเข้าพจนานุกรมเพราะไม่มีที่ใช้เป็น effect | ยังไม่ได้อ่าน: จอไทยทั้งหมด | จอ Preview ที่เลเวล 1 แสดง ATK 53 · DEF 15 · HP 407 · Crit 5% / 50% — **ไม่เก็บ** schema เก็บค่าพลังที่เลเวลเดียว (60) และห้ามคำนวณเลเวลอื่น จดไว้ตรงนี้เท่านั้น | **สกิลธาตุเติม effect แล้ว** (ผู้เล่นกำหนด 2026-10-22: \"ถ้าไม่บอกว่าใครก็คือตัวเอง\" — ข้อความที่ไม่ระบุผู้รับบัฟ ให้ target self)"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (ผู้เล่นยังไม่มีตัวนี้ จอตัวอย่างเปิดดูได้) · Info · Detailed Stats · Basic Attack · Effect Details · **ยังไม่มีจอไทย** | Fighter · **Wind** · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** ดาวบนจอ Info คือดาวอัปเลเวล | ค่าพลังจากจอตัวอย่าง (ไม่มีของติด จอ Info กับ Detailed Stats ตรงกัน): ATK 1,943 (เท่ากับวิเวียน) · DEF 656 · HP 9,978 · ไม่มีบรรทัด Wind DMG Boost บนจอ (ตัวอื่นมี Fire DMG Boost) · Fighter 1,078 เท่ากับ Verna / Mina | Basic Attack Lv.12 ครบ 17 บรรทัด (จอที่สองเลื่อนลงจนเห็นทั้งตาราง) · line: Hit 1-5 = ท่อน 1 · Enhanced ทั้งหมดรวม Gust = ท่อน 2 · Hyper Punch = ท่อน 3 · Charge / Air / Evasion ไม่ใส่ | statuses เก็บเป็นข้อความ: High Tempo มีหลายผลปนกัน (ATK · ลดดาเมจที่ได้รับ · กันกระเด็น · จำนวนครั้งตี) · It's... Not Over Yet! พูดถึง **\"Penetration Rate\"** ซึ่งยังไม่มีในพจนานุกรม (Verna ปลุกพลังขั้น 6 เขียน \"Pierce Rate\" — ยังไม่รู้ว่าเป็นค่าเดียวกันไหม) | ช่องที่หกชื่อ **Guidance of Wind** (Lv.12 บนจอตัวอย่าง) — ยืนยันว่าหัวช่องเปลี่ยนตามธาตุ | รูป portrait ตัดจากจอ Character Preview (เลเวล 1 หน้าตรง) ที่ผู้เล่นส่งมา 2026-10-22 ขนาด 400x400 แทนรูปเดิมที่หลับตา | **2026-10-22 รอบสอง** Switch Skill Substitution · Ultimate Skill Blow It All Up! (Lv.12) · Passive Trait Overheat (Lv.1) · Guidance of Wind Time to Lock In! (**Lv.12 บนจอตัวอย่าง** = Wind DMG +24.6% 15 วินาที เมื่อใช้สกิลสับเปลี่ยน · effects ว่าง เพราะจอไม่ได้บอกว่าบัฟลงที่ใคร) · Effect Details ของ Wind Affliction | **Passive: คำอธิบายบนจอมีช่องว่างเหนือประโยคแรก** อาจเป็นเพราะพาเนลเลื่อนลงไปแล้ว มีท่อนก่อนหน้าที่ไม่เห็น — เก็บเฉพาะที่เห็น บรรทัดค่าทั้งแปดเป็นอัตราชาร์จพลังงานอัลติเมตตามท่า ไม่ใส่ line | **Wind Affliction ข้อความรูปแบบเดียวกับ Fire Affliction ทุกคำ** แค่เปลี่ยนธาตุ (Wind DMG over time · Wind RES −15%) | ultimate: บรรทัดค่าทั้งสามผูกท่อน 1 · switch: DMG = ท่อน 1 · High Tempo Duration = ท่อน 2 | **2026-10-22 รอบสาม** Special Skill Infighting (Lv.12 ครบเจ็ดบรรทัด จากจอที่เลื่อนลง) และปลุกพลังครบหกขั้น (ทุกขั้นยังล็อกบนจอตัวอย่าง) — **ครบทั้งหกช่องสกิลแล้ว** | special: ท่อนแรกของคำอธิบายยาวและยังไม่มี \"/\" คั่น เพราะจอขึ้นบรรทัดใหม่ภายในย่อหน้าเดียว — แบ่งท่อนตามย่อหน้าบนจอ (สามย่อหน้า) · บรรทัดค่าทั้งหมดยกเว้น Cooldown ผูกท่อน 1 | ปลุกพลัง: effects เติมขั้น 3 (ดาเมจสกิลพิเศษ +6%) และขั้น 5 (ดาเมจโจมตีพื้นฐาน +6%) · ขั้นอื่นเปลี่ยนค่าในสถานะ/สกิลเดิม เก็บเป็นข้อความ | **\"Pierce Rate\" กับ \"Penetration Rate\" คือค่าเดียวกัน** — ปลุกพลังขั้น 1 เขียน \"It's... Not Over Yet! effect's Pierce Rate increases to 22%\" ซึ่งอ้างถึงค่า 12% ที่หน้าต่างสถานะเดียวกันเรียกว่า \"Penetration Rate\" เกมใช้สองคำกับค่าเดียว (Verna ปลุกพลังขั้น 6 ใช้ Pierce Rate) ยังไม่เพิ่มเข้าพจนานุกรมเพราะไม่มีที่ใช้เป็น effect | จอ Preview ที่เลเวล 1 แสดง ATK 53 · DEF 15 · HP 407 · Crit 5% / 50% — **ไม่เก็บ** schema เก็บค่าพลังที่เลเวลเดียว (60) และห้ามคำนวณเลเวลอื่น จดไว้ตรงนี้เท่านั้น | **สกิลธาตุเติม effect แล้ว** (ผู้เล่นกำหนด 2026-10-22: \"ถ้าไม่บอกว่าใครก็คือตัวเอง\" — ข้อความที่ไม่ระบุผู้รับบัฟ ให้ target self) | **2026-10-23 จอไทย (พรีวิวตัวละคร)** ชื่อ โคลอี้ · ค่าพลังห้าค่าตรงจออังกฤษ · โจมตีพื้นฐาน เบาๆ หนึ่ง สอง! (ตาราง 17 แถวตรงทุกค่า) · สกิลอัลติเมต ซัดให้กระจุยไปเลย! · รายละเอียดเอฟเฟกต์ ไฮเทมโป / ยัง... ไม่จบหรอก! | desc ไทยของโจมตีพื้นฐาน: จอแยก \"ไฮเทมโป…เสริมพลัง\" กับ \"ในการโจมตีขั้น 5…\" เป็นสองบรรทัดติดกันไม่เว้นย่อหน้า — รวมเป็นท่อนเดียวให้ตรงกับท่อนที่ 2 ของจออังกฤษ (line ของตารางอ้างตามท่อน) · ข้อความสถานะที่จอตัดบรรทัด ต่อเป็นประโยคเดียว | จอไทยเรียก Pierce/Penetration Rate ว่า \"อัตราการเจาะทะลุ\" · Air Counter = \"ดาเมจโจมตีฉับพลัน\" · Evasion Counter = \"ดาเมจหลบหลีกโต้กลับ\" | **2026-10-23 จอไทยรอบสอง** สกิลสับเปลี่ยน เปลี่ยนตัวนักกีฬา · สกิลพิเศษ ต่อสู้ระยะประชิด (ตารางเจ็ดแถวตรงทุกค่า · สามบรรทัดแรกของจอไทยไม่เว้นย่อหน้า รวมเป็นท่อนที่ 1 ตามจออังกฤษ) · การชี้นำแห่งลม มาวัดกันให้รู้ไปเลย! · ปลุกพลังครบหกขั้น | **ข้อความไทยในเกมไม่สม่ำเสมอ เก็บตามจอ**: ขั้น 1 พิมพ์ \"ยัง...ยังไม่จบหรอก!\" (ซ้ำคำ) และเรียก Pierce Rate ว่า \"อัตราเจาะเกราะ\" ขณะที่หน้าสถานะใช้ \"อัตราการเจาะทะลุ\" · ขั้น 2 เรียก Windmill Kick ว่า \"เตะกังหันลม\" ขณะที่สกิลพิเศษใช้ \"วินด์มิลล์คิก\" · ขั้น 6 ใช้ \"ทักษะพิเศษ\" แทน \"สกิลพิเศษ\" | **2026-10-23 จอไทยรอบสาม** แพสซีฟ โอเวอร์ฮีท (ตารางแปดแถวตรงทุกค่า) · เอฟเฟกต์อ่อนแอต่อลม → **จอไทยครบทุกส่วนแล้ว** | **desc อังกฤษของแพสซีฟมีแค่ท่อนเดียว (\"When Chloe joins the battle…\") แต่จอไทยมีสามท่อน** — ท่อน 1–2 (ได้รับโอเวอร์ฮีทเอเนอร์จี / ถูกลบเมื่อเปลี่ยนตัวหรือใช้อัลติเมต) ไม่มีในข้อความอังกฤษที่เก็บไว้ น่าจะอ่านจออังกฤษตกไป — ไม่แปลเติม · validate:data บังคับให้สองภาษามีจำนวนท่อนเท่ากัน จึงเก็บใน desc ไทยแค่ท่อนที่ 3 (คู่กับอังกฤษ) และพักท่อน 1–2 ภาษาไทยไว้ตรงนี้จนกว่าจะได้จออังกฤษ: «เมื่อโจมตีพื้นฐานและการโจมตีขั้น 1, 2 ของสกิลพิเศษโดน จะได้รับโอเวอร์ฮีทเอเนอร์จี และเมื่อใช้โจมตีพื้นฐานเสริมพลังหรือหมัดทะลวง จะได้รับเร็วขึ้นอีก» / «เมื่อเปลี่ยนเป็นโคลอี้หรือเมื่อใช้สกิลอัลติเมต โอเวอร์ฮีทเอเนอร์จีที่ยังไม่ได้ใช้จะถูกลบออกทั้งหมด»"
   }
 }

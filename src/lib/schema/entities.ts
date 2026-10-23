@@ -434,16 +434,20 @@ export const food = z.object({
   id: slug,
   name: text,
   category: vocabEnum("foodCategory"),
+  /** ดาวบนการ์ดในจอ Cooking (1–4 เท่าที่เห็น) */
+  stars: z.number().int().min(1).max(5).optional(),
   effects: z.array(effect).default([]),
   durationSec: z.number().positive(),
   exquisite: z.object({ effects: z.array(effect).default([]) }).optional(),
-  ingredients: z
-    .array(z.object({ name: text, qty: z.number().int().positive(), swappable: z.boolean().default(false) }))
-    .default([]),
   unlock: z.object({ method: vocabEnum("obtainMethod"), note: text.optional() }).optional(),
   images: z.object({ icon: z.string().optional() }).optional(),
+  /**
+   * ไม่มีช่อง ingredients และ goldCost — ตัดออกจากขอบเขตตามคำสั่งผู้เล่น 2026-10-22
+   * "ชื่อวัตถุดิบ ไม่เก็บ" · "ทองที่ใช้ทำไม่เก็บ"
+   * ดู PLAN §13.7.2 · schema ตั้งเป็น .strict() ไฟล์ที่ใส่วัตถุดิบกลับมาจะไม่ผ่าน validate
+   */
   source,
-});
+}).strict();
 
 export const build = z.object({
   id: slug,
@@ -608,6 +612,7 @@ export type Monsterling = z.infer<typeof monsterling>;
 export type Skill = z.infer<typeof skill>;
 export type Equipment = z.infer<typeof equipment>;
 export type Artifact = z.infer<typeof artifact>;
+export type Food = z.infer<typeof food>;
 export type GearMainStat = z.infer<typeof gearMainStat>;
 export type GearSubstat = z.infer<typeof gearSubstat>;
 export type EquipmentSet = z.infer<typeof equipmentSet>;

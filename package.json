@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "preview": "npx --yes serve@14.2.4 out",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "audit": "npm audit --omit=dev --audit-level=high",

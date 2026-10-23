@@ -61,10 +61,10 @@ export const SECTIONS: Section[] = [
     slug: "food",
     title: { th: "อาหาร", en: "Food" },
     blurb: {
-      th: "Entree และ Side บัฟ 30 นาที วัตถุดิบที่สลับได้ และค่าเวอร์ชัน Exquisite",
-      en: "Entrees and sides, 30-minute buffs, swappable ingredients and Exquisite values",
+      th: "จานหลักและจานเคียง บัฟ 30 นาทีของแต่ละจาน และดาว",
+      en: "Entrées and sides, each dish's 30-minute buffs and stars",
     },
-    ready: false,
+    ready: true,
   },
   {
     slug: "builds",

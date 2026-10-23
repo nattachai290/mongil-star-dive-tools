@@ -1,0 +1,1052 @@
+{
+  "id": "gabi",
+  "name": {
+    "en": "Gabi"
+  },
+  "rarity": 5,
+  "element": "earth",
+  "role": "fighter",
+  "range": "melee",
+  "stats": {
+    "atLevel": 60,
+    "hp": 9713,
+    "atk": 1943,
+    "def": 673,
+    "critRate": 5,
+    "critDmg": 50
+  },
+  "otherStats": [
+    {
+      "kind": "buff",
+      "stat": "brawlDmg",
+      "value": 12.18,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "weaknessHit"
+      ],
+      "value": 125,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "energyGain",
+      "value": 100,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "stamina",
+      "value": 100,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "fighterPower",
+      "value": 1078,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
+  "awaken": [
+    {
+      "stage": 1,
+      "name": {
+        "en": "Just Hit a Bit Harder?"
+      },
+      "desc": {
+        "en": "Gabi's Special Skill's cooldown is reset upon using Crushing Blow. In addition, the interval length at which the Wooden Guardian Statue grants Spiritual Power decreases. / Spinning Bat Attack becomes available if she has 3 stacks of Spiritual Power after using her Basic Attack's 2nd Hit."
+      },
+      "effects": []
+    },
+    {
+      "stage": 2,
+      "name": {
+        "en": "Big Swing Coming Up!"
+      },
+      "desc": {
+        "en": "Using Gabi's Switch Skill inflicts Petrification on nearby enemies. Petrification lasts for 4 sec and can affect up to 7 target(s). / Landing her Basic Attack's 4th Hit always generates a Rock, and the generated Rock's Petrification effect range increases."
+      },
+      "effects": []
+    },
+    {
+      "stage": 3,
+      "name": {
+        "en": "Brutal Dokkaebi Instincts"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 4,
+      "name": {
+        "en": "Crush Any Obstacles!"
+      },
+      "desc": {
+        "en": "Gabi's Crushing Blow deals 104% increased DMG, and the Bonus DMG that Crushing Blow inflicts against targets with Petrification increases to 170%."
+      },
+      "effects": []
+    },
+    {
+      "stage": 5,
+      "name": {
+        "en": "Descendant of Duoxini"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Ultimate Skill DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "ultimate"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 6,
+      "name": {
+        "en": "True Friends' Sworn Protector"
+      },
+      "desc": {
+        "en": "The Wooden Guardian Statue effect increases 3.4-fold. Gabi's Basic Attack and Crushing Blow DMG increases 2-fold while the Wooden Guardian Statue effect is active / In addition, Wooden Guardian Statue periodically inflicts Petrification on nearby enemies. Petrification lasts for 4 sec and can affect up to 7 target(s)."
+      },
+      "effects": []
+    }
+  ],
+  "skills": {
+    "basic": {
+      "name": {
+        "en": "Dokkaebi Bat"
+      },
+      "desc": {
+        "en": "Gabi deals Physical DMG to enemies by swinging her Dokkaebi Bat wildly. She causes a shockwave on her finishing attack, dealing Earth DMG. / When she has 3 stacks of Spiritual Power, holding the Basic Attack button will trigger a Crushing Blow. Crushing Blows inflict Petrification and deal Earth DMG to nearby enemies. Enemies inflicted with Petrification take increased DMG from Crushing Blow. Gabi gains a DMG Reduction effect while Crushing Blow is active. / Using Crushing Blow during an enemy's special attack will momentarily neutralize the enemy. If an enemy is successfully neutralized while possessing Slugger's Will, the effect is immediately consumed and 3 stacks of Spiritual Power are gained. / Holding the Basic Attack button after using a Switch Skill triggers a Spinning Bat Attack, and Gabi will hurl the bat to attack enemies all around, dealing Physical DMG. / After using her Ultimate Skill, Gabi's Basic Attack will be enhanced, dealing Earth DMG and increasing in Attack Speed each attack. (Max: 4 times)"
+      },
+      "damageType": "physical",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            56.7,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            62.5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "3rd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            95.9,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "4th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            91,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "1st Enhanced Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            182,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 5
+        },
+        {
+          "label": {
+            "en": "2nd Enhanced Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            182,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 5
+        },
+        {
+          "label": {
+            "en": "Enhanced Attack Speed Boost"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            10,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 5
+        },
+        {
+          "label": {
+            "en": "Crushing Blow DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1167.8,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Enhanced Crushing Blow DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1351.3,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Crushing Blow's Petrification Target DMG Boost"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            50,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "DMG Reduction"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            50,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Spinning Bat Attack"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            385.8,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 4
+        },
+        {
+          "label": {
+            "en": "Charge Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            87.5,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Air Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            109.8,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Evasion Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            227.5,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Petrification Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Max Petrification Targets"
+          },
+          "unit": "flat",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            7,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "switch": {
+      "name": {
+        "en": "Hoorah!"
+      },
+      "desc": {
+        "en": "Gabi appears near the enemy and strikes the ground, dealing Earth DMG to nearby enemies, and she gains Slugger's Will."
+      },
+      "damageType": "earth",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            208.2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "special": {
+      "name": {
+        "en": "Dokkaebi Technique: Create Gold!"
+      },
+      "desc": {
+        "en": "Gabi leaps towards an enemy and slams the ground near them, dealing Earth DMG to the enemy around the erupting rock."
+      },
+      "damageType": "earth",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            519.7,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            11.5,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "ultimate": {
+      "name": {
+        "en": "Dokkaebi's Domain"
+      },
+      "desc": {
+        "en": "Gabi summons a Wooden Guardian Statue and slams it on the ground, dealing Earth DMG and inflicting Petrification and Earth Affliction on enemies. / Wooden Guardian Statue: Enhances Basic Attacks, periodically grants Spiritual Power, and grants all teammates Earth DMG and DEF Boosts."
+      },
+      "damageType": "earth",
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "damageType": "earth",
+          "value": 10,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onUltimate",
+          "durationSec": 15,
+          "condition": {
+            "note": {
+              "en": "Wooden Guardian Statue"
+            }
+          }
+        },
+        {
+          "kind": "buff",
+          "stat": "def",
+          "value": 20,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onUltimate",
+          "durationSec": 15,
+          "condition": {
+            "note": {
+              "en": "Wooden Guardian Statue"
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "label": {
+            "en": "DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            322.3,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Earth DMG Boost"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            10,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "DEF Boost"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            20,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Wooden Guardian Statue Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            15,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Earth Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Petrification Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "passive": {
+      "name": {
+        "en": "Dokkaebi Power"
+      },
+      "desc": {
+        "en": "Gabi gains 1 stack of Spiritual Power and has a chance of generating a Rock upon landing her Basic Attack's 4th Hit. Up to 3 stacks of Spiritual Power can be gained. / The Rock can be destroyed with Physical DMG or Earth DMG, and upon being destroyed, it deals Physical DMG and inflicts Petrification to nearby enemies and grants Gabi 1 stack of Spiritual Power."
+      },
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Rock Destruction DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            52,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Rock Generation Rate"
+          },
+          "unit": "percent",
+          "scaling": [
+            50,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Petrification Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            4,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Max Petrification Targets"
+          },
+          "unit": "flat",
+          "scaling": [
+            7,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "elemental": {
+      "name": {
+        "en": "Dokkaebi Appears"
+      },
+      "desc": {
+        "en": "Using Gabi's Switch Skill increases Basic Attack DMG by 39.55% (Duration: 10s)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 39.55,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSwitch",
+          "durationSec": 10
+        }
+      ],
+      "values": []
+    }
+  },
+  "statuses": [
+    {
+      "name": {
+        "en": "Petrification"
+      },
+      "desc": {
+        "en": "Afflicted targets are turned to stone and cannot move. / The effect is removed upon taking Physical or Earth DMG and also deals 50% Earth DMG. Boss enemies take Earth DMG immediately. / Dying while inflicted with this effect deals 50% Physical DMG to surrounding enemies."
+      },
+      "effects": []
+    },
+    {
+      "name": {
+        "en": "Slugger's Will"
+      },
+      "desc": {
+        "en": "If Crushing Blow is used during an enemy's special attack, Spiritual Power is returned."
+      },
+      "effects": []
+    },
+    {
+      "name": {
+        "en": "Earth Affliction"
+      },
+      "desc": {
+        "en": "Afflicted targets take Earth DMG over time, and Earth and Physical RES decrease by 15%."
+      },
+      "effects": []
+    }
+  ],
+  "images": {
+    "portrait": "gabi-portrait.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Fighter · Earth · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,943 · DEF 673 · HP 9,713 · Crit 5% / 50% อ่านจากจอตรง ๆ — **DEF 673 สูงกว่าตัวอื่นที่ลงไว้ทั้งหมด (สูงสุดเดิม 656)** เก็บตามจอ | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** ปลุกพลังขั้น 2–6 (จอยังล็อกทุกขั้น · effects: ขั้น 3 Basic +6% · ขั้น 5 Ultimate +6% · ขั้นอื่นเก็บเป็นข้อความ) · ขั้น 6 ประโยคแรกไม่มีจุดท้าย \"…is active\" ตามจอ · \"Duoxini\" ชื่อในขั้น 5 ตามจอ | **2026-10-22 รอบสาม** Detailed Stats: Brawl DMG Boost 12.18% · Fighter 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Basic Dokkaebi Bat (คำอธิบายห้าท่อน + ตาราง 17 แถว อ่านจากสี่จอที่เลื่อนต่อกัน) · Switch Hoorah! · Special Dokkaebi Technique: Create Gold! · Ultimate Dokkaebi's Domain (Wooden Guardian Statue ให้ทั้งทีม Earth DMG +10% / DEF +20% นาน 15 วินาที → effects target team ตามที่จอระบุ \"all teammates\") · Passive Dokkaebi Power · Guidance of Earth Dokkaebi Appears · ปลุกพลังขั้น 1 → ครบหกขั้น | Effect Details: Petrification · Earth Affliction (ลด Earth และ Physical RES ตามแบบที่รู้แล้ว) · Slugger's Will | Basic: \"Enhanced Crushing Blow DMG\" ไม่มีประโยคบอกท่อน ใส่ line 2 ตามแถว Crushing Blow · \"Max Petrification Targets\" เป็นค่าคงที่ · elemental ไม่มีจุดท้ายประโยคตามจอ | ยังไม่ได้อ่าน: จอไทยทั้งหมด"
+  }
+}

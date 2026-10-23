@@ -1,0 +1,49 @@
+{
+  "id": "legendary-golden-chicken",
+  "name": {
+    "th": "ไก่ทอดทองคำแห่งตำนาน",
+    "en": "Legendary Golden Chicken"
+  },
+  "category": "entree",
+  "stars": 3,
+  "effects": [
+    {
+      "kind": "buff",
+      "stat": "hp",
+      "value": 11,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "atk",
+      "value": 8.25,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "debuff",
+      "stat": "staminaConsumption",
+      "value": 13.75,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
+  "durationSec": 1800,
+  "images": {
+    "icon": "legendary-golden-chicken-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en",
+      "th"
+    ],
+    "note": "อ่านจากจอ **Cooking → Entrées** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | Duration 30m · ผู้รับบัฟไม่ระบุบนจอ → target self (PLAN §13.11) | Stamina Consumption −X% → kind debuff stat staminaConsumption (เพิ่มเข้าพจนานุกรม อังกฤษอย่างเดียว) | วัตถุดิบไม่เก็บ (ผู้เล่นกำหนด 2026-10-22 \"ชื่อวัตถุดิบ ไม่เก็บ\" — PLAN §13.7.2) | ทองที่ใช้ทำไม่เก็บ (ผู้เล่นกำหนด 2026-10-22) | **2026-10-23 จอไทย (ปรุงอาหาร → จานหลัก)** ชื่อไทยอ่านจากจอ · ค่าบัฟตรงกับจออังกฤษทุกบรรทัด · ไอคอนตัดจากกล่องรายละเอียดของจอนี้"
+  }
+}

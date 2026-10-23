@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { EffectLine } from "@/components/EffectLine";
+import { FilteredList, type FilteredRow } from "@/components/FilteredList";
 import { Text } from "@/components/Text";
 import { createTranslate } from "@/i18n";
 import { LOCALES, isLocale, type Locale } from "@/lib/i18n";
 import { ARTIFACTS, artifactsSorted } from "@/lib/data";
+import { byNumberDesc, haystackOf, optionsFrom } from "@/lib/facets";
+import { asset } from "@/lib/base-path";
 import { label } from "@/lib/vocabulary";
 import type { Artifact } from "@/lib/schema/entities";
 
@@ -34,7 +37,7 @@ function ArtifactCard({ a, locale, t }: { a: Artifact; locale: Locale; t: T }) {
         {a.images?.icon && (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={`/images/artifacts/${a.images.icon}`}
+            src={asset(`/images/artifacts/${a.images.icon}`)}
             alt=""
             width={64}
             height={64}
@@ -127,6 +130,48 @@ export default async function ArtifactsPage({
   const list = artifactsSorted(locale);
   const missingThai = ARTIFACTS.some((a) => !a.name.th);
 
+  const rows: FilteredRow[] = list.map((a) => {
+    const effects = a.fusion.flatMap((f) => f.effects);
+    const damageTypes = [
+      ...a.stats.map((s) => s.damageType),
+      ...effects.flatMap((e) => [e.damageType, e.condition?.triggerDamageType]),
+    ].filter((v): v is string => Boolean(v));
+    return {
+      key: a.id,
+      facets: {
+        stars: a.stars !== undefined ? [String(a.stars)] : [],
+        role: [a.role],
+        // ค่าสเตตัสบรรทัดสอง — บรรทัดแรกเป็น ATK คงที่ทุกชิ้น กรองไปก็ได้ทุกชิ้น
+        stat: [...new Set(a.stats.slice(1).map((s) => s.stat))],
+        damageType: [...new Set(damageTypes)],
+        trigger: [...new Set(effects.map((e) => e.trigger))],
+        target: [...new Set(effects.map((e) => e.target))],
+      },
+      haystack: haystackOf([
+        a.id,
+        a.name.th,
+        a.name.en,
+        ...a.fusion.flatMap((f) => [f.name?.th, f.name?.en, f.desc.th, f.desc.en]),
+      ]),
+      card: <ArtifactCard key={a.id} a={a} locale={locale as Locale} t={t} />,
+    };
+  });
+
+  const facets = [
+    { key: "stars", param: "r", legend: t("filters.stars"),
+      options: optionsFrom(rows, "stars", (v) => `${"★".repeat(Number(v))} ${v}`, byNumberDesc) },
+    { key: "role", param: "role", legend: t("filters.role"),
+      options: optionsFrom(rows, "role", (v) => label("role", v, locale)) },
+    { key: "stat", param: "stat", legend: t("filters.mainStat"),
+      options: optionsFrom(rows, "stat", (v) => label("stat", v, locale)) },
+    { key: "damageType", param: "dmg", legend: t("filters.damageType"),
+      options: optionsFrom(rows, "damageType", (v) => label("damageType", v, locale)) },
+    { key: "trigger", param: "trig", legend: t("filters.trigger"),
+      options: optionsFrom(rows, "trigger", (v) => label("trigger", v, locale)) },
+    { key: "target", param: "for", legend: t("filters.target"),
+      options: optionsFrom(rows, "target", (v) => label("target", v, locale)) },
+  ];
+
   return (
     <div className="mx-auto max-w-5xl px-5 py-8">
       <h1 className="font-display text-2xl font-semibold">{t("artifacts.title")}</h1>
@@ -141,11 +186,20 @@ export default async function ArtifactsPage({
       {list.length === 0 ? (
         <p className="mt-8 text-sm text-muted">{t("artifacts.empty")}</p>
       ) : (
-        <ul className="mt-6 grid gap-4 md:grid-cols-2">
-          {list.map((a) => (
-            <ArtifactCard key={a.id} a={a} locale={locale as Locale} t={t} />
-          ))}
-        </ul>
+        <FilteredList
+          idPrefix="artifacts"
+          rows={rows}
+          facets={facets}
+          listClassName="mt-6 grid gap-4 md:grid-cols-2"
+          labels={{
+            search: t("artifacts.search"),
+            matches: t("artifacts.matches"),
+            noMatch: t("artifacts.noMatch"),
+            filters: t("filters.legend"),
+            any: t("filters.any"),
+            clear: t("filters.clear"),
+          }}
+        />
       )}
     </div>
   );

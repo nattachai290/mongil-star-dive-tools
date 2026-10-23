@@ -1,0 +1,1087 @@
+{
+  "id": "brisshell",
+  "name": {
+    "en": "Brisshell"
+  },
+  "rarity": 5,
+  "element": "earth",
+  "role": "assassin",
+  "range": "melee",
+  "stats": {
+    "atLevel": 60,
+    "hp": 9272,
+    "atk": 2049,
+    "def": 673,
+    "critRate": 5,
+    "critDmg": 50
+  },
+  "otherStats": [
+    {
+      "kind": "buff",
+      "stat": "suppressionDmg",
+      "value": 12.18,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "weaknessHit"
+      ],
+      "value": 125,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "energyGain",
+      "value": 100,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "stamina",
+      "value": 100,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "assassinPower",
+      "value": 1078,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
+  "awaken": [
+    {
+      "stage": 1,
+      "name": {
+        "en": "I Need to Go Easy..."
+      },
+      "desc": {
+        "en": "Upon using Brisshell's Enhanced Basic Attack's 2nd or 4th Hit, or her Enhanced Support Skill's 1st or 2nd Hit, she strikes the ground with Alien Power, dealing Bonus DMG equal to 30% of the Attack DMG to the enemy. / Enhanced Switch Skill DMG increases by 50%."
+      },
+      "effects": []
+    },
+    {
+      "stage": 2,
+      "name": {
+        "en": "Tear Them Apart! Alfred!"
+      },
+      "desc": {
+        "en": "While Attention Overload is active, Brisshell's Enhanced Support Skill charges upon switching to another character, even if her Enhanced Basic Attack is used. / Increases Brisshell's Enhanced Basic Attack DMG by 80% and Enhanced Support Skill DMG by 40%. This effect does not work for Alien Power."
+      },
+      "effects": []
+    },
+    {
+      "stage": 3,
+      "name": {
+        "en": "Affinity with Alfred"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive"
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 4,
+      "name": {
+        "en": "Destruction Is Easier than Creation"
+      },
+      "desc": {
+        "en": "DEF Reduction increases to 20% upon landing an attack with Alien Power on an enemy. / DMG from Alien Power increases by80%."
+      },
+      "effects": []
+    },
+    {
+      "stage": 5,
+      "name": {
+        "en": "Bond with Alfred"
+      },
+      "desc": {
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Switch Skill DMG by 6%. (Support Skill and Tag-out Skill excluded)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "switchSkill"
+          ],
+          "value": 6,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive",
+          "condition": {
+            "note": {
+              "en": "Support Skill and Tag-out Skill excluded"
+            }
+          }
+        }
+      ],
+      "skillLevelBonus": 2
+    },
+    {
+      "stage": 6,
+      "name": {
+        "en": "Fear of the Unknown"
+      },
+      "desc": {
+        "en": "Attention Overload's ATK Boost increases to 45% and Suppression DMG Boost increases to 15%. / Upon gaining Attention Overload, Brisshell gains an effect that increases DMG against boss enemies by 24% of her Suppression DMG Boost, up to 15%. (Duration: 6 sec) / Tear Them Apart! Alfred! is enhanced, increasing Enhanced Basic Attack DMG to 160% and Enhanced Support Skill DMG to 80%. This effect does not apply to Alien Power."
+      },
+      "effects": []
+    }
+  ],
+  "skills": {
+    "basic": {
+      "name": {
+        "en": "My First Friend Alfred"
+      },
+      "desc": {
+        "en": "Brisshell swings Alfred and strikes down, dealing Physical DMG to enemies in front of her. / Brisshell's Basic Attack is enhanced when Attention Overload is active, causing Alfred to pursue enemies, unleashing a series of bites and slashes that deal Earth DMG. / All Elemental RES also increases by a portion of Suppression DMG while using this skill, but it doesn't increase above a set maximum."
+      },
+      "damageType": "physical",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            60,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            113.4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "3rd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            108.4,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "4th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            125.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "1st Enhanced Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            199,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "2nd Enhanced Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            305.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "3rd Enhanced Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            197.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Enhanced 4th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            407.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Suppression DMG Boost Conversion Ratio"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            72,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "All Elemental RES Boost Max"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            40,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "Charge Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            95.9,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Enhanced Charge Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            113.7,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Air Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            111.7,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Evasion Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            144,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Enhanced Evasion Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            336.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "switch": {
+      "name": {
+        "en": "Here I Come!"
+      },
+      "desc": {
+        "en": "Brisshell swings Alfred in wide arc, dealing Earth DMG to nearby enemies. / Using her Switch Skill after triggering her Support Skill enhances the skill, sending Alfred into a frenzy. Alfred charges at the enemy, then swiftly maneuvers, trampling them and dealing Earth DMG. / [Support Skill] When a teammate lands a Basic Attack or Special Skill, Brisshell enters the field, striking Alfred into the ground. She deals Earth DMG to nearby enemies, then inflicts Earth Affliction. / If Brisshell switches out without using her Enhanced Basic Attack while Attention Overload is active, her Enhanced Support Skill is fully charged. / [Enhanced Support Skill] Alfred pursues the enemy, unleashing a series of bites and slashes that deal Earth DMG, then inflicts Earth Affliction. / Brisshell's Enhanced Support Skill isn't affected by her Support Skill Cooldown and can be triggered based on the number of charges. Also, while using the Enhanced Support Skill, Attention Overload remains active regardless of its usual duration."
+      },
+      "damageType": "earth",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Switch Skill DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            208.5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Enhanced Switch Skill DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            486.5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Support Skill DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            256.5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "Support Skill Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            7,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 3
+        },
+        {
+          "label": {
+            "en": "1st Enhanced Support Skill DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            513.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 5
+        },
+        {
+          "label": {
+            "en": "2nd Enhanced Support Skill DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            513.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 5
+        },
+        {
+          "label": {
+            "en": "Enhanced Support Skill Max Charges"
+          },
+          "unit": "times",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            2,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 6
+        }
+      ]
+    },
+    "special": {
+      "name": {
+        "en": "Alfred Rush"
+      },
+      "desc": {
+        "en": "Alfred is now out of control and charges forward, viciously biting and tearing through enemies to deal Earth DMG.The duration of Attention Overload also increases. / Brisshell slams Alfred into the ground to forcibly calm him down, then strikes again with Alien Power, dealing Earth DMG."
+      },
+      "damageType": "earth",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Mangle DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            476.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Slam Down DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            143.6,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Alien Power DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            215.5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Attention Overload Duration Boost"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            3,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Cooldown"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            13.5,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    "ultimate": {
+      "name": {
+        "en": "Anxiety Burst"
+      },
+      "desc": {
+        "en": "Overwhelmed with anxiety, Brisshell is unable to control her powers, causingAlien Power to explode around her, dealing Earth DMG and inflicting Earth Affliction."
+      },
+      "damageType": "earth",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "Alien Power Explosion DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1315.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Earth Affliction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        }
+      ]
+    },
+    "passive": {
+      "name": {
+        "en": "Attention Overload"
+      },
+      "desc": {
+        "en": "Brisshell gains Attention Overload upon using her Switch Skill or Ultimate Skill. / Inflicts DEF Reduction on enemies upon landing attacks with Alien Power."
+      },
+      "effects": [
+        {
+          "kind": "debuff",
+          "stat": "def",
+          "value": 10,
+          "unit": "percent",
+          "target": "enemy",
+          "trigger": "onHit",
+          "durationSec": 6,
+          "condition": {
+            "note": {
+              "en": "upon landing attacks with Alien Power"
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "label": {
+            "en": "Attention Overload Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            6,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "DEF Reduction Rate"
+          },
+          "unit": "percent",
+          "scaling": [
+            10,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "DEF Reduction Duration"
+          },
+          "unit": "seconds",
+          "scaling": [
+            6,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        }
+      ]
+    },
+    "elemental": {
+      "name": {
+        "en": "Loner's Efforts"
+      },
+      "desc": {
+        "en": "Increases all teammates' Earth DMG by 22.6% upon using Brisshell's Support Skill or Switch Skill. (Max Stacks: 2, Duration: 10 sec, New stacks reset the duration)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "damageType": "earth",
+          "value": 22.6,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onSwitch",
+          "durationSec": 10,
+          "maxStacks": 2,
+          "condition": {
+            "note": {
+              "en": "upon using Brisshell's Support Skill or Switch Skill · New stacks reset the duration"
+            }
+          }
+        }
+      ],
+      "values": []
+    }
+  },
+  "statuses": [
+    {
+      "name": {
+        "en": "Attention Overload"
+      },
+      "desc": {
+        "en": "Increases ATK by 10% and Suppression DMG by 5%."
+      },
+      "effects": []
+    },
+    {
+      "name": {
+        "en": "Earth Affliction"
+      },
+      "desc": {
+        "en": "Afflicted targets take Earth DMG over time, and Earth and Physical RES decrease by 15%."
+      },
+      "effects": []
+    }
+  ],
+  "images": {
+    "portrait": "brisshell-portrait.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Assassin · Earth · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | **ค่าพลังหักบัฟอาหารแล้ว** (ผู้เล่นบอก \"ตอนนี้ยังมีบัพอาหารออกลบตัวเลขออกด้วย\" — อาหารชุดเดียวกับ Narae / Isabella: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,279 · DEF 758 · HP 10,662 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 2,049 · DEF 673 · HP 9,272 · Crit 5% / 50%** — ทั้งสามค่าเคยเห็นในตัว Preview แล้ว (ATK 2,049 แบบ 5 ดาวหลายตัว · DEF 673 เท่า Gabi · HP 9,272 เท่า Flare) | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 12.18% · Assassin 1,078 · Ultimate Gauge 100% · Stamina 100 · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · ไม่มีบรรทัดธาตุ | Basic My First Friend Alfred (Physical · ตาราง 15 แถวจากสองจอ) · Effect Details Attention Overload | **Guidance of Earth ขึ้น \"Inactive\" บนจอบัญชีนี้** — ยังไม่ได้อ่าน | **2026-10-22 รอบสาม** Ultimate Anxiety Burst (1,315.1% · จอพิมพ์ \"causingAlien\" ติดกัน เก็บตามจอ) · Effect Details Earth Affliction · Passive Attention Overload (ชื่อซ้ำกับสถานะ · ลด DEF ศัตรู 10% 6 วินาทีเมื่อโจมตีด้วย Alien Power → effect debuff onHit + note) | Guidance of Earth Loner's Efforts: **ค่า Lv.12 = 22.6% จากป๊อปอัป Skill Info (Lv. 1 >> Lv. 12)** — จอหลักขึ้น \"Inactive\" Lv.1 = 16% · trigger เก็บได้ช่องเดียว ใส่ onSwitch แล้วเขียน Support Skill ไว้ใน note | **2026-10-22 รอบสี่** Switch Here I Come! (คำอธิบายหกท่อน Switch / Enhanced / Support / Enhanced Support · ตารางเจ็ดแถวจากสามจอ · \"2 time(s)\" → unit times) · Special Alfred Rush (476.1% · คูลดาวน์ 13.5 วินาที · \"DMG.The\" ไม่มีเว้นวรรคตามจอ) · \"in wide arc\" ตามจอ | **2026-10-22 รอบห้า** ปลุกพลังครบหกขั้น — บัญชีนี้ปลดขั้น 1–2 แล้ว (\"Awakening Complete\") ซึ่งไม่เพิ่มเลเวลสกิล ค่าสกิล Lv.12 จึงยังไม่มีโบนัส | effects: ขั้น 3 Basic +6% · ขั้น 5 Switch +6% (ไม่นับ Support / Tag-out → note) · ขั้นอื่นเก็บเป็นข้อความเพราะผูกกับร่างเสริมพลัง / Alien Power | ขั้น 4 \"by80%\" ไม่มีเว้นวรรคตามจอ · ปุ่ม Effects ของขั้น 2 / 6 คือ Attention Overload (ผู้เล่นยืนยัน 2026-10-22) — สถานะเดียวกับที่เก็บแล้ว ไม่ต้องเพิ่ม | ยังไม่ได้อ่าน: จอไทยทั้งหมด"
+  }
+}

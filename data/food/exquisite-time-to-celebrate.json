@@ -1,0 +1,58 @@
+{
+  "id": "exquisite-time-to-celebrate",
+  "name": {
+    "en": "Exquisite Time to Celebrate"
+  },
+  "category": "side",
+  "stars": 4,
+  "effects": [
+    {
+      "kind": "buff",
+      "stat": "def",
+      "value": 12.75,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "weaknessHit"
+      ],
+      "value": 25.5,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "captureProficiency",
+      "value": 1275,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "critDmg",
+      "value": 42.5,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
+  "durationSec": 1800,
+  "images": {
+    "icon": "exquisite-time-to-celebrate-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-22",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอ **Bag → Cooking** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | 4 ดาวบนการ์ด · Duration 30m · ผู้รับบัฟไม่ระบุบนจอ → target self (PLAN §13.11) | **\"Exquisite\" เป็นส่วนหนึ่งของชื่อจาน ไม่ใช่เวอร์ชันของจานอื่น** — ไม่มีจาน \"Time to Celebrate\" ในจอ Cooking ทั้ง 20 จาน · จานนี้ไม่อยู่ในจอ Cooking เลย (ได้มาทางอื่น ยังไม่รู้ว่าทางไหน) | หมวด side: จอกระเป๋าไม่บอกหมวด — ใช้ตามจอ Check Active Food ที่จานนี้อยู่ช่องจานเคียง และบัฟชุดเดียวกับจานเคียง (DEF · Elemental Weakness · Capture Proficiency · Crit DMG) ค่าสูงกว่าจานเคียง 4 ดาวในจอ Cooking | คำบรรยายใต้บัฟเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | ไอคอนตัดจากจอกระเป๋า"
+  }
+}

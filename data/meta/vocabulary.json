@@ -276,6 +276,14 @@
     "destroyerPower": {
       "en": "Destroyer"
     },
+    "captureProficiency": {
+      "th": "ระดับความชำนาญจับ",
+      "en": "Capture Proficiency"
+    },
+    "staminaConsumption": {
+      "th": "สเตมินาที่ใช้งาน",
+      "en": "Stamina Consumption"
+    },
     "roleMastery": {
       "th": "ความเชี่ยวชาญตามบทบาท"
     },
@@ -608,7 +616,7 @@
       "en": "Entree"
     },
     "side": {
-      "th": "จานเคียง",
+      "th": "จานรอง",
       "en": "Side"
     }
   },
