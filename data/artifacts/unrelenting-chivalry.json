@@ -1,6 +1,7 @@
 {
   "id": "unrelenting-chivalry",
   "name": {
+    "th": "อัศวินผู้ไม่ยอมจำนน",
     "en": "Unrelenting Chivalry"
   },
   "stars": 4,
@@ -23,9 +24,11 @@
       "artifactLevel": 60,
       "level": 5,
       "name": {
+        "th": "ความแน่วแน่อันมั่นคง คำสัญญาอันหนักแน่น V",
         "en": "Firm Resolve, Unwavering Vow V"
       },
       "desc": {
+        "th": "เมื่อตัวละคร [เดสทรอยเยอร์] ติดตั้ง จะได้รับเอฟเฟกต์ดังต่อไปนี้ / เมื่อบรรลุเงื่อนไขดังต่อไปนี้ในระหว่างต่อสู้ จะได้รับเอฟเฟกต์จิตวิญญาณแห่งอัศวิน (ทับซ้อนสูงสุด 3) / : ได้รับเมื่อใช้สกิลล่าถอย / : ได้รับเมื่อใช้สกิลสับเปลี่ยน / : ได้รับเมื่อใช้สกิลพิเศษ / : ได้รับทับซ้อน 3 เมื่อใช้สกิลอัลติเมต / จิตวิญญาณแห่งอัศวิน: เมื่อโจมตีพื้นฐาน จะใช้ทับซ้อนทั้งหมดเพื่อเพิ่มดาเมจธาตุสายฟ้า 6% ต่อทับซ้อน, เพิ่มดาเมจโจมตีพื้นฐาน 6% ต่อทับซ้อน (ทับซ้อนสูงสุด 3, เวลาแสดงผล 4 วินาที, เมื่อทับซ้อน เวลาแสดงผลจะถูกรีเฟรช) / เมื่อการต่อสู้สิ้นสุด ทับซ้อนทั้งหมดจะหายไป / รวมขั้น 5 : ทุกเดสทรอยเยอร์ 10 หน่วย จะได้รับเอฟเฟกต์เพิ่มพลังโจมตี 0.06% (สูงสุด 5%)",
         "en": "When equipped by a [Destroyer] character, grants the following effect. / Spirit of Chivalry is granted in the following situations. (Max Stacks: 3) / - Using a Tag-out Skill / - Using a Switch Skill / - Using a Special Skill / - Grants 3 stacks upon using an Ultimate Skill / Spirit of Chivalry: Upon using a Basic Attack, all stacks are consumed, Lightning DMG increases by 6%, and Basic Attack DMG increases by 6% per stack. (Max Stacks: 3, Duration: 4s, New stacks reset the duration). / All stacks are removed at the end of combat. / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Destroyer proficiency. (Max: 5%)"
       },
       "effects": [
@@ -74,8 +77,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **4 ดาว (ผู้เล่นบอก 2026-10-22 \"artifact 4 ดาวหมด\")** ตรงกับเพชร 4 เม็ดบนการ์ด · เลเวล 60 (Max) · Fusion Level 5 | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | ข้อความ Fusion อ่านสองจอต่อกัน | **\"per stack\" อยู่ท้ายประโยค จอไม่ชัดว่าครอบ Lightning DMG 6% ด้วยหรือไม่** — ใส่ maxStacks 3 ทั้งสองข้อตามรูปประโยค \"(Max Stacks: 3)\" ที่ครอบทั้งสถานะ | Fusion Level 5 (ATK ตามความชำนาญ Destroyer) เก็บเป็นข้อความ"
+    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **4 ดาว (ผู้เล่นบอก 2026-10-22 \"artifact 4 ดาวหมด\")** ตรงกับเพชร 4 เม็ดบนการ์ด · เลเวล 60 (Max) · Fusion Level 5 | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | ข้อความ Fusion อ่านสองจอต่อกัน | **\"per stack\" อยู่ท้ายประโยค จอไม่ชัดว่าครอบ Lightning DMG 6% ด้วยหรือไม่** — ใส่ maxStacks 3 ทั้งสองข้อตามรูปประโยค \"(Max Stacks: 3)\" ที่ครอบทั้งสถานะ | Fusion Level 5 (ATK ตามความชำนาญ Destroyer) เก็บเป็นข้อความ | **2026-10-24 จอพรีวิวอาร์ติแฟกต์ไทย** ชื่อ อัศวินผู้ไม่ยอมจำนน · เดสทรอยเยอร์ · ค่าสเตตัส Lv.60 ตรงจออังกฤษ (663 · พลังชีวิต 2,319) · รวมขั้น 5 ความแน่วแน่อันมั่นคง คำสัญญาอันหนักแน่น V (ชื่อขึ้นสองบรรทัด \"…อันหนัก\" / \"แน่น V\" ต่อกันไม่เว้นวรรค) · Spirit of Chivalry = จิตวิญญาณแห่งอัศวิน · รายการเงื่อนไขขึ้นต้นด้วย \": \" ตามจอ (อังกฤษ \"- \")"
   }
 }

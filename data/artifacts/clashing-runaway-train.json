@@ -1,6 +1,7 @@
 {
   "id": "clashing-runaway-train",
   "name": {
+    "th": "รถไฟมรณะคลั่ง",
     "en": "Clashing Runaway Train"
   },
   "stars": 5,
@@ -23,9 +24,11 @@
       "artifactLevel": 1,
       "level": 1,
       "name": {
+        "th": "ดับเครื่องชนจนกว่าจะสำเร็จ! I",
         "en": "Next Time's the Charm! I"
       },
       "desc": {
+        "th": "เมื่อตัวละคร [บรอว์เลอร์] ติดตั้ง จะได้รับเอฟเฟกต์ดังต่อไปนี้ / เมื่อใช้สกิลพิเศษหรือสกิลอัลติเมต จะเพิ่มดาเมจสกิลพิเศษธาตุลม 74.8% และจะเพิ่มดาเมจโจมตีพื้นฐานธาตุลม 49.8% (คูลดาวน์ 10 วินาที, เวลาแสดงผล 10 วินาที) / รวมขั้น 3 : ทุกบรอว์เลอร์ 10 หน่วย จะได้รับเอฟเฟกต์เพิ่มอัตราชาร์จสกิลอัลติเมต 0.06% (สูงสุด 15%) / รวมขั้น 5 : ทุกบรอว์เลอร์ 10 หน่วย จะได้รับเอฟเฟกต์เพิ่มพลังโจมตี 0.06% (สูงสุด 15%)",
         "en": "When equipped by a [Fighter] character, grants the following effect. / Using a Special Skill or an Ultimate Skill increases Wind Special Skill DMG by 74.8% and Wind Basic Attack DMG by 49.8%. (Cooldown: 10 sec, Duration: 10 sec) / Fusion Level 3: Gains 0.06% Ultimate Gauge Charge Boost for every 10 points of Fighter proficiency. (Max: 15%) / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Fighter proficiency. (Max: 15%)"
       },
       "effects": [
@@ -73,9 +76,11 @@
       "artifactLevel": 60,
       "level": 5,
       "name": {
+        "th": "ดับเครื่องชนจนกว่าจะสำเร็จ! V",
         "en": "Next Time's the Charm! V"
       },
       "desc": {
+        "th": "เมื่อตัวละคร [บรอว์เลอร์] ติดตั้ง จะได้รับเอฟเฟกต์ดังต่อไปนี้ / เมื่อใช้สกิลพิเศษหรือสกิลอัลติเมต จะเพิ่มดาเมจสกิลพิเศษธาตุลม 149.6% และจะเพิ่มดาเมจโจมตีพื้นฐานธาตุลม 99.6% (คูลดาวน์ 10 วินาที, เวลาแสดงผล 10 วินาที) / รวมขั้น 3 : ทุกบรอว์เลอร์ 10 หน่วย จะได้รับเอฟเฟกต์เพิ่มอัตราชาร์จสกิลอัลติเมต 0.06% (สูงสุด 15%) / รวมขั้น 5 : ทุกบรอว์เลอร์ 10 หน่วย จะได้รับเอฟเฟกต์เพิ่มพลังโจมตี 0.06% (สูงสุด 15%)",
         "en": "When equipped by a [Fighter] character, grants the following effect. / Using a Special Skill or an Ultimate Skill increases Wind Special Skill DMG by 149.6% and Wind Basic Attack DMG by 99.6%. (Cooldown: 10 sec, Duration: 10 sec) / Fusion Level 3: Gains 0.06% Ultimate Gauge Charge Boost for every 10 points of Fighter proficiency. (Max: 15%) / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Fighter proficiency. (Max: 15%)"
       },
       "effects": [
@@ -125,9 +130,10 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **5 ดาว (ผู้เล่นบอก 2026-10-22)** ตรงกับเพชร 5 เม็ดบนการ์ดสีส้ม | สองจอ: ปุ่ม Max → การ์ด Lv.01 (0/123) กล่อง Fusion Level 1 · ปุ่ม Min → การ์ด Lv.60 Max | ค่าสเตตัสเป็นของจอ Lv.60 — จอ Lv.01 ไม่เห็นแถบค่าสเตตัส | **จอ Lv.60 = Fusion Level 5 (ผู้เล่นบอก 2026-10-22: \"Fusion 1 ให้เก็บเวล 1 กับ 5\")** · **ยืนยันจากจอแล้ว 2026-10-22** (ส่งจอ Lv.60 ที่เลื่อนขึ้นบนสุดมา หัวกล่องเขียน \"Fusion Level 5\" และชื่อ \"Next Time's the Charm! V\") | บรรทัด Fusion Level 3 / 5 (ตามความชำนาญ สูงสุด 15% — 4 ดาวคือ 5%) เป็นสีเทาที่ Fusion 1 เก็บเป็นข้อความ | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | trigger เก็บได้ช่องเดียว ใส่ onSpecialSkill แล้วเขียน Ultimate ไว้ใน note | ไอคอนตัดจากจอ Lv.60 รอบหลัง | ค่าสเตตัสเก็บที่ Lv.60 เท่านั้น (ผู้เล่นกำหนด 2026-10-22)"
+    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **5 ดาว (ผู้เล่นบอก 2026-10-22)** ตรงกับเพชร 5 เม็ดบนการ์ดสีส้ม | สองจอ: ปุ่ม Max → การ์ด Lv.01 (0/123) กล่อง Fusion Level 1 · ปุ่ม Min → การ์ด Lv.60 Max | ค่าสเตตัสเป็นของจอ Lv.60 — จอ Lv.01 ไม่เห็นแถบค่าสเตตัส | **จอ Lv.60 = Fusion Level 5 (ผู้เล่นบอก 2026-10-22: \"Fusion 1 ให้เก็บเวล 1 กับ 5\")** · **ยืนยันจากจอแล้ว 2026-10-22** (ส่งจอ Lv.60 ที่เลื่อนขึ้นบนสุดมา หัวกล่องเขียน \"Fusion Level 5\" และชื่อ \"Next Time's the Charm! V\") | บรรทัด Fusion Level 3 / 5 (ตามความชำนาญ สูงสุด 15% — 4 ดาวคือ 5%) เป็นสีเทาที่ Fusion 1 เก็บเป็นข้อความ | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | trigger เก็บได้ช่องเดียว ใส่ onSpecialSkill แล้วเขียน Ultimate ไว้ใน note | ไอคอนตัดจากจอ Lv.60 รอบหลัง | ค่าสเตตัสเก็บที่ Lv.60 เท่านั้น (ผู้เล่นกำหนด 2026-10-22) | **2026-10-24 จอพรีวิวอาร์ติแฟกต์ไทย** ชื่อ รถไฟมรณะคลั่ง · บรอว์เลอร์ · ค่าสเตตัส Lv.60 ตรงจออังกฤษ (883 · ดาเมจคริติคอล 45%) · รวมขั้น 1 / 5 ดับเครื่องชนจนกว่าจะสำเร็จ! I / V"
   },
   "images": {
     "icon": "clashing-runaway-train-icon.webp"

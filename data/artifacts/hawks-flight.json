@@ -1,6 +1,7 @@
 {
   "id": "hawks-flight",
   "name": {
+    "th": "การพุ่งทะยานของเหยี่ยว",
     "en": "Hawk's Flight"
   },
   "stars": 4,
@@ -23,9 +24,11 @@
       "artifactLevel": 60,
       "level": 5,
       "name": {
+        "th": "กรงนกภวังค์ร้ายประดิษฐ์ V",
         "en": "Cage of Nightmares V"
       },
       "desc": {
+        "th": "เมื่อตัวละคร [สเลเยอร์] ติดตั้ง จะได้รับเอฟเฟกต์ดังต่อไปนี้ / เมื่อใช้สกิลพิเศษ จะได้รับเอฟเฟกต์ภวังค์ร้าย / ภวังค์ร้าย: เมื่อได้รับ จะเพิ่มดาเมจธาตุสายฟ้า 6% และเมื่อใช้สกิลสนับสนุนหรือสกิลล่าถอย จะเพิ่มดาเมจธาตุสายฟ้าเพิ่มขึ้นอีก 6% (ทับซ้อนสูงสุด 3, เวลาแสดงผล 20 วินาที) / เมื่อทับซ้อนสูงสุด 3 ภายในเวลาแสดงผลเอฟเฟกต์ จะได้รับเอฟเฟกต์คลื่นพลังเพิ่มเติม / คลื่นพลัง: เพิ่มปริมาณดาเมจสกิลพิเศษ 20% และเมื่อใช้สกิลพิเศษ เอฟเฟกต์คลื่นพลังจะถูกลบ (เวลาแสดงผล 15 วินาที) / รวมขั้น 5 : ทุกสเลเยอร์ 10 หน่วย จะได้รับเอฟเฟกต์เพิ่มพลังโจมตี 0.06% (สูงสุด 5%)",
         "en": "When equipped by an [Assassin] character, grants the following effect. / Using a Special Skill grants Nightmare. / Nightmare: Upon gaining Nightmare, Lightning DMG increases by 6%. Upon using a Support Skill or Tag-out Skill, Lightning DMG increases by an additional 6%. (Max Stacks: 3, Duration: 20s) / If the max of 3 Nightmare stacks is reached during the effect's duration, it grants Pulse. / Pulse: Special Skill DMG increases by 20%. Using a Special Skill will remove Pulse. (Duration: 15s) / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Assassin proficiency. (Max: 5%)"
       },
       "effects": [
@@ -89,8 +92,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **4 ดาว (ผู้เล่นบอก 2026-10-22 \"artifact 4 ดาวหมด\")** ตรงกับเพชร 4 เม็ดบนการ์ด · เลเวล 60 (Max) · Fusion Level 5 | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | ข้อความ Fusion อ่านสองจอต่อกัน | Nightmare: Special Skill ให้ 1 ชั้น และ Support/Tag-out ให้เพิ่มอีก 6% (trigger เก็บได้ช่องเดียว ใส่ onSupportSkill แล้วเขียน Tag-out ไว้ใน note) · จอไม่บอกว่า Support/Tag-out นับเป็นชั้นเดียวกันหรือไม่ | Pulse ได้เมื่อ Nightmare ครบ 3 ชั้น ไม่มี trigger ตรง ๆ จึงใส่ passive + note | Fusion Level 5 (ATK ตามความชำนาญ Assassin) เก็บเป็นข้อความ"
+    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **4 ดาว (ผู้เล่นบอก 2026-10-22 \"artifact 4 ดาวหมด\")** ตรงกับเพชร 4 เม็ดบนการ์ด · เลเวล 60 (Max) · Fusion Level 5 | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | ข้อความ Fusion อ่านสองจอต่อกัน | Nightmare: Special Skill ให้ 1 ชั้น และ Support/Tag-out ให้เพิ่มอีก 6% (trigger เก็บได้ช่องเดียว ใส่ onSupportSkill แล้วเขียน Tag-out ไว้ใน note) · จอไม่บอกว่า Support/Tag-out นับเป็นชั้นเดียวกันหรือไม่ | Pulse ได้เมื่อ Nightmare ครบ 3 ชั้น ไม่มี trigger ตรง ๆ จึงใส่ passive + note | Fusion Level 5 (ATK ตามความชำนาญ Assassin) เก็บเป็นข้อความ | **2026-10-24 จอพรีวิวอาร์ติแฟกต์ไทย** ชื่อ การพุ่งทะยานของเหยี่ยว · สเลเยอร์ · ค่าสเตตัส Lv.60 ตรงจออังกฤษ (663 · พลังโจมตี 20.25%) · รวมขั้น 5 กรงนกภวังค์ร้ายประดิษฐ์ V · Nightmare = ภวังค์ร้าย · Pulse = คลื่นพลัง · บรรทัด \"เมื่อทับซ้อนสูงสุด 3…\" บนจอไทยต่อใต้ย่อหน้าภวังค์ร้ายโดยไม่มีบรรทัดว่าง — แยกเป็นท่อนให้ตรงอังกฤษ"
   }
 }

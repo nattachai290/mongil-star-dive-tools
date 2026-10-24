@@ -1,6 +1,7 @@
 {
   "id": "fall-from-grace",
   "name": {
+    "th": "สูงศักดิ์ผู้ตกต่ำ",
     "en": "Fall from Grace"
   },
   "stars": 4,
@@ -23,9 +24,11 @@
       "artifactLevel": 60,
       "level": 5,
       "name": {
+        "th": "ตราบจนสิ้นความชั่วทั้งปวง V",
         "en": "Until All Evil is Slain V"
       },
       "desc": {
+        "th": "เมื่อตัวละคร [สเลเยอร์] ติดตั้ง จะได้รับเอฟเฟกต์ดังต่อไปนี้ / เมื่อตัวละครที่ติดตั้งเป็นประเภทระยะไกล จะเพิ่มพลังโจมตี 7% / เมื่อใช้สกิลพิเศษ จะเพิ่มดาเมจสกิลสนับสนุน 14% และจะเพิ่มปริมาณดาเมจโจมตีพื้นฐาน 14% (เวลาแสดงผล 10 วินาที) / รวมขั้น 5 : ทุกสเลเยอร์ 10 หน่วย จะได้รับเอฟเฟกต์เพิ่มพลังโจมตี 0.06% (สูงสุด 5%)",
         "en": "When equipped by an [Assassin] character, grants the following effect. / ATK increases by 7% if the equipping character is a Ranged type. / Using a Special Skill increases Support Skill DMG by 14% and Basic Attack DMG by 14%. (Duration: 10s) / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Assassin proficiency. (Max: 5%)"
       },
       "effects": [
@@ -74,8 +77,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **4 ดาว (ผู้เล่นบอก 2026-10-22 \"artifact 4 ดาวหมด\")** ตรงกับเพชร 4 เม็ดบนการ์ด · เลเวล 60 (Max) · Fusion Level 5 | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | ATK 20.25% บรรทัดสองเหมือน Shadow Lotus | Fusion Level 5 (ATK ตามความชำนาญ Assassin) เก็บเป็นข้อความ"
+    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **4 ดาว (ผู้เล่นบอก 2026-10-22 \"artifact 4 ดาวหมด\")** ตรงกับเพชร 4 เม็ดบนการ์ด · เลเวล 60 (Max) · Fusion Level 5 | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | ATK 20.25% บรรทัดสองเหมือน Shadow Lotus | Fusion Level 5 (ATK ตามความชำนาญ Assassin) เก็บเป็นข้อความ | **2026-10-24 จอพรีวิวอาร์ติแฟกต์ไทย** ชื่อ สูงศักดิ์ผู้ตกต่ำ · สเลเยอร์ · ค่าสเตตัส Lv.60 ตรงจออังกฤษ (663 · พลังโจมตี 20.25%) · รวมขั้น 5 ตราบจนสิ้นความชั่วทั้งปวง V"
   }
 }
