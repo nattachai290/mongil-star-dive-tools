@@ -3,11 +3,12 @@ import {
   EQUIPMENT,
   EQUIPMENT_SETS,
   FOOD,
+  GEAR_MAIN_STATS,
   MONSTERLINGS,
   TRAIT_POOL,
   characterById,
 } from "./data";
-import { computeDamage, type DamageInput } from "./formula";
+import { computeDamage, proficiencyToPercent, type DamageInput } from "./formula";
 import type { Effect, LocalizedText } from "./schema/common";
 import type { BuildLoadout, BuildMember, Character } from "./schema/entities";
 
@@ -18,7 +19,7 @@ import type { BuildLoadout, BuildMember, Character } from "./schema/entities";
  * สมมติฐานที่ตั้งเอง (ต้องแสดงคู่กับตัวเลขเสมอ — ดู TEAM_ASSUMPTIONS):
  * - บัฟทุกตัวทำงานตลอดรอบ ไม่ว่าจะมีเงื่อนไขหรือเวลาแสดงผล
  * - ศัตรูเป็นบอส ไม่ได้ตีจุดอ่อน ไม่ได้หมดฤทธิ์ และไม่หักป้องกัน (ยังไม่มีข้อมูลศัตรู)
- * - ไม่นับค่าหลัก/ค่ารองของอุปกรณ์ เพราะบิ้วยังไม่เก็บ
+ * - ค่าหลักของอุปกรณ์คิดที่เลเวลสูงสุด · ค่ารองยังไม่นับ เพราะสุ่มและบิ้วยังไม่เก็บ
  */
 
 export const CYCLE_SKILLS = ["basic", "switch", "special", "ultimate"] as const;
@@ -47,7 +48,8 @@ export type TeamDamage = { members: MemberDamage[]; total: number };
 export const TEAM_ASSUMPTIONS = [
   "บัฟทุกตัวทำงานตลอดรอบ (ไม่คิดเงื่อนไขและเวลาแสดงผล)",
   "ศัตรูเป็นบอส · ไม่ตีจุดอ่อน · ไม่หมดฤทธิ์ · ไม่หักป้องกัน",
-  "ยังไม่นับค่าหลักและค่ารองของอุปกรณ์",
+  "ค่าหลักของอุปกรณ์คิดที่เลเวลสูงสุด · ยังไม่นับค่ารอง (สุ่ม)",
+  "ความชำนาญบทบาทคิดเป็นดาเมจเฉพาะบรอว์เลอร์ (ดาเมจปะทะ) — บทบาทอื่นสูตรยังไม่มี",
   "ยังไม่นับดาเมจต่อเนื่อง ดาเมจลิงก์เชน และสกิลสนับสนุน",
 ];
 
@@ -87,7 +89,11 @@ function memberEffects(mem: BuildMember, char: Character, awaken: number): Effec
   const counts = new Map<string, number>();
   for (const id of Object.values(mem.equipment)) {
     const piece = EQUIPMENT.find((e) => e.id === id);
-    if (piece?.setId) counts.set(piece.setId, (counts.get(piece.setId) ?? 0) + 1);
+    if (!piece) continue;
+    if (piece.setId) counts.set(piece.setId, (counts.get(piece.setId) ?? 0) + 1);
+    // ค่าหลักไม่สุ่ม ผูกกับช่อง + ระดับ (meta/gear-main-stats.json) — คิดที่เลเวลสูงสุด
+    const main = GEAR_MAIN_STATS.find((g) => g.slot === piece.slot && g.grade === piece.grade && g.stars === piece.stars);
+    if (main) out.push(asEffect(main.stat, main.atMaxLevel, "flat"));
   }
   for (const [setId, n] of counts) {
     const set = EQUIPMENT_SETS.find((s) => s.id === setId);
@@ -175,6 +181,10 @@ function inputsFor(
         break;
       case "brawlDmg":
         if (char.role === "fighter") inp.brawlDmg = (inp.brawlDmg ?? 0) + v;
+        break;
+      case "roleMastery":
+        // ความชำนาญบทบาทจากรองเท้า → % ดาเมจบทบาท · สูตรมีแค่ดาเมจปะทะของบรอว์เลอร์
+        if (char.role === "fighter") inp.brawlDmg = (inp.brawlDmg ?? 0) + proficiencyToPercent(v);
         break;
       case "dmgDealt":
         if (e.damageType) inp.elementalDmg! += v;

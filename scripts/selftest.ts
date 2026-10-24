@@ -122,6 +122,18 @@ console.log("\nดาเมจรวมทั้งทีม");
     members: [{ characterId: "gabi", equipment: {}, monsterlings: [] }],
   });
   check("อาหารเพิ่ม ATK แล้วดาเมจขึ้น", withFood.total > solo.total);
+  const withGloves = teamDamage({
+    awaken: 0,
+    food: {},
+    members: [{ characterId: "gabi", equipment: { gloves: "avengers-gauntlet" }, monsterlings: [] }],
+  });
+  check("ค่าหลักถุงมือ (ATK) ถูกนับ", withGloves.total > solo.total);
+  const withBoots = teamDamage({
+    awaken: 0,
+    food: {},
+    members: [{ characterId: "gabi", equipment: { footwear: "breeze-walkers" }, monsterlings: [] }],
+  });
+  check("ความชำนาญจากรองเท้าเพิ่มดาเมจปะทะของบรอว์เลอร์", withBoots.total > solo.total);
 }
 
 // ---------- ชนิดดาเมจอยู่ที่ท่า ไม่ใช่ที่ตัวละคร ----------
