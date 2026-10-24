@@ -77,9 +77,11 @@
     {
       "stage": 2,
       "name": {
+        "th": "ไร้ร่องรอย",
         "en": "Secretly"
       },
       "desc": {
+        "th": "เมื่อใช้สกิลสับเปลี่ยน จะเพิ่มอัตราคริติคอลของตนเอง 20% นาน 8 วินาที",
         "en": "Using Yeonhwa's Switch Skill increases her Crit Rate by 20% for 8s."
       },
       "effects": [
@@ -97,9 +99,11 @@
     {
       "stage": 3,
       "name": {
+        "th": "อันธการคืบคลาน",
         "en": "Seeping Darkness"
       },
       "desc": {
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจสกิลสับเปลี่ยน 6% (ยกเว้นสกิลสนับสนุนและสกิลล่าถอย)",
         "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Switch Skill DMG by 6%. (Support Skill and Tag-out Skill excluded)"
       },
       "effects": [
@@ -120,9 +124,11 @@
     {
       "stage": 4,
       "name": {
+        "th": "เริ่มอำพรางตัว",
         "en": "Commence Operation"
       },
       "desc": {
+        "th": "เมื่อเคลื่อนที่ไปยังตำแหน่งเงา เงาจะไม่ถูกลบ และจะเพิ่มดาเมจของการโจมตีครั้งถัดไปของตนเอง 50% เมื่อใช้โจมตีพื้นฐาน สกิลพิเศษ สกิลอัลติเมต สกิลสับเปลี่ยนหรือสกิลสนับสนุน จะปรับใช้เอฟเฟกต์ดังกล่าว 1 ครั้งและจะถูกลบ",
         "en": "Moving to a Shadow's location does not destroy it, and Yeonhwa's next attack's DMG increases by 50%. This effect applies 1 time(s) upon using her Basic Attack, Special Skill, Ultimate Skill, Switch Skill, or Support Skill, then is removed."
       },
       "effects": []
@@ -130,9 +136,11 @@
     {
       "stage": 5,
       "name": {
+        "th": "คมดาบที่หล่อหลอมจากเงา",
         "en": "Blade Forged of Shadow"
       },
       "desc": {
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจสกิลสนับสนุน 6%",
         "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Support Skill DMG by 6%."
       },
       "effects": [
@@ -150,9 +158,11 @@
     {
       "stage": 6,
       "name": {
+        "th": "เงามืดเบ่งบาน",
         "en": "Blossoming Shadow"
       },
       "desc": {
+        "th": "เมื่อใช้สกิลอัลติเมต หากเงาถูกสร้างขึ้นและคงอยู่ เงาจะเคลื่อนที่มายังตำแหน่งของตนเอง และเลียนแบบการกระทำ สร้างดาเมจธาตุสายฟ้าเท่ากับ 50% ของดาเมจสกิลอัลติเมต และหลังจากเลียนแบบการกระทำ เงาจะหายไป",
         "en": "If Yeonhwa's Ultimate Skill is used while a Shadow is on the field, the Shadow can be moved to Yeonhwa's location and copy her moves, dealing Lightning DMG equal to 50% of her Ultimate DMG. Shadows that copy her actions disappear."
       },
       "effects": []
@@ -1006,6 +1016,6 @@
       "en",
       "th"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Assassin · Lightning · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลักจากจอ Info: ATK 1,908 · DEF 598 · HP 8,389 · Crit 5% / 50% — **เท่ากับ Reina ทุกตัว** (Lightning Melee 4 ดาวเหมือนกัน แต่คนละบทบาท) อ่านจากจอตรง ๆ ไม่ได้คัดลอก | รูป portrait ตัดจากจอ Info 340x340 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 11.59% · Assassin 1,026 · Elemental Weakness 125% · gauge 100% · stamina 100 (แบบ Assassin 4 ดาวเดียวกับ Angel) | Basic Bloody Bamboo (ดาเมจกายภาพ) · Ultimate Storm Call (สายฟ้า · Lightning Bolt 1,064.8%) · Passive Wraith (Lv.1) · Guidance of Lightning: Slay (Lv.12 ATK +11.9% 15s · ไม่ระบุเป้าหมาย เก็บเป็นข้อความ) · Lightning Affliction | passive: ประโยคแรกเคยถูกตัดหัว — จอที่เลื่อนขึ้นบนสุด 2026-10-22 ได้ประโยคเต็ม **\"Yeonhwa's Crit DMG increases by a portion of her Lightning DMG Boost, but it doesn't increase above a set maximum.\"** ยืนยันว่าแปลง Lightning DMG Boost (อัตรา 150%) เป็น Crit DMG สูงสุด 50% ตามที่คาดไว้ · effects ยังว่าง เพราะโครง effect ยังเก็บการแปลงค่าจาก stat อื่นไม่ได้ (แบบเดียวกับ passive ของวิเวียน) | **2026-10-22 รอบสาม** Switch Seized Opportunity (ครบหกบรรทัดจากจอที่เลื่อนลง) · Special Thunder Chain Slash · ปลุกพลังครบหกขั้น — **ครบทั้งหกช่องสกิลแล้ว** | switch: ประโยคแรกเคยถูกตัดหัว — จอที่เลื่อนขึ้นบนสุด 2026-10-22 ได้ประโยคเต็มแล้ว (\"Yeonhwa quickly approaches the enemy and delivers...\") | ปลุกพลัง: effects เติมขั้น 2 (ใช้สกิลสับเปลี่ยน → อัตราคริติคอลตัวเอง +20% 8 วินาที · onSwitch ตามคำ \"Using ... Switch Skill\" เป้าหมายชัดว่า \"her\") · ขั้น 3 (ดาเมจสกิลสับเปลี่ยน +6% ไม่รวมสกิลสนับสนุน/Tag-out — scopes switchSkill ซึ่งหมายถึงตัวสกิลสับเปลี่ยนอยู่แล้ว) · ขั้น 5 (ดาเมจสกิลสนับสนุน +6%) · ขั้น 1 (ลดพลังป้องกันเป้าหมายเดียว 25% เมื่อสกิลสนับสนุนโดน) เก็บเป็นข้อความ เพราะยังไม่มีตัวกระตุ้นฝั่ง \"สกิลสนับสนุนโดน\" | **2026-10-24 จอไทย (พรีวิวตัวละคร)** ชื่อ ยอนฮวา · สเลเยอร์ (= Assassin) · สายฟ้า ระยะใกล้ · 4 ดาว · ค่าพลังห้าค่าตรงจออังกฤษ · โจมตีพื้นฐาน คมไผ่โลหิต · สกิลสับเปลี่ยน ชั่วพริบตา · การชี้นำแห่งสายฟ้า สังหารให้สิ้นซาก (11.9% ตรง · condition.note ไทยเอาท่อนแรกของประโยคบนจอ) — ค่า Lv.12 ตรงทุกแถว · Shadow = เงา | **2026-10-24 จอไทยรอบสอง** สกิลพิเศษ คมวายุโหม (Swift Slash = พุ่งฟัน) · สกิลอัลติเมต จุติ (คำอธิบายเรียกสถานะว่า \"อสนีบาต\" แต่หัวตารางเขียน \"เวลาแสดงผลฟ้าผ่า\" — เก็บตามจอทั้งคู่) · แพสซีฟ ปีศาจทมิฬ (ท่อนเงาจอไทยเขียน \"เมื่อสนับสนุนของยอนฮวาทำงาน\" ไม่มีคำว่าสกิล เก็บตามจอ) · ปลุกพลังขั้น 1 เงาที่แสวงหาหนทาง · สถานะ เอฟเฟกต์อ่อนแอต่อสายฟ้า — ค่าตรงทุกแถว | ยังไม่ได้อ่าน (ไทย): ปลุกพลัง 2–6 | **สกิลธาตุเติม effect แล้ว** (ผู้เล่นกำหนด 2026-10-22: \"ถ้าไม่บอกว่าใครก็คือตัวเอง\" — ข้อความที่ไม่ระบุผู้รับบัฟ ให้ target self) · ตัวกระตุ้นจริงคือ \"สร้าง Shadow ด้วยสกิลสนับสนุน\" (Shadow เกิดได้ 40%) เก็บเป็น onSupportSkill + condition.note ตามข้อความเกม"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Assassin · Lightning · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลักจากจอ Info: ATK 1,908 · DEF 598 · HP 8,389 · Crit 5% / 50% — **เท่ากับ Reina ทุกตัว** (Lightning Melee 4 ดาวเหมือนกัน แต่คนละบทบาท) อ่านจากจอตรง ๆ ไม่ได้คัดลอก | รูป portrait ตัดจากจอ Info 340x340 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 11.59% · Assassin 1,026 · Elemental Weakness 125% · gauge 100% · stamina 100 (แบบ Assassin 4 ดาวเดียวกับ Angel) | Basic Bloody Bamboo (ดาเมจกายภาพ) · Ultimate Storm Call (สายฟ้า · Lightning Bolt 1,064.8%) · Passive Wraith (Lv.1) · Guidance of Lightning: Slay (Lv.12 ATK +11.9% 15s · ไม่ระบุเป้าหมาย เก็บเป็นข้อความ) · Lightning Affliction | passive: ประโยคแรกเคยถูกตัดหัว — จอที่เลื่อนขึ้นบนสุด 2026-10-22 ได้ประโยคเต็ม **\"Yeonhwa's Crit DMG increases by a portion of her Lightning DMG Boost, but it doesn't increase above a set maximum.\"** ยืนยันว่าแปลง Lightning DMG Boost (อัตรา 150%) เป็น Crit DMG สูงสุด 50% ตามที่คาดไว้ · effects ยังว่าง เพราะโครง effect ยังเก็บการแปลงค่าจาก stat อื่นไม่ได้ (แบบเดียวกับ passive ของวิเวียน) | **2026-10-22 รอบสาม** Switch Seized Opportunity (ครบหกบรรทัดจากจอที่เลื่อนลง) · Special Thunder Chain Slash · ปลุกพลังครบหกขั้น — **ครบทั้งหกช่องสกิลแล้ว** | switch: ประโยคแรกเคยถูกตัดหัว — จอที่เลื่อนขึ้นบนสุด 2026-10-22 ได้ประโยคเต็มแล้ว (\"Yeonhwa quickly approaches the enemy and delivers...\") | ปลุกพลัง: effects เติมขั้น 2 (ใช้สกิลสับเปลี่ยน → อัตราคริติคอลตัวเอง +20% 8 วินาที · onSwitch ตามคำ \"Using ... Switch Skill\" เป้าหมายชัดว่า \"her\") · ขั้น 3 (ดาเมจสกิลสับเปลี่ยน +6% ไม่รวมสกิลสนับสนุน/Tag-out — scopes switchSkill ซึ่งหมายถึงตัวสกิลสับเปลี่ยนอยู่แล้ว) · ขั้น 5 (ดาเมจสกิลสนับสนุน +6%) · ขั้น 1 (ลดพลังป้องกันเป้าหมายเดียว 25% เมื่อสกิลสนับสนุนโดน) เก็บเป็นข้อความ เพราะยังไม่มีตัวกระตุ้นฝั่ง \"สกิลสนับสนุนโดน\" | **2026-10-24 จอไทย (พรีวิวตัวละคร)** ชื่อ ยอนฮวา · สเลเยอร์ (= Assassin) · สายฟ้า ระยะใกล้ · 4 ดาว · ค่าพลังห้าค่าตรงจออังกฤษ · โจมตีพื้นฐาน คมไผ่โลหิต · สกิลสับเปลี่ยน ชั่วพริบตา · การชี้นำแห่งสายฟ้า สังหารให้สิ้นซาก (11.9% ตรง · condition.note ไทยเอาท่อนแรกของประโยคบนจอ) — ค่า Lv.12 ตรงทุกแถว · Shadow = เงา | **2026-10-24 จอไทยรอบสอง** สกิลพิเศษ คมวายุโหม (Swift Slash = พุ่งฟัน) · สกิลอัลติเมต จุติ (คำอธิบายเรียกสถานะว่า \"อสนีบาต\" แต่หัวตารางเขียน \"เวลาแสดงผลฟ้าผ่า\" — เก็บตามจอทั้งคู่) · แพสซีฟ ปีศาจทมิฬ (ท่อนเงาจอไทยเขียน \"เมื่อสนับสนุนของยอนฮวาทำงาน\" ไม่มีคำว่าสกิล เก็บตามจอ) · ปลุกพลังขั้น 1 เงาที่แสวงหาหนทาง · สถานะ เอฟเฟกต์อ่อนแอต่อสายฟ้า — ค่าตรงทุกแถว | **2026-10-24 จอไทยรอบสาม** ปลุกพลัง 2–6 ครบ | **ภาษาไทยของยอนฮวาครบแล้ว** | **สกิลธาตุเติม effect แล้ว** (ผู้เล่นกำหนด 2026-10-22: \"ถ้าไม่บอกว่าใครก็คือตัวเอง\" — ข้อความที่ไม่ระบุผู้รับบัฟ ให้ target self) · ตัวกระตุ้นจริงคือ \"สร้าง Shadow ด้วยสกิลสนับสนุน\" (Shadow เกิดได้ 40%) เก็บเป็น onSupportSkill + condition.note ตามข้อความเกม"
   }
 }
