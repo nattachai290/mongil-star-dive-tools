@@ -8,6 +8,7 @@ import {
   MONSTER_STAT_TIERS,
   TRAIT_POOL,
   characterById,
+  minSubstat,
 } from "./data";
 import { computeDamage, proficiencyToPercent, type DamageInput } from "./formula";
 import type { Effect, LocalizedText } from "./schema/common";
@@ -20,7 +21,7 @@ import type { BuildLoadout, BuildMember, Character } from "./schema/entities";
  * สมมติฐานที่ตั้งเอง (ต้องแสดงคู่กับตัวเลขเสมอ — ดู TEAM_ASSUMPTIONS):
  * - บัฟทุกตัวทำงานตลอดรอบ ไม่ว่าจะมีเงื่อนไขหรือเวลาแสดงผล
  * - ศัตรูเป็นบอส ไม่ได้ตีจุดอ่อน ไม่ได้หมดฤทธิ์ และไม่หักป้องกัน (ยังไม่มีข้อมูลศัตรู)
- * - ค่าหลักของอุปกรณ์คิดที่เลเวลสูงสุด · ค่ารองยังไม่นับ เพราะสุ่มและบิ้วยังไม่เก็บ
+ * - ค่าหลักของอุปกรณ์คิดที่เลเวลสูงสุด · ค่ารองใช้ค่าต่ำสุดของระดับชิ้น (บิ้วเก็บแค่ชนิด)
  */
 
 export const CYCLE_SKILLS = ["basic", "switch", "special", "ultimate"] as const;
@@ -49,7 +50,7 @@ export type TeamDamage = { members: MemberDamage[]; total: number };
 export const TEAM_ASSUMPTIONS = [
   "บัฟทุกตัวทำงานตลอดรอบ (ไม่คิดเงื่อนไขและเวลาแสดงผล)",
   "ศัตรูเป็นบอส · ไม่ตีจุดอ่อน · ไม่หมดฤทธิ์ · ไม่หักป้องกัน",
-  "ค่าหลักของอุปกรณ์คิดที่เลเวลสูงสุด · ยังไม่นับค่ารอง (สุ่ม)",
+  "ค่าหลักของอุปกรณ์คิดที่เลเวลสูงสุด · ค่ารองใช้ค่าต่ำสุด (เลเวล 1) ของระดับชิ้น",
   "ค่าพลังของมอน (ATK/DEF/HP) ตามชนิด บอส / ทั่วไป / ตำนาน · มอนทั่วไปบางตัวอนุมานจากการไม่มีลิงก์เชน",
   "ความชำนาญบทบาทคิดเป็นดาเมจเฉพาะบรอว์เลอร์ (ดาเมจปะทะ) — บทบาทอื่นสูตรยังไม่มี",
   "ยังไม่นับดาเมจต่อเนื่อง ดาเมจลิงก์เชน และสกิลสนับสนุน",
@@ -102,6 +103,15 @@ function memberEffects(mem: BuildMember, char: Character, awaken: number): Effec
     // ค่าหลักไม่สุ่ม ผูกกับช่อง + ระดับ (meta/gear-main-stats.json) — คิดที่เลเวลสูงสุด
     const main = GEAR_MAIN_STATS.find((g) => g.slot === piece.slot && g.grade === piece.grade && g.stars === piece.stars);
     if (main) out.push(asEffect(main.stat, main.atMaxLevel, "flat"));
+  }
+  // ค่ารอง ชิ้นละ 4 — ใช้ค่าต่ำสุดของระดับชิ้นนั้น (ผู้เล่นสั่ง) · ต้านทานธาตุไม่มีผลกับดาเมจ จึงข้าม
+  for (const [slot, keys] of Object.entries(mem.substats)) {
+    const piece = EQUIPMENT.find((e) => e.id === mem.equipment[slot as keyof typeof mem.equipment]);
+    if (!piece) continue;
+    for (const key of keys ?? []) {
+      const sub = minSubstat(key, piece.grade, piece.stars);
+      if (sub && sub.stat !== "res") out.push(asEffect(sub.stat, sub.min, sub.unit));
+    }
   }
   for (const [setId, n] of counts) {
     const set = EQUIPMENT_SETS.find((s) => s.id === setId);

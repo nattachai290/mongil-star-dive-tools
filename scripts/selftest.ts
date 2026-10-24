@@ -110,7 +110,7 @@ check("ความชำนาญ 1,078 = 12.18% ตรงกับจอเก
 // ---------- ดาเมจรวมทั้งทีม ----------
 console.log("\nดาเมจรวมทั้งทีม");
 {
-  const solo = teamDamage({ awaken: 0, food: {}, members: [{ characterId: "gabi", equipment: {}, monsterlings: [] }] });
+  const solo = teamDamage({ awaken: 0, food: {}, members: [{ characterId: "gabi", equipment: {}, substats: {}, monsterlings: [] }] });
   const basic = solo.members[0].skills.find((s) => s.skill === "basic");
   const labels = (basic?.rows ?? []).map((r) => r.label.en);
   check("นับโจมตีพื้นฐานครบชุด", labels.includes("1st Hit DMG") && labels.includes("4th Hit DMG"), labels.join(", "));
@@ -119,21 +119,26 @@ console.log("\nดาเมจรวมทั้งทีม");
   const withFood = teamDamage({
     awaken: 0,
     food: { entree: "green-cappy-forest-stew" },
-    members: [{ characterId: "gabi", equipment: {}, monsterlings: [] }],
+    members: [{ characterId: "gabi", equipment: {}, substats: {}, monsterlings: [] }],
   });
   check("อาหารเพิ่ม ATK แล้วดาเมจขึ้น", withFood.total > solo.total);
   const withGloves = teamDamage({
     awaken: 0,
     food: {},
-    members: [{ characterId: "gabi", equipment: { gloves: "avengers-gauntlet" }, monsterlings: [] }],
+    members: [{ characterId: "gabi", equipment: { gloves: "avengers-gauntlet" }, substats: {}, monsterlings: [] }],
   });
   check("ค่าหลักถุงมือ (ATK) ถูกนับ", withGloves.total > solo.total);
   const withBoots = teamDamage({
     awaken: 0,
     food: {},
-    members: [{ characterId: "gabi", equipment: { footwear: "breeze-walkers" }, monsterlings: [] }],
+    members: [{ characterId: "gabi", equipment: { footwear: "breeze-walkers" }, substats: {}, monsterlings: [] }],
   });
   check("ความชำนาญจากรองเท้าเพิ่มดาเมจปะทะของบรอว์เลอร์", withBoots.total > solo.total);
+  const withSubs = teamDamage({
+    awaken: 0, food: {},
+    members: [{ characterId: "gabi", equipment: { gloves: "avengers-gauntlet" }, substats: { gloves: ["critDmg", "atk"] }, monsterlings: [] }],
+  });
+  check("ค่ารองต่ำสุดถูกนับ (ดาเมจคริ + ATK)", withSubs.total > withGloves.total);
   // รองเท้า 2,775 แทนค่าพื้นฐาน 1,078 ไม่ได้บวก — ดาเมจปะทะเข้าสูตรเป็น 1 + 0.045 × (1 + ปะทะ%)
   const ratio = (1 + 0.045 * (1 + 2775 * 0.000113)) / (1 + 0.045 * (1 + 0.1218));
   check("ความชำนาญรองเท้าแทนค่าพื้นฐาน ไม่ได้บวก", Math.abs(withBoots.total / solo.total - ratio) < 1e-6,

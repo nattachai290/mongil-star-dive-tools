@@ -454,11 +454,19 @@ type MemberShape = {
   characterId: string;
   artifact?: string;
   equipment?: Record<string, string | undefined>;
+  substats?: Record<string, string[] | undefined>;
   monsterlings?: MonShape[];
   linkChain?: string;
   legendary?: MonShape;
 };
 type LoadoutShape = { awaken: number; food?: { entree?: string; side?: string }; members?: MemberShape[] };
+
+/** แถวตารางค่ารอง → คีย์ที่บิ้วใช้ ("critDmg", "res-fire") */
+const substatRows = (
+  (readJson(join(DATA, "meta", "gear-substats.json"), "data/meta/gear-substats.json") as
+    | { stat: string; damageType?: string; grade: string; stars: number }[]
+    | undefined) ?? []
+).map((r) => ({ key: r.damageType ? `${r.stat}-${r.damageType}` : r.stat, grade: r.grade, stars: r.stars }));
 
 const bookOf = (m: string) => (parsed.monsterlings?.[m]?.dex as { book?: string } | undefined)?.book;
 
@@ -500,6 +508,21 @@ for (const [id, doc] of Object.entries(parsed.builds ?? {})) {
         checkRefs(where, piece, "equipment", `${mt}.equipment.${slot}`);
         const eq = parsed.equipment?.[piece];
         if (eq && eq.slot !== slot) fail(where, `${mt}.equipment.${slot} = "${piece}" แต่ชิ้นนั้นเป็นช่อง ${eq.slot}`);
+      }
+
+      for (const [slot, keys] of Object.entries(mem.substats ?? {})) {
+        if (!keys?.length) continue;
+        const piece = mem.equipment?.[slot] ? parsed.equipment?.[mem.equipment[slot]!] : undefined;
+        if (!piece) {
+          fail(where, `${mt}.substats.${slot} มีค่ารอง แต่ช่อง ${slot} ยังไม่ได้ใส่อุปกรณ์`);
+          continue;
+        }
+        for (const key of keys) {
+          const known = substatRows.some(
+            (r) => r.key === key && r.grade === piece.grade && r.stars === piece.stars,
+          );
+          if (!known) fail(where, `${mt}.substats.${slot} มี "${key}" ซึ่งไม่มีในตารางค่ารองของ ${String(piece.grade)} ${String(piece.stars)} ดาว`);
+        }
       }
 
       const monSlots = mem.monsterlings ?? [];

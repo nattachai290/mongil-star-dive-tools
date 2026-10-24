@@ -495,6 +495,9 @@ const monSlot = z
   })
   .strict();
 
+/** ชนิดค่ารองของอุปกรณ์ — stat ใน gear-substats.json หรือ "res-<ธาตุ>" สำหรับต้านทาน */
+const substatKey = z.string().regex(/^[a-zA-Z]+(-[a-z]+)?$/);
+
 /** ของที่ตัวละคร 1 ตัวในทีมใส่ */
 export const buildMember = z.object({
   characterId: slug,
@@ -506,6 +509,20 @@ export const buildMember = z.object({
       chestpiece: slug.optional(),
       gloves: slug.optional(),
       footwear: slug.optional(),
+    })
+    .strict()
+    .default({}),
+  /**
+   * ค่ารองของแต่ละชิ้น — ชิ้นละ 4 อัน (รวมค่าหลักเป็น 5 · ผู้เล่นบอก 2026-10-24)
+   * เก็บแค่ชนิด เช่น "critDmg" หรือ "res-fire" · ค่าใช้ค่าต่ำสุดจาก meta/gear-substats.json ตามระดับของชิ้น
+   * (ผู้เล่นสั่ง "ให้เอา stat ต่ำสุด")
+   */
+  substats: z
+    .object({
+      headgear: z.array(substatKey).max(4).optional(),
+      chestpiece: z.array(substatKey).max(4).optional(),
+      gloves: z.array(substatKey).max(4).optional(),
+      footwear: z.array(substatKey).max(4).optional(),
     })
     .strict()
     .default({}),

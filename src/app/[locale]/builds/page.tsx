@@ -16,6 +16,7 @@ import {
   TRAIT_POOL,
   characterById,
   characterImage,
+  minSubstat,
   monsterlingImage,
 } from "@/lib/data";
 import { asset } from "@/lib/base-path";
@@ -237,10 +238,34 @@ function MemberGear({ mem, dup, locale, t }: { mem: BuildMember; dup: Set<string
           <ul className="space-y-1 text-sm">
             {SLOTS.map((slot) => {
               const piece = EQUIPMENT.find((e) => e.id === mem.equipment[slot]);
+              const subs = piece ? (mem.substats[slot] ?? []) : [];
               return (
                 <li key={slot} className="flex gap-2">
                   <span className="w-20 shrink-0 text-xs text-muted">{label("slot", slot, locale)}</span>
-                  <span>{piece ? name(piece.name, locale, piece.id) : t("builds.empty.slot")}</span>
+                  <span>
+                    {piece ? name(piece.name, locale, piece.id) : t("builds.empty.slot")}
+                    {subs.length > 0 && (
+                      <span className="mt-0.5 flex flex-wrap gap-1">
+                        {subs.map((key, i) => {
+                          const sub = minSubstat(key, piece!.grade, piece!.stars);
+                          const statName = sub?.damageType
+                            ? `${label("stat", sub.stat, locale)} ${label("damageType", sub.damageType, locale)}`
+                            : label("stat", sub?.stat ?? key, locale);
+                          return (
+                            <span key={i} className="rounded border border-line px-1.5 py-0.5 text-[11px] text-ink-2">
+                              {statName}
+                              {sub && (
+                                <span className="font-mono text-gold">
+                                  {" "}+{sub.min}
+                                  {sub.unit === "percent" ? "%" : ""}
+                                </span>
+                              )}
+                            </span>
+                          );
+                        })}
+                      </span>
+                    )}
+                  </span>
                 </li>
               );
             })}
