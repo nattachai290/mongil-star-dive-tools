@@ -1,6 +1,7 @@
 {
   "id": "daisy",
   "name": {
+    "th": "เดซี่",
     "en": "Daisy"
   },
   "rarity": 4,
@@ -148,9 +149,11 @@
   "skills": {
     "basic": {
       "name": {
+        "th": "โปรยเมล็ดพันธุ์",
         "en": "Go, Mr. Seeds!"
       },
       "desc": {
+        "th": "ขว้างเมล็ดพันธุ์ สร้างดาเมจธาตุดินแก่ศัตรู",
         "en": "Daisy deals Earth DMG by launching seeds at an enemy."
       },
       "damageType": "earth",
@@ -158,6 +161,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 1",
             "en": "1st Hit DMG"
           },
           "unit": "percent",
@@ -183,6 +187,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 2",
             "en": "2nd Hit DMG"
           },
           "unit": "percent",
@@ -208,6 +213,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 3",
             "en": "3rd Hit DMG"
           },
           "unit": "percent",
@@ -233,6 +239,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีฉับพลัน",
             "en": "Air Counter DMG"
           },
           "unit": "percent",
@@ -257,6 +264,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจหลบหลีกโต้กลับ",
             "en": "Evasion Counter DMG"
           },
           "unit": "percent",
@@ -530,9 +538,11 @@
     },
     "ultimate": {
       "name": {
+        "th": "คุณดอกไม้ ขอพลังหน่อย",
         "en": "Help Us, Mr. Flower!"
       },
       "desc": {
+        "th": "รวบรวมพลังคุณดอกไม้แล้วพ่นไปรอบตนเอง สร้างดาเมจธาตุดิน และมอบเอฟเฟกต์อ่อนแอต่อดินแก่ศัตรู พร้อมฟื้นฟูพลังชีวิตของสมาชิกทีมทั้งหมดตามสัดส่วนพลังชีวิตสูงสุดของเดซี่ / หากใช้สกิลอัลติเมตอีกครั้ง จะสร้างดาเมจธาตุดินแก่ศัตรูอีกครั้งด้วยพลังคุณดอกไม้และทำให้ศัตรูลอยขึ้นกลางอากาศ อีกทั้งฟื้นฟูพลังชีวิตของสมาชิกทีมทั้งหมดตามสัดส่วนพลังชีวิตสูงสุดของเดซี่ / หากกดปุ่มเคลื่อนที่ขณะใช้สกิล จะทำให้เคลื่อนที่ไปยังทิศทางดังกล่าวช้าลง",
         "en": "Daisy spreads the power of Mr. Flower in an area around her. This power deals Earth DMG, inflicts Earth Affliction on enemies, and restores all teammates' HP based on her Max HP. / Using her Ultimate skill again causes Daisy to call upon Mr. Flower's power once more to deal Earth DMG and knock enemies hit Airborne. All teammates' HP is restored based on Daisy's Max HP. / While this skill is active, Daisy moves at a reduced speed."
       },
       "damageType": "earth",
@@ -540,6 +550,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจต่อเนื่อง",
             "en": "DoT"
           },
           "unit": "percent",
@@ -565,6 +576,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจเพิ่มเติม",
             "en": "Bonus DMG"
           },
           "unit": "percent",
@@ -590,6 +602,7 @@
         },
         {
           "label": {
+            "th": "ปริมาณฟื้นฟูตามสัดส่วนพลังชีวิตสูงสุด",
             "en": "Max HP-Based Healing"
           },
           "unit": "percent",
@@ -614,6 +627,7 @@
         },
         {
           "label": {
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อดิน",
             "en": "Earth Affliction Duration"
           },
           "unit": "seconds",
@@ -641,9 +655,11 @@
     },
     "passive": {
       "name": {
+        "th": "คุณดอกไม้ ช่วยด้วย",
         "en": "Mr. Flower's Aid"
       },
       "desc": {
+        "th": "เพิ่มต้านทานธาตุดินให้กับสมาชิกทีมทั้งหมด",
         "en": "Increases all teammates' Earth RES."
       },
       "effects": [
@@ -660,6 +676,7 @@
       "values": [
         {
           "label": {
+            "th": "เพิ่มต้านทานธาตุดิน",
             "en": "Earth RES Boost"
           },
           "unit": "percent",
@@ -738,8 +755,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Support · **Earth** (ธาตุที่ห้า — ครบห้าธาตุรบแล้ว) · Ranged · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลักจากจอ Info: ATK 1,678 (เท่ากับ Bonnie ซึ่งเป็น Support 4 ดาวเหมือนกัน) · DEF 609 · HP 9,272 · Crit 5% / 50% | รูป portrait ตัดจากจอ Info 360x360 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 11.59% · Support 1,026 · Elemental Weakness 125% · gauge 100% · stamina 100 และ **Earth RES 10%** — บรรทัดต้านทานธาตุบนจอค่าพลังตัวละคร เห็นครั้งแรก เก็บเป็น stat res + damageType earth | Basic Go, Mr. Seeds! · Ultimate Help Us, Mr. Flower! (Lv.12) · Effect Details ของ Earth Affliction | ultimate: Max HP-Based Healing ไม่ใส่ line เพราะท่อน 1 และ 2 ต่างพูดถึงการฮีล · **DoT กับ Bonus DMG เป็น 586.2% เท่ากันพอดี** อ่านจากจอซ้ำสองจอแล้ว | **Earth Affliction ต่างจากอีกสี่ธาตุ: ลดต้านทาน \"ทั้งดินและกายภาพ\" 15%** (\"Earth and Physical RES decrease by 15%\") ส่วนธาตุอื่นลดแค่ธาตุตัวเอง | **2026-10-22 รอบสาม** Switch Fly, Flowers! · Special This Is My Flower Garden! (Lv.12) · Passive Mr. Flower's Aid (Lv.1) · Guidance of Earth: Fresh Flowers (Lv.12) · ปลุกพลังครบหกขั้น — **ครบทั้งหกช่องสกิลแล้ว** | special ไม่ใส่ damageType — จอไม่ได้เขียนว่าสร้างดาเมจ (มีแต่ฮีล · ลดความเร็ว · Earth Affliction) | **passive ใส่ effect ได้ครบ**: Earth RES +10% ให้ทั้งทีม (จอบอกเป้าหมายชัด) · **Earth RES 10% บนจอ Detailed Stats น่าจะมาจาก passive นี้** แบบเดียวกับที่ 19.97% ของ Reina รวม passive ไว้ — จดไว้เป็นข้อสังเกต ค่าที่เก็บยังตามจอ | Guidance of Earth: **ผู้เล่นยืนยัน 2026-10-22 ว่าทั้งสองท่อนเกิดเมื่อสลับตัว** — ฮีลทั้งทีม 6.2% ของพลังชีวิตสูงสุดของ Daisy ทุกครั้ง และถ้ามีเพื่อนธาตุดิน 3 คนขึ้นไปจะได้ ATK +6.6% 10 วินาทีเพิ่มด้วย · เติม effects สองตัว: heal team (onSwitchOut) และ ATK ตัวเอง (กฎ PLAN §13.11) พร้อม condition.note เรื่องธาตุดินสามคน เพราะยังไม่มีช่องเงื่อนไของค์ประกอบทีม | ปลุกพลัง: ขั้น 5 เติม effects (ดาเมจโจมตีพื้นฐาน +6%) · ขั้น 3 ลดคูลดาวน์ 4.5% เก็บเป็นข้อความตามแบบเดิม · ขั้น 6 มีการชุบชีวิตเพื่อน | ยังไม่ได้อ่าน: จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Support · **Earth** (ธาตุที่ห้า — ครบห้าธาตุรบแล้ว) · Ranged · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลักจากจอ Info: ATK 1,678 (เท่ากับ Bonnie ซึ่งเป็น Support 4 ดาวเหมือนกัน) · DEF 609 · HP 9,272 · Crit 5% / 50% | รูป portrait ตัดจากจอ Info 360x360 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 11.59% · Support 1,026 · Elemental Weakness 125% · gauge 100% · stamina 100 และ **Earth RES 10%** — บรรทัดต้านทานธาตุบนจอค่าพลังตัวละคร เห็นครั้งแรก เก็บเป็น stat res + damageType earth | Basic Go, Mr. Seeds! · Ultimate Help Us, Mr. Flower! (Lv.12) · Effect Details ของ Earth Affliction | ultimate: Max HP-Based Healing ไม่ใส่ line เพราะท่อน 1 และ 2 ต่างพูดถึงการฮีล · **DoT กับ Bonus DMG เป็น 586.2% เท่ากันพอดี** อ่านจากจอซ้ำสองจอแล้ว | **Earth Affliction ต่างจากอีกสี่ธาตุ: ลดต้านทาน \"ทั้งดินและกายภาพ\" 15%** (\"Earth and Physical RES decrease by 15%\") ส่วนธาตุอื่นลดแค่ธาตุตัวเอง | **2026-10-22 รอบสาม** Switch Fly, Flowers! · Special This Is My Flower Garden! (Lv.12) · Passive Mr. Flower's Aid (Lv.1) · Guidance of Earth: Fresh Flowers (Lv.12) · ปลุกพลังครบหกขั้น — **ครบทั้งหกช่องสกิลแล้ว** | special ไม่ใส่ damageType — จอไม่ได้เขียนว่าสร้างดาเมจ (มีแต่ฮีล · ลดความเร็ว · Earth Affliction) | **passive ใส่ effect ได้ครบ**: Earth RES +10% ให้ทั้งทีม (จอบอกเป้าหมายชัด) · **Earth RES 10% บนจอ Detailed Stats น่าจะมาจาก passive นี้** แบบเดียวกับที่ 19.97% ของ Reina รวม passive ไว้ — จดไว้เป็นข้อสังเกต ค่าที่เก็บยังตามจอ | Guidance of Earth: **ผู้เล่นยืนยัน 2026-10-22 ว่าทั้งสองท่อนเกิดเมื่อสลับตัว** — ฮีลทั้งทีม 6.2% ของพลังชีวิตสูงสุดของ Daisy ทุกครั้ง และถ้ามีเพื่อนธาตุดิน 3 คนขึ้นไปจะได้ ATK +6.6% 10 วินาทีเพิ่มด้วย · เติม effects สองตัว: heal team (onSwitchOut) และ ATK ตัวเอง (กฎ PLAN §13.11) พร้อม condition.note เรื่องธาตุดินสามคน เพราะยังไม่มีช่องเงื่อนไของค์ประกอบทีม | ปลุกพลัง: ขั้น 5 เติม effects (ดาเมจโจมตีพื้นฐาน +6%) · ขั้น 3 ลดคูลดาวน์ 4.5% เก็บเป็นข้อความตามแบบเดิม · ขั้น 6 มีการชุบชีวิตเพื่อน | **2026-10-24 จอไทย (พรีวิวตัวละคร)** ชื่อ เดซี่ · ซัพพอร์ตเตอร์ · ดิน ระยะไกล · 4 ดาว · ค่าพลังห้าค่าตรงจออังกฤษ (ATK 1,678 · DEF 609 · HP 9,272) · โจมตีพื้นฐาน โปรยเมล็ดพันธุ์ · สกิลอัลติเมต คุณดอกไม้ ขอพลังหน่อย · แพสซีฟ คุณดอกไม้ ช่วยด้วย — ค่าตรงทุกแถว | ยังไม่ได้อ่าน (ไทย): สกิลสับเปลี่ยน · สกิลพิเศษ · การชี้นำแห่งดิน · ปลุกพลัง · สถานะ"
   }
 }
