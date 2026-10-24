@@ -1,6 +1,7 @@
 {
   "id": "flare",
   "name": {
+    "th": "แฟลร์",
     "en": "Flare"
   },
   "rarity": 5,
@@ -74,9 +75,11 @@
     {
       "stage": 2,
       "name": {
+        "th": "บุตรสาวแห่งตระกูลสการ์เล็ต",
         "en": "Noble Daughter of the Scarlet House"
       },
       "desc": {
+        "th": "ดาเมจธาตุไฟของเอฟเฟกต์ปราณมังกรเพิ่มขึ้นเป็น 40% และเพิ่มเวลาแสดงผลเป็น 15 วินาที / อีกทั้งเมื่อแฟลร์ได้รับปราณมังกร จะมอบเอฟเฟกต์เดียวกันให้กับสมาชิกทีม",
         "en": "Dragon's Breath's Fire DMG Boost increases to 40% and its duration increases to 15s. / Also, when Flare gains Dragon's Breath, the same effect will be granted to her teammates."
       },
       "effects": []
@@ -84,9 +87,11 @@
     {
       "stage": 3,
       "name": {
+        "th": "ผู้บ้าคลั่งระเบิด",
         "en": "Explosion Junkie"
       },
       "desc": {
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจสกิลล่าถอย 6%",
         "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Tag-out Skill DMG by 6%."
       },
       "effects": [
@@ -107,9 +112,11 @@
     {
       "stage": 4,
       "name": {
+        "th": "ผู้รับผิดชอบพลังความร้อนแห่งหน่วยอัศวินที่ 9",
         "en": "Firepower Specialist of the 9th Brigade"
       },
       "desc": {
+        "th": "เพิ่มอัตราดาเมจเขตเพลิงไหม้ของแพสซีฟเป็น 69% และเพิ่มเวลาแสดงผลเป็น 5 วินาที / อีกทั้งเขตเพลิงไหม้จะลุกลามไปยังพื้นที่โดยรอบ 1 ครั้ง",
         "en": "Flare's Passive Trait is enhanced, increasing Blaze Zone's DMG Ratio to 69% and its duration to 5s. / Also, the Blaze Zone spreads across the surrounding ground 1 time."
       },
       "effects": []
@@ -117,9 +124,11 @@
     {
       "stage": 5,
       "name": {
+        "th": "จะเผาให้สิ้นซาก!",
         "en": "Burn It All!"
       },
       "desc": {
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจสกิลอัลติเมต 6%",
         "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Ultimate Skill DMG by 6%."
       },
       "effects": [
@@ -140,9 +149,11 @@
     {
       "stage": 6,
       "name": {
+        "th": "พลังแห่งมังกร ตื่นรู้!",
         "en": "Dragon Power, Awaken!"
       },
       "desc": {
+        "th": "มังกรเพลิงจะห่อหุ้มด้วยเปลวเพลิงลุกโชน และปลุกพลังกลายเป็นมังกรเพลิงโลหิต / เมื่อใช้สกิลพิเศษ จะพ่นลมหายใจที่ทรงพลังยิ่งขึ้น เพิ่มปริมาณดาเมจรวม 248% / เมื่อใช้สกิลอัลติเมต จะเพิ่มขอบเขตโจมตี และเพิ่มปริมาณดาเมจรวมจากการจู่โจมในสถานะการจู่โจมของมังกร 174% / เมื่อใช้สกิลล่าถอย จะปล่อยลูกไฟโลหิตระเบิดที่ถูกเพิ่มขอบเขตระเบิด และทำให้ศัตรูที่โดนโจมตีลอยขึ้นไปบนอากาศ",
         "en": "The Fire dragon wraps itself in a blaze, awakening into a Blazing Dragon. / Flare's Special Skill unleashes an even more powerful breath, increasing its total DMG by 248%. / Her Ultimate Skill expands its attack range, and while Dragon's Ambush is active, its total DMG increases by 174%. / Upon using her Tag-out Skill, a Blasting Blazeball with increased blast range is launched, knocking hit enemies Airborne."
       },
       "effects": []
@@ -151,9 +162,11 @@
   "skills": {
     "basic": {
       "name": {
+        "th": "ไฟเออร์บลาสต์",
         "en": "Fire Blast"
       },
       "desc": {
+        "th": "ขว้างลูกไฟใส่ศัตรู สร้างดาเมจธาตุไฟ",
         "en": "Flare deals Fire DMG by launching a fireball at an enemy."
       },
       "damageType": "fire",
@@ -161,6 +174,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 1",
             "en": "1st Hit DMG"
           },
           "unit": "percent",
@@ -186,6 +200,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 2",
             "en": "2nd Hit DMG"
           },
           "unit": "percent",
@@ -211,6 +226,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 3",
             "en": "3rd Hit DMG"
           },
           "unit": "percent",
@@ -236,6 +252,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 4",
             "en": "4th Hit DMG"
           },
           "unit": "percent",
@@ -261,6 +278,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีฉับพลัน",
             "en": "Air Counter DMG"
           },
           "unit": "percent",
@@ -285,6 +303,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจหลบหลีกโต้กลับ",
             "en": "Evasion Counter DMG"
           },
           "unit": "percent",
@@ -311,9 +330,11 @@
     },
     "switch": {
       "name": {
+        "th": "ดรากอนวิงส์",
         "en": "Wings of Fire"
       },
       "desc": {
+        "th": "ปรากฏตัวใกล้สมาชิกทีม กางปีกมังกรพุ่งไปยังศัตรู สร้างดาเมจธาตุไฟแก่ศัตรูที่เข้าใกล้ และสร้างลูกไฟหลายลูกพุ่งใส่ศัตรูแบบสุ่ม สร้างดาเมจธาตุไฟเพิ่มเติม / [สกิลล่าถอย] อัญเชิญมังกรเพลิงออกมาแล้วปล่อยลูกไฟระเบิดใส่ศัตรู ลูกไฟระเบิดจะทะลุผ่านศัตรู สร้างดาเมจธาตุไฟและมอบเอฟเฟกต์อ่อนแอต่อไฟ",
         "en": "Flare appears near a teammate, spreading dragon wings that deal Fire DMG to nearby enemies and unleashing multiple homing fireballs at random targets to deal bonus Fire DMG. / [Tag-out Skill] Flare summons a Fire dragon that launches a Fire Sphere, piercing through enemies, dealing Fire DMG, and inflicting Fire Affliction."
       },
       "damageType": "fire",
@@ -321,6 +342,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจระยะประชิด",
             "en": "Melee DMG"
           },
           "unit": "percent",
@@ -346,6 +368,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจลูกไฟ",
             "en": "Fireball DMG"
           },
           "unit": "percent",
@@ -371,6 +394,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจลูกไฟระเบิด",
             "en": "Fire Sphere DMG"
           },
           "unit": "percent",
@@ -396,6 +420,7 @@
         },
         {
           "label": {
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อไฟ",
             "en": "Fire Affliction Duration"
           },
           "unit": "seconds",
@@ -685,15 +710,18 @@
     },
     "passive": {
       "name": {
+        "th": "ไฟเออร์โซน",
         "en": "Fire Zone"
       },
       "desc": {
+        "th": "เมื่อโจมตี จะสร้างเขตเพลิงไหม้ที่มอบดาเมจธาตุไฟเท่ากับอัตราที่กำหนดของพลังโจมตี / เมื่อตนเองเข้าสู่เขตเพลิงไหม้ จะได้รับปราณมังกรและเอฟเฟกต์เพิ่มดาเมจธาตุไฟ",
         "en": "Flare's attacks create a Blaze Zone that deals Fire DMG equal to a portion of her ATK. / When Flare enters the Blaze Zone, she gains Dragon's Breath, which grants a Fire DMG Boost."
       },
       "effects": [],
       "values": [
         {
           "label": {
+            "th": "อัตราดาเมจเขตเพลิงไหม้",
             "en": "Blaze Zone DMG Ratio"
           },
           "unit": "percent",
@@ -719,6 +747,7 @@
         },
         {
           "label": {
+            "th": "เวลาแสดงผลเขตเพลิงไหม้",
             "en": "Blaze Zone Duration"
           },
           "unit": "seconds",
@@ -744,6 +773,7 @@
         },
         {
           "label": {
+            "th": "อัตราเพิ่มดาเมจธาตุไฟ",
             "en": "Fire DMG Boost Rate"
           },
           "unit": "percent",
@@ -769,6 +799,7 @@
         },
         {
           "label": {
+            "th": "เวลาแสดงผลเพิ่มดาเมจธาตุไฟ",
             "en": "Fire DMG Boost Duration"
           },
           "unit": "seconds",
@@ -796,9 +827,11 @@
     },
     "elemental": {
       "name": {
+        "th": "ดรากอนบลัด",
         "en": "Dragon Blood"
       },
       "desc": {
+        "th": "เมื่อใช้สกิลสับเปลี่ยน จะเพิ่มพลังโจมตีของสมาชิกทีมธาตุไฟทั้งหมด 28.8% (เวลาแสดงผล 10 วินาที)",
         "en": "Using a Switch Skill increases all Fire teammates' ATK by 28.8%. (Duration: 10s)"
       },
       "effects": [
@@ -812,6 +845,7 @@
           "durationSec": 10,
           "condition": {
             "note": {
+              "th": "สมาชิกทีมธาตุไฟทั้งหมด",
               "en": "all Fire teammates"
             }
           }
@@ -839,8 +873,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Destroyer · Fire · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 2,155 · DEF 638 · HP 9,272 · Crit 5% / 50% อ่านจากจอตรง ๆ — **ATK สูงกว่าตัว 5 ดาวอื่นที่ลงไว้ (2,049 / 1,943) และ HP ต่ำกว่า** ไม่ได้ปรับให้เข้าแบบ | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Neutralization DMG Boost 12.18% · Destroyer 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Basic Fire Blast · Ultimate Dragon Storm (706.7%, Dragon Ambush 116.6% x 9 ครั้ง) · Passive Fire Zone · Guidance of Fire Dragon Blood (ATK +28.8% ให้เพื่อนธาตุไฟทั้งทีม → target team + note) | ปลุกพลัง (จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส) · effects: ขั้น 3 Tag-out +6% · ขั้น 5 Ultimate +6% · ขั้นอื่นเก็บเป็นข้อความ | **2026-10-22 รอบสาม** Switch Wings of Fire · Special Dragon's Breath (654.7%, คูลดาวน์ 12.1 วินาที) · ตาราง Ultimate ที่เลื่อนลงครบเจ็ดแถว (Dragon Ambush Duration 11s · DEF Reduction 5% / 8s · Fire Affliction 5s) · ปลุกพลังขั้น 1 Birth of a Genius Magus → ครบหกขั้น | **สกิลพิเศษชื่อ \"Dragon's Breath\" ซ้ำกับชื่อบัฟของ Passive** — ตามจอทั้งสองที่ | Effect Details จากปุ่ม Effects ของ Switch: Fire Affliction (อ่านจากจอ) · **Dragon's Mark ไม่มีคำอธิบายแยก — ผู้เล่นบอก 2026-10-22 \"dargon mark เขียนตรงนี้เลย\"** ใช้ข้อความในคำอธิบาย Ultimate + แถว DEF Reduction Rate 5% / Duration 8s → effect debuff DEF 5% ใส่ใน Ultimate (target enemy, onUltimateHit) · ไม่ทำเป็น statuses | ยังไม่ได้อ่าน: จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) | Destroyer · Fire · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 2,155 · DEF 638 · HP 9,272 · Crit 5% / 50% อ่านจากจอตรง ๆ — **ATK สูงกว่าตัว 5 ดาวอื่นที่ลงไว้ (2,049 / 1,943) และ HP ต่ำกว่า** ไม่ได้ปรับให้เข้าแบบ | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Neutralization DMG Boost 12.18% · Destroyer 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Basic Fire Blast · Ultimate Dragon Storm (706.7%, Dragon Ambush 116.6% x 9 ครั้ง) · Passive Fire Zone · Guidance of Fire Dragon Blood (ATK +28.8% ให้เพื่อนธาตุไฟทั้งทีม → target team + note) | ปลุกพลัง (จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส) · effects: ขั้น 3 Tag-out +6% · ขั้น 5 Ultimate +6% · ขั้นอื่นเก็บเป็นข้อความ | **2026-10-22 รอบสาม** Switch Wings of Fire · Special Dragon's Breath (654.7%, คูลดาวน์ 12.1 วินาที) · ตาราง Ultimate ที่เลื่อนลงครบเจ็ดแถว (Dragon Ambush Duration 11s · DEF Reduction 5% / 8s · Fire Affliction 5s) · ปลุกพลังขั้น 1 Birth of a Genius Magus → ครบหกขั้น | **สกิลพิเศษชื่อ \"Dragon's Breath\" ซ้ำกับชื่อบัฟของ Passive** — ตามจอทั้งสองที่ | Effect Details จากปุ่ม Effects ของ Switch: Fire Affliction (อ่านจากจอ) · **Dragon's Mark ไม่มีคำอธิบายแยก — ผู้เล่นบอก 2026-10-22 \"dargon mark เขียนตรงนี้เลย\"** ใช้ข้อความในคำอธิบาย Ultimate + แถว DEF Reduction Rate 5% / Duration 8s → effect debuff DEF 5% ใส่ใน Ultimate (target enemy, onUltimateHit) · ไม่ทำเป็น statuses | **2026-10-24 จอไทยรอบแรก** ชื่อ แฟลร์ · เดสทรอยเยอร์ · ไฟ ระยะไกล · 5 ดาว · ค่าพลังห้าค่าตรงจออังกฤษ · โจมตีพื้นฐาน ไฟเออร์บลาสต์ · สกิลสับเปลี่ยน ดรากอนวิงส์ · การชี้นำแห่งไฟ ดรากอนบลัด (28.8% ตรง) · แพสซีฟ ไฟเออร์โซน (Blaze Zone = เขตเพลิงไหม้ · Dragon's Breath = ปราณมังกร) · ปลุกพลัง 2–6 (Dragon's Ambush = การจู่โจมของมังกร) — ค่าตรงทุกแถว | ยังไม่ได้อ่าน (ไทย): สกิลพิเศษ · สกิลอัลติเมต · ปลุกพลังขั้น 1 · สถานะ"
   }
 }
