@@ -134,6 +134,10 @@ console.log("\nดาเมจรวมทั้งทีม");
     members: [{ characterId: "gabi", equipment: { footwear: "breeze-walkers" }, monsterlings: [] }],
   });
   check("ความชำนาญจากรองเท้าเพิ่มดาเมจปะทะของบรอว์เลอร์", withBoots.total > solo.total);
+  // รองเท้า 2,775 แทนค่าพื้นฐาน 1,078 ไม่ได้บวก — ดาเมจปะทะเข้าสูตรเป็น 1 + 0.045 × (1 + ปะทะ%)
+  const ratio = (1 + 0.045 * (1 + 2775 * 0.000113)) / (1 + 0.045 * (1 + 0.1218));
+  check("ความชำนาญรองเท้าแทนค่าพื้นฐาน ไม่ได้บวก", Math.abs(withBoots.total / solo.total - ratio) < 1e-6,
+    `ได้ ${withBoots.total / solo.total} ควรเป็น ${ratio}`);
 }
 
 // ---------- ชนิดดาเมจอยู่ที่ท่า ไม่ใช่ที่ตัวละคร ----------

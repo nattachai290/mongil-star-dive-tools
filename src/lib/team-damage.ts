@@ -131,6 +131,9 @@ function valueAt(scaling: (number | null)[], level: number): { value: number; le
   return null;
 }
 
+/** ดาเมจบทบาทที่มาจากความชำนาญพื้นฐานของตัวละคร — ถูกแทนด้วยค่าจากรองเท้าเมื่อใส่รองเท้า */
+const ROLE_DMG_STATS = new Set(["brawlDmg", "suppressionDmg", "neutralizationDmg", "supportDmg"]);
+
 const SCOPE_OF: Record<CycleSkill, string> = {
   basic: "basicAttack",
   switch: "switchSkill",
@@ -191,7 +194,7 @@ function inputsFor(
         if (char.role === "fighter") inp.brawlDmg = (inp.brawlDmg ?? 0) + v;
         break;
       case "roleMastery":
-        // ความชำนาญบทบาทจากรองเท้า → % ดาเมจบทบาท · สูตรมีแค่ดาเมจปะทะของบรอว์เลอร์
+        // ความชำนาญบทบาทจากรองเท้า (แทนค่าพื้นฐาน ไม่ได้บวก) → % ดาเมจบทบาท · สูตรมีแค่ดาเมจปะทะของบรอว์เลอร์
         if (char.role === "fighter") inp.brawlDmg = (inp.brawlDmg ?? 0) + proficiencyToPercent(v);
         break;
       case "dmgDealt":
@@ -229,12 +232,16 @@ export function teamDamage(lo: BuildLoadout): TeamDamage {
       if (c?.teammateRange && c.teammateRange !== char.range) return false;
       return true;
     };
+    const hasBoots = own[i].some((e) => e.stat === "roleMastery");
     const mine: Sourced[] = [
       ...own[i].filter((e) => e.target === "self").map((effect) => ({ effect, ownerId: mem.characterId })),
       ...shared.filter(fits),
       ...food.map((effect) => ({ effect, ownerId: "food" })),
       ...(char.otherStats ?? [])
         .filter((e) => !(e.stat === "dmgDealt" && e.scopes?.includes("weaknessHit")))
+        // ใส่รองเท้าแล้วความชำนาญกลายเป็นค่าของรองเท้า ไม่ได้บวกกับค่าพื้นฐาน (ผู้เล่นบอก 2026-10-24)
+        // → ตัดดาเมจบทบาทพื้นฐาน (เช่น ดาเมจปะทะ 12.18% จากความชำนาญ 1,078) ออก ให้ค่าจากรองเท้าแทน
+        .filter((e) => !(hasBoots && ROLE_DMG_STATS.has(e.stat ?? "")))
         .map((effect) => ({ effect, ownerId: mem.characterId })),
     ];
     const level = skillLevel(char, lo.awaken);
