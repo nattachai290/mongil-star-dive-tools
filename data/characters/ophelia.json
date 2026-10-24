@@ -65,9 +65,11 @@
     {
       "stage": 1,
       "name": {
+        "th": "คลื่นที่ถูกปกคลุมด้วยเกล็ดน้ำค้าง...",
         "en": "Frost Settles Upon the Waves..."
       },
       "desc": {
+        "th": "เพิ่มขอบเขตดาเมจของสกิลพิเศษและเพิ่มปริมาณดาเมจ 50% และเมื่อใช้ฟาดดาบขั้น 3 จะเพิ่มเอฟเฟกต์ดาเมจสนับสนุนเป็น 30%",
         "en": "Ophelia's Special Skill's range increases, and its DMG increases by 50%. Support DMG effect increases to 30% upon using Falling Slash's 3rd Hit."
       },
       "effects": []
@@ -75,9 +77,11 @@
     {
       "stage": 2,
       "name": {
+        "th": "จากคลื่นลมที่สงบ...",
         "en": "Born From Gentle Ripples..."
       },
       "desc": {
+        "th": "เพิ่มดาเมจธาตุน้ำแข็ง 76% ในขณะเอฟเฟกต์แม่มดนัยน์ตาม่วงทำงาน",
         "en": "Ophelia's Ice DMG increases by 76% while Amethyst Witch is active."
       },
       "effects": []
@@ -85,9 +89,11 @@
     {
       "stage": 3,
       "name": {
+        "th": "จารึกคลื่นที่แพร่ขยายไม่มีที่สิ้นสุด...",
         "en": "Carving Far-Reaching Echoes..."
       },
       "desc": {
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจสกิลพิเศษ 6%",
         "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Special Skill DMG by 6%."
       },
       "effects": [
@@ -108,9 +114,11 @@
     {
       "stage": 4,
       "name": {
+        "th": "คมมีดที่ถูกลับคมด้วยความเชื่ออันแน่วแน่",
         "en": "A Blade Tempered With Resolve..."
       },
       "desc": {
+        "th": "เมื่อใช้สกิลพิเศษ โจมตีพื้นฐานจะปรับใช้คริติคอลตลอดภายในระยะเวลาที่กำหนด (เวลาแสดงผล 4 วินาที)",
         "en": "Ophelia's Basic Attacks will always be critical hits for a set duration after using a Special Skill. (Duration: 4s)"
       },
       "effects": []
@@ -118,9 +126,11 @@
     {
       "stage": 5,
       "name": {
+        "th": "จงเป็นคลื่นโหมกระหน่ำที่พังทลายและแช่แข็งโลกทั้งใบ",
         "en": "Turns Into a World-Shattering Icy Torrent..."
       },
       "desc": {
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจโจมตีพื้นฐาน 6%",
         "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
       },
       "effects": [
@@ -141,9 +151,11 @@
     {
       "stage": 6,
       "name": {
+        "th": "จงเป็นดาบแห่งการพิพากษาซึ่งกวาดล้างความชั่วร้ายทั้งปวง",
         "en": "Purging All Evil With Judgment"
       },
       "desc": {
+        "th": "หากใช้สกิลอัลติเมต จะเกิดพลังดาบที่สร้างดาเมจเพิ่มเติม 176% ของดาเมจเมื่อโจมตีพื้นฐานนาน 20 วินาที",
         "en": "Using Ophelia's Ultimate Skill generates sword energy equal to 176% of her Basic Attack's DMG as Bonus DMG for 20s."
       },
       "effects": []
@@ -152,9 +164,11 @@
   "skills": {
     "basic": {
       "name": {
+        "th": "วิชาดาบแห่งอาชูฟ",
         "en": "Achouffe Swordsmanship"
       },
       "desc": {
+        "th": "พุ่งไปด้านหน้าแล้วฟันศัตรู สร้างดาเมจกายภาพ เมื่อโจมตีครั้งสุดท้ายโดน จะทำให้ศัตรูถูกผลักออกมาด้านหน้า / ในขณะที่เอฟเฟกต์แม่มดนัยน์ตาม่วงทำงาน จะเพิ่มดาเมจคริติคอลของโจมตีพื้นฐาน",
         "en": "Ophelia deals Physical DMG by lunging forward and slashing enemies. Enemies hit by her final strike are knocked forward. / Her Basic Attack's Crit DMG increases while Amethyst Witch is active."
       },
       "damageType": "physical",
@@ -162,6 +176,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 1",
             "en": "1st Hit DMG"
           },
           "unit": "percent",
@@ -187,6 +202,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 2",
             "en": "2nd Hit DMG"
           },
           "unit": "percent",
@@ -212,6 +228,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 3",
             "en": "3rd Hit DMG"
           },
           "unit": "percent",
@@ -237,6 +254,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 4",
             "en": "4th Hit DMG"
           },
           "unit": "percent",
@@ -262,6 +280,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีชาร์จ",
             "en": "Charge Attack DMG"
           },
           "unit": "percent",
@@ -286,6 +305,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีฉับพลัน",
             "en": "Air Counter DMG"
           },
           "unit": "percent",
@@ -310,6 +330,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจหลบหลีกโต้กลับ",
             "en": "Evasion Counter DMG"
           },
           "unit": "percent",
@@ -334,6 +355,7 @@
         },
         {
           "label": {
+            "th": "เพิ่มดาเมจคริติคอล",
             "en": "Crit DMG Boost"
           },
           "unit": "percent",
@@ -361,9 +383,11 @@
     },
     "switch": {
       "name": {
+        "th": "ย่างก้าวคลื่นเกล็ดน้ำค้าง",
         "en": "Crystalline Leap"
       },
       "desc": {
+        "th": "กระโดดไปด้านหน้าและฟาดลงใส่ศัตรู สะเก็ดเกล็ดน้ำค้างจะถูกสร้างในตำแหน่งที่ฟาดลงมาด้วยดาบ สร้างดาเมจธาตุน้ำแข็ง",
         "en": "Ophelia leaps forward to strike an enemy down, unleashing frost shards that deal Ice DMG at the point of impact."
       },
       "damageType": "ice",
@@ -371,6 +395,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจ",
             "en": "DMG"
           },
           "unit": "percent",
@@ -685,15 +710,18 @@
     },
     "passive": {
       "name": {
+        "th": "แม่มดนัยน์ตาม่วง",
         "en": "Amethyst Witch"
       },
       "desc": {
+        "th": "เมื่อใช้สกิลพิเศษหรือสกิลสับเปลี่ยน จะได้รับเอฟเฟกต์แม่มดนัยน์ตาม่วง",
         "en": "Ophelia gains Amethyst Witch upon using her Special Skill or Switch Skill."
       },
       "effects": [],
       "values": [
         {
           "label": {
+            "th": "เวลาแสดงผลแม่มดนัยน์ตาม่วง",
             "en": "Amethyst Witch Duration"
           },
           "unit": "seconds",
@@ -721,9 +749,11 @@
     },
     "elemental": {
       "name": {
+        "th": "นักดาบแห่งเกลียวคลื่นน้ำแข็ง",
         "en": "Frost-Wave Blade Swordsman"
       },
       "desc": {
+        "th": "เมื่อใช้สกิลสับเปลี่ยน จะเพิ่มดาเมจโจมตีพื้นฐาน 36% (เวลาแสดงผล 15 วินาที)",
         "en": "Using Ophelia's Switch Skill increases Basic Attack DMG by 36%. (Duration: 15s)"
       },
       "effects": [
@@ -746,9 +776,11 @@
   "statuses": [
     {
       "name": {
+        "th": "แม่มดนัยน์ตาม่วง",
         "en": "Amethyst Witch"
       },
       "desc": {
+        "th": "ธาตุโจมตีของโอฟีเลียจะถูกเปลี่ยนเป็นธาตุน้ำแข็ง และจะเพิ่มอัตราคริติคอล 15%",
         "en": "Ophelia's attack element changes to Ice. Crit Rate increases by 15%."
       },
       "effects": []
@@ -776,6 +808,6 @@
       "en",
       "th"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) | Fighter · Ice · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,943 · DEF 638 · HP 10,243 · Crit 5% / 50% อ่านจากจอตรง ๆ — เท่ากับ Vivian ทุกค่า | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Brawl DMG Boost 12.18% · Fighter 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Switch Crystalline Leap (211.1%) · Special Flowing Frost (ตารางแปดแถว อ่านจากจอที่เลื่อนลง) | **2026-10-22 รอบสาม** Basic Achouffe Swordsmanship (Physical, แปดแถว) · Ultimate Judgment (882%) · Passive Amethyst Witch (4 วินาที) · Effect Details ของ Amethyst Witch (จากปุ่ม Effects ของ Basic) · Guidance of Ice Frost-Wave Blade Swordsman (ดาเมจโจมตีพื้นฐาน +36% เมื่อใช้ Switch Skill, 15 วินาที) · ปลุกพลังครบหกขั้น | ปลุกพลัง: จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส · effects: ขั้น 3 Special +6% · ขั้น 5 Basic +6% · ขั้นอื่นเก็บเป็นข้อความ | **ชื่อขั้น 1–5 ลงท้ายด้วย \"...\" ตามจอ** (ขั้น 6 ไม่มี) | Effect Details ของ Ultimate: Ice Affliction (อ่านจากจอ) | **2026-10-24 จอไทยรอบแรก** ชื่อ โอฟีเลีย · บรอว์เลอร์ · น้ำแข็ง ระยะใกล้ · 5 ดาว · ค่าพลังห้าค่าตรงจออังกฤษ · สกิลพิเศษ ระบำคลื่นเกล็ดน้ำค้าง (Thrust = แทง · Rising Slash = ฟันเฉือน · Falling Slash = ฟาดดาบ) · สกิลอัลติเมต พิพากษา · สถานะ เอฟเฟกต์อ่อนแอต่อน้ำแข็ง — ค่าตรงทุกแถว | ยังไม่ได้อ่าน (ไทย): โจมตีพื้นฐาน · สกิลสับเปลี่ยน · การชี้นำแห่งน้ำแข็ง · แพสซีฟ · ปลุกพลัง · สถานะ Amethyst Witch"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) | Fighter · Ice · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,943 · DEF 638 · HP 10,243 · Crit 5% / 50% อ่านจากจอตรง ๆ — เท่ากับ Vivian ทุกค่า | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Brawl DMG Boost 12.18% · Fighter 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Switch Crystalline Leap (211.1%) · Special Flowing Frost (ตารางแปดแถว อ่านจากจอที่เลื่อนลง) | **2026-10-22 รอบสาม** Basic Achouffe Swordsmanship (Physical, แปดแถว) · Ultimate Judgment (882%) · Passive Amethyst Witch (4 วินาที) · Effect Details ของ Amethyst Witch (จากปุ่ม Effects ของ Basic) · Guidance of Ice Frost-Wave Blade Swordsman (ดาเมจโจมตีพื้นฐาน +36% เมื่อใช้ Switch Skill, 15 วินาที) · ปลุกพลังครบหกขั้น | ปลุกพลัง: จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส · effects: ขั้น 3 Special +6% · ขั้น 5 Basic +6% · ขั้นอื่นเก็บเป็นข้อความ | **ชื่อขั้น 1–5 ลงท้ายด้วย \"...\" ตามจอ** (ขั้น 6 ไม่มี) | Effect Details ของ Ultimate: Ice Affliction (อ่านจากจอ) | **2026-10-24 จอไทยรอบแรก** ชื่อ โอฟีเลีย · บรอว์เลอร์ · น้ำแข็ง ระยะใกล้ · 5 ดาว · ค่าพลังห้าค่าตรงจออังกฤษ · สกิลพิเศษ ระบำคลื่นเกล็ดน้ำค้าง (Thrust = แทง · Rising Slash = ฟันเฉือน · Falling Slash = ฟาดดาบ) · สกิลอัลติเมต พิพากษา · สถานะ เอฟเฟกต์อ่อนแอต่อน้ำแข็ง — ค่าตรงทุกแถว | **2026-10-24 จอไทยรอบสอง** โจมตีพื้นฐาน วิชาดาบแห่งอาชูฟ · สกิลสับเปลี่ยน ย่างก้าวคลื่นเกล็ดน้ำค้าง · การชี้นำแห่งน้ำแข็ง นักดาบแห่งเกลียวคลื่นน้ำแข็ง (36% ตรง) · แพสซีฟ แม่มดนัยน์ตาม่วง (Amethyst Witch) · ปลุกพลัง 1–6 · สถานะ แม่มดนัยน์ตาม่วง — ค่าตรงทุกแถว | **ชื่อปลุกพลังไทย:** ขั้น 1–3 ลงท้าย \"...\" เหมือนอังกฤษ แต่ขั้น 4–5 ไม่มี \"...\" (อังกฤษขั้น 4–5 มี) เก็บตามจอ · ชื่อขั้น 5 และ 6 บนจอไทยขึ้นสองบรรทัด ต่อกันไม่เว้นวรรค · ขั้น 1 จอไทยเว้นวรรคสองช่องหลัง \"50%\" เก็บเป็นช่องเดียว | **ภาษาไทยของโอฟีเลียครบแล้ว**"
   }
 }
