@@ -470,9 +470,11 @@
     },
     "switch": {
       "name": {
+        "th": "เทมเพสต์แอโรว์",
         "en": "Tempest Arrow"
       },
       "desc": {
+        "th": "ปรากฏตัวใกล้สมาชิกทีม แล้วยิงลูกธนูสูงขึ้นกลางอากาศ ลูกธนูจะถูกแบ่งกลางอากาศ และโปรยลงมาเป็นฝนลูกธนูใส่ตำแหน่งศัตรู สร้างดาเมจธาตุสายฟ้า",
         "en": "Penny appears near a teammate and fires an arrow into the air. This arrow then splits into falling shards that rain down on enemies, dealing Lightning DMG."
       },
       "damageType": "lightning",
@@ -480,6 +482,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจฝนลูกธนู",
             "en": "Arrow Rain DMG"
           },
           "unit": "percent",
@@ -507,9 +510,11 @@
     },
     "special": {
       "name": {
+        "th": "อิเล็กทริกโอเวอร์โหลด",
         "en": "Electric Overload"
       },
       "desc": {
+        "th": "กระโดดไปด้านหลังและยิงลูกธนูหลายนัดไปด้านหน้า สร้างดาเมจธาตุสายฟ้า / เมื่อใช้สกิลพิเศษขณะครองครองเหรียญ จะใช้เหรียญและทำการโจมตีที่ถูกเสริมพลัง หลังจากยิงลูกธนูที่ห่อหุ้มด้วยกระแสไฟฟ้าไปด้านหน้า สร้างดาเมจธาตุสายฟ้า จากนั้นรวบรวมพลังเพิ่มเติมแล้วยิงลูกธนูโอเวอร์โหลด สร้างดาเมจธาตุสายฟ้า และเมื่อเกิดฟ้าผ่าระเบิดในตำแหน่งศัตรู จะเกิดฟ้าผ่ารอบบริเวณ สร้างดาเมจธาตุสายฟ้า / การโจมตีที่ถูกเสริมพลัง จะกระโดดไปด้านหน้าและด้านหลังตามระยะห่างระหว่างศัตรู",
         "en": "Penny leaps back and fires multiple arrows forward, dealing Lightning DMG. / Using her Special Skill when she has a Coin consumes the Coin and triggers an enhanced attack. Penny fires electric arrows in front of her to deal Lightning DMG. Penny channels more power and shoots an overloaded arrow that deals Lightning DMG. This enhanced attack triggers a Lightning Explosion at the enemy's location, and Lightning Bolts strike the surrounding area, also dealing Lightning DMG. / During the enhanced attack, Penny leaps forward or backward depending on her distance from the enemy."
       },
       "damageType": "lightning",
@@ -517,6 +522,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจลูกธนู",
             "en": "Arrow DMG"
           },
           "unit": "percent",
@@ -542,6 +548,7 @@
         },
         {
           "label": {
+            "th": "คูลดาวน์",
             "en": "Cooldown"
           },
           "unit": "seconds",
@@ -566,6 +573,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจลูกธนูสายฟ้า",
             "en": "Electric Arrow DMG"
           },
           "unit": "percent",
@@ -591,6 +599,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจลูกธนูโอเวอร์โหลด",
             "en": "Overloaded Arrow DMG"
           },
           "unit": "percent",
@@ -616,6 +625,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจฟ้าผ่าระเบิด",
             "en": "Lightning Explosion DMG"
           },
           "unit": "percent",
@@ -641,6 +651,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจสายฟ้าฟาด",
             "en": "Lightning Bolt DMG"
           },
           "unit": "percent",
@@ -666,6 +677,7 @@
         },
         {
           "label": {
+            "th": "คูลดาวน์สกิลพิเศษเสริมพลัง",
             "en": "Enhanced Special Skill Cooldown"
           },
           "unit": "seconds",
@@ -693,9 +705,11 @@
     },
     "ultimate": {
       "name": {
+        "th": "ไลท์นิงสตอร์มสเปียร์",
         "en": "Thunderstorm Shot"
       },
       "desc": {
+        "th": "รวบรวมพลังของหินแหล่งพลังงาน แล้วยิงธนูสายฟ้าไปด้านหน้า สร้างดาเมจธาตุสายฟ้าและมอบเอฟเฟกต์อ่อนแอต่อสายฟ้า และจะเกิดระเบิดในตำแหน่งที่ลูกธนูผ่าน สร้างดาเมจธาตุสายฟ้าและมอบเอฟเฟกต์อ่อนแอต่อสายฟ้า",
         "en": "Penny gathers power via her energy source, then fires an electric arrow that deals Lightning DMG and inflicts Lightning Affliction. The arrow causes explosions as it flies past, dealing Lightning DMG and inflicting Lightning Affliction."
       },
       "damageType": "lightning",
@@ -703,6 +717,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจลูกธนูสายฟ้า",
             "en": "Electric Arrow DMG"
           },
           "unit": "percent",
@@ -728,6 +743,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจระเบิด",
             "en": "Explosion DMG"
           },
           "unit": "percent",
@@ -753,6 +769,7 @@
         },
         {
           "label": {
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อสายฟ้า",
             "en": "Lightning Affliction Duration"
           },
           "unit": "seconds",
@@ -780,6 +797,7 @@
     },
     "passive": {
       "name": {
+        "th": "อิเล็กทริกชาร์จ",
         "en": "Electric Charge"
       },
       "desc": {
@@ -789,6 +807,7 @@
       "values": [
         {
           "label": {
+            "th": "อัตราแปลงตามค่าเพิ่มดาเมจธาตุสายฟ้า",
             "en": "Lightning DMG Boost Conversion Ratio"
           },
           "unit": "percent",
@@ -814,6 +833,7 @@
         },
         {
           "label": {
+            "th": "ค่าสูงสุดของการเพิ่มอัตราคริติคอล",
             "en": "Crit Rate Boost Max"
           },
           "unit": "percent",
@@ -839,6 +859,7 @@
         },
         {
           "label": {
+            "th": "จำนวนรับเหรียญสูงสุด",
             "en": "Max Coins"
           },
           "unit": "flat",
@@ -921,6 +942,6 @@
       "en",
       "th"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) | Fighter · Lightning · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,996 · DEF 656 · HP 9,713 · Crit 5% / 50% อ่านจากจอตรง ๆ — ชุดตัวเลขนี้ยังไม่ซ้ำกับตัวไหนที่ลงไว้ | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Brawl DMG Boost 12.18% · Fighter 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Basic Titanium Bow (ตาราง 12 แถว อ่านจากจอที่เลื่อนลง · Stamina Recovery 40 เป็นค่าคงที่) · Guidance of Lightning A Generous Quest Reward (ATK +15.5% เป็น effect · Pierce Rate +5.6% อยู่ใน note เพราะพจนานุกรมยังไม่มี Pierce Rate — ดูโน้ตของ Chloe) | **2026-10-22 รอบสาม** Passive ส่วนที่เลื่อนลง (หัวข้อ Coin + ตารางสามแถว · Max Coins 1 เป็นค่าคงที่) · Switch Tempest Arrow (186.2%) · Ultimate Thunderstorm Shot (783.6%) · Effect Details Lightning Affliction | **2026-10-22 รอบสี่** ตาราง Special (เจ็ดแถว จากจอที่เลื่อนลง) · ปลุกพลังครบหกขั้น (จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส · effects: ขั้น 3 Special +6% · ขั้น 5 Ultimate +6% · ขั้นอื่นเก็บเป็นข้อความ) · Effect Details Jackpot (จากปุ่ม Effects ของขั้น 6) · \"a(n)\" ในขั้น 6 ตามจอ | ปุ่ม Effects ของขั้น 2 คือ Lightning Affliction (ผู้เล่นยืนยัน 2026-10-22) — สถานะเดียวกับที่เก็บแล้ว ไม่ต้องเพิ่ม | **2026-10-24 จอไทยรอบแรก** ชื่อ เพนี่ · บรอว์เลอร์ (= Fighter) · สายฟ้า ระยะไกล · 5 ดาว · ค่าพลังห้าค่าตรงจออังกฤษ · ปลุกพลัง 3–6 (Coin = เหรียญ · Jackpot = แจ็กพอต · Critical Dodge = หลบหลีกขั้นสูง · ขั้น 6 อ้าง \"ห้ามโก่งราคา\" = ชื่อขั้น 2 No Price Gouging) | ยังไม่ได้อ่าน (ไทย): ทุกสกิล · ปลุกพลัง 1–2 · สถานะ"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) | Fighter · Lightning · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,996 · DEF 656 · HP 9,713 · Crit 5% / 50% อ่านจากจอตรง ๆ — ชุดตัวเลขนี้ยังไม่ซ้ำกับตัวไหนที่ลงไว้ | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Brawl DMG Boost 12.18% · Fighter 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Basic Titanium Bow (ตาราง 12 แถว อ่านจากจอที่เลื่อนลง · Stamina Recovery 40 เป็นค่าคงที่) · Guidance of Lightning A Generous Quest Reward (ATK +15.5% เป็น effect · Pierce Rate +5.6% อยู่ใน note เพราะพจนานุกรมยังไม่มี Pierce Rate — ดูโน้ตของ Chloe) | **2026-10-22 รอบสาม** Passive ส่วนที่เลื่อนลง (หัวข้อ Coin + ตารางสามแถว · Max Coins 1 เป็นค่าคงที่) · Switch Tempest Arrow (186.2%) · Ultimate Thunderstorm Shot (783.6%) · Effect Details Lightning Affliction | **2026-10-22 รอบสี่** ตาราง Special (เจ็ดแถว จากจอที่เลื่อนลง) · ปลุกพลังครบหกขั้น (จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส · effects: ขั้น 3 Special +6% · ขั้น 5 Ultimate +6% · ขั้นอื่นเก็บเป็นข้อความ) · Effect Details Jackpot (จากปุ่ม Effects ของขั้น 6) · \"a(n)\" ในขั้น 6 ตามจอ | ปุ่ม Effects ของขั้น 2 คือ Lightning Affliction (ผู้เล่นยืนยัน 2026-10-22) — สถานะเดียวกับที่เก็บแล้ว ไม่ต้องเพิ่ม | **2026-10-24 จอไทยรอบแรก** ชื่อ เพนี่ · บรอว์เลอร์ (= Fighter) · สายฟ้า ระยะไกล · 5 ดาว · ค่าพลังห้าค่าตรงจออังกฤษ · ปลุกพลัง 3–6 (Coin = เหรียญ · Jackpot = แจ็กพอต · Critical Dodge = หลบหลีกขั้นสูง · ขั้น 6 อ้าง \"ห้ามโก่งราคา\" = ชื่อขั้น 2 No Price Gouging) | **2026-10-24 จอไทยรอบสอง** สกิลสับเปลี่ยน เทมเพสต์แอโรว์ · สกิลพิเศษ อิเล็กทริกโอเวอร์โหลด (จอไทยพิมพ์ \"ครองครอง\" ซ้ำ เก็บตามจอ) · สกิลอัลติเมต ไลท์นิงสตอร์มสเปียร์ (ชื่อไทยต่างจากอังกฤษ Thunderstorm Shot เก็บตามจอ) · แพสซีฟ อิเล็กทริกชาร์จ — ชื่อและหัวตารางเท่านั้น: **จอไทยของแพสซีฟถูกเลื่อนลง ไม่เห็นย่อหน้าแรก (เรื่องอัตราคริติคอล)** เห็นแค่สามย่อหน้าหลัง จึงยังไม่ใส่ desc ไทย (ต้องครบสี่ท่อนตามอังกฤษ) — ค่าตรงทุกแถว | ยังไม่ได้อ่าน (ไทย): โจมตีพื้นฐาน · การชี้นำแห่งสายฟ้า · desc แพสซีฟย่อหน้าแรก · ปลุกพลัง 1–2 · สถานะ"
   }
 }
