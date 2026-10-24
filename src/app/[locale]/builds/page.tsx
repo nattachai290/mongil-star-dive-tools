@@ -106,11 +106,9 @@ function MonFull({
           {slot.traits.map((tr, i) => {
             const trait = TRAIT_POOL.pool.find((x) => x.id === tr.id);
             const value = trait ? trait.values[tr.grade as keyof typeof trait.values] : undefined;
-            // "สีทอง" → "ทอง" ให้ป้ายสั้น อ่านแบบเดียวกับที่ผู้เล่นพูด
-            const grade = label("monsterRank", tr.grade, locale).replace(/^สี/, "");
             return (
               <li key={i} className="rounded border border-gold/60 px-1.5 py-0.5 text-[11px] text-ink">
-                {name(trait?.name, locale, tr.id)} {grade}
+                {name(trait?.name, locale, tr.id)}
                 {value !== undefined && (
                   <span className="font-mono text-gold">
                     {" "}+{value}
