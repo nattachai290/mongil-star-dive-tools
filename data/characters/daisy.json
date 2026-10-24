@@ -74,9 +74,11 @@
     {
       "stage": 1,
       "name": {
+        "th": "ความรุนแรงจากข้อเท็จจริงที่ไม่มีเจตนาร้าย",
         "en": "Brutal Honesty"
       },
       "desc": {
+        "th": "เพิ่มจำนวนวัตถุยิงของโจมตีพื้นฐาน และเพิ่มปริมาณดาเมจรวม 75%",
         "en": "Increases the number of projectiles from Daisy's Basic Attack, increasing its total DMG by 75%."
       },
       "effects": []
@@ -84,9 +86,11 @@
     {
       "stage": 2,
       "name": {
+        "th": "พรแห่งธรรมชาติอันยิ่งใหญ่",
         "en": "Blessing of Mother Nature"
       },
       "desc": {
+        "th": "เสริมพลังสกิลสนับสนุนและในระหว่างต่อสู้ หากพลังชีวิตของสมาชิกทีมต่ำกว่า 90% จะฟื้นฟูให้กับสมาชิกทีมดังกล่าวนาน 7 วินาทีตามสัดส่วนพลังชีวิตสูงสุดของเดซี่ทุก 7 วินาที",
         "en": "Daisy's Support Skill is enhanced, and every 7s it heals teammates whose HP has fallen to 90% or below during combat for 7s, based on Daisy's Max HP."
       },
       "effects": []
@@ -94,9 +98,11 @@
     {
       "stage": 3,
       "name": {
+        "th": "ดินแดนแห่งการเยียวยา",
         "en": "Healing Earth"
       },
       "desc": {
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / ลดคูลดาวน์สกิลพิเศษ 4.5%",
         "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Special Skill's cooldown decreases by 4.5%."
       },
       "effects": [],
@@ -105,9 +111,11 @@
     {
       "stage": 4,
       "name": {
+        "th": "เคียงข้างเสมอไม่ว่าเมื่อใด",
         "en": "Always Together"
       },
       "desc": {
+        "th": "เสริมพลังแพสซีฟ ทำให้เพิ่มต้านทานธาตุทั้งหมดให้กับสมาชิกทีมทั้งหมด 10%",
         "en": "Daisy's Passive Trait is enhanced, increasing All Elemental RES by 10% for all teammates."
       },
       "effects": []
@@ -115,9 +123,11 @@
     {
       "stage": 5,
       "name": {
+        "th": "เอลฟ์ผู้มีความสุข",
         "en": "A Happy Elf"
       },
       "desc": {
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจโจมตีพื้นฐาน 6%",
         "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
       },
       "effects": [
@@ -138,9 +148,11 @@
     {
       "stage": 6,
       "name": {
+        "th": "คุณสมบัติของราชินี",
         "en": "Worthy to Be Queen"
       },
       "desc": {
+        "th": "เมื่อใช้สกิลอัลติเมต จะเพิ่มความเร็วเคลื่อนที่ 20% และคืนชีพสมาชิกที่เสียชีวิตเป็น 20% ของพลังชีวิตสูงสุดของสมาชิกดังกล่าว",
         "en": "Upon using Daisy's Ultimate Skill, her movement Speed increases by 20% and a fallen teammate is revived with 20% of their Max HP."
       },
       "effects": []
@@ -291,9 +303,11 @@
     },
     "switch": {
       "name": {
+        "th": "คุณดอกไม้ บินไปเลย",
         "en": "Fly, Flowers!"
       },
       "desc": {
+        "th": "ขว้างบุปผาเวท 5 ดอกใส่ศัตรู สร้างดาเมจธาตุดิน / [สกิลสนับสนุน] ในระหว่างต่อสู้ หากปรากฏตัวใกล้สมาชิกทีมในตอนที่พลังชีวิตของสมาชิกทีมเหลือต่ำกว่า 75% จะฟื้นฟูพลังชีวิตต่อเนื่องให้กับสมาชิกทีมตามสัดส่วนพลังชีวิตสุดสูงของเดซี่",
         "en": "Daisy sends 5 magical flowers towards the enemy, dealing Earth DMG. / [Support Skill] When a teammate's HP falls to 75% or below, Daisy appears by their side and grants the teammate Healing Over Time based on Daisy's Max HP."
       },
       "damageType": "earth",
@@ -301,6 +315,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจ",
             "en": "DMG"
           },
           "unit": "percent",
@@ -326,6 +341,7 @@
         },
         {
           "label": {
+            "th": "ปริมาณฟื้นฟูตามสัดส่วนพลังชีวิตสูงสุดของสกิลสนับสนุน",
             "en": "Support Skill's Max HP-Based Healing"
           },
           "unit": "percent",
@@ -351,6 +367,7 @@
         },
         {
           "label": {
+            "th": "เวลาแสดงผลสกิลสนับสนุน",
             "en": "Support Skill Duration"
           },
           "unit": "seconds",
@@ -376,6 +393,7 @@
         },
         {
           "label": {
+            "th": "คูลดาวน์สกิลสนับสนุน",
             "en": "Support Skill Cooldown"
           },
           "unit": "seconds",
@@ -403,15 +421,18 @@
     },
     "special": {
       "name": {
+        "th": "แปลงดอกไม้แสนรัก",
         "en": "This Is My Flower Garden!"
       },
       "desc": {
+        "th": "สร้างสวนดอกไม้ใต้เท้าตนเอง และฟื้นฟูพลังชีวิตต่อเนื่องให้กับสมาชิกทีมที่อยู่บนสวนตามสัดส่วนพลังชีวิตสุดสูงของเดซี่ และลดความเร็วเคลื่อนที่พร้อมมอบเอฟเฟกต์อ่อนแอต่อดินแก่ศัตรู",
         "en": "Daisy creates a field of flowers at her feet. Teammates within the Flower Field are granted Healing Over Time based on her Max HP, and enemies within the Flower Field have their Movement Speed decreased and are inflicted with Earth Affliction."
       },
       "effects": [],
       "values": [
         {
           "label": {
+            "th": "ปริมาณฟื้นฟูตามสัดส่วนพลังชีวิตสูงสุด",
             "en": "Max HP-Based Healing"
           },
           "unit": "percent",
@@ -437,6 +458,7 @@
         },
         {
           "label": {
+            "th": "ลดความเร็วเคลื่อนที่",
             "en": "Movement Speed Reduction"
           },
           "unit": "percent",
@@ -462,6 +484,7 @@
         },
         {
           "label": {
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อดิน",
             "en": "Earth Affliction Duration"
           },
           "unit": "seconds",
@@ -487,6 +510,7 @@
         },
         {
           "label": {
+            "th": "เวลาแสดงผลสวนดอกไม้",
             "en": "Flower Field Duration"
           },
           "unit": "seconds",
@@ -512,6 +536,7 @@
         },
         {
           "label": {
+            "th": "คูลดาวน์",
             "en": "Cooldown"
           },
           "unit": "seconds",
@@ -704,9 +729,11 @@
     },
     "elemental": {
       "name": {
+        "th": "ดอกไม้สดใหม่ที่ดูมีชีวิตชีวา",
         "en": "Fresh Flowers"
       },
       "desc": {
+        "th": "เมื่อเปลี่ยนเป็นสมาชิกทีมคนอื่น จะฟื้นฟูพลังชีวิตของสมาชิกทีมทั้งหมด 6.2% ของพลังชีวิตสูงสุดของเดซี่ / หากสมาชิกทีมธาตุดินถูกจัดทีม 3 คนขึ้นไป จะมอบเอฟเฟกต์เพิ่มพลังโจมตีเพิ่มเติม 6.6% (เวลาแสดงผล 10 วินาที)",
         "en": "Upon switching to another teammate, all teammates' HP is restored by 6.2% of Daisy's Max HP. / If there are 3 or more Earth teammates on the team, an additional 6.6% ATK Boost is granted. (Duration: 10s)"
       },
       "effects": [
@@ -728,6 +755,7 @@
           "durationSec": 10,
           "condition": {
             "note": {
+              "th": "หากสมาชิกทีมธาตุดินถูกจัดทีม 3 คนขึ้นไป",
               "en": "If there are 3 or more Earth teammates on the team"
             }
           }
@@ -739,9 +767,11 @@
   "statuses": [
     {
       "name": {
+        "th": "เอฟเฟกต์อ่อนแอต่อดิน",
         "en": "Earth Affliction"
       },
       "desc": {
+        "th": "ได้รับดาเมจต่อเนื่องธาตุดินและลดพลังต้านทานธาตุดิน, กายภาพ 15%",
         "en": "Afflicted targets take Earth DMG over time, and Earth and Physical RES decrease by 15%."
       },
       "effects": []
@@ -758,6 +788,6 @@
       "en",
       "th"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Support · **Earth** (ธาตุที่ห้า — ครบห้าธาตุรบแล้ว) · Ranged · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลักจากจอ Info: ATK 1,678 (เท่ากับ Bonnie ซึ่งเป็น Support 4 ดาวเหมือนกัน) · DEF 609 · HP 9,272 · Crit 5% / 50% | รูป portrait ตัดจากจอ Info 360x360 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 11.59% · Support 1,026 · Elemental Weakness 125% · gauge 100% · stamina 100 และ **Earth RES 10%** — บรรทัดต้านทานธาตุบนจอค่าพลังตัวละคร เห็นครั้งแรก เก็บเป็น stat res + damageType earth | Basic Go, Mr. Seeds! · Ultimate Help Us, Mr. Flower! (Lv.12) · Effect Details ของ Earth Affliction | ultimate: Max HP-Based Healing ไม่ใส่ line เพราะท่อน 1 และ 2 ต่างพูดถึงการฮีล · **DoT กับ Bonus DMG เป็น 586.2% เท่ากันพอดี** อ่านจากจอซ้ำสองจอแล้ว | **Earth Affliction ต่างจากอีกสี่ธาตุ: ลดต้านทาน \"ทั้งดินและกายภาพ\" 15%** (\"Earth and Physical RES decrease by 15%\") ส่วนธาตุอื่นลดแค่ธาตุตัวเอง | **2026-10-22 รอบสาม** Switch Fly, Flowers! · Special This Is My Flower Garden! (Lv.12) · Passive Mr. Flower's Aid (Lv.1) · Guidance of Earth: Fresh Flowers (Lv.12) · ปลุกพลังครบหกขั้น — **ครบทั้งหกช่องสกิลแล้ว** | special ไม่ใส่ damageType — จอไม่ได้เขียนว่าสร้างดาเมจ (มีแต่ฮีล · ลดความเร็ว · Earth Affliction) | **passive ใส่ effect ได้ครบ**: Earth RES +10% ให้ทั้งทีม (จอบอกเป้าหมายชัด) · **Earth RES 10% บนจอ Detailed Stats น่าจะมาจาก passive นี้** แบบเดียวกับที่ 19.97% ของ Reina รวม passive ไว้ — จดไว้เป็นข้อสังเกต ค่าที่เก็บยังตามจอ | Guidance of Earth: **ผู้เล่นยืนยัน 2026-10-22 ว่าทั้งสองท่อนเกิดเมื่อสลับตัว** — ฮีลทั้งทีม 6.2% ของพลังชีวิตสูงสุดของ Daisy ทุกครั้ง และถ้ามีเพื่อนธาตุดิน 3 คนขึ้นไปจะได้ ATK +6.6% 10 วินาทีเพิ่มด้วย · เติม effects สองตัว: heal team (onSwitchOut) และ ATK ตัวเอง (กฎ PLAN §13.11) พร้อม condition.note เรื่องธาตุดินสามคน เพราะยังไม่มีช่องเงื่อนไของค์ประกอบทีม | ปลุกพลัง: ขั้น 5 เติม effects (ดาเมจโจมตีพื้นฐาน +6%) · ขั้น 3 ลดคูลดาวน์ 4.5% เก็บเป็นข้อความตามแบบเดิม · ขั้น 6 มีการชุบชีวิตเพื่อน | **2026-10-24 จอไทย (พรีวิวตัวละคร)** ชื่อ เดซี่ · ซัพพอร์ตเตอร์ · ดิน ระยะไกล · 4 ดาว · ค่าพลังห้าค่าตรงจออังกฤษ (ATK 1,678 · DEF 609 · HP 9,272) · โจมตีพื้นฐาน โปรยเมล็ดพันธุ์ · สกิลอัลติเมต คุณดอกไม้ ขอพลังหน่อย · แพสซีฟ คุณดอกไม้ ช่วยด้วย — ค่าตรงทุกแถว | ยังไม่ได้อ่าน (ไทย): สกิลสับเปลี่ยน · สกิลพิเศษ · การชี้นำแห่งดิน · ปลุกพลัง · สถานะ"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Support · **Earth** (ธาตุที่ห้า — ครบห้าธาตุรบแล้ว) · Ranged · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลักจากจอ Info: ATK 1,678 (เท่ากับ Bonnie ซึ่งเป็น Support 4 ดาวเหมือนกัน) · DEF 609 · HP 9,272 · Crit 5% / 50% | รูป portrait ตัดจากจอ Info 360x360 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 11.59% · Support 1,026 · Elemental Weakness 125% · gauge 100% · stamina 100 และ **Earth RES 10%** — บรรทัดต้านทานธาตุบนจอค่าพลังตัวละคร เห็นครั้งแรก เก็บเป็น stat res + damageType earth | Basic Go, Mr. Seeds! · Ultimate Help Us, Mr. Flower! (Lv.12) · Effect Details ของ Earth Affliction | ultimate: Max HP-Based Healing ไม่ใส่ line เพราะท่อน 1 และ 2 ต่างพูดถึงการฮีล · **DoT กับ Bonus DMG เป็น 586.2% เท่ากันพอดี** อ่านจากจอซ้ำสองจอแล้ว | **Earth Affliction ต่างจากอีกสี่ธาตุ: ลดต้านทาน \"ทั้งดินและกายภาพ\" 15%** (\"Earth and Physical RES decrease by 15%\") ส่วนธาตุอื่นลดแค่ธาตุตัวเอง | **2026-10-22 รอบสาม** Switch Fly, Flowers! · Special This Is My Flower Garden! (Lv.12) · Passive Mr. Flower's Aid (Lv.1) · Guidance of Earth: Fresh Flowers (Lv.12) · ปลุกพลังครบหกขั้น — **ครบทั้งหกช่องสกิลแล้ว** | special ไม่ใส่ damageType — จอไม่ได้เขียนว่าสร้างดาเมจ (มีแต่ฮีล · ลดความเร็ว · Earth Affliction) | **passive ใส่ effect ได้ครบ**: Earth RES +10% ให้ทั้งทีม (จอบอกเป้าหมายชัด) · **Earth RES 10% บนจอ Detailed Stats น่าจะมาจาก passive นี้** แบบเดียวกับที่ 19.97% ของ Reina รวม passive ไว้ — จดไว้เป็นข้อสังเกต ค่าที่เก็บยังตามจอ | Guidance of Earth: **ผู้เล่นยืนยัน 2026-10-22 ว่าทั้งสองท่อนเกิดเมื่อสลับตัว** — ฮีลทั้งทีม 6.2% ของพลังชีวิตสูงสุดของ Daisy ทุกครั้ง และถ้ามีเพื่อนธาตุดิน 3 คนขึ้นไปจะได้ ATK +6.6% 10 วินาทีเพิ่มด้วย · เติม effects สองตัว: heal team (onSwitchOut) และ ATK ตัวเอง (กฎ PLAN §13.11) พร้อม condition.note เรื่องธาตุดินสามคน เพราะยังไม่มีช่องเงื่อนไของค์ประกอบทีม | ปลุกพลัง: ขั้น 5 เติม effects (ดาเมจโจมตีพื้นฐาน +6%) · ขั้น 3 ลดคูลดาวน์ 4.5% เก็บเป็นข้อความตามแบบเดิม · ขั้น 6 มีการชุบชีวิตเพื่อน | **2026-10-24 จอไทย (พรีวิวตัวละคร)** ชื่อ เดซี่ · ซัพพอร์ตเตอร์ · ดิน ระยะไกล · 4 ดาว · ค่าพลังห้าค่าตรงจออังกฤษ (ATK 1,678 · DEF 609 · HP 9,272) · โจมตีพื้นฐาน โปรยเมล็ดพันธุ์ · สกิลอัลติเมต คุณดอกไม้ ขอพลังหน่อย · แพสซีฟ คุณดอกไม้ ช่วยด้วย — ค่าตรงทุกแถว | **2026-10-24 จอไทยรอบสอง** สกิลสับเปลี่ยน คุณดอกไม้ บินไปเลย · สกิลพิเศษ แปลงดอกไม้แสนรัก (Flower Field = สวนดอกไม้) · การชี้นำแห่งดิน ดอกไม้สดใหม่ที่ดูมีชีวิตชีวา (6.2% / 6.6% ตรง) · ปลุกพลัง 1–6 ครบ · สถานะ เอฟเฟกต์อ่อนแอต่อดิน — ค่าตรงทุกแถว | **คำอธิบายไทยของสกิลสับเปลี่ยนและสกิลพิเศษพิมพ์ \"พลังชีวิตสุดสูง\" (สลับคำ) ทั้งสองที่ — เก็บตามจอ** · หัวตารางเขียน \"สูงสุด\" ปกติ | **ภาษาไทยของเดซี่ครบแล้ว**"
   }
 }
