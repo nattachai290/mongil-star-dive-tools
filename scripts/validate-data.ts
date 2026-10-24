@@ -380,6 +380,11 @@ for (const [id, doc] of Object.entries(parsed.characters ?? {})) {
 }
 
 for (const [id, doc] of Object.entries(parsed.monsterlings ?? {})) {
+  // มอนที่มีลิงก์เชนเป็นบอสทุกตัว (ผู้เล่นบอก 2026-10-24)
+  const hasChain = Object.values(parsed["link-chains"] ?? {}).some((c) => c.monsterlingId === id);
+  if (hasChain && doc.kind !== "boss") {
+    fail(`data/monsterlings/${id}.json`, `มีลิงก์เชน จึงต้องเป็น kind: "boss" (ได้ ${String(doc.kind)})`);
+  }
   if (typeof doc.statTier === "string" && !statTierIds.has(doc.statTier)) {
     fail(`data/monsterlings/${id}.json`, `statTier "${doc.statTier}" ไม่มีใน meta/monster-stat-tiers.json`);
   }

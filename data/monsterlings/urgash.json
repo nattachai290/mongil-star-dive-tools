@@ -8,11 +8,16 @@
     "book": "field",
     "no": 51
   },
+  "kind": "boss",
+  "statTier": "boss",
   "speciesEffects": [
     {
       "kind": "buff",
       "stat": "dmgDealt",
-      "scopes": ["ultimate", "weaknessHit"],
+      "scopes": [
+        "ultimate",
+        "weaknessHit"
+      ],
       "value": 8,
       "unit": "percent",
       "target": "self",
@@ -27,6 +32,6 @@
     "verifiedAt": "2026-09-13",
     "gameVersion": "unknown",
     "by": "in-game",
-    "note": "จอภาษาอังกฤษเขียน \"Ultimate Skill Elemental Weakness DMG +8%\" — ซ้อนขอบเขตสองชั้น จึงเป็นตัวแรกที่ใช้ scopes มากกว่าหนึ่งค่า จอไทยเขียนเรียงกลับด้าน \"เพิ่มดาเมจธาตุจุดอ่อนของสกิลอัลติเมต 8%\" ตรงกับที่ describe.ts สลับลำดับให้ตอนแสดงผลภาษาไทย"
+    "note": "จอภาษาอังกฤษเขียน \"Ultimate Skill Elemental Weakness DMG +8%\" — ซ้อนขอบเขตสองชั้น จึงเป็นตัวแรกที่ใช้ scopes มากกว่าหนึ่งค่า จอไทยเขียนเรียงกลับด้าน \"เพิ่มดาเมจธาตุจุดอ่อนของสกิลอัลติเมต 8%\" ตรงกับที่ describe.ts สลับลำดับให้ตอนแสดงผลภาษาไทย | **2026-10-24** kind boss — ผู้เล่นบอก \"พวกที่มี link chain เป็นบอสหมด\" · statTier boss — ผู้เล่นบอก \"บอสจะได้ stat แบบกายหมัดหิน แต่ยกเว้นสกาที่น้อยกว่า\""
   }
 }

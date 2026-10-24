@@ -764,5 +764,15 @@
       "th": "สีทอง",
       "en": "Gold"
     }
+  },
+  "monsterKind": {
+    "boss": {
+      "th": "บอส",
+      "en": "Boss"
+    },
+    "normal": {
+      "th": "ทั่วไป",
+      "en": "Normal"
+    }
   }
 }

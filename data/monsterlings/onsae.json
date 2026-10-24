@@ -8,6 +8,8 @@
     "book": "field",
     "no": 141
   },
+  "kind": "boss",
+  "statTier": "boss",
   "speciesEffects": [
     {
       "kind": "buff",
@@ -30,6 +32,6 @@
     "verifiedAt": "2026-09-14",
     "gameVersion": "unknown",
     "by": "in-game",
-    "note": "ตัวแรกที่ \"ท่าที่ไปกระตุ้น\" ถูกจำกัด — คริติคอลต้องมาจากสกิลอัลติเมต แต่ผลที่ได้คือดาเมจคริติคอลของทุกท่า จึงเป็น condition.triggerScope ไม่ใช่ effect.scopes"
+    "note": "ตัวแรกที่ \"ท่าที่ไปกระตุ้น\" ถูกจำกัด — คริติคอลต้องมาจากสกิลอัลติเมต แต่ผลที่ได้คือดาเมจคริติคอลของทุกท่า จึงเป็น condition.triggerScope ไม่ใช่ effect.scopes | **2026-10-24** kind boss — ผู้เล่นบอก \"พวกที่มี link chain เป็นบอสหมด\" · statTier boss — ผู้เล่นบอก \"บอสจะได้ stat แบบกายหมัดหิน แต่ยกเว้นสกาที่น้อยกว่า\""
   }
 }

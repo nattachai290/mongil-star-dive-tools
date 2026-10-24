@@ -1,12 +1,22 @@
 {
   "id": "monks-shadow",
-  "name": { "th": "เงาของนักบวช", "en": "Monk's Shadow" },
-  "dex": { "book": "field", "no": 63 },
+  "name": {
+    "th": "เงาของนักบวช",
+    "en": "Monk's Shadow"
+  },
+  "dex": {
+    "book": "field",
+    "no": 63
+  },
+  "kind": "normal",
+  "statTier": "normal",
   "speciesEffects": [
     {
       "kind": "buff",
       "stat": "dmgDealt",
-      "scopes": ["weaknessHit"],
+      "scopes": [
+        "weaknessHit"
+      ],
       "value": 6.57,
       "unit": "percent",
       "target": "self",
@@ -16,12 +26,17 @@
     }
   ],
   "effectsRank": "gold",
-  "images": { "icon": "monks-shadow-icon.webp" },
+  "images": {
+    "icon": "monks-shadow-icon.webp"
+  },
   "source": {
     "verifiedAt": "2026-09-14",
     "gameVersion": "unknown",
     "by": "in-game",
-    "readIn": ["th", "en"],
-    "note": "โครงเดียวกับนักบวชแห่งความว่างเปล่า (field 62) แต่ได้ 6.57% ส่วนตัวนั้นได้ 6.25%"
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "โครงเดียวกับนักบวชแห่งความว่างเปล่า (field 62) แต่ได้ 6.57% ส่วนตัวนั้นได้ 6.25% | **2026-10-24** kind normal · statTier normal — อนุมานจากกติกาที่ผู้เล่นบอก: เกมแบ่งแค่บอสกับทั่วไป และมอนที่มีลิงก์เชนเป็นบอสหมด ตัวนี้ไม่มีลิงก์เชน → จัดเป็นทั่วไป ถ้าเจอว่าเป็นบอสให้แก้"
   }
 }

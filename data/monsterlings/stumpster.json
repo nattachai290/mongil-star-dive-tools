@@ -8,12 +8,16 @@
     "book": "field",
     "no": 107
   },
+  "kind": "normal",
+  "statTier": "normal",
   "speciesEffects": [
     {
       "kind": "buff",
       "stat": "dmgDealt",
       "damageType": "fire",
-      "scopes": ["switchSkill"],
+      "scopes": [
+        "switchSkill"
+      ],
       "value": 6.57,
       "unit": "percent",
       "target": "self",
@@ -28,7 +32,10 @@
     "verifiedAt": "2026-09-14",
     "gameVersion": "unknown",
     "by": "in-game",
-    "readIn": ["th", "en"],
-    "note": "เป็นขั้นบนของต้นไม้ปีศาจ (field 106) ที่ได้ 6.25 — ใช้ครบสามแกนพร้อมกัน stat ดาเมจ + ธาตุไฟ + ขอบเขตสกิลสับเปลี่ยน"
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "เป็นขั้นบนของต้นไม้ปีศาจ (field 106) ที่ได้ 6.25 — ใช้ครบสามแกนพร้อมกัน stat ดาเมจ + ธาตุไฟ + ขอบเขตสกิลสับเปลี่ยน | **2026-10-24** kind normal · statTier normal — อนุมานจากกติกาที่ผู้เล่นบอก: เกมแบ่งแค่บอสกับทั่วไป และมอนที่มีลิงก์เชนเป็นบอสหมด ตัวนี้ไม่มีลิงก์เชน → จัดเป็นทั่วไป ถ้าเจอว่าเป็นบอสให้แก้"
   }
 }

@@ -8,11 +8,15 @@
     "book": "field",
     "no": 56
   },
+  "kind": "boss",
+  "statTier": "boss",
   "speciesEffects": [
     {
       "kind": "buff",
       "stat": "dmgDealt",
-      "scopes": ["specialSkill"],
+      "scopes": [
+        "specialSkill"
+      ],
       "value": 8.4,
       "unit": "percent",
       "target": "self",
@@ -28,7 +32,10 @@
     "verifiedAt": "2026-09-14",
     "gameVersion": "unknown",
     "by": "in-game",
-    "readIn": ["th", "en"],
-    "note": "8.4% คือขั้นบนของฐาน 8% (8 x 1.05) ดู PLAN §13.9.2 | โครงใกล้กับเบเฮโมวูล์ฟ (field 54) ที่ได้ 8% onCrit 10 วินาทีเหมือนกัน แต่คนละ stat จึงยังไม่ถือว่าเป็นคู่"
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "8.4% คือขั้นบนของฐาน 8% (8 x 1.05) ดู PLAN §13.9.2 | โครงใกล้กับเบเฮโมวูล์ฟ (field 54) ที่ได้ 8% onCrit 10 วินาทีเหมือนกัน แต่คนละ stat จึงยังไม่ถือว่าเป็นคู่ | **2026-10-24** kind boss — ผู้เล่นบอก \"พวกที่มี link chain เป็นบอสหมด\" · statTier boss — ผู้เล่นบอก \"บอสจะได้ stat แบบกายหมัดหิน แต่ยกเว้นสกาที่น้อยกว่า\""
   }
 }

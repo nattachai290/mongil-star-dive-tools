@@ -1,12 +1,22 @@
 {
   "id": "noxtroll",
-  "name": { "th": "ไนท์โทรลล์", "en": "Noxtroll" },
-  "dex": { "book": "field", "no": 50 },
+  "name": {
+    "th": "ไนท์โทรลล์",
+    "en": "Noxtroll"
+  },
+  "dex": {
+    "book": "field",
+    "no": 50
+  },
+  "kind": "normal",
+  "statTier": "normal",
   "speciesEffects": [
     {
       "kind": "buff",
       "stat": "neutralizationDmg",
-      "scopes": ["ultimate"],
+      "scopes": [
+        "ultimate"
+      ],
       "value": 6.57,
       "unit": "percent",
       "target": "self",
@@ -14,12 +24,17 @@
     }
   ],
   "effectsRank": "gold",
-  "images": { "icon": "noxtroll-icon.webp" },
+  "images": {
+    "icon": "noxtroll-icon.webp"
+  },
   "source": {
     "verifiedAt": "2026-09-14",
     "gameVersion": "unknown",
     "by": "in-game",
-    "readIn": ["th", "en"],
-    "note": "โครงเดียวกับโทรลล์ (field 49) แต่ได้ 6.57% ส่วนตัวนั้นได้ 6.25%"
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "โครงเดียวกับโทรลล์ (field 49) แต่ได้ 6.57% ส่วนตัวนั้นได้ 6.25% | **2026-10-24** kind normal · statTier normal — อนุมานจากกติกาที่ผู้เล่นบอก: เกมแบ่งแค่บอสกับทั่วไป และมอนที่มีลิงก์เชนเป็นบอสหมด ตัวนี้ไม่มีลิงก์เชน → จัดเป็นทั่วไป ถ้าเจอว่าเป็นบอสให้แก้"
   }
 }

@@ -8,6 +8,8 @@
     "book": "field",
     "no": 113
   },
+  "kind": "normal",
+  "statTier": "normal",
   "speciesEffects": [
     {
       "kind": "buff",
@@ -23,7 +25,6 @@
     }
   ],
   "effectsRank": "gold",
-  "statTier": "white-wraith-class",
   "images": {
     "icon": "white-wraith-icon.webp"
   },
@@ -35,6 +36,6 @@
       "th",
       "en"
     ],
-    "note": "**2026-10-24 จอรายละเอียดมอน (ไทย)** Lv.60 พลังโจมตี 669 · ป้องกัน 1,044 · ชีวิต 2,226 → statTier white-wraith-class"
+    "note": "**2026-10-24 จอรายละเอียดมอน (ไทย)** Lv.60 พลังโจมตี 669 · ป้องกัน 1,044 · ชีวิต 2,226 → statTier normal (เดิมชื่อแบบซาตานสตะ) | **2026-10-24** kind normal · statTier normal — อนุมานจากกติกาที่ผู้เล่นบอก: เกมแบ่งแค่บอสกับทั่วไป และมอนที่มีลิงก์เชนเป็นบอสหมด ตัวนี้ไม่มีลิงก์เชน → จัดเป็นทั่วไป ถ้าเจอว่าเป็นบอสให้แก้"
   }
 }

@@ -8,11 +8,15 @@
     "book": "field",
     "no": 34
   },
+  "kind": "boss",
+  "statTier": "boss",
   "speciesEffects": [
     {
       "kind": "buff",
       "stat": "dmgDealt",
-      "scopes": ["crit"],
+      "scopes": [
+        "crit"
+      ],
       "damageType": "lightning",
       "value": 8,
       "unit": "percent",
@@ -28,6 +32,6 @@
     "verifiedAt": "2026-09-14",
     "gameVersion": "unknown",
     "by": "in-game",
-    "note": "โครงเดียวกับเกล็ดน้ำค้างขาว/แดง (field 13/14) ที่เป็นธาตุน้ำแข็ง 6.25%/6.57% ตัวนี้ธาตุสายฟ้า 8%"
+    "note": "โครงเดียวกับเกล็ดน้ำค้างขาว/แดง (field 13/14) ที่เป็นธาตุน้ำแข็ง 6.25%/6.57% ตัวนี้ธาตุสายฟ้า 8% | **2026-10-24** kind boss — ผู้เล่นบอก \"พวกที่มี link chain เป็นบอสหมด\" · statTier boss — ผู้เล่นบอก \"บอสจะได้ stat แบบกายหมัดหิน แต่ยกเว้นสกาที่น้อยกว่า\""
   }
 }

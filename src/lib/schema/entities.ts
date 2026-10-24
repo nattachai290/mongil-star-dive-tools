@@ -336,6 +336,11 @@ export const monsterling = z.object({
    */
   effectsRank: vocabEnum("monsterRank").optional(),
   /**
+   * ชนิดมอนตามที่เกมแบ่ง — เกมบอกแค่ บอส / ทั่วไป (ผู้เล่นบอก 2026-10-24)
+   * มอนที่มีลิงก์เชนเป็นบอสทุกตัว (validate:data ตรวจ) · ไม่มีลิงก์เชนไม่ได้แปลว่าเป็นมอนทั่วไป ต้องมีคนบอก
+   */
+  kind: vocabEnum("monsterKind").optional(),
+  /**
    * แบบค่าพลังที่มอนบวกให้ตัวละครตอนใส่ (ATK / DEF / HP) — id ใน meta/monster-stat-tiers.json
    * ไม่ใส่ = ยังไม่รู้ว่าอยู่แบบไหน
    */
