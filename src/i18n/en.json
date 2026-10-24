@@ -152,7 +152,7 @@
   "linkChains.matches": "link chains",
   "linkChains.noMatch": "No link chain matches those filters",
   "builds.title": "Builds",
-  "builds.lede": "What each character equips, one tab per Awaken stage, with teammates and the monsterlings they carry",
+  "builds.lede": "Three-member team builds, one tab per Awaken stage, with each member's gear and the team's total damage",
   "builds.count": "builds",
   "builds.empty": "No builds yet",
   "builds.awaken": "Awaken",
@@ -163,9 +163,14 @@
   "builds.linkChain": "Link Chain",
   "builds.legendary": "Legendary",
   "builds.food": "Food",
-  "builds.team": "Team",
   "builds.dupWarning": "Same monsterling on more than one team member — buffs do not stack",
   "builds.empty.slot": "—",
   "builds.pieces": "pieces",
-  "builds.traits": "Traits"
+  "builds.traits": "Traits",
+  "builds.teamDamage": "Team damage",
+  "builds.teamDamageNote": "One full skill cycle per member: full basic chain + switch + special + ultimate · crit-rate average · community sheet formula (unverified)",
+  "builds.member": "Member",
+  "builds.total": "Total",
+  "builds.teamTotal": "Team total",
+  "builds.rowsCounted": "Rows counted"
 }

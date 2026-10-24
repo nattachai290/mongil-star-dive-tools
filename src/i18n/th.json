@@ -152,7 +152,7 @@
   "linkChains.matches": "ใบที่ตรง",
   "linkChains.noMatch": "ไม่พบลิงก์เชนที่ตรงกับตัวกรอง",
   "builds.title": "บิ้ว",
-  "builds.lede": "ของที่ตัวละครใส่ แยกแท็บตามขั้นปลุกพลัง พร้อมเพื่อนร่วมทีมและมอนที่เพื่อนใส่",
+  "builds.lede": "บิ้วทีม 3 ตัว แยกแท็บตามขั้นปลุกพลัง พร้อมของที่แต่ละตัวใส่และดาเมจรวมทั้งทีม",
   "builds.count": "บิ้ว",
   "builds.empty": "ยังไม่มีบิ้ว",
   "builds.awaken": "ปลุกพลัง",
@@ -163,9 +163,14 @@
   "builds.linkChain": "ลิงก์เชน",
   "builds.legendary": "มอนสเตอร์ตำนาน",
   "builds.food": "อาหาร",
-  "builds.team": "ทีม",
   "builds.dupWarning": "มอนตัวเดียวกันอยู่หลายคนในทีม — บัฟไม่ทับซ้อนกัน",
   "builds.empty.slot": "—",
   "builds.pieces": "ชิ้น",
-  "builds.traits": "ลักษณะเฉพาะ"
+  "builds.traits": "ลักษณะเฉพาะ",
+  "builds.teamDamage": "ดาเมจรวมทั้งทีม",
+  "builds.teamDamageNote": "สกิลครบ 1 รอบต่อตัว: โจมตีพื้นฐานครบชุด + สกิลสับเปลี่ยน + สกิลพิเศษ + สกิลอัลติเมต · ค่าเฉลี่ยตามอัตราคริ · สูตรจากชีตชุมชน (ยังไม่ยืนยัน)",
+  "builds.member": "ตัวละคร",
+  "builds.total": "รวม",
+  "builds.teamTotal": "รวมทั้งทีม",
+  "builds.rowsCounted": "แถวตัวเลขที่นับ"
 }

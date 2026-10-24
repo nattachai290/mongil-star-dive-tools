@@ -6,6 +6,7 @@
  */
 import { character, food, linkChain, monsterling, skill } from "../src/lib/schema/entities";
 import { computeDamage, proficiencyToPercent, sumBuffs } from "../src/lib/formula";
+import { teamDamage } from "../src/lib/team-damage";
 import { LINK_CHAIN_LIST_IS_COMPLETE, linkableBadge, linkableIds, linkableOf } from "../src/lib/linkable";
 import type { Effect } from "../src/lib/schema/common";
 
@@ -105,6 +106,23 @@ check("ไม่ใส่ป้องกันศัตรู = ข้ามข�
   noDef.steps.find((s) => s.id === "defenseFactor")?.skipped === true &&
   noDef.caveats.some((c) => c.includes("ก่อนหักป้องกัน")));
 check("ความชำนาญ 1,078 = 12.18% ตรงกับจอเกม", Math.abs(proficiencyToPercent(1078) - 12.18) < 0.01);
+
+// ---------- ดาเมจรวมทั้งทีม ----------
+console.log("\nดาเมจรวมทั้งทีม");
+{
+  const solo = teamDamage({ awaken: 0, food: {}, members: [{ characterId: "gabi", equipment: {}, monsterlings: [] }] });
+  const basic = solo.members[0].skills.find((s) => s.skill === "basic");
+  const labels = (basic?.rows ?? []).map((r) => r.label.en);
+  check("นับโจมตีพื้นฐานครบชุด", labels.includes("1st Hit DMG") && labels.includes("4th Hit DMG"), labels.join(", "));
+  check("ไม่นับท่าโต้กลับและแถวบัฟ", !labels.some((l) => /Counter|Boost|Duration/.test(l ?? "")), labels.join(", "));
+  check("รวมทั้งทีม = ผลรวมของสมาชิก", Math.abs(solo.total - solo.members[0].total) < 1e-6);
+  const withFood = teamDamage({
+    awaken: 0,
+    food: { entree: "green-cappy-forest-stew" },
+    members: [{ characterId: "gabi", equipment: {}, monsterlings: [] }],
+  });
+  check("อาหารเพิ่ม ATK แล้วดาเมจขึ้น", withFood.total > solo.total);
+}
 
 // ---------- ชนิดดาเมจอยู่ที่ท่า ไม่ใช่ที่ตัวละคร ----------
 const skillShape = { name: t("ท่า"), desc: t("คำอธิบาย") };

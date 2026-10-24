@@ -20,7 +20,9 @@ import {
 } from "@/lib/data";
 import { asset } from "@/lib/base-path";
 import { label } from "@/lib/vocabulary";
-import type { Build, BuildLoadout, LinkChain } from "@/lib/schema/entities";
+import type { BuildLoadout, BuildMember, LinkChain } from "@/lib/schema/entities";
+import { FORMULA } from "@/lib/formula";
+import { CYCLE_SKILLS, TEAM_ASSUMPTIONS, teamDamage } from "@/lib/team-damage";
 import type { Effect, LocalizedText } from "@/lib/schema/common";
 
 export function generateStaticParams() {
@@ -45,10 +47,10 @@ const SLOTS = ["headgear", "chestpiece", "gloves", "footwear"] as const;
 const name = (v: LocalizedText | undefined, locale: Locale, fallback: string) =>
   v?.[locale] ?? v?.en ?? v?.th ?? fallback;
 
-type MonSlot = BuildLoadout["monsterlings"][number];
+type MonSlot = BuildMember["monsterlings"][number];
 
-/** ชิ้นต่อเซ็ตของแท็บนี้ → โบนัสที่ทำงาน (ครบ 2 / 4 ชิ้น) */
-function activeSets(lo: BuildLoadout) {
+/** ชิ้นต่อเซ็ตของตัวนี้ → โบนัสที่ทำงาน (ครบ 2 / 4 ชิ้น) */
+function activeSets(lo: BuildMember) {
   const counts = new Map<string, number>();
   for (const slot of SLOTS) {
     const piece = EQUIPMENT.find((e) => e.id === lo.equipment[slot]);
@@ -124,16 +126,6 @@ function MonFull({
   );
 }
 
-function MonSmall({ id, locale, highlight }: { id: string; locale: Locale; highlight: boolean }) {
-  const m = MONSTERLINGS.get(id);
-  return (
-    <li className={`flex items-center gap-2 rounded-md p-1 ${highlight ? "ring-1 ring-gold" : ""}`}>
-      <Icon src={monsterlingImage(id)} />
-      <span className="text-sm">{name(m?.name, locale, id)}</span>
-    </li>
-  );
-}
-
 /** ลิงก์เชน — มอนเจ้าของ เงื่อนไขปรากฏตัว ดาเมจ คูลดาวน์ และเอฟเฟกต์เพิ่มเติมของขั้นสูงสุดที่อ่านมา */
 function ChainInfo({ chain, locale, t }: { chain: LinkChain; locale: Locale; t: T }) {
   const owner = MONSTERLINGS.get(chain.monsterlingId);
@@ -193,19 +185,36 @@ function Slot({ title, children }: { title: string; children: React.ReactNode })
   );
 }
 
-function Loadout({ b, lo, locale, t }: { b: Build; lo: BuildLoadout; locale: Locale; t: T }) {
-  const art = ARTIFACTS.find((a) => a.id === lo.artifact);
-  const fusion = art && [...art.fusion].sort((x, y) => y.artifactLevel - x.artifactLevel)[0];
-  const chain = LINK_CHAINS.find((c) => c.id === lo.linkChain);
-  const sets = activeSets(lo);
+const fmt = (n: number, locale: Locale) =>
+  Math.round(n).toLocaleString(locale === "th" ? "th-TH" : "en-US");
 
-  // มอนตัวเดียวกันบนหลายคนในทีม บัฟไม่ทับซ้อน
-  const own = lo.monsterlings.map((m) => m.id);
-  const all = [...own, ...lo.teammates.flatMap((m) => m.monsterlings)];
-  const dup = new Set(all.filter((m, i) => all.indexOf(m) !== i));
+/** ของที่ตัวละคร 1 ตัวในทีมใส่ */
+function MemberGear({ mem, dup, locale, t }: { mem: BuildMember; dup: Set<string>; locale: Locale; t: T }) {
+  const c = characterById(mem.characterId);
+  const art = ARTIFACTS.find((a) => a.id === mem.artifact);
+  const fusion = art && [...art.fusion].sort((x, y) => y.artifactLevel - x.artifactLevel)[0];
+  const chain = LINK_CHAINS.find((x) => x.id === mem.linkChain);
+  const sets = activeSets(mem);
+  const img = characterImage(mem.characterId);
 
   return (
-    <div className="space-y-3">
+    <section className="rounded-xl border border-line p-3">
+      <header className="mb-3 flex items-center gap-2.5">
+        <Icon src={img} />
+        <div>
+          <h3 className="text-sm font-semibold">
+            <Link href={`/${locale}/characters/${mem.characterId}`} className="hover:underline">
+              {name(c?.name, locale, mem.characterId)}
+            </Link>
+          </h3>
+          {c && (
+            <p className="text-[11px] text-ink-2">
+              <span className="text-gold">{c.rarity !== undefined && "★".repeat(c.rarity)}</span>{" "}
+              {label("role", c.role, locale)} · {label("element", c.element, locale)}
+            </p>
+          )}
+        </div>
+      </header>
       <div className="grid gap-3 sm:grid-cols-2">
         <Slot title={t("builds.artifact")}>
           {art ? (
@@ -227,7 +236,7 @@ function Loadout({ b, lo, locale, t }: { b: Build; lo: BuildLoadout; locale: Loc
         <Slot title={t("builds.equipment")}>
           <ul className="space-y-1 text-sm">
             {SLOTS.map((slot) => {
-              const piece = EQUIPMENT.find((e) => e.id === lo.equipment[slot]);
+              const piece = EQUIPMENT.find((e) => e.id === mem.equipment[slot]);
               return (
                 <li key={slot} className="flex gap-2">
                   <span className="w-20 shrink-0 text-xs text-muted">{label("slot", slot, locale)}</span>
@@ -239,7 +248,11 @@ function Loadout({ b, lo, locale, t }: { b: Build; lo: BuildLoadout; locale: Loc
           {sets.map(({ set, n, bonuses }) => (
             <div key={set.id} className="mt-3 border-t border-line pt-2">
               <p className="text-xs font-semibold text-ink-2">
-                {name(set.name, locale, set.id)} <span className="font-normal text-muted">({n}{set.pieceCount ? `/${set.pieceCount}` : ""})</span>
+                {name(set.name, locale, set.id)}{" "}
+                <span className="font-normal text-muted">
+                  ({n}
+                  {set.pieceCount ? `/${set.pieceCount}` : ""})
+                </span>
               </p>
               {bonuses.map((bonus) => (
                 <div key={bonus.pieces} className="mt-1.5">
@@ -255,7 +268,7 @@ function Loadout({ b, lo, locale, t }: { b: Build; lo: BuildLoadout; locale: Loc
 
         <Slot title={t("builds.monsterlings")}>
           <ul className="space-y-2">
-            {lo.monsterlings.map((m) => (
+            {mem.monsterlings.map((m) => (
               <MonFull key={m.id} slot={m} locale={locale} highlight={dup.has(m.id)} traitsLabel={t("builds.traits")} />
             ))}
           </ul>
@@ -263,62 +276,128 @@ function Loadout({ b, lo, locale, t }: { b: Build; lo: BuildLoadout; locale: Loc
 
         <div className="space-y-3">
           <Slot title={t("builds.linkChain")}>
-            {chain ? <ChainInfo chain={chain} locale={locale} t={t} /> : <p className="text-sm text-muted">{t("builds.empty.slot")}</p>}
+            {chain ? (
+              <ChainInfo chain={chain} locale={locale} t={t} />
+            ) : (
+              <p className="text-sm text-muted">{t("builds.empty.slot")}</p>
+            )}
           </Slot>
-
           <Slot title={t("builds.legendary")}>
-            {lo.legendary ? (
+            {mem.legendary ? (
               <ul>
-                <MonFull slot={lo.legendary} locale={locale} highlight={false} traitsLabel={t("builds.traits")} />
+                <MonFull
+                  slot={mem.legendary}
+                  locale={locale}
+                  highlight={dup.has(mem.legendary.id)}
+                  traitsLabel={t("builds.traits")}
+                />
               </ul>
             ) : (
               <p className="text-sm text-muted">{t("builds.empty.slot")}</p>
             )}
           </Slot>
-
-          <Slot title={t("builds.food")}>
-            <div className="space-y-3">
-              {(["entree", "side"] as const).map((cat) => {
-                const f = FOOD.find((x) => x.id === lo.food[cat]);
-                return (
-                  <div key={cat}>
-                    <p className="text-sm">
-                      <span className="text-xs text-muted">{label("foodCategory", cat, locale)}: </span>
-                      {f ? name(f.name, locale, f.id) : t("builds.empty.slot")}
-                    </p>
-                    <Effects effects={f?.effects ?? []} locale={locale} />
-                  </div>
-                );
-              })}
-            </div>
-          </Slot>
         </div>
       </div>
+    </section>
+  );
+}
 
-      {lo.teammates.length > 0 && (
-        <Slot title={t("builds.team")}>
-          <div className="grid gap-3 sm:grid-cols-3">
-            {[{ characterId: b.characterId, monsterlings: own }, ...lo.teammates].map((mate) => {
-              const c = characterById(mate.characterId);
-              return (
-                <div key={mate.characterId}>
-                  <p className="text-sm font-semibold">
-                    <Link href={`/${locale}/characters/${mate.characterId}`} className="hover:underline">
-                      {name(c?.name, locale, mate.characterId)}
-                    </Link>
-                  </p>
-                  <ul className="mt-1.5 space-y-1">
-                    {mate.monsterlings.map((m) => (
-                      <MonSmall key={m} id={m} locale={locale} highlight={dup.has(m)} />
-                    ))}
-                  </ul>
-                </div>
-              );
-            })}
-          </div>
-          {dup.size > 0 && <p className="mt-3 text-xs text-gold">{t("builds.dupWarning")}</p>}
-        </Slot>
-      )}
+/** ดาเมจรวมทั้งทีม — สกิลครบ 1 รอบต่อตัว */
+function TeamDamageTable({ lo, locale, t }: { lo: BuildLoadout; locale: Locale; t: T }) {
+  const result = teamDamage(lo);
+  return (
+    <Slot title={t("builds.teamDamage")}>
+      <p className="text-[11px] text-muted">{t("builds.teamDamageNote")}</p>
+      <table className="mt-2 w-full text-sm">
+        <thead>
+          <tr className="text-left text-[11px] text-muted">
+            <th className="py-1 font-normal">{t("builds.member")}</th>
+            {CYCLE_SKILLS.map((k) => (
+              <th key={k} className="py-1 text-end font-normal">
+                {t(`skill.${k}`)}
+              </th>
+            ))}
+            <th className="py-1 text-end font-normal">{t("builds.total")}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {result.members.map((m) => (
+            <tr key={m.characterId} className="border-t border-line">
+              <td className="py-1.5">{name(characterById(m.characterId)?.name, locale, m.characterId)}</td>
+              {CYCLE_SKILLS.map((k) => {
+                const s = m.skills.find((x) => x.skill === k);
+                return (
+                  <td key={k} className="py-1.5 text-end font-mono tabular-nums">
+                    {s ? fmt(s.average, locale) : "—"}
+                  </td>
+                );
+              })}
+              <td className="py-1.5 text-end font-mono font-semibold tabular-nums">{fmt(m.total, locale)}</td>
+            </tr>
+          ))}
+          <tr className="border-t-2 border-gold">
+            <td className="py-1.5 font-semibold" colSpan={CYCLE_SKILLS.length + 1}>
+              {t("builds.teamTotal")}
+            </td>
+            <td className="py-1.5 text-end font-mono font-semibold text-gold tabular-nums">{fmt(result.total, locale)}</td>
+          </tr>
+        </tbody>
+      </table>
+      <details className="mt-3 text-xs">
+        <summary className="cursor-pointer text-ink-2">{t("builds.rowsCounted")}</summary>
+        <div className="mt-2 space-y-2">
+          {result.members.map((m) => (
+            <div key={m.characterId}>
+              <p className="font-semibold">{name(characterById(m.characterId)?.name, locale, m.characterId)}</p>
+              <ul className="mt-1 space-y-0.5 text-ink-2">
+                {m.skills.map((s) => (
+                  <li key={s.skill}>
+                    {t(`skill.${s.skill}`)} Lv.{s.level}:{" "}
+                    {s.rows.map((r) => `${name(r.label, locale, "")} ${r.value}%`).join(" · ")}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </details>
+      <ul className="mt-3 list-disc space-y-0.5 ps-4 text-[11px] text-muted">
+        {[...TEAM_ASSUMPTIONS, ...FORMULA.notYetModeled.slice(0, 1)].map((a) => (
+          <li key={a}>{a}</li>
+        ))}
+      </ul>
+    </Slot>
+  );
+}
+
+function Loadout({ lo, locale, t }: { lo: BuildLoadout; locale: Locale; t: T }) {
+  // มอนตัวเดียวกันบนหลายคนในทีม บัฟไม่ทับซ้อน
+  const all = lo.members.flatMap((m) => [...m.monsterlings.map((x) => x.id), ...(m.legendary ? [m.legendary.id] : [])]);
+  const dup = new Set(all.filter((m, i) => all.indexOf(m) !== i));
+
+  return (
+    <div className="space-y-3">
+      <TeamDamageTable lo={lo} locale={locale} t={t} />
+      <Slot title={t("builds.food")}>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {(["entree", "side"] as const).map((cat) => {
+            const f = FOOD.find((x) => x.id === lo.food[cat]);
+            return (
+              <div key={cat}>
+                <p className="text-sm">
+                  <span className="text-xs text-muted">{label("foodCategory", cat, locale)}: </span>
+                  {f ? name(f.name, locale, f.id) : t("builds.empty.slot")}
+                </p>
+                <Effects effects={f?.effects ?? []} locale={locale} />
+              </div>
+            );
+          })}
+        </div>
+      </Slot>
+      {dup.size > 0 && <p className="text-xs text-gold">{t("builds.dupWarning")}</p>}
+      {lo.members.map((mem) => (
+        <MemberGear key={mem.characterId} mem={mem} dup={dup} locale={locale} t={t} />
+      ))}
     </div>
   );
 }
@@ -341,33 +420,14 @@ export default async function BuildsPage({ params }: { params: Promise<{ locale:
       ) : (
         <div className="mt-6 space-y-8">
           {BUILDS.map((b) => {
-            const c = characterById(b.characterId);
-            const img = characterImage(b.characterId);
+            const team = b.loadouts[0].members.map((m) => name(characterById(m.characterId)?.name, locale as Locale, m.characterId));
             return (
               <article key={b.id} id={b.id} className="rounded-xl border border-line p-4">
-                <header className="mb-4 flex items-center gap-3">
-                  {img && (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={img} alt="" width={56} height={56} className="size-14 rounded-full border border-line bg-surface-2 object-cover" />
-                  )}
-                  <div>
-                    <h2 className="font-display text-lg font-semibold">
-                      <Link href={`/${locale}/characters/${b.characterId}`} className="hover:underline">
-                        {name(c?.name, locale as Locale, b.characterId)}
-                      </Link>
-                    </h2>
-                    {c && (
-                      <p className="text-xs text-ink-2">
-                        <span className="text-gold">{c.rarity !== undefined && "★".repeat(c.rarity)}</span> {label("role", c.role, locale)} ·{" "}
-                        {label("element", c.element, locale)}
-                      </p>
-                    )}
-                  </div>
-                </header>
+                <h2 className="mb-4 font-display text-lg font-semibold">{team.join(" · ")}</h2>
                 <BuildTabs
                   labels={b.loadouts.map((lo) => `${t("builds.awaken")} ${lo.awaken}`)}
                   panels={b.loadouts.map((lo) => (
-                    <Loadout key={lo.awaken} b={b} lo={lo} locale={locale as Locale} t={t} />
+                    <Loadout key={lo.awaken} lo={lo} locale={locale as Locale} t={t} />
                   ))}
                 />
               </article>
