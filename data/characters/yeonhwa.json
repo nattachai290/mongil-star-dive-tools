@@ -1,6 +1,7 @@
 {
   "id": "yeonhwa",
   "name": {
+    "th": "ยอนฮวา",
     "en": "Yeonhwa"
   },
   "rarity": 4,
@@ -158,9 +159,11 @@
   "skills": {
     "basic": {
       "name": {
+        "th": "คมไผ่โลหิต",
         "en": "Bloody Bamboo"
       },
       "desc": {
+        "th": "ฟันดาบไม้ไผ่อย่างรวดเร็ว สร้างดาเมจกายภาพ และเมื่อโจมตีครั้งสุดท้ายในระหว่างต่อสู้ จะสร้างเงาเพื่อเลียนแบบการกระทำ สร้างดาเมจกายภาพ",
         "en": "Yeonhwa deals Physical DMG by quickly slashing with her bamboo blade. Using her finishing attack during battle generates a Shadow that copies her movements, dealing Physical DMG."
       },
       "damageType": "physical",
@@ -168,6 +171,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 1",
             "en": "1st Hit DMG"
           },
           "unit": "percent",
@@ -193,6 +197,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 2",
             "en": "2nd Hit DMG"
           },
           "unit": "percent",
@@ -218,6 +223,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 3",
             "en": "3rd Hit DMG"
           },
           "unit": "percent",
@@ -243,6 +249,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 4",
             "en": "4th Hit DMG"
           },
           "unit": "percent",
@@ -268,6 +275,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 5",
             "en": "5th Hit DMG"
           },
           "unit": "percent",
@@ -293,6 +301,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 6",
             "en": "6th Hit DMG"
           },
           "unit": "percent",
@@ -318,6 +327,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจเงา",
             "en": "Shadow DMG"
           },
           "unit": "percent",
@@ -343,6 +353,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีฉับพลัน",
             "en": "Air Counter DMG"
           },
           "unit": "percent",
@@ -367,6 +378,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจหลบหลีกโต้กลับ",
             "en": "Evasion Counter DMG"
           },
           "unit": "percent",
@@ -393,9 +405,11 @@
     },
     "switch": {
       "name": {
+        "th": "ชั่วพริบตา",
         "en": "Seized Opportunity"
       },
       "desc": {
+        "th": "พุ่งเข้าใส่ศัตรูอย่างรวดเร็ว ฟาดด้วยดาบไม้ไผ่อย่างรุนแรง สร้างดาเมจธาตุสายฟ้า / [สกิลสนับสนุน] เมื่อสมาชิกทีมโจมตีติดคริติคอลในระหว่างต่อสู้ จะฟันศัตรูที่เป็นเป้าหมายอย่างรวดเร็วแล้วปักดาบ สร้างดาเมจธาตุสายฟ้าและมอบเอฟเฟกต์อ่อนแอต่อสายฟ้า และสร้างเงาที่ไม่ทำการเคลื่อนไหวใดตามอัตราที่กำหนด / เมื่อสกิลสนับสนุนทำงาน หากเงาถูกสร้างขึ้นและคงอยู่ เงานั้นจะเลียนแบบการกระทำ 1 ครั้ง สร้างดาเมจธาตุสายฟ้าและหายไป",
         "en": "Yeonhwa quickly approaches the enemy and delivers a sweeping slash with her bamboo blade, dealing Lightning DMG. / [Support Skill] If a teammate lands a critical hit during combat, Yeonhwa quickly slashes and stabs the target enemy, dealing Lightning DMG and inflicting Lightning Affliction. Yeonhwa has a set chance of generating a Shadow that does nothing. / If Yeonhwa's Support Skill is triggered while a Shadow is on the field, it will follow her actions once, dealing Lightning DMG before disappearing."
       },
       "damageType": "lightning",
@@ -403,6 +417,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจสกิลสับเปลี่ยน",
             "en": "Switch Skill DMG"
           },
           "unit": "percent",
@@ -428,6 +443,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจสกิลสนับสนุน",
             "en": "Support Skill DMG"
           },
           "unit": "percent",
@@ -453,6 +469,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจเงา",
             "en": "Shadow DMG"
           },
           "unit": "percent",
@@ -478,6 +495,7 @@
         },
         {
           "label": {
+            "th": "อัตราสร้างเงา",
             "en": "Shadow Generation Rate"
           },
           "unit": "percent",
@@ -503,6 +521,7 @@
         },
         {
           "label": {
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อสายฟ้า",
             "en": "Lightning Affliction Duration"
           },
           "unit": "seconds",
@@ -528,6 +547,7 @@
         },
         {
           "label": {
+            "th": "คูลดาวน์สกิลสนับสนุน",
             "en": "Support Skill Cooldown"
           },
           "unit": "seconds",
@@ -914,9 +934,11 @@
     },
     "elemental": {
       "name": {
+        "th": "สังหารให้สิ้นซาก",
         "en": "Slay"
       },
       "desc": {
+        "th": "เมื่อสร้างเงาในขณะใช้สกิลสนับสนุน จะเพิ่มพลังโจมตี 11.9% (เวลาแสดงผล 15 วินาที)",
         "en": "ATK increases by 11.9% upon generating a Shadow using Yeonhwa's Support Skill. (Duration: 15s)"
       },
       "effects": [
@@ -930,6 +952,7 @@
           "durationSec": 15,
           "condition": {
             "note": {
+              "th": "เมื่อสร้างเงาในขณะใช้สกิลสนับสนุน",
               "en": "upon generating a Shadow using her Support Skill"
             }
           }
@@ -957,8 +980,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Assassin · Lightning · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลักจากจอ Info: ATK 1,908 · DEF 598 · HP 8,389 · Crit 5% / 50% — **เท่ากับ Reina ทุกตัว** (Lightning Melee 4 ดาวเหมือนกัน แต่คนละบทบาท) อ่านจากจอตรง ๆ ไม่ได้คัดลอก | รูป portrait ตัดจากจอ Info 340x340 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 11.59% · Assassin 1,026 · Elemental Weakness 125% · gauge 100% · stamina 100 (แบบ Assassin 4 ดาวเดียวกับ Angel) | Basic Bloody Bamboo (ดาเมจกายภาพ) · Ultimate Storm Call (สายฟ้า · Lightning Bolt 1,064.8%) · Passive Wraith (Lv.1) · Guidance of Lightning: Slay (Lv.12 ATK +11.9% 15s · ไม่ระบุเป้าหมาย เก็บเป็นข้อความ) · Lightning Affliction | passive: ประโยคแรกเคยถูกตัดหัว — จอที่เลื่อนขึ้นบนสุด 2026-10-22 ได้ประโยคเต็ม **\"Yeonhwa's Crit DMG increases by a portion of her Lightning DMG Boost, but it doesn't increase above a set maximum.\"** ยืนยันว่าแปลง Lightning DMG Boost (อัตรา 150%) เป็น Crit DMG สูงสุด 50% ตามที่คาดไว้ · effects ยังว่าง เพราะโครง effect ยังเก็บการแปลงค่าจาก stat อื่นไม่ได้ (แบบเดียวกับ passive ของวิเวียน) | **2026-10-22 รอบสาม** Switch Seized Opportunity (ครบหกบรรทัดจากจอที่เลื่อนลง) · Special Thunder Chain Slash · ปลุกพลังครบหกขั้น — **ครบทั้งหกช่องสกิลแล้ว** | switch: ประโยคแรกเคยถูกตัดหัว — จอที่เลื่อนขึ้นบนสุด 2026-10-22 ได้ประโยคเต็มแล้ว (\"Yeonhwa quickly approaches the enemy and delivers...\") | ปลุกพลัง: effects เติมขั้น 2 (ใช้สกิลสับเปลี่ยน → อัตราคริติคอลตัวเอง +20% 8 วินาที · onSwitch ตามคำ \"Using ... Switch Skill\" เป้าหมายชัดว่า \"her\") · ขั้น 3 (ดาเมจสกิลสับเปลี่ยน +6% ไม่รวมสกิลสนับสนุน/Tag-out — scopes switchSkill ซึ่งหมายถึงตัวสกิลสับเปลี่ยนอยู่แล้ว) · ขั้น 5 (ดาเมจสกิลสนับสนุน +6%) · ขั้น 1 (ลดพลังป้องกันเป้าหมายเดียว 25% เมื่อสกิลสนับสนุนโดน) เก็บเป็นข้อความ เพราะยังไม่มีตัวกระตุ้นฝั่ง \"สกิลสนับสนุนโดน\" | ยังไม่ได้อ่าน: จอไทยทั้งหมด | **สกิลธาตุเติม effect แล้ว** (ผู้เล่นกำหนด 2026-10-22: \"ถ้าไม่บอกว่าใครก็คือตัวเอง\" — ข้อความที่ไม่ระบุผู้รับบัฟ ให้ target self) · ตัวกระตุ้นจริงคือ \"สร้าง Shadow ด้วยสกิลสนับสนุน\" (Shadow เกิดได้ 40%) เก็บเป็น onSupportSkill + condition.note ตามข้อความเกม"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Assassin · Lightning · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลักจากจอ Info: ATK 1,908 · DEF 598 · HP 8,389 · Crit 5% / 50% — **เท่ากับ Reina ทุกตัว** (Lightning Melee 4 ดาวเหมือนกัน แต่คนละบทบาท) อ่านจากจอตรง ๆ ไม่ได้คัดลอก | รูป portrait ตัดจากจอ Info 340x340 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 11.59% · Assassin 1,026 · Elemental Weakness 125% · gauge 100% · stamina 100 (แบบ Assassin 4 ดาวเดียวกับ Angel) | Basic Bloody Bamboo (ดาเมจกายภาพ) · Ultimate Storm Call (สายฟ้า · Lightning Bolt 1,064.8%) · Passive Wraith (Lv.1) · Guidance of Lightning: Slay (Lv.12 ATK +11.9% 15s · ไม่ระบุเป้าหมาย เก็บเป็นข้อความ) · Lightning Affliction | passive: ประโยคแรกเคยถูกตัดหัว — จอที่เลื่อนขึ้นบนสุด 2026-10-22 ได้ประโยคเต็ม **\"Yeonhwa's Crit DMG increases by a portion of her Lightning DMG Boost, but it doesn't increase above a set maximum.\"** ยืนยันว่าแปลง Lightning DMG Boost (อัตรา 150%) เป็น Crit DMG สูงสุด 50% ตามที่คาดไว้ · effects ยังว่าง เพราะโครง effect ยังเก็บการแปลงค่าจาก stat อื่นไม่ได้ (แบบเดียวกับ passive ของวิเวียน) | **2026-10-22 รอบสาม** Switch Seized Opportunity (ครบหกบรรทัดจากจอที่เลื่อนลง) · Special Thunder Chain Slash · ปลุกพลังครบหกขั้น — **ครบทั้งหกช่องสกิลแล้ว** | switch: ประโยคแรกเคยถูกตัดหัว — จอที่เลื่อนขึ้นบนสุด 2026-10-22 ได้ประโยคเต็มแล้ว (\"Yeonhwa quickly approaches the enemy and delivers...\") | ปลุกพลัง: effects เติมขั้น 2 (ใช้สกิลสับเปลี่ยน → อัตราคริติคอลตัวเอง +20% 8 วินาที · onSwitch ตามคำ \"Using ... Switch Skill\" เป้าหมายชัดว่า \"her\") · ขั้น 3 (ดาเมจสกิลสับเปลี่ยน +6% ไม่รวมสกิลสนับสนุน/Tag-out — scopes switchSkill ซึ่งหมายถึงตัวสกิลสับเปลี่ยนอยู่แล้ว) · ขั้น 5 (ดาเมจสกิลสนับสนุน +6%) · ขั้น 1 (ลดพลังป้องกันเป้าหมายเดียว 25% เมื่อสกิลสนับสนุนโดน) เก็บเป็นข้อความ เพราะยังไม่มีตัวกระตุ้นฝั่ง \"สกิลสนับสนุนโดน\" | **2026-10-24 จอไทย (พรีวิวตัวละคร)** ชื่อ ยอนฮวา · สเลเยอร์ (= Assassin) · สายฟ้า ระยะใกล้ · 4 ดาว · ค่าพลังห้าค่าตรงจออังกฤษ · โจมตีพื้นฐาน คมไผ่โลหิต · สกิลสับเปลี่ยน ชั่วพริบตา · การชี้นำแห่งสายฟ้า สังหารให้สิ้นซาก (11.9% ตรง · condition.note ไทยเอาท่อนแรกของประโยคบนจอ) — ค่า Lv.12 ตรงทุกแถว · Shadow = เงา | ยังไม่ได้อ่าน (ไทย): สกิลพิเศษ · สกิลอัลติเมต · แพสซีฟ · ปลุกพลัง · สถานะ | **สกิลธาตุเติม effect แล้ว** (ผู้เล่นกำหนด 2026-10-22: \"ถ้าไม่บอกว่าใครก็คือตัวเอง\" — ข้อความที่ไม่ระบุผู้รับบัฟ ให้ target self) · ตัวกระตุ้นจริงคือ \"สร้าง Shadow ด้วยสกิลสนับสนุน\" (Shadow เกิดได้ 40%) เก็บเป็น onSupportSkill + condition.note ตามข้อความเกม"
   }
 }
