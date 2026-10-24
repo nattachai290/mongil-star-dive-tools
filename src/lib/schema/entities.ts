@@ -456,6 +456,17 @@ export const food = z.object({
  * จำนวนช่องตามเกม: มอน 3 · ลิงก์เชน 1 · มอนตำนาน 1 (แยกจากมอน 3 ตัว) · อาหาร จานหลัก + จานรอง
  * ทีมมี 3 ตัว → เพื่อนร่วมทีมใส่ได้ 2 ตัว เก็บเฉพาะมอนที่เพื่อนใส่ · ไม่มีช่องหมายเหตุ (ผู้เล่นกำหนด 2026-10-24)
  */
+/** มอน 1 ช่องในบิ้ว — ลักษณะเฉพาะ + แรง เช่น ดาเมจคริติคอล ทอง = +15% (ค่าอ่านจาก meta/traits.json) */
+const monSlot = z
+  .object({
+    id: slug,
+    traits: z
+      .array(z.object({ id: slug, grade: vocabEnum("monsterRank") }).strict())
+      .max(4)
+      .default([]),
+  })
+  .strict();
+
 export const buildLoadout = z.object({
   awaken: z.number().int().min(0).max(6),
   artifact: slug.optional(),
@@ -470,13 +481,10 @@ export const buildLoadout = z.object({
     .strict()
     .default({}),
   /** มอนของตัวเอง พร้อม Trait ที่ใช้ — มอนหนึ่งตัวมี Trait 4 ช่อง (meta/traits.json) */
-  monsterlings: z
-    .array(z.object({ id: slug, traits: z.array(slug).max(4).default([]) }).strict())
-    .max(3)
-    .default([]),
+  monsterlings: z.array(monSlot).max(3).default([]),
   linkChain: slug.optional(),
-  /** มอนจากสมุดภาพ "มอนสเตอร์ตำนาน" — ช่องของตัวเอง ไม่นับรวมกับมอน 3 ตัว */
-  legendary: slug.optional(),
+  /** มอนจากสมุดภาพ "มอนสเตอร์ตำนาน" — ช่องของตัวเอง ไม่นับรวมกับมอน 3 ตัว · มี Trait 4 ช่องเหมือนกัน */
+  legendary: monSlot.optional(),
   food: z.object({ entree: slug.optional(), side: slug.optional() }).strict().default({}),
   /**
    * เพื่อน 2 ตัวพร้อมมอนที่เพื่อนใส่ — มอนตัวเดียวกันบนสองคนในทีม บัฟไม่ทับซ้อนกัน

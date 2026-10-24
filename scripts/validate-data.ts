@@ -431,9 +431,9 @@ type LoadoutShape = {
   awaken: number;
   artifact?: string;
   equipment?: Record<string, string | undefined>;
-  monsterlings?: { id: string; traits?: string[] }[];
+  monsterlings?: { id: string; traits?: { id: string; grade: string }[] }[];
   linkChain?: string;
-  legendary?: string;
+  legendary?: { id: string; traits?: { id: string; grade: string }[] };
   food?: { entree?: string; side?: string };
   teammates?: { characterId: string; monsterlings?: string[] }[];
 };
@@ -464,9 +464,12 @@ for (const [id, doc] of Object.entries(parsed.builds ?? {})) {
 
     const monSlots = lo.monsterlings ?? [];
     const mons = monSlots.map((m) => m.id);
-    for (const [j, m] of monSlots.entries()) {
+    for (const [label, m] of [
+      ...monSlots.map((m, j) => [`monsterlings[${j}]`, m] as const),
+      ...(lo.legendary ? [["legendary", lo.legendary] as const] : []),
+    ]) {
       for (const tr of m.traits ?? []) {
-        if (!traitIds.has(tr)) fail(where, `${at}.monsterlings[${j}].traits มี "${tr}" ซึ่งไม่อยู่ใน meta/traits.json`);
+        if (!traitIds.has(tr.id)) fail(where, `${at}.${label}.traits มี "${tr.id}" ซึ่งไม่อยู่ใน meta/traits.json`);
       }
     }
     checkRefs(where, mons, "monsterlings", `${at}.monsterlings`);
@@ -475,10 +478,11 @@ for (const [id, doc] of Object.entries(parsed.builds ?? {})) {
       const book = (parsed.monsterlings?.[m]?.dex as { book?: string } | undefined)?.book;
       if (book === "legendary") fail(where, `${at}.monsterlings มี "${m}" ซึ่งเป็นมอนตำนาน — ต้องใส่ช่อง legendary`);
     }
-    checkRefs(where, lo.legendary, "monsterlings", `${at}.legendary`);
-    if (lo.legendary) {
-      const book = (parsed.monsterlings?.[lo.legendary]?.dex as { book?: string } | undefined)?.book;
-      if (book && book !== "legendary") fail(where, `${at}.legendary "${lo.legendary}" ไม่ใช่มอนตำนาน`);
+    const legId = lo.legendary?.id;
+    checkRefs(where, legId, "monsterlings", `${at}.legendary`);
+    if (legId) {
+      const book = (parsed.monsterlings?.[legId]?.dex as { book?: string } | undefined)?.book;
+      if (book && book !== "legendary") fail(where, `${at}.legendary "${legId}" ไม่ใช่มอนตำนาน`);
     }
     checkRefs(where, lo.linkChain, "link-chains", `${at}.linkChain`);
 

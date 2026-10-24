@@ -135,9 +135,9 @@ exquisite{ buff }, unlock{ from: "brownie-shop"|"event"|"quest" }, images.icon, 
 | `awaken` | 0–6 | ขั้นปลุกพลังของแท็บนี้ |
 | `artifact` | 1 | บทบาทต้องตรงกับตัวละคร |
 | `equipment.{headgear,chestpiece,gloves,footwear}` | ช่องละ 1 | ชิ้นต้องอยู่ช่องนั้นจริง · โบนัสเซ็ตคิดจากชิ้นที่ใส่ |
-| `monsterlings[{id, traits}]` | สูงสุด 3 · Trait ตัวละ 4 | ห้ามมีมอนตำนาน · Trait ต้องอยู่ใน meta/traits.json |
+| `monsterlings[{id, traits[{id, grade}]}]` | สูงสุด 3 · Trait ตัวละ 4 | ห้ามมีมอนตำนาน · Trait ต้องอยู่ใน meta/traits.json · grade = แรง (เทา…ทอง) ค่าอ่านจากคลัง |
 | `linkChain` | 1 | |
-| `legendary` | 1 | มอนจากสมุดภาพมอนสเตอร์ตำนาน · แยกจากมอน 3 ตัว |
+| `legendary{id, traits[{id, grade}]}` | 1 · Trait 4 | มอนจากสมุดภาพมอนสเตอร์ตำนาน · แยกจากมอน 3 ตัว |
 | `food.{entree,side}` | จานหลัก 1 + จานรอง 1 | หมวดต้องตรง |
 | `teammates[{characterId, monsterlings}]` | เพื่อนสูงสุด 2 · มอนคนละสูงสุด 3 | ทีมมี 3 ตัว · เก็บเฉพาะมอนที่เพื่อนใส่ |
 

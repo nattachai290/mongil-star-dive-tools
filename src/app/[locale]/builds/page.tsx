@@ -20,7 +20,7 @@ import {
 } from "@/lib/data";
 import { asset } from "@/lib/base-path";
 import { label } from "@/lib/vocabulary";
-import type { Build, BuildLoadout } from "@/lib/schema/entities";
+import type { Build, BuildLoadout, LinkChain } from "@/lib/schema/entities";
 import type { Effect, LocalizedText } from "@/lib/schema/common";
 
 export function generateStaticParams() {
@@ -104,10 +104,19 @@ function MonFull({
         <ul className="mt-2 flex flex-wrap items-center gap-1">
           <li className="text-[11px] text-muted">{traitsLabel}:</li>
           {slot.traits.map((tr, i) => {
-            const trait = TRAIT_POOL.pool.find((x) => x.id === tr);
+            const trait = TRAIT_POOL.pool.find((x) => x.id === tr.id);
+            const value = trait ? trait.values[tr.grade as keyof typeof trait.values] : undefined;
+            // "สีทอง" → "ทอง" ให้ป้ายสั้น อ่านแบบเดียวกับที่ผู้เล่นพูด
+            const grade = label("monsterRank", tr.grade, locale).replace(/^สี/, "");
             return (
               <li key={i} className="rounded border border-gold/60 px-1.5 py-0.5 text-[11px] text-ink">
-                {name(trait?.name, locale, tr)}
+                {name(trait?.name, locale, tr.id)} {grade}
+                {value !== undefined && (
+                  <span className="font-mono text-gold">
+                    {" "}+{value}
+                    {trait?.unit === "percent" ? "%" : ""}
+                  </span>
+                )}
               </li>
             );
           })}
@@ -127,6 +136,56 @@ function MonSmall({ id, locale, highlight }: { id: string; locale: Locale; highl
   );
 }
 
+/** ลิงก์เชน — มอนเจ้าของ เงื่อนไขปรากฏตัว ดาเมจ คูลดาวน์ และเอฟเฟกต์เพิ่มเติมของขั้นสูงสุดที่อ่านมา */
+function ChainInfo({ chain, locale, t }: { chain: LinkChain; locale: Locale; t: T }) {
+  const owner = MONSTERLINGS.get(chain.monsterlingId);
+  const top = [...chain.levels].sort((a, b) => b.level - a.level)[0];
+  return (
+    <div className="text-sm">
+      <p className="font-semibold">
+        {name(chain.name, locale, chain.id)}
+        {chain.rarity !== undefined && <span className="ms-1.5 text-xs text-gold">{"◆".repeat(chain.rarity)}</span>}
+      </p>
+      <div className="mt-1.5 flex items-center gap-2 text-xs text-ink-2">
+        <Icon src={monsterlingImage(chain.monsterlingId)} />
+        <span>
+          {t("linkChains.owner")}: {name(owner?.name, locale, chain.monsterlingId)}
+        </span>
+      </div>
+      {top && (
+        <dl className="mt-2 space-y-0.5 text-xs">
+          <div className="flex gap-1.5">
+            <dt className="text-muted">{t("linkChains.level")}</dt>
+            <dd>{top.level}</dd>
+          </div>
+          <div className="flex gap-1.5">
+            <dt className="text-muted">{t("linkChains.condition")}:</dt>
+            <dd>{top.appearanceConditions.map((c) => label("appearanceCondition", c, locale)).join(" / ")}</dd>
+          </div>
+          {top.appearanceInfo.dmgPercentOfAtk !== undefined && (
+            <div className="flex gap-1.5">
+              <dt className="text-muted">{t("linkChains.dmgOfAtk")}:</dt>
+              <dd className="font-mono">{top.appearanceInfo.dmgPercentOfAtk}%</dd>
+            </div>
+          )}
+          {top.appearanceInfo.cooldownSec !== undefined && (
+            <div className="flex gap-1.5">
+              <dt className="text-muted">{t("linkChains.cooldown")}:</dt>
+              <dd className="font-mono">{top.appearanceInfo.cooldownSec}s</dd>
+            </div>
+          )}
+          {top.bonusEffects?.map((bonus, i) => (
+            <div key={i} className="flex gap-1.5">
+              <dt className="text-muted">{t("linkChains.bonus")}:</dt>
+              <dd>{name(bonus, locale, "")}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
+    </div>
+  );
+}
+
 function Slot({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="rounded-lg border border-line bg-surface p-3">
@@ -140,7 +199,6 @@ function Loadout({ b, lo, locale, t }: { b: Build; lo: BuildLoadout; locale: Loc
   const art = ARTIFACTS.find((a) => a.id === lo.artifact);
   const fusion = art && [...art.fusion].sort((x, y) => y.artifactLevel - x.artifactLevel)[0];
   const chain = LINK_CHAINS.find((c) => c.id === lo.linkChain);
-  const legendary = lo.legendary ? MONSTERLINGS.get(lo.legendary) : undefined;
   const sets = activeSets(lo);
 
   // มอนตัวเดียวกันบนหลายคนในทีม บัฟไม่ทับซ้อน
@@ -207,18 +265,14 @@ function Loadout({ b, lo, locale, t }: { b: Build; lo: BuildLoadout; locale: Loc
 
         <div className="space-y-3">
           <Slot title={t("builds.linkChain")}>
-            <p className="text-sm">{chain ? name(chain.name, locale, chain.id) : t("builds.empty.slot")}</p>
+            {chain ? <ChainInfo chain={chain} locale={locale} t={t} /> : <p className="text-sm text-muted">{t("builds.empty.slot")}</p>}
           </Slot>
 
           <Slot title={t("builds.legendary")}>
             {lo.legendary ? (
-              <>
-                <div className="flex items-center gap-2">
-                  <Icon src={monsterlingImage(lo.legendary)} />
-                  <span className="text-sm font-semibold">{name(legendary?.name, locale, lo.legendary)}</span>
-                </div>
-                <Effects effects={legendary?.speciesEffects ?? []} locale={locale} />
-              </>
+              <ul>
+                <MonFull slot={lo.legendary} locale={locale} highlight={false} traitsLabel={t("builds.traits")} />
+              </ul>
             ) : (
               <p className="text-sm text-muted">{t("builds.empty.slot")}</p>
             )}
