@@ -44,6 +44,7 @@
           "maxStacks": 3,
           "condition": {
             "note": {
+              "th": "จิตวิญญาณแห่งอัศวิน · เมื่อโจมตีพื้นฐาน จะใช้ทับซ้อนทั้งหมด",
               "en": "Spirit of Chivalry · all stacks are consumed upon using a Basic Attack"
             }
           }
@@ -62,6 +63,7 @@
           "maxStacks": 3,
           "condition": {
             "note": {
+              "th": "จิตวิญญาณแห่งอัศวิน · เมื่อโจมตีพื้นฐาน จะใช้ทับซ้อนทั้งหมด",
               "en": "Spirit of Chivalry · all stacks are consumed upon using a Basic Attack"
             }
           }

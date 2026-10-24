@@ -70,9 +70,9 @@ export const SECTIONS: Section[] = [
     slug: "builds",
     title: { th: "Build", en: "Builds" },
     blurb: {
-      th: "ชุดของที่แนะนำ เป้าหมาย Awaken ทีมที่เข้ากัน และตัวเลขดาเมจที่คำนวณจากชุดนั้น",
-      en: "Recommended gear, Awaken targets, team comps and damage computed from that setup",
+      th: "ของที่ใส่แยกตามขั้นปลุกพลัง เพื่อนร่วมทีมและมอนที่เพื่อนใส่ และบัฟรวมจากชุดนั้น",
+      en: "Gear per Awaken stage, teammates and their monsterlings, and the buffs that setup adds",
     },
-    ready: false,
+    ready: true,
   },
 ];

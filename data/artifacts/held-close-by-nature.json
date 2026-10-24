@@ -46,6 +46,7 @@
             "hitCount": 3,
             "triggerDamageType": "wind",
             "note": {
+              "th": "พยัคฆ์สะเทือนพิภพ · เมื่อใช้โต้กลับ จะได้รับเอฟเฟกต์พยัคฆ์สะเทือนพิภพ",
               "en": "Tigerquake · Tigerquake is gained upon counterattacking"
             }
           }
@@ -78,6 +79,7 @@
             "hitCount": 3,
             "triggerDamageType": "wind",
             "note": {
+              "th": "พยัคฆ์สะเทือนพิภพ · เมื่อใช้โต้กลับ จะได้รับเอฟเฟกต์พยัคฆ์สะเทือนพิภพ",
               "en": "Tigerquake · Tigerquake is gained upon counterattacking"
             }
           }

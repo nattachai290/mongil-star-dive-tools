@@ -49,6 +49,7 @@
           "maxStacks": 20,
           "condition": {
             "note": {
+              "th": "ปราณชีวา · เมื่อสเตมินามากกว่า 90% ทุก 1 วินาที",
               "en": "Vitality · per second when Stamina is 90% or higher"
             }
           }
@@ -84,6 +85,7 @@
           "maxStacks": 20,
           "condition": {
             "note": {
+              "th": "ปราณชีวา · เมื่อสเตมินามากกว่า 90% ทุก 1 วินาที",
               "en": "Vitality · per second when Stamina is 90% or higher"
             }
           }

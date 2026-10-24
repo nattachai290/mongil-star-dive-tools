@@ -1,8 +1,8 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { asset } from "./base-path";
-import { artifact, food, monsterDexEntry, linkChain, monsterling, character, equipment, equipmentSet, gearMainStat, gearSubstat, traitPool, dropSources } from "./schema/entities";
-import type { Artifact, Character, Food, Equipment, EquipmentSet, GearMainStat, GearSubstat, LinkChain, Monsterling, TraitPool, DropSources } from "./schema/entities";
+import { artifact, build, food, monsterDexEntry, linkChain, monsterling, character, equipment, equipmentSet, gearMainStat, gearSubstat, traitPool, dropSources } from "./schema/entities";
+import type { Artifact, Build, Character, Food, Equipment, EquipmentSet, GearMainStat, GearSubstat, LinkChain, Monsterling, TraitPool, DropSources } from "./schema/entities";
 
 /**
  * อ่านข้อมูลจาก data/ ตอน build — ไม่มี API ไม่มีฐานข้อมูล
@@ -152,3 +152,9 @@ export function monsterlingImage(slug: string): string | null {
     ? asset(`/images/monsterlings/${file}`)
     : null;
 }
+
+/** บิ้ว — ตัวละครละไฟล์ แท็บละขั้นปลุกพลัง */
+export const BUILDS: Build[] = readCollection("builds", (raw) => build.parse(raw)).map((b) => ({
+  ...b,
+  loadouts: [...b.loadouts].sort((x, y) => x.awaken - y.awaken),
+}));

@@ -47,6 +47,7 @@
           "internalCooldownSec": 10,
           "condition": {
             "note": {
+              "th": "เมื่อใช้สกิลพิเศษหรือสกิลอัลติเมต",
               "en": "Using a Special Skill or an Ultimate Skill"
             }
           }
@@ -66,6 +67,7 @@
           "internalCooldownSec": 10,
           "condition": {
             "note": {
+              "th": "เมื่อใช้สกิลพิเศษหรือสกิลอัลติเมต",
               "en": "Using a Special Skill or an Ultimate Skill"
             }
           }
@@ -99,6 +101,7 @@
           "internalCooldownSec": 10,
           "condition": {
             "note": {
+              "th": "เมื่อใช้สกิลพิเศษหรือสกิลอัลติเมต",
               "en": "Using a Special Skill or an Ultimate Skill"
             }
           }
@@ -118,6 +121,7 @@
           "internalCooldownSec": 10,
           "condition": {
             "note": {
+              "th": "เมื่อใช้สกิลพิเศษหรือสกิลอัลติเมต",
               "en": "Using a Special Skill or an Ultimate Skill"
             }
           }

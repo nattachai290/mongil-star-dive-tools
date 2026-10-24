@@ -55,6 +55,7 @@
           "condition": {
             "triggerDamageType": "earth",
             "note": {
+              "th": "เมื่อโจมตีพื้นฐานธาตุดิน",
               "en": "upon using a Basic Earth Attack"
             }
           }
@@ -96,6 +97,7 @@
           "condition": {
             "triggerDamageType": "earth",
             "note": {
+              "th": "เมื่อโจมตีพื้นฐานธาตุดิน",
               "en": "upon using a Basic Earth Attack"
             }
           }

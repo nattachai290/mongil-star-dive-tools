@@ -44,6 +44,7 @@
           "internalCooldownSec": 5,
           "condition": {
             "note": {
+              "th": "หินอัคนี · เมื่อเข้าสู่โจมตีสับเปลี่ยน",
               "en": "Flamestone · Using a Switch Attack"
             }
           }
@@ -58,6 +59,7 @@
           "durationSec": 10,
           "condition": {
             "note": {
+              "th": "หินอัคนีสลัก · เมื่อได้รับเอฟเฟกต์เพิ่มดาเมจธาตุไฟในขณะที่มีเอฟเฟกต์หินอัคนี",
               "en": "Inscribed Flamestone · gaining a Fire DMG Boost while Flamestone is active"
             }
           }
@@ -72,6 +74,7 @@
           "durationSec": 10,
           "condition": {
             "note": {
+              "th": "หินอัคนีสลัก · เมื่อได้รับเอฟเฟกต์เพิ่มดาเมจธาตุไฟในขณะที่มีเอฟเฟกต์หินอัคนี",
               "en": "Inscribed Flamestone · gaining a Fire DMG Boost while Flamestone is active"
             }
           }
@@ -101,6 +104,7 @@
           "internalCooldownSec": 5,
           "condition": {
             "note": {
+              "th": "หินอัคนี · เมื่อเข้าสู่โจมตีสับเปลี่ยน",
               "en": "Flamestone · Using a Switch Attack"
             }
           }
@@ -115,6 +119,7 @@
           "durationSec": 10,
           "condition": {
             "note": {
+              "th": "หินอัคนีสลัก · เมื่อได้รับเอฟเฟกต์เพิ่มดาเมจธาตุไฟในขณะที่มีเอฟเฟกต์หินอัคนี",
               "en": "Inscribed Flamestone · gaining a Fire DMG Boost while Flamestone is active"
             }
           }
@@ -129,6 +134,7 @@
           "durationSec": 10,
           "condition": {
             "note": {
+              "th": "หินอัคนีสลัก · เมื่อได้รับเอฟเฟกต์เพิ่มดาเมจธาตุไฟในขณะที่มีเอฟเฟกต์หินอัคนี",
               "en": "Inscribed Flamestone · gaining a Fire DMG Boost while Flamestone is active"
             }
           }

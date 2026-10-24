@@ -45,6 +45,7 @@
           "maxStacks": 7,
           "condition": {
             "note": {
+              "th": "บันไดเสียง · เมื่อทับซ้อน เวลาแสดงผลจะถูกรีเฟรช",
               "en": "Musical Scale · New stacks reset the duration"
             }
           }

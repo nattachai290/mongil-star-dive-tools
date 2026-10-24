@@ -63,6 +63,7 @@
           "durationSec": 3,
           "condition": {
             "note": {
+              "th": "เมื่อได้รับเอฟเฟกต์เพิ่มดาเมจสกิลในระหว่างใช้โจมตีพื้นฐาน",
               "en": "upon gaining a Skill DMG Boost effect while using a Basic Attack"
             }
           }
@@ -112,6 +113,7 @@
           "durationSec": 3,
           "condition": {
             "note": {
+              "th": "เมื่อได้รับเอฟเฟกต์เพิ่มดาเมจสกิลในระหว่างใช้โจมตีพื้นฐาน",
               "en": "upon gaining a Skill DMG Boost effect while using a Basic Attack"
             }
           }
