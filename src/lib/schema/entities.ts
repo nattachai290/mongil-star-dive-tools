@@ -335,6 +335,19 @@ export const monsterling = z.object({
    * ไม่ใส่ = ยังไม่รู้แรง ไม่ใช่ "แรงต่ำ" — เว็บแสดงเฉพาะค่าจากตัวสีทอง
    */
   effectsRank: vocabEnum("monsterRank").optional(),
+  /**
+   * ค่าพลังของมอนที่บวกให้ตัวละครเวลาใส่ (จอรายละเอียดมอน: พลังโจมตี / พลังป้องกัน / พลังชีวิต)
+   * เก็บพร้อมเลเวลบนจอ · ยังไม่รู้ว่าแรงหรือตัวที่จับมาแต่ละตัวทำให้ค่าต่างกันไหม — ไม่ใส่ = ยังไม่เคยเห็นจอ
+   */
+  stats: z
+    .object({
+      atLevel: z.number().int().positive(),
+      atk: z.number().nonnegative(),
+      def: z.number().nonnegative(),
+      hp: z.number().nonnegative(),
+    })
+    .strict()
+    .optional(),
   obtain: z.object({ method: vocabEnum("obtainMethod"), note: text.optional() }).optional(),
   /**
    * ของที่มอนตัวนี้ดรอป — เก็บแค่ชื่อ

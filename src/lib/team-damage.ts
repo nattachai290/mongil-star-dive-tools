@@ -49,6 +49,7 @@ export const TEAM_ASSUMPTIONS = [
   "บัฟทุกตัวทำงานตลอดรอบ (ไม่คิดเงื่อนไขและเวลาแสดงผล)",
   "ศัตรูเป็นบอส · ไม่ตีจุดอ่อน · ไม่หมดฤทธิ์ · ไม่หักป้องกัน",
   "ค่าหลักของอุปกรณ์คิดที่เลเวลสูงสุด · ยังไม่นับค่ารอง (สุ่ม)",
+  "ค่าพลังของมอน (ATK/DEF/HP) นับเฉพาะตัวที่เคยเห็นจอรายละเอียด",
   "ความชำนาญบทบาทคิดเป็นดาเมจเฉพาะบรอว์เลอร์ (ดาเมจปะทะ) — บทบาทอื่นสูตรยังไม่มี",
   "ยังไม่นับดาเมจต่อเนื่อง ดาเมจลิงก์เชน และสกิลสนับสนุน",
 ];
@@ -61,7 +62,12 @@ function asEffect(stat: string, value: number, unit: string, extra: Partial<Effe
 
 /** มอน 1 ช่อง → เอฟเฟกต์สายพันธุ์ + Trait ที่แปลงเป็นเอฟเฟกต์แล้ว */
 function monsterEffects(slot: BuildMember["monsterlings"][number]): Effect[] {
-  const out = [...(MONSTERLINGS.get(slot.id)?.speciesEffects ?? [])];
+  const mon = MONSTERLINGS.get(slot.id);
+  const out = [...(mon?.speciesEffects ?? [])];
+  // ค่าพลังของมอนบวกให้ตัวละครตอนใส่ — มีเฉพาะตัวที่เคยเห็นจอรายละเอียด
+  if (mon?.stats) {
+    out.push(asEffect("atk", mon.stats.atk, "flat"), asEffect("def", mon.stats.def, "flat"), asEffect("hp", mon.stats.hp, "flat"));
+  }
   for (const tr of slot.traits) {
     const t = TRAIT_POOL.pool.find((x) => x.id === tr.id);
     if (!t || t.kind !== "buff") continue;
