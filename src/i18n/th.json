@@ -164,8 +164,8 @@
   "builds.legendary": "มอนสเตอร์ตำนาน",
   "builds.food": "อาหาร",
   "builds.team": "ทีม",
-  "builds.buffs": "บัฟจากของที่ใส่",
-  "builds.buffsNote": "รวมเฉพาะเอฟเฟกต์ที่แปลงเป็นตัวเลขแล้ว ยังไม่รวมบัฟจากสกิลตัวละครและเพื่อน",
   "builds.dupWarning": "มอนตัวเดียวกันอยู่หลายคนในทีม — บัฟไม่ทับซ้อนกัน",
-  "builds.empty.slot": "—"
+  "builds.empty.slot": "—",
+  "builds.pieces": "ชิ้น",
+  "builds.traits": "ลักษณะเฉพาะ"
 }

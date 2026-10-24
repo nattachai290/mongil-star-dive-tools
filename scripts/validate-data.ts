@@ -123,6 +123,8 @@ if (Array.isArray(mainStatsRaw)) {
 // ---------- คลังลักษณะเฉพาะ ----------
 const traitsRaw = readJson(join(DATA, "meta", "traits.json"), "data/meta/traits.json");
 const traitsParsed = traitPool.safeParse(traitsRaw);
+/** id ของ Trait ทั้งคลัง — บิ้วอ้างถึงตอนระบุ Trait ของมอน */
+const traitIds = new Set<string>(traitsParsed.success ? traitsParsed.data.pool.map((t) => t.id) : []);
 if (!traitsParsed.success) {
   for (const issue of traitsParsed.error.issues)
     fail("data/meta/traits.json", `${issue.path.join(".") || "(root)"}: ${issue.message}`);
@@ -429,7 +431,7 @@ type LoadoutShape = {
   awaken: number;
   artifact?: string;
   equipment?: Record<string, string | undefined>;
-  monsterlings?: string[];
+  monsterlings?: { id: string; traits?: string[] }[];
   linkChain?: string;
   legendary?: string;
   food?: { entree?: string; side?: string };
@@ -460,7 +462,13 @@ for (const [id, doc] of Object.entries(parsed.builds ?? {})) {
       if (eq && eq.slot !== slot) fail(where, `${at}.equipment.${slot} = "${piece}" แต่ชิ้นนั้นเป็นช่อง ${eq.slot}`);
     }
 
-    const mons = lo.monsterlings ?? [];
+    const monSlots = lo.monsterlings ?? [];
+    const mons = monSlots.map((m) => m.id);
+    for (const [j, m] of monSlots.entries()) {
+      for (const tr of m.traits ?? []) {
+        if (!traitIds.has(tr)) fail(where, `${at}.monsterlings[${j}].traits มี "${tr}" ซึ่งไม่อยู่ใน meta/traits.json`);
+      }
+    }
     checkRefs(where, mons, "monsterlings", `${at}.monsterlings`);
     if (new Set(mons).size !== mons.length) fail(where, `${at}.monsterlings มีตัวซ้ำ`);
     for (const m of mons) {

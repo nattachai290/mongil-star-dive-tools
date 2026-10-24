@@ -469,7 +469,11 @@ export const buildLoadout = z.object({
     })
     .strict()
     .default({}),
-  monsterlings: z.array(slug).max(3).default([]),
+  /** มอนของตัวเอง พร้อม Trait ที่ใช้ — มอนหนึ่งตัวมี Trait 4 ช่อง (meta/traits.json) */
+  monsterlings: z
+    .array(z.object({ id: slug, traits: z.array(slug).max(4).default([]) }).strict())
+    .max(3)
+    .default([]),
   linkChain: slug.optional(),
   /** มอนจากสมุดภาพ "มอนสเตอร์ตำนาน" — ช่องของตัวเอง ไม่นับรวมกับมอน 3 ตัว */
   legendary: slug.optional(),

@@ -164,8 +164,8 @@
   "builds.legendary": "Legendary",
   "builds.food": "Food",
   "builds.team": "Team",
-  "builds.buffs": "Buffs from this setup",
-  "builds.buffsNote": "Only effects already parsed into numbers; character skills and teammates not included",
   "builds.dupWarning": "Same monsterling on more than one team member — buffs do not stack",
-  "builds.empty.slot": "—"
+  "builds.empty.slot": "—",
+  "builds.pieces": "pieces",
+  "builds.traits": "Traits"
 }

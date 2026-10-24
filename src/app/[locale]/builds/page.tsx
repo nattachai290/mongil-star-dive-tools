@@ -13,6 +13,7 @@ import {
   FOOD,
   LINK_CHAINS,
   MONSTERLINGS,
+  TRAIT_POOL,
   characterById,
   characterImage,
   monsterlingImage,
@@ -44,50 +45,83 @@ const SLOTS = ["headgear", "chestpiece", "gloves", "footwear"] as const;
 const name = (v: LocalizedText | undefined, locale: Locale, fallback: string) =>
   v?.[locale] ?? v?.en ?? v?.th ?? fallback;
 
-/** บัฟแต่ละแหล่งของแท็บนี้ — เฉพาะเอฟเฟกต์ที่แปลงเป็นตัวเลขไว้แล้วในข้อมูล */
-function buffSources(lo: BuildLoadout, locale: Locale) {
-  const out: { from: string; effects: Effect[] }[] = [];
-  const art = ARTIFACTS.find((a) => a.id === lo.artifact);
-  if (art) {
-    const top = [...art.fusion].sort((a, b) => b.artifactLevel - a.artifactLevel)[0];
-    if (top?.effects.length) out.push({ from: name(art.name, locale, art.id), effects: top.effects });
-  }
+type MonSlot = BuildLoadout["monsterlings"][number];
+
+/** ชิ้นต่อเซ็ตของแท็บนี้ → โบนัสที่ทำงาน (ครบ 2 / 4 ชิ้น) */
+function activeSets(lo: BuildLoadout) {
   const counts = new Map<string, number>();
   for (const slot of SLOTS) {
     const piece = EQUIPMENT.find((e) => e.id === lo.equipment[slot]);
     if (piece?.setId) counts.set(piece.setId, (counts.get(piece.setId) ?? 0) + 1);
   }
-  for (const [setId, n] of counts) {
+  return [...counts].flatMap(([setId, n]) => {
     const set = EQUIPMENT_SETS.find((s) => s.id === setId);
-    if (!set) continue;
-    for (const b of set.bonuses.filter((b) => b.pieces <= n)) {
-      if (b.effects.length) {
-        out.push({ from: `${name(set.name, locale, set.id)} (${b.pieces})`, effects: b.effects });
-      }
-    }
-  }
-  for (const id of [...lo.monsterlings, ...(lo.legendary ? [lo.legendary] : [])]) {
-    const m = MONSTERLINGS.get(id);
-    if (m?.speciesEffects.length) out.push({ from: name(m.name, locale, id), effects: m.speciesEffects });
-  }
-  for (const dish of [lo.food.entree, lo.food.side]) {
-    const f = FOOD.find((x) => x.id === dish);
-    if (f?.effects.length) out.push({ from: name(f.name, locale, f.id), effects: f.effects });
-  }
-  return out;
+    return set ? [{ set, n, bonuses: set.bonuses.filter((b) => b.pieces <= n) }] : [];
+  });
 }
 
-function Mon({ id, locale }: { id: string; locale: Locale }) {
-  const m = MONSTERLINGS.get(id);
-  const img = monsterlingImage(id);
+function Icon({ src }: { src: string | null }) {
+  return src ? (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src={src} alt="" width={36} height={36} className="size-9 shrink-0 rounded-full border border-line bg-surface-2" />
+  ) : (
+    <span className="size-9 shrink-0 rounded-full border border-line bg-surface-2" />
+  );
+}
+
+function Effects({ effects, locale }: { effects: Effect[]; locale: Locale }) {
+  if (effects.length === 0) return null;
   return (
-    <li className="flex items-center gap-2">
-      {img ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img src={img} alt="" width={36} height={36} className="size-9 rounded-full border border-line bg-surface-2" />
-      ) : (
-        <span className="size-9 rounded-full border border-line bg-surface-2" />
+    <div className="mt-1.5 space-y-1.5">
+      {effects.map((e, i) => (
+        <EffectLine key={i} effect={e} locale={locale} />
+      ))}
+    </div>
+  );
+}
+
+/** มอนของตัวเอง — เอฟเฟกต์สายพันธุ์ + Trait 4 ช่อง */
+function MonFull({
+  slot,
+  locale,
+  highlight,
+  traitsLabel,
+}: {
+  slot: MonSlot;
+  locale: Locale;
+  highlight: boolean;
+  traitsLabel: string;
+}) {
+  const m = MONSTERLINGS.get(slot.id);
+  return (
+    <li className={`rounded-md p-1.5 ${highlight ? "ring-1 ring-gold" : ""}`}>
+      <div className="flex items-center gap-2">
+        <Icon src={monsterlingImage(slot.id)} />
+        <span className="text-sm font-semibold">{name(m?.name, locale, slot.id)}</span>
+      </div>
+      <Effects effects={m?.speciesEffects ?? []} locale={locale} />
+      {slot.traits.length > 0 && (
+        <ul className="mt-2 flex flex-wrap items-center gap-1">
+          <li className="text-[11px] text-muted">{traitsLabel}:</li>
+          {slot.traits.map((tr, i) => {
+            const trait = TRAIT_POOL.pool.find((x) => x.id === tr);
+            return (
+              <li key={i} className="rounded border border-gold/60 px-1.5 py-0.5 text-[11px] text-ink">
+                {name(trait?.name, locale, tr)}
+              </li>
+            );
+          })}
+        </ul>
       )}
+    </li>
+  );
+}
+
+function MonSmall({ id, locale, highlight }: { id: string; locale: Locale; highlight: boolean }) {
+  const m = MONSTERLINGS.get(id);
+  return (
+    <li className={`flex items-center gap-2 rounded-md p-1 ${highlight ? "ring-1 ring-gold" : ""}`}>
+      <Icon src={monsterlingImage(id)} />
       <span className="text-sm">{name(m?.name, locale, id)}</span>
     </li>
   );
@@ -104,30 +138,31 @@ function Slot({ title, children }: { title: string; children: React.ReactNode })
 
 function Loadout({ b, lo, locale, t }: { b: Build; lo: BuildLoadout; locale: Locale; t: T }) {
   const art = ARTIFACTS.find((a) => a.id === lo.artifact);
+  const fusion = art && [...art.fusion].sort((x, y) => y.artifactLevel - x.artifactLevel)[0];
   const chain = LINK_CHAINS.find((c) => c.id === lo.linkChain);
-  const dish = (id?: string) => FOOD.find((f) => f.id === id);
+  const legendary = lo.legendary ? MONSTERLINGS.get(lo.legendary) : undefined;
+  const sets = activeSets(lo);
 
   // มอนตัวเดียวกันบนหลายคนในทีม บัฟไม่ทับซ้อน
-  const all = [...lo.monsterlings, ...lo.teammates.flatMap((m) => m.monsterlings)];
+  const own = lo.monsterlings.map((m) => m.id);
+  const all = [...own, ...lo.teammates.flatMap((m) => m.monsterlings)];
   const dup = new Set(all.filter((m, i) => all.indexOf(m) !== i));
-
-  const buffs = buffSources(lo, locale);
 
   return (
     <div className="space-y-3">
       <div className="grid gap-3 sm:grid-cols-2">
         <Slot title={t("builds.artifact")}>
           {art ? (
-            <div className="flex items-center gap-2">
-              {art.images?.icon && (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={asset(`/images/artifacts/${art.images.icon}`)} alt="" width={40} height={40} className="size-10 rounded-full border border-line bg-surface-2" />
-              )}
-              <div>
-                <p className="text-sm font-semibold">{name(art.name, locale, art.id)}</p>
-                <p className="text-xs text-gold">{art.stars !== undefined && "★".repeat(art.stars)}</p>
+            <>
+              <div className="flex items-center gap-2">
+                <Icon src={art.images?.icon ? asset(`/images/artifacts/${art.images.icon}`) : null} />
+                <div>
+                  <p className="text-sm font-semibold">{name(art.name, locale, art.id)}</p>
+                  {fusion?.name && <p className="text-xs text-gold">{name(fusion.name, locale, "")}</p>}
+                </div>
               </div>
-            </div>
+              <Effects effects={fusion?.effects ?? []} locale={locale} />
+            </>
           ) : (
             <p className="text-sm text-muted">{t("builds.empty.slot")}</p>
           )}
@@ -137,56 +172,81 @@ function Loadout({ b, lo, locale, t }: { b: Build; lo: BuildLoadout; locale: Loc
           <ul className="space-y-1 text-sm">
             {SLOTS.map((slot) => {
               const piece = EQUIPMENT.find((e) => e.id === lo.equipment[slot]);
-              const set = EQUIPMENT_SETS.find((s) => s.id === piece?.setId);
               return (
                 <li key={slot} className="flex gap-2">
                   <span className="w-20 shrink-0 text-xs text-muted">{label("slot", slot, locale)}</span>
-                  <span>
-                    {piece ? name(piece.name, locale, piece.id) : t("builds.empty.slot")}
-                    {set && <span className="text-xs text-muted"> · {name(set.name, locale, set.id)}</span>}
-                  </span>
+                  <span>{piece ? name(piece.name, locale, piece.id) : t("builds.empty.slot")}</span>
                 </li>
               );
             })}
           </ul>
+          {sets.map(({ set, n, bonuses }) => (
+            <div key={set.id} className="mt-3 border-t border-line pt-2">
+              <p className="text-xs font-semibold text-ink-2">
+                {name(set.name, locale, set.id)} <span className="font-normal text-muted">({n}{set.pieceCount ? `/${set.pieceCount}` : ""})</span>
+              </p>
+              {bonuses.map((bonus) => (
+                <div key={bonus.pieces} className="mt-1.5">
+                  <p className="text-[11px] text-gold">
+                    {bonus.pieces} {t("builds.pieces")}
+                  </p>
+                  <Effects effects={bonus.effects} locale={locale} />
+                </div>
+              ))}
+            </div>
+          ))}
         </Slot>
 
-        <Slot title={`${t("builds.monsterlings")} · ${t("builds.linkChain")} · ${t("builds.legendary")}`}>
-          <ul className="space-y-1.5">
+        <Slot title={t("builds.monsterlings")}>
+          <ul className="space-y-2">
             {lo.monsterlings.map((m) => (
-              <Mon key={m} id={m} locale={locale} />
+              <MonFull key={m.id} slot={m} locale={locale} highlight={dup.has(m.id)} traitsLabel={t("builds.traits")} />
             ))}
           </ul>
-          <p className="mt-2 text-sm">
-            <span className="text-xs text-muted">{t("builds.linkChain")}: </span>
-            {chain ? name(chain.name, locale, chain.id) : t("builds.empty.slot")}
-          </p>
-          {lo.legendary && (
-            <ul className="mt-2 border-t border-line pt-2">
-              <Mon id={lo.legendary} locale={locale} />
-            </ul>
-          )}
         </Slot>
 
-        <Slot title={t("builds.food")}>
-          <ul className="space-y-1 text-sm">
-            {(["entree", "side"] as const).map((cat) => {
-              const f = dish(lo.food[cat]);
-              return (
-                <li key={cat} className="flex gap-2">
-                  <span className="w-20 shrink-0 text-xs text-muted">{label("foodCategory", cat, locale)}</span>
-                  <span>{f ? name(f.name, locale, f.id) : t("builds.empty.slot")}</span>
-                </li>
-              );
-            })}
-          </ul>
-        </Slot>
+        <div className="space-y-3">
+          <Slot title={t("builds.linkChain")}>
+            <p className="text-sm">{chain ? name(chain.name, locale, chain.id) : t("builds.empty.slot")}</p>
+          </Slot>
+
+          <Slot title={t("builds.legendary")}>
+            {lo.legendary ? (
+              <>
+                <div className="flex items-center gap-2">
+                  <Icon src={monsterlingImage(lo.legendary)} />
+                  <span className="text-sm font-semibold">{name(legendary?.name, locale, lo.legendary)}</span>
+                </div>
+                <Effects effects={legendary?.speciesEffects ?? []} locale={locale} />
+              </>
+            ) : (
+              <p className="text-sm text-muted">{t("builds.empty.slot")}</p>
+            )}
+          </Slot>
+
+          <Slot title={t("builds.food")}>
+            <div className="space-y-3">
+              {(["entree", "side"] as const).map((cat) => {
+                const f = FOOD.find((x) => x.id === lo.food[cat]);
+                return (
+                  <div key={cat}>
+                    <p className="text-sm">
+                      <span className="text-xs text-muted">{label("foodCategory", cat, locale)}: </span>
+                      {f ? name(f.name, locale, f.id) : t("builds.empty.slot")}
+                    </p>
+                    <Effects effects={f?.effects ?? []} locale={locale} />
+                  </div>
+                );
+              })}
+            </div>
+          </Slot>
+        </div>
       </div>
 
       {lo.teammates.length > 0 && (
         <Slot title={t("builds.team")}>
           <div className="grid gap-3 sm:grid-cols-3">
-            {[{ characterId: b.characterId, monsterlings: lo.monsterlings }, ...lo.teammates].map((mate) => {
+            {[{ characterId: b.characterId, monsterlings: own }, ...lo.teammates].map((mate) => {
               const c = characterById(mate.characterId);
               return (
                 <div key={mate.characterId}>
@@ -195,13 +255,9 @@ function Loadout({ b, lo, locale, t }: { b: Build; lo: BuildLoadout; locale: Loc
                       {name(c?.name, locale, mate.characterId)}
                     </Link>
                   </p>
-                  <ul className="mt-1.5 space-y-1.5">
+                  <ul className="mt-1.5 space-y-1">
                     {mate.monsterlings.map((m) => (
-                      <li key={m} className={dup.has(m) ? "rounded ring-1 ring-gold" : undefined}>
-                        <ul>
-                          <Mon id={m} locale={locale} />
-                        </ul>
-                      </li>
+                      <MonSmall key={m} id={m} locale={locale} highlight={dup.has(m)} />
                     ))}
                   </ul>
                 </div>
@@ -209,24 +265,6 @@ function Loadout({ b, lo, locale, t }: { b: Build; lo: BuildLoadout; locale: Loc
             })}
           </div>
           {dup.size > 0 && <p className="mt-3 text-xs text-gold">{t("builds.dupWarning")}</p>}
-        </Slot>
-      )}
-
-      {buffs.length > 0 && (
-        <Slot title={t("builds.buffs")}>
-          <p className="text-[11px] text-muted">{t("builds.buffsNote")}</p>
-          <div className="mt-2 space-y-3">
-            {buffs.map((src, i) => (
-              <div key={i}>
-                <p className="text-xs font-semibold text-ink-2">{src.from}</p>
-                <div className="mt-1 space-y-1.5">
-                  {src.effects.map((e, j) => (
-                    <EffectLine key={j} effect={e} locale={locale} />
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
         </Slot>
       )}
     </div>
