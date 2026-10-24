@@ -65,9 +65,11 @@
     {
       "stage": 1,
       "name": {
+        "th": "ปรับสายพิณพื้นฐาน",
         "en": "Fundamental Pipa Tuning"
       },
       "desc": {
+        "th": "เมื่อเปลี่ยนเป็นตัวละครอื่น หากท่วงทำนองมากกว่า 3 ตัว จะได้รับเพิ่มอีก 3 ตัว และจะมอบเอฟเฟกต์ท่วงทำนองแห่งสวรรค์ให้กับสมาชิกทีมทั้งหหมด และโจมตีพื้นฐานนาน 3 วินาที จะมอบเอฟเฟกต์อ่อนแอต่อรอยแยกแห่งท่วงทำนองแก่ศัตรู / อีกทั้งเมื่อปรากฏตัวระหว่างต่อสู้และโจมตี จะมอบเอฟเฟกต์อ่อนแอต่อรอยแยกแห่งท่วงทำนอง",
         "en": "When switched out, if Jiwon has 3 or more counts of a Melody, she gains 3 more and grants Divine Harmony to all teammates. She uses her Basic Attack for 3s, inflicting Melodic Fracture on enemies. / Also, when Jiwon is summoned to battle and attacks, she inflicts Melodic Fracture on targets."
       },
       "effects": []
@@ -75,9 +77,11 @@
     {
       "stage": 2,
       "name": {
+        "th": "หน้าที่ของการคงไว้ซึ่งเกียรติ",
         "en": "Promise of Dignified Conduct"
       },
       "desc": {
+        "th": "เมื่อเปลี่ยนเป็นตัวละครอื่น จะโจมตีพื้นฐานเท่ากับเวลาแสดงผลเอฟเฟกต์ท่วงทำนองแห่งสวรรค์ที่ได้รับ / ท่วงทำนองแห่งสวรรค์ขั้น 1 จะเพิ่มพลังโจมตีเพิ่มเติม 2% และเอฟเฟกต์ขั้น 3 จะเพิ่มพลังโจมตีเพิ่มเติมอีก 3%",
         "en": "When switched out, Jiwon uses her Basic Attack for the duration of Divine Harmony. / A(n) 2% ATK Boost is added to Divine Harmony Tier 1, and on Tier 3, ATK increases by an additional 3%."
       },
       "effects": []
@@ -85,9 +89,11 @@
     {
       "stage": 3,
       "name": {
+        "th": "ทักษะพื้นฐานของผู้นำ",
         "en": "Essential Leadership Skills"
       },
       "desc": {
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจโจมตีพื้นฐาน 6%",
         "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
       },
       "effects": [
@@ -108,9 +114,11 @@
     {
       "stage": 4,
       "name": {
+        "th": "เก็บแสงไว้ในหยดน้ำค้าง",
         "en": "Embrace the Dew, Capture the Light"
       },
       "desc": {
+        "th": "เมื่อโจมตีพื้นฐาน สกิลพิเศษ หรือสกิลอัลติเมต จำนวนท่วงทำนองที่ได้รับ จะเพิ่มขึ้น 3 ตัว, 6 ตัว, 12 ตัวตามลำดับ / เพิ่มขอบเขตดาเมจของสกิลพิเศษ และเอฟเฟกต์ท่วงทำนองแห่งสวรรค์ขั้น 3 จะถูกเสริมพลังด้วยการเพิ่มดาเมจธาตุลมเพิ่มเติม 30% และการเพิ่มพลังโจมตีเพิ่มเติม 5% / เพิ่มอัตราชาร์จสกิลอัลติเมต 20%",
         "en": "The counts of Melody gained from using Jiwon's Basic Attack, Special Skill, and Ultimate Skill is increased to 3, 6, and 12, respectively. / Jiwon's Special Skill's attack range increases, and the Divine Harmony Tier 3 effect is enhanced with an additional +30% Wind DMG and +5% ATK. / Ultimate Gauge Charge increases by 20%."
       },
       "effects": [
@@ -127,9 +135,11 @@
     {
       "stage": 5,
       "name": {
+        "th": "ดอกไม้แห่งสวนที่บานสะพรั่ง",
         "en": "Blooming Bed of Flowers"
       },
       "desc": {
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจสกิลอัลติเมต 6%",
         "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Ultimate Skill DMG by 6%."
       },
       "effects": [
@@ -355,9 +365,11 @@
     },
     "switch": {
       "name": {
+        "th": "หนึ่งท่วงทำนอง",
         "en": "Let Me Sing You A Song"
       },
       "desc": {
+        "th": "ปล่อยทำนองไหลตามลมไปยังศัตรู สร้างดาเมจธาตุลม / [สกิลล่าถอย] เมื่อเปลี่ยนเป็นตัวละครอื่น จะมอบเอฟเฟกต์ท่วงทำนองแห่งสวรรค์ให้กับสมาชิกทีมทั้งหมดตามจำนวนท่วงทำนอง",
         "en": "Jiwon fires musical notes at an enemy, dealing Wind DMG. / [Tag-out Skill] Upon switching to another character, all teammates gain Divine Harmony based on the count of the Melody reached."
       },
       "damageType": "wind",
@@ -365,6 +377,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจ",
             "en": "DMG"
           },
           "unit": "percent",
@@ -392,9 +405,11 @@
     },
     "special": {
       "name": {
+        "th": "คลื่นทำนอง",
         "en": "Sonic Wave"
       },
       "desc": {
+        "th": "บรรเลงพิณและก่อคลื่นทำนองรอบตนเอง สร้างดาเมจธาตุลม และรวบรวมศัตรูที่อยู่ใกล้เคียงมาด้านหน้าตนเองก่อนจะทำให้ลอยขึ้นไปในอากาศ",
         "en": "Jiwon plays the pipa to create waves of musical notes around her, dealing Wind DMG and gathering nearby enemies in front of her, knocking them Airborne."
       },
       "damageType": "wind",
@@ -402,6 +417,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจ",
             "en": "DMG"
           },
           "unit": "percent",
@@ -427,6 +443,7 @@
         },
         {
           "label": {
+            "th": "คูลดาวน์",
             "en": "Cooldown"
           },
           "unit": "seconds",
@@ -714,9 +731,11 @@
     },
     "elemental": {
       "name": {
+        "th": "พลังแห่งฤดูใบไม้ผลิอันอบอุ่น",
         "en": "Warmth of Spring"
       },
       "desc": {
+        "th": "เมื่อใช้สกิลพิเศษหรือเมื่อมอบท่วงทำนองแห่งสวรรค์ขั้น 4 จะฟื้นฟูพลังชีวิตของสมาชิกทีมธาตุลมทั้งหมด 20.5% ของพลังชีวิตสูงสุดของจีวอน",
         "en": "Using a Special Skill or inflicting Divine Harmony Tier 4 restores all Wind teammates' HP by 20.5% of Jiwon's Max HP."
       },
       "effects": [
@@ -729,6 +748,7 @@
           "trigger": "onSpecialSkill",
           "condition": {
             "note": {
+              "th": "สมาชิกทีมธาตุลมทั้งหมด · เมื่อใช้สกิลพิเศษหรือเมื่อมอบท่วงทำนองแห่งสวรรค์ขั้น 4",
               "en": "all Wind teammates · Using a Special Skill or inflicting Divine Harmony Tier 4"
             }
           }
@@ -740,45 +760,55 @@
   "statuses": [
     {
       "name": {
+        "th": "ท่วงทำนองแห่งสวรรค์ (ขั้น 1)",
         "en": "Divine Harmony (Tier 1)"
       },
       "desc": {
+        "th": "เพิ่มดาเมจธาตุลม 10%",
         "en": "Wind DMG increases by 10%."
       },
       "effects": []
     },
     {
       "name": {
+        "th": "ท่วงทำนองแห่งสวรรค์ (ขั้น 2)",
         "en": "Divine Harmony (Tier 2)"
       },
       "desc": {
+        "th": "ลดปริมาณการใช้สเตมินา 50% เอฟเฟกต์ดังกล่าวไม่สามารถทับซ้อนได้",
         "en": "Stamina Consumption decreases by 50%."
       },
       "effects": []
     },
     {
       "name": {
+        "th": "ท่วงทำนองแห่งสวรรค์ (ขั้น 3)",
         "en": "Divine Harmony (Tier 3)"
       },
       "desc": {
+        "th": "เสริมพลังท่วงทำนองแห่งสวรรค์ (ขั้น 1) (ขั้น 2) เพิ่มดาเมจธาตุลมอีก 15% และลดปริมาณการใช้สเตมินาเพิ่มเติมอีก 50%",
         "en": "Divine Harmony (Tier 1) and (Tier 2) are enhanced, additionally increasing Wind DMG by 15% and decreasing Stamina Consumption by 50%."
       },
       "effects": []
     },
     {
       "name": {
+        "th": "ท่วงทำนองแห่งสวรรค์ (ขั้น 4)",
         "en": "Divine Harmony (Tier 4)"
       },
       "desc": {
+        "th": "เพิ่มเวลาแสดงผลท่วงทำนองแห่งสวรรค์เป็น 12 วินาที",
         "en": "Divine Harmony's duration increases to 12s."
       },
       "effects": []
     },
     {
       "name": {
+        "th": "รอยแยกแห่งท่วงทำนอง",
         "en": "Melodic Fracture"
       },
       "desc": {
+        "th": "ลดต้านทานธาตุลม 1% (ทับซ้อนสูงสุด 10, เมื่อทับซ้อน เวลาแสดงผลจะถูกรีเฟรช)",
         "en": "Wind RES decreases by 1%. (Max Stacks: 10, New stacks reset the duration)"
       },
       "effects": []
@@ -806,6 +836,6 @@
       "en",
       "th"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) | Support · Wind · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,855 · DEF 656 · HP 10,508 · Crit 5% / 50% อ่านจากจอตรง ๆ — ชุดตัวเลขนี้ยังไม่ซ้ำกับตัวไหนที่ลงไว้ | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 12.18% · Support 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Switch Let Me Sing You A Song (155.8% + Tag-out) · Special Sonic Wave (297%, 11.1 วินาที) · Passive Melodic Blessings (ตารางเจ็ดแถว · จำนวน Melody เป็นค่าคงที่) · Guidance of Wind Warmth of Spring (ฮีลเพื่อนธาตุลมทั้งทีม 20.5% ของ Max HP ของ Jiwon → kind heal แบบ Daisy · trigger onSpecialSkill + note เรื่อง Divine Harmony Tier 4) | **2026-10-22 รอบสาม** Basic Strings on the Wind (ฮีลทั้งทีม 3% ของ Max HP อยู่ในตาราง) · Ultimate Eternal Melody (643.6%) · Effect Details: Wind Affliction · Divine Harmony Tier 1–4 + Melodic Fracture (จากปุ่ม Effects ของปลุกพลังขั้น 1 สองจอเลื่อนต่อกัน) · ปลุกพลังครบหกขั้น | ปลุกพลัง: จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส · effects: ขั้น 3 Basic +6% · ขั้น 4 Ultimate Gauge Charge +20% (energyGain) · ขั้น 5 Ultimate +6% · ขั้นอื่นเก็บเป็นข้อความ · \"A(n) 2%\" ในขั้น 2 ตามจอ | **2026-10-24 จอไทยรอบแรก** ชื่อ จีวอน · ซัพพอร์ตเตอร์ · ลม ระยะไกล · 5 ดาว · ค่าพลังห้าค่าตรงจออังกฤษ · โจมตีพื้นฐาน สายลมบรรเลง · สกิลอัลติเมต ท่วงทำนองแห่งนิรันดร์ · แพสซีฟ พรแห่งท่วงทำนอง (Melody = ท่วงทำนอง · Divine Harmony = ท่วงทำนองแห่งสวรรค์) · สถานะ เอฟเฟกต์อ่อนแอต่อลม — ค่าตรงทุกแถว | ยังไม่ได้อ่าน (ไทย): สกิลสับเปลี่ยน · สกิลพิเศษ · การชี้นำแห่งลม · ปลุกพลัง · สถานะท่วงทำนองแห่งสวรรค์ 1–4 และ Melodic Fracture"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) | Support · Wind · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,855 · DEF 656 · HP 10,508 · Crit 5% / 50% อ่านจากจอตรง ๆ — ชุดตัวเลขนี้ยังไม่ซ้ำกับตัวไหนที่ลงไว้ | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 12.18% · Support 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Switch Let Me Sing You A Song (155.8% + Tag-out) · Special Sonic Wave (297%, 11.1 วินาที) · Passive Melodic Blessings (ตารางเจ็ดแถว · จำนวน Melody เป็นค่าคงที่) · Guidance of Wind Warmth of Spring (ฮีลเพื่อนธาตุลมทั้งทีม 20.5% ของ Max HP ของ Jiwon → kind heal แบบ Daisy · trigger onSpecialSkill + note เรื่อง Divine Harmony Tier 4) | **2026-10-22 รอบสาม** Basic Strings on the Wind (ฮีลทั้งทีม 3% ของ Max HP อยู่ในตาราง) · Ultimate Eternal Melody (643.6%) · Effect Details: Wind Affliction · Divine Harmony Tier 1–4 + Melodic Fracture (จากปุ่ม Effects ของปลุกพลังขั้น 1 สองจอเลื่อนต่อกัน) · ปลุกพลังครบหกขั้น | ปลุกพลัง: จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส · effects: ขั้น 3 Basic +6% · ขั้น 4 Ultimate Gauge Charge +20% (energyGain) · ขั้น 5 Ultimate +6% · ขั้นอื่นเก็บเป็นข้อความ · \"A(n) 2%\" ในขั้น 2 ตามจอ | **2026-10-24 จอไทยรอบแรก** ชื่อ จีวอน · ซัพพอร์ตเตอร์ · ลม ระยะไกล · 5 ดาว · ค่าพลังห้าค่าตรงจออังกฤษ · โจมตีพื้นฐาน สายลมบรรเลง · สกิลอัลติเมต ท่วงทำนองแห่งนิรันดร์ · แพสซีฟ พรแห่งท่วงทำนอง (Melody = ท่วงทำนอง · Divine Harmony = ท่วงทำนองแห่งสวรรค์) · สถานะ เอฟเฟกต์อ่อนแอต่อลม — ค่าตรงทุกแถว | **2026-10-24 จอไทยรอบสอง** สกิลสับเปลี่ยน หนึ่งท่วงทำนอง · สกิลพิเศษ คลื่นทำนอง · การชี้นำแห่งลม พลังแห่งฤดูใบไม้ผลิอันอบอุ่น (20.5% ตรง) · ปลุกพลัง 1–5 · สถานะ ท่วงทำนองแห่งสวรรค์ ขั้น 1–4 และ รอยแยกแห่งท่วงทำนอง — ค่าตรงทุกแถว | **ข้อความไทยที่เก็บตามจอ:** ปลุกพลังขั้น 1 พิมพ์ \"ทั้งหหมด\" · สถานะขั้น 2 จอไทยมีประโยค \"เอฟเฟกต์ดังกล่าวไม่สามารถทับซ้อนได้\" ซึ่งอังกฤษไม่มี | ยังไม่ได้อ่าน (ไทย): ปลุกพลังขั้น 6"
   }
 }
