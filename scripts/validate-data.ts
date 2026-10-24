@@ -541,11 +541,6 @@ for (const step of FORMULA.pipeline) {
     fail("data/meta/formula.json", `pipeline มีขั้น "${step}" ที่ src/lib/formula.ts ยังไม่ได้ทำ`);
   }
 }
-const missing = Object.entries(FORMULA.constants).filter(([, v]) => v === null).map(([k]) => k);
-if (missing.length) {
-  warn("data/meta/formula.json", `ค่าคงที่ที่ยังไม่ยืนยัน: ${missing.join(", ")} — เครื่องคำนวณจะข้ามขั้นที่ต้องใช้ค่าเหล่านี้`);
-}
-
 // ---------- สรุป ----------
 if (warnings.length) {
   console.warn(`คำเตือน ${warnings.length} รายการ:`);

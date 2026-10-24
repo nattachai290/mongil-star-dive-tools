@@ -5,7 +5,7 @@
  * แม้ schema จะพังอยู่ ทำให้ไม่รู้ตัวจนวันที่เริ่มกรอกข้อมูลจริง
  */
 import { character, food, linkChain, monsterling, skill } from "../src/lib/schema/entities";
-import { computeDamage, missingConstants, sumBuffs } from "../src/lib/formula";
+import { computeDamage, proficiencyToPercent, sumBuffs } from "../src/lib/formula";
 import { LINK_CHAIN_LIST_IS_COMPLETE, linkableBadge, linkableIds, linkableOf } from "../src/lib/linkable";
 import type { Effect } from "../src/lib/schema/common";
 
@@ -88,20 +88,23 @@ const summed = sumBuffs(buffs, "atk");
 check("รวมบัฟ % เฉพาะ stat ที่ขอ", summed.percent === 30, `ได้ ${summed.percent} ควรเป็น 30`);
 check("รวมบัฟค่าคงที่แยกจาก %", summed.flat === 50, `ได้ ${summed.flat} ควรเป็น 50`);
 
-const r = computeDamage({ atkBase: 1300, buffs, skillPercent: 500, critRate: 5, critDmg: 150 });
-const expectedAtk = 1300 * 1.3 + 50;
-check("ATK รวมถูกต้อง", Math.abs(r.atkTotal - expectedAtk) < 1e-9, `ได้ ${r.atkTotal} ควรเป็น ${expectedAtk}`);
-const expectedAvg = ((expectedAtk * 500) / 100) * (1 + 0.05 * 0.5);
-check("ดาเมจเฉลี่ยถูกต้อง", r.average !== null && Math.abs(r.average - expectedAvg) < 1e-9,
-  `ได้ ${r.average} ควรเป็น ${expectedAvg}`);
-check("ไม่ใส่ป้องกันศัตรู = ข้ามขั้นนั้นแล้วเตือน",
-  r.steps.find((s) => s.id === "afterDefense")?.skipped === true &&
-  r.caveats.some((c) => c.includes("ก่อนหักป้องกัน")));
+// ตัวอย่างในชีตชุมชน V1.13 — เวอร์น่า Lv.60 ตี Custos-15 ชีตได้ 329,147
+const sheet = computeDamage({
+  atkBase: 1855, atkFlat: 5066, atkPercent: 52, skillPercent: 100,
+  critRate: 100, critDmg: 190, elementalDmg: 187.5, weaknessHit: true,
+  bossDmg: 38, basicAttackDmg: 70, brawlDmg: 43.5389, enemiesOnField: 1, alliesOnField: 1,
+  enemyDef: 2212, defReduction: 25, enemyEleDef: 0, enemyRes: 0, resShred: 51.55,
+});
+check("สูตรชีตชุมชน: ตัวอย่างในชีตได้ 329,147", Math.trunc(sheet.onCrit) === 329147, `ได้ ${sheet.onCrit}`);
+check("คริ 100% = ค่าเฉลี่ยเท่าดาเมจคริ", Math.abs(sheet.average - sheet.onCrit) < 1e-6);
+check("ช่วงดาเมจ ±30%", Math.abs(sheet.range[0] - sheet.average * 0.7) < 1e-6 && Math.abs(sheet.range[1] - sheet.average * 1.3) < 1e-6);
 
-const blocked = computeDamage({ atkBase: 1300, buffs: [], skillPercent: 500, critRate: 5, critDmg: 150, enemyDef: 2000 });
-check("ใส่ป้องกันศัตรูขณะค่าคงที่ยังไม่ยืนยัน = คืน null ไม่ใช่เดา",
-  blocked.average === null && blocked.steps.find((s) => s.id === "afterDefense")?.blockedBy === "defConstant");
-check("บอกได้ว่าค่าคงที่ไหนยังขาด", missingConstants().includes("defConstant"));
+const noDef = computeDamage({ atkBase: 1300, buffs, skillPercent: 500, critRate: 5, critDmg: 50 });
+check("ATK รวมใช้บัฟ % และค่าคงที่", Math.abs(noDef.atkTotal - (1300 + 50) * 1.3) < 1e-9, `ได้ ${noDef.atkTotal}`);
+check("ไม่ใส่ป้องกันศัตรู = ข้ามขั้นนั้นแล้วเตือน",
+  noDef.steps.find((s) => s.id === "defenseFactor")?.skipped === true &&
+  noDef.caveats.some((c) => c.includes("ก่อนหักป้องกัน")));
+check("ความชำนาญ 1,078 = 12.18% ตรงกับจอเกม", Math.abs(proficiencyToPercent(1078) - 12.18) < 0.01);
 
 // ---------- ชนิดดาเมจอยู่ที่ท่า ไม่ใช่ที่ตัวละคร ----------
 const skillShape = { name: t("ท่า"), desc: t("คำอธิบาย") };
