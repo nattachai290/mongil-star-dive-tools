@@ -1,6 +1,7 @@
 {
   "id": "benjamin",
   "name": {
+    "th": "เบนจามิน",
     "en": "Benjamin"
   },
   "rarity": 4,
@@ -171,9 +172,11 @@
   "skills": {
     "basic": {
       "name": {
+        "th": "วิชาดาบแห่งความเยือกเย็น",
         "en": "Sardonic Swordplay"
       },
       "desc": {
+        "th": "พุ่งไปยังด้านหน้าและใช้ดาบในสองมือฟาดฟันใส่ศัตรู สร้างดาเมจกายภาพอย่างต่อเนื่อง / เมื่อโจมตีพื้นฐานขั้น 3 การโจมตีทั้งหมดจะถูกเปลี่ยนเป็นธาตุสายฟ้าภายในระยะเวลาที่กำหนด",
         "en": "Benjamin deals consecutive Physical DMG by advancing forward and striking enemies with his dual swords. / Upon using his Basic Attack's 3th Hit, the element of all attacks is converted to Lightning for a set duration."
       },
       "damageType": "physical",
@@ -181,6 +184,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 1",
             "en": "1st Hit DMG"
           },
           "unit": "percent",
@@ -206,6 +210,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 2",
             "en": "2nd Hit DMG"
           },
           "unit": "percent",
@@ -231,6 +236,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 3",
             "en": "3rd Hit DMG"
           },
           "unit": "percent",
@@ -256,6 +262,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 4",
             "en": "4th Hit DMG"
           },
           "unit": "percent",
@@ -281,6 +288,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีชาร์จ",
             "en": "Charge Attack DMG"
           },
           "unit": "percent",
@@ -305,6 +313,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีฉับพลัน",
             "en": "Air Counter DMG"
           },
           "unit": "percent",
@@ -329,6 +338,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจหลบหลีกโต้กลับ",
             "en": "Evasion Counter DMG"
           },
           "unit": "percent",
@@ -353,6 +363,7 @@
         },
         {
           "label": {
+            "th": "เวลาแสดงผล",
             "en": "Duration"
           },
           "unit": "seconds",
@@ -689,15 +700,18 @@
     },
     "passive": {
       "name": {
+        "th": "กระแสน้ำเชี่ยวกรากแห่งราตรี",
         "en": "Sleepless Torrent"
       },
       "desc": {
+        "th": "เมื่อใช้สกิลพิเศษ หากไม่ได้รับดาเมจจากศัตรูนาน 3 วินาที จะได้รับเอฟเฟกต์ฝันร้ายพุ่งทะยาน",
         "en": "If Benjamin doesn't take any DMG for 3s when using his Special Skill, he gains Nightmare Sprint."
       },
       "effects": [],
       "values": [
         {
           "label": {
+            "th": "เวลาแสดงผลฝันร้ายพุ่งทะยาน",
             "en": "Nightmare Sprint Duration"
           },
           "unit": "seconds",
@@ -723,6 +737,7 @@
         },
         {
           "label": {
+            "th": "คูลดาวน์ฝันร้ายพุ่งทะยาน",
             "en": "Nightmare Sprint Cooldown"
           },
           "unit": "seconds",
@@ -750,9 +765,11 @@
     },
     "elemental": {
       "name": {
+        "th": "เซนส์ของนักแก้ปัญหา",
         "en": "Fixer's Gut"
       },
       "desc": {
+        "th": "เมื่อเปลี่ยนเป็นสมาชิกทีมคนอื่น จะเพิ่มพลังโจมตี 7.6% (เวลาแสดงผล 15 วินาที)",
         "en": "ATK increases by 7.6% upon switching to another teammate. (Duration: 15s)"
       },
       "effects": [
@@ -781,9 +798,11 @@
     },
     {
       "name": {
+        "th": "ฝันร้ายพุ่งทะยาน",
         "en": "Nightmare Sprint"
       },
       "desc": {
+        "th": "สามารถใช้สกิลพิเศษเสริมพลังหรือสกิลล่าถอยภายในระยะเวลาแสดงผลเอฟเฟกต์ เมื่อใช้งานทันทีเอฟเฟกต์ดังกล่าวจะหายไป",
         "en": "Enhanced Special Skills and Tag-out Skills can be used during the effect's duration. The effect is removed immediately after use."
       },
       "effects": []
@@ -797,8 +816,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Assassin · Lightning · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวละครชายตัวที่สอง | ค่าพลังห้าค่าหลัก: ATK 1,908 · DEF 598 · HP 8,389 · Crit 5% / 50% — เท่ากับ Reina และ Yeonhwa ทุกตัว (Lightning Melee 4 ดาว) อ่านจากจอตรง ๆ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 11.59% · Assassin 1,026 · Elemental Weakness 125% (แบบ Assassin 4 ดาว) · Basic Sardonic Swordplay · Ultimate Dimensional Annihilation Slash (921.2%) · Passive Sleepless Torrent · Effect Details ของ Lightning Affliction และ Nightmare Sprint | basic: ดาเมจกายภาพตามท่อนแรก ท่อนสองเปลี่ยนธาตุของทุกการโจมตีเป็นสายฟ้า 4 วินาทีหลังจังหวะที่ 3 · **จอเขียน \"3th Hit\" (ไวยากรณ์ผิดในเกม) เก็บตามจอ** | **2026-10-22 รอบสาม** Switch Raging Flurry (Switch/Tag-out/Support) · Special Nightmare Mark · Guidance of Lightning Fixer's Gut (ATK +7.6% เมื่อสลับไปตัวอื่น → onSwitchOut, target self ตามกฎ \"ถ้าไม่บอกว่าใครก็คือตัวเอง\") · ปลุกพลังครบหกขั้น (จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส) | effects ปลุกพลัง: ขั้น 3 Tag-out +6% · ขั้น 5 Special +6% · ขั้น 6 Tag-out +20% และ supportDmg +20% · ขั้นอื่นเปลี่ยนกลไก/ค่าสกิล เก็บเป็นข้อความ | ขั้น 4 เอ่ยถึง \"Strike Count of Nightmare Sprint\" แต่ Effect Details ของ Nightmare Sprint ไม่มีตัวเลขครั้ง — เก็บตามจอ | ยังไม่ได้อ่าน: จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) | Assassin · Lightning · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวละครชายตัวที่สอง | ค่าพลังห้าค่าหลัก: ATK 1,908 · DEF 598 · HP 8,389 · Crit 5% / 50% — เท่ากับ Reina และ Yeonhwa ทุกตัว (Lightning Melee 4 ดาว) อ่านจากจอตรง ๆ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 11.59% · Assassin 1,026 · Elemental Weakness 125% (แบบ Assassin 4 ดาว) · Basic Sardonic Swordplay · Ultimate Dimensional Annihilation Slash (921.2%) · Passive Sleepless Torrent · Effect Details ของ Lightning Affliction และ Nightmare Sprint | basic: ดาเมจกายภาพตามท่อนแรก ท่อนสองเปลี่ยนธาตุของทุกการโจมตีเป็นสายฟ้า 4 วินาทีหลังจังหวะที่ 3 · **จอเขียน \"3th Hit\" (ไวยากรณ์ผิดในเกม) เก็บตามจอ** | **2026-10-22 รอบสาม** Switch Raging Flurry (Switch/Tag-out/Support) · Special Nightmare Mark · Guidance of Lightning Fixer's Gut (ATK +7.6% เมื่อสลับไปตัวอื่น → onSwitchOut, target self ตามกฎ \"ถ้าไม่บอกว่าใครก็คือตัวเอง\") · ปลุกพลังครบหกขั้น (จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส) | effects ปลุกพลัง: ขั้น 3 Tag-out +6% · ขั้น 5 Special +6% · ขั้น 6 Tag-out +20% และ supportDmg +20% · ขั้นอื่นเปลี่ยนกลไก/ค่าสกิล เก็บเป็นข้อความ | ขั้น 4 เอ่ยถึง \"Strike Count of Nightmare Sprint\" แต่ Effect Details ของ Nightmare Sprint ไม่มีตัวเลขครั้ง — เก็บตามจอ | **2026-10-24 จอไทย (พรีวิวตัวละคร)** ชื่อ เบนจามิน · สเลเยอร์ (= Assassin ตาม vocabulary) · สายฟ้า ระยะใกล้ · 4 ดาว · ค่าพลังห้าค่าตรงจออังกฤษ · โจมตีพื้นฐาน วิชาดาบแห่งความเยือกเย็น (Lv.12 ตรงทุกแถว — จอไทยเขียน \"ขั้น 3\" ไม่มีปัญหา 3th) · การชี้นำแห่งสายฟ้า เซนส์ของนักแก้ปัญหา (7.6% ตรง) · แพสซีฟ กระแสน้ำเชี่ยวกรากแห่งราตรี (15 / 20 วิ ตรง) · สถานะ ฝันร้ายพุ่งทะยาน | ยังไม่ได้อ่าน (ไทย): สกิลสับเปลี่ยน · สกิลพิเศษ · สกิลอัลติเมต · ปลุกพลัง · สถานะอ่อนแอต่อสายฟ้า"
   }
 }
