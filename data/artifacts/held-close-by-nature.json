@@ -1,6 +1,7 @@
 {
   "id": "held-close-by-nature",
   "name": {
+    "th": "มิตรแท้แห่งธรรมชาติอันยิ่งใหญ่",
     "en": "Held Close by Nature"
   },
   "stars": 5,
@@ -23,9 +24,11 @@
       "artifactLevel": 1,
       "level": 1,
       "name": {
+        "th": "ใต้ฟ้าย่อมมีขุนเขา I",
         "en": "Beneath the Sky Stands Mount Tai I"
       },
       "desc": {
+        "th": "เมื่อตัวละคร [บรอว์เลอร์] ติดตั้ง จะได้รับเอฟเฟกต์ดังต่อไปนี้ / เมื่อใช้โต้กลับ จะได้รับเอฟเฟกต์พยัคฆ์สะเทือนพิภพ / พยัคฆ์สะเทือนพิภพ: เมื่อโจมตีพื้นฐานธาตุลมโดน 3 ครั้ง จะเพิ่มดาเมจธาตุลม 2.5% (ทับซ้อนสูงสุด 25, เวลาแสดงผล 20 วินาที) / รวมขั้น 3 : ทุกบรอว์เลอร์ 10 หน่วย จะได้รับเอฟเฟกต์เพิ่มดาเมจธาตุลม 0.06% (สูงสุด 15%) / รวมขั้น 5 : ทุกบรอว์เลอร์ 10 หน่วย จะได้รับเอฟเฟกต์เพิ่มพลังโจมตี 0.06% (สูงสุด 15%)",
         "en": "When equipped by a [Fighter] character, grants the following effect. / Tigerquake is gained upon counterattacking. / Tigerquake: Wind DMG increases by 2.5% upon landing a Basic Wind Attack 3 time(s). (Max Stacks: 25, Duration: 20s) / Fusion Level 3: Gains 0.06% Wind DMG Boost for every 10 points of Fighter proficiency. (Max: 15%) / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Fighter proficiency. (Max: 15%)"
       },
       "effects": [
@@ -53,9 +56,11 @@
       "artifactLevel": 60,
       "level": 5,
       "name": {
+        "th": "ใต้ฟ้าย่อมมีขุนเขา V",
         "en": "Beneath the Sky Stands Mount Tai V"
       },
       "desc": {
+        "th": "เมื่อตัวละคร [บรอว์เลอร์] ติดตั้ง จะได้รับเอฟเฟกต์ดังต่อไปนี้ / เมื่อใช้โต้กลับ จะได้รับเอฟเฟกต์พยัคฆ์สะเทือนพิภพ / พยัคฆ์สะเทือนพิภพ: เมื่อโจมตีพื้นฐานธาตุลมโดน 3 ครั้ง จะเพิ่มดาเมจธาตุลม 5% (ทับซ้อนสูงสุด 25, เวลาแสดงผล 20 วินาที) / รวมขั้น 3 : ทุกบรอว์เลอร์ 10 หน่วย จะได้รับเอฟเฟกต์เพิ่มดาเมจธาตุลม 0.06% (สูงสุด 15%) / รวมขั้น 5 : ทุกบรอว์เลอร์ 10 หน่วย จะได้รับเอฟเฟกต์เพิ่มพลังโจมตี 0.06% (สูงสุด 15%)",
         "en": "When equipped by a [Fighter] character, grants the following effect. / Tigerquake is gained upon counterattacking. / Tigerquake: Wind DMG increases by 5% upon landing a Basic Wind Attack 3 time(s). (Max Stacks: 25, Duration: 20s) / Fusion Level 3: Gains 0.06% Wind DMG Boost for every 10 points of Fighter proficiency. (Max: 15%) / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Fighter proficiency. (Max: 15%)"
       },
       "effects": [
@@ -88,8 +93,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **5 ดาว (ผู้เล่นบอก 2026-10-22)** ตรงกับเพชร 5 เม็ดบนการ์ดสีส้ม | เก็บ Fusion 1 (จอ Lv.01) กับ Fusion 5 (จอ Lv.60) และค่าสเตตัสที่ Lv.60 ตามที่ผู้เล่นกำหนด 2026-10-22 | บรรทัด Fusion Level 3 / 5 (ตามความชำนาญ สูงสุด 15%) เก็บเป็นข้อความ | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | \"time(s)\" ตามจอ"
+    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **5 ดาว (ผู้เล่นบอก 2026-10-22)** ตรงกับเพชร 5 เม็ดบนการ์ดสีส้ม | เก็บ Fusion 1 (จอ Lv.01) กับ Fusion 5 (จอ Lv.60) และค่าสเตตัสที่ Lv.60 ตามที่ผู้เล่นกำหนด 2026-10-22 | บรรทัด Fusion Level 3 / 5 (ตามความชำนาญ สูงสุด 15%) เก็บเป็นข้อความ | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | \"time(s)\" ตามจอ | **2026-10-24 จอพรีวิวอาร์ติแฟกต์ไทย** ชื่อ มิตรแท้แห่งธรรมชาติอันยิ่งใหญ่ (บนจอขึ้นสองบรรทัด ต่อกันไม่เว้นวรรค) · บรอว์เลอร์ · Lv.60 พลังโจมตี 883 · อัตราคริติคอล 21% ตรง · รวมขั้น 1 (Lv.01) / รวมขั้น 5 (Lv.60) ใต้ฟ้าย่อมมีขุนเขา I / V · Tigerquake = พยัคฆ์สะเทือนพิภพ (จอไทยขึ้นหัวเป็นบรรทัดของตัวเอง เก็บเป็น \"พยัคฆ์สะเทือนพิภพ: …\" ให้รูปตรงอังกฤษ) · **บรรทัด \"รวมขั้น 5 : …\" ของจอ Lv.01 ถูกตัดขอบจอ** — ใช้ข้อความจากจอ Lv.60 ซึ่งเป็นบรรทัดเดียวกัน (อังกฤษสองเลเวลเหมือนกันทุกคำ) · รวมขั้น 3 ของจอ Lv.01 ไม่มีสีที่คำ \"ดาเมจธาตุลม\" ส่วน Lv.60 มี — ข้อความเหมือนกัน"
   }
 }
