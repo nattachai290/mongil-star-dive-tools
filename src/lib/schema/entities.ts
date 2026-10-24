@@ -486,6 +486,11 @@ export const buildMember = z.object({
   linkChain: slug.optional(),
   /** มอนจากสมุดภาพ "มอนสเตอร์ตำนาน" — ช่องของตัวเอง ไม่นับรวมกับมอน 3 ตัว · มี Trait 4 ช่องเหมือนกัน */
   legendary: monSlot.optional(),
+  /**
+   * ท่าที่ตัวนี้ใช้ใน 1 รอบ — บางตัวสลับเข้ามากดสกิลแล้วออกเลย ไม่ตีปกติ (ผู้เล่นบอก 2026-10-24)
+   * ไม่ใส่ = ใช้ครบทั้ง 4 ท่า
+   */
+  cycle: z.array(z.enum(["basic", "switch", "special", "ultimate"])).min(1).optional(),
 }).strict();
 
 /**

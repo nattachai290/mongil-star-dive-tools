@@ -156,6 +156,13 @@ export const effect = z
          * ห้ามใส่จากการเดา ถ้ายังไม่ได้ดูจอ ให้ปล่อยให้มันเตือนต่อไป
          */
         enemyScopeVerified: z.boolean().optional(),
+        /**
+         * บัฟทีมที่ให้เฉพาะเพื่อนบางแบบ — อ่านจากข้อความเงื่อนไขบนจอ เช่น "all Fire teammates",
+         * "Ranged type teammates who are not Ice-type" · เครื่องคิดดาเมจทีมใช้กรองว่าใครได้บัฟ
+         */
+        teammateElement: vocabEnum("damageType").optional(),
+        teammateNotElement: vocabEnum("damageType").optional(),
+        teammateRange: vocabEnum("range").optional(),
         note: text.optional(),
       })
       .optional(),

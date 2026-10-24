@@ -203,9 +203,17 @@ export function teamDamage(lo: BuildLoadout): TeamDamage {
   const members: MemberDamage[] = lo.members.map((mem, i) => {
     const char = chars[i];
     if (!char) return { characterId: mem.characterId, skills: [], total: 0 };
+    // บัฟทีมที่จอบอกว่าให้เฉพาะเพื่อนธาตุหรือระยะหนึ่ง
+    const fits = ({ effect: e }: Sourced) => {
+      const c = e.condition;
+      if (c?.teammateElement && c.teammateElement !== char.element) return false;
+      if (c?.teammateNotElement && c.teammateNotElement === char.element) return false;
+      if (c?.teammateRange && c.teammateRange !== char.range) return false;
+      return true;
+    };
     const mine: Sourced[] = [
       ...own[i].filter((e) => e.target === "self").map((effect) => ({ effect, ownerId: mem.characterId })),
-      ...shared,
+      ...shared.filter(fits),
       ...food.map((effect) => ({ effect, ownerId: "food" })),
       ...(char.otherStats ?? [])
         .filter((e) => !(e.stat === "dmgDealt" && e.scopes?.includes("weaknessHit")))
@@ -213,7 +221,7 @@ export function teamDamage(lo: BuildLoadout): TeamDamage {
     ];
     const level = skillLevel(char, lo.awaken);
     const skills: SkillDamage[] = [];
-    for (const key of CYCLE_SKILLS) {
+    for (const key of mem.cycle ?? CYCLE_SKILLS) {
       const sk = char.skills?.[key];
       if (!sk) continue;
       const damageType = sk.damageType ?? char.element;

@@ -141,6 +141,7 @@ exquisite{ buff }, unlock{ from: "brownie-shop"|"event"|"quest" }, images.icon, 
 | `monsterlings[{id, traits[{id, grade}]}]` | สูงสุด 3 · Trait ตัวละ 4 | ห้ามมีมอนตำนาน · grade = แรง (เทา…ทอง) ค่าอ่านจาก meta/traits.json |
 | `linkChain` | 1 | |
 | `legendary{id, traits}` | 1 · Trait 4 | มอนจากสมุดภาพมอนสเตอร์ตำนาน · แยกจากมอน 3 ตัว |
+| `cycle` | ท่าที่ใช้ใน 1 รอบ | ไม่ใส่ = ครบ 4 ท่า · บางตัวสลับเข้ามากดสกิลแล้วออกเลย ไม่ตีปกติ |
 
 มอนตัวเดียวกันบนสองคนในทีม บัฟไม่ทับซ้อนกัน — validate:data เตือน (ไม่ fail) และหน้าเว็บกรอบสีทอง
 
