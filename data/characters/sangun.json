@@ -1,6 +1,7 @@
 {
   "id": "sangun",
   "name": {
+    "th": "ซันกุน",
     "en": "Sangun"
   },
   "rarity": 5,
@@ -139,9 +140,11 @@
   "skills": {
     "basic": {
       "name": {
+        "th": "พยัคฆ์คืนชีพ",
         "en": "Lurking Tiger"
       },
       "desc": {
+        "th": "โจมตีต่อเนื่องด้วยพยัคฆ์คำราม สร้างดาเมจธาตุดิลม / สามารถโจมตีโดนได้โดยการเข้าประชิดหรือถอยห่างตามระยะห่างจากศัตรู",
         "en": "Sangun deals Wind DMG by unleashing a series of attacks with Tiger's Howl. / He may either move in or pull back while striking, depending on the distance to the enemy."
       },
       "damageType": "wind",
@@ -149,6 +152,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 1",
             "en": "1st Hit DMG"
           },
           "unit": "percent",
@@ -174,6 +178,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 2",
             "en": "2nd Hit DMG"
           },
           "unit": "percent",
@@ -199,6 +204,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 3",
             "en": "3rd Hit DMG"
           },
           "unit": "percent",
@@ -224,6 +230,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 4",
             "en": "4th Hit DMG"
           },
           "unit": "percent",
@@ -249,6 +256,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีฉับพลัน",
             "en": "Air Counter DMG"
           },
           "unit": "percent",
@@ -273,6 +281,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจหลบหลีกโต้กลับ",
             "en": "Evasion Counter DMG"
           },
           "unit": "percent",
@@ -299,9 +308,11 @@
     },
     "switch": {
       "name": {
+        "th": "พยัคฆ์จู่โจม",
         "en": "Tiger Strike"
       },
       "desc": {
+        "th": "ปรากฏตัวใกล้ศัตรู หมุนตัวและพยัคฆ์คำรามไปด้านหน้าอย่างแรง สร้างดาเมจธาตุลม / เมื่อโจมตีโดน จะลากศัตรูมายังจุดโจมตี",
         "en": "Sangun emerges near an enemy, spins rapidly, and hurls the Tiger's Howl forward, dealing Wind DMG. / Landing a hit pulls the target to the point of attack."
       },
       "damageType": "wind",
@@ -309,6 +320,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจ ขั้น 1",
             "en": "1st Hit DMG"
           },
           "unit": "percent",
@@ -334,6 +346,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจ ขั้น 2",
             "en": "2nd Hit DMG"
           },
           "unit": "percent",
@@ -534,15 +547,18 @@
     },
     "passive": {
       "name": {
+        "th": "ฟ้าดินกลมกลืน",
         "en": "Aura of Harmony"
       },
       "desc": {
+        "th": "เมื่อใช้สกิลโต้กลับ จะมอบระบำคลุ้มคลั่งแห่งสมดุลให้กับตนเอง",
         "en": "Sangun gains Wild Fervor upon using a counterattack."
       },
       "effects": [],
       "values": [
         {
           "label": {
+            "th": "เวลาแสดงผลระบำคลุ้มคลั่งแห่งสมดุล",
             "en": "Wild Fervor Duration"
           },
           "unit": "seconds",
@@ -570,9 +586,11 @@
     },
     "elemental": {
       "name": {
+        "th": "พยัคฆ์เมาเหินฟ้า",
         "en": "Drunken Tiger Ascends"
       },
       "desc": {
+        "th": "เมื่อใช้สกิลสับเปลี่ยน จะเพิ่มดาเมจธาตุลม 23.15% (เวลาแสดงผล 10 วินาที) / หากหลบหลีกโต้กลับสำเร็จในขณะเวลาแสดงผลของเอฟเฟกต์ดังกล่าว เวลาแสดงผลจะถูกรีเซต",
         "en": "Wind DMG increases by 23.15% upon using a Switch Skill. (Duration: 10s) / Landing a successful Evasion Counter while the effect is active resets its duration."
       },
       "effects": [
@@ -587,6 +605,7 @@
           "durationSec": 10,
           "condition": {
             "note": {
+              "th": "หากหลบหลีกโต้กลับสำเร็จในขณะเวลาแสดงผลของเอฟเฟกต์ดังกล่าว เวลาแสดงผลจะถูกรีเซต",
               "en": "Landing a successful Evasion Counter while the effect is active resets its duration."
             }
           }
@@ -650,8 +669,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Fighter · Wind · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,943 · DEF 656 · HP 9,978 · Crit 5% / 50% อ่านจากจอตรง ๆ — เท่ากับ Chloe ทุกค่า (Wind Fighter Melee 5 ดาว) | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 380x380 ขยายเป็น 400x400 (เลี่ยงป้าย Info ด้านบน) | **2026-10-22 รอบสอง** Switch Tiger Strike · Special Fearsome Tiger (293.6%, 8.6 วินาที) · Ultimate Cataclysm (คำอธิบายและตารางอ่านจากพื้นหลังจาง ๆ ของป๊อปอัป Effect Details — อ่านออกครบ) · Passive Aura of Harmony (Wild Fervor 6 วินาที) · Guidance of Wind Drunken Tiger Ascends (ดาเมจลม +23.15% 10 วินาที) | **2026-10-22 รอบสาม** Detailed Stats: Brawl DMG Boost 12.18% · Fighter 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Basic Lurking Tiger · Effect Details: Wind Tiger Strike Tier 1–3 (Tier 1 อ่านจากปุ่ม Effects ของปลุกพลังขั้น 2) · Wind Affliction · Wild Fervor (จากปุ่ม Effects ของขั้น 1) · ปลุกพลังครบหกขั้น | ปลุกพลัง: จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส · effects: ขั้น 3 Basic +6% · ขั้น 5 ลดคูลดาวน์ Special 4.5% เก็บเป็นข้อความ (ไม่มีแบบ % cooldown ในโครง) · ขั้นอื่นเก็บเป็นข้อความ | **ขั้น 4 ขึ้นต้นด้วย \"\\Applies\" (มี backslash ในเกม) เก็บตามจอ** · ขั้น 2 \"70% /90%\" ช่องว่างไม่เท่ากันตามจอ | ยังไม่ได้อ่าน: จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) | Fighter · Wind · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,943 · DEF 656 · HP 9,978 · Crit 5% / 50% อ่านจากจอตรง ๆ — เท่ากับ Chloe ทุกค่า (Wind Fighter Melee 5 ดาว) | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 380x380 ขยายเป็น 400x400 (เลี่ยงป้าย Info ด้านบน) | **2026-10-22 รอบสอง** Switch Tiger Strike · Special Fearsome Tiger (293.6%, 8.6 วินาที) · Ultimate Cataclysm (คำอธิบายและตารางอ่านจากพื้นหลังจาง ๆ ของป๊อปอัป Effect Details — อ่านออกครบ) · Passive Aura of Harmony (Wild Fervor 6 วินาที) · Guidance of Wind Drunken Tiger Ascends (ดาเมจลม +23.15% 10 วินาที) | **2026-10-22 รอบสาม** Detailed Stats: Brawl DMG Boost 12.18% · Fighter 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Basic Lurking Tiger · Effect Details: Wind Tiger Strike Tier 1–3 (Tier 1 อ่านจากปุ่ม Effects ของปลุกพลังขั้น 2) · Wind Affliction · Wild Fervor (จากปุ่ม Effects ของขั้น 1) · ปลุกพลังครบหกขั้น | ปลุกพลัง: จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส · effects: ขั้น 3 Basic +6% · ขั้น 5 ลดคูลดาวน์ Special 4.5% เก็บเป็นข้อความ (ไม่มีแบบ % cooldown ในโครง) · ขั้นอื่นเก็บเป็นข้อความ | **ขั้น 4 ขึ้นต้นด้วย \"\\Applies\" (มี backslash ในเกม) เก็บตามจอ** · ขั้น 2 \"70% /90%\" ช่องว่างไม่เท่ากันตามจอ | **2026-10-24 จอไทยรอบแรก** ชื่อ ซันกุน · บรอว์เลอร์ · ลม ระยะใกล้ · 5 ดาว · ค่าพลังห้าค่าตรงจออังกฤษ · โจมตีพื้นฐาน พยัคฆ์คืนชีพ (**จอไทยพิมพ์ \"ดาเมจธาตุดิลม\" เก็บตามจอ**) · สกิลสับเปลี่ยน พยัคฆ์จู่โจม · การชี้นำแห่งลม พยัคฆ์เมาเหินฟ้า (23.15% ตรง) · แพสซีฟ ฟ้าดินกลมกลืน (Wild Fervor = ระบำคลุ้มคลั่งแห่งสมดุล · Tiger's Howl = พยัคฆ์คำราม) — ค่าตรงทุกแถว | ยังไม่ได้อ่าน (ไทย): สกิลพิเศษ · สกิลอัลติเมต · ปลุกพลัง · สถานะ"
   }
 }
