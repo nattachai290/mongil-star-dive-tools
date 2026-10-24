@@ -391,9 +391,11 @@
     },
     "switch": {
       "name": {
+        "th": "ลมวายุกรรโชก",
         "en": "Raging Flurry"
       },
       "desc": {
+        "th": "ปรากฏตัวใกล้ศัตรูแล้วพุ่งชนอย่างดุเดือด ฟาดฟันด้วยดาบนับครั้งไม่ถ้วน สร้างดาเมจธาตุสายฟ้าต่อเนื่อง / [สกิลล่าถอย] เมื่อมีเอฟเฟกต์ฝันร้ายพุ่งทะยาน จะพุ่งชนใส่ศัตรูพร้อมกับร่างแยก สร้างดาเมจธาตุสายฟ้าและทำให้ศัตรูลอยขึ้นกลางอากาศ และมอบเอฟเฟกต์อ่อนแอต่อสายฟ้าแก่ศัตรูที่โดนโจมตี / [สกิลสนับสนุน] เมื่อสมาชิกทีมใช้สกิลพิเศษในระหว่างต่อสู้ จะปรากฏตัวรอบข้าง สร้างดาเมจธาตุสายฟ้าแก่ศัตรูและมอบเอฟเฟกต์อ่อนแอต่อสายฟ้าแก่ศัตรูที่โดนโจมตี",
         "en": "Benjamin appears near the enemy and fiercely charges at them, unleashing a flurry of slashes with his sword to deal consecutive Lightning DMG. / [Tag-out Skill] When Nightmare Sprint is active, Benjamin charges at enemies with his clones, dealing Lightning DMG and rendering enemies Airborne. Hit enemies are inflicted with Lightning Affliction. / [Support Skill] When a teammate uses a Special Skill during combat, Benjamin appears nearby, dealing Lightning DMG and inflicting Lightning Affliction on hit enemies."
       },
       "damageType": "lightning",
@@ -401,6 +403,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจสกิลสับเปลี่ยน",
             "en": "Switch Skill DMG"
           },
           "unit": "percent",
@@ -426,6 +429,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจสกิลล่าถอย",
             "en": "Tag-out Skill DMG"
           },
           "unit": "percent",
@@ -451,6 +455,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจสกิลสนับสนุน",
             "en": "Support Skill DMG"
           },
           "unit": "percent",
@@ -476,6 +481,7 @@
         },
         {
           "label": {
+            "th": "คูลดาวน์สกิลสนับสนุน",
             "en": "Support Skill Cooldown"
           },
           "unit": "seconds",
@@ -501,6 +507,7 @@
         },
         {
           "label": {
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อสายฟ้า",
             "en": "Lightning Affliction Duration"
           },
           "unit": "seconds",
@@ -527,9 +534,11 @@
     },
     "special": {
       "name": {
+        "th": "ตราประทับแห่งภวังค์ร้าย",
         "en": "Nightmare Mark"
       },
       "desc": {
+        "th": "ร่างแยกปรากฏรอบตัว พร้อมกวัดแกว่งดาบฟาดฟันหลายครั้ง จากนั้นอัญเชิญดาบ สร้างดาเมจธาตุสายฟ้าและทำให้ศัตรูลอยขึ้นกลางอากาศ / เมื่อมีเอฟเฟกต์ฝันร้ายพุ่งทะยาน จะเสริมพลังสกิลพิเศษและพุ่งชนใส่ศัตรูพร้อมกับร่างแยก สร้างดาเมจธาตุสายฟ้าและทำให้ศัตรูลอยขึ้นกลางอากาศ",
         "en": "Clones appear around Benjamin, simultaneously swinging swords to unleash a barrage of slashes. Benjamin then summons his sword, dealing Lightning DMG and rendering enemies Airborne. / When Nightmare Sprint is active, Benjamin's Special Skill is enhanced. He charges at enemies with his clones, dealing Lightning DMG and rendering enemies Airborne."
       },
       "damageType": "lightning",
@@ -537,6 +546,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจฟาดฟัน",
             "en": "Slash DMG"
           },
           "unit": "percent",
@@ -562,6 +572,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจอัญเชิญดาบ",
             "en": "Sword Summon DMG"
           },
           "unit": "percent",
@@ -587,6 +598,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจสกิลพิเศษเสริมพลัง",
             "en": "Enhanced Special Skill DMG"
           },
           "unit": "percent",
@@ -612,6 +624,7 @@
         },
         {
           "label": {
+            "th": "คูลดาวน์",
             "en": "Cooldown"
           },
           "unit": "seconds",
@@ -638,9 +651,11 @@
     },
     "ultimate": {
       "name": {
+        "th": "ฟาดฟันทลายมิติ",
         "en": "Dimensional Annihilation Slash"
       },
       "desc": {
+        "th": "ฟาดฟันดาบอย่างรวดเร็ว ฉีกมิติออกและโจมตีศัตรูนับครั้งไม่ถ้วน สร้างดาเมจธาตุสายฟ้าและทำให้ศัตรูลอยขึ้นไปบนอากาศ ศัตรูที่โดนการโจมตี จะได้รับเอฟเฟกต์อ่อนแอต่อสายฟ้า",
         "en": "Benjamin swiftly swings his sword, slicing through dimensions and slashing countless enemies, dealing Lightning DMG and rendering enemies Airborne. Hit enemies are inflicted with Lightning Affliction."
       },
       "damageType": "lightning",
@@ -648,6 +663,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจ",
             "en": "DMG"
           },
           "unit": "percent",
@@ -673,6 +689,7 @@
         },
         {
           "label": {
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อสายฟ้า",
             "en": "Lightning Affliction Duration"
           },
           "unit": "seconds",
@@ -789,9 +806,11 @@
   "statuses": [
     {
       "name": {
+        "th": "เอฟเฟกต์อ่อนแอต่อสายฟ้า",
         "en": "Lightning Affliction"
       },
       "desc": {
+        "th": "ได้รับดาเมจต่อเนื่องธาตุสายฟ้าและลดพลังต้านทานธาตุสายฟ้า 15%",
         "en": "Afflicted targets take Lightning DMG over time, and Lightning RES decreases by 15%."
       },
       "effects": []
@@ -819,6 +838,6 @@
       "en",
       "th"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) | Assassin · Lightning · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวละครชายตัวที่สอง | ค่าพลังห้าค่าหลัก: ATK 1,908 · DEF 598 · HP 8,389 · Crit 5% / 50% — เท่ากับ Reina และ Yeonhwa ทุกตัว (Lightning Melee 4 ดาว) อ่านจากจอตรง ๆ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 11.59% · Assassin 1,026 · Elemental Weakness 125% (แบบ Assassin 4 ดาว) · Basic Sardonic Swordplay · Ultimate Dimensional Annihilation Slash (921.2%) · Passive Sleepless Torrent · Effect Details ของ Lightning Affliction และ Nightmare Sprint | basic: ดาเมจกายภาพตามท่อนแรก ท่อนสองเปลี่ยนธาตุของทุกการโจมตีเป็นสายฟ้า 4 วินาทีหลังจังหวะที่ 3 · **จอเขียน \"3th Hit\" (ไวยากรณ์ผิดในเกม) เก็บตามจอ** | **2026-10-22 รอบสาม** Switch Raging Flurry (Switch/Tag-out/Support) · Special Nightmare Mark · Guidance of Lightning Fixer's Gut (ATK +7.6% เมื่อสลับไปตัวอื่น → onSwitchOut, target self ตามกฎ \"ถ้าไม่บอกว่าใครก็คือตัวเอง\") · ปลุกพลังครบหกขั้น (จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส) | effects ปลุกพลัง: ขั้น 3 Tag-out +6% · ขั้น 5 Special +6% · ขั้น 6 Tag-out +20% และ supportDmg +20% · ขั้นอื่นเปลี่ยนกลไก/ค่าสกิล เก็บเป็นข้อความ | ขั้น 4 เอ่ยถึง \"Strike Count of Nightmare Sprint\" แต่ Effect Details ของ Nightmare Sprint ไม่มีตัวเลขครั้ง — เก็บตามจอ | **2026-10-24 จอไทย (พรีวิวตัวละคร)** ชื่อ เบนจามิน · สเลเยอร์ (= Assassin ตาม vocabulary) · สายฟ้า ระยะใกล้ · 4 ดาว · ค่าพลังห้าค่าตรงจออังกฤษ · โจมตีพื้นฐาน วิชาดาบแห่งความเยือกเย็น (Lv.12 ตรงทุกแถว — จอไทยเขียน \"ขั้น 3\" ไม่มีปัญหา 3th) · การชี้นำแห่งสายฟ้า เซนส์ของนักแก้ปัญหา (7.6% ตรง) · แพสซีฟ กระแสน้ำเชี่ยวกรากแห่งราตรี (15 / 20 วิ ตรง) · สถานะ ฝันร้ายพุ่งทะยาน | ยังไม่ได้อ่าน (ไทย): สกิลสับเปลี่ยน · สกิลพิเศษ · สกิลอัลติเมต · ปลุกพลัง · สถานะอ่อนแอต่อสายฟ้า"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) | Assassin · Lightning · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวละครชายตัวที่สอง | ค่าพลังห้าค่าหลัก: ATK 1,908 · DEF 598 · HP 8,389 · Crit 5% / 50% — เท่ากับ Reina และ Yeonhwa ทุกตัว (Lightning Melee 4 ดาว) อ่านจากจอตรง ๆ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 11.59% · Assassin 1,026 · Elemental Weakness 125% (แบบ Assassin 4 ดาว) · Basic Sardonic Swordplay · Ultimate Dimensional Annihilation Slash (921.2%) · Passive Sleepless Torrent · Effect Details ของ Lightning Affliction และ Nightmare Sprint | basic: ดาเมจกายภาพตามท่อนแรก ท่อนสองเปลี่ยนธาตุของทุกการโจมตีเป็นสายฟ้า 4 วินาทีหลังจังหวะที่ 3 · **จอเขียน \"3th Hit\" (ไวยากรณ์ผิดในเกม) เก็บตามจอ** | **2026-10-22 รอบสาม** Switch Raging Flurry (Switch/Tag-out/Support) · Special Nightmare Mark · Guidance of Lightning Fixer's Gut (ATK +7.6% เมื่อสลับไปตัวอื่น → onSwitchOut, target self ตามกฎ \"ถ้าไม่บอกว่าใครก็คือตัวเอง\") · ปลุกพลังครบหกขั้น (จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส) | effects ปลุกพลัง: ขั้น 3 Tag-out +6% · ขั้น 5 Special +6% · ขั้น 6 Tag-out +20% และ supportDmg +20% · ขั้นอื่นเปลี่ยนกลไก/ค่าสกิล เก็บเป็นข้อความ | ขั้น 4 เอ่ยถึง \"Strike Count of Nightmare Sprint\" แต่ Effect Details ของ Nightmare Sprint ไม่มีตัวเลขครั้ง — เก็บตามจอ | **2026-10-24 จอไทย (พรีวิวตัวละคร)** ชื่อ เบนจามิน · สเลเยอร์ (= Assassin ตาม vocabulary) · สายฟ้า ระยะใกล้ · 4 ดาว · ค่าพลังห้าค่าตรงจออังกฤษ · โจมตีพื้นฐาน วิชาดาบแห่งความเยือกเย็น (Lv.12 ตรงทุกแถว — จอไทยเขียน \"ขั้น 3\" ไม่มีปัญหา 3th) · การชี้นำแห่งสายฟ้า เซนส์ของนักแก้ปัญหา (7.6% ตรง) · แพสซีฟ กระแสน้ำเชี่ยวกรากแห่งราตรี (15 / 20 วิ ตรง) · สถานะ ฝันร้ายพุ่งทะยาน | **2026-10-24 จอไทยรอบสอง** สกิลสับเปลี่ยน ลมวายุกรรโชก · สกิลพิเศษ ตราประทับแห่งภวังค์ร้าย · สกิลอัลติเมต ฟาดฟันทลายมิติ · สถานะ เอฟเฟกต์อ่อนแอต่อสายฟ้า — ค่า Lv.12 ตรงจออังกฤษทุกแถว | ยังไม่ได้อ่าน (ไทย): ปลุกพลัง 1–6"
   }
 }
