@@ -168,5 +168,18 @@
   "builds.pieces": "ชิ้น",
   "builds.traits": "ลักษณะเฉพาะ",
   "builds.artifactMain": "ชิ้นหลัก",
-  "builds.artifactAlt": "สำรอง"
+  "builds.artifactAlt": "สำรอง",
+  "builds.fusion": "รวมขั้น",
+  "builds.stats": "ค่าพลังรวม",
+  "builds.stats.gear": "ของที่ใส่",
+  "builds.stats.buffed": "รวมบัฟทั้งหมด",
+  "builds.stats.element": "ดาเมจธาตุ",
+  "builds.stats.basic": "ดาเมจโจมตีพื้นฐาน",
+  "builds.stats.skill": "ดาเมจสกิล",
+  "builds.stats.dmgBonus": "ดาเมจอื่น ๆ (บอส / ทั่วไป)",
+  "builds.stats.mastery": "ความเชี่ยวชาญตามบทบาท",
+  "builds.stats.enemyDef": "ลดป้องกันศัตรู",
+  "builds.stats.enemyRes": "ลดต้านทานธาตุศัตรู",
+  "builds.stats.note": "รวมบัฟ = สมมติว่าบัฟทุกตัวทำงานพร้อมกัน (รวมบัฟที่ต้องเข้าเงื่อนไข และบัฟทีม/อาหาร) · ค่ารองใช้ค่าต่ำสุด · อาร์ติแฟกต์คิดเฉพาะชิ้นหลัก 5 ดาวคิดรวมขั้น 1",
+  "builds.buffs": "บัฟทั้งหมดแยกตามที่มา"
 }

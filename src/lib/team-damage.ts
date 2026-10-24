@@ -12,7 +12,7 @@ import {
 } from "./data";
 import { computeDamage, proficiencyToPercent, type DamageInput } from "./formula";
 import type { Effect, LocalizedText } from "./schema/common";
-import type { BuildLoadout, BuildMember, Character } from "./schema/entities";
+import type { Artifact, BuildLoadout, BuildMember, Character } from "./schema/entities";
 
 /**
  * ดาเมจรวมของทีม — สกิลครบ 1 รอบต่อตัว (ผู้เล่นเลือก 2026-10-24)
@@ -56,45 +56,66 @@ export const TEAM_ASSUMPTIONS = [
   "ยังไม่นับดาเมจต่อเนื่อง ดาเมจลิงก์เชน และสกิลสนับสนุน",
 ];
 
-type Sourced = { effect: Effect; ownerId: string };
+/** เอฟเฟกต์พร้อมที่มา — gear = ค่าพลังของของที่ใส่ (ไม่ใช่บัฟ) */
+export type Tagged = { effect: Effect; from: LocalizedText; gear: boolean };
+type Sourced = Tagged;
 
 function asEffect(stat: string, value: number, unit: string, extra: Partial<Effect> = {}): Effect {
   return { kind: "buff", stat, value, unit, target: "self", trigger: "passive", ...extra } as Effect;
 }
 
-/** มอน 1 ช่อง → เอฟเฟกต์สายพันธุ์ + Trait ที่แปลงเป็นเอฟเฟกต์แล้ว */
-function monsterEffects(slot: BuildMember["monsterlings"][number]): Effect[] {
+const tag = (from: LocalizedText, gear: boolean) => (effect: Effect): Tagged => ({ effect, from, gear });
+const join = (a: LocalizedText, suffix: LocalizedText): LocalizedText => ({
+  th: `${a.th ?? a.en ?? ""} · ${suffix.th ?? suffix.en ?? ""}`,
+  en: `${a.en ?? a.th ?? ""} · ${suffix.en ?? suffix.th ?? ""}`,
+});
+
+/**
+ * รวมขั้นที่ใช้คิด — 5 ดาวส่วนใหญ่ผู้เล่นไม่มีรวมขั้น 5 จึงใช้รวมขั้น 1 (ผู้เล่นกำหนด 2026-10-24)
+ * 4 ดาวเก็บแค่รวมขั้น 5 จึงใช้ขั้นนั้น
+ */
+export function artifactFusion(art: Artifact) {
+  const byLevel = [...art.fusion].sort((a, b) => (a.level ?? a.artifactLevel) - (b.level ?? b.artifactLevel));
+  if (art.stars === 5) return byLevel.find((f) => f.level === 1) ?? byLevel[0];
+  return byLevel[byLevel.length - 1];
+}
+
+/** มอน 1 ช่อง → ค่าพลังตามชนิด + Trait (ค่าพลังของของ) และเอฟเฟกต์สายพันธุ์ (บัฟ) */
+function monsterEffects(slot: BuildMember["monsterlings"][number]): Tagged[] {
   const mon = MONSTERLINGS.get(slot.id);
-  const out = [...(mon?.speciesEffects ?? [])];
+  const from = mon?.name ?? { en: slot.id };
+  const out: Tagged[] = (mon?.speciesEffects ?? []).map(tag(from, false));
   // ค่าพลังของมอนบวกให้ตัวละครตอนใส่ — ตามแบบ (meta/monster-stat-tiers.json) เฉพาะตัวที่รู้แบบแล้ว
   const tier = MONSTER_STAT_TIERS.find((t) => t.id === mon?.statTier);
   if (tier) {
-    out.push(asEffect("atk", tier.atk, "flat"), asEffect("def", tier.def, "flat"), asEffect("hp", tier.hp, "flat"));
+    for (const e of [asEffect("atk", tier.atk, "flat"), asEffect("def", tier.def, "flat"), asEffect("hp", tier.hp, "flat")])
+      out.push(tag(from, true)(e));
   }
   for (const tr of slot.traits) {
     const t = TRAIT_POOL.pool.find((x) => x.id === tr.id);
     if (!t || t.kind !== "buff") continue;
     const value = t.values[tr.grade as keyof typeof t.values];
     out.push(
-      asEffect(t.stat, value, t.unit, {
-        damageType: t.damageType,
-        scopes: t.scopes,
-        condition: t.vsBoss === undefined ? undefined : { vsBoss: t.vsBoss },
-      }),
+      tag(from, true)(
+        asEffect(t.stat, value, t.unit, {
+          damageType: t.damageType,
+          scopes: t.scopes,
+          condition: t.vsBoss === undefined ? undefined : { vsBoss: t.vsBoss },
+        }),
+      ),
     );
   }
   return out;
 }
 
 /** ทุกเอฟเฟกต์ที่มาจากตัวละคร 1 ตัวและของที่ใส่ ณ ขั้นปลุกพลังนี้ */
-function memberEffects(mem: BuildMember, char: Character, awaken: number): Effect[] {
-  const out: Effect[] = [];
+function memberEffects(mem: BuildMember, char: Character, awaken: number): Tagged[] {
+  const out: Tagged[] = [];
   // คิดจากชิ้นหลัก (ชิ้นแรก) — ที่เหลือเป็นตัวสำรอง
   const art = ARTIFACTS.find((a) => a.id === mem.artifacts?.[0]);
   if (art) {
-    for (const s of art.stats) out.push(asEffect(s.stat, s.value, s.unit, { damageType: s.damageType }));
-    const top = [...art.fusion].sort((a, b) => b.artifactLevel - a.artifactLevel)[0];
-    out.push(...(top?.effects ?? []));
+    for (const s of art.stats) out.push(tag(art.name, true)(asEffect(s.stat, s.value, s.unit, { damageType: s.damageType })));
+    out.push(...(artifactFusion(art)?.effects ?? []).map(tag(art.name, false)));
   }
   const counts = new Map<string, number>();
   for (const id of Object.values(mem.equipment)) {
@@ -103,7 +124,7 @@ function memberEffects(mem: BuildMember, char: Character, awaken: number): Effec
     if (piece.setId) counts.set(piece.setId, (counts.get(piece.setId) ?? 0) + 1);
     // ค่าหลักไม่สุ่ม ผูกกับช่อง + ระดับ (meta/gear-main-stats.json) — คิดที่เลเวลสูงสุด
     const main = GEAR_MAIN_STATS.find((g) => g.slot === piece.slot && g.grade === piece.grade && g.stars === piece.stars);
-    if (main) out.push(asEffect(main.stat, main.atMaxLevel, "flat"));
+    if (main) out.push(tag(piece.name, true)(asEffect(main.stat, main.atMaxLevel, "flat")));
   }
   // ค่ารอง ชิ้นละ 4 — ใช้ค่าต่ำสุดของระดับชิ้นนั้น (ผู้เล่นสั่ง) · ต้านทานธาตุไม่มีผลกับดาเมจ จึงข้าม
   for (const [slot, keys] of Object.entries(mem.substats)) {
@@ -111,17 +132,22 @@ function memberEffects(mem: BuildMember, char: Character, awaken: number): Effec
     if (!piece) continue;
     for (const key of keys ?? []) {
       const sub = minSubstat(key, piece.grade, piece.stars);
-      if (sub && sub.stat !== "res") out.push(asEffect(sub.stat, sub.min, sub.unit));
+      if (sub && sub.stat !== "res") out.push(tag(piece.name, true)(asEffect(sub.stat, sub.min, sub.unit)));
     }
   }
   for (const [setId, n] of counts) {
     const set = EQUIPMENT_SETS.find((s) => s.id === setId);
-    for (const b of set?.bonuses ?? []) if (b.pieces <= n) out.push(...b.effects);
+    for (const b of set?.bonuses ?? [])
+      if (b.pieces <= n) out.push(...b.effects.map(tag(join(set!.name, { th: `${b.pieces} ชิ้น`, en: `${b.pieces}-piece` }), false)));
   }
   for (const m of mem.monsterlings) out.push(...monsterEffects(m));
   if (mem.legendary) out.push(...monsterEffects(mem.legendary));
-  for (const skill of Object.values(char.skills ?? {})) out.push(...(skill?.effects ?? []));
-  for (const a of char.awaken ?? []) if (a.stage <= awaken) out.push(...a.effects);
+  for (const skill of Object.values(char.skills ?? {})) {
+    if (skill) out.push(...(skill.effects ?? []).map(tag(join(char.name, skill.name), false)));
+  }
+  for (const a of char.awaken ?? []) {
+    if (a.stage <= awaken) out.push(...a.effects.map(tag(join(char.name, a.name ?? { th: `ปลุกพลัง ${a.stage}`, en: `Awaken ${a.stage}` }), false)));
+  }
   return out;
 }
 
@@ -220,41 +246,136 @@ function inputsFor(
   return inp;
 }
 
-export function teamDamage(lo: BuildLoadout): TeamDamage {
+/** เอฟเฟกต์ที่สมาชิกแต่ละตัวได้รับจริง — ของตัวเอง + บัฟทีม/ดีบัฟศัตรูจากเพื่อน + อาหาร + ค่าพลังพื้นฐาน */
+export function receivedEffects(lo: BuildLoadout): { char: Character | undefined; effects: Tagged[] }[] {
   const chars = lo.members.map((m) => characterById(m.characterId));
-  const food = [lo.food.entree, lo.food.side].flatMap((id) => FOOD.find((f) => f.id === id)?.effects ?? []);
+  const food = [lo.food.entree, lo.food.side].flatMap((id) => {
+    const f = FOOD.find((x) => x.id === id);
+    return f ? f.effects.map(tag(f.name, false)) : [];
+  });
 
   // เอฟเฟกต์ของแต่ละตัว — target team/ally ส่งให้ทุกคน, enemy ส่งให้ทุกคน (ดีบัฟบนศัตรูตัวเดียวกัน)
   const own = lo.members.map((m, i) => (chars[i] ? memberEffects(m, chars[i]!, lo.awaken) : []));
-  const shared: Sourced[] = own.flatMap((list, i) =>
-    list
-      .filter((e) => ["team", "ally", "enemy", "allEnemies"].includes(e.target))
-      .map((effect) => ({ effect, ownerId: lo.members[i].characterId })),
-  );
+  const shared = own.flat().filter((t) => ["team", "ally", "enemy", "allEnemies"].includes(t.effect.target));
 
-  const members: MemberDamage[] = lo.members.map((mem, i) => {
+  return lo.members.map((mem, i) => {
     const char = chars[i];
-    if (!char) return { characterId: mem.characterId, skills: [], total: 0 };
+    if (!char) return { char, effects: [] };
     // บัฟทีมที่จอบอกว่าให้เฉพาะเพื่อนธาตุหรือระยะหนึ่ง
-    const fits = ({ effect: e }: Sourced) => {
+    const fits = ({ effect: e }: Tagged) => {
       const c = e.condition;
       if (c?.teammateElement && c.teammateElement !== char.element) return false;
       if (c?.teammateNotElement && c.teammateNotElement === char.element) return false;
       if (c?.teammateRange && c.teammateRange !== char.range) return false;
       return true;
     };
-    const hasBoots = own[i].some((e) => e.stat === "roleMastery");
-    const mine: Sourced[] = [
-      ...own[i].filter((e) => e.target === "self").map((effect) => ({ effect, ownerId: mem.characterId })),
-      ...shared.filter(fits),
-      ...food.map((effect) => ({ effect, ownerId: "food" })),
-      ...(char.otherStats ?? [])
-        .filter((e) => !(e.stat === "dmgDealt" && e.scopes?.includes("weaknessHit")))
-        // ใส่รองเท้าแล้วความชำนาญกลายเป็นค่าของรองเท้า ไม่ได้บวกกับค่าพื้นฐาน (ผู้เล่นบอก 2026-10-24)
-        // → ตัดดาเมจบทบาทพื้นฐาน (เช่น ดาเมจปะทะ 12.18% จากความชำนาญ 1,078) ออก ให้ค่าจากรองเท้าแทน
-        .filter((e) => !(hasBoots && ROLE_DMG_STATS.has(e.stat ?? "")))
-        .map((effect) => ({ effect, ownerId: mem.characterId })),
-    ];
+    const hasBoots = own[i].some((t) => t.effect.stat === "roleMastery");
+    const base = { th: "ค่าพลังพื้นฐาน", en: "Base stats" };
+    return {
+      char,
+      effects: [
+        ...own[i].filter((t) => t.effect.target === "self"),
+        ...shared.filter(fits),
+        ...food,
+        ...(char.otherStats ?? [])
+          .filter((e) => !(e.stat === "dmgDealt" && e.scopes?.includes("weaknessHit")))
+          // ใส่รองเท้าแล้วความชำนาญกลายเป็นค่าของรองเท้า ไม่ได้บวกกับค่าพื้นฐาน (ผู้เล่นบอก 2026-10-24)
+          // → ตัดดาเมจบทบาทพื้นฐาน (เช่น ดาเมจปะทะ 12.18% จากความชำนาญ 1,078) ออก ให้ค่าจากรองเท้าแทน
+          .filter((e) => !(hasBoots && (ROLE_DMG_STATS.has(e.stat ?? "") || e.stat?.endsWith("Power"))))
+          .map(tag(base, true)),
+      ],
+    };
+  });
+}
+
+export type StatSheet = {
+  atk: number;
+  def: number;
+  hp: number;
+  critRate: number;
+  critDmg: number;
+  elementDmg: number;
+  dmgBonus: number;
+  basicAttackDmg: number;
+  skillDmg: number;
+  /** ความชำนาญบทบาท (แต้ม) */
+  roleMastery: number;
+  roleDmg: number;
+  enemyDefDown: number;
+  enemyResDown: number;
+};
+
+/** สรุปค่าพลัง — gearOnly = เฉพาะค่าพลังของของที่ใส่ ไม่รวมบัฟ */
+export function statSheet(char: Character, effects: Tagged[], gearOnly: boolean): StatSheet {
+  const s: StatSheet = {
+    atk: 0, def: 0, hp: 0,
+    critRate: char.stats?.critRate ?? 0, critDmg: char.stats?.critDmg ?? 0,
+    elementDmg: 0, dmgBonus: 0, basicAttackDmg: 0, skillDmg: 0, roleMastery: 0, roleDmg: 0, enemyDefDown: 0, enemyResDown: 0,
+  };
+  const flat = { atk: 0, def: 0, hp: 0 };
+  const pct = { atk: 0, def: 0, hp: 0 };
+  for (const t of effects) {
+    if (gearOnly && !t.gear) continue;
+    const e = t.effect;
+    if (e.value === undefined || e.stat === undefined) continue;
+    if (e.condition?.vsBoss === false) continue;
+    const v = e.value;
+    if (e.target === "enemy" || e.target === "allEnemies") {
+      if (e.kind !== "debuff") continue;
+      if (e.stat === "def") s.enemyDefDown += v;
+      else if (e.stat === "res" && (!e.damageType || e.damageType === char.element)) s.enemyResDown += v;
+      else if (e.stat === "dmgTaken") s.dmgBonus += v;
+      continue;
+    }
+    if (e.kind !== "buff") continue;
+    const scopes = e.scopes as string[] | undefined;
+    switch (e.stat) {
+      case "atk": case "def": case "hp":
+        if (e.unit === "percent") pct[e.stat] += v;
+        else flat[e.stat] += v;
+        break;
+      case "critRate": s.critRate += v; break;
+      case "critDmg": s.critDmg += v; break;
+      case "brawlDmg": case "suppressionDmg": case "neutralizationDmg": case "supportDmg":
+        if (ROLE_STAT_OF[char.role] === e.stat) s.roleDmg += v;
+        break;
+      case "fighterPower": case "assassinPower": case "destroyerPower": case "supportPower":
+        s.roleMastery += v;
+        break;
+      case "roleMastery":
+        s.roleMastery += v;
+        s.roleDmg += proficiencyToPercent(v);
+        break;
+      case "dmgDealt":
+        if (e.damageType && e.damageType !== char.element) break;
+        if (scopes?.includes("weaknessHit")) break;
+        if (scopes) {
+          if (scopes.includes("basicAttack")) s.basicAttackDmg += v;
+          else s.skillDmg += v;
+        } else if (e.damageType) s.elementDmg += v;
+        else s.dmgBonus += v;
+        break;
+    }
+  }
+  s.atk = ((char.stats?.atk ?? 0) + flat.atk) * (1 + pct.atk / 100);
+  s.def = ((char.stats?.def ?? 0) + flat.def) * (1 + pct.def / 100);
+  s.hp = ((char.stats?.hp ?? 0) + flat.hp) * (1 + pct.hp / 100);
+  return s;
+}
+
+/** ดาเมจบทบาทของแต่ละบทบาท — ตามบรรทัดใน Detailed Stats */
+const ROLE_STAT_OF: Record<string, string> = {
+  fighter: "brawlDmg",
+  assassin: "suppressionDmg",
+  destroyer: "neutralizationDmg",
+  supporter: "supportDmg",
+};
+
+export function teamDamage(lo: BuildLoadout): TeamDamage {
+  const received = receivedEffects(lo);
+  const members: MemberDamage[] = lo.members.map((mem, i) => {
+    const { char, effects: mine } = received[i];
+    if (!char) return { characterId: mem.characterId, skills: [], total: 0 };
     const level = skillLevel(char, lo.awaken);
     const skills: SkillDamage[] = [];
     for (const key of mem.cycle ?? CYCLE_SKILLS) {

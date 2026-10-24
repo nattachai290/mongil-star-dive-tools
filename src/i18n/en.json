@@ -168,5 +168,18 @@
   "builds.pieces": "pieces",
   "builds.traits": "Traits",
   "builds.artifactMain": "Main",
-  "builds.artifactAlt": "Alternative"
+  "builds.artifactAlt": "Alternative",
+  "builds.fusion": "Fusion",
+  "builds.stats": "Total stats",
+  "builds.stats.gear": "Gear only",
+  "builds.stats.buffed": "With all buffs",
+  "builds.stats.element": "DMG",
+  "builds.stats.basic": "Basic Attack DMG",
+  "builds.stats.skill": "Skill DMG",
+  "builds.stats.dmgBonus": "Other DMG (boss / general)",
+  "builds.stats.mastery": "Role Mastery",
+  "builds.stats.enemyDef": "Enemy DEF down",
+  "builds.stats.enemyRes": "Enemy RES down",
+  "builds.stats.note": "With all buffs = every buff assumed active at once (including conditional, team and food buffs) · substats at minimum roll · main artifact only, 5★ at Fusion 1",
+  "builds.buffs": "All buffs by source"
 }

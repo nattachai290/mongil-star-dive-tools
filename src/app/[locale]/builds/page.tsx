@@ -20,8 +20,9 @@ import {
   monsterlingImage,
 } from "@/lib/data";
 import { asset } from "@/lib/base-path";
+import { artifactFusion, receivedEffects, statSheet, type StatSheet, type Tagged } from "@/lib/team-damage";
 import { label } from "@/lib/vocabulary";
-import type { BuildLoadout, BuildMember, LinkChain } from "@/lib/schema/entities";
+import type { BuildLoadout, BuildMember, Character, LinkChain } from "@/lib/schema/entities";
 import type { Effect, LocalizedText } from "@/lib/schema/common";
 
 export function generateStaticParams() {
@@ -184,8 +185,102 @@ function Slot({ title, children }: { title: string; children: React.ReactNode })
   );
 }
 
+const pctFmt = (v: number) => `${Math.round(v * 100) / 100}%`;
+const numFmt = (v: number) => Math.round(v).toLocaleString("en-US");
+
+/** ค่าพลังรวม — ของที่ใส่อย่างเดียว เทียบกับรวมบัฟทั้งหมด + รายการบัฟแยกตามที่มา */
+function StatsSlot({ char, effects, locale, t }: { char: Character; effects: Tagged[]; locale: Locale; t: T }) {
+  const gear = statSheet(char, effects, true);
+  const all = statSheet(char, effects, false);
+  const roleStat = { fighter: "brawlDmg", assassin: "suppressionDmg", destroyer: "neutralizationDmg", supporter: "supportDmg" }[
+    char.role as string
+  ];
+  const rows: { label: string; key: keyof StatSheet; fmt: (v: number) => string }[] = [
+    { label: label("stat", "atk", locale), key: "atk", fmt: numFmt },
+    { label: label("stat", "def", locale), key: "def", fmt: numFmt },
+    { label: label("stat", "hp", locale), key: "hp", fmt: numFmt },
+    { label: label("stat", "critRate", locale), key: "critRate", fmt: pctFmt },
+    { label: label("stat", "critDmg", locale), key: "critDmg", fmt: pctFmt },
+    {
+      label:
+        locale === "en"
+          ? `${label("element", char.element, locale)} ${t("builds.stats.element")}`
+          : `${t("builds.stats.element")}${label("element", char.element, locale)}`,
+      key: "elementDmg", fmt: pctFmt },
+    { label: t("builds.stats.basic"), key: "basicAttackDmg", fmt: pctFmt },
+    { label: t("builds.stats.skill"), key: "skillDmg", fmt: pctFmt },
+    { label: t("builds.stats.dmgBonus"), key: "dmgBonus", fmt: pctFmt },
+    { label: t("builds.stats.mastery"), key: "roleMastery", fmt: numFmt },
+    ...(roleStat ? [{ label: label("stat", roleStat, locale), key: "roleDmg" as const, fmt: pctFmt }] : []),
+    { label: t("builds.stats.enemyDef"), key: "enemyDefDown", fmt: pctFmt },
+    { label: t("builds.stats.enemyRes"), key: "enemyResDown", fmt: pctFmt },
+  ];
+
+  // บัฟ (ไม่ใช่ค่าพลังของของ) จัดกลุ่มตามที่มา
+  const groups = new Map<string, { from: LocalizedText; effects: Effect[] }>();
+  for (const x of effects) {
+    if (x.gear) continue;
+    const k = `${x.from.th ?? ""}|${x.from.en ?? ""}`;
+    if (!groups.has(k)) groups.set(k, { from: x.from, effects: [] });
+    groups.get(k)!.effects.push(x.effect);
+  }
+
+  return (
+    <Slot title={t("builds.stats")}>
+      <table className="w-full text-sm">
+        <thead>
+          <tr className="text-[11px] text-muted">
+            <th className="py-1 text-start font-normal"></th>
+            <th className="py-1 text-end font-normal">{t("builds.stats.gear")}</th>
+            <th className="py-1 text-end font-normal">{t("builds.stats.buffed")}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows
+            .filter((r) => gear[r.key] !== 0 || all[r.key] !== 0)
+            .map((r) => (
+              <tr key={r.key} className="border-t border-line">
+                <td className="py-1 text-xs text-ink-2">{r.label}</td>
+                <td className="py-1 text-end font-mono">{r.fmt(gear[r.key])}</td>
+                <td className="py-1 text-end font-mono text-gold">{r.fmt(all[r.key])}</td>
+              </tr>
+            ))}
+        </tbody>
+      </table>
+      <p className="mt-2 text-[11px] text-muted">{t("builds.stats.note")}</p>
+      {groups.size > 0 && (
+        <details className="mt-3 border-t border-line pt-2">
+          <summary className="cursor-pointer text-xs font-semibold text-ink-2">
+            {t("builds.buffs")} ({groups.size})
+          </summary>
+          <ul className="mt-2 space-y-3">
+            {[...groups.values()].map((g, i) => (
+              <li key={i}>
+                <p className="text-xs font-semibold">{name(g.from, locale, "")}</p>
+                <Effects effects={g.effects} locale={locale} />
+              </li>
+            ))}
+          </ul>
+        </details>
+      )}
+    </Slot>
+  );
+}
+
 /** ของที่ตัวละคร 1 ตัวในทีมใส่ */
-function MemberGear({ mem, dup, locale, t }: { mem: BuildMember; dup: Set<string>; locale: Locale; t: T }) {
+function MemberGear({
+  mem,
+  effects,
+  dup,
+  locale,
+  t,
+}: {
+  mem: BuildMember;
+  effects: Tagged[];
+  dup: Set<string>;
+  locale: Locale;
+  t: T;
+}) {
   const c = characterById(mem.characterId);
   const arts = (mem.artifacts ?? []).flatMap((id) => ARTIFACTS.find((a) => a.id === id) ?? []);
   const chain = LINK_CHAINS.find((x) => x.id === mem.linkChain);
@@ -217,7 +312,7 @@ function MemberGear({ mem, dup, locale, t }: { mem: BuildMember; dup: Set<string
           ) : (
             <ol className="space-y-3">
               {arts.map((art, i) => {
-                const fusion = [...art.fusion].sort((x, y) => y.artifactLevel - x.artifactLevel)[0];
+                const fusion = artifactFusion(art);
                 return (
                   <li key={art.id} className={i > 0 ? "border-t border-line pt-3" : undefined}>
                     <p className="mb-1 text-[11px] text-muted">
@@ -232,7 +327,10 @@ function MemberGear({ mem, dup, locale, t }: { mem: BuildMember; dup: Set<string
                             {art.stars !== undefined && "★".repeat(art.stars)}
                           </span>
                         </p>
-                        {fusion?.name && <p className="text-xs text-gold">{name(fusion.name, locale, "")}</p>}
+                        <p className="text-xs text-gold">
+                          {fusion?.level !== undefined && `${t("builds.fusion")} ${fusion.level}`}
+                          {fusion?.name && ` · ${name(fusion.name, locale, "")}`}
+                        </p>
                       </div>
                     </div>
                     <Effects effects={fusion?.effects ?? []} locale={locale} />
@@ -331,6 +429,11 @@ function MemberGear({ mem, dup, locale, t }: { mem: BuildMember; dup: Set<string
             )}
           </Slot>
         </div>
+        {c && (
+          <div className="sm:col-span-2">
+            <StatsSlot char={c} effects={effects} locale={locale} t={t} />
+          </div>
+        )}
       </div>
     </section>
   );
@@ -340,6 +443,7 @@ function Loadout({ lo, locale, t }: { lo: BuildLoadout; locale: Locale; t: T }) 
   // มอนตัวเดียวกันบนหลายคนในทีม บัฟไม่ทับซ้อน
   const all = lo.members.flatMap((m) => [...m.monsterlings.map((x) => x.id), ...(m.legendary ? [m.legendary.id] : [])]);
   const dup = new Set(all.filter((m, i) => all.indexOf(m) !== i));
+  const received = receivedEffects(lo);
 
   return (
     <div className="space-y-3">
@@ -360,8 +464,8 @@ function Loadout({ lo, locale, t }: { lo: BuildLoadout; locale: Locale; t: T }) 
         </div>
       </Slot>
       {dup.size > 0 && <p className="text-xs text-gold">{t("builds.dupWarning")}</p>}
-      {lo.members.map((mem) => (
-        <MemberGear key={mem.characterId} mem={mem} dup={dup} locale={locale} t={t} />
+      {lo.members.map((mem, i) => (
+        <MemberGear key={mem.characterId} mem={mem} effects={received[i].effects} dup={dup} locale={locale} t={t} />
       ))}
     </div>
   );
