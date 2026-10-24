@@ -1,6 +1,7 @@
 {
   "id": "ophelia",
   "name": {
+    "th": "โอฟีเลีย",
     "en": "Ophelia"
   },
   "rarity": 5,
@@ -397,9 +398,11 @@
     },
     "special": {
       "name": {
+        "th": "ระบำคลื่นเกล็ดน้ำค้าง",
         "en": "Flowing Frost"
       },
       "desc": {
+        "th": "ใช้ดาบ สร้างดาเมจธาตุน้ำแข็งแก่ศัตรู / หลังจากที่ใช้สกิลแล้ว จะสามารถกดเพิ่มได้ภายในระยะเวลาที่กำหนด และเมื่อกดเพิ่มเติม คูลดาวน์จะเพิ่มขึ้น / เมื่อใช้ฟาดดาบขั้น 3 จะเพิ่มดาเมจสนับสนุน",
         "en": "Ophelia uses her sword to deal Ice DMG to an enemy. / The skill can be used an additional time within a set duration after using the skill, but doing so extends the cooldown. / Support DMG increases upon using Falling Slash's 3rd Hit."
       },
       "damageType": "ice",
@@ -407,6 +410,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจแทง ขั้น 1",
             "en": "1st Hit (Thrust) DMG"
           },
           "unit": "percent",
@@ -432,6 +436,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจฟันเฉือน ขั้น 2",
             "en": "2nd Hit (Rising Slash) DMG"
           },
           "unit": "percent",
@@ -457,6 +462,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจฟาดดาบ ขั้น 3",
             "en": "3rd Hit (Falling Slash) DMG"
           },
           "unit": "percent",
@@ -482,6 +488,7 @@
         },
         {
           "label": {
+            "th": "เพิ่มดาเมจสนับสนุน",
             "en": "Support DMG Boost"
           },
           "unit": "percent",
@@ -507,6 +514,7 @@
         },
         {
           "label": {
+            "th": "เวลาแสดงผลเพิ่มดาเมจสนับสนุน",
             "en": "Support DMG Boost Duration"
           },
           "unit": "seconds",
@@ -532,6 +540,7 @@
         },
         {
           "label": {
+            "th": "คูลดาวน์แทง ขั้น 1",
             "en": "1st Hit (Thrust) Cooldown"
           },
           "unit": "seconds",
@@ -556,6 +565,7 @@
         },
         {
           "label": {
+            "th": "เพิ่มคูลดาวน์ฟันเฉือน ขั้น 2",
             "en": "2nd Hit (Rising Slash) Cooldown Increase"
           },
           "unit": "seconds",
@@ -581,6 +591,7 @@
         },
         {
           "label": {
+            "th": "เพิ่มคูลดาวน์ฟาดดาบ ขั้น 3",
             "en": "3rd Hit (Falling Slash) Cooldown Increase"
           },
           "unit": "seconds",
@@ -608,9 +619,11 @@
     },
     "ultimate": {
       "name": {
+        "th": "พิพากษา",
         "en": "Judgment"
       },
       "desc": {
+        "th": "รวบรวมพลังเกล็ดน้ำค้างไว้ที่ดาบแล้วฟาดขึ้น ทำให้ศัตรูที่ถูกโจมตีลอยขึ้นไปบนอากาศจากนั้นฟาดลง สร้างดาเมจธาตุน้ำแข็ง และมอบเอฟเฟกต์อ่อนแอต่อน้ำแข็งแก่เป้าหมายที่ถูกโจมตี",
         "en": "Ophelia channels frost energy into her blade, knocking the enemy airborne with an upward slash before striking down to deal Ice DMG. Hit enemies are inflicted with Ice Affliction."
       },
       "damageType": "ice",
@@ -618,6 +631,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจ",
             "en": "DMG"
           },
           "unit": "percent",
@@ -643,6 +657,7 @@
         },
         {
           "label": {
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อน้ำแข็ง",
             "en": "Ice Affliction Duration"
           },
           "unit": "seconds",
@@ -740,9 +755,11 @@
     },
     {
       "name": {
+        "th": "เอฟเฟกต์อ่อนแอต่อน้ำแข็ง",
         "en": "Ice Affliction"
       },
       "desc": {
+        "th": "ได้รับดาเมจต่อเนื่องธาตุน้ำแข็งและลดพลังต้านทานธาตุน้ำแข็ง 15%",
         "en": "Afflicted targets take Ice DMG over time, and Ice RES decreases by 15%."
       },
       "effects": []
@@ -756,8 +773,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Fighter · Ice · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,943 · DEF 638 · HP 10,243 · Crit 5% / 50% อ่านจากจอตรง ๆ — เท่ากับ Vivian ทุกค่า | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Brawl DMG Boost 12.18% · Fighter 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Switch Crystalline Leap (211.1%) · Special Flowing Frost (ตารางแปดแถว อ่านจากจอที่เลื่อนลง) | **2026-10-22 รอบสาม** Basic Achouffe Swordsmanship (Physical, แปดแถว) · Ultimate Judgment (882%) · Passive Amethyst Witch (4 วินาที) · Effect Details ของ Amethyst Witch (จากปุ่ม Effects ของ Basic) · Guidance of Ice Frost-Wave Blade Swordsman (ดาเมจโจมตีพื้นฐาน +36% เมื่อใช้ Switch Skill, 15 วินาที) · ปลุกพลังครบหกขั้น | ปลุกพลัง: จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส · effects: ขั้น 3 Special +6% · ขั้น 5 Basic +6% · ขั้นอื่นเก็บเป็นข้อความ | **ชื่อขั้น 1–5 ลงท้ายด้วย \"...\" ตามจอ** (ขั้น 6 ไม่มี) | Effect Details ของ Ultimate: Ice Affliction (อ่านจากจอ) | ยังไม่ได้อ่าน: จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) | Fighter · Ice · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,943 · DEF 638 · HP 10,243 · Crit 5% / 50% อ่านจากจอตรง ๆ — เท่ากับ Vivian ทุกค่า | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Brawl DMG Boost 12.18% · Fighter 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Switch Crystalline Leap (211.1%) · Special Flowing Frost (ตารางแปดแถว อ่านจากจอที่เลื่อนลง) | **2026-10-22 รอบสาม** Basic Achouffe Swordsmanship (Physical, แปดแถว) · Ultimate Judgment (882%) · Passive Amethyst Witch (4 วินาที) · Effect Details ของ Amethyst Witch (จากปุ่ม Effects ของ Basic) · Guidance of Ice Frost-Wave Blade Swordsman (ดาเมจโจมตีพื้นฐาน +36% เมื่อใช้ Switch Skill, 15 วินาที) · ปลุกพลังครบหกขั้น | ปลุกพลัง: จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส · effects: ขั้น 3 Special +6% · ขั้น 5 Basic +6% · ขั้นอื่นเก็บเป็นข้อความ | **ชื่อขั้น 1–5 ลงท้ายด้วย \"...\" ตามจอ** (ขั้น 6 ไม่มี) | Effect Details ของ Ultimate: Ice Affliction (อ่านจากจอ) | **2026-10-24 จอไทยรอบแรก** ชื่อ โอฟีเลีย · บรอว์เลอร์ · น้ำแข็ง ระยะใกล้ · 5 ดาว · ค่าพลังห้าค่าตรงจออังกฤษ · สกิลพิเศษ ระบำคลื่นเกล็ดน้ำค้าง (Thrust = แทง · Rising Slash = ฟันเฉือน · Falling Slash = ฟาดดาบ) · สกิลอัลติเมต พิพากษา · สถานะ เอฟเฟกต์อ่อนแอต่อน้ำแข็ง — ค่าตรงทุกแถว | ยังไม่ได้อ่าน (ไทย): โจมตีพื้นฐาน · สกิลสับเปลี่ยน · การชี้นำแห่งน้ำแข็ง · แพสซีฟ · ปลุกพลัง · สถานะ Amethyst Witch"
   }
 }
