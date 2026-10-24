@@ -1,6 +1,7 @@
 {
   "id": "serpent-dragons-white-scale",
   "name": {
+    "th": "เกล็ดขาวของอสรพิษวารี",
     "en": "Serpent Dragon's White Scale"
   },
   "stars": 5,
@@ -23,9 +24,11 @@
       "artifactLevel": 1,
       "level": 1,
       "name": {
+        "th": "การยั่วยวนที่แสนอันตราย I",
         "en": "Lethal Temptation I"
       },
       "desc": {
+        "th": "เมื่อตัวละคร [เดสทรอยเยอร์] ติดตั้ง จะได้รับเอฟเฟกต์ดังต่อไปนี้ / เมื่อใช้สกิลสับเปลี่ยน จะได้รับเอฟเฟกต์เกล็ดขาว (เวลาแสดงผล 15 วินาที, คูลดาวน์ 10 วินาที) / เกล็ดขาว: เพิ่มดาเมจธาตุลม 15% / เมื่อเอฟเฟกต์ไม่สนดาเมจปรับใช้งานขณะที่มีเอฟเฟกต์เกล็ดขาว จะเพิ่มดาเมจโจมตีพื้นฐาน 30% (เวลาแสดงผล 10 วินาที)",
         "en": "When equipped by a [Destroyer] character, grants the following effect. / Gains White Scale upon using a Switch Skill. (Duration: 15s, Cooldown: 10s) / White Scale: Increases Wind DMG by 15%. / Increases Basic Attack DMG by 30% if DMG Immunity is applied while White Scale is active. (Duration: 10s)"
       },
       "effects": [
@@ -41,6 +44,7 @@
           "internalCooldownSec": 10,
           "condition": {
             "note": {
+              "th": "เกล็ดขาว",
               "en": "White Scale"
             }
           }
@@ -58,6 +62,7 @@
           "durationSec": 10,
           "condition": {
             "note": {
+              "th": "เมื่อเอฟเฟกต์ไม่สนดาเมจปรับใช้งานขณะที่มีเอฟเฟกต์เกล็ดขาว",
               "en": "if DMG Immunity is applied while White Scale is active"
             }
           }
@@ -68,9 +73,11 @@
       "artifactLevel": 60,
       "level": 5,
       "name": {
+        "th": "การยั่วยวนที่แสนอันตราย V",
         "en": "Lethal Temptation V"
       },
       "desc": {
+        "th": "เมื่อตัวละคร [เดสทรอยเยอร์] ติดตั้ง จะได้รับเอฟเฟกต์ดังต่อไปนี้ / เมื่อใช้สกิลสับเปลี่ยน จะได้รับเอฟเฟกต์เกล็ดขาว (เวลาแสดงผล 15 วินาที, คูลดาวน์ 10 วินาที) / เกล็ดขาว: เพิ่มดาเมจธาตุลม 30% / เมื่อเอฟเฟกต์ไม่สนดาเมจปรับใช้งานขณะที่มีเอฟเฟกต์เกล็ดขาว จะเพิ่มดาเมจโจมตีพื้นฐาน 60% (เวลาแสดงผล 10 วินาที) / รวมขั้น 3 : ทุกเดสทรอยเยอร์ 10 หน่วย จะได้รับเอฟเฟกต์เพิ่มดาเมจหมดฤทธิ์ 0.06% (สูงสุด 15%) / รวมขั้น 5 : ทุกเดสทรอยเยอร์ 10 หน่วย จะได้รับเอฟเฟกต์เพิ่มพลังโจมตี 0.06% (สูงสุด 15%)",
         "en": "When equipped by a [Destroyer] character, grants the following effect. / Gains White Scale upon using a Switch Skill. (Duration: 15s, Cooldown: 10s) / White Scale: Increases Wind DMG by 30%. / Increases Basic Attack DMG by 60% if DMG Immunity is applied while White Scale is active. (Duration: 10s) / Fusion Level 3: Gains 0.06% Neutralization DMG Boost for every 10 points of Destroyer proficiency. (Max: 15%) / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Destroyer proficiency. (Max: 15%)"
       },
       "effects": [
@@ -86,6 +93,7 @@
           "internalCooldownSec": 10,
           "condition": {
             "note": {
+              "th": "เกล็ดขาว",
               "en": "White Scale"
             }
           }
@@ -103,6 +111,7 @@
           "durationSec": 10,
           "condition": {
             "note": {
+              "th": "เมื่อเอฟเฟกต์ไม่สนดาเมจปรับใช้งานขณะที่มีเอฟเฟกต์เกล็ดขาว",
               "en": "if DMG Immunity is applied while White Scale is active"
             }
           }
@@ -118,8 +127,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **5 ดาว (ผู้เล่นบอก 2026-10-22)** ตรงกับเพชร 5 เม็ดบนการ์ดสีส้ม | สองจอ: ปุ่ม Max → การ์ด Lv.01 (0/123) กล่อง Fusion Level 1 · ปุ่ม Min → การ์ด Lv.60 Max | ค่าสเตตัสเป็นของจอ Lv.60 — จอ Lv.01 ไม่เห็นแถบค่าสเตตัส | **จอ Lv.60 = Fusion Level 5 (ผู้เล่นบอก 2026-10-22: \"Fusion 1 ให้เก็บเวล 1 กับ 5\")** · **ยืนยันจากจอแล้ว 2026-10-22** (ส่งจอ Lv.60 ที่เลื่อนขึ้นบนสุดมา หัวกล่องเขียน \"Fusion Level 5\" และชื่อ \"Lethal Temptation V\") | บรรทัด Fusion Level 3 / 5 (ตามความชำนาญ สูงสุด 15% — 4 ดาวคือ 5%) เป็นสีเทาที่ Fusion 1 เก็บเป็นข้อความ | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | จอ Lv.01 บรรทัด Fusion Level 3 ถูกตัดขอบล่าง ไม่เก็บใน desc ของ Lv.01 (อ่านครบจากจอ Lv.60) | ค่าสเตตัสบรรทัดสองเป็น ATK 27% (เปอร์เซ็นต์) | ใช้ trigger onSwitch ตามแบบ \"Using a Switch Skill\" ของ Chloe | \"if DMG Immunity is applied\" ไม่มี trigger ตรง ใส่ passive + note | ค่าสเตตัสเก็บที่ Lv.60 เท่านั้น (ผู้เล่นกำหนด 2026-10-22)"
+    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **5 ดาว (ผู้เล่นบอก 2026-10-22)** ตรงกับเพชร 5 เม็ดบนการ์ดสีส้ม | สองจอ: ปุ่ม Max → การ์ด Lv.01 (0/123) กล่อง Fusion Level 1 · ปุ่ม Min → การ์ด Lv.60 Max | ค่าสเตตัสเป็นของจอ Lv.60 — จอ Lv.01 ไม่เห็นแถบค่าสเตตัส | **จอ Lv.60 = Fusion Level 5 (ผู้เล่นบอก 2026-10-22: \"Fusion 1 ให้เก็บเวล 1 กับ 5\")** · **ยืนยันจากจอแล้ว 2026-10-22** (ส่งจอ Lv.60 ที่เลื่อนขึ้นบนสุดมา หัวกล่องเขียน \"Fusion Level 5\" และชื่อ \"Lethal Temptation V\") | บรรทัด Fusion Level 3 / 5 (ตามความชำนาญ สูงสุด 15% — 4 ดาวคือ 5%) เป็นสีเทาที่ Fusion 1 เก็บเป็นข้อความ | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | จอ Lv.01 บรรทัด Fusion Level 3 ถูกตัดขอบล่าง ไม่เก็บใน desc ของ Lv.01 (อ่านครบจากจอ Lv.60) | ค่าสเตตัสบรรทัดสองเป็น ATK 27% (เปอร์เซ็นต์) | ใช้ trigger onSwitch ตามแบบ \"Using a Switch Skill\" ของ Chloe | \"if DMG Immunity is applied\" ไม่มี trigger ตรง ใส่ passive + note | ค่าสเตตัสเก็บที่ Lv.60 เท่านั้น (ผู้เล่นกำหนด 2026-10-22) | **2026-10-24 จอพรีวิวอาร์ติแฟกต์ไทย** ชื่อ เกล็ดขาวของอสรพิษวารี · เดสทรอยเยอร์ · ค่าสเตตัส Lv.60 ตรงจออังกฤษ (883 · พลังโจมตี 27%) · รวมขั้น 1 / 5 การยั่วยวนที่แสนอันตราย I / V · White Scale = เกล็ดขาว · DMG Immunity = ไม่สนดาเมจ · **จอไทย Lv.01 มีบรรทัด \"รวมขั้น 3 : …\" โผล่ที่ขอบล่าง (ถูกตัด)** แต่ข้อความอังกฤษ Lv.01 ที่เก็บไว้ไม่มีบรรทัดรวมขั้น 3/5 — เก็บไทย Lv.01 ให้จำนวนท่อนตรงอังกฤษ (ไม่ใส่บรรทัดรวมขั้น)"
   }
 }

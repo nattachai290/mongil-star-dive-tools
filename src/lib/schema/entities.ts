@@ -449,23 +449,52 @@ export const food = z.object({
   source,
 }).strict();
 
+/**
+ * ของที่ตัวละคร 1 ตัวใส่ ณ ขั้นปลุกพลังหนึ่ง — หน้าเว็บแสดงเป็นแท็บแยกตามขั้น
+ * เพราะแต่ละขั้นอาจใช้ของคนละชุดได้ (ผู้เล่นกำหนด 2026-10-24)
+ *
+ * จำนวนช่องตามเกม: มอน 3 · ลิงก์เชน 1 · มอนตำนาน 1 (แยกจากมอน 3 ตัว) · อาหาร จานหลัก + จานรอง
+ * ทีมมี 3 ตัว → เพื่อนร่วมทีมใส่ได้ 2 ตัว เก็บเฉพาะมอนที่เพื่อนใส่ · ไม่มีช่องหมายเหตุ (ผู้เล่นกำหนด 2026-10-24)
+ */
+export const buildLoadout = z.object({
+  awaken: z.number().int().min(0).max(6),
+  artifact: slug.optional(),
+  /** ระบุทีละช่อง — โบนัสเซ็ตคิดจากชิ้นที่ใส่ ไม่เก็บซ้ำ */
+  equipment: z
+    .object({
+      headgear: slug.optional(),
+      chestpiece: slug.optional(),
+      gloves: slug.optional(),
+      footwear: slug.optional(),
+    })
+    .strict()
+    .default({}),
+  monsterlings: z.array(slug).max(3).default([]),
+  linkChain: slug.optional(),
+  /** มอนจากสมุดภาพ "มอนสเตอร์ตำนาน" — ช่องของตัวเอง ไม่นับรวมกับมอน 3 ตัว */
+  legendary: slug.optional(),
+  food: z.object({ entree: slug.optional(), side: slug.optional() }).strict().default({}),
+  /**
+   * เพื่อน 2 ตัวพร้อมมอนที่เพื่อนใส่ — มอนตัวเดียวกันบนสองคนในทีม บัฟไม่ทับซ้อนกัน
+   * จึงต้องรู้ว่าเพื่อนใส่ตัวไหน (ผู้เล่นบอก 2026-10-24) · validate:data เตือนเมื่อซ้ำ
+   */
+  teammates: z
+    .array(
+      z.object({ characterId: slug, monsterlings: z.array(slug).max(3).default([]) }).strict(),
+    )
+    .max(2)
+    .default([]),
+}).strict();
+
+/**
+ * บิ้วของตัวละคร 1 ตัว — ไม่มีชื่อบิ้ว ประเภทเนื้อหา หรือแหล่งที่มา (ผู้เล่นกำหนด 2026-10-24)
+ * แท็บละ 1 ขั้นปลุกพลัง ขั้นเดียวกันห้ามซ้ำ (validate:data ตรวจ)
+ */
 export const build = z.object({
   id: slug,
   characterId: slug,
-  title: text,
-  contentType: vocabEnum("contentType"),
-  artifacts: z.array(slug).default([]),
-  equipment: z.array(slug).default([]),
-  setIds: z.array(slug).default([]),
-  monsterlings: z.array(slug).default([]),
-  food: z.object({ entree: slug.optional(), side: slug.optional() }).optional(),
-  awakenTarget: z.number().int().min(0).max(6).optional(),
-  teamComps: z
-    .array(z.object({ name: text.optional(), members: z.array(slug).min(1), note: text.optional() }))
-    .default([]),
-  notes: text.optional(),
-  source,
-});
+  loadouts: z.array(buildLoadout).min(1),
+}).strict();
 
 /**
  * Link Chain — ของที่คราฟต์แล้วผูกกับ Monsterling หนึ่งตัว
@@ -607,6 +636,7 @@ export const SCHEMAS = {
 export type Collection = keyof typeof SCHEMAS;
 export type Character = z.infer<typeof character>;
 export type Build = z.infer<typeof build>;
+export type BuildLoadout = z.infer<typeof buildLoadout>;
 export type LinkChain = z.infer<typeof linkChain>;
 export type Monsterling = z.infer<typeof monsterling>;
 export type Skill = z.infer<typeof skill>;

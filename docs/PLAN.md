@@ -123,9 +123,26 @@ mongil-star-dive-tools/
 exquisite{ buff }, unlock{ from: "brownie-shop"|"event"|"quest" }, images.icon, source`
 
 ### 4.5 Build
-`id, characterId, title{}, contentType: "boss"|"pvp"|"story"|"farming", author, updatedAt,
-artifacts[], monsterlings[], food{entree, side}, skillPriority[], awakenTarget,
-teamComps[{name, members[characterId], note}], pros[], cons[], notes{}`
+
+> ปรับตามผู้เล่น 2026-10-24 — ไม่มีชื่อบิ้ว ประเภทเนื้อหา หรือแหล่งที่มา · บิ้ว 1 ชุด = ตัวละคร 1 ตัว
+
+`id, characterId, loadouts[]` — แท็บละ 1 ขั้นปลุกพลัง (แต่ละขั้นใช้ของคนละชุดได้ · ขั้นเดียวกันห้ามซ้ำ)
+
+ต่อแท็บ (จำนวนช่องตามเกม):
+
+| ช่อง | จำนวน | หมายเหตุ |
+|---|---|---|
+| `awaken` | 0–6 | ขั้นปลุกพลังของแท็บนี้ |
+| `artifact` | 1 | บทบาทต้องตรงกับตัวละคร |
+| `equipment.{headgear,chestpiece,gloves,footwear}` | ช่องละ 1 | ชิ้นต้องอยู่ช่องนั้นจริง · โบนัสเซ็ตคิดจากชิ้นที่ใส่ |
+| `monsterlings` | สูงสุด 3 | ห้ามมีมอนตำนาน |
+| `linkChain` | 1 | |
+| `legendary` | 1 | มอนจากสมุดภาพมอนสเตอร์ตำนาน · แยกจากมอน 3 ตัว |
+| `food.{entree,side}` | จานหลัก 1 + จานรอง 1 | หมวดต้องตรง |
+| `teammates[{characterId, monsterlings}]` | เพื่อนสูงสุด 2 · มอนคนละสูงสุด 3 | ทีมมี 3 ตัว · เก็บเฉพาะมอนที่เพื่อนใส่ |
+
+มอนตัวเดียวกันบนสองคนในทีม บัฟไม่ทับซ้อนกัน — validate:data เตือน (ไม่ fail) และหน้าเว็บควรบอกผู้อ่าน
+ไม่มีช่องหมายเหตุ (ผู้เล่นกำหนด 2026-10-24)
 
 ### 4.6 การบังคับความถูกต้อง
 

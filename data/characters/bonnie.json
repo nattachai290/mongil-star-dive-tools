@@ -1,6 +1,7 @@
 {
   "id": "bonnie",
   "name": {
+    "th": "บอนนี่",
     "en": "Bonnie"
   },
   "rarity": 4,
@@ -64,9 +65,11 @@
     {
       "stage": 1,
       "name": {
+        "th": "เริ่มบรรเลง!",
         "en": "Cue the Overture!"
       },
       "desc": {
+        "th": "เมื่อใช้สกิลสับเปลี่ยน จะเรียกขาตั้งโน้ตออกมาด้านหน้าตนเอง ขาตั้งโน้ตจะคงอยู่นาน 8 วินาทีและสร้างทำนองตามจังหวะที่กำหนด อีกทั้งเมื่อกดค้างโจมตีพื้นฐานขณะที่มีขาตั้งโน้ต การโจมตีพื้นฐานจะประสานต่อเนื่อง / ขาตั้งโน้ต เมื่อกดค้างโจมตีพื้นฐาน สกิลพิเศษ หรือสกิลอัลติเมต ตรงตามทำนองที่สร้างขึ้น จะเพิ่มดาเมจของการโจมตีที่ใช้ 5% และได้รับโน้ต 2",
         "en": "Bonnie summons a Podium in front of herself upon using her Switch Skill. The podium remains for 8s and generates a steady rhythmic melody. Holding the Basic Attack button while the podium is on the field unleashes consecutive Basic Attacks. / Podium: Using Basic Attacks, Special Skills, and Ultimate Skills in beat with the generated melody increases the attack's DMG by 5%, and Bonnie will gain 2 Musical Scores."
       },
       "effects": []
@@ -74,9 +77,11 @@
     {
       "stage": 2,
       "name": {
+        "th": "ข้าจะบรรเลงอีกหนึ่งรอบ!",
         "en": "Encore!"
       },
       "desc": {
+        "th": "เมื่อบรรเลงฮอร์นในขณะใช้สกิลล่าถอย จะเพิ่มดาเมจคริติคอลของสมาชิกทีมเท่ากับ 40% ของอัตราคริติคอลบอนนี่ต่อเนื่องนาน 5 วินาที",
         "en": "When Bonnie plays the French Horn during her Tag-out Skill, her teammates' Crit DMG increases by 40% of her Crit Rate for 5s."
       },
       "effects": []
@@ -84,9 +89,11 @@
     {
       "stage": 3,
       "name": {
+        "th": "วาทกเจ้าอารมณ์",
         "en": "Mood-y Musician"
       },
       "desc": {
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจสกิลอัลติเมต 6%",
         "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Ultimate Skill DMG by 6%."
       },
       "effects": [
@@ -107,9 +114,11 @@
     {
       "stage": 4,
       "name": {
+        "th": "เดี๋ยวเร่งจังหวะให้เอง!",
         "en": "Pick Up the Tempo!"
       },
       "desc": {
+        "th": "เพิ่มจำนวนโน้ตสูงสุดที่สามารถครอบครองได้เป็น 25 และเมื่อโจมตีคริติคอลโดนในขณะใช้สกิลล่าถอย จะได้รับโน้ต 3 เอฟเฟกต์นี้จะเกิด 1 ครั้ง ทุก 2 วินาที",
         "en": "The maximum number of holdable Musical Scores increases to 25. Bonnie can gain 3 Musical Score(s) if she lands a critical hit using her Tag-out Skill, and this effect can trigger 1 time(s) every 2s."
       },
       "effects": []
@@ -117,9 +126,11 @@
     {
       "stage": 5,
       "name": {
+        "th": "อัจฉริยะซื่อบื้อ",
         "en": "Brilliant Fool"
       },
       "desc": {
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจสกิลล่าถอย 6%",
         "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Tag-out Skill DMG by 6%."
       },
       "effects": [
@@ -140,9 +151,11 @@
     {
       "stage": 6,
       "name": {
+        "th": "ลองฟังดูสิ! แฟนตาเซียของข้า!",
         "en": "Listen! My Fantasia!"
       },
       "desc": {
+        "th": "เมื่อเปลี่ยนเป็นเครื่องดนตรีอื่น จะได้รับฮาร์โมนี ซึ่งทับซ้อนได้สูงสุด 4 และเมื่อเปลี่ยนเป็นบอนนี่ เอฟเฟกต์ฮาร์โมนีจะถูกลบออก",
         "en": "Bonnie can gain up to 4 stacks of Harmony when she changes her instrument. Switching to Bonnie will remove Harmony."
       },
       "effects": []
@@ -151,9 +164,11 @@
   "skills": {
     "basic": {
       "name": {
+        "th": "พาร์ท.ทรัมเป็ต",
         "en": "Trumpet Part"
       },
       "desc": {
+        "th": "เป่าทรัมเป็ตใส่ศัตรู สร้างดาเมจธาตุลม",
         "en": "Bonnie deals Wind DMG by blowing her Trumpet at an enemy."
       },
       "damageType": "wind",
@@ -161,6 +176,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 1",
             "en": "1st Hit DMG"
           },
           "unit": "percent",
@@ -186,6 +202,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 2",
             "en": "2nd Hit DMG"
           },
           "unit": "percent",
@@ -211,6 +228,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจเสียงสะท้อนโจมตี ขั้น 2",
             "en": "2nd Hit Reverberation DMG"
           },
           "unit": "percent",
@@ -236,6 +254,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 3",
             "en": "3rd Hit DMG"
           },
           "unit": "percent",
@@ -261,6 +280,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจเสียงสะท้อนโจมตี ขั้น 3",
             "en": "3rd Hit Reverberation DMG"
           },
           "unit": "percent",
@@ -286,6 +306,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีฉับพลัน",
             "en": "Air Counter DMG"
           },
           "unit": "percent",
@@ -310,6 +331,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจหลบหลีกโต้กลับ",
             "en": "Evasion Counter DMG"
           },
           "unit": "percent",
@@ -336,9 +358,11 @@
     },
     "switch": {
       "name": {
+        "th": "อินโทร",
         "en": "Intro"
       },
       "desc": {
+        "th": "ปรากฏตัวใกล้ศัตรูแล้วเป่าทรัมเป็ตอย่างรุนแรง สร้างดาเมจธาตุลม / [สกิลล่าถอย] เป่าฮอร์น สร้างดาเมจธาตุลมและมอบเอฟเฟกต์อ่อนแอต่อลม และหากจำนวนโน้ตสำหรับบรรเลงฮอร์นเกินขั้นต่ำ จะใช้โน้ตเพื่อบรรเลงซ้ำ",
         "en": "Bonnie appears near the enemy and blows her Trumpet, dealing Wind DMG. / [Tag-out Skill] Bonnie blows her French Horn, dealing Wind DMG and inflicting Wind Affliction. If she has enough Musical Scores to play the French Horn again, they are consumed to continue playing."
       },
       "damageType": "wind",
@@ -346,6 +370,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจบรรเลงทรัมเป็ต",
             "en": "Trumpet Performance DMG"
           },
           "unit": "percent",
@@ -371,6 +396,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจคลื่นเสียงฮอร์น",
             "en": "French Horn Sound Waves DMG"
           },
           "unit": "percent",
@@ -396,6 +422,7 @@
         },
         {
           "label": {
+            "th": "โน้ตขั้นต่ำในการบรรเลงฮอร์นของสกิลล่าถอย",
             "en": "Tag-out Skill French Horn Performance Minimum Musical Scores"
           },
           "unit": "times",
@@ -421,6 +448,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจบรรเลงฮอร์น",
             "en": "French Horn Performance DMG"
           },
           "unit": "percent",
@@ -446,6 +474,7 @@
         },
         {
           "label": {
+            "th": "ใช้โน้ต ขณะบรรเลงฮอร์น",
             "en": "French Horn Performance Consumed Musical Scores"
           },
           "unit": "times",
@@ -473,9 +502,11 @@
     },
     "special": {
       "name": {
+        "th": "พาร์ท.ทูบา",
         "en": "Tuba Part"
       },
       "desc": {
+        "th": "ถือทูบาวิ่งไปด้านหน้าแล้วบรรเลง สร้างดาเมจธาตุลม / เมื่อบรรเลงจบ จะสร้างดาเมจธาตุลมในตำแหน่งเดิม ศัตรูที่ได้รับดาเมจจะติดสถานะสั่นสะท้าน / ขณะใช้สกิลดังกล่าว สามารถเคลื่อนที่ไปยังทิศทางที่กดได้ / สั่นสะท้าน หากเลยเวลาที่กำหนดจะระเบิด สร้างดาเมจธาตุลม และเมื่อศัตรูที่ติดสถานะสั่นสะท้านอยู่ใกล้กันเอง จะระเบิดทันที",
         "en": "Bonnie travels forward playing a Tuba, dealing Wind DMG. / In her closing performance, she deals Wind DMG in place and inflicts Resonance on hit enemies. / Bonnie can be controlled while using this skill. / Resonance: Explodes after a set duration, dealing Wind DMG. If multiple Resonating enemies are close together, they explode immediately."
       },
       "damageType": "wind",
@@ -483,6 +514,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจบรรเลงทูบา",
             "en": "Tuba Performance DMG"
           },
           "unit": "percent",
@@ -508,6 +540,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจบรรเลงทูบาจบ",
             "en": "Tuba Closing Performance DMG"
           },
           "unit": "percent",
@@ -533,6 +566,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจสั่นสะท้าน",
             "en": "Resonance DMG"
           },
           "unit": "percent",
@@ -558,6 +592,7 @@
         },
         {
           "label": {
+            "th": "เวลาแสดงผลสั่นสะท้าน",
             "en": "Resonance Duration"
           },
           "unit": "seconds",
@@ -583,6 +618,7 @@
         },
         {
           "label": {
+            "th": "คูลดาวน์",
             "en": "Cooldown"
           },
           "unit": "seconds",
@@ -609,9 +645,11 @@
     },
     "ultimate": {
       "name": {
+        "th": "ฟินาเล่",
         "en": "Finale"
       },
       "desc": {
+        "th": "วางเครื่องดนตรีเพื่อเตรียมฟินาเล่แห่งจินตนาการ / เครื่องดนตรีต่างๆ จะบรรเลงร่วมก่อคลื่นเสียงไปด้านหน้า สร้างดาเมจธาตุลมและมอบเอฟเฟกต์อ่อนแอต่อลม และขณะบรรเลงร่วมต่อเนื่อง จะได้รับโน้ตเป็นระยะตามที่กำหนด / เมื่อใช้สกิลอัลติเมตซ้ำในขณะบรรเลงร่วม การบรรเลงร่วมจะหยุดลง สร้างดาเมจธาตุลมและมอบเอฟเฟกต์อ่อนแอต่อลม และเมื่อบรรเลงจบ จะได้รับโน้ต",
         "en": "Bonnie sets up instruments and prepares for the grand finale. / The instruments perform as an ensemble, sending sound waves forward, dealing Wind DMG and inflicting Wind Affliction. During the ensemble, Musical Scores are gained at set intervals. / Reusing her Ultimate Skill ends the ensemble, deals Wind DMG, and inflicts Wind Affliction. Another Musical Score is obtained at the end."
       },
       "damageType": "wind",
@@ -619,6 +657,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจบรรเลงร่วม",
             "en": "Ensemble DMG"
           },
           "unit": "percent",
@@ -644,6 +683,7 @@
         },
         {
           "label": {
+            "th": "โน้ตที่ได้รับสูงสุด ขณะบรรเลงร่วม",
             "en": "Max Ensemble Musical Scores"
           },
           "unit": "times",
@@ -669,6 +709,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจบรรเลงร่วมจบ",
             "en": "Ensemble Closing DMG"
           },
           "unit": "percent",
@@ -694,6 +735,7 @@
         },
         {
           "label": {
+            "th": "โน้ตที่ได้รับ เมื่อบรรเลงจบ",
             "en": "Ensemble Closing Musical Scores Gained"
           },
           "unit": "times",
@@ -721,15 +763,18 @@
     },
     "passive": {
       "name": {
+        "th": "แฟนตาเซีย",
         "en": "Fantasia"
       },
       "desc": {
+        "th": "เมื่อเปลี่ยนเป็นเครื่องดนตรีอื่นในระหว่างการต่อสู้ จะเพิ่มอัตราคริติคอลของตนเอง / เมื่อการโจมตีของตนเองติดคริติคอล จะได้รับโน้ต",
         "en": "Switching to another instrument during combat increases Bonnie's Crit Rate. / If she lands a critical hit, she can gain a Musical Score."
       },
       "effects": [],
       "values": [
         {
           "label": {
+            "th": "เพิ่มอัตราคริติคอล",
             "en": "Crit Rate Boost"
           },
           "unit": "percent",
@@ -755,6 +800,7 @@
         },
         {
           "label": {
+            "th": "เมื่อโจมตีคริติคอลโดน จะได้รับโน้ต",
             "en": "Musical Scores Gained upon Critical Hit"
           },
           "unit": "times",
@@ -780,6 +826,7 @@
         },
         {
           "label": {
+            "th": "จำนวนโน้ตสูงสุดที่สามารถครอบครอง",
             "en": "Max Musical Scores"
           },
           "unit": "times",
@@ -807,9 +854,11 @@
     },
     "elemental": {
       "name": {
+        "th": "บรรเลงพร้อมกัน!",
         "en": "All Together Now!"
       },
       "desc": {
+        "th": "ในขณะที่ใช้สกิลล่าถอย จะฟื้นฟูพลังชีวิตของสมาชิกทีมทั้งหมด 4.2% ของพลังชีวิตสูงสุดของบอนนี่ ทุก 1 วินาที",
         "en": "All teammates' HP is restored by 4.2% of Bonnie's Max HP every 1s while using her Tag-out Skill."
       },
       "effects": [
@@ -828,10 +877,21 @@
   "statuses": [
     {
       "name": {
+        "th": "เอฟเฟกต์อ่อนแอต่อลม",
         "en": "Wind Affliction"
       },
       "desc": {
+        "th": "ได้รับดาเมจต่อเนื่องธาตุลมและลดพลังต้านทานธาตุลม 15%",
         "en": "Afflicted targets take Wind DMG over time, and Wind RES decreases by 15%."
+      },
+      "effects": []
+    },
+    {
+      "name": {
+        "th": "ฮาร์โมนี"
+      },
+      "desc": {
+        "th": "เพิ่มดาเมจสกิลล่าถอย 5% (ทับซ้อนสูงสุด 4)"
       },
       "effects": []
     }
@@ -844,8 +904,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 · Info · Detailed Stats · Basic Attack · Ultimate Skill · Effect Details · **ยังไม่มีจอไทย** | Support · Wind · Ranged · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** ดาวบนจอ Info คือดาวอัปเลเวล | ค่าพลัง (จอ Info กับ Detailed Stats ตรงกัน): ATK 1,678 · DEF 598 · HP 9,537 · **Support DMG Boost 11.59%** (supportDmg) · Support 1,026 (supportPower) | **ค่าบทบาทของตัว 4 ดาวคือ 1,026 ทั้ง Angel (Assassin) และ Bonnie (Support)** ส่วนตัว 5 ดาวคือ 1,078 ทุกตัว (Vivian · Verna · Mina · Chloe) — ยืนยันว่าค่านี้ผูกกับแรงก์ ไม่ใช่บทบาท · ค่าบูสต์ดาเมจตามบทบาทของ 4 ดาว 11.59% (Angel Suppression · Bonnie Support) ส่วน 5 ดาว 12.18% | Basic: Hit 1-3 และ Reverberation = ท่อน 1 · Air/Evasion Counter ไม่ใส่ line · Ultimate: Ensemble = ท่อน 2 · Closing = ท่อน 3 · บรรทัดจำนวนโน้ตใช้หน่วย times | Wind Affliction ตรงกับของ Chloe ทุกคำ | รูป portrait ตัดจากจอ Info 380x380 | **2026-10-22 รอบสอง** Switch Skill Intro · Special Skill Tuba Part (ครบห้าบรรทัดจากจอที่เลื่อนลง) · Passive Fantasia (Lv.1) · Guidance of Wind All Together Now! (Lv.12) — **ครบทั้งหกช่องสกิลแล้ว** | switch: Trumpet = ท่อน 1 · บรรทัด French Horn ทั้งหมด = ท่อน 2 ([Tag-out Skill]) · บรรทัดจำนวนโน้ตใช้หน่วย times | special: คำอธิบายสี่ย่อหน้า ย่อหน้าที่สี่คือคำอธิบายย่อยของ Resonance ที่จอใส่หัวข้อสีเหลือง เก็บต่อท้ายพร้อม \"Resonance:\" ตามแบบ Wanted ของ Angel | **Guidance of Wind ใส่ effect ได้** — จอบอกเป้าหมายชัด (All teammates) และตัวกระตุ้น (while using her Tag-out Skill → onTagOutSkill): ฮีล 4.2% ของพลังชีวิตสูงสุดของ Bonnie ทุก 1 วินาที · ช่วงเวลา \"ทุก 1 วินาที\" ยังไม่มีช่องใน effect จดไว้ตรงนี้ | **2026-10-22 รอบสาม** ปลุกพลังขั้น 1-4 (ยังล็อกบนจอตัวอย่าง) · ขั้น 3 เติม effects (ดาเมจสกิลอัลติเมต +6% — scope ultimate ครั้งแรกในปลุกพลัง) · ขั้น 1 มีคำอธิบายย่อยของ Podium หัวข้อสีเหลือง เก็บต่อท้ายพร้อม \"Podium:\" · ขั้น 2 Crit DMG ของทีมคิดจาก Crit Rate ของ Bonnie (แปลงค่า) จึงเก็บเป็นข้อความ | **2026-10-22 รอบสี่** ปลุกพลังขั้น 5-6 — **ครบหกขั้นแล้ว** · ขั้น 5 \"Increases Tag-out Skill DMG by 6%\" เพิ่มคำใหม่ scope tagOutSkill (มีแต่ภาษาอังกฤษ ยังไม่เห็นคำไทย) · ขั้น 6 อ้างถึงสถานะ **Harmony** ซึ่งมีปุ่ม Effects แต่ยังไม่เห็นหน้าต่างรายละเอียด จึงยังไม่มีในสถานะ | ยังไม่ได้อ่าน: หน้าต่าง Effects ของ Harmony · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 · Info · Detailed Stats · Basic Attack · Ultimate Skill · Effect Details · **ยังไม่มีจอไทย** | Support · Wind · Ranged · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** ดาวบนจอ Info คือดาวอัปเลเวล | ค่าพลัง (จอ Info กับ Detailed Stats ตรงกัน): ATK 1,678 · DEF 598 · HP 9,537 · **Support DMG Boost 11.59%** (supportDmg) · Support 1,026 (supportPower) | **ค่าบทบาทของตัว 4 ดาวคือ 1,026 ทั้ง Angel (Assassin) และ Bonnie (Support)** ส่วนตัว 5 ดาวคือ 1,078 ทุกตัว (Vivian · Verna · Mina · Chloe) — ยืนยันว่าค่านี้ผูกกับแรงก์ ไม่ใช่บทบาท · ค่าบูสต์ดาเมจตามบทบาทของ 4 ดาว 11.59% (Angel Suppression · Bonnie Support) ส่วน 5 ดาว 12.18% | Basic: Hit 1-3 และ Reverberation = ท่อน 1 · Air/Evasion Counter ไม่ใส่ line · Ultimate: Ensemble = ท่อน 2 · Closing = ท่อน 3 · บรรทัดจำนวนโน้ตใช้หน่วย times | Wind Affliction ตรงกับของ Chloe ทุกคำ | รูป portrait ตัดจากจอ Info 380x380 | **2026-10-22 รอบสอง** Switch Skill Intro · Special Skill Tuba Part (ครบห้าบรรทัดจากจอที่เลื่อนลง) · Passive Fantasia (Lv.1) · Guidance of Wind All Together Now! (Lv.12) — **ครบทั้งหกช่องสกิลแล้ว** | switch: Trumpet = ท่อน 1 · บรรทัด French Horn ทั้งหมด = ท่อน 2 ([Tag-out Skill]) · บรรทัดจำนวนโน้ตใช้หน่วย times | special: คำอธิบายสี่ย่อหน้า ย่อหน้าที่สี่คือคำอธิบายย่อยของ Resonance ที่จอใส่หัวข้อสีเหลือง เก็บต่อท้ายพร้อม \"Resonance:\" ตามแบบ Wanted ของ Angel | **Guidance of Wind ใส่ effect ได้** — จอบอกเป้าหมายชัด (All teammates) และตัวกระตุ้น (while using her Tag-out Skill → onTagOutSkill): ฮีล 4.2% ของพลังชีวิตสูงสุดของ Bonnie ทุก 1 วินาที · ช่วงเวลา \"ทุก 1 วินาที\" ยังไม่มีช่องใน effect จดไว้ตรงนี้ | **2026-10-22 รอบสาม** ปลุกพลังขั้น 1-4 (ยังล็อกบนจอตัวอย่าง) · ขั้น 3 เติม effects (ดาเมจสกิลอัลติเมต +6% — scope ultimate ครั้งแรกในปลุกพลัง) · ขั้น 1 มีคำอธิบายย่อยของ Podium หัวข้อสีเหลือง เก็บต่อท้ายพร้อม \"Podium:\" · ขั้น 2 Crit DMG ของทีมคิดจาก Crit Rate ของ Bonnie (แปลงค่า) จึงเก็บเป็นข้อความ | **2026-10-22 รอบสี่** ปลุกพลังขั้น 5-6 — **ครบหกขั้นแล้ว** · ขั้น 5 \"Increases Tag-out Skill DMG by 6%\" เพิ่มคำใหม่ scope tagOutSkill (มีแต่ภาษาอังกฤษ ยังไม่เห็นคำไทย) · ขั้น 6 อ้างถึงสถานะ **Harmony** ซึ่งมีปุ่ม Effects แต่ยังไม่เห็นหน้าต่างรายละเอียด จึงยังไม่มีในสถานะ | ยังไม่ได้อ่าน: หน้าต่าง Effects ของ Harmony · จอไทยทั้งหมด | **2026-10-24 จอไทย (พรีวิวตัวละคร)** ชื่อ บอนนี่ · ค่าพลังห้าค่าตรงจออังกฤษ · โจมตีพื้นฐาน พาร์ท.ทรัมเป็ต (มีจุดกลางชื่อตามจอ) · สกิลอัลติเมต ฟินาเล่ · แพสซีฟ แฟนตาเซีย · การชี้นำแห่งลม บรรเลงพร้อมกัน! · ตัวเลขทุกตารางตรงจออังกฤษ | จอไทยเรียก Tag-out Skill ว่า \"สกิลล่าถอย\" | **2026-10-24 จอไทยรอบสอง** สกิลสับเปลี่ยน อินโทร · สกิลพิเศษ พาร์ท.ทูบา (ตารางห้าแถวจากสองจอ · หัวข้อ \"สั่นสะท้าน\" บรรทัดเดียวต่อด้วยเว้นวรรค) · ปลุกพลังครบหกขั้น · ตัวเลขทุกตารางตรงจออังกฤษ | ปลุกพลังขั้น 1 ไทยมีเว้นวรรคสองช่อง \"โจมตีพื้นฐาน  สกิลพิเศษ\" เก็บเป็นช่องเดียว | **สถานะ ฮาร์โมนี เก็บเป็นภาษาไทยอย่างเดียว** (จากปุ่มเอฟเฟกต์ของปลุกพลังขั้น 6) — ยังไม่เคยเห็นป๊อปอัปนี้ในจออังกฤษ ไม่แปลเติม | เอฟเฟกต์อ่อนแอต่อลม (จอไทยรอบสาม จากปุ่มเอฟเฟกต์ของสกิลสับเปลี่ยน) → **จอไทยครบทุกส่วนแล้ว** | ยังไม่ได้อ่าน (อังกฤษ): ป๊อปอัป Harmony"
   }
 }

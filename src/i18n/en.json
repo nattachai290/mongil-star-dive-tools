@@ -150,5 +150,22 @@
   "artifacts.noMatch": "No artifact matches those filters",
   "linkChains.search": "Search by name, monsterling, condition or effect",
   "linkChains.matches": "link chains",
-  "linkChains.noMatch": "No link chain matches those filters"
+  "linkChains.noMatch": "No link chain matches those filters",
+  "builds.title": "Builds",
+  "builds.lede": "What each character equips, one tab per Awaken stage, with teammates and the monsterlings they carry",
+  "builds.count": "builds",
+  "builds.empty": "No builds yet",
+  "builds.awaken": "Awaken",
+  "builds.artifact": "Artifact",
+  "builds.equipment": "Equipment",
+  "builds.setActive": "Active set bonuses",
+  "builds.monsterlings": "Monsterlings",
+  "builds.linkChain": "Link Chain",
+  "builds.legendary": "Legendary",
+  "builds.food": "Food",
+  "builds.team": "Team",
+  "builds.buffs": "Buffs from this setup",
+  "builds.buffsNote": "Only effects already parsed into numbers; character skills and teammates not included",
+  "builds.dupWarning": "Same monsterling on more than one team member — buffs do not stack",
+  "builds.empty.slot": "—"
 }

@@ -150,5 +150,22 @@
   "artifacts.noMatch": "ไม่พบ Artifact ที่ตรงกับตัวกรอง",
   "linkChains.search": "ค้นหาลิงก์เชน · ชื่อ ชื่อมอน เงื่อนไข หรือเอฟเฟกต์",
   "linkChains.matches": "ใบที่ตรง",
-  "linkChains.noMatch": "ไม่พบลิงก์เชนที่ตรงกับตัวกรอง"
+  "linkChains.noMatch": "ไม่พบลิงก์เชนที่ตรงกับตัวกรอง",
+  "builds.title": "บิ้ว",
+  "builds.lede": "ของที่ตัวละครใส่ แยกแท็บตามขั้นปลุกพลัง พร้อมเพื่อนร่วมทีมและมอนที่เพื่อนใส่",
+  "builds.count": "บิ้ว",
+  "builds.empty": "ยังไม่มีบิ้ว",
+  "builds.awaken": "ปลุกพลัง",
+  "builds.artifact": "อาร์ติแฟกต์",
+  "builds.equipment": "อุปกรณ์",
+  "builds.setActive": "โบนัสเซ็ตที่ทำงาน",
+  "builds.monsterlings": "มอนสเตอร์ลิง",
+  "builds.linkChain": "ลิงก์เชน",
+  "builds.legendary": "มอนสเตอร์ตำนาน",
+  "builds.food": "อาหาร",
+  "builds.team": "ทีม",
+  "builds.buffs": "บัฟจากของที่ใส่",
+  "builds.buffsNote": "รวมเฉพาะเอฟเฟกต์ที่แปลงเป็นตัวเลขแล้ว ยังไม่รวมบัฟจากสกิลตัวละครและเพื่อน",
+  "builds.dupWarning": "มอนตัวเดียวกันอยู่หลายคนในทีม — บัฟไม่ทับซ้อนกัน",
+  "builds.empty.slot": "—"
 }

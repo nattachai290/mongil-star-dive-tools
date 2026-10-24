@@ -1,6 +1,7 @@
 {
   "id": "sangun",
   "name": {
+    "th": "ซันกุน",
     "en": "Sangun"
   },
   "rarity": 5,
@@ -64,9 +65,11 @@
     {
       "stage": 1,
       "name": {
+        "th": "พยัคฆ์ดื่มด่ำสุนทรีย์",
         "en": "A Tiger of Culture"
       },
       "desc": {
+        "th": "เอฟเฟกต์ระบำคลุ้มคลั่งแห่งสมดุลจะถูกปรับใช้กับสกิลพิเศษและสกิลอัลติเมต ทำให้จำนวนครั้งในการโจมตีเพิ่มขึ้น 3 และความเร็วโจมตีเพิ่มขึ้น 20% / อีกทั้งดาเมจของการโจมตีแก่ศัตรูแต่ละครั้งจะลดลง 10% แต่ปริมาณดาเมจรวมจะเพิ่มขึ้น 260%",
         "en": "Wild Fervor affects Sangun's Special Skill and Ultimate Skill, increasing Strike Count by 3 and Attack Speed by 20%. / Also, DMG decreases by 10% per strike, but the total DMG increases by 260%."
       },
       "effects": []
@@ -74,9 +77,11 @@
     {
       "stage": 2,
       "name": {
+        "th": "อยู่เย็นเป็นสุข",
         "en": "Carefree and Casual"
       },
       "desc": {
+        "th": "เอฟเฟกต์วายุเทพพยัคฆ์กระหน่ำจะถูกปรับใช้กับสกิลพิเศษและสกิลอัลติเมต ทำให้ขอบเขตดาเมจเพิ่มขึ้น / อีกทั้งปริมาณการเพิ่มดาเมจธาตุลมจะเพิ่มขึ้นตามขั้นเป็น 50% / 70% / 90% และเวลาแสดงผลจะเพิ่มขึ้นเป็น 25 วินาที",
         "en": "Wind Tiger Strike applies to Sangun's Special Skill and Ultimate Skill, increasing their range. / In addition, Wind DMG Boost increases in stages to 50% / 70% /90%, and duration increases to 25s."
       },
       "effects": []
@@ -84,9 +89,11 @@
     {
       "stage": 3,
       "name": {
+        "th": "ค่ำคืนอันเงียบสงบกลางขุนเขา",
         "en": "Leisurely Nights on the Mountain"
       },
       "desc": {
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจโจมตีพื้นฐาน 6%",
         "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
       },
       "effects": [
@@ -107,9 +114,11 @@
     {
       "stage": 4,
       "name": {
+        "th": "ระลึกถึงสายสัมพันธ์อันเขียวชอุ่มในวันวาน",
         "en": "Sweet Memories"
       },
       "desc": {
+        "th": "หากศัตรูติดสถานะมึนงงหรือจับกุม เอฟเฟกต์ระบำคลุ้มคลั่งแห่งสมดุลจะถูกปรับใช้งานนาน 6 วินาที",
         "en": "\\Applies Wild Fervor to enemies inflicted with Stagger or Bind for 6s."
       },
       "effects": []
@@ -117,9 +126,11 @@
     {
       "stage": 5,
       "name": {
+        "th": "ความโหยหาที่ฝังลึกชั่วนิรันดร์",
         "en": "Eternal Longing"
       },
       "desc": {
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / ลดคูลดาวน์สกิลพิเศษ 4.5%",
         "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Special Skill's cooldown decreases by 4.5%."
       },
       "effects": [],
@@ -128,9 +139,11 @@
     {
       "stage": 6,
       "name": {
+        "th": "แม้ผ่านไปนับพันปี ก็ยังมั่นคงดั่งขุนเขา",
         "en": "The Immutable Mount Tai"
       },
       "desc": {
+        "th": "เมื่อกดค้างสกิลพิเศษ จะถีบพื้นแล้วหมุนตัว สร้างดาเมจธาตุลมให้ศัตรูด้านหน้า / อีกทั้ง จำนวนครั้งการโจมตีจะเพิ่มขึ้น 5 ครั้ง และปริมาณดาเมจรวมเพิ่มขึ้น 150%",
         "en": "Holding the Special Skill button allows Sangun to kick the ground and spin around, dealing Wind DMG to enemies in front of him. / Also, his Special Skill's Strike Count increases by 5, and total DMG increases by 150%."
       },
       "effects": []
@@ -139,9 +152,11 @@
   "skills": {
     "basic": {
       "name": {
+        "th": "พยัคฆ์คืนชีพ",
         "en": "Lurking Tiger"
       },
       "desc": {
+        "th": "โจมตีต่อเนื่องด้วยพยัคฆ์คำราม สร้างดาเมจธาตุดิลม / สามารถโจมตีโดนได้โดยการเข้าประชิดหรือถอยห่างตามระยะห่างจากศัตรู",
         "en": "Sangun deals Wind DMG by unleashing a series of attacks with Tiger's Howl. / He may either move in or pull back while striking, depending on the distance to the enemy."
       },
       "damageType": "wind",
@@ -149,6 +164,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 1",
             "en": "1st Hit DMG"
           },
           "unit": "percent",
@@ -174,6 +190,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 2",
             "en": "2nd Hit DMG"
           },
           "unit": "percent",
@@ -199,6 +216,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 3",
             "en": "3rd Hit DMG"
           },
           "unit": "percent",
@@ -224,6 +242,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตี ขั้น 4",
             "en": "4th Hit DMG"
           },
           "unit": "percent",
@@ -249,6 +268,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจโจมตีฉับพลัน",
             "en": "Air Counter DMG"
           },
           "unit": "percent",
@@ -273,6 +293,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจหลบหลีกโต้กลับ",
             "en": "Evasion Counter DMG"
           },
           "unit": "percent",
@@ -299,9 +320,11 @@
     },
     "switch": {
       "name": {
+        "th": "พยัคฆ์จู่โจม",
         "en": "Tiger Strike"
       },
       "desc": {
+        "th": "ปรากฏตัวใกล้ศัตรู หมุนตัวและพยัคฆ์คำรามไปด้านหน้าอย่างแรง สร้างดาเมจธาตุลม / เมื่อโจมตีโดน จะลากศัตรูมายังจุดโจมตี",
         "en": "Sangun emerges near an enemy, spins rapidly, and hurls the Tiger's Howl forward, dealing Wind DMG. / Landing a hit pulls the target to the point of attack."
       },
       "damageType": "wind",
@@ -309,6 +332,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจ ขั้น 1",
             "en": "1st Hit DMG"
           },
           "unit": "percent",
@@ -334,6 +358,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจ ขั้น 2",
             "en": "2nd Hit DMG"
           },
           "unit": "percent",
@@ -361,9 +386,11 @@
     },
     "special": {
       "name": {
+        "th": "ปลดปล่อยพยัคฆ์",
         "en": "Fearsome Tiger"
       },
       "desc": {
+        "th": "หากศัตรูอยู่ไกล จะพุ่งกระโดดอย่างรวดเร็วและพยัคฆ์คำรามใส่อย่างแรง สร้างดาเมจธาตุลม / เมื่อโจมตีโดน จะลากศัตรูมายังจุดโจมตี",
         "en": "When enemies are at a distance, Sangun swiftly leaps and charges at them, then strikes down mightily with the Tiger's Howl, dealing Wind DMG. / Landing a hit pulls the target to the point of attack."
       },
       "damageType": "wind",
@@ -371,6 +398,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจ",
             "en": "DMG"
           },
           "unit": "percent",
@@ -396,6 +424,7 @@
         },
         {
           "label": {
+            "th": "คูลดาวน์",
             "en": "Cooldown"
           },
           "unit": "seconds",
@@ -422,9 +451,11 @@
     },
     "ultimate": {
       "name": {
+        "th": "ฟ้าถล่มดินทลาย",
         "en": "Cataclysm"
       },
       "desc": {
+        "th": "รวบรวมพลังแห่งลมเพื่ออัญเชิญเสือออกมา สร้างดาเมจธาตุลม และมอบเอฟเฟกต์อ่อนแอต่อลม และผลักศัตรูออกไป เสือที่ถูกอัญเชิญออกมาจะมอบพลังแห่งวายุเทพพยัคฆ์กระหน่ำที่สั่นสะเทือนผืนดินให้กับซันกุน / วายุเทพพยัคฆ์กระหน่ำ จะเพิ่มขั้นตามจำนวนครั้งที่โจมตีโดนศัตรูภายในระยะเวลาที่กำหนด",
         "en": "Sangun channels the power of the wind to summon a tiger, dealing Wind DMG, inflicting Wind Affliction, and knocking enemies back. The summoned tiger grants Sangun the ground-shaking power of Wind Tiger Strike. / While Wind Tiger Strike is active, its tier increases along with the strike count."
       },
       "damageType": "wind",
@@ -432,6 +463,7 @@
       "values": [
         {
           "label": {
+            "th": "ดาเมจ ขั้น 1",
             "en": "1st Hit DMG"
           },
           "unit": "percent",
@@ -457,6 +489,7 @@
         },
         {
           "label": {
+            "th": "ดาเมจ ขั้น 2",
             "en": "2nd Hit DMG"
           },
           "unit": "percent",
@@ -482,6 +515,7 @@
         },
         {
           "label": {
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อลม",
             "en": "Wind Affliction Duration"
           },
           "unit": "seconds",
@@ -507,6 +541,7 @@
         },
         {
           "label": {
+            "th": "เวลาแสดงผลวายุเทพพยัคฆ์กระหน่ำ",
             "en": "Wind Tiger Strike Duration"
           },
           "unit": "seconds",
@@ -534,15 +569,18 @@
     },
     "passive": {
       "name": {
+        "th": "ฟ้าดินกลมกลืน",
         "en": "Aura of Harmony"
       },
       "desc": {
+        "th": "เมื่อใช้สกิลโต้กลับ จะมอบระบำคลุ้มคลั่งแห่งสมดุลให้กับตนเอง",
         "en": "Sangun gains Wild Fervor upon using a counterattack."
       },
       "effects": [],
       "values": [
         {
           "label": {
+            "th": "เวลาแสดงผลระบำคลุ้มคลั่งแห่งสมดุล",
             "en": "Wild Fervor Duration"
           },
           "unit": "seconds",
@@ -570,9 +608,11 @@
     },
     "elemental": {
       "name": {
+        "th": "พยัคฆ์เมาเหินฟ้า",
         "en": "Drunken Tiger Ascends"
       },
       "desc": {
+        "th": "เมื่อใช้สกิลสับเปลี่ยน จะเพิ่มดาเมจธาตุลม 23.15% (เวลาแสดงผล 10 วินาที) / หากหลบหลีกโต้กลับสำเร็จในขณะเวลาแสดงผลของเอฟเฟกต์ดังกล่าว เวลาแสดงผลจะถูกรีเซต",
         "en": "Wind DMG increases by 23.15% upon using a Switch Skill. (Duration: 10s) / Landing a successful Evasion Counter while the effect is active resets its duration."
       },
       "effects": [
@@ -587,6 +627,7 @@
           "durationSec": 10,
           "condition": {
             "note": {
+              "th": "หากหลบหลีกโต้กลับสำเร็จในขณะเวลาแสดงผลของเอฟเฟกต์ดังกล่าว เวลาแสดงผลจะถูกรีเซต",
               "en": "Landing a successful Evasion Counter while the effect is active resets its duration."
             }
           }
@@ -598,45 +639,55 @@
   "statuses": [
     {
       "name": {
+        "th": "วายุเทพพยัคฆ์กระหน่ำ (ขั้น 1)",
         "en": "Wind Tiger Strike (Tier 1)"
       },
       "desc": {
+        "th": "เพิ่มขอบเขตดาเมจของโจมตีพื้นฐานและเพิ่มดาเมจธาตุลม 10%",
         "en": "Basic Attack Range and Wind DMG increase by 10%."
       },
       "effects": []
     },
     {
       "name": {
+        "th": "วายุเทพพยัคฆ์กระหน่ำ (ขั้น 2)",
         "en": "Wind Tiger Strike (Tier 2)"
       },
       "desc": {
+        "th": "เพิ่มขอบเขตดาเมจของโจมตีพื้นฐานและเพิ่มดาเมจธาตุลม 25% เอฟเฟกต์นี้จะหายไปพร้อมกับเอฟเฟกต์วายุเทพพยัคฆ์กระหน่ำ (ขั้น 1) โดยไม่ขึ้นอยู่กับเวลาแสดงผล",
         "en": "Basic Attack Range and Wind DMG increase by 25%. The effect expires when Wind Tiger Strike (Tier 1) expires, regardless of duration."
       },
       "effects": []
     },
     {
       "name": {
+        "th": "วายุเทพพยัคฆ์กระหน่ำ (ขั้น 3)",
         "en": "Wind Tiger Strike (Tier 3)"
       },
       "desc": {
+        "th": "เพิ่มขอบเขตดาเมจของโจมตีพื้นฐานและเพิ่มดาเมจธาตุลม 40% เอฟเฟกต์นี้จะหายไปพร้อมกับเอฟเฟกต์วายุเทพพยัคฆ์กระหน่ำ (ขั้น 1) โดยไม่ขึ้นอยู่กับเวลาแสดงผล",
         "en": "Basic Attack Range and Wind DMG increase by 40%. The effect expires when Wind Tiger Strike (Tier 1) expires, regardless of duration."
       },
       "effects": []
     },
     {
       "name": {
+        "th": "เอฟเฟกต์อ่อนแอต่อลม",
         "en": "Wind Affliction"
       },
       "desc": {
+        "th": "ได้รับดาเมจต่อเนื่องธาตุลมและลดพลังต้านทานธาตุลม 15%",
         "en": "Afflicted targets take Wind DMG over time, and Wind RES decreases by 15%."
       },
       "effects": []
     },
     {
       "name": {
+        "th": "ระบำคลุ้มคลั่งแห่งสมดุล",
         "en": "Wild Fervor"
       },
       "desc": {
+        "th": "จำนวนโจมตีโดนของโจมตีพื้นฐานขั้น 1, ขั้น 2, ขั้น 3, ขั้น 4 จะเพิ่มขึ้น 3 และเพิ่มความเร็วโจมตีพื้นฐาน 20%",
         "en": "Basic Attack's 1st, 2nd, 3rd, and 4th Hit's Strike Count increases by 3 and Basic Attack Speed increases by 20%."
       },
       "effects": []
@@ -650,8 +701,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Fighter · Wind · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,943 · DEF 656 · HP 9,978 · Crit 5% / 50% อ่านจากจอตรง ๆ — เท่ากับ Chloe ทุกค่า (Wind Fighter Melee 5 ดาว) | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 380x380 ขยายเป็น 400x400 (เลี่ยงป้าย Info ด้านบน) | **2026-10-22 รอบสอง** Switch Tiger Strike · Special Fearsome Tiger (293.6%, 8.6 วินาที) · Ultimate Cataclysm (คำอธิบายและตารางอ่านจากพื้นหลังจาง ๆ ของป๊อปอัป Effect Details — อ่านออกครบ) · Passive Aura of Harmony (Wild Fervor 6 วินาที) · Guidance of Wind Drunken Tiger Ascends (ดาเมจลม +23.15% 10 วินาที) | **2026-10-22 รอบสาม** Detailed Stats: Brawl DMG Boost 12.18% · Fighter 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Basic Lurking Tiger · Effect Details: Wind Tiger Strike Tier 1–3 (Tier 1 อ่านจากปุ่ม Effects ของปลุกพลังขั้น 2) · Wind Affliction · Wild Fervor (จากปุ่ม Effects ของขั้น 1) · ปลุกพลังครบหกขั้น | ปลุกพลัง: จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส · effects: ขั้น 3 Basic +6% · ขั้น 5 ลดคูลดาวน์ Special 4.5% เก็บเป็นข้อความ (ไม่มีแบบ % cooldown ในโครง) · ขั้นอื่นเก็บเป็นข้อความ | **ขั้น 4 ขึ้นต้นด้วย \"\\Applies\" (มี backslash ในเกม) เก็บตามจอ** · ขั้น 2 \"70% /90%\" ช่องว่างไม่เท่ากันตามจอ | ยังไม่ได้อ่าน: จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) | Fighter · Wind · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลังห้าค่าหลัก: ATK 1,943 · DEF 656 · HP 9,978 · Crit 5% / 50% อ่านจากจอตรง ๆ — เท่ากับ Chloe ทุกค่า (Wind Fighter Melee 5 ดาว) | คำแนะนำตัวละครบนจอ Info เป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอ Info 380x380 ขยายเป็น 400x400 (เลี่ยงป้าย Info ด้านบน) | **2026-10-22 รอบสอง** Switch Tiger Strike · Special Fearsome Tiger (293.6%, 8.6 วินาที) · Ultimate Cataclysm (คำอธิบายและตารางอ่านจากพื้นหลังจาง ๆ ของป๊อปอัป Effect Details — อ่านออกครบ) · Passive Aura of Harmony (Wild Fervor 6 วินาที) · Guidance of Wind Drunken Tiger Ascends (ดาเมจลม +23.15% 10 วินาที) | **2026-10-22 รอบสาม** Detailed Stats: Brawl DMG Boost 12.18% · Fighter 1,078 · Elemental Weakness 125% (แบบ 5 ดาว) · Basic Lurking Tiger · Effect Details: Wind Tiger Strike Tier 1–3 (Tier 1 อ่านจากปุ่ม Effects ของปลุกพลังขั้น 2) · Wind Affliction · Wild Fervor (จากปุ่ม Effects ของขั้น 1) · ปลุกพลังครบหกขั้น | ปลุกพลัง: จอยังล็อกทุกขั้น → ค่าสกิลเลเวล 12 ไม่มีโบนัส · effects: ขั้น 3 Basic +6% · ขั้น 5 ลดคูลดาวน์ Special 4.5% เก็บเป็นข้อความ (ไม่มีแบบ % cooldown ในโครง) · ขั้นอื่นเก็บเป็นข้อความ | **ขั้น 4 ขึ้นต้นด้วย \"\\Applies\" (มี backslash ในเกม) เก็บตามจอ** · ขั้น 2 \"70% /90%\" ช่องว่างไม่เท่ากันตามจอ | **2026-10-24 จอไทยรอบแรก** ชื่อ ซันกุน · บรอว์เลอร์ · ลม ระยะใกล้ · 5 ดาว · ค่าพลังห้าค่าตรงจออังกฤษ · โจมตีพื้นฐาน พยัคฆ์คืนชีพ (**จอไทยพิมพ์ \"ดาเมจธาตุดิลม\" เก็บตามจอ**) · สกิลสับเปลี่ยน พยัคฆ์จู่โจม · การชี้นำแห่งลม พยัคฆ์เมาเหินฟ้า (23.15% ตรง) · แพสซีฟ ฟ้าดินกลมกลืน (Wild Fervor = ระบำคลุ้มคลั่งแห่งสมดุล · Tiger's Howl = พยัคฆ์คำราม) — ค่าตรงทุกแถว | **2026-10-24 จอไทยรอบสอง** สกิลพิเศษ ปลดปล่อยพยัคฆ์ · สกิลอัลติเมต ฟ้าถล่มดินทลาย (Wind Tiger Strike = วายุเทพพยัคฆ์กระหน่ำ · ย่อหน้าแรกจอไทยตัดบรรทัดก่อน \"เสือที่ถูกอัญเชิญ…\" ไม่มีบรรทัดว่าง รวมเป็นท่อนเดียวให้ตรงอังกฤษ) · ปลุกพลังขั้น 1 พยัคฆ์ดื่มด่ำสุนทรีย์ · สถานะ วายุเทพพยัคฆ์กระหน่ำ ขั้น 1–3 และ ระบำคลุ้มคลั่งแห่งสมดุล — ค่าตรงทุกแถว | **2026-10-24 จอไทยรอบสาม** ปลุกพลัง 2–6 · สถานะ เอฟเฟกต์อ่อนแอต่อลม · ขั้น 2 \"50% / 70% / 90%\" มีเครื่องหมาย / ในประโยคทั้งสองภาษา (อังกฤษ \"70% /90%\") — หน้าเว็บแยกท่อนตาม / จึงตัดตรงตัวเลขเหมือนกันทั้งสองภาษา เก็บตามจอ · ขั้น 4 จอไทยไม่มี backslash ที่ต้นข้อความ (Stagger = มึนงง · Bind = จับกุม) | **ภาษาไทยของซันกุนครบแล้ว**"
   }
 }

@@ -1,6 +1,7 @@
 {
   "id": "dreaming-adventurer",
   "name": {
+    "th": "นักผจญภัยผู้มีความฝัน",
     "en": "Dreaming Adventurer"
   },
   "stars": 4,
@@ -23,9 +24,11 @@
       "artifactLevel": 60,
       "level": 5,
       "name": {
+        "th": "จดจำค่ำคืนราวกับฝันในวันนั้น V",
         "en": "Remembered Days, Dreamt-of Nights V"
       },
       "desc": {
+        "th": "เมื่อตัวละคร [เดสทรอยเยอร์] ติดตั้ง จะได้รับเอฟเฟกต์ดังต่อไปนี้ / หลังใช้สกิลพิเศษภายใน 10 วินาที การโจมตีพื้นฐานธาตุน้ำแข็งครั้งถัดไป 1 ครั้ง จะเพิ่มดาเมจธาตุน้ำแข็ง 36% (คูลดาวน์ 30 วินาที) / รวมขั้น 5 : ทุกเดสทรอยเยอร์ 10 หน่วย จะได้รับเอฟเฟกต์เพิ่มพลังโจมตี 0.06% (สูงสุด 5%)",
         "en": "When equipped by a [Destroyer] character, grants the following effect. / For 10s after using a Special Skill, Ice DMG of the next (and only the next) Basic Ice Attack increases by 36%. (Cooldown: 30s) / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Destroyer proficiency. (Max: 5%)"
       },
       "effects": [
@@ -44,6 +47,7 @@
           "internalCooldownSec": 30,
           "condition": {
             "note": {
+              "th": "การโจมตีพื้นฐานธาตุน้ำแข็งครั้งถัดไป 1 ครั้ง",
               "en": "the next (and only the next) Basic Ice Attack"
             }
           }
@@ -59,8 +63,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **4 ดาว (ผู้เล่นบอก 2026-10-22 \"artifact 4 ดาวหมด\")** ตรงกับเพชร 4 เม็ดบนการ์ด · เลเวล 60 (Max) · Fusion Level 5 | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | บรรทัด Fusion Level 5 (ATK ตามความชำนาญ Destroyer สูงสุด 5%) เก็บเป็นข้อความ"
+    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **4 ดาว (ผู้เล่นบอก 2026-10-22 \"artifact 4 ดาวหมด\")** ตรงกับเพชร 4 เม็ดบนการ์ด · เลเวล 60 (Max) · Fusion Level 5 | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | บรรทัด Fusion Level 5 (ATK ตามความชำนาญ Destroyer สูงสุด 5%) เก็บเป็นข้อความ | **2026-10-24 จอพรีวิวอาร์ติแฟกต์ไทย** ชื่อ นักผจญภัยผู้มีความฝัน · เดสทรอยเยอร์ · ค่าสเตตัส Lv.60 ตรงจออังกฤษ (663 · ดาเมจคริติคอล 33.75%) · รวมขั้น 5 จดจำค่ำคืนราวกับฝันในวันนั้น V"
   }
 }

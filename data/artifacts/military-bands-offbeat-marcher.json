@@ -1,6 +1,7 @@
 {
   "id": "military-bands-offbeat-marcher",
   "name": {
+    "th": "ตัวแปรนอกกรอบแห่งวงดุริยางค์ทหาร",
     "en": "Military Band's Offbeat Marcher"
   },
   "stars": 4,
@@ -23,9 +24,11 @@
       "artifactLevel": 60,
       "level": 5,
       "name": {
+        "th": "แตรบรรเลง! V",
         "en": "Fanfare! V"
       },
       "desc": {
+        "th": "เมื่อตัวละคร [ซัพพอร์ตเตอร์] ติดตั้ง จะได้รับเอฟเฟกต์ดังต่อไปนี้ / เมื่อตัวละครติดตั้งโจมตีสกิลล่าถอยโดน จะมอบเอฟเฟกต์บันไดเสียงให้กับสมาชิกทีมและตนเอง เอฟเฟกต์ดังกล่าวจะทำงาน 1 ครั้ง ทุก 0.5 วินาที / บันไดเสียง: เพิ่มดาเมจธาตุลม 3% (ทับซ้อนสูงสุด 7, เวลาแสดงผล 2 วินาที, เมื่อทับซ้อน เวลาแสดงผลจะถูกรีเฟรช) / รวมขั้น 5 : ทุกซัพพอร์ตเตอร์ 10 หน่วย จะได้รับเอฟเฟกต์เพิ่มอัตราคริติคอล 0.06% (สูงสุด 5%)",
         "en": "When equipped by a [Support] character, grants the following effect. / When the equipping character lands a Tag-out Skill attack, Musical Scale is granted to them and all other teammates. (Cooldown: 0.5s) / Musical Scale: Increases Wind DMG by 3%. (Max Stacks: 7, Duration: 2s, New stacks reset the duration) / Fusion Level 5: Gains 0.06% Crit Rate Boost for every 10 points of Support proficiency. (Max: 5%)"
       },
       "effects": [
@@ -42,6 +45,7 @@
           "maxStacks": 7,
           "condition": {
             "note": {
+              "th": "บันไดเสียง · เมื่อทับซ้อน เวลาแสดงผลจะถูกรีเฟรช",
               "en": "Musical Scale · New stacks reset the duration"
             }
           }
@@ -57,8 +61,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **4 ดาว (ผู้เล่นบอก 2026-10-22 \"artifact 4 ดาวหมด\")** ตรงกับเพชร 4 เม็ดบนการ์ด · เลเวล 60 (Max) · Fusion Level 5 | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | ข้อความ Fusion อ่านสองจอ (เลื่อนลง) ต่อกันครบ | บรรทัด Fusion Level 5 (Crit Rate ตามความชำนาญ Support สูงสุด 5%) เก็บเป็นข้อความ — schema ยังไม่มีแบบ \"ต่อทุก N แต้ม\""
+    "note": "อ่านจากจอ **Artifact Preview** ภาษาอังกฤษ 2026-10-22 · **ยังไม่มีจอไทย** | **4 ดาว (ผู้เล่นบอก 2026-10-22 \"artifact 4 ดาวหมด\")** ตรงกับเพชร 4 เม็ดบนการ์ด · เลเวล 60 (Max) · Fusion Level 5 | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ (PLAN §13.7.1) | ข้อความ Fusion อ่านสองจอ (เลื่อนลง) ต่อกันครบ | บรรทัด Fusion Level 5 (Crit Rate ตามความชำนาญ Support สูงสุด 5%) เก็บเป็นข้อความ — schema ยังไม่มีแบบ \"ต่อทุก N แต้ม\" | **2026-10-24 จอพรีวิวอาร์ติแฟกต์ไทย** ชื่อ ตัวแปรนอกกรอบแห่งวงดุริยางค์ทหาร · ซัพพอร์ตเตอร์ · ค่าสเตตัส Lv.60 ตรงจออังกฤษ (663 · พลังป้องกัน 15.75%) · ชื่อบนจอขึ้นสองบรรทัด ต่อกันไม่เว้นวรรค · รวมขั้น 5 แตรบรรเลง! V · Musical Scale = บันไดเสียง"
   }
 }
