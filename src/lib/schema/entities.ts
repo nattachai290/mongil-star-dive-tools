@@ -454,7 +454,7 @@ export const food = z.object({
  * เพราะแต่ละขั้นอาจใช้ของคนละชุดได้ (ผู้เล่นกำหนด 2026-10-24)
  *
  * จำนวนช่องตามเกม: มอน 3 · ลิงก์เชน 1 · มอนตำนาน 1 (แยกจากมอน 3 ตัว) · อาหาร จานหลัก + จานรอง
- * ทีมมี 3 ตัว → เพื่อนร่วมทีมใส่ได้ 2 ตัว และไม่เก็บของของเพื่อน
+ * ทีมมี 3 ตัว → เพื่อนร่วมทีมใส่ได้ 2 ตัว เก็บเฉพาะมอนที่เพื่อนใส่ · ไม่มีช่องหมายเหตุ (ผู้เล่นกำหนด 2026-10-24)
  */
 export const buildLoadout = z.object({
   awaken: z.number().int().min(0).max(6),
@@ -474,8 +474,16 @@ export const buildLoadout = z.object({
   /** มอนจากสมุดภาพ "มอนสเตอร์ตำนาน" — ช่องของตัวเอง ไม่นับรวมกับมอน 3 ตัว */
   legendary: slug.optional(),
   food: z.object({ entree: slug.optional(), side: slug.optional() }).strict().default({}),
-  teammates: z.array(slug).max(2).default([]),
-  notes: text.optional(),
+  /**
+   * เพื่อน 2 ตัวพร้อมมอนที่เพื่อนใส่ — มอนตัวเดียวกันบนสองคนในทีม บัฟไม่ทับซ้อนกัน
+   * จึงต้องรู้ว่าเพื่อนใส่ตัวไหน (ผู้เล่นบอก 2026-10-24) · validate:data เตือนเมื่อซ้ำ
+   */
+  teammates: z
+    .array(
+      z.object({ characterId: slug, monsterlings: z.array(slug).max(3).default([]) }).strict(),
+    )
+    .max(2)
+    .default([]),
 }).strict();
 
 /**

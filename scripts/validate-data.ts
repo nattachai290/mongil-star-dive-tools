@@ -433,7 +433,7 @@ type LoadoutShape = {
   linkChain?: string;
   legendary?: string;
   food?: { entree?: string; side?: string };
-  teammates?: string[];
+  teammates?: { characterId: string; monsterlings?: string[] }[];
 };
 
 for (const [id, doc] of Object.entries(parsed.builds ?? {})) {
@@ -483,9 +483,25 @@ for (const [id, doc] of Object.entries(parsed.builds ?? {})) {
     }
 
     const mates = lo.teammates ?? [];
-    checkRefs(where, mates, "characters", `${at}.teammates`);
-    if (mates.includes(charId)) fail(where, `${at}.teammates มีตัวละครของบิ้วเอง`);
-    if (new Set(mates).size !== mates.length) fail(where, `${at}.teammates มีตัวซ้ำ`);
+    const mateIds = mates.map((m) => m.characterId);
+    checkRefs(where, mateIds, "characters", `${at}.teammates`);
+    if (mateIds.includes(charId)) fail(where, `${at}.teammates มีตัวละครของบิ้วเอง`);
+    if (new Set(mateIds).size !== mateIds.length) fail(where, `${at}.teammates มีตัวซ้ำ`);
+
+    // มอนตัวเดียวกันบนสองคนในทีม บัฟไม่ทับซ้อน — ไม่ผิดกติกาเกม จึงแค่เตือน
+    const owner = new Map<string, string>(mons.map((m) => [m, charId]));
+    for (const [j, mate] of mates.entries()) {
+      const mm = mate.monsterlings ?? [];
+      checkRefs(where, mm, "monsterlings", `${at}.teammates[${j}].monsterlings`);
+      if (new Set(mm).size !== mm.length) fail(where, `${at}.teammates[${j}].monsterlings มีตัวซ้ำ`);
+      for (const m of mm) {
+        const book = (parsed.monsterlings?.[m]?.dex as { book?: string } | undefined)?.book;
+        if (book === "legendary") fail(where, `${at}.teammates[${j}].monsterlings มี "${m}" ซึ่งเป็นมอนตำนาน`);
+        const prev = owner.get(m);
+        if (prev) warn(where, `${at}: มอน "${m}" อยู่ทั้ง ${prev} และ ${mate.characterId} — บัฟไม่ทับซ้อนกัน`);
+        else owner.set(m, mate.characterId);
+      }
+    }
   }
 }
 
