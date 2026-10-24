@@ -22,8 +22,6 @@ import {
 import { asset } from "@/lib/base-path";
 import { label } from "@/lib/vocabulary";
 import type { BuildLoadout, BuildMember, LinkChain } from "@/lib/schema/entities";
-import { FORMULA } from "@/lib/formula";
-import { CYCLE_SKILLS, TEAM_ASSUMPTIONS, teamDamage } from "@/lib/team-damage";
 import type { Effect, LocalizedText } from "@/lib/schema/common";
 
 export function generateStaticParams() {
@@ -186,14 +184,10 @@ function Slot({ title, children }: { title: string; children: React.ReactNode })
   );
 }
 
-const fmt = (n: number, locale: Locale) =>
-  Math.round(n).toLocaleString(locale === "th" ? "th-TH" : "en-US");
-
 /** ของที่ตัวละคร 1 ตัวในทีมใส่ */
 function MemberGear({ mem, dup, locale, t }: { mem: BuildMember; dup: Set<string>; locale: Locale; t: T }) {
   const c = characterById(mem.characterId);
-  const art = ARTIFACTS.find((a) => a.id === mem.artifact);
-  const fusion = art && [...art.fusion].sort((x, y) => y.artifactLevel - x.artifactLevel)[0];
+  const arts = (mem.artifacts ?? []).flatMap((id) => ARTIFACTS.find((a) => a.id === id) ?? []);
   const chain = LINK_CHAINS.find((x) => x.id === mem.linkChain);
   const sets = activeSets(mem);
   const img = characterImage(mem.characterId);
@@ -218,19 +212,34 @@ function MemberGear({ mem, dup, locale, t }: { mem: BuildMember; dup: Set<string
       </header>
       <div className="grid gap-3 sm:grid-cols-2">
         <Slot title={t("builds.artifact")}>
-          {art ? (
-            <>
-              <div className="flex items-center gap-2">
-                <Icon src={art.images?.icon ? asset(`/images/artifacts/${art.images.icon}`) : null} />
-                <div>
-                  <p className="text-sm font-semibold">{name(art.name, locale, art.id)}</p>
-                  {fusion?.name && <p className="text-xs text-gold">{name(fusion.name, locale, "")}</p>}
-                </div>
-              </div>
-              <Effects effects={fusion?.effects ?? []} locale={locale} />
-            </>
-          ) : (
+          {arts.length === 0 ? (
             <p className="text-sm text-muted">{t("builds.empty.slot")}</p>
+          ) : (
+            <ol className="space-y-3">
+              {arts.map((art, i) => {
+                const fusion = [...art.fusion].sort((x, y) => y.artifactLevel - x.artifactLevel)[0];
+                return (
+                  <li key={art.id} className={i > 0 ? "border-t border-line pt-3" : undefined}>
+                    <p className="mb-1 text-[11px] text-muted">
+                      {i === 0 ? t("builds.artifactMain") : `${t("builds.artifactAlt")} ${i}`}
+                    </p>
+                    <div className="flex items-center gap-2">
+                      <Icon src={art.images?.icon ? asset(`/images/artifacts/${art.images.icon}`) : null} />
+                      <div>
+                        <p className="text-sm font-semibold">
+                          {name(art.name, locale, art.id)}{" "}
+                          <span className="text-xs font-normal text-gold">
+                            {art.stars !== undefined && "★".repeat(art.stars)}
+                          </span>
+                        </p>
+                        {fusion?.name && <p className="text-xs text-gold">{name(fusion.name, locale, "")}</p>}
+                      </div>
+                    </div>
+                    <Effects effects={fusion?.effects ?? []} locale={locale} />
+                  </li>
+                );
+              })}
+            </ol>
           )}
         </Slot>
 
@@ -327,74 +336,6 @@ function MemberGear({ mem, dup, locale, t }: { mem: BuildMember; dup: Set<string
   );
 }
 
-/** ดาเมจรวมทั้งทีม — สกิลครบ 1 รอบต่อตัว */
-function TeamDamageTable({ lo, locale, t }: { lo: BuildLoadout; locale: Locale; t: T }) {
-  const result = teamDamage(lo);
-  return (
-    <Slot title={t("builds.teamDamage")}>
-      <p className="text-[11px] text-muted">{t("builds.teamDamageNote")}</p>
-      <table className="mt-2 w-full text-sm">
-        <thead>
-          <tr className="text-left text-[11px] text-muted">
-            <th className="py-1 font-normal">{t("builds.member")}</th>
-            {CYCLE_SKILLS.map((k) => (
-              <th key={k} className="py-1 text-end font-normal">
-                {t(`skill.${k}`)}
-              </th>
-            ))}
-            <th className="py-1 text-end font-normal">{t("builds.total")}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {result.members.map((m) => (
-            <tr key={m.characterId} className="border-t border-line">
-              <td className="py-1.5">{name(characterById(m.characterId)?.name, locale, m.characterId)}</td>
-              {CYCLE_SKILLS.map((k) => {
-                const s = m.skills.find((x) => x.skill === k);
-                return (
-                  <td key={k} className="py-1.5 text-end font-mono tabular-nums">
-                    {s ? fmt(s.average, locale) : "—"}
-                  </td>
-                );
-              })}
-              <td className="py-1.5 text-end font-mono font-semibold tabular-nums">{fmt(m.total, locale)}</td>
-            </tr>
-          ))}
-          <tr className="border-t-2 border-gold">
-            <td className="py-1.5 font-semibold" colSpan={CYCLE_SKILLS.length + 1}>
-              {t("builds.teamTotal")}
-            </td>
-            <td className="py-1.5 text-end font-mono font-semibold text-gold tabular-nums">{fmt(result.total, locale)}</td>
-          </tr>
-        </tbody>
-      </table>
-      <details className="mt-3 text-xs">
-        <summary className="cursor-pointer text-ink-2">{t("builds.rowsCounted")}</summary>
-        <div className="mt-2 space-y-2">
-          {result.members.map((m) => (
-            <div key={m.characterId}>
-              <p className="font-semibold">{name(characterById(m.characterId)?.name, locale, m.characterId)}</p>
-              <ul className="mt-1 space-y-0.5 text-ink-2">
-                {m.skills.map((s) => (
-                  <li key={s.skill}>
-                    {t(`skill.${s.skill}`)} Lv.{s.level}:{" "}
-                    {s.rows.map((r) => `${name(r.label, locale, "")} ${r.value}%`).join(" · ")}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </details>
-      <ul className="mt-3 list-disc space-y-0.5 ps-4 text-[11px] text-muted">
-        {[...TEAM_ASSUMPTIONS, ...FORMULA.notYetModeled.slice(0, 1)].map((a) => (
-          <li key={a}>{a}</li>
-        ))}
-      </ul>
-    </Slot>
-  );
-}
-
 function Loadout({ lo, locale, t }: { lo: BuildLoadout; locale: Locale; t: T }) {
   // มอนตัวเดียวกันบนหลายคนในทีม บัฟไม่ทับซ้อน
   const all = lo.members.flatMap((m) => [...m.monsterlings.map((x) => x.id), ...(m.legendary ? [m.legendary.id] : [])]);
@@ -402,7 +343,6 @@ function Loadout({ lo, locale, t }: { lo: BuildLoadout; locale: Locale; t: T }) 
 
   return (
     <div className="space-y-3">
-      <TeamDamageTable lo={lo} locale={locale} t={t} />
       <Slot title={t("builds.food")}>
         <div className="grid gap-3 sm:grid-cols-2">
           {(["entree", "side"] as const).map((cat) => {

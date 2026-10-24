@@ -452,7 +452,7 @@ for (const [id, doc] of Object.entries(parsed.equipment ?? {})) {
 type MonShape = { id: string; traits?: { id: string; grade: string }[] };
 type MemberShape = {
   characterId: string;
-  artifact?: string;
+  artifacts?: string[];
   equipment?: Record<string, string | undefined>;
   substats?: Record<string, string[] | undefined>;
   monsterlings?: MonShape[];
@@ -497,10 +497,14 @@ for (const [id, doc] of Object.entries(parsed.builds ?? {})) {
       checkRefs(where, mem.characterId, "characters", `${mt}.characterId`);
       const char = parsed.characters?.[mem.characterId];
 
-      checkRefs(where, mem.artifact, "artifacts", `${mt}.artifact`);
-      const art = mem.artifact ? parsed.artifacts?.[mem.artifact] : undefined;
-      if (art && char && art.role !== char.role) {
-        fail(where, `${mt}.artifact "${mem.artifact}" ใส่ได้เฉพาะ ${art.role} แต่ ${mem.characterId} เป็น ${char.role}`);
+      const arts = mem.artifacts ?? [];
+      checkRefs(where, arts, "artifacts", `${mt}.artifacts`);
+      if (new Set(arts).size !== arts.length) fail(where, `${mt}.artifacts มีชิ้นซ้ำ`);
+      for (const a of arts) {
+        const art = parsed.artifacts?.[a];
+        if (art && char && art.role !== char.role) {
+          fail(where, `${mt}.artifacts "${a}" ใส่ได้เฉพาะ ${art.role} แต่ ${mem.characterId} เป็น ${char.role}`);
+        }
       }
 
       for (const [slot, piece] of Object.entries(mem.equipment ?? {})) {

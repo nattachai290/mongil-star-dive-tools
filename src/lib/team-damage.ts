@@ -89,7 +89,8 @@ function monsterEffects(slot: BuildMember["monsterlings"][number]): Effect[] {
 /** ทุกเอฟเฟกต์ที่มาจากตัวละคร 1 ตัวและของที่ใส่ ณ ขั้นปลุกพลังนี้ */
 function memberEffects(mem: BuildMember, char: Character, awaken: number): Effect[] {
   const out: Effect[] = [];
-  const art = ARTIFACTS.find((a) => a.id === mem.artifact);
+  // คิดจากชิ้นหลัก (ชิ้นแรก) — ที่เหลือเป็นตัวสำรอง
+  const art = ARTIFACTS.find((a) => a.id === mem.artifacts?.[0]);
   if (art) {
     for (const s of art.stats) out.push(asEffect(s.stat, s.value, s.unit, { damageType: s.damageType }));
     const top = [...art.fusion].sort((a, b) => b.artifactLevel - a.artifactLevel)[0];

@@ -501,7 +501,11 @@ const substatKey = z.string().regex(/^[a-zA-Z]+(-[a-z]+)?$/);
 /** ของที่ตัวละคร 1 ตัวในทีมใส่ */
 export const buildMember = z.object({
   characterId: slug,
-  artifact: slug.optional(),
+  /**
+   * อาร์ติแฟกต์ 1–4 ชิ้น — ชิ้นแรกคือตัวหลัก ที่เหลือเป็นตัวสำรองเรียงตามลำดับ
+   * เผื่อผู้เล่นไม่มีชิ้นหลัก (ผู้เล่นกำหนด 2026-10-24) · ตัวละครใส่ได้จริงทีละ 1 ชิ้น
+   */
+  artifacts: z.array(slug).min(1).max(4).optional(),
   /** ระบุทีละช่อง — โบนัสเซ็ตคิดจากชิ้นที่ใส่ ไม่เก็บซ้ำ */
   equipment: z
     .object({
