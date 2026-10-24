@@ -12,7 +12,7 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { z } from "zod";
-import { SCHEMAS, equipmentSet, gearMainStat, gearSubstat, monsterDexEntry, traitPool, dropSources, type Collection } from "../src/lib/schema/entities";
+import { SCHEMAS, equipmentSet, gearMainStat, gearSubstat, monsterDexEntry, traitPool, dropSources, monsterStatTiers, type Collection } from "../src/lib/schema/entities";
 import { FORMULA, IMPLEMENTED_STEPS } from "../src/lib/formula";
 
 const ROOT = process.cwd();
@@ -149,6 +149,20 @@ if (!traitsParsed.success) {
           `${tr.id}: ค่าไม่ได้ไต่ขึ้นตามแรง (${RANK_ORDER[i - 1]} ${seq[i - 1]} -> ${RANK_ORDER[i]} ${seq[i]})`,
         );
     }
+  }
+}
+
+// ---------- ค่าพลังมอนแยกตามแบบ ----------
+const statTierRaw = readJson(join(DATA, "meta", "monster-stat-tiers.json"), "data/meta/monster-stat-tiers.json");
+const statTierParsed = monsterStatTiers.safeParse(statTierRaw);
+const statTierIds = new Set<string>();
+if (!statTierParsed.success) {
+  for (const issue of statTierParsed.error.issues)
+    fail("data/meta/monster-stat-tiers.json", `${issue.path.join(".") || "(root)"}: ${issue.message}`);
+} else {
+  for (const t of statTierParsed.data.tiers) {
+    if (statTierIds.has(t.id)) fail("data/meta/monster-stat-tiers.json", `id ซ้ำ: ${t.id}`);
+    statTierIds.add(t.id);
   }
 }
 
@@ -366,6 +380,9 @@ for (const [id, doc] of Object.entries(parsed.characters ?? {})) {
 }
 
 for (const [id, doc] of Object.entries(parsed.monsterlings ?? {})) {
+  if (typeof doc.statTier === "string" && !statTierIds.has(doc.statTier)) {
+    fail(`data/monsterlings/${id}.json`, `statTier "${doc.statTier}" ไม่มีใน meta/monster-stat-tiers.json`);
+  }
   const where = `data/monsterlings/${id}.json`;
   // ตัวเลขเอฟเฟกต์สายพันธุ์ขึ้นกับแรงของมอนแต่ละตัว เว็บจะโชว์เฉพาะค่าจากตัวสีทอง
   const grade = doc.effectsRank as string | undefined;

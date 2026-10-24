@@ -23,6 +23,7 @@
     }
   ],
   "effectsRank": "gold",
+  "statTier": "white-wraith-class",
   "images": {
     "icon": "white-wraith-icon.webp"
   },
@@ -33,6 +34,7 @@
     "readIn": [
       "th",
       "en"
-    ]
+    ],
+    "note": "**2026-10-24 จอรายละเอียดมอน (ไทย)** Lv.60 พลังโจมตี 669 · ป้องกัน 1,044 · ชีวิต 2,226 → statTier white-wraith-class"
   }
 }

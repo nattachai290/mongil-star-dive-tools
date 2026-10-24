@@ -336,18 +336,10 @@ export const monsterling = z.object({
    */
   effectsRank: vocabEnum("monsterRank").optional(),
   /**
-   * ค่าพลังของมอนที่บวกให้ตัวละครเวลาใส่ (จอรายละเอียดมอน: พลังโจมตี / พลังป้องกัน / พลังชีวิต)
-   * เก็บพร้อมเลเวลบนจอ · ยังไม่รู้ว่าแรงหรือตัวที่จับมาแต่ละตัวทำให้ค่าต่างกันไหม — ไม่ใส่ = ยังไม่เคยเห็นจอ
+   * แบบค่าพลังที่มอนบวกให้ตัวละครตอนใส่ (ATK / DEF / HP) — id ใน meta/monster-stat-tiers.json
+   * ไม่ใส่ = ยังไม่รู้ว่าอยู่แบบไหน
    */
-  stats: z
-    .object({
-      atLevel: z.number().int().positive(),
-      atk: z.number().nonnegative(),
-      def: z.number().nonnegative(),
-      hp: z.number().nonnegative(),
-    })
-    .strict()
-    .optional(),
+  statTier: slug.optional(),
   obtain: z.object({ method: vocabEnum("obtainMethod"), note: text.optional() }).optional(),
   /**
    * ของที่มอนตัวนี้ดรอป — เก็บแค่ชื่อ
@@ -418,6 +410,24 @@ export const traitPool = z.object({
   source,
 });
 export type TraitPool = z.infer<typeof traitPool>;
+
+/** ค่าพลังของมอนแยกตามแบบ — มอนแบบเดียวกันได้ค่าเท่ากันหมด (ผู้เล่นสังเกต 2026-10-24) */
+export const monsterStatTiers = z.object({
+  tiers: z
+    .array(
+      z.object({
+        id: slug,
+        name: text,
+        atLevel: z.number().int().positive(),
+        atk: z.number().nonnegative(),
+        def: z.number().nonnegative(),
+        hp: z.number().nonnegative(),
+      }).strict(),
+    )
+    .min(1),
+  source,
+});
+export type MonsterStatTiers = z.infer<typeof monsterStatTiers>;
 
 /**
  * ศัตรูที่ดรอปของแต่ "ไม่มีมอนสเตอร์ลิง" — จับไม่ได้ จึงไม่มีหน้าในสมุดภาพ

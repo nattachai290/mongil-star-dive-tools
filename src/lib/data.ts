@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { asset } from "./base-path";
-import { artifact, build, food, monsterDexEntry, linkChain, monsterling, character, equipment, equipmentSet, gearMainStat, gearSubstat, traitPool, dropSources } from "./schema/entities";
+import { artifact, build, food, monsterDexEntry, linkChain, monsterling, character, equipment, equipmentSet, gearMainStat, gearSubstat, traitPool, dropSources, monsterStatTiers } from "./schema/entities";
 import type { Artifact, Build, Character, Food, Equipment, EquipmentSet, GearMainStat, GearSubstat, LinkChain, Monsterling, TraitPool, DropSources } from "./schema/entities";
 
 /**
@@ -129,6 +129,9 @@ export const GEAR_SUBSTATS: GearSubstat[] = (
  * ถ้าวันหนึ่งมันไปโผล่อยู่ในไฟล์มอน แปลว่ามีคนเข้าใจผิดแล้ว
  */
 export const TRAIT_POOL: TraitPool = traitPool.parse(readJson(join(DATA, "meta", "traits.json")));
+
+/** ค่าพลังที่มอนบวกให้ตัวละคร แยกตามแบบ */
+export const MONSTER_STAT_TIERS = monsterStatTiers.parse(readJson(join(DATA, "meta", "monster-stat-tiers.json"))).tiers;
 
 /**
  * ศัตรูที่ดรอปของแต่ไม่มีมอนสเตอร์ลิง — ของดรอปที่เหลือแขวนอยู่กับไฟล์มอนตามเดิม
