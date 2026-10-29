@@ -8,6 +8,8 @@
     "book": "field",
     "no": 92
   },
+  "kind": "boss",
+  "statTier": "boss",
   "speciesEffects": [
     {
       "kind": "debuff",
@@ -32,6 +34,6 @@
       "th",
       "en"
     ],
-    "note": "**2026-10-21 จอกระเป๋าภาษาอังกฤษยืนยัน Rank Effect แล้ว** \"Target's Lightning RES -11% for 5s upon attacking with Elemental Weakness\" ตรงกับที่เก็บไว้ทุกช่อง ยืนยันครบสองภาษาแล้ว (เดิมอ่านจากจอไทยอย่างเดียว 2026-09-12) | ตัวที่เปิดดูเลเวล 60 สูงสุด และ**หัวพาเนลเขียน \"Prime\" เหมือนมอนเซกเตอร์ 3** — แปลว่า Prime ไม่ใช่ป้ายเฉพาะของเนื้อหาใหม่ มอนเก่าที่เก็บเป็น gold ก็ขึ้นคำนี้ด้วย | บล็อกลิงก์เชนบนจอ (When all Stamina is consumed · Cooldown 300s · Restores 40 Stamina) ตรงกับ data/link-chains/ravenous-spoon.json | ลักษณะสามค่าบนชิป (Support Skill DMG 3 · Elemental Weakness DMG 10 · Crit DMG 15 สองตัวหลังมีดาวทอง) ตรงกับตาราง"
+    "note": "**2026-10-21 จอกระเป๋าภาษาอังกฤษยืนยัน Rank Effect แล้ว** \"Target's Lightning RES -11% for 5s upon attacking with Elemental Weakness\" ตรงกับที่เก็บไว้ทุกช่อง ยืนยันครบสองภาษาแล้ว (เดิมอ่านจากจอไทยอย่างเดียว 2026-09-12) | ตัวที่เปิดดูเลเวล 60 สูงสุด และ**หัวพาเนลเขียน \"Prime\" เหมือนมอนเซกเตอร์ 3** — แปลว่า Prime ไม่ใช่ป้ายเฉพาะของเนื้อหาใหม่ มอนเก่าที่เก็บเป็น gold ก็ขึ้นคำนี้ด้วย | บล็อกลิงก์เชนบนจอ (When all Stamina is consumed · Cooldown 300s · Restores 40 Stamina) ตรงกับ data/link-chains/ravenous-spoon.json | ลักษณะสามค่าบนชิป (Support Skill DMG 3 · Elemental Weakness DMG 10 · Crit DMG 15 สองตัวหลังมีดาวทอง) ตรงกับตาราง | **2026-10-24** kind boss — ผู้เล่นบอก \"พวกที่มี link chain เป็นบอสหมด\" · statTier boss — ผู้เล่นบอก \"บอสจะได้ stat แบบกายหมัดหิน แต่ยกเว้นสกาที่น้อยกว่า\""
   }
 }

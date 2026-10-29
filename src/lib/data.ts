@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { asset } from "./base-path";
-import { artifact, build, food, monsterDexEntry, linkChain, monsterling, character, equipment, equipmentSet, gearMainStat, gearSubstat, traitPool, dropSources } from "./schema/entities";
+import { artifact, build, food, monsterDexEntry, linkChain, monsterling, character, equipment, equipmentSet, gearMainStat, gearSubstat, traitPool, dropSources, monsterStatTiers } from "./schema/entities";
 import type { Artifact, Build, Character, Food, Equipment, EquipmentSet, GearMainStat, GearSubstat, LinkChain, Monsterling, TraitPool, DropSources } from "./schema/entities";
 
 /**
@@ -124,11 +124,26 @@ export const GEAR_SUBSTATS: GearSubstat[] = (
   readJson(join(DATA, "meta", "gear-substats.json")) as unknown[]
 ).map((raw) => gearSubstat.parse(raw));
 
+/** คีย์ค่ารองที่บิ้วใช้อ้างถึง — stat ตรง ๆ หรือ "res-<ธาตุ>" */
+export function substatKeyOf(s: GearSubstat): string {
+  return s.damageType ? `${s.stat}-${s.damageType}` : s.stat;
+}
+
+/** ค่ารองต่ำสุดของชิ้นระดับนี้ — null = ยังไม่มีตารางของระดับนั้น */
+export function minSubstat(key: string, grade: string, stars: number | undefined): GearSubstat & { min: number } | null {
+  const row = GEAR_SUBSTATS.find((s) => substatKeyOf(s) === key && s.grade === grade && s.stars === stars);
+  if (!row) return null;
+  return { ...row, min: Math.min(...row.tiers.map((t) => t.atLevel1)) };
+}
+
 /**
  * คลังลักษณะเฉพาะที่สุ่มใส่มอนตอนจับ — ของกลางไฟล์เดียว ไม่ผูกกับมอนตัวไหน
  * ถ้าวันหนึ่งมันไปโผล่อยู่ในไฟล์มอน แปลว่ามีคนเข้าใจผิดแล้ว
  */
 export const TRAIT_POOL: TraitPool = traitPool.parse(readJson(join(DATA, "meta", "traits.json")));
+
+/** ค่าพลังที่มอนบวกให้ตัวละคร แยกตามแบบ */
+export const MONSTER_STAT_TIERS = monsterStatTiers.parse(readJson(join(DATA, "meta", "monster-stat-tiers.json"))).tiers;
 
 /**
  * ศัตรูที่ดรอปของแต่ไม่มีมอนสเตอร์ลิง — ของดรอปที่เหลือแขวนอยู่กับไฟล์มอนตามเดิม

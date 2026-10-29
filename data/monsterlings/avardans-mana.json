@@ -1,7 +1,15 @@
 {
   "id": "avardans-mana",
-  "name": { "th": "มานาของอวาดัน", "en": "Avardan's Mana" },
-  "dex": { "book": "field", "no": 95 },
+  "name": {
+    "th": "มานาของอวาดัน",
+    "en": "Avardan's Mana"
+  },
+  "dex": {
+    "book": "field",
+    "no": 95
+  },
+  "kind": "boss",
+  "statTier": "boss",
   "speciesEffects": [
     {
       "kind": "heal",
@@ -11,16 +19,24 @@
       "target": "team",
       "trigger": "onHit",
       "internalCooldownSec": 10,
-      "condition": { "vsBoss": true, "enemyState": "staggered" }
+      "condition": {
+        "vsBoss": true,
+        "enemyState": "staggered"
+      }
     }
   ],
   "effectsRank": "gold",
-  "images": { "icon": "avardans-mana-icon.webp" },
+  "images": {
+    "icon": "avardans-mana-icon.webp"
+  },
   "source": {
     "verifiedAt": "2026-09-14",
     "gameVersion": "unknown",
     "by": "in-game",
-    "readIn": ["th", "en"],
-    "note": "ฟื้นฟูตัวแรกที่ฮีลให้ทั้งทีม อีกสามตัว (ช้อปปี้มัม 3 / โกลิค 69 / ลิฟฟี่มัม 4) ฮีลเฉพาะตัวเอง | เงื่อนไขบอส+มึนงงเหมือนมิโนต้าทุ่งหญ้า (91) กับหุ่นฟางดำ (121) แต่สองตัวนั้นให้ดาเมจ ตัวนี้ให้ฮีล"
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "ฟื้นฟูตัวแรกที่ฮีลให้ทั้งทีม อีกสามตัว (ช้อปปี้มัม 3 / โกลิค 69 / ลิฟฟี่มัม 4) ฮีลเฉพาะตัวเอง | เงื่อนไขบอส+มึนงงเหมือนมิโนต้าทุ่งหญ้า (91) กับหุ่นฟางดำ (121) แต่สองตัวนั้นให้ดาเมจ ตัวนี้ให้ฮีล | **2026-10-24** kind boss — ผู้เล่นบอก \"พวกที่มี link chain เป็นบอสหมด\" · statTier boss — ผู้เล่นบอก \"บอสจะได้ stat แบบกายหมัดหิน แต่ยกเว้นสกาที่น้อยกว่า\""
   }
 }

@@ -8,6 +8,8 @@
     "book": "field",
     "no": 136
   },
+  "kind": "normal",
+  "statTier": "normal",
   "speciesEffects": [
     {
       "kind": "buff",
@@ -35,6 +37,6 @@
       "th",
       "en"
     ],
-    "note": "จอทั้งสองภาษา 2026-09-19 วางชนิดศัตรูไว้ในท่อนกระตุ้น (\"upon attacking Lightning enemy N times\" / \"เมื่อโจมตีมอนสเตอร์ธาตุ... N ครั้ง\") เคยเก็บเป็น enemyType ย้ายเป็น triggerEnemyType แล้ว | จอทั้งสองภาษายืนยันว่า**ไม่มีระยะเวลา** (en \"Lightning DMG +6.25% upon attacking Lightning enemy 10 times\") ที่ช่อง durationSec ว่างจึงถูกอยู่แล้ว ไม่ใช่กรณีจอไทยตกฟิลด์ตาม §13.9.1"
+    "note": "จอทั้งสองภาษา 2026-09-19 วางชนิดศัตรูไว้ในท่อนกระตุ้น (\"upon attacking Lightning enemy N times\" / \"เมื่อโจมตีมอนสเตอร์ธาตุ... N ครั้ง\") เคยเก็บเป็น enemyType ย้ายเป็น triggerEnemyType แล้ว | จอทั้งสองภาษายืนยันว่า**ไม่มีระยะเวลา** (en \"Lightning DMG +6.25% upon attacking Lightning enemy 10 times\") ที่ช่อง durationSec ว่างจึงถูกอยู่แล้ว ไม่ใช่กรณีจอไทยตกฟิลด์ตาม §13.9.1 | **2026-10-24** kind normal · statTier normal — อนุมานจากกติกาที่ผู้เล่นบอก: เกมแบ่งแค่บอสกับทั่วไป และมอนที่มีลิงก์เชนเป็นบอสหมด ตัวนี้ไม่มีลิงก์เชน → จัดเป็นทั่วไป ถ้าเจอว่าเป็นบอสให้แก้"
   }
 }

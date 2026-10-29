@@ -8,6 +8,8 @@
     "book": "field",
     "no": 80
   },
+  "kind": "boss",
+  "statTier": "boss",
   "speciesEffects": [
     {
       "kind": "buff",
@@ -29,6 +31,7 @@
   "source": {
     "verifiedAt": "2026-09-13",
     "gameVersion": "unknown",
-    "by": "in-game"
+    "by": "in-game",
+    "note": "**2026-10-24** kind boss — ผู้เล่นบอก \"พวกที่มี link chain เป็นบอสหมด\" · statTier boss — ผู้เล่นบอก \"บอสจะได้ stat แบบกายหมัดหิน แต่ยกเว้นสกาที่น้อยกว่า\""
   }
 }

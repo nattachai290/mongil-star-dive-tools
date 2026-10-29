@@ -335,6 +335,16 @@ export const monsterling = z.object({
    * ไม่ใส่ = ยังไม่รู้แรง ไม่ใช่ "แรงต่ำ" — เว็บแสดงเฉพาะค่าจากตัวสีทอง
    */
   effectsRank: vocabEnum("monsterRank").optional(),
+  /**
+   * ชนิดมอนตามที่เกมแบ่ง — เกมบอกแค่ บอส / ทั่วไป (ผู้เล่นบอก 2026-10-24)
+   * มอนที่มีลิงก์เชนเป็นบอสทุกตัว (validate:data ตรวจ) · ไม่มีลิงก์เชนไม่ได้แปลว่าเป็นมอนทั่วไป ต้องมีคนบอก
+   */
+  kind: vocabEnum("monsterKind").optional(),
+  /**
+   * แบบค่าพลังที่มอนบวกให้ตัวละครตอนใส่ (ATK / DEF / HP) — id ใน meta/monster-stat-tiers.json
+   * ไม่ใส่ = ยังไม่รู้ว่าอยู่แบบไหน
+   */
+  statTier: slug.optional(),
   obtain: z.object({ method: vocabEnum("obtainMethod"), note: text.optional() }).optional(),
   /**
    * ของที่มอนตัวนี้ดรอป — เก็บแค่ชื่อ
@@ -406,6 +416,24 @@ export const traitPool = z.object({
 });
 export type TraitPool = z.infer<typeof traitPool>;
 
+/** ค่าพลังของมอนแยกตามแบบ — มอนแบบเดียวกันได้ค่าเท่ากันหมด (ผู้เล่นสังเกต 2026-10-24) */
+export const monsterStatTiers = z.object({
+  tiers: z
+    .array(
+      z.object({
+        id: slug,
+        name: text,
+        atLevel: z.number().int().positive(),
+        atk: z.number().nonnegative(),
+        def: z.number().nonnegative(),
+        hp: z.number().nonnegative(),
+      }).strict(),
+    )
+    .min(1),
+  source,
+});
+export type MonsterStatTiers = z.infer<typeof monsterStatTiers>;
+
 /**
  * ศัตรูที่ดรอปของแต่ "ไม่มีมอนสเตอร์ลิง" — จับไม่ได้ จึงไม่มีหน้าในสมุดภาพ
  *
@@ -454,11 +482,32 @@ export const food = z.object({
  * เพราะแต่ละขั้นอาจใช้ของคนละชุดได้ (ผู้เล่นกำหนด 2026-10-24)
  *
  * จำนวนช่องตามเกม: มอน 3 · ลิงก์เชน 1 · มอนตำนาน 1 (แยกจากมอน 3 ตัว) · อาหาร จานหลัก + จานรอง
- * ทีมมี 3 ตัว → เพื่อนร่วมทีมใส่ได้ 2 ตัว เก็บเฉพาะมอนที่เพื่อนใส่ · ไม่มีช่องหมายเหตุ (ผู้เล่นกำหนด 2026-10-24)
+ * ทีมมี 3 ตัว ทุกตัวมีของครบ · ไม่มีช่องหมายเหตุ (ผู้เล่นกำหนด 2026-10-24)
  */
-export const buildLoadout = z.object({
-  awaken: z.number().int().min(0).max(6),
-  artifact: slug.optional(),
+/** มอน 1 ช่องในบิ้ว — ลักษณะเฉพาะ + แรง เช่น ดาเมจคริติคอล ทอง = +15% (ค่าอ่านจาก meta/traits.json) */
+const monSlot = z
+  .object({
+    id: slug,
+    traits: z
+      .array(z.object({ id: slug, grade: vocabEnum("monsterRank") }).strict())
+      .max(4)
+      // Trait เดียวกันขึ้นซ้ำในมอนตัวเดียวไม่ได้ (ผู้เล่นบอก 2026-10-29)
+      .refine((ts) => new Set(ts.map((t) => t.id)).size === ts.length, { message: "Trait ซ้ำในมอนตัวเดียวกันไม่ได้" })
+      .default([]),
+  })
+  .strict();
+
+/** ชนิดค่ารองของอุปกรณ์ — stat ใน gear-substats.json หรือ "res-<ธาตุ>" สำหรับต้านทาน */
+const substatKey = z.string().regex(/^[a-zA-Z]+(-[a-z]+)?$/);
+
+/** ของที่ตัวละคร 1 ตัวในทีมใส่ */
+export const buildMember = z.object({
+  characterId: slug,
+  /**
+   * อาร์ติแฟกต์ 1–4 ชิ้น — ชิ้นแรกคือตัวหลัก ที่เหลือเป็นตัวสำรองเรียงตามลำดับ
+   * เผื่อผู้เล่นไม่มีชิ้นหลัก (ผู้เล่นกำหนด 2026-10-24) · ตัวละครใส่ได้จริงทีละ 1 ชิ้น
+   */
+  artifacts: z.array(slug).min(1).max(4).optional(),
   /** ระบุทีละช่อง — โบนัสเซ็ตคิดจากชิ้นที่ใส่ ไม่เก็บซ้ำ */
   equipment: z
     .object({
@@ -469,30 +518,50 @@ export const buildLoadout = z.object({
     })
     .strict()
     .default({}),
-  monsterlings: z.array(slug).max(3).default([]),
-  linkChain: slug.optional(),
-  /** มอนจากสมุดภาพ "มอนสเตอร์ตำนาน" — ช่องของตัวเอง ไม่นับรวมกับมอน 3 ตัว */
-  legendary: slug.optional(),
-  food: z.object({ entree: slug.optional(), side: slug.optional() }).strict().default({}),
   /**
-   * เพื่อน 2 ตัวพร้อมมอนที่เพื่อนใส่ — มอนตัวเดียวกันบนสองคนในทีม บัฟไม่ทับซ้อนกัน
-   * จึงต้องรู้ว่าเพื่อนใส่ตัวไหน (ผู้เล่นบอก 2026-10-24) · validate:data เตือนเมื่อซ้ำ
+   * ค่ารองของแต่ละชิ้น — ชิ้นละ 4 อัน (รวมค่าหลักเป็น 5 · ผู้เล่นบอก 2026-10-24)
+   * เก็บแค่ชนิด เช่น "critDmg" หรือ "res-fire" · ค่าใช้ค่าต่ำสุดจาก meta/gear-substats.json ตามระดับของชิ้น
+   * (ผู้เล่นสั่ง "ให้เอา stat ต่ำสุด")
    */
-  teammates: z
-    .array(
-      z.object({ characterId: slug, monsterlings: z.array(slug).max(3).default([]) }).strict(),
-    )
-    .max(2)
-    .default([]),
+  substats: z
+    .object({
+      headgear: z.array(substatKey).max(4).optional(),
+      chestpiece: z.array(substatKey).max(4).optional(),
+      gloves: z.array(substatKey).max(4).optional(),
+      footwear: z.array(substatKey).max(4).optional(),
+    })
+    .strict()
+    .default({}),
+  /** มอน 3 ตัว พร้อม Trait ตัวละ 4 ช่อง (meta/traits.json) */
+  monsterlings: z.array(monSlot).max(3).default([]),
+  linkChain: slug.optional(),
+  /** มอนจากสมุดภาพ "มอนสเตอร์ตำนาน" — ช่องของตัวเอง ไม่นับรวมกับมอน 3 ตัว · มี Trait 4 ช่องเหมือนกัน */
+  legendary: monSlot.optional(),
+  /**
+   * ท่าที่ตัวนี้ใช้ใน 1 รอบ — บางตัวสลับเข้ามากดสกิลแล้วออกเลย ไม่ตีปกติ (ผู้เล่นบอก 2026-10-24)
+   * ไม่ใส่ = ใช้ครบทั้ง 4 ท่า
+   */
+  cycle: z.array(z.enum(["basic", "switch", "special", "ultimate"])).min(1).optional(),
 }).strict();
 
 /**
- * บิ้วของตัวละคร 1 ตัว — ไม่มีชื่อบิ้ว ประเภทเนื้อหา หรือแหล่งที่มา (ผู้เล่นกำหนด 2026-10-24)
+ * แท็บ 1 ขั้นปลุกพลัง — ทั้งทีมอยู่ขั้นเดียวกัน แต่ละขั้นใช้ของคนละชุดได้
+ * อาหาร 2 จาน (จานหลัก + จานรอง) ใช้ร่วมทั้งทีม (ผู้เล่นเลือก 2026-10-24)
+ */
+export const buildLoadout = z.object({
+  awaken: z.number().int().min(0).max(6),
+  food: z.object({ entree: slug.optional(), side: slug.optional() }).strict().default({}),
+  /** ตัวแรกคือตัวหลักของบิ้ว · สองร่างของตัวละครเดียวกันอยู่ทีมเดียวกันได้ เพราะเกมนับเป็นคนละตัว */
+  members: z.array(buildMember).min(1).max(3),
+}).strict();
+
+/**
+ * บิ้วทีม 3 ตัว — ทุกตัวมีของครบ เพื่อคิดดาเมจรวมทั้งทีม (ผู้เล่นกำหนด 2026-10-24
+ * "เวลาบิ้วต้องดูผลรวมดาเมจของทีมไม่ใช่แค่ตัวเดียว") · ไม่มีชื่อบิ้ว ประเภทเนื้อหา หรือแหล่งที่มา
  * แท็บละ 1 ขั้นปลุกพลัง ขั้นเดียวกันห้ามซ้ำ (validate:data ตรวจ)
  */
 export const build = z.object({
   id: slug,
-  characterId: slug,
   loadouts: z.array(buildLoadout).min(1),
 }).strict();
 
@@ -637,6 +706,7 @@ export type Collection = keyof typeof SCHEMAS;
 export type Character = z.infer<typeof character>;
 export type Build = z.infer<typeof build>;
 export type BuildLoadout = z.infer<typeof buildLoadout>;
+export type BuildMember = z.infer<typeof buildMember>;
 export type LinkChain = z.infer<typeof linkChain>;
 export type Monsterling = z.infer<typeof monsterling>;
 export type Skill = z.infer<typeof skill>;

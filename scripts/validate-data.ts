@@ -12,7 +12,7 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { z } from "zod";
-import { SCHEMAS, equipmentSet, gearMainStat, gearSubstat, monsterDexEntry, traitPool, dropSources, type Collection } from "../src/lib/schema/entities";
+import { SCHEMAS, equipmentSet, gearMainStat, gearSubstat, monsterDexEntry, traitPool, dropSources, monsterStatTiers, type Collection } from "../src/lib/schema/entities";
 import { FORMULA, IMPLEMENTED_STEPS } from "../src/lib/formula";
 
 const ROOT = process.cwd();
@@ -123,6 +123,17 @@ if (Array.isArray(mainStatsRaw)) {
 // ---------- คลังลักษณะเฉพาะ ----------
 const traitsRaw = readJson(join(DATA, "meta", "traits.json"), "data/meta/traits.json");
 const traitsParsed = traitPool.safeParse(traitsRaw);
+/** id ของ Trait ทั้งคลัง — บิ้วอ้างถึงตอนระบุ Trait ของมอน */
+const traitIds = new Set<string>(traitsParsed.success ? traitsParsed.data.pool.map((t) => t.id) : []);
+/** Trait ที่ผูกธาตุ (ดาเมจธาตุ / ต้านทานธาตุ) */
+const elementTraits = new Set<string>(
+  traitsParsed.success ? traitsParsed.data.pool.filter((t) => t.damageType).map((t) => t.id) : [],
+);
+/**
+ * มอนตำนานมีตัวเดียวทั้งไอดี (ผู้เล่นบอก 2026-10-29) — ทุกบิ้วใช้ตัวเดียวกัน Trait จึงต้องเหมือนกันทุกบิ้ว
+ * และไม่ควรเป็น Trait ผูกธาตุ เพราะทีมธาตุอื่นที่ยืมไปใช้จะไม่ได้ผล
+ */
+const legendaryTraits = new Map<string, { where: string; sig: string }>();
 if (!traitsParsed.success) {
   for (const issue of traitsParsed.error.issues)
     fail("data/meta/traits.json", `${issue.path.join(".") || "(root)"}: ${issue.message}`);
@@ -147,6 +158,20 @@ if (!traitsParsed.success) {
           `${tr.id}: ค่าไม่ได้ไต่ขึ้นตามแรง (${RANK_ORDER[i - 1]} ${seq[i - 1]} -> ${RANK_ORDER[i]} ${seq[i]})`,
         );
     }
+  }
+}
+
+// ---------- ค่าพลังมอนแยกตามแบบ ----------
+const statTierRaw = readJson(join(DATA, "meta", "monster-stat-tiers.json"), "data/meta/monster-stat-tiers.json");
+const statTierParsed = monsterStatTiers.safeParse(statTierRaw);
+const statTierIds = new Set<string>();
+if (!statTierParsed.success) {
+  for (const issue of statTierParsed.error.issues)
+    fail("data/meta/monster-stat-tiers.json", `${issue.path.join(".") || "(root)"}: ${issue.message}`);
+} else {
+  for (const t of statTierParsed.data.tiers) {
+    if (statTierIds.has(t.id)) fail("data/meta/monster-stat-tiers.json", `id ซ้ำ: ${t.id}`);
+    statTierIds.add(t.id);
   }
 }
 
@@ -364,6 +389,14 @@ for (const [id, doc] of Object.entries(parsed.characters ?? {})) {
 }
 
 for (const [id, doc] of Object.entries(parsed.monsterlings ?? {})) {
+  // มอนที่มีลิงก์เชนเป็นบอสทุกตัว (ผู้เล่นบอก 2026-10-24)
+  const hasChain = Object.values(parsed["link-chains"] ?? {}).some((c) => c.monsterlingId === id);
+  if (hasChain && doc.kind !== "boss") {
+    fail(`data/monsterlings/${id}.json`, `มีลิงก์เชน จึงต้องเป็น kind: "boss" (ได้ ${String(doc.kind)})`);
+  }
+  if (typeof doc.statTier === "string" && !statTierIds.has(doc.statTier)) {
+    fail(`data/monsterlings/${id}.json`, `statTier "${doc.statTier}" ไม่มีใน meta/monster-stat-tiers.json`);
+  }
   const where = `data/monsterlings/${id}.json`;
   // ตัวเลขเอฟเฟกต์สายพันธุ์ขึ้นกับแรงของมอนแต่ละตัว เว็บจะโชว์เฉพาะค่าจากตัวสีทอง
   const grade = doc.effectsRank as string | undefined;
@@ -425,54 +458,34 @@ for (const [id, doc] of Object.entries(parsed.equipment ?? {})) {
   checkRefs(`data/equipment/${id}.json`, doc.setId, "sets", "setId");
 }
 
-type LoadoutShape = {
-  awaken: number;
-  artifact?: string;
+type MonShape = { id: string; traits?: { id: string; grade: string }[] };
+type MemberShape = {
+  characterId: string;
+  artifacts?: string[];
   equipment?: Record<string, string | undefined>;
-  monsterlings?: string[];
+  substats?: Record<string, string[] | undefined>;
+  monsterlings?: MonShape[];
   linkChain?: string;
-  legendary?: string;
-  food?: { entree?: string; side?: string };
-  teammates?: { characterId: string; monsterlings?: string[] }[];
+  legendary?: MonShape;
 };
+type LoadoutShape = { awaken: number; food?: { entree?: string; side?: string }; members?: MemberShape[] };
+
+/** แถวตารางค่ารอง → คีย์ที่บิ้วใช้ ("critDmg", "res-fire") */
+const substatRows = (
+  (readJson(join(DATA, "meta", "gear-substats.json"), "data/meta/gear-substats.json") as
+    | { stat: string; damageType?: string; grade: string; stars: number }[]
+    | undefined) ?? []
+).map((r) => ({ key: r.damageType ? `${r.stat}-${r.damageType}` : r.stat, grade: r.grade, stars: r.stars }));
+
+const bookOf = (m: string) => (parsed.monsterlings?.[m]?.dex as { book?: string } | undefined)?.book;
 
 for (const [id, doc] of Object.entries(parsed.builds ?? {})) {
   const where = `data/builds/${id}.json`;
-  const charId = doc.characterId as string;
-  checkRefs(where, charId, "characters", "characterId");
-  const char = parsed.characters?.[charId];
   const seenAwaken = new Set<number>();
   for (const [i, lo] of ((doc.loadouts as LoadoutShape[] | undefined) ?? []).entries()) {
     const at = `loadouts[${i}]`;
     if (seenAwaken.has(lo.awaken)) fail(where, `${at}.awaken = ${lo.awaken} ซ้ำกับแท็บอื่น`);
     seenAwaken.add(lo.awaken);
-
-    checkRefs(where, lo.artifact, "artifacts", `${at}.artifact`);
-    const art = lo.artifact ? parsed.artifacts?.[lo.artifact] : undefined;
-    if (art && char && art.role !== char.role) {
-      fail(where, `${at}.artifact "${lo.artifact}" ใส่ได้เฉพาะ ${art.role} แต่ตัวละครเป็น ${char.role}`);
-    }
-
-    for (const [slot, piece] of Object.entries(lo.equipment ?? {})) {
-      if (!piece) continue;
-      checkRefs(where, piece, "equipment", `${at}.equipment.${slot}`);
-      const eq = parsed.equipment?.[piece];
-      if (eq && eq.slot !== slot) fail(where, `${at}.equipment.${slot} = "${piece}" แต่ชิ้นนั้นเป็นช่อง ${eq.slot}`);
-    }
-
-    const mons = lo.monsterlings ?? [];
-    checkRefs(where, mons, "monsterlings", `${at}.monsterlings`);
-    if (new Set(mons).size !== mons.length) fail(where, `${at}.monsterlings มีตัวซ้ำ`);
-    for (const m of mons) {
-      const book = (parsed.monsterlings?.[m]?.dex as { book?: string } | undefined)?.book;
-      if (book === "legendary") fail(where, `${at}.monsterlings มี "${m}" ซึ่งเป็นมอนตำนาน — ต้องใส่ช่อง legendary`);
-    }
-    checkRefs(where, lo.legendary, "monsterlings", `${at}.legendary`);
-    if (lo.legendary) {
-      const book = (parsed.monsterlings?.[lo.legendary]?.dex as { book?: string } | undefined)?.book;
-      if (book && book !== "legendary") fail(where, `${at}.legendary "${lo.legendary}" ไม่ใช่มอนตำนาน`);
-    }
-    checkRefs(where, lo.linkChain, "link-chains", `${at}.linkChain`);
 
     for (const cat of ["entree", "side"] as const) {
       const dish = lo.food?.[cat];
@@ -482,24 +495,83 @@ for (const [id, doc] of Object.entries(parsed.builds ?? {})) {
       if (f && f.category !== cat) fail(where, `${at}.food.${cat} = "${dish}" แต่จานนั้นเป็น ${f.category}`);
     }
 
-    const mates = lo.teammates ?? [];
-    const mateIds = mates.map((m) => m.characterId);
-    checkRefs(where, mateIds, "characters", `${at}.teammates`);
-    if (mateIds.includes(charId)) fail(where, `${at}.teammates มีตัวละครของบิ้วเอง`);
-    if (new Set(mateIds).size !== mateIds.length) fail(where, `${at}.teammates มีตัวซ้ำ`);
+    const members = lo.members ?? [];
+    const ids = members.map((m) => m.characterId);
+    if (new Set(ids).size !== ids.length) fail(where, `${at}.members มีตัวละครซ้ำ`);
 
     // มอนตัวเดียวกันบนสองคนในทีม บัฟไม่ทับซ้อน — ไม่ผิดกติกาเกม จึงแค่เตือน
-    const owner = new Map<string, string>(mons.map((m) => [m, charId]));
-    for (const [j, mate] of mates.entries()) {
-      const mm = mate.monsterlings ?? [];
-      checkRefs(where, mm, "monsterlings", `${at}.teammates[${j}].monsterlings`);
-      if (new Set(mm).size !== mm.length) fail(where, `${at}.teammates[${j}].monsterlings มีตัวซ้ำ`);
-      for (const m of mm) {
-        const book = (parsed.monsterlings?.[m]?.dex as { book?: string } | undefined)?.book;
-        if (book === "legendary") fail(where, `${at}.teammates[${j}].monsterlings มี "${m}" ซึ่งเป็นมอนตำนาน`);
+    const owner = new Map<string, string>();
+    for (const [j, mem] of members.entries()) {
+      const mt = `${at}.members[${j}]`;
+      checkRefs(where, mem.characterId, "characters", `${mt}.characterId`);
+      const char = parsed.characters?.[mem.characterId];
+
+      const arts = mem.artifacts ?? [];
+      checkRefs(where, arts, "artifacts", `${mt}.artifacts`);
+      if (new Set(arts).size !== arts.length) fail(where, `${mt}.artifacts มีชิ้นซ้ำ`);
+      for (const a of arts) {
+        const art = parsed.artifacts?.[a];
+        if (art && char && art.role !== char.role) {
+          fail(where, `${mt}.artifacts "${a}" ใส่ได้เฉพาะ ${art.role} แต่ ${mem.characterId} เป็น ${char.role}`);
+        }
+      }
+
+      for (const [slot, piece] of Object.entries(mem.equipment ?? {})) {
+        if (!piece) continue;
+        checkRefs(where, piece, "equipment", `${mt}.equipment.${slot}`);
+        const eq = parsed.equipment?.[piece];
+        if (eq && eq.slot !== slot) fail(where, `${mt}.equipment.${slot} = "${piece}" แต่ชิ้นนั้นเป็นช่อง ${eq.slot}`);
+      }
+
+      for (const [slot, keys] of Object.entries(mem.substats ?? {})) {
+        if (!keys?.length) continue;
+        const piece = mem.equipment?.[slot] ? parsed.equipment?.[mem.equipment[slot]!] : undefined;
+        if (!piece) {
+          fail(where, `${mt}.substats.${slot} มีค่ารอง แต่ช่อง ${slot} ยังไม่ได้ใส่อุปกรณ์`);
+          continue;
+        }
+        for (const key of keys) {
+          const known = substatRows.some(
+            (r) => r.key === key && r.grade === piece.grade && r.stars === piece.stars,
+          );
+          if (!known) fail(where, `${mt}.substats.${slot} มี "${key}" ซึ่งไม่มีในตารางค่ารองของ ${String(piece.grade)} ${String(piece.stars)} ดาว`);
+        }
+      }
+
+      const monSlots = mem.monsterlings ?? [];
+      const mons = monSlots.map((m) => m.id);
+      checkRefs(where, mons, "monsterlings", `${mt}.monsterlings`);
+      if (new Set(mons).size !== mons.length) fail(where, `${mt}.monsterlings มีตัวซ้ำ`);
+      for (const m of mons) {
+        if (bookOf(m) === "legendary") fail(where, `${mt}.monsterlings มี "${m}" ซึ่งเป็นมอนตำนาน — ต้องใส่ช่อง legendary`);
+      }
+      const legId = mem.legendary?.id;
+      checkRefs(where, legId, "monsterlings", `${mt}.legendary`);
+      if (legId && bookOf(legId) && bookOf(legId) !== "legendary") fail(where, `${mt}.legendary "${legId}" ไม่ใช่มอนตำนาน`);
+
+      for (const [label, m] of [
+        ...monSlots.map((m, k) => [`monsterlings[${k}]`, m] as const),
+        ...(mem.legendary ? [["legendary", mem.legendary] as const] : []),
+      ]) {
+        for (const tr of m.traits ?? []) {
+          if (!traitIds.has(tr.id)) fail(where, `${mt}.${label}.traits มี "${tr.id}" ซึ่งไม่อยู่ใน meta/traits.json`);
+        }
+      }
+      if (mem.legendary) {
+        const el = (mem.legendary.traits ?? []).filter((tr) => elementTraits.has(tr.id)).map((tr) => tr.id);
+        if (el.length) warn(where, `${mt}.legendary มี Trait ผูกธาตุ (${el.join(", ")}) — มอนตำนานมีตัวเดียวทั้งไอดี ทีมธาตุอื่นใช้ไม่ได้ผล`);
+        const sig = (mem.legendary.traits ?? []).map((tr) => `${tr.id}:${tr.grade}`).sort().join(",");
+        const seen = legendaryTraits.get(mem.legendary.id);
+        if (seen && seen.sig !== sig) {
+          fail(where, `${mt}.legendary "${mem.legendary.id}" Trait ไม่ตรงกับที่ ${seen.where} — มอนตำนานมีตัวเดียวทั้งไอดี`);
+        } else if (!seen) legendaryTraits.set(mem.legendary.id, { where: `${where} ${mt}`, sig });
+      }
+      checkRefs(where, mem.linkChain, "link-chains", `${mt}.linkChain`);
+
+      for (const m of [...mons, ...(legId ? [legId] : [])]) {
         const prev = owner.get(m);
-        if (prev) warn(where, `${at}: มอน "${m}" อยู่ทั้ง ${prev} และ ${mate.characterId} — บัฟไม่ทับซ้อนกัน`);
-        else owner.set(m, mate.characterId);
+        if (prev) warn(where, `${at}: มอน "${m}" อยู่ทั้ง ${prev} และ ${mem.characterId} — บัฟไม่ทับซ้อนกัน`);
+        else owner.set(m, mem.characterId);
       }
     }
   }
@@ -529,11 +601,6 @@ for (const step of FORMULA.pipeline) {
     fail("data/meta/formula.json", `pipeline มีขั้น "${step}" ที่ src/lib/formula.ts ยังไม่ได้ทำ`);
   }
 }
-const missing = Object.entries(FORMULA.constants).filter(([, v]) => v === null).map(([k]) => k);
-if (missing.length) {
-  warn("data/meta/formula.json", `ค่าคงที่ที่ยังไม่ยืนยัน: ${missing.join(", ")} — เครื่องคำนวณจะข้ามขั้นที่ต้องใช้ค่าเหล่านี้`);
-}
-
 // ---------- สรุป ----------
 if (warnings.length) {
   console.warn(`คำเตือน ${warnings.length} รายการ:`);

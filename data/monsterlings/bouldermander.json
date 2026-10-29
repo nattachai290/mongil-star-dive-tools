@@ -1,27 +1,44 @@
 {
   "id": "bouldermander",
-  "name": { "th": "แอกโซลอเติลกระดองหินยักษ์", "en": "Bouldermander" },
-  "dex": { "book": "field", "no": 47 },
+  "name": {
+    "th": "แอกโซลอเติลกระดองหินยักษ์",
+    "en": "Bouldermander"
+  },
+  "dex": {
+    "book": "field",
+    "no": 47
+  },
+  "kind": "normal",
+  "statTier": "normal",
   "speciesEffects": [
     {
       "kind": "buff",
       "stat": "dmgDealt",
-      "scopes": ["specialSkill"],
+      "scopes": [
+        "specialSkill"
+      ],
       "value": 6.25,
       "unit": "percent",
       "target": "self",
       "trigger": "onTakeHit",
       "durationSec": 5,
-      "condition": { "hitCount": 10 }
+      "condition": {
+        "hitCount": 10
+      }
     }
   ],
   "effectsRank": "gold",
-  "images": { "icon": "bouldermander-icon.webp" },
+  "images": {
+    "icon": "bouldermander-icon.webp"
+  },
   "source": {
     "verifiedAt": "2026-09-14",
     "gameVersion": "unknown",
     "by": "in-game",
-    "readIn": ["th", "en"],
-    "note": "โครงเดียวกับแอกโซลอเติลไวกิ้ง (field 48) แต่ได้ 6.25% ส่วนตัวนั้นได้ 6.57%"
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "โครงเดียวกับแอกโซลอเติลไวกิ้ง (field 48) แต่ได้ 6.25% ส่วนตัวนั้นได้ 6.57% | **2026-10-24** kind normal · statTier normal — อนุมานจากกติกาที่ผู้เล่นบอก: เกมแบ่งแค่บอสกับทั่วไป และมอนที่มีลิงก์เชนเป็นบอสหมด ตัวนี้ไม่มีลิงก์เชน → จัดเป็นทั่วไป ถ้าเจอว่าเป็นบอสให้แก้"
   }
 }

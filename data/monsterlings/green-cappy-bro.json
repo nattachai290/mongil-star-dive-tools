@@ -8,12 +8,16 @@
     "book": "field",
     "no": 24
   },
+  "kind": "boss",
+  "statTier": "boss",
   "speciesEffects": [
     {
       "kind": "buff",
       "stat": "dmgDealt",
       "damageType": "fire",
-      "scopes": ["specialSkill"],
+      "scopes": [
+        "specialSkill"
+      ],
       "value": 8.4,
       "unit": "percent",
       "target": "self",
@@ -29,6 +33,6 @@
     "verifiedAt": "2026-09-14",
     "gameVersion": "unknown",
     "by": "in-game",
-    "note": "โครงเดียวกับช้อปปู้อังเคิล (field 23) แต่ได้ 8.4% ส่วนตัวนั้นได้ 8%"
+    "note": "โครงเดียวกับช้อปปู้อังเคิล (field 23) แต่ได้ 8.4% ส่วนตัวนั้นได้ 8% | **2026-10-24** kind boss — ผู้เล่นบอก \"พวกที่มี link chain เป็นบอสหมด\" · statTier boss — ผู้เล่นบอก \"บอสจะได้ stat แบบกายหมัดหิน แต่ยกเว้นสกาที่น้อยกว่า\""
   }
 }

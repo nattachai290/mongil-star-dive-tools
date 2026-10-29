@@ -8,11 +8,15 @@
     "book": "field",
     "no": 105
   },
+  "kind": "boss",
+  "statTier": "boss",
   "speciesEffects": [
     {
       "kind": "buff",
       "stat": "atk",
-      "scopes": ["switchSkill"],
+      "scopes": [
+        "switchSkill"
+      ],
       "value": 5.78,
       "unit": "percent",
       "target": "self",
@@ -26,6 +30,7 @@
   "source": {
     "verifiedAt": "2026-09-12",
     "gameVersion": "unknown",
-    "by": "in-game"
+    "by": "in-game",
+    "note": "**2026-10-24** kind boss — ผู้เล่นบอก \"พวกที่มี link chain เป็นบอสหมด\" · statTier boss — ผู้เล่นบอก \"บอสจะได้ stat แบบกายหมัดหิน แต่ยกเว้นสกาที่น้อยกว่า\""
   }
 }
