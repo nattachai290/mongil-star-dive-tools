@@ -168,6 +168,7 @@ console.log("\nดาเมจรวมทั้งทีม");
     Math.abs(teamDamage(withWeakTrait).total - teamDamage(plain).total) < 1e-6);
   check("Trait ดาเมจจุดอ่อนเพิ่มดาเมจเมื่อตีจุดอ่อน",
     teamDamage(withWeakTrait, { weakness: true }).total > teamDamage(plain, { weakness: true }).total);
+  check("ลดคูลดาวน์ 60% แล้วกาบิ (11.5 → 4.6 วิ) ใช้ซ้ำทันใน 5.8 วิ", canRecastSpecial(characterById("gabi")!, 5.8, 60) === true);
   check("คูลดาวน์ 8 วิ ใช้ซ้ำภายใน 5.8 วิไม่ได้", canRecastSpecial(characterById("chloe")!, 5.8) === false);
 }
 

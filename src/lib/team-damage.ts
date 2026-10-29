@@ -54,7 +54,7 @@ export const TEAM_ASSUMPTIONS = [
   "ค่าพลังของมอน (ATK/DEF/HP) ตามชนิด บอส / ทั่วไป / ตำนาน · มอนทั่วไปบางตัวอนุมานจากการไม่มีลิงก์เชน",
   "ความชำนาญบทบาทคิดเป็นดาเมจเฉพาะบรอว์เลอร์ (ดาเมจปะทะ) — บทบาทอื่นสูตรยังไม่มี",
   "ยังไม่นับดาเมจต่อเนื่อง ดาเมจลิงก์เชน และสกิลสนับสนุน",
-  "ลดคูลดาวน์สกิลพิเศษ: กดทุกครั้งที่คูลดาวน์หมด ดาเมจสกิลพิเศษ × (คูลดาวน์ตามจอ ÷ หลังลด) · หลายแหล่งบวกกัน · ไม่หักเวลาตีพื้นฐาน",
+  "ลดคูลดาวน์สกิลพิเศษ: กดทุกครั้งที่คูลดาวน์หมด ดาเมจสกิลพิเศษ × (คูลดาวน์ตามจอ ÷ หลังลด) · หลายแหล่งบวกกัน (ผู้เล่นยืนยัน 2026-10-29) · ไม่หักเวลาตีพื้นฐาน",
 ];
 
 /** เอฟเฟกต์พร้อมที่มา — gear = ค่าพลังของของที่ใส่ (ไม่ใช่บัฟ) */
@@ -117,13 +117,14 @@ function monsterEffects(slot: BuildMember["monsterlings"][number]): Tagged[] {
  * - มีบรรทัด "คูลดาวน์" → ได้ถ้าไม่เกิน sec
  * - ไม่มีข้อมูลคูลดาวน์ → undefined (ไม่รู้ จึงไม่ตัดบัฟ)
  */
-export function canRecastSpecial(char: Character, sec: number): boolean | undefined {
+export function canRecastSpecial(char: Character, sec: number, cdCutPercent = 0): boolean | undefined {
   const rows = (char.skills?.special?.values ?? []).filter((v) => v.unit === "seconds");
   if (rows.some((v) => /Cooldown (Increase|Boost)/i.test(v.label.en ?? ""))) return true;
   const cd = rows.find((v) => /^Cooldown$/i.test(v.label.en ?? ""));
   const values = (cd?.scaling ?? []).filter((x): x is number => typeof x === "number");
   if (values.length === 0) return undefined;
-  return Math.min(...values) <= sec;
+  // คูลดาวน์หลังลด — Trait ลดคูลดาวน์ทำให้ใช้ซ้ำทันได้
+  return Math.min(...values) * (1 - Math.min(cdCutPercent, 90) / 100) <= sec;
 }
 
 /** คูลดาวน์สกิลพิเศษตามจอ (บรรทัด "Cooldown") — สกิลที่กดต่อได้หรือไม่มีข้อมูล = undefined */
@@ -136,7 +137,7 @@ export function specialCooldown(char: Character): number | undefined {
   return values.length ? Math.min(...values) : undefined;
 }
 
-/** ลดคูลดาวน์สกิลพิเศษรวม (%) — สมมติว่าหลายแหล่งบวกกัน */
+/** ลดคูลดาวน์สกิลพิเศษรวม (%) — หลายแหล่งบวกกันตรง ๆ เหมือนอัตราคริ (ผู้เล่นยืนยัน 2026-10-29) */
 export function specialCooldownReduction(effects: Tagged[]): number {
   return effects
     .filter(({ effect: e }) => e.stat === "cooldown" && e.unit === "percent" && e.scopes?.includes("specialSkill"))
@@ -161,15 +162,16 @@ const ownsType = (char: Character, t: string | undefined) => !t || t === char.el
  * - element: บัฟดาเมจธาตุอื่นให้ตัวเอง หรือต้องตีด้วยธาตุอื่นถึงจะติด (เช่น ดาเมจน้ำแข็งบนกาบิธาตุดิน)
  * - recast: ต้องใช้สกิลพิเศษซ้ำเร็วกว่าคูลดาวน์ของตัวละคร
  */
-export function unusableReason(char: Character, e: Effect): "element" | "recast" | undefined {
+export function unusableReason(char: Character, e: Effect, cdCutPercent = 0): "element" | "recast" | undefined {
   if (!ownsType(char, e.condition?.triggerDamageType)) return "element";
   if (e.target === "self" && e.kind === "buff" && !ownsType(char, e.damageType)) return "element";
   const sec = e.condition?.specialRecastWithinSec;
-  if (sec !== undefined && canRecastSpecial(char, sec) === false) return "recast";
+  if (sec !== undefined && canRecastSpecial(char, sec, cdCutPercent) === false) return "recast";
   return undefined;
 }
 
-export const unreachable = (char: Character, e: Effect) => unusableReason(char, e) !== undefined;
+export const unreachable = (char: Character, e: Effect, cdCutPercent = 0) =>
+  unusableReason(char, e, cdCutPercent) !== undefined;
 
 /** ทุกเอฟเฟกต์ที่มาจากตัวละคร 1 ตัวและของที่ใส่ ณ ขั้นปลุกพลังนี้ */
 function memberEffects(mem: BuildMember, char: Character, awaken: number): Tagged[] {
@@ -211,7 +213,8 @@ function memberEffects(mem: BuildMember, char: Character, awaken: number): Tagge
   for (const a of char.awaken ?? []) {
     if (a.stage <= awaken) out.push(...a.effects.map(tag(join(char.name, a.name ?? { th: `ปลุกพลัง ${a.stage}`, en: `Awaken ${a.stage}` }), false)));
   }
-  return out.filter((t) => !unreachable(char, t.effect));
+  const cut = specialCooldownReduction(out);
+  return out.filter((t) => !unreachable(char, t.effect, cut));
 }
 
 function skillLevel(char: Character, awaken: number): number {

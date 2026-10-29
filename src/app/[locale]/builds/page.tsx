@@ -20,7 +20,15 @@ import {
   monsterlingImage,
 } from "@/lib/data";
 import { asset } from "@/lib/base-path";
-import { artifactFusion, receivedEffects, statSheet, unusableReason, type StatSheet, type Tagged } from "@/lib/team-damage";
+import {
+  artifactFusion,
+  receivedEffects,
+  specialCooldownReduction,
+  statSheet,
+  unusableReason,
+  type StatSheet,
+  type Tagged,
+} from "@/lib/team-damage";
 import { label } from "@/lib/vocabulary";
 import type { BuildLoadout, BuildMember, Character, LinkChain } from "@/lib/schema/entities";
 import type { Effect, LocalizedText } from "@/lib/schema/common";
@@ -352,7 +360,7 @@ function MemberGear({
                       ))}
                     </p>
                     {(fusion?.effects ?? []).map((e, j) => {
-                      const why = c && unusableReason(c, e);
+                      const why = c && unusableReason(c, e, specialCooldownReduction(effects));
                       return why ? (
                         <div key={j} className="opacity-50">
                           <Effects effects={[e]} locale={locale} />

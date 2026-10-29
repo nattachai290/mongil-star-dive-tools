@@ -11,9 +11,9 @@
         {
           "characterId": "gabi",
           "artifacts": [
+            "subzero-verdict",
             "to-whom-the-dokkaebi-kneel",
-            "held-close-by-nature",
-            "subzero-verdict"
+            "held-close-by-nature"
           ],
           "equipment": {
             "headgear": "eerie-horned-helmet",
@@ -56,15 +56,15 @@
                   "grade": "gold"
                 },
                 {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-rate",
+                  "grade": "gold"
+                },
+                {
                   "id": "crit-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "atk",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-earth",
                   "grade": "gold"
                 }
               ]
@@ -77,7 +77,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-dmg",
+                  "id": "special-skill-cooldown",
                   "grade": "gold"
                 },
                 {
@@ -85,7 +85,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "atk",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -94,7 +94,7 @@
               "id": "swamp-odong",
               "traits": [
                 {
-                  "id": "atk",
+                  "id": "special-skill-cooldown",
                   "grade": "gold"
                 },
                 {
@@ -117,11 +117,11 @@
             "id": "reginula",
             "traits": [
               {
-                "id": "dmg-vs-boss",
+                "id": "special-skill-cooldown",
                 "grade": "gold"
               },
               {
-                "id": "crit-dmg",
+                "id": "dmg-vs-boss",
                 "grade": "gold"
               },
               {
@@ -129,7 +129,7 @@
                 "grade": "gold"
               },
               {
-                "id": "atk",
+                "id": "crit-dmg",
                 "grade": "gold"
               }
             ]
