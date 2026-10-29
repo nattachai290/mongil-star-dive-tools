@@ -491,6 +491,8 @@ const monSlot = z
     traits: z
       .array(z.object({ id: slug, grade: vocabEnum("monsterRank") }).strict())
       .max(4)
+      // Trait เดียวกันขึ้นซ้ำในมอนตัวเดียวไม่ได้ (ผู้เล่นบอก 2026-10-29)
+      .refine((ts) => new Set(ts.map((t) => t.id)).size === ts.length, { message: "Trait ซ้ำในมอนตัวเดียวกันไม่ได้" })
       .default([]),
   })
   .strict();

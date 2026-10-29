@@ -4,7 +4,7 @@
  * มีไว้เพราะ data/ ยังว่างอยู่ — ถ้าไม่มีไฟล์นี้ validate:data จะผ่านตลอด
  * แม้ schema จะพังอยู่ ทำให้ไม่รู้ตัวจนวันที่เริ่มกรอกข้อมูลจริง
  */
-import { character, food, linkChain, monsterling, skill } from "../src/lib/schema/entities";
+import { buildLoadout, character, food, linkChain, monsterling, skill } from "../src/lib/schema/entities";
 import { computeDamage, proficiencyToPercent, sumBuffs } from "../src/lib/formula";
 import { canRecastSpecial, receivedEffects, teamDamage } from "../src/lib/team-damage";
 import { characterById } from "../src/lib/data";
@@ -155,6 +155,8 @@ console.log("\nดาเมจรวมทั้งทีม");
     monsterlings: [{ id: "rock-fist-dude", traits: traits.map((id) => ({ id, grade: "gold" as const })) }] });
   const plain = { awaken: 0, food: {}, members: [weakMem([])] };
   const withWeakTrait = { awaken: 0, food: {}, members: [weakMem(["weakness-dmg"])] };
+  check("Trait ซ้ำในมอนตัวเดียวกัน = ไม่ผ่าน", !buildLoadout.safeParse({ awaken: 0, food: {},
+    members: [weakMem(["atk", "atk"])] }).success);
   check("ตีจุดอ่อนแรงกว่าไม่ตี", teamDamage(plain, { weakness: true }).total > teamDamage(plain).total);
   check("Trait ดาเมจจุดอ่อนไม่มีผลถ้าไม่ตีจุดอ่อน",
     Math.abs(teamDamage(withWeakTrait).total - teamDamage(plain).total) < 1e-6);
