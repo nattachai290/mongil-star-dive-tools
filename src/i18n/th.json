@@ -185,5 +185,7 @@
   "builds.unusable.element": "ตัวนี้ใช้ไม่ได้ — คนละธาตุ จึงไม่นับในค่าพลังรวม",
   "builds.unusable.recast": "ตัวนี้ใช้ไม่ได้ — คูลดาวน์สกิลพิเศษยาวเกินกว่าจะใช้ซ้ำทันในเวลาบัฟ จึงไม่นับในค่าพลังรวม",
   "builds.stats.boss": "ดาเมจมอนสเตอร์บอส",
-  "builds.stats.weakness": "ดาเมจธาตุจุดอ่อน"
+  "builds.stats.weakness": "ดาเมจธาตุจุดอ่อน",
+  "builds.stats.specialCd": "คูลดาวน์สกิลพิเศษ",
+  "builds.stats.sec": " วิ"
 }

@@ -54,6 +54,7 @@ export const TEAM_ASSUMPTIONS = [
   "ค่าพลังของมอน (ATK/DEF/HP) ตามชนิด บอส / ทั่วไป / ตำนาน · มอนทั่วไปบางตัวอนุมานจากการไม่มีลิงก์เชน",
   "ความชำนาญบทบาทคิดเป็นดาเมจเฉพาะบรอว์เลอร์ (ดาเมจปะทะ) — บทบาทอื่นสูตรยังไม่มี",
   "ยังไม่นับดาเมจต่อเนื่อง ดาเมจลิงก์เชน และสกิลสนับสนุน",
+  "ลดคูลดาวน์สกิลพิเศษ: กดทุกครั้งที่คูลดาวน์หมด ดาเมจสกิลพิเศษ × (คูลดาวน์ตามจอ ÷ หลังลด) · หลายแหล่งบวกกัน · ไม่หักเวลาตีพื้นฐาน",
 ];
 
 /** เอฟเฟกต์พร้อมที่มา — gear = ค่าพลังของของที่ใส่ (ไม่ใช่บัฟ) */
@@ -93,11 +94,13 @@ function monsterEffects(slot: BuildMember["monsterlings"][number]): Tagged[] {
   }
   for (const tr of slot.traits) {
     const t = TRAIT_POOL.pool.find((x) => x.id === tr.id);
-    if (!t || t.kind !== "buff") continue;
+    // ลดคูลดาวน์เก็บเป็น debuff ที่ตัวเอง (stat cooldown) — นอกนั้นรับเฉพาะบัฟ
+    if (!t || (t.kind !== "buff" && t.stat !== "cooldown")) continue;
     const value = t.values[tr.grade as keyof typeof t.values];
     out.push(
       tag(from, true)(
         asEffect(t.stat, value, t.unit, {
+          kind: t.kind,
           damageType: t.damageType,
           scopes: t.scopes,
           condition: t.vsBoss === undefined ? undefined : { vsBoss: t.vsBoss },
@@ -121,6 +124,33 @@ export function canRecastSpecial(char: Character, sec: number): boolean | undefi
   const values = (cd?.scaling ?? []).filter((x): x is number => typeof x === "number");
   if (values.length === 0) return undefined;
   return Math.min(...values) <= sec;
+}
+
+/** คูลดาวน์สกิลพิเศษตามจอ (บรรทัด "Cooldown") — สกิลที่กดต่อได้หรือไม่มีข้อมูล = undefined */
+export function specialCooldown(char: Character): number | undefined {
+  const rows = (char.skills?.special?.values ?? []).filter((v) => v.unit === "seconds");
+  if (rows.some((v) => /Cooldown (Increase|Boost)/i.test(v.label.en ?? ""))) return undefined;
+  const values = (rows.find((v) => /^Cooldown$/i.test(v.label.en ?? ""))?.scaling ?? []).filter(
+    (x): x is number => typeof x === "number",
+  );
+  return values.length ? Math.min(...values) : undefined;
+}
+
+/** ลดคูลดาวน์สกิลพิเศษรวม (%) — สมมติว่าหลายแหล่งบวกกัน */
+export function specialCooldownReduction(effects: Tagged[]): number {
+  return effects
+    .filter(({ effect: e }) => e.stat === "cooldown" && e.unit === "percent" && e.scopes?.includes("specialSkill"))
+    .reduce((n, { effect: e }) => n + (e.value ?? 0), 0);
+}
+
+/**
+ * แบบง่าย (ผู้เล่นเลือก 2026-10-29): กดสกิลพิเศษทุกครั้งที่คูลดาวน์หมด ท่าอื่นนับ 1 รอบเท่าเดิม
+ * → ดาเมจสกิลพิเศษ × (คูลดาวน์ตามจอ ÷ คูลดาวน์หลังลด) · ไม่หักเวลาตีพื้นฐานที่เสียไป จึงสูงเกินจริงเล็กน้อย
+ */
+export function specialCastFactor(char: Character, effects: Tagged[]): number {
+  const cd = specialCooldown(char);
+  const cut = Math.min(specialCooldownReduction(effects), 90);
+  return cd === undefined || cut <= 0 ? 1 : 1 / (1 - cut / 100);
 }
 
 /** ตัวละครนี้ตีได้แค่ธาตุของตัวเองกับกายภาพ */
@@ -350,6 +380,8 @@ export type StatSheet = {
   roleDmg: number;
   enemyDefDown: number;
   enemyResDown: number;
+  /** คูลดาวน์สกิลพิเศษหลังลด (วินาที) · 0 = ไม่รู้ / สกิลกดต่อได้ */
+  specialCd: number;
 };
 
 /** สรุปค่าพลัง — gearOnly = เฉพาะค่าพลังของของที่ใส่ ไม่รวมบัฟ */
@@ -357,7 +389,7 @@ export function statSheet(char: Character, effects: Tagged[], gearOnly: boolean)
   const s: StatSheet = {
     atk: 0, def: 0, hp: 0,
     critRate: char.stats?.critRate ?? 0, critDmg: char.stats?.critDmg ?? 0,
-    elementDmg: 0, bossDmg: 0, dmgBonus: 0, weaknessDmg: FORMULA.constants.weaknessBase * 100, basicAttackDmg: 0, skillDmg: 0, roleMastery: 0, roleDmg: 0, enemyDefDown: 0, enemyResDown: 0,
+    elementDmg: 0, bossDmg: 0, dmgBonus: 0, weaknessDmg: FORMULA.constants.weaknessBase * 100, basicAttackDmg: 0, skillDmg: 0, roleMastery: 0, roleDmg: 0, enemyDefDown: 0, enemyResDown: 0, specialCd: 0,
   };
   const flat = { atk: 0, def: 0, hp: 0 };
   const pct = { atk: 0, def: 0, hp: 0 };
@@ -408,6 +440,8 @@ export function statSheet(char: Character, effects: Tagged[], gearOnly: boolean)
   s.atk = ((char.stats?.atk ?? 0) + flat.atk) * (1 + pct.atk / 100);
   s.def = ((char.stats?.def ?? 0) + flat.def) * (1 + pct.def / 100);
   s.hp = ((char.stats?.hp ?? 0) + flat.hp) * (1 + pct.hp / 100);
+  const cd = specialCooldown(char);
+  if (cd !== undefined) s.specialCd = cd / specialCastFactor(char, effects.filter((t) => !gearOnly || t.gear));
   return s;
 }
 
@@ -444,6 +478,7 @@ export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean } = {}):
         rows.push({ label: row.label, value: at.value });
         sum += computeDamage(inputsFor(char, mine, key, damageType, at.value, opts.weakness)).average;
       }
+      if (key === "special") sum *= specialCastFactor(char, mine);
       if (rows.length) skills.push({ skill: key, level: usedLevel, rows, damageType, average: sum });
     }
     return { characterId: mem.characterId, skills, total: skills.reduce((n, s) => n + s.average, 0) };

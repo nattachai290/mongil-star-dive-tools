@@ -214,6 +214,7 @@ function StatsSlot({ char, effects, locale, t }: { char: Character; effects: Tag
     { label: t("builds.stats.dmgBonus"), key: "dmgBonus", fmt: pctFmt },
     { label: t("builds.stats.mastery"), key: "roleMastery", fmt: numFmt },
     ...(roleStat ? [{ label: label("stat", roleStat, locale), key: "roleDmg" as const, fmt: pctFmt }] : []),
+    { label: t("builds.stats.specialCd"), key: "specialCd", fmt: (v: number) => `${Math.round(v * 100) / 100}${t("builds.stats.sec")}` },
     { label: t("builds.stats.enemyDef"), key: "enemyDefDown", fmt: pctFmt },
     { label: t("builds.stats.enemyRes"), key: "enemyResDown", fmt: pctFmt },
   ];

@@ -157,6 +157,12 @@ console.log("\nดาเมจรวมทั้งทีม");
   const withWeakTrait = { awaken: 0, food: {}, members: [weakMem(["weakness-dmg"])] };
   check("Trait ซ้ำในมอนตัวเดียวกัน = ไม่ผ่าน", !buildLoadout.safeParse({ awaken: 0, food: {},
     members: [weakMem(["atk", "atk"])] }).success);
+  {
+    const sp = (traits: string[]) => teamDamage({ awaken: 0, food: {}, members: [weakMem(traits)] })
+      .members[0].skills.find((x) => x.skill === "special")!.average;
+    check("ลดคูลดาวน์สกิลพิเศษทอง 15% = ดาเมจสกิลพิเศษ × 1/0.85",
+      Math.abs(sp(["special-skill-cooldown"]) / sp([]) - 1 / 0.85) < 1e-9, `ได้ ${sp(["special-skill-cooldown"]) / sp([])}`);
+  }
   check("ตีจุดอ่อนแรงกว่าไม่ตี", teamDamage(plain, { weakness: true }).total > teamDamage(plain).total);
   check("Trait ดาเมจจุดอ่อนไม่มีผลถ้าไม่ตีจุดอ่อน",
     Math.abs(teamDamage(withWeakTrait).total - teamDamage(plain).total) < 1e-6);
