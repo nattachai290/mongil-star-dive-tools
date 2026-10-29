@@ -163,6 +163,14 @@ export const effect = z
         teammateElement: vocabEnum("damageType").optional(),
         teammateNotElement: vocabEnum("damageType").optional(),
         teammateRange: vocabEnum("range").optional(),
+        /**
+         * บัฟนี้ไปลงที่สกิลพิเศษ "ครั้งถัดไป" ซึ่งต้องโดนภายในกี่วินาทีหลังสกิลพิเศษครั้งก่อนโดน
+         * คิดจากเงื่อนไขที่ต่อกันบนจอ เช่น คมเยือกแข็งแห่งการพิพากษา: สกิลพิเศษโดน → บัฟ 4 วิ →
+         * โจมตีพื้นฐานโดนในช่วงนั้น → ดาเมจสกิลพิเศษ +80% นาน 1.8 วิ → ต้องใช้สกิลพิเศษซ้ำภายใน 4 + 1.8 = 5.8 วิ
+         * เครื่องคิดดาเมจตัดบัฟนี้ออกเมื่อคูลดาวน์สกิลพิเศษของตัวละครยาวกว่านี้และสกิลกดต่อไม่ได้
+         * (ทดสอบในเกม 2026-10-29: Ophelia ซึ่งกด E ต่อได้ ได้บัฟนี้จริง)
+         */
+        specialRecastWithinSec: z.number().positive().optional(),
         note: text.optional(),
       })
       .optional(),

@@ -108,6 +108,27 @@ function monsterEffects(slot: BuildMember["monsterlings"][number]): Tagged[] {
   return out;
 }
 
+/**
+ * ตัวละครนี้ใช้สกิลพิเศษซ้ำให้โดนภายใน sec วินาทีได้ไหม
+ * - สกิลที่กดต่อได้ (มีบรรทัด "ขั้น 2 ... เพิ่มคูลดาวน์" แบบ Ophelia, Yeonhwa) → ได้
+ * - มีบรรทัด "คูลดาวน์" → ได้ถ้าไม่เกิน sec
+ * - ไม่มีข้อมูลคูลดาวน์ → undefined (ไม่รู้ จึงไม่ตัดบัฟ)
+ */
+export function canRecastSpecial(char: Character, sec: number): boolean | undefined {
+  const rows = (char.skills?.special?.values ?? []).filter((v) => v.unit === "seconds");
+  if (rows.some((v) => /Cooldown (Increase|Boost)/i.test(v.label.en ?? ""))) return true;
+  const cd = rows.find((v) => /^Cooldown$/i.test(v.label.en ?? ""));
+  const values = (cd?.scaling ?? []).filter((x): x is number => typeof x === "number");
+  if (values.length === 0) return undefined;
+  return Math.min(...values) <= sec;
+}
+
+/** เอฟเฟกต์ที่ตัวละครนี้เข้าเงื่อนไขไม่ทันเพราะคูลดาวน์สกิลพิเศษยาวเกิน */
+export function unreachable(char: Character, e: Effect): boolean {
+  const sec = e.condition?.specialRecastWithinSec;
+  return sec !== undefined && canRecastSpecial(char, sec) === false;
+}
+
 /** ทุกเอฟเฟกต์ที่มาจากตัวละคร 1 ตัวและของที่ใส่ ณ ขั้นปลุกพลังนี้ */
 function memberEffects(mem: BuildMember, char: Character, awaken: number): Tagged[] {
   const out: Tagged[] = [];
@@ -148,7 +169,7 @@ function memberEffects(mem: BuildMember, char: Character, awaken: number): Tagge
   for (const a of char.awaken ?? []) {
     if (a.stage <= awaken) out.push(...a.effects.map(tag(join(char.name, a.name ?? { th: `ปลุกพลัง ${a.stage}`, en: `Awaken ${a.stage}` }), false)));
   }
-  return out;
+  return out.filter((t) => !unreachable(char, t.effect));
 }
 
 function skillLevel(char: Character, awaken: number): number {

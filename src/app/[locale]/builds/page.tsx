@@ -20,7 +20,7 @@ import {
   monsterlingImage,
 } from "@/lib/data";
 import { asset } from "@/lib/base-path";
-import { artifactFusion, receivedEffects, statSheet, type StatSheet, type Tagged } from "@/lib/team-damage";
+import { artifactFusion, receivedEffects, statSheet, unreachable, type StatSheet, type Tagged } from "@/lib/team-damage";
 import { label } from "@/lib/vocabulary";
 import type { BuildLoadout, BuildMember, Character, LinkChain } from "@/lib/schema/entities";
 import type { Effect, LocalizedText } from "@/lib/schema/common";
@@ -333,7 +333,16 @@ function MemberGear({
                         </p>
                       </div>
                     </div>
-                    <Effects effects={fusion?.effects ?? []} locale={locale} />
+                    <Effects
+                      effects={(fusion?.effects ?? []).filter((e) => !(c && unreachable(c, e)))}
+                      locale={locale}
+                    />
+                    {c && (fusion?.effects ?? []).some((e) => unreachable(c, e)) && (
+                      <div className="mt-1.5 opacity-60">
+                        <Effects effects={(fusion?.effects ?? []).filter((e) => unreachable(c, e))} locale={locale} />
+                        <p className="mt-1 text-[11px] text-gold">{t("builds.unreachable")}</p>
+                      </div>
+                    )}
                   </li>
                 );
               })}

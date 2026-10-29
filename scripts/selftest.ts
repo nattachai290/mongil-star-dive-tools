@@ -6,7 +6,8 @@
  */
 import { character, food, linkChain, monsterling, skill } from "../src/lib/schema/entities";
 import { computeDamage, proficiencyToPercent, sumBuffs } from "../src/lib/formula";
-import { teamDamage } from "../src/lib/team-damage";
+import { canRecastSpecial, receivedEffects, teamDamage } from "../src/lib/team-damage";
+import { characterById } from "../src/lib/data";
 import { LINK_CHAIN_LIST_IS_COMPLETE, linkableBadge, linkableIds, linkableOf } from "../src/lib/linkable";
 import type { Effect } from "../src/lib/schema/common";
 
@@ -143,6 +144,14 @@ console.log("\nดาเมจรวมทั้งทีม");
   const ratio = (1 + 0.045 * (1 + 2775 * 0.000113)) / (1 + 0.045 * (1 + 0.1218));
   check("ความชำนาญรองเท้าแทนค่าพื้นฐาน ไม่ได้บวก", Math.abs(withBoots.total / solo.total - ratio) < 1e-6,
     `ได้ ${withBoots.total / solo.total} ควรเป็น ${ratio}`);
+
+  // คมเยือกแข็งฯ +80% ต้องใช้สกิลพิเศษซ้ำภายใน 5.8 วิ — กาบิคูลดาวน์ 11.5 ไม่ทัน, Ophelia กด E ต่อได้ (ทดสอบในเกม 2026-10-29)
+  const has80 = (id: string) =>
+    receivedEffects({ awaken: 0, food: {}, members: [{ characterId: id, artifacts: ["subzero-verdict"], equipment: {}, substats: {}, monsterlings: [] }] })[0]
+      .effects.some((x) => x.effect.condition?.specialRecastWithinSec !== undefined);
+  check("กาบิ (คูลดาวน์ 11.5 วิ) ไม่ได้ +80% ของคมเยือกแข็งฯ", !has80("gabi"));
+  check("Ophelia (สกิลพิเศษกดต่อได้) ได้ +80% ของคมเยือกแข็งฯ", has80("ophelia"));
+  check("คูลดาวน์ 8 วิ ใช้ซ้ำภายใน 5.8 วิไม่ได้", canRecastSpecial(characterById("chloe")!, 5.8) === false);
 }
 
 // ---------- ชนิดดาเมจอยู่ที่ท่า ไม่ใช่ที่ตัวละคร ----------
