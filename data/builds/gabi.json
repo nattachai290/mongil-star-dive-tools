@@ -1,0 +1,361 @@
+{
+  "id": "gabi",
+  "loadouts": [
+    {
+      "awaken": 0,
+      "food": {
+        "entree": "green-cappy-forest-stew",
+        "side": "exquisite-time-to-celebrate"
+      },
+      "members": [
+        {
+          "characterId": "gabi",
+          "artifacts": [
+            "to-whom-the-dokkaebi-kneel",
+            "held-close-by-nature",
+            "subzero-verdict"
+          ],
+          "equipment": {
+            "headgear": "eerie-horned-helmet",
+            "chestpiece": "avengers-prayer-beads",
+            "gloves": "avengers-gauntlet",
+            "footwear": "breeze-walkers"
+          },
+          "substats": {
+            "headgear": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ],
+            "chestpiece": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ],
+            "gloves": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ],
+            "footwear": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ]
+          },
+          "monsterlings": [
+            {
+              "id": "rock-fist-dude",
+              "traits": [
+                {
+                  "id": "dmg-earth",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-rate",
+                  "grade": "gold"
+                },
+                {
+                  "id": "brawl-dmg",
+                  "grade": "gold"
+                }
+              ]
+            },
+            {
+              "id": "scrap-hoarder",
+              "traits": [
+                {
+                  "id": "dmg-earth",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-rate",
+                  "grade": "gold"
+                },
+                {
+                  "id": "atk",
+                  "grade": "gold"
+                }
+              ]
+            },
+            {
+              "id": "swamp-odong",
+              "traits": [
+                {
+                  "id": "dmg-earth",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-rate",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                }
+              ]
+            }
+          ],
+          "linkChain": "frangible-pebble",
+          "legendary": {
+            "id": "reginula",
+            "traits": [
+              {
+                "id": "dmg-earth",
+                "grade": "gold"
+              },
+              {
+                "id": "crit-dmg",
+                "grade": "gold"
+              },
+              {
+                "id": "crit-rate",
+                "grade": "gold"
+              },
+              {
+                "id": "atk",
+                "grade": "gold"
+              }
+            ]
+          }
+        },
+        {
+          "characterId": "brisshell",
+          "artifacts": [
+            "wind-harboring-broom",
+            "hawks-flight"
+          ],
+          "equipment": {
+            "headgear": "gourmands-hat",
+            "chestpiece": "gourmands-apron",
+            "gloves": "gourmands-gloves",
+            "footwear": "gourmands-slippers"
+          },
+          "substats": {
+            "headgear": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ],
+            "chestpiece": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ],
+            "gloves": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ],
+            "footwear": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ]
+          },
+          "monsterlings": [
+            {
+              "id": "colossus",
+              "traits": [
+                {
+                  "id": "atk",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-rate",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-earth",
+                  "grade": "gold"
+                }
+              ]
+            },
+            {
+              "id": "custos",
+              "traits": [
+                {
+                  "id": "atk",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-rate",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-earth",
+                  "grade": "gold"
+                }
+              ]
+            },
+            {
+              "id": "master-lizcout",
+              "traits": [
+                {
+                  "id": "atk",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-rate",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-earth",
+                  "grade": "gold"
+                }
+              ]
+            }
+          ],
+          "linkChain": "giants-destroyed-fist",
+          "cycle": [
+            "switch",
+            "special",
+            "ultimate"
+          ]
+        },
+        {
+          "characterId": "francis-summer-dive",
+          "artifacts": [
+            "forest-fragrance",
+            "melody-played-on-heartstrings"
+          ],
+          "equipment": {
+            "headgear": "ascendant-white-wolfs-mask",
+            "chestpiece": "ascendant-white-wolfs-restraints",
+            "gloves": "ascendant-white-wolfs-grasp",
+            "footwear": "ascendant-white-wolfs-claw"
+          },
+          "substats": {
+            "headgear": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ],
+            "chestpiece": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ],
+            "gloves": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ],
+            "footwear": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ]
+          },
+          "monsterlings": [
+            {
+              "id": "odong-seed",
+              "traits": [
+                {
+                  "id": "atk",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-rate",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-earth",
+                  "grade": "gold"
+                }
+              ]
+            },
+            {
+              "id": "vamphid",
+              "traits": [
+                {
+                  "id": "atk",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-rate",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-earth",
+                  "grade": "gold"
+                }
+              ]
+            },
+            {
+              "id": "spadupa",
+              "traits": [
+                {
+                  "id": "atk",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-rate",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-earth",
+                  "grade": "gold"
+                }
+              ]
+            }
+          ],
+          "linkChain": "poisoned-claw",
+          "cycle": [
+            "switch",
+            "special",
+            "ultimate"
+          ]
+        }
+      ]
+    }
+  ]
+}
