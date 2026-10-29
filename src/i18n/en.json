@@ -182,5 +182,6 @@
   "builds.stats.enemyRes": "Enemy RES down",
   "builds.stats.note": "With all buffs = every buff assumed active at once (including conditional, team and food buffs) · substats at minimum roll · main artifact only, 5★ at Fusion 1",
   "builds.buffs": "All buffs by source",
-  "builds.unreachable": "Not usable by this character — special skill cooldown is too long to recast within the buff window, so it is not counted in total stats"
+  "builds.unusable.element": "Not usable by this character — different element, so it is not counted in total stats",
+  "builds.unusable.recast": "Not usable by this character — special skill cooldown is too long to recast within the buff window, so it is not counted in total stats"
 }

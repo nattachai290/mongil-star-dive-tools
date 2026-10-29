@@ -123,11 +123,23 @@ export function canRecastSpecial(char: Character, sec: number): boolean | undefi
   return Math.min(...values) <= sec;
 }
 
-/** เอฟเฟกต์ที่ตัวละครนี้เข้าเงื่อนไขไม่ทันเพราะคูลดาวน์สกิลพิเศษยาวเกิน */
-export function unreachable(char: Character, e: Effect): boolean {
+/** ตัวละครนี้ตีได้แค่ธาตุของตัวเองกับกายภาพ */
+const ownsType = (char: Character, t: string | undefined) => !t || t === char.element || t === "physical";
+
+/**
+ * เหตุที่เอฟเฟกต์นี้ใช้กับตัวละครนี้ไม่ได้ — undefined = ใช้ได้
+ * - element: บัฟดาเมจธาตุอื่นให้ตัวเอง หรือต้องตีด้วยธาตุอื่นถึงจะติด (เช่น ดาเมจน้ำแข็งบนกาบิธาตุดิน)
+ * - recast: ต้องใช้สกิลพิเศษซ้ำเร็วกว่าคูลดาวน์ของตัวละคร
+ */
+export function unusableReason(char: Character, e: Effect): "element" | "recast" | undefined {
+  if (!ownsType(char, e.condition?.triggerDamageType)) return "element";
+  if (e.target === "self" && e.kind === "buff" && !ownsType(char, e.damageType)) return "element";
   const sec = e.condition?.specialRecastWithinSec;
-  return sec !== undefined && canRecastSpecial(char, sec) === false;
+  if (sec !== undefined && canRecastSpecial(char, sec) === false) return "recast";
+  return undefined;
 }
+
+export const unreachable = (char: Character, e: Effect) => unusableReason(char, e) !== undefined;
 
 /** ทุกเอฟเฟกต์ที่มาจากตัวละคร 1 ตัวและของที่ใส่ ณ ขั้นปลุกพลังนี้ */
 function memberEffects(mem: BuildMember, char: Character, awaken: number): Tagged[] {

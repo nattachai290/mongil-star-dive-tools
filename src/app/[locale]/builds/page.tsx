@@ -20,7 +20,7 @@ import {
   monsterlingImage,
 } from "@/lib/data";
 import { asset } from "@/lib/base-path";
-import { artifactFusion, receivedEffects, statSheet, unreachable, type StatSheet, type Tagged } from "@/lib/team-damage";
+import { artifactFusion, receivedEffects, statSheet, unusableReason, type StatSheet, type Tagged } from "@/lib/team-damage";
 import { label } from "@/lib/vocabulary";
 import type { BuildLoadout, BuildMember, Character, LinkChain } from "@/lib/schema/entities";
 import type { Effect, LocalizedText } from "@/lib/schema/common";
@@ -333,16 +333,32 @@ function MemberGear({
                         </p>
                       </div>
                     </div>
-                    <Effects
-                      effects={(fusion?.effects ?? []).filter((e) => !(c && unreachable(c, e)))}
-                      locale={locale}
-                    />
-                    {c && (fusion?.effects ?? []).some((e) => unreachable(c, e)) && (
-                      <div className="mt-1.5 opacity-60">
-                        <Effects effects={(fusion?.effects ?? []).filter((e) => unreachable(c, e))} locale={locale} />
-                        <p className="mt-1 text-[11px] text-gold">{t("builds.unreachable")}</p>
-                      </div>
-                    )}
+                    <p className="mt-1.5 flex flex-wrap gap-1">
+                      {art.stats.map((st, j) => (
+                        <span key={j} className="rounded border border-line px-1.5 py-0.5 text-[11px] text-ink-2">
+                          {st.damageType
+                            ? locale === "en"
+                              ? `${label("damageType", st.damageType, locale)} ${label("stat", st.stat, locale)}`
+                              : `${label("stat", st.stat, locale)}ธาตุ${label("damageType", st.damageType, locale)}`
+                            : label("stat", st.stat, locale)}
+                          <span className="font-mono text-gold">
+                            {" "}+{st.value.toLocaleString("en-US")}
+                            {st.unit === "percent" ? "%" : ""}
+                          </span>
+                        </span>
+                      ))}
+                    </p>
+                    {(fusion?.effects ?? []).map((e, j) => {
+                      const why = c && unusableReason(c, e);
+                      return why ? (
+                        <div key={j} className="opacity-50">
+                          <Effects effects={[e]} locale={locale} />
+                          <p className="mt-1 text-[11px] text-gold">{t(`builds.unusable.${why}`)}</p>
+                        </div>
+                      ) : (
+                        <Effects key={j} effects={[e]} locale={locale} />
+                      );
+                    })}
                   </li>
                 );
               })}
