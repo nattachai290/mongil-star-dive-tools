@@ -151,6 +151,15 @@ console.log("\nดาเมจรวมทั้งทีม");
       .effects.some((x) => x.effect.condition?.specialRecastWithinSec !== undefined);
   check("กาบิ (คูลดาวน์ 11.5 วิ) ไม่ได้ +80% ของคมเยือกแข็งฯ", !has80("gabi"));
   check("Ophelia (สกิลพิเศษกดต่อได้) ได้ +80% ของคมเยือกแข็งฯ", has80("ophelia"));
+  const weakMem = (traits: string[]) => ({ characterId: "gabi", equipment: {}, substats: {},
+    monsterlings: [{ id: "rock-fist-dude", traits: traits.map((id) => ({ id, grade: "gold" as const })) }] });
+  const plain = { awaken: 0, food: {}, members: [weakMem([])] };
+  const withWeakTrait = { awaken: 0, food: {}, members: [weakMem(["weakness-dmg"])] };
+  check("ตีจุดอ่อนแรงกว่าไม่ตี", teamDamage(plain, { weakness: true }).total > teamDamage(plain).total);
+  check("Trait ดาเมจจุดอ่อนไม่มีผลถ้าไม่ตีจุดอ่อน",
+    Math.abs(teamDamage(withWeakTrait).total - teamDamage(plain).total) < 1e-6);
+  check("Trait ดาเมจจุดอ่อนเพิ่มดาเมจเมื่อตีจุดอ่อน",
+    teamDamage(withWeakTrait, { weakness: true }).total > teamDamage(plain, { weakness: true }).total);
   check("คูลดาวน์ 8 วิ ใช้ซ้ำภายใน 5.8 วิไม่ได้", canRecastSpecial(characterById("chloe")!, 5.8) === false);
 }
 

@@ -52,7 +52,7 @@
               "id": "rock-fist-dude",
               "traits": [
                 {
-                  "id": "dmg-earth",
+                  "id": "dmg-vs-boss",
                   "grade": "gold"
                 },
                 {
@@ -60,11 +60,11 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-rate",
+                  "id": "atk",
                   "grade": "gold"
                 },
                 {
-                  "id": "brawl-dmg",
+                  "id": "dmg-earth",
                   "grade": "gold"
                 }
               ]
@@ -73,7 +73,7 @@
               "id": "scrap-hoarder",
               "traits": [
                 {
-                  "id": "dmg-earth",
+                  "id": "dmg-vs-boss",
                   "grade": "gold"
                 },
                 {
@@ -94,7 +94,7 @@
               "id": "swamp-odong",
               "traits": [
                 {
-                  "id": "dmg-earth",
+                  "id": "atk",
                   "grade": "gold"
                 },
                 {
@@ -117,7 +117,7 @@
             "id": "reginula",
             "traits": [
               {
-                "id": "dmg-earth",
+                "id": "dmg-vs-boss",
                 "grade": "gold"
               },
               {

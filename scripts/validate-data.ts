@@ -125,6 +125,15 @@ const traitsRaw = readJson(join(DATA, "meta", "traits.json"), "data/meta/traits.
 const traitsParsed = traitPool.safeParse(traitsRaw);
 /** id ของ Trait ทั้งคลัง — บิ้วอ้างถึงตอนระบุ Trait ของมอน */
 const traitIds = new Set<string>(traitsParsed.success ? traitsParsed.data.pool.map((t) => t.id) : []);
+/** Trait ที่ผูกธาตุ (ดาเมจธาตุ / ต้านทานธาตุ) */
+const elementTraits = new Set<string>(
+  traitsParsed.success ? traitsParsed.data.pool.filter((t) => t.damageType).map((t) => t.id) : [],
+);
+/**
+ * มอนตำนานมีตัวเดียวทั้งไอดี (ผู้เล่นบอก 2026-10-29) — ทุกบิ้วใช้ตัวเดียวกัน Trait จึงต้องเหมือนกันทุกบิ้ว
+ * และไม่ควรเป็น Trait ผูกธาตุ เพราะทีมธาตุอื่นที่ยืมไปใช้จะไม่ได้ผล
+ */
+const legendaryTraits = new Map<string, { where: string; sig: string }>();
 if (!traitsParsed.success) {
   for (const issue of traitsParsed.error.issues)
     fail("data/meta/traits.json", `${issue.path.join(".") || "(root)"}: ${issue.message}`);
@@ -547,6 +556,15 @@ for (const [id, doc] of Object.entries(parsed.builds ?? {})) {
         for (const tr of m.traits ?? []) {
           if (!traitIds.has(tr.id)) fail(where, `${mt}.${label}.traits มี "${tr.id}" ซึ่งไม่อยู่ใน meta/traits.json`);
         }
+      }
+      if (mem.legendary) {
+        const el = (mem.legendary.traits ?? []).filter((tr) => elementTraits.has(tr.id)).map((tr) => tr.id);
+        if (el.length) warn(where, `${mt}.legendary มี Trait ผูกธาตุ (${el.join(", ")}) — มอนตำนานมีตัวเดียวทั้งไอดี ทีมธาตุอื่นใช้ไม่ได้ผล`);
+        const sig = (mem.legendary.traits ?? []).map((tr) => `${tr.id}:${tr.grade}`).sort().join(",");
+        const seen = legendaryTraits.get(mem.legendary.id);
+        if (seen && seen.sig !== sig) {
+          fail(where, `${mt}.legendary "${mem.legendary.id}" Trait ไม่ตรงกับที่ ${seen.where} — มอนตำนานมีตัวเดียวทั้งไอดี`);
+        } else if (!seen) legendaryTraits.set(mem.legendary.id, { where: `${where} ${mt}`, sig });
       }
       checkRefs(where, mem.linkChain, "link-chains", `${mt}.linkChain`);
 

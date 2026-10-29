@@ -209,6 +209,8 @@ function StatsSlot({ char, effects, locale, t }: { char: Character; effects: Tag
       key: "elementDmg", fmt: pctFmt },
     { label: t("builds.stats.basic"), key: "basicAttackDmg", fmt: pctFmt },
     { label: t("builds.stats.skill"), key: "skillDmg", fmt: pctFmt },
+    { label: t("builds.stats.boss"), key: "bossDmg", fmt: pctFmt },
+    { label: t("builds.stats.weakness"), key: "weaknessDmg", fmt: pctFmt },
     { label: t("builds.stats.dmgBonus"), key: "dmgBonus", fmt: pctFmt },
     { label: t("builds.stats.mastery"), key: "roleMastery", fmt: numFmt },
     ...(roleStat ? [{ label: label("stat", roleStat, locale), key: "roleDmg" as const, fmt: pctFmt }] : []),

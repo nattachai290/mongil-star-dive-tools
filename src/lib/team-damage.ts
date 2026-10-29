@@ -10,7 +10,7 @@ import {
   characterById,
   minSubstat,
 } from "./data";
-import { computeDamage, proficiencyToPercent, type DamageInput } from "./formula";
+import { FORMULA, computeDamage, proficiencyToPercent, type DamageInput } from "./formula";
 import type { Effect, LocalizedText } from "./schema/common";
 import type { Artifact, BuildLoadout, BuildMember, Character } from "./schema/entities";
 
@@ -218,8 +218,13 @@ function inputsFor(
   skill: CycleSkill,
   damageType: string,
   skillPercent: number,
+  weakness = false,
 ): DamageInput {
+  // จุดอ่อนธาตุ: ตีด้วยธาตุที่ศัตรูแพ้ — กายภาพไม่มีจุดอ่อน
+  const weak = weakness && damageType !== "physical";
   const inp: DamageInput = {
+    weaknessHit: weak,
+    weaknessDmg: 0,
     atkBase: char.stats?.atk ?? 0,
     atkFlat: 0,
     atkPercent: 0,
@@ -238,6 +243,10 @@ function inputsFor(
     if (e.condition?.vsBoss === false) continue;
     if (e.damageType && e.stat !== "res" && e.damageType !== damageType) continue;
     const scopes = e.scopes as string[] | undefined;
+    if (scopes?.includes("weaknessHit")) {
+      if (weak && e.kind === "buff" && e.stat === "dmgDealt") inp.weaknessDmg! += e.value;
+      continue;
+    }
     if (scopes && !scopes.includes(SCOPE_OF[skill])) continue;
     const v = e.value;
 
@@ -328,7 +337,12 @@ export type StatSheet = {
   critRate: number;
   critDmg: number;
   elementDmg: number;
+  /** ดาเมจมอนสเตอร์บอส (เงื่อนไข vsBoss) */
+  bossDmg: number;
+  /** ดาเมจทั่วไปที่ไม่ผูกธาตุ/ท่า + ดีบัฟเพิ่มดาเมจที่ได้รับของศัตรู */
   dmgBonus: number;
+  /** ดาเมจธาตุจุดอ่อน — ฐาน 125% ตามจอ + โบนัส */
+  weaknessDmg: number;
   basicAttackDmg: number;
   skillDmg: number;
   /** ความชำนาญบทบาท (แต้ม) */
@@ -343,7 +357,7 @@ export function statSheet(char: Character, effects: Tagged[], gearOnly: boolean)
   const s: StatSheet = {
     atk: 0, def: 0, hp: 0,
     critRate: char.stats?.critRate ?? 0, critDmg: char.stats?.critDmg ?? 0,
-    elementDmg: 0, dmgBonus: 0, basicAttackDmg: 0, skillDmg: 0, roleMastery: 0, roleDmg: 0, enemyDefDown: 0, enemyResDown: 0,
+    elementDmg: 0, bossDmg: 0, dmgBonus: 0, weaknessDmg: FORMULA.constants.weaknessBase * 100, basicAttackDmg: 0, skillDmg: 0, roleMastery: 0, roleDmg: 0, enemyDefDown: 0, enemyResDown: 0,
   };
   const flat = { atk: 0, def: 0, hp: 0 };
   const pct = { atk: 0, def: 0, hp: 0 };
@@ -381,11 +395,12 @@ export function statSheet(char: Character, effects: Tagged[], gearOnly: boolean)
         break;
       case "dmgDealt":
         if (e.damageType && e.damageType !== char.element) break;
-        if (scopes?.includes("weaknessHit")) break;
-        if (scopes) {
+        if (scopes?.includes("weaknessHit")) s.weaknessDmg += v;
+        else if (scopes) {
           if (scopes.includes("basicAttack")) s.basicAttackDmg += v;
           else s.skillDmg += v;
         } else if (e.damageType) s.elementDmg += v;
+        else if (e.condition?.vsBoss === true) s.bossDmg += v;
         else s.dmgBonus += v;
         break;
     }
@@ -404,7 +419,8 @@ const ROLE_STAT_OF: Record<string, string> = {
   supporter: "supportDmg",
 };
 
-export function teamDamage(lo: BuildLoadout): TeamDamage {
+/** weakness: ศัตรูแพ้ธาตุของท่าที่ตี (ค่าเริ่มต้น = ไม่ตีจุดอ่อน ตาม TEAM_ASSUMPTIONS) */
+export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean } = {}): TeamDamage {
   const received = receivedEffects(lo);
   const members: MemberDamage[] = lo.members.map((mem, i) => {
     const { char, effects: mine } = received[i];
@@ -426,7 +442,7 @@ export function teamDamage(lo: BuildLoadout): TeamDamage {
         if (!at) continue;
         usedLevel = at.level;
         rows.push({ label: row.label, value: at.value });
-        sum += computeDamage(inputsFor(char, mine, key, damageType, at.value)).average;
+        sum += computeDamage(inputsFor(char, mine, key, damageType, at.value, opts.weakness)).average;
       }
       if (rows.length) skills.push({ skill: key, level: usedLevel, rows, damageType, average: sum });
     }
