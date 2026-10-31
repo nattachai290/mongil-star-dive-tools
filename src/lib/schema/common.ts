@@ -188,10 +188,20 @@ export const effect = z
          */
         teammatesOnly: z.literal(true).optional(),
         /**
-         * ค่าของเอฟเฟกต์ = ดาเมจธาตุนี้ (บัฟ dmgDealt ของธาตุนั้น) ที่ตัวเองได้รับรวมกัน แต่ไม่เกิน value (อัตราแปลงสูงสุด)
-         * เช่น แพสซีฟของ Francis: Summer Dive! "ATK increases by an amount equal to any received Earth DMG Boosts" สูงสุด 25%
+         * ค่าของเอฟเฟกต์แปลงจากค่าอื่นของ "เจ้าของเอฟเฟกต์" = ค่าต้นทาง × ratio% แต่ไม่เกิน value (ค่าสูงสุดบนจอ · ไม่มีเพดาน = ไม่ใส่ value)
+         * stat ต้นทาง: dmgDealt + damageType (ดาเมจธาตุที่ได้รับ) · critRate · critDmg · hp (ค่าพลังรวม) · ดาเมจบทบาท (supportDmg ฯลฯ)
+         * เช่น แพสซีฟ Francis: Summer Dive! "ATK increases by an amount equal to any received Earth DMG Boosts" สูงสุด 25%
+         *   → stat atk · value 25 · convertFrom { stat: dmgDealt, damageType: earth, ratio: 100 }
+         * บัฟทีม (เช่น Vivian ให้ทีม ATK ตามดาเมจกดดันของ Vivian) ใช้ค่าของเจ้าของ ไม่ใช่ของคนที่ได้รับ
          */
-        convertFromElementDmg: vocabEnum("damageType").optional(),
+        convertFrom: z
+          .object({
+            stat: vocabEnum("stat"),
+            damageType: vocabEnum("damageType").optional(),
+            /** % ของค่าต้นทาง เช่น 30 = 30% · Reina "0.1% ต่อ HP 100" = 0.1 (ต่อ HP 1 = 0.001%) */
+            ratio: z.number().positive(),
+          })
+          .optional(),
         note: text.optional(),
       })
       .optional(),

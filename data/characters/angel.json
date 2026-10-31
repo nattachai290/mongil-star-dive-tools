@@ -81,7 +81,23 @@
         "th": "เมื่อใช้สกิลสับเปลี่ยนหลังจากใช้สกิลสนับสนุน จะเพิ่มเอฟเฟกต์เพิ่มดาเมจธาตุไฟที่ได้รับ 15% / อีกทั้งเมื่อเมื่อใช้สกิลพิเศษในขณะที่มีเอฟเฟกต์ดังกล่าว จะเพิ่มเอฟเฟกต์ลดดาเมจเป็น 2 เท่า",
         "en": "The Fire DMG Boost granted from using Angel's Switch Skill after using her Support Skill increases to 15%. / Also, using a Special Skill while this effect is active provides 2 times as much DMG Reduction."
       },
-      "effects": []
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "damageType": "fire",
+          "value": 5,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSwitch",
+          "durationSec": 4,
+          "condition": {
+            "note": {
+              "en": "Fire DMG Boost 10% → 15%"
+            }
+          }
+        }
+      ]
     },
     {
       "stage": 2,
@@ -93,7 +109,42 @@
         "th": "เพิ่มดาเมจที่สร้างในสถานะเตรียมพร้อมลั่นไกเป็น 40% และเอฟเฟกต์ดังกล่าวจะถูกปรับใช้กับสกิลทั้งหมด",
         "en": "DMG dealt while Locked and Loaded increases to 40%, and this effect applies to all skills."
       },
-      "effects": []
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 20,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "always",
+          "condition": {
+            "note": {
+              "en": "Locked and Loaded 20% → 40%"
+            }
+          }
+        },
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "switchSkill",
+            "specialSkill",
+            "ultimate"
+          ],
+          "value": 40,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "always",
+          "condition": {
+            "note": {
+              "en": "Locked and Loaded · applies to all skills"
+            }
+          }
+        }
+      ]
     },
     {
       "stage": 3,
@@ -127,7 +178,24 @@
         "th": "ลดเวลาคูลดาวน์ของออกหมายจับ 2 วินาที อีกทั้งเมื่อสับเปลี่ยนหลังจากใช้สกิลสนับสนุน เอฟเฟกต์เพิ่มดาเมจธาตุไฟที่ได้รับ จะเปลี่ยนเป็นบัฟทีม และเพิ่มเวลาแสดงผล 2 วินาที",
         "en": "Wanted's cooldown decreases by 2s. Also, switching Angel out after using her Support Skill provides the Fire DMG Boost to her entire team, and its duration increases by 2s."
       },
-      "effects": []
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "damageType": "fire",
+          "value": 15,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onSwitchOut",
+          "durationSec": 6,
+          "condition": {
+            "teammatesOnly": true,
+            "note": {
+              "en": "switching Angel out after using her Support Skill · Fire DMG Boost to her entire team"
+            }
+          }
+        }
+      ]
     },
     {
       "stage": 5,
@@ -164,7 +232,25 @@
         "th": "เมื่อใช้สกิลสับเปลี่ยนหรือสกิลสนับสนุน จะโจมตีโดยใช้กระสุนแม็กนั่มทะลวงศัตรู / เมื่อปรากฏตัวด้วยสกิลสับเปลี่ยน จะเพิ่มดาเมจของการโจมตีพื้นฐานทั้งหมด ในสถานะเตรียมพร้อมลั่นไก 2 เท่า นาน 6 วินาทีและใช้กระสุนแม็กนั่มทะลวงศัตรู",
         "en": "Upon using a Switch Skill or Support Skill, Angel fires a Magnum Round that pierces the enemy and deals DMG. / Also, when entering battle with a Switch Skill, Angel becomes Locked and Loaded for 6s, dealing 2 times as much DMG with all Basic Attacks and firing Magnum Rounds that pierce the enemy."
       },
-      "effects": []
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 100,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSwitch",
+          "durationSec": 6,
+          "condition": {
+            "note": {
+              "en": "Locked and Loaded when entering battle with a Switch Skill · 2 times as much DMG with all Basic Attacks (counted as +100%, same as Gabi A6)"
+            }
+          }
+        }
+      ]
     }
   ],
   "skills": {
@@ -346,7 +432,23 @@
         "en": "Angel charges at the enemy while shooting, dealing Fire DMG. Using her Switch Skill after using her Support Skill grants a Fire DMG Boost. / [Support Skill] When a teammate hits a Wanted target, Angel charges in with rapid volley shots, dealing Fire DMG and inflicting Fire Affliction on hit enemies."
       },
       "damageType": "fire",
-      "effects": [],
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "damageType": "fire",
+          "value": 10,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSwitch",
+          "durationSec": 4,
+          "condition": {
+            "note": {
+              "en": "using her Switch Skill after using her Support Skill"
+            }
+          }
+        }
+      ],
       "values": [
         {
           "label": {
@@ -646,7 +748,24 @@
         "th": "หากศัตรูที่เป็นเป้าหมายอยู่ใกล้ตัว จะเข้าสู่สถานะเตรียมพร้อมลั่นไก และเพิ่มปริมาณดาเมจของโจมตีพื้นฐาน / เมื่อตนเองถูกจัดอยู่ในทีมและสมาชิกทีมอยู่ในระหว่างการต่อสู้ จะสุ่มมอบเอฟเฟกต์ออกหมายจับแก่ศัตรู / ออกหมายจับ: เมื่อสมาชิกทีมสร้างดาเมจแก่ศัตรูที่ติดเอฟเฟกต์ สกิลสนับสนุนของแองเจิลจะทำงาน",
         "en": "If Angel's target enemy is nearby, she becomes Locked and Loaded, dealing increased DMG for Basic Attacks. / If Angel is on the team, she randomly marks enemies as Wanted when a teammate is in combat. / Wanted: Angel's Support Skill is triggered when a teammate deals DMG to a Wanted enemy."
       },
-      "effects": [],
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 20,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "always",
+          "condition": {
+            "note": {
+              "en": "Locked and Loaded · when Angel's target enemy is nearby"
+            }
+          }
+        }
+      ],
       "values": [
         {
           "label": {
@@ -775,6 +894,6 @@
       "en",
       "th"
     ],
-    "note": "อ่านจากจอตัวละครภาษาอังกฤษ 2026-10-22 (Info · Detailed Stats · Passive Trait · Guidance of Fire) | Assassin · Fire · Ranged · เลเวล 60 สูงสุด · **4 ดาว (ผู้เล่นบอก 2026-10-22)** — ดาวบนจอ Info คือดาวอัปเลเวล | ค่าพลังเปล่า: จอ Info ไม่มีป้าย On Team และตัวเลขตรงกับจอ Detailed Stats ทุกช่อง (ATK 1,961 · DEF 580 · HP 8,389) จึงเป็นค่าที่ไม่ได้ติดของ | **\"Assassin 1,026\" เก็บเป็น stat ใหม่ assassinPower** ทูลทิป \"Assassins' Suppression DMG increases based on their Assassin proficiency\" — ชุดเดียวกับ supportPower (Vivian) และ fighterPower (Verna / Mina) แต่ตัวเลขต่างกัน (1,026 vs 1,078) อาจเพราะเป็น 4 ดาว | ค่าบรรทัดอื่นเทียบตัว 5 ดาว: Elemental Weakness 125% · Ultimate Gauge 100% · Stamina 100 เท่ากัน · Fire DMG Boost 0.7% เท่ากับ Mina · ATK/DEF/HP ต่ำกว่า และมี Suppression DMG Boost 11.59% แทน Brawl | **เลเวลสกิลบนจอไม่เท่ากัน**: Basic Attack 13 · Switch 13 · Special 16 · Ultimate 12 — น่าจะมาจากโบนัสของการปลุกพลัง (ขั้น 3/5 ของตัวอื่นให้ +2) ยังไม่ได้อ่านสี่ท่านี้ | Passive (Lv.1): Locked and Loaded = ท่อน 1 · Wanted ทั้งสองบรรทัด = ท่อน 2 · ท่อน 3 คือคำอธิบายย่อยของ Wanted ที่จอใส่หัวข้อสีเหลือง เก็บต่อท้ายพร้อมคำว่า \"Wanted:\" | Guidance of Fire: Evil Condemned Lv.2 = ATK +5.9% 15 วินาที เมื่อใช้สกิลสนับสนุน · effects ว่าง เพราะจอไม่ได้บอกว่าบัฟลงที่ใคร | รูป portrait ตัดจากภาพในฉากที่ผู้เล่นส่งมา 2026-10-22 (1920x1080) 420x420 ช่วงหัวถึงอก แทนรูปจากจอ Info เดิม | **2026-10-22 รอบสอง** Basic Attack · Switch Skill · Ultimate Skill ภาษาอังกฤษ | **เลเวลบนจอเป็น \"ฐาน + โบนัส\"** เช่น Ultimate \"Level 8 +4\" = 12 · Basic/Switch \"Level 9 +4\" = 13 — ค่าในตารางเป็นของเลเวลรวม จึงเก็บที่ช่อง 12 / 13 · **โบนัส +4 มาจากปลุกพลังขั้น 3 กับ 5 (+2 ทั้งคู่)** — จอปลุกพลังขึ้น Awakening Complete ทั้งหกขั้น | **Ultimate ช่อง 16 มาจากป๊อปอัป Skill Info** ที่โชว์ \"Lv.12 >> Lv.16\" DMG 1,371.7% (▲280.6%) · Fire Affliction 5s — เป็นตัวเลขที่จอแสดงจริง จึงเก็บ (ต่างจากป๊อปอัปของสกิลธาตุที่ไม่มีตาราง scaling) | Switch Skill (13): ห้าบรรทัดครบ — จอแรกบรรทัดที่สามถูกตัด จึงรอจอที่เลื่อนลงแล้วค่อยเก็บ · DMG / Fire DMG Boost 10% / Duration 4s = ท่อน 1 · Support Skill DMG / Fire Affliction Duration = ท่อน 2 | Basic: 1st-4th = ท่อน 1 · Air/Evasion Counter ไม่ถูกพูดถึง ไม่ใส่ line | Guidance of Fire ป๊อปอัปบอก Lv.12 = 6.9% (จดไว้ ไม่ใส่) | Fire Affliction ข้อความตรงกับวิเวียน · Verna · Mina ทุกตัวอักษร | **Special Skill \"Level 12 +4\" = 16 และขึ้น Max level reached** — เลเวลสกิลสูงสุดคือ 16 (ฐาน 12 + โบนัส 4) ตรงกับ scaling 16 ช่องที่ schema ตั้งไว้ · Bullet Ballet: DMG 485.8% · DMG Reduction 25% · Cooldown 11.5s | ครบทั้งหกช่องสกิลแล้ว | **2026-10-22 รอบสาม ปลุกพลังครบหกขั้น (Awakening Complete — ปลดล็อกแล้วทั้งหมด)** · effects เติมขั้น 3 (ดาเมจสกิลสนับสนุน +6% → supportDmg ตามแบบขั้น 5 ของวิเวียน) และขั้น 5 (ดาเมจโจมตีพื้นฐาน +6%) · ขั้นอื่นเปลี่ยนค่าของสกิลเดิมหรือมีเงื่อนไข เก็บเป็นข้อความ | **ค่าสกิลที่เก็บไว้เป็นค่าหลังปลุกพลังครบ** (เลเวลรวม +4) ไม่ใช่ค่าของตัวที่ไม่ได้ปลุก — ตัวละครตัวอื่นที่ยังล็อกอยู่ (Verna / Mina) เลเวล 12 คือไม่มีโบนัส | **สกิลธาตุเติม effect แล้ว** (ผู้เล่นกำหนด 2026-10-22: \"ถ้าไม่บอกว่าใครก็คือตัวเอง\" — ข้อความที่ไม่ระบุผู้รับบัฟ ให้ target self) | **2026-10-24 จอไทย (พรีวิวตัวละคร — Lv.12 ไม่มีโบนัสปลุกพลัง)** ชื่อ แองเจิล · ค่าพลังห้าค่าตรงจออังกฤษ · โจมตีพื้นฐาน แรพพิดไฟร์ · สกิลสับเปลี่ยน บลิทซ์ช็อต · การชี้นำแห่งไฟ ลงทัณฑ์คนชั่ว · เอฟเฟกต์อ่อนแอต่อไฟ | **จอไทยเป็นจอ Preview ที่ Lv.12 → ค่าตาราง Basic / Switch เติมลงช่อง scaling 12** (ช่อง 13 จากจอบัญชีอังกฤษเก็บไว้เหมือนเดิม) · Fire DMG Boost 10% / 4s / Fire Affliction 5s เท่ากันทั้งสองเลเวล | **สกิลธาตุ: effect เปลี่ยนจาก 5.9% (Lv.2) เป็น 6.9% (Lv.12)** ตามแบบตัวอื่นที่เก็บค่า Lv.12 — ตรงกับป๊อปอัปที่จดไว้ก่อนแล้ว · desc อังกฤษยังเป็นข้อความ Lv.2 (5.9%) ตามที่อ่าน ส่วน desc ไทยเป็น Lv.12 (6.9%) — ตัวเลขสองภาษาไม่ตรงกันเพราะคนละเลเวล ไม่แก้ข้อความอังกฤษเอง | **2026-10-24 จอไทยรอบสอง** สกิลพิเศษ ระบำกระสุน (Lv.12: 386.4% / 25% / 11.5 วิ → ช่อง 12) · สกิลอัลติเมต ชัตดาวน์ (Lv.12 1,091.1% / 5 วิ ตรงค่าที่มี) · แพสซีฟ นักล่าค่าหัว (Lv.1 20% / 6 วิ / 12 วิ ตรง) · Locked and Loaded = เตรียมพร้อมลั่นไก · Wanted = ออกหมายจับ · ปลุกพลัง 1–6 ครบ — ชื่อขั้น 6 บนจอขึ้นสองบรรทัด ต่อกันไม่เว้นวรรค · ขั้น 1 จอไทยพิมพ์ \"เมื่อเมื่อ\" ซ้ำ เก็บตามจอ | **ภาษาไทยของแองเจิลครบแล้ว**"
+    "note": "อ่านจากจอตัวละครภาษาอังกฤษ 2026-10-22 (Info · Detailed Stats · Passive Trait · Guidance of Fire) | Assassin · Fire · Ranged · เลเวล 60 สูงสุด · **4 ดาว (ผู้เล่นบอก 2026-10-22)** — ดาวบนจอ Info คือดาวอัปเลเวล | ค่าพลังเปล่า: จอ Info ไม่มีป้าย On Team และตัวเลขตรงกับจอ Detailed Stats ทุกช่อง (ATK 1,961 · DEF 580 · HP 8,389) จึงเป็นค่าที่ไม่ได้ติดของ | **\"Assassin 1,026\" เก็บเป็น stat ใหม่ assassinPower** ทูลทิป \"Assassins' Suppression DMG increases based on their Assassin proficiency\" — ชุดเดียวกับ supportPower (Vivian) และ fighterPower (Verna / Mina) แต่ตัวเลขต่างกัน (1,026 vs 1,078) อาจเพราะเป็น 4 ดาว | ค่าบรรทัดอื่นเทียบตัว 5 ดาว: Elemental Weakness 125% · Ultimate Gauge 100% · Stamina 100 เท่ากัน · Fire DMG Boost 0.7% เท่ากับ Mina · ATK/DEF/HP ต่ำกว่า และมี Suppression DMG Boost 11.59% แทน Brawl | **เลเวลสกิลบนจอไม่เท่ากัน**: Basic Attack 13 · Switch 13 · Special 16 · Ultimate 12 — น่าจะมาจากโบนัสของการปลุกพลัง (ขั้น 3/5 ของตัวอื่นให้ +2) ยังไม่ได้อ่านสี่ท่านี้ | Passive (Lv.1): Locked and Loaded = ท่อน 1 · Wanted ทั้งสองบรรทัด = ท่อน 2 · ท่อน 3 คือคำอธิบายย่อยของ Wanted ที่จอใส่หัวข้อสีเหลือง เก็บต่อท้ายพร้อมคำว่า \"Wanted:\" | Guidance of Fire: Evil Condemned Lv.2 = ATK +5.9% 15 วินาที เมื่อใช้สกิลสนับสนุน · effects ว่าง เพราะจอไม่ได้บอกว่าบัฟลงที่ใคร | รูป portrait ตัดจากภาพในฉากที่ผู้เล่นส่งมา 2026-10-22 (1920x1080) 420x420 ช่วงหัวถึงอก แทนรูปจากจอ Info เดิม | **2026-10-22 รอบสอง** Basic Attack · Switch Skill · Ultimate Skill ภาษาอังกฤษ | **เลเวลบนจอเป็น \"ฐาน + โบนัส\"** เช่น Ultimate \"Level 8 +4\" = 12 · Basic/Switch \"Level 9 +4\" = 13 — ค่าในตารางเป็นของเลเวลรวม จึงเก็บที่ช่อง 12 / 13 · **โบนัส +4 มาจากปลุกพลังขั้น 3 กับ 5 (+2 ทั้งคู่)** — จอปลุกพลังขึ้น Awakening Complete ทั้งหกขั้น | **Ultimate ช่อง 16 มาจากป๊อปอัป Skill Info** ที่โชว์ \"Lv.12 >> Lv.16\" DMG 1,371.7% (▲280.6%) · Fire Affliction 5s — เป็นตัวเลขที่จอแสดงจริง จึงเก็บ (ต่างจากป๊อปอัปของสกิลธาตุที่ไม่มีตาราง scaling) | Switch Skill (13): ห้าบรรทัดครบ — จอแรกบรรทัดที่สามถูกตัด จึงรอจอที่เลื่อนลงแล้วค่อยเก็บ · DMG / Fire DMG Boost 10% / Duration 4s = ท่อน 1 · Support Skill DMG / Fire Affliction Duration = ท่อน 2 | Basic: 1st-4th = ท่อน 1 · Air/Evasion Counter ไม่ถูกพูดถึง ไม่ใส่ line | Guidance of Fire ป๊อปอัปบอก Lv.12 = 6.9% (จดไว้ ไม่ใส่) | Fire Affliction ข้อความตรงกับวิเวียน · Verna · Mina ทุกตัวอักษร | **Special Skill \"Level 12 +4\" = 16 และขึ้น Max level reached** — เลเวลสกิลสูงสุดคือ 16 (ฐาน 12 + โบนัส 4) ตรงกับ scaling 16 ช่องที่ schema ตั้งไว้ · Bullet Ballet: DMG 485.8% · DMG Reduction 25% · Cooldown 11.5s | ครบทั้งหกช่องสกิลแล้ว | **2026-10-22 รอบสาม ปลุกพลังครบหกขั้น (Awakening Complete — ปลดล็อกแล้วทั้งหมด)** · effects เติมขั้น 3 (ดาเมจสกิลสนับสนุน +6% → supportDmg ตามแบบขั้น 5 ของวิเวียน) และขั้น 5 (ดาเมจโจมตีพื้นฐาน +6%) · ขั้นอื่นเปลี่ยนค่าของสกิลเดิมหรือมีเงื่อนไข เก็บเป็นข้อความ | **ค่าสกิลที่เก็บไว้เป็นค่าหลังปลุกพลังครบ** (เลเวลรวม +4) ไม่ใช่ค่าของตัวที่ไม่ได้ปลุก — ตัวละครตัวอื่นที่ยังล็อกอยู่ (Verna / Mina) เลเวล 12 คือไม่มีโบนัส | **สกิลธาตุเติม effect แล้ว** (ผู้เล่นกำหนด 2026-10-22: \"ถ้าไม่บอกว่าใครก็คือตัวเอง\" — ข้อความที่ไม่ระบุผู้รับบัฟ ให้ target self) | **2026-10-24 จอไทย (พรีวิวตัวละคร — Lv.12 ไม่มีโบนัสปลุกพลัง)** ชื่อ แองเจิล · ค่าพลังห้าค่าตรงจออังกฤษ · โจมตีพื้นฐาน แรพพิดไฟร์ · สกิลสับเปลี่ยน บลิทซ์ช็อต · การชี้นำแห่งไฟ ลงทัณฑ์คนชั่ว · เอฟเฟกต์อ่อนแอต่อไฟ | **จอไทยเป็นจอ Preview ที่ Lv.12 → ค่าตาราง Basic / Switch เติมลงช่อง scaling 12** (ช่อง 13 จากจอบัญชีอังกฤษเก็บไว้เหมือนเดิม) · Fire DMG Boost 10% / 4s / Fire Affliction 5s เท่ากันทั้งสองเลเวล | **สกิลธาตุ: effect เปลี่ยนจาก 5.9% (Lv.2) เป็น 6.9% (Lv.12)** ตามแบบตัวอื่นที่เก็บค่า Lv.12 — ตรงกับป๊อปอัปที่จดไว้ก่อนแล้ว · desc อังกฤษยังเป็นข้อความ Lv.2 (5.9%) ตามที่อ่าน ส่วน desc ไทยเป็น Lv.12 (6.9%) — ตัวเลขสองภาษาไม่ตรงกันเพราะคนละเลเวล ไม่แก้ข้อความอังกฤษเอง | **2026-10-24 จอไทยรอบสอง** สกิลพิเศษ ระบำกระสุน (Lv.12: 386.4% / 25% / 11.5 วิ → ช่อง 12) · สกิลอัลติเมต ชัตดาวน์ (Lv.12 1,091.1% / 5 วิ ตรงค่าที่มี) · แพสซีฟ นักล่าค่าหัว (Lv.1 20% / 6 วิ / 12 วิ ตรง) · Locked and Loaded = เตรียมพร้อมลั่นไก · Wanted = ออกหมายจับ · ปลุกพลัง 1–6 ครบ — ชื่อขั้น 6 บนจอขึ้นสองบรรทัด ต่อกันไม่เว้นวรรค · ขั้น 1 จอไทยพิมพ์ \"เมื่อเมื่อ\" ซ้ำ เก็บตามจอ | **ภาษาไทยของแองเจิลครบแล้ว** | **2026-10-31 ผู้เล่นสั่งไล่ใส่บัฟที่เป็นข้อความทั้งหมด** ใส่ effect จากข้อความ/ตารางบนจอเดิม (ไม่ได้อ่านจอใหม่): A1, A2, A4, A6, passive, switch · \"X เท่า\" นับเป็น +100% ต่อเท่าตามที่ผู้เล่นยืนยันกับกาบี้ · ท่าที่ตีเพิ่ม/จำนวนครั้งเพิ่มใช้ bonusDmg · บัฟแปลงค่าใช้ condition.convertFrom"
   }
 }
