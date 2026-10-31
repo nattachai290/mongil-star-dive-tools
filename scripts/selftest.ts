@@ -387,5 +387,14 @@ check("yes แปะป้ายสองภาษา", linkableBadge("yes")?.th
   check("บัฟเฉพาะแถวไม่นับในตารางค่าพลังรวม", sheet(4) === sheet(3), `${sheet(3)} vs ${sheet(4)}`);
 }
 
+// ---------- จุดอ่อนธาตุนับเฉพาะธาตุของตัวหลัก ----------
+{
+  // ผู้เล่นบอก 2026-10-31: ตีบอสที่แพ้ธาตุดินด้วยธาตุลม ไม่ได้อะไรจากจุดอ่อน
+  const lo = buildLoadout.parse({ awaken: 0, members: [{ characterId: "gabi" }, { characterId: "chloe" }] });
+  const w = teamDamage(lo, { weakness: true }), n = teamDamage(lo, { weakness: false });
+  const gain = (i: number) => w.members[i].total / n.members[i].total;
+  check("ตัวธาตุอื่นในทีมได้จากจุดอ่อนน้อยกว่าตัวธาตุเดียวกับตัวหลัก", gain(1) < gain(0), `${gain(1)} vs ${gain(0)}`);
+}
+
 console.log(failed === 0 ? "\nผ่านทั้งหมด\n" : `\nไม่ผ่าน ${failed} ข้อ\n`);
 if (failed > 0) process.exit(1);

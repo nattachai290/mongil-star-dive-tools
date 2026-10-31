@@ -468,7 +468,12 @@ type MemberShape = {
   linkChain?: string;
   legendary?: MonShape;
 };
-type LoadoutShape = { awaken: number; food?: { entree?: string; side?: string }; members?: MemberShape[] };
+type LoadoutShape = {
+  awaken: number;
+  food?: { entree?: string; side?: string };
+  members?: MemberShape[];
+  substitutes?: { replaces: string; member: MemberShape }[];
+};
 
 /** แถวตารางค่ารอง → คีย์ที่บิ้วใช้ ("critDmg", "res-fire") */
 const substatRows = (
@@ -501,8 +506,21 @@ for (const [id, doc] of Object.entries(parsed.builds ?? {})) {
 
     // มอนตัวเดียวกันบนสองคนในทีม บัฟไม่ทับซ้อน — ไม่ผิดกติกาเกม จึงแค่เตือน
     const owner = new Map<string, string>();
-    for (const [j, mem] of members.entries()) {
-      const mt = `${at}.members[${j}]`;
+    // ตัวแทน: ต้องแทนคนที่อยู่ในทีม ตัวเองต้องยังไม่อยู่ในทีม · มอนเทียบกับสมาชิกที่เหลือเท่านั้น
+    const subs = lo.substitutes ?? [];
+    for (const [k, sub] of subs.entries()) {
+      if (!ids.includes(sub.replaces)) fail(where, `${at}.substitutes[${k}].replaces "${sub.replaces}" ไม่ได้อยู่ในทีม`);
+      if (ids.includes(sub.member.characterId)) fail(where, `${at}.substitutes[${k}] "${sub.member.characterId}" อยู่ในทีมอยู่แล้ว`);
+    }
+    const toCheck: [MemberShape, string, Map<string, string>][] = [
+      ...members.map((m, j) => [m, `${at}.members[${j}]`, owner] as [MemberShape, string, Map<string, string>]),
+      ...subs.map((sub, k) => [
+        sub.member,
+        `${at}.substitutes[${k}]`,
+        new Map(members.filter((m) => m.characterId !== sub.replaces).flatMap((m) => (m.monsterlings ?? []).map((x) => [x.id, m.characterId] as [string, string]))),
+      ] as [MemberShape, string, Map<string, string>]),
+    ];
+    for (const [mem, mt, owner] of toCheck) {
       checkRefs(where, mem.characterId, "characters", `${mt}.characterId`);
       const char = parsed.characters?.[mem.characterId];
 

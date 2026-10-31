@@ -294,11 +294,14 @@ function inputsFor(
   enemyDef?: number,
   /** ชื่อแถวดาเมจ (อังกฤษ) — บัฟที่มี condition.skillRow ใช้เฉพาะแถวที่ชื่อตรง */
   row?: string,
+  /** ธาตุที่ศัตรูแพ้ — ไม่ใส่ = ทุกธาตุที่ไม่ใช่กายภาพ */
+  weakElement?: string,
 ): DamageInput {
   // บัฟที่ติดเมื่อตีจุดอ่อน (เช่น ผู้พิทักษ์แห่งนครทองคำ) ติดเฉพาะเมื่อทีมตีจุดอ่อน — เป็นบัฟค้าง ใช้กับทุกท่าหลังติดแล้ว
   const teamWeak = weakness;
-  // จุดอ่อนธาตุ: ตีด้วยธาตุที่ศัตรูแพ้ — กายภาพไม่มีจุดอ่อน
-  const weak = weakness && damageType !== "physical";
+  // จุดอ่อนธาตุ: ตีด้วยธาตุที่ศัตรูแพ้เท่านั้น — กายภาพไม่มีจุดอ่อน
+  // (ผู้เล่นบอก 2026-10-31: ตีบอสที่แพ้ธาตุดินด้วยธาตุลม ไม่ได้อะไรจากจุดอ่อน)
+  const weak = weakness && damageType !== "physical" && (!weakElement || damageType === weakElement);
   const inp: DamageInput = {
     enemyDef,
     weaknessHit: weak,
@@ -369,6 +372,11 @@ function inputsFor(
   return inp;
 }
 
+/** ธาตุที่ศัตรูแพ้ในบิ้วที่ตีจุดอ่อน = ธาตุของตัวหลัก (ตัวแรก) */
+export function weakElementOf(lo: BuildLoadout): string | undefined {
+  return characterById(lo.members[0]?.characterId ?? "")?.element;
+}
+
 /** เอฟเฟกต์ที่สมาชิกแต่ละตัวได้รับจริง — ของตัวเอง + บัฟทีม/ดีบัฟศัตรูจากเพื่อน + อาหาร + ค่าพลังพื้นฐาน */
 export function receivedEffects(
   lo: BuildLoadout,
@@ -381,15 +389,17 @@ export function receivedEffects(
   });
 
   // เอฟเฟกต์ของแต่ละตัว — target team/ally ส่งให้ทุกคน, enemy ส่งให้ทุกคน (ดีบัฟบนศัตรูตัวเดียวกัน)
-  // บัฟที่ติดเมื่อตีจุดอ่อนธาตุ นับเฉพาะบิ้วที่ตีจุดอ่อน
+  // บัฟที่ติดเมื่อตีจุดอ่อนธาตุ นับเฉพาะตัวที่ตีจุดอ่อนได้จริง (ธาตุเดียวกับที่ศัตรูแพ้)
+  const weakEl = weakElementOf(lo);
+  const hitsWeak = (c: Character | undefined) => weakness && !!c && (!weakEl || c.element === weakEl);
   const own = lo.members.map((m, i) =>
-    (chars[i] ? memberEffects(m, chars[i]!, m.awaken ?? lo.awaken) : []).filter((t) => weakness || t.effect.trigger !== "onWeaknessHit"),
+    (chars[i] ? memberEffects(m, chars[i]!, m.awaken ?? lo.awaken) : []).filter((t) => hitsWeak(chars[i]) || t.effect.trigger !== "onWeaknessHit"),
   );
   // เอฟเฟกต์เพิ่มเติมของลิงก์เชนที่โผล่ในรอบ — ลงที่ศัตรู จึงได้ทั้งทีม
   const chainFx = lo.members.flatMap((m, i) => {
     const lc = LINK_CHAINS.find((c) => c.id === m.linkChain);
     const ch = chars[i];
-    if (!lc || !ch || !chainAppears(lc, ch, m.cycle ?? CYCLE_SKILLS, weakness, lo.staggerOften)) return [];
+    if (!lc || !ch || !chainAppears(lc, ch, m.cycle ?? CYCLE_SKILLS, hitsWeak(ch), lo.staggerOften)) return [];
     return chainEffects(lc).effects.map(tag(lc.name, false));
   });
   // บัฟทีม/ดีบัฟศัตรูตัวเดียวกันจากหลายคน (เซ็ตเดียวกัน · Artifact เดียวกัน · มอนตำนานตัวเดียวกัน) ไม่ทับซ้อน — นับครั้งเดียว
@@ -538,6 +548,7 @@ const ROLE_STAT_OF: Record<string, string> = {
 export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean; enemyDef?: number } = {}): TeamDamage {
   const weakness = opts.weakness ?? lo.weaknessHit ?? false;
   const received = receivedEffects(lo, weakness);
+  const weakEl = weakElementOf(lo);
   const members: MemberDamage[] = lo.members.map((mem, i) => {
     const { char, effects: mine } = received[i];
     if (!char) return { characterId: mem.characterId, skills: [], chain: 0, total: 0 };
@@ -558,7 +569,7 @@ export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean; enemyDe
         if (!at) continue;
         usedLevel = at.level;
         rows.push({ label: row.label, value: at.value });
-        sum += computeDamage(inputsFor(char, mine, key, damageType, at.value, weakness, opts.enemyDef, en)).average;
+        sum += computeDamage(inputsFor(char, mine, key, damageType, at.value, weakness, opts.enemyDef, en, weakEl)).average;
       }
       if (key === "special") sum *= specialCastFactor(char, mine);
       if (rows.length) skills.push({ skill: key, level: usedLevel, rows, damageType, average: sum });
@@ -567,8 +578,9 @@ export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean; enemyDe
     let chain = 0;
     const lc = LINK_CHAINS.find((c) => c.id === mem.linkChain);
     const top = lc && topLevel(lc);
-    if (lc && top?.appearanceInfo.dmgPercentOfAtk && chainAppears(lc, char, mem.cycle ?? CYCLE_SKILLS, weakness, lo.staggerOften)) {
-      chain = computeDamage(inputsFor(char, mine, "chain", top.damageType ?? "physical", top.appearanceInfo.dmgPercentOfAtk, weakness, opts.enemyDef)).average;
+    const memberWeak = weakness && (!weakEl || char.element === weakEl);
+    if (lc && top?.appearanceInfo.dmgPercentOfAtk && chainAppears(lc, char, mem.cycle ?? CYCLE_SKILLS, memberWeak, lo.staggerOften)) {
+      chain = computeDamage(inputsFor(char, mine, "chain", top.damageType ?? "physical", top.appearanceInfo.dmgPercentOfAtk, weakness, opts.enemyDef, undefined, weakEl)).average;
     }
     return { characterId: mem.characterId, skills, chain, total: skills.reduce((n, s) => n + s.average, 0) + chain };
   });

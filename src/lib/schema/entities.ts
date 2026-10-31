@@ -565,6 +565,14 @@ export const buildLoadout = z.object({
   staggerOften: z.boolean().optional(),
   /** ตัวแรกคือตัวหลักของบิ้ว · สองร่างของตัวละครเดียวกันอยู่ทีมเดียวกันได้ เพราะเกมนับเป็นคนละตัว */
   members: z.array(buildMember).min(1).max(3),
+  /**
+   * ตัวแทน — ถ้าไม่มีตัวใดตัวหนึ่งในทีม ใช้ใครแทน พร้อมของที่ตัวแทนใส่ (ผู้เล่นสั่ง 2026-10-31)
+   * replaces = characterId ของสมาชิกที่ถูกแทน · ตัวแทนห้ามเป็นคนที่อยู่ในทีมแล้ว
+   * มอนห้ามซ้ำกับสมาชิกที่เหลือ · มอนตำนานใช้ Trait เดียวกับทุกที่ (validate:data ตรวจ)
+   */
+  substitutes: z
+    .array(z.object({ replaces: slug, member: buildMember, note: text.optional() }).strict())
+    .optional(),
 }).strict();
 
 /**

@@ -37,6 +37,7 @@ import {
   receivedEffects,
   specialCooldownReduction,
   statSheet,
+  teamDamage,
   unusableReason,
   type StatSheet,
   type Tagged,
@@ -671,6 +672,61 @@ function BuildView({ b, locale, t }: { b: (typeof BUILDS)[number]; locale: Local
   );
 }
 
+/**
+ * ตัวแทน — ถ้าไม่มีตัวใดตัวหนึ่งในทีม (ผู้เล่นสั่ง 2026-10-31)
+ * คิดที่ขั้นปลุกพลังเริ่มต้นของบิ้ว ไม่ตาม dropdown · ดาเมจรวมทีมเทียบทีมหลัก
+ */
+function Substitutes({ lo, locale, t }: { lo: BuildLoadout; locale: Locale; t: T }) {
+  const subs = lo.substitutes ?? [];
+  if (subs.length === 0) return null;
+  const main = teamDamage(lo).total;
+  return (
+    <section className="mt-6 border-t border-line pt-4">
+      <h3 className="font-display text-base font-semibold">{t("builds.substitutes")}</h3>
+      <p className="mt-1 text-xs text-ink-2">{t("builds.substitutesNote")}</p>
+      <div className="mt-3 space-y-2">
+        {subs.map((sub, k) => {
+          const swapped: BuildLoadout = {
+            ...lo,
+            members: lo.members.map((m) => (m.characterId === sub.replaces ? sub.member : m)),
+          };
+          const i = swapped.members.indexOf(sub.member);
+          const received = receivedEffects(swapped);
+          const team = swapped.members.flatMap((m) => characterById(m.characterId) ?? []);
+          const others = swapped.members.filter((m) => m !== sub.member).flatMap((m) => m.monsterlings.map((x) => x.id));
+          const dup = new Set(sub.member.monsterlings.map((x) => x.id).filter((id) => others.includes(id)));
+          const pct = teamDamage(swapped).total / main - 1;
+          const pctText = `${pct >= 0 ? "+" : "−"}${Math.abs(Math.round(pct * 1000) / 10)}%`;
+          const replaced = name(characterById(sub.replaces)?.name, locale, sub.replaces);
+          const who = name(characterById(sub.member.characterId)?.name, locale, sub.member.characterId);
+          return (
+            <details key={k} className="rounded-xl border border-line p-3">
+              <summary className="cursor-pointer text-sm">
+                <span className="text-muted">{t("builds.replaces").replace("{name}", replaced)}:</span>{" "}
+                <strong className="font-semibold">{who}</strong>{" "}
+                <span className="text-xs text-gold">{t("builds.teamDmgVsMain").replace("{pct}", pctText)}</span>
+              </summary>
+              {sub.note && <p className="mt-2 text-xs text-ink-2">{name(sub.note, locale, "")}</p>}
+              <div className="mt-3">
+                <MemberGear
+                  mem={sub.member}
+                  effects={received[i]?.effects ?? []}
+                  team={team}
+                  weaknessHit={lo.weaknessHit ?? false}
+                  staggerOften={lo.staggerOften ?? false}
+                  dup={dup}
+                  locale={locale}
+                  t={t}
+                />
+              </div>
+            </details>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
 export default async function BuildsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
@@ -695,6 +751,7 @@ export default async function BuildsPage({ params }: { params: Promise<{ locale:
                 <h2 className="mb-4 font-display text-lg font-semibold">{team.join(" · ")}</h2>
                 <p className="mb-3 text-xs text-ink-2">{t("builds.awakenSelect")}</p>
                 <BuildView b={b} locale={locale as Locale} t={t} />
+                <Substitutes lo={b.loadouts[0]} locale={locale as Locale} t={t} />
               </article>
             );
           })}
