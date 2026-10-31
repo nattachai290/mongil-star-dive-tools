@@ -1,0 +1,98 @@
+{
+  "id": "plains-embroidering-dew",
+  "name": {
+    "th": "น้ำค้างที่ถักทอทุ่งหญ้า",
+    "en": "Plains Embroidering Dew"
+  },
+  "stars": 5,
+  "role": "supporter",
+  "level": 60,
+  "stats": [
+    {
+      "stat": "atk",
+      "value": 883,
+      "unit": "flat"
+    },
+    {
+      "stat": "def",
+      "value": 21,
+      "unit": "percent"
+    }
+  ],
+  "fusion": [
+    {
+      "artifactLevel": 60,
+      "level": 1,
+      "name": {
+        "th": "หากฝนจิ้งจอกตก I",
+        "en": "Fox Rain I"
+      },
+      "desc": {
+        "th": "เมื่อตัวละคร [ซัพพอร์ตเตอร์] ติดตั้ง จะได้รับเอฟเฟกต์ดังต่อไปนี้ / เมื่อตัวละครที่ติดตั้งมอบเอฟเฟกต์ม่านป้องกัน จะเพิ่มดาเมจที่สมาชิกทีมสร้างโดยโจมตีพื้นฐาน 12% (เวลาแสดงผล 14 วินาที) / หากสมาชิกทีมที่ได้รับเอฟเฟกต์ม่านป้องกันเป็นธาตุน้ำแข็ง จะเพิ่มดาเมจที่สร้างโดยโจมตีพื้นฐานขึ้นอีก 20% และเพิ่มดาเมจคริติคอล 25% (เวลาแสดงผล 14 วินาที) / รวมขั้น 3 : ทุกซัพพอร์ตเตอร์ 10 หน่วย จะได้รับเอฟเฟกต์เพิ่มดาเมจธาตุน้ำแข็ง 0.06% (สูงสุด 15%) / รวมขั้น 5 : ทุกซัพพอร์ตเตอร์ 10 หน่วย จะได้รับเอฟเฟกต์เพิ่มพลังโจมตี 0.06% (สูงสุด 15%)",
+        "en": "When equipped by a [Support] character, grants the following effect. / When the equipping character grants a teammate a Shield, their Basic Attack DMG increases by 12%. (Duration: 14s) / If that teammate is an Ice character, damage dealt with Basic Attacks increases an additional 20%, and their Crit DMG increases by 25%. (Duration: 14s). / Fusion Level 3: Gains 0.06% Ice DMG Boost for every 10 points of Support proficiency. (Max: 15%) / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Support proficiency. (Max: 15%)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "target": "team",
+          "trigger": "onGrantShield",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 12,
+          "unit": "percent",
+          "durationSec": 14
+        },
+        {
+          "kind": "buff",
+          "target": "team",
+          "trigger": "onGrantShield",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 20,
+          "unit": "percent",
+          "durationSec": 14,
+          "condition": {
+            "teammateElement": "ice",
+            "note": {
+              "th": "หากสมาชิกทีมที่ได้รับเอฟเฟกต์ม่านป้องกันเป็นธาตุน้ำแข็ง",
+              "en": "If that teammate is an Ice character"
+            }
+          }
+        },
+        {
+          "kind": "buff",
+          "target": "team",
+          "trigger": "onGrantShield",
+          "stat": "critDmg",
+          "value": 25,
+          "unit": "percent",
+          "durationSec": 14,
+          "condition": {
+            "teammateElement": "ice",
+            "note": {
+              "th": "หากสมาชิกทีมที่ได้รับเอฟเฟกต์ม่านป้องกันเป็นธาตุน้ำแข็ง",
+              "en": "If that teammate is an Ice character"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "images": {
+    "icon": "plains-embroidering-dew-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-31",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "อ่านจากจอพรีวิวอาร์ติแฟกต์ไทย 2026-10-31 (Lv.60) | 5 ดาวจากเพชร 5 เม็ดบนการ์ด | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ | รวมขั้น 1 | ไอคอนตัดจากการ์ดในภาพที่ส่งมาซ้ำ 2026-10-31 (ป้าย \"กำลังติดตั้ง\" บังขอบบน จึงตัดต่ำลงมา) | **2026-10-31 จออังกฤษ (Lv.60 · Fusion Level 1)** ชื่อ Plains Embroidering Dew · Fox Rain I · ค่าสเตตัส ATK 883 · DEF 21% ตรงจอไทย · ตัวเลขทุกตัวตรงจอไทย · id เปลี่ยนจาก namkhang-thi-thak-tho (ถอดเสียงไทย) เป็นชื่ออังกฤษ"
+  }
+}
