@@ -573,7 +573,8 @@ for (const [id, doc] of Object.entries(parsed.builds ?? {})) {
         fail(where, `${mt}.linkChain "${mem.linkChain}" เป็นของ "${String(chainOwner)}" ซึ่งไม่ได้อยู่ในมอน 3 ตัวที่ใส่`);
       }
 
-      for (const m of [...mons, ...(legId ? [legId] : [])]) {
+      // มอนตำนานใส่ซ้ำได้ทุกตัวละคร (ผู้เล่นบอก 2026-10-31) — เตือนเฉพาะมอนสเตอร์ลิงธรรมดา
+      for (const m of mons) {
         const prev = owner.get(m);
         if (prev) warn(where, `${at}: มอน "${m}" อยู่ทั้ง ${prev} และ ${mem.characterId} — บัฟไม่ทับซ้อนกัน`);
         else owner.set(m, mem.characterId);

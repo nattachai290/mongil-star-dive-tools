@@ -513,7 +513,8 @@ function MemberGear({
 
 function Loadout({ lo, locale, t }: { lo: BuildLoadout; locale: Locale; t: T }) {
   // มอนตัวเดียวกันบนหลายคนในทีม บัฟไม่ทับซ้อน
-  const all = lo.members.flatMap((m) => [...m.monsterlings.map((x) => x.id), ...(m.legendary ? [m.legendary.id] : [])]);
+  // มอนตำนานใส่ซ้ำได้ทุกตัวละคร (ผู้เล่นบอก 2026-10-31) จึงไม่นับ
+  const all = lo.members.flatMap((m) => m.monsterlings.map((x) => x.id));
   const dup = new Set(all.filter((m, i) => all.indexOf(m) !== i));
   const received = receivedEffects(lo);
   const team = lo.members.flatMap((m) => characterById(m.characterId) ?? []);

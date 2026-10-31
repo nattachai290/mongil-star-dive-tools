@@ -115,7 +115,7 @@
           ],
           "linkChain": "autumn-branch",
           "legendary": {
-            "id": "sorin",
+            "id": "reginula",
             "traits": [
               {
                 "id": "special-skill-cooldown",
@@ -126,11 +126,11 @@
                 "grade": "gold"
               },
               {
-                "id": "crit-dmg",
+                "id": "weakness-dmg",
                 "grade": "gold"
               },
               {
-                "id": "weakness-dmg",
+                "id": "crit-dmg",
                 "grade": "gold"
               }
             ]
@@ -373,6 +373,27 @@
             }
           ],
           "linkChain": "golems-gem",
+          "legendary": {
+            "id": "reginula",
+            "traits": [
+              {
+                "id": "special-skill-cooldown",
+                "grade": "gold"
+              },
+              {
+                "id": "dmg-vs-boss",
+                "grade": "gold"
+              },
+              {
+                "id": "weakness-dmg",
+                "grade": "gold"
+              },
+              {
+                "id": "crit-dmg",
+                "grade": "gold"
+              }
+            ]
+          },
           "cycle": [
             "switch",
             "special",
