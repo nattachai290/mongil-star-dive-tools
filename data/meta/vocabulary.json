@@ -285,7 +285,8 @@
       "en": "Stamina Consumption"
     },
     "roleMastery": {
-      "th": "ความเชี่ยวชาญตามบทบาท"
+      "th": "ความเชี่ยวชาญตามบทบาท",
+      "en": "Role Specialization"
     },
     "supportDmg": {
       "th": "ดาเมจสนับสนุน",
