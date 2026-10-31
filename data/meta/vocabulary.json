@@ -242,6 +242,10 @@
       "th": "ความเสียหายที่ได้รับ",
       "en": "DMG Taken"
     },
+    "bonusDmg": {
+      "th": "ดาเมจเพิ่มเติม",
+      "en": "Bonus DMG"
+    },
     "defShred": {
       "th": "ลดพลังป้องกันศัตรู",
       "en": "DEF Shred"

@@ -405,6 +405,9 @@ export function receivedEffects(
   // บัฟทีม/ดีบัฟศัตรูตัวเดียวกันจากหลายคน (เซ็ตเดียวกัน · Artifact เดียวกัน · มอนตำนานตัวเดียวกัน) ไม่ทับซ้อน — นับครั้งเดียว
   // แบบเดียวกับมอนตัวเดียวกันในทีม (ผู้เล่นบอก 2026-10-24) · ตัวคำนวณเคยนับซ้ำจนเสนอให้ทุกคนใส่โบนัสเซ็ตเดียวกัน
   const seen = new Set<string>();
+  // จำว่าเอฟเฟกต์มาจากสมาชิกคนไหน — บัฟ teammatesOnly ไม่ย้อนกลับไปให้เจ้าของ
+  const origin = new Map<Tagged, number>();
+  own.forEach((ts, i) => ts.forEach((t) => origin.set(t, i)));
   const shared = [...own.flat(), ...chainFx]
     .filter((t) => ["team", "ally", "enemy", "allEnemies"].includes(t.effect.target))
     .filter((t) => {
@@ -419,8 +422,9 @@ export function receivedEffects(
     const char = chars[i];
     if (!char) return { char, effects: [] };
     // บัฟทีมที่จอบอกว่าให้เฉพาะเพื่อนธาตุหรือระยะหนึ่ง
-    const fits = ({ effect: e }: Tagged) => {
-      const c = e.condition;
+    const fits = (t: Tagged) => {
+      const c = t.effect.condition;
+      if (c?.teammatesOnly && origin.get(t) === i) return false;
       if (c?.teammateElement && c.teammateElement !== char.element) return false;
       if (c?.teammateNotElement && c.teammateNotElement === char.element) return false;
       if (c?.teammateRange && c.teammateRange !== char.range) return false;
@@ -543,6 +547,27 @@ const ROLE_STAT_OF: Record<string, string> = {
   supporter: "supportDmg",
 };
 
+/**
+ * ดาเมจเพิ่มเติม (stat bonusDmg) — % ของดาเมจท่านั้น บวกเพิ่มเป็นอีกก้อน เช่น
+ * Alluring Empress's Reign ของ Nagi "additional Wind DMG equal to 100% of base DMG" → ท่าลม × 2
+ * บัฟของตัวเอง/ทีม หรือดีบัฟบนศัตรู (Embrittled ของ Isabella: ท่าน้ำแข็งของทุกคน +50%) · หลายแหล่งบวกกัน
+ */
+function bonusDamagePct(effects: Sourced[], skill: CycleSkill | "chain", damageType: string, row?: string): number {
+  let pct = 0;
+  for (const { effect: e } of effects) {
+    if (e.stat !== "bonusDmg" || e.value === undefined) continue;
+    const onEnemy = e.target === "enemy" || e.target === "allEnemies";
+    if (onEnemy ? e.kind !== "debuff" : e.kind !== "buff") continue;
+    if (e.condition?.vsBoss === false) continue;
+    if (e.damageType && e.damageType !== damageType) continue;
+    const scopes = e.scopes as string[] | undefined;
+    if (scopes && !scopes.includes(SCOPE_OF[skill])) continue;
+    if (e.condition?.skillRow && !row?.includes(e.condition.skillRow)) continue;
+    pct += e.value;
+  }
+  return pct;
+}
+
 /** weakness: ศัตรูแพ้ธาตุของท่าที่ตี — ไม่ใส่ = ตาม lo.weaknessHit ของบิ้ว (ไม่มี = ไม่ตีจุดอ่อน) */
 /** enemyDef: พลังป้องกันศัตรู — ไม่ใส่ = ไม่หักป้องกัน (ยังไม่รู้ค่าของบอส) · ใส่เพื่อดูว่าการลดพลังป้องกันคุ้มแค่ไหน */
 export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean; enemyDef?: number } = {}): TeamDamage {
@@ -576,7 +601,9 @@ export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean; enemyDe
         usedLevel = at.level;
         const n = hits.find((h) => en.startsWith(h.prefix))?.n ?? 1;
         rows.push({ label: row.label, value: at.value * n });
-        sum += computeDamage(inputsFor(char, mine, key, damageType, at.value * n, weakness, opts.enemyDef, en, weakEl)).average;
+        sum +=
+          computeDamage(inputsFor(char, mine, key, damageType, at.value * n, weakness, opts.enemyDef, en, weakEl)).average *
+          (1 + bonusDamagePct(mine, key, damageType, en) / 100);
       }
       if (key === "special") sum *= specialCastFactor(char, mine);
       if (rows.length) skills.push({ skill: key, level: usedLevel, rows, damageType, average: sum });
@@ -587,7 +614,10 @@ export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean; enemyDe
     const top = lc && topLevel(lc);
     const memberWeak = weakness && (!weakEl || char.element === weakEl);
     if (lc && top?.appearanceInfo.dmgPercentOfAtk && chainAppears(lc, char, mem.cycle ?? CYCLE_SKILLS, memberWeak, lo.staggerOften)) {
-      chain = computeDamage(inputsFor(char, mine, "chain", top.damageType ?? "physical", top.appearanceInfo.dmgPercentOfAtk, weakness, opts.enemyDef, undefined, weakEl)).average;
+      const chainType = top.damageType ?? "physical";
+      chain =
+        computeDamage(inputsFor(char, mine, "chain", chainType, top.appearanceInfo.dmgPercentOfAtk, weakness, opts.enemyDef, undefined, weakEl)).average *
+        (1 + bonusDamagePct(mine, "chain", chainType) / 100);
     }
     return { characterId: mem.characterId, skills, chain, total: skills.reduce((n, s) => n + s.average, 0) + chain };
   });

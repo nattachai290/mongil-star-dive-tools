@@ -182,6 +182,11 @@ export const effect = z
          * ตารางค่าพลังรวมไม่นับ (ไม่ได้ใช้กับทั้งท่า) แต่โชว์ในรายการบัฟ
          */
         skillRow: z.string().min(1).optional(),
+        /**
+         * บัฟทีมที่ให้ "เพื่อน" ไม่รวมตัวเอง เช่น Imperial Grace ของ Nagi ("grants teammates")
+         * ตัวคำนวณไม่ส่งบัฟนี้กลับไปให้ตัวที่เป็นเจ้าของ
+         */
+        teammatesOnly: z.literal(true).optional(),
         note: text.optional(),
       })
       .optional(),

@@ -404,5 +404,20 @@ check("yes แปะป้ายสองภาษา", linkableBadge("yes")?.th
   check("แถว X DMG คูณจำนวนครั้งจากแถว X Max Hits", Math.abs((row?.value ?? 0) - 9.9 * 21) < 1e-6, String(row?.value));
 }
 
+// ---------- ดาเมจเพิ่มเติม (bonusDmg) ----------
+{
+  // Nagi: Alluring Empress's Reign = ดาเมจลมเพิ่มเติม 100% → ท่าลมของ Nagi × 2 · Imperial Grace (ปลุก 2) ให้เพื่อน ไม่ใช่ตัวเอง
+  const nagi = (awaken: number, team: string[] = []) =>
+    teamDamage(buildLoadout.parse({ awaken, members: [{ characterId: "nagi" }, ...team.map((c) => ({ characterId: c }))] }));
+  const ult = (r: ReturnType<typeof teamDamage>) => r.members[0].skills.find((x) => x.skill === "ultimate")!.average;
+  check("Imperial Grace ไม่ย้อนกลับไปให้ Nagi เอง", Math.abs(ult(nagi(2)) - ult(nagi(1))) < 1e-6, `${ult(nagi(1))} vs ${ult(nagi(2))}`);
+  const chloe = (aw: number) => nagi(aw, ["chloe"]).members[1].total;
+  check("Imperial Grace ให้เพื่อนธาตุลมได้ดาเมจเพิ่มเติม", chloe(2) > chloe(1) * 1.5, `${chloe(1)} → ${chloe(2)}`);
+  // Isabella ปลุก 4: Embrittled บนศัตรู → ท่าน้ำแข็งของเพื่อนในทีม +50%
+  const isa = (aw: number) => teamDamage(buildLoadout.parse({ awaken: 0, members: [{ characterId: "ophelia" }, { characterId: "isabella", awaken: aw }] }));
+  const oSwitch = (r: ReturnType<typeof teamDamage>) => r.members[0].skills.find((x) => x.skill === "switch")!.average;
+  check("Embrittled ทำให้ท่าน้ำแข็งของเพื่อน +50%", Math.abs(oSwitch(isa(4)) / oSwitch(isa(3)) - 1.5) < 1e-6, String(oSwitch(isa(4)) / oSwitch(isa(3))));
+}
+
 console.log(failed === 0 ? "\nผ่านทั้งหมด\n" : `\nไม่ผ่าน ${failed} ข้อ\n`);
 if (failed > 0) process.exit(1);
