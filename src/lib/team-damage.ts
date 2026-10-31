@@ -279,12 +279,14 @@ function inputsFor(
   damageType: string,
   skillPercent: number,
   weakness = false,
+  enemyDef?: number,
 ): DamageInput {
   // บัฟที่ติดเมื่อตีจุดอ่อน (เช่น ผู้พิทักษ์แห่งนครทองคำ) ติดเฉพาะเมื่อทีมตีจุดอ่อน — เป็นบัฟค้าง ใช้กับทุกท่าหลังติดแล้ว
   const teamWeak = weakness;
   // จุดอ่อนธาตุ: ตีด้วยธาตุที่ศัตรูแพ้ — กายภาพไม่มีจุดอ่อน
   const weak = weakness && damageType !== "physical";
   const inp: DamageInput = {
+    enemyDef,
     weaknessHit: weak,
     weaknessDmg: 0,
     atkBase: char.stats?.atk ?? 0,
@@ -504,7 +506,8 @@ const ROLE_STAT_OF: Record<string, string> = {
 };
 
 /** weakness: ศัตรูแพ้ธาตุของท่าที่ตี — ไม่ใส่ = ตาม lo.weaknessHit ของบิ้ว (ไม่มี = ไม่ตีจุดอ่อน) */
-export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean } = {}): TeamDamage {
+/** enemyDef: พลังป้องกันศัตรู — ไม่ใส่ = ไม่หักป้องกัน (ยังไม่รู้ค่าของบอส) · ใส่เพื่อดูว่าการลดพลังป้องกันคุ้มแค่ไหน */
+export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean; enemyDef?: number } = {}): TeamDamage {
   const weakness = opts.weakness ?? lo.weaknessHit ?? false;
   const received = receivedEffects(lo, weakness);
   const members: MemberDamage[] = lo.members.map((mem, i) => {
@@ -527,7 +530,7 @@ export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean } = {}):
         if (!at) continue;
         usedLevel = at.level;
         rows.push({ label: row.label, value: at.value });
-        sum += computeDamage(inputsFor(char, mine, key, damageType, at.value, weakness)).average;
+        sum += computeDamage(inputsFor(char, mine, key, damageType, at.value, weakness, opts.enemyDef)).average;
       }
       if (key === "special") sum *= specialCastFactor(char, mine);
       if (rows.length) skills.push({ skill: key, level: usedLevel, rows, damageType, average: sum });
@@ -537,7 +540,7 @@ export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean } = {}):
     const lc = LINK_CHAINS.find((c) => c.id === mem.linkChain);
     const top = lc && topLevel(lc);
     if (lc && top?.appearanceInfo.dmgPercentOfAtk && chainAppears(lc, char, mem.cycle ?? CYCLE_SKILLS, weakness, lo.staggerOften)) {
-      chain = computeDamage(inputsFor(char, mine, "chain", top.damageType ?? "physical", top.appearanceInfo.dmgPercentOfAtk, weakness)).average;
+      chain = computeDamage(inputsFor(char, mine, "chain", top.damageType ?? "physical", top.appearanceInfo.dmgPercentOfAtk, weakness, opts.enemyDef)).average;
     }
     return { characterId: mem.characterId, skills, chain, total: skills.reduce((n, s) => n + s.average, 0) + chain };
   });
