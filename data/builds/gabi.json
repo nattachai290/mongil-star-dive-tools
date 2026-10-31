@@ -309,7 +309,7 @@
           },
           "monsterlings": [
             {
-              "id": "forkmugger",
+              "id": "custos",
               "traits": [
                 {
                   "id": "dmg-vs-boss",
