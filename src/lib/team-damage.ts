@@ -162,11 +162,18 @@ const ownsType = (char: Character, t: string | undefined) => !t || t === char.el
  * - element: บัฟดาเมจธาตุอื่นให้ตัวเอง หรือต้องตีด้วยธาตุอื่นถึงจะติด (เช่น ดาเมจน้ำแข็งบนกาบิธาตุดิน)
  * - recast: ต้องใช้สกิลพิเศษซ้ำเร็วกว่าคูลดาวน์ของตัวละคร
  */
+export type UnusableReason = "element" | "recast" | "attackElement" | "teamElement";
+
+/**
+ * team (ถ้าส่งมา) = ตัวละครทั้งทีม — ใช้ตัดบัฟทีม/ดีบัฟศัตรูของธาตุที่ไม่มีใครในทีมใช้
+ * เช่น โบนัสเซ็ตลดต้านทานลมในทีมที่ไม่มีตัวธาตุลม (ผู้เล่นสั่ง 2026-10-31)
+ */
 export function unusableReason(
   char: Character,
   e: Effect,
   cdCutPercent = 0,
-): "element" | "recast" | "attackElement" | undefined {
+  team?: Character[],
+): UnusableReason | undefined {
   if (!ownsType(char, e.condition?.triggerDamageType)) return "element";
   if (e.condition?.requiresAttackElementChange && !Object.values(char.skills ?? {}).some((sk) => sk?.changesBasicAttackTo)) {
     return "attackElement";
@@ -174,6 +181,11 @@ export function unusableReason(
   if (e.target === "self" && e.kind === "buff" && !ownsType(char, e.damageType)) return "element";
   const sec = e.condition?.specialRecastWithinSec;
   if (sec !== undefined && canRecastSpecial(char, sec, cdCutPercent) === false) return "recast";
+  if (team && e.target !== "self") {
+    if (e.damageType && !team.some((m) => ownsType(m, e.damageType))) return "teamElement";
+    const te = e.condition?.teammateElement;
+    if (te && !team.some((m) => m.element === te)) return "teamElement";
+  }
   return undefined;
 }
 

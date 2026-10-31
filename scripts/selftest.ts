@@ -6,7 +6,7 @@
  */
 import { buildLoadout, character, food, linkChain, monsterling, skill } from "../src/lib/schema/entities";
 import { computeDamage, proficiencyToPercent, sumBuffs } from "../src/lib/formula";
-import { canRecastSpecial, receivedEffects, teamDamage } from "../src/lib/team-damage";
+import { canRecastSpecial, receivedEffects, teamDamage, unusableReason } from "../src/lib/team-damage";
 import { characterById } from "../src/lib/data";
 import { LINK_CHAIN_LIST_IS_COMPLETE, linkableBadge, linkableIds, linkableOf } from "../src/lib/linkable";
 import type { Effect } from "../src/lib/schema/common";
@@ -172,6 +172,12 @@ console.log("\nดาเมจรวมทั้งทีม");
       members: [{ characterId: "gabi", equipment: {}, substats: {}, monsterlings: [{ id: "el-dorado-guardian", traits: [] }] }] })[0]
       .effects.some((x) => x.effect.trigger === "onWeaknessHit");
     check("บัฟเมื่อตีจุดอ่อน (ผู้พิทักษ์แห่งนครทองคำ) นับเฉพาะบิ้วที่ตีจุดอ่อน", eldo(true) && !eldo(false));
+  }
+  {
+    const gabi = characterById("gabi")!;
+    const windShred = { kind: "debuff", stat: "res", damageType: "wind", value: 6, unit: "percent", target: "enemy", trigger: "onSpecialSkillHit" } as Effect;
+    check("ลดต้านทานลมในทีมที่ไม่มีตัวธาตุลม = ทีมใช้ไม่ได้", unusableReason(gabi, windShred, 0, [gabi]) === "teamElement");
+    check("ลดต้านทานลมในทีมที่มีตัวธาตุลม = ใช้ได้", unusableReason(gabi, windShred, 0, [gabi, characterById("chloe")!]) === undefined);
   }
   check("ตีจุดอ่อนแรงกว่าไม่ตี", teamDamage(plain, { weakness: true }).total > teamDamage(plain).total);
   check("Trait ดาเมจจุดอ่อนไม่มีผลถ้าไม่ตีจุดอ่อน",

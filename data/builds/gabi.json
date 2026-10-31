@@ -115,7 +115,7 @@
           ],
           "linkChain": "frangible-pebble",
           "legendary": {
-            "id": "reginula",
+            "id": "sorin",
             "traits": [
               {
                 "id": "special-skill-cooldown",
@@ -126,11 +126,11 @@
                 "grade": "gold"
               },
               {
-                "id": "weakness-dmg",
+                "id": "crit-dmg",
                 "grade": "gold"
               },
               {
-                "id": "crit-dmg",
+                "id": "weakness-dmg",
                 "grade": "gold"
               }
             ]
@@ -241,6 +241,27 @@
             }
           ],
           "linkChain": "giants-destroyed-fist",
+          "legendary": {
+            "id": "reginula",
+            "traits": [
+              {
+                "id": "special-skill-cooldown",
+                "grade": "gold"
+              },
+              {
+                "id": "dmg-vs-boss",
+                "grade": "gold"
+              },
+              {
+                "id": "weakness-dmg",
+                "grade": "gold"
+              },
+              {
+                "id": "crit-dmg",
+                "grade": "gold"
+              }
+            ]
+          },
           "cycle": [
             "switch",
             "special",
