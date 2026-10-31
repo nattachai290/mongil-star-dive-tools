@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BuildTabs } from "@/components/BuildTabs";
+import { AwakenSelect } from "@/components/AwakenSelect";
 import { EffectLine } from "@/components/EffectLine";
 import { createTranslate } from "@/i18n";
 import { LOCALES, isLocale, type Locale } from "@/lib/i18n";
@@ -562,6 +562,8 @@ function Loadout({ lo, locale, t }: { lo: BuildLoadout; locale: Locale; t: T }) 
   );
 }
 
+const AWAKEN_STAGES = [0, 1, 2, 3, 4, 5, 6] as const;
+
 export default async function BuildsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
@@ -584,11 +586,21 @@ export default async function BuildsPage({ params }: { params: Promise<{ locale:
             return (
               <article key={b.id} id={b.id} className="rounded-xl border border-line p-4">
                 <h2 className="mb-4 font-display text-lg font-semibold">{team.join(" · ")}</h2>
-                <BuildTabs
-                  labels={b.loadouts.map((lo) => `${t("builds.awaken")} ${lo.awaken}`)}
-                  panels={b.loadouts.map((lo) => (
-                    <Loadout key={lo.awaken} lo={lo} locale={locale as Locale} t={t} />
-                  ))}
+                <AwakenSelect
+                  label={t("builds.awakenSelect")}
+                  options={AWAKEN_STAGES.map((a) => `${t("builds.awaken")} ${a}`)}
+                  panels={AWAKEN_STAGES.map((a) => {
+                    // ขั้นที่ยังไม่ได้จัดของแยก ใช้ของชุดของขั้นที่ต่ำกว่าที่ใกล้ที่สุด แล้วคิดค่าพลังที่ขั้นนั้น
+                    const base = [...b.loadouts].reverse().find((x) => x.awaken <= a) ?? b.loadouts[0];
+                    return (
+                      <div key={a} className="space-y-3">
+                        {base.awaken !== a && (
+                          <p className="text-xs text-gold">{t("builds.awakenInherited").replace("{n}", String(base.awaken))}</p>
+                        )}
+                        <Loadout lo={{ ...base, awaken: a }} locale={locale as Locale} t={t} />
+                      </div>
+                    );
+                  })}
                 />
               </article>
             );

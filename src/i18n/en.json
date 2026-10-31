@@ -152,7 +152,7 @@
   "linkChains.matches": "link chains",
   "linkChains.noMatch": "No link chain matches those filters",
   "builds.title": "Builds",
-  "builds.lede": "Three-member team builds, one tab per Awaken stage, with each member's gear",
+  "builds.lede": "3-character team builds — pick the awaken stage — with what each character equips",
   "builds.count": "builds",
   "builds.empty": "No builds yet",
   "builds.awaken": "Awaken",
@@ -192,5 +192,7 @@
   "builds.weaknessHit": "This build assumes hitting the enemy's elemental weakness",
   "builds.unusable.teamElement": "Not usable by this team — no teammate of this element",
   "builds.chainNoAppear": "This link chain does not appear in this character's skill cycle, so the calculator does not count it",
-  "builds.unusable.evasionCounter": "Not counted — evasion counters happen rarely"
+  "builds.unusable.evasionCounter": "Not counted — evasion counters happen rarely",
+  "builds.awakenSelect": "Team awaken stage",
+  "builds.awakenInherited": "No separate gear for this stage yet — uses the Awaken {n} gear, with stats at the selected stage (some awaken effects are still text and not counted)"
 }
