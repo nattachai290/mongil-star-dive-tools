@@ -198,7 +198,38 @@
         "en": "Attention Overload's ATK Boost increases to 45% and Suppression DMG Boost increases to 15%. / Upon gaining Attention Overload, Brisshell gains an effect that increases DMG against boss enemies by 24% of her Suppression DMG Boost, up to 15%. (Duration: 6 sec) / Tear Them Apart! Alfred! is enhanced, increasing Enhanced Basic Attack DMG to 160% and Enhanced Support Skill DMG to 80%. This effect does not apply to Alien Power.",
         "th": "เอฟเฟกต์เพิ่มพลังโจมตีของความสนใจท่วมท้นเพิ่มขึ้นเป็น 45%, เอฟเฟกต์เพิ่มดาเมจกดขี่เพิ่มขึ้นเป็น 15% / เมื่อได้รับเอฟเฟกต์ความสนใจท่วมท้น จะได้รับเอฟเฟกต์เพิ่มดาเมจมอนสเตอร์บอสเท่ากับ 24% ของค่าเพิ่มดาเมจกดขี่ สูงสุด 15% (เวลาแสดงผล 6 วินาที) / เอฟเฟกต์ของขย้ำมันเลย! อัลเฟรด!ถูกเสริมพลัง ทำให้เพิ่มดาเมจของโจมตีพื้นฐานเสริมพลังเป็น 160% และเพิ่มดาเมจสกิลสนับสนุนเสริมพลังเป็น 80% เอฟเฟกต์ดังกล่าวจะไม่ถูกปรับใช้กับพลังจากต่างโลก"
       },
-      "effects": []
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "atk",
+          "value": 35,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSwitch",
+          "durationSec": 6,
+          "condition": {
+            "note": {
+              "th": "ความสนใจท่วมท้น · เพิ่มพลังโจมตี 10% → 45%",
+              "en": "Attention Overload · ATK Boost 10% → 45%"
+            }
+          }
+        },
+        {
+          "kind": "buff",
+          "stat": "suppressionDmg",
+          "value": 10,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSwitch",
+          "durationSec": 6,
+          "condition": {
+            "note": {
+              "th": "ความสนใจท่วมท้น · เพิ่มดาเมจกดขี่ 5% → 15%",
+              "en": "Attention Overload · Suppression DMG Boost 5% → 15%"
+            }
+          }
+        }
+      ]
     }
   ],
   "skills": {
@@ -1032,6 +1063,36 @@
               "th": "เมื่อการโจมตีด้วยพลังจากต่างโลกโดนศัตรู"
             }
           }
+        },
+        {
+          "kind": "buff",
+          "stat": "atk",
+          "value": 10,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSwitch",
+          "durationSec": 6,
+          "condition": {
+            "note": {
+              "th": "ความสนใจท่วมท้น · ได้รับเมื่อใช้สกิลสับเปลี่ยนหรือสกิลอัลติเมต",
+              "en": "Attention Overload · gained upon using the Switch Skill or Ultimate Skill"
+            }
+          }
+        },
+        {
+          "kind": "buff",
+          "stat": "suppressionDmg",
+          "value": 5,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSwitch",
+          "durationSec": 6,
+          "condition": {
+            "note": {
+              "th": "ความสนใจท่วมท้น · ได้รับเมื่อใช้สกิลสับเปลี่ยนหรือสกิลอัลติเมต",
+              "en": "Attention Overload · gained upon using the Switch Skill or Ultimate Skill"
+            }
+          }
         }
       ],
       "values": [
@@ -1181,6 +1242,6 @@
       "en",
       "th"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Assassin · Earth · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | **ค่าพลังหักบัฟอาหารแล้ว** (ผู้เล่นบอก \"ตอนนี้ยังมีบัพอาหารออกลบตัวเลขออกด้วย\" — อาหารชุดเดียวกับ Narae / Isabella: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,279 · DEF 758 · HP 10,662 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 2,049 · DEF 673 · HP 9,272 · Crit 5% / 50%** — ทั้งสามค่าเคยเห็นในตัว Preview แล้ว (ATK 2,049 แบบ 5 ดาวหลายตัว · DEF 673 เท่า Gabi · HP 9,272 เท่า Flare) | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 12.18% · Assassin 1,078 · Ultimate Gauge 100% · Stamina 100 · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · ไม่มีบรรทัดธาตุ | Basic My First Friend Alfred (Physical · ตาราง 15 แถวจากสองจอ) · Effect Details Attention Overload | **Guidance of Earth ขึ้น \"Inactive\" บนจอบัญชีนี้** — ยังไม่ได้อ่าน | **2026-10-22 รอบสาม** Ultimate Anxiety Burst (1,315.1% · จอพิมพ์ \"causingAlien\" ติดกัน เก็บตามจอ) · Effect Details Earth Affliction · Passive Attention Overload (ชื่อซ้ำกับสถานะ · ลด DEF ศัตรู 10% 6 วินาทีเมื่อโจมตีด้วย Alien Power → effect debuff onHit + note) | Guidance of Earth Loner's Efforts: **ค่า Lv.12 = 22.6% จากป๊อปอัป Skill Info (Lv. 1 >> Lv. 12)** — จอหลักขึ้น \"Inactive\" Lv.1 = 16% · trigger เก็บได้ช่องเดียว ใส่ onSwitch แล้วเขียน Support Skill ไว้ใน note | **2026-10-22 รอบสี่** Switch Here I Come! (คำอธิบายหกท่อน Switch / Enhanced / Support / Enhanced Support · ตารางเจ็ดแถวจากสามจอ · \"2 time(s)\" → unit times) · Special Alfred Rush (476.1% · คูลดาวน์ 13.5 วินาที · \"DMG.The\" ไม่มีเว้นวรรคตามจอ) · \"in wide arc\" ตามจอ | **2026-10-22 รอบห้า** ปลุกพลังครบหกขั้น — บัญชีนี้ปลดขั้น 1–2 แล้ว (\"Awakening Complete\") ซึ่งไม่เพิ่มเลเวลสกิล ค่าสกิล Lv.12 จึงยังไม่มีโบนัส | effects: ขั้น 3 Basic +6% · ขั้น 5 Switch +6% (ไม่นับ Support / Tag-out → note) · ขั้นอื่นเก็บเป็นข้อความเพราะผูกกับร่างเสริมพลัง / Alien Power | ขั้น 4 \"by80%\" ไม่มีเว้นวรรคตามจอ · ปุ่ม Effects ของขั้น 2 / 6 คือ Attention Overload (ผู้เล่นยืนยัน 2026-10-22) — สถานะเดียวกับที่เก็บแล้ว ไม่ต้องเพิ่ม | ยังไม่ได้อ่าน: จอไทยทั้งหมด | **2026-10-31 จอภาษาไทยครบทุกช่อง** (ผู้เล่นส่ง: ข้อมูล · สกิลทั้ง 6 ช่อง รวมรายละเอียดเอฟเฟกต์ความสนใจท่วมท้น/อ่อนแอต่อดิน · การชี้นำแห่งดิน Lv.1 16% และจอข้อมูลสกิล Lv.12 22.6% · ปลุกพลังขั้น 1–6) ใส่ชื่อ คำอธิบาย ชื่อแถว และสถานะภาษาไทยแล้ว ตัวเลขทุกแถวตรงกับจออังกฤษ | ชื่อไทย บรีเซล · จอข้อมูลภาษาไทยเป็นค่าพลังของผู้เล่นที่ใส่ของแล้ว (ATK 8,024 ...) ไม่ใช่ค่าพื้นฐาน จึงไม่ได้ใช้"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Assassin · Earth · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | **ค่าพลังหักบัฟอาหารแล้ว** (ผู้เล่นบอก \"ตอนนี้ยังมีบัพอาหารออกลบตัวเลขออกด้วย\" — อาหารชุดเดียวกับ Narae / Isabella: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,279 · DEF 758 · HP 10,662 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 2,049 · DEF 673 · HP 9,272 · Crit 5% / 50%** — ทั้งสามค่าเคยเห็นในตัว Preview แล้ว (ATK 2,049 แบบ 5 ดาวหลายตัว · DEF 673 เท่า Gabi · HP 9,272 เท่า Flare) | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 12.18% · Assassin 1,078 · Ultimate Gauge 100% · Stamina 100 · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · ไม่มีบรรทัดธาตุ | Basic My First Friend Alfred (Physical · ตาราง 15 แถวจากสองจอ) · Effect Details Attention Overload | **Guidance of Earth ขึ้น \"Inactive\" บนจอบัญชีนี้** — ยังไม่ได้อ่าน | **2026-10-22 รอบสาม** Ultimate Anxiety Burst (1,315.1% · จอพิมพ์ \"causingAlien\" ติดกัน เก็บตามจอ) · Effect Details Earth Affliction · Passive Attention Overload (ชื่อซ้ำกับสถานะ · ลด DEF ศัตรู 10% 6 วินาทีเมื่อโจมตีด้วย Alien Power → effect debuff onHit + note) | Guidance of Earth Loner's Efforts: **ค่า Lv.12 = 22.6% จากป๊อปอัป Skill Info (Lv. 1 >> Lv. 12)** — จอหลักขึ้น \"Inactive\" Lv.1 = 16% · trigger เก็บได้ช่องเดียว ใส่ onSwitch แล้วเขียน Support Skill ไว้ใน note | **2026-10-22 รอบสี่** Switch Here I Come! (คำอธิบายหกท่อน Switch / Enhanced / Support / Enhanced Support · ตารางเจ็ดแถวจากสามจอ · \"2 time(s)\" → unit times) · Special Alfred Rush (476.1% · คูลดาวน์ 13.5 วินาที · \"DMG.The\" ไม่มีเว้นวรรคตามจอ) · \"in wide arc\" ตามจอ | **2026-10-22 รอบห้า** ปลุกพลังครบหกขั้น — บัญชีนี้ปลดขั้น 1–2 แล้ว (\"Awakening Complete\") ซึ่งไม่เพิ่มเลเวลสกิล ค่าสกิล Lv.12 จึงยังไม่มีโบนัส | effects: ขั้น 3 Basic +6% · ขั้น 5 Switch +6% (ไม่นับ Support / Tag-out → note) · ขั้นอื่นเก็บเป็นข้อความเพราะผูกกับร่างเสริมพลัง / Alien Power | ขั้น 4 \"by80%\" ไม่มีเว้นวรรคตามจอ · ปุ่ม Effects ของขั้น 2 / 6 คือ Attention Overload (ผู้เล่นยืนยัน 2026-10-22) — สถานะเดียวกับที่เก็บแล้ว ไม่ต้องเพิ่ม | ยังไม่ได้อ่าน: จอไทยทั้งหมด | **2026-10-31 จอภาษาไทยครบทุกช่อง** (ผู้เล่นส่ง: ข้อมูล · สกิลทั้ง 6 ช่อง รวมรายละเอียดเอฟเฟกต์ความสนใจท่วมท้น/อ่อนแอต่อดิน · การชี้นำแห่งดิน Lv.1 16% และจอข้อมูลสกิล Lv.12 22.6% · ปลุกพลังขั้น 1–6) ใส่ชื่อ คำอธิบาย ชื่อแถว และสถานะภาษาไทยแล้ว ตัวเลขทุกแถวตรงกับจออังกฤษ | ชื่อไทย บรีเซล · จอข้อมูลภาษาไทยเป็นค่าพลังของผู้เล่นที่ใส่ของแล้ว (ATK 8,024 ...) ไม่ใช่ค่าพื้นฐาน จึงไม่ได้ใช้ | **2026-10-31** สถานะความสนใจท่วมท้น (ATK 10% · ดาเมจกดขี่ 5% · 6 วินาที) ใส่เป็น effects ของแพสซีฟ เพราะเครื่องคิดดาเมจไม่อ่าน statuses · ปลุก 6 เก็บส่วนต่าง (+35 / +10)"
   }
 }
