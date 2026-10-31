@@ -187,5 +187,6 @@
   "builds.stats.boss": "ดาเมจมอนสเตอร์บอส",
   "builds.stats.weakness": "ดาเมจธาตุจุดอ่อน",
   "builds.stats.specialCd": "คูลดาวน์สกิลพิเศษ",
-  "builds.stats.sec": " วิ"
+  "builds.stats.sec": " วิ",
+  "builds.unusable.attackElement": "ตัวนี้ใช้ไม่ได้ — ไม่มีสกิลเปลี่ยนธาตุโจมตี จึงไม่นับในค่าพลังรวม"
 }

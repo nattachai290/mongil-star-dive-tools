@@ -187,5 +187,6 @@
   "builds.stats.boss": "Boss DMG",
   "builds.stats.weakness": "Elemental Weakness DMG",
   "builds.stats.specialCd": "Special Skill Cooldown",
-  "builds.stats.sec": "s"
+  "builds.stats.sec": "s",
+  "builds.unusable.attackElement": "Not usable by this character — no skill that changes its attack element, so it is not counted in total stats"
 }

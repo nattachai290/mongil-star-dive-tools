@@ -162,8 +162,15 @@ const ownsType = (char: Character, t: string | undefined) => !t || t === char.el
  * - element: บัฟดาเมจธาตุอื่นให้ตัวเอง หรือต้องตีด้วยธาตุอื่นถึงจะติด (เช่น ดาเมจน้ำแข็งบนกาบิธาตุดิน)
  * - recast: ต้องใช้สกิลพิเศษซ้ำเร็วกว่าคูลดาวน์ของตัวละคร
  */
-export function unusableReason(char: Character, e: Effect, cdCutPercent = 0): "element" | "recast" | undefined {
+export function unusableReason(
+  char: Character,
+  e: Effect,
+  cdCutPercent = 0,
+): "element" | "recast" | "attackElement" | undefined {
   if (!ownsType(char, e.condition?.triggerDamageType)) return "element";
+  if (e.condition?.requiresAttackElementChange && !Object.values(char.skills ?? {}).some((sk) => sk?.changesBasicAttackTo)) {
+    return "attackElement";
+  }
   if (e.target === "self" && e.kind === "buff" && !ownsType(char, e.damageType)) return "element";
   const sec = e.condition?.specialRecastWithinSec;
   if (sec !== undefined && canRecastSpecial(char, sec, cdCutPercent) === false) return "recast";
