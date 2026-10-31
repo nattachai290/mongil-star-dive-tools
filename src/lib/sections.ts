@@ -75,4 +75,13 @@ export const SECTIONS: Section[] = [
     },
     ready: true,
   },
+  {
+    slug: "tier-list",
+    title: { th: "Tier list", en: "Tier List" },
+    blurb: {
+      th: "จัดอันดับจากตัวละคร สกิล และปลุกพลังอย่างเดียว แยกตามขั้นปลุกพลัง คิดคะแนนสายดาเมจกับซัพพอร์ตคนละแบบ",
+      en: "Rankings from the character, skills and Awaken alone, per Awaken stage, with damage dealers and supports scored separately",
+    },
+    ready: true,
+  },
 ];

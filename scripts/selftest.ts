@@ -7,7 +7,8 @@
 import { buildLoadout, character, food, linkChain, monsterling, skill } from "../src/lib/schema/entities";
 import { computeDamage, proficiencyToPercent, sumBuffs } from "../src/lib/formula";
 import { awakenGroups, canRecastSpecial, receivedEffects, statSheet, teamDamage, unusableReason } from "../src/lib/team-damage";
-import { LINK_CHAINS, characterById } from "../src/lib/data";
+import { CHARACTERS, LINK_CHAINS, characterById } from "../src/lib/data";
+import { tierList } from "../src/lib/tier-list";
 import { chainAppears, chainEffects } from "../src/lib/link-chain-effects";
 import { LINK_CHAIN_LIST_IS_COMPLETE, linkableBadge, linkableIds, linkableOf } from "../src/lib/linkable";
 import type { Effect } from "../src/lib/schema/common";
@@ -450,6 +451,17 @@ check("yes แปะป้ายสองภาษา", linkableBadge("yes")?.th
   const r = teamDamage(buildLoadout.parse({ awaken: 0, members: [{ characterId: "flare" }] }));
   const row = r.members[0].skills.find((x) => x.skill === "ultimate")?.rows.find((x) => x.label.en === "Dragon Ambush DMG");
   check("แถว X Count คูณแถว X DMG", Math.abs((row?.value ?? 0) - 116.6 * 9) < 1e-6, String(row?.value));
+}
+
+// ---------- Tier list ----------
+{
+  const list = tierList();
+  check("Tier list มีตัวละครครบทุกตัว", list.length === CHARACTERS.length, `${list.length} / ${CHARACTERS.length}`);
+  const covers = list.every((e) => e.ranges[0].from === 0 && e.ranges.at(-1)!.to === 6 && e.ranges.every((r, i) => i === 0 || r.from === e.ranges[i - 1].to + 1));
+  check("ช่วงปลุกพลังต่อกันครบ 0–6 ทุกตัว", covers);
+  const merged = list.every((e) => e.ranges.every((r, i) => i === 0 || r.tier !== e.ranges[i - 1].tier));
+  check("ขั้นติดกันที่ tier เท่ากันรวมเป็นช่วงเดียว", merged);
+  for (const g of ["dps", "support"] as const) check(`กลุ่ม ${g} มี tier S`, list.some((e) => e.group === g && e.ranges.some((r) => r.tier === "S")));
 }
 
 console.log(failed === 0 ? "\nผ่านทั้งหมด\n" : `\nไม่ผ่าน ${failed} ข้อ\n`);

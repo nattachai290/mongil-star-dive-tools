@@ -196,5 +196,12 @@
   "builds.legendaryShared": "ใช้ร่วมทุกตัว · Trait เหมือนกันทุกที่",
   "builds.mainBadge": "ตัวหลัก",
   "builds.chainAppears": "โผล่ในรอบ",
-  "builds.back": "กลับไปรายการบิ้ว"
+  "builds.back": "กลับไปรายการบิ้ว",
+  "tierList.title": "Tier list",
+  "tierList.lede": "จัดจากตัวละคร สกิล และปลุกพลังอย่างเดียว ไม่คิดอุปกรณ์ Artifact มอนสเตอร์ อาหาร หรือทีม · ตัวเดียวกันอยู่หลาย tier ได้ตามขั้นปลุกพลัง ขั้นที่ได้ tier เท่ากันรวมเป็นช่วง เช่น ปลุก 0–6",
+  "tierList.group.dps": "สายดาเมจ",
+  "tierList.group.support": "ซัพพอร์ต",
+  "tierList.tier": "Tier",
+  "tierList.awaken": "ปลุก {r}",
+  "tierList.incomplete": "ตัวเลขสกิลบางท่ายังไม่ครบถึงเลเวล 12 คะแนนจึงต่ำกว่าจริง"
 }
