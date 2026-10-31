@@ -14,7 +14,7 @@
           "artifacts": [
             "subzero-verdict",
             "to-whom-the-dokkaebi-kneel",
-            "held-close-by-nature"
+            "blazing-kumiho"
           ],
           "equipment": {
             "headgear": "eerie-horned-helmet",
@@ -140,8 +140,8 @@
           "characterId": "brisshell",
           "artifacts": [
             "monstrous-longing",
-            "wind-harboring-broom",
-            "hawks-flight"
+            "hawks-flight",
+            "wind-harboring-broom"
           ],
           "equipment": {
             "headgear": "gourmands-hat",
@@ -309,8 +309,12 @@
           },
           "monsterlings": [
             {
-              "id": "custos",
+              "id": "the-great-unknown",
               "traits": [
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
                 {
                   "id": "dmg-vs-boss",
                   "grade": "gold"
@@ -320,24 +324,20 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
                   "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
             },
             {
-              "id": "hahnul",
+              "id": "rock-fist-dude",
               "traits": [
                 {
-                  "id": "dmg-vs-boss",
+                  "id": "special-skill-cooldown",
                   "grade": "gold"
                 },
                 {
-                  "id": "special-skill-cooldown",
+                  "id": "dmg-vs-boss",
                   "grade": "gold"
                 },
                 {
