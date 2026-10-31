@@ -208,6 +208,24 @@
               "en": "Wooden Guardian Statue ×3.4 (20% → 68%)"
             }
           }
+        },
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 100,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onUltimate",
+          "durationSec": 15,
+          "condition": {
+            "note": {
+              "th": "ขณะได้รับเอฟเฟกต์สลักไม้แห่งเทพพิทักษ์ · โจมตีพื้นฐานและหนึ่งพิฆาต \"2 เท่า\" = +100% (ผู้เล่นบอก 2026-10-31)",
+              "en": "While the Wooden Guardian Statue effect is active · Basic Attack and Crushing Blow \"2-fold\" = +100% (player confirmed 2026-10-31)"
+            }
+          }
         }
       ]
     }
