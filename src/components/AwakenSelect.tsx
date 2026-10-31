@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useId, useState, type ReactNode } from "react";
+import { createContext, useContext, useState, type ReactNode } from "react";
 
 /**
  * ขั้นปลุกพลังแยกรายตัวในทีม (ผู้เล่นสั่ง 2026-10-31 "dropdown ปลุกพลังต้องแยกกันของแต่ละตัวในทีม")
@@ -8,7 +8,13 @@ import { createContext, useContext, useId, useState, type ReactNode } from "reac
  * ทุกชุดค่าผสมถูก render ฝั่งเซิร์ฟเวอร์มาแล้ว ตัวนี้แค่เก็บว่าแต่ละตัวเลือกขั้นไหน แล้วสลับว่าโชว์ชุดไหน
  * หน้าเว็บจึงยังเป็น static export ได้ · ตัวเลือกรวมขั้นที่ให้ผลเหมือนกันไว้แล้ว (เช่น 0–2) ชุดค่าผสมจึงไม่เยอะ
  */
-type Ctx = { stages: number[]; set: (member: number, stage: number) => void };
+type Ctx = {
+  stages: number[];
+  set: (member: number, stage: number) => void;
+  /** ตัวละครที่กำลังดูของอยู่ (หน้าบิ้วโชว์ทีละตัว) */
+  selected: number;
+  select: (member: number) => void;
+};
 const AwakenContext = createContext<Ctx | null>(null);
 
 /** คีย์ของชุดค่าผสม — ขั้นต่ำสุดของช่วงที่แต่ละตัวเลือก คั่นด้วยจุลภาค */
@@ -16,32 +22,83 @@ export const awakenKey = (stages: number[]) => stages.join(",");
 
 export function AwakenProvider({ initial, children }: { initial: number[]; children: ReactNode }) {
   const [stages, setStages] = useState(initial);
+  const [selected, select] = useState(0);
   const set = (member: number, stage: number) => setStages((s) => s.map((x, i) => (i === member ? stage : x)));
-  return <AwakenContext.Provider value={{ stages, set }}>{children}</AwakenContext.Provider>;
+  return <AwakenContext.Provider value={{ stages, set, selected, select }}>{children}</AwakenContext.Provider>;
 }
 
-/** dropdown ของตัวที่ member — options คือ [ค่า (ขั้นต่ำสุดของช่วง), ข้อความ] */
-export function MemberAwakenSelect({ member, label, options }: { member: number; label: string; options: [number, string][] }) {
+/**
+ * ปุ่มขั้นปลุกพลังของตัวที่ member — options คือ [ค่า (ขั้นต่ำสุดของช่วง), ข้อความ]
+ * กดแล้วเลือกตัวนั้นให้ด้วย จะได้เห็นของที่เปลี่ยนทันที (หน้าบิ้วแบบใหม่ 2026-10-31)
+ */
+export function AwakenPills({
+  member,
+  label,
+  options,
+  className = "",
+}: {
+  member: number;
+  label: string;
+  options: [number, string][];
+  className?: string;
+}) {
   const ctx = useContext(AwakenContext);
-  const id = useId();
   if (!ctx) return null;
   return (
-    <label htmlFor={id} className="ml-auto flex items-center gap-1.5 text-xs text-ink-2">
-      {label}
-      <select
-        id={id}
-        value={ctx.stages[member]}
-        onChange={(e) => ctx.set(member, Number(e.target.value))}
-        className="rounded-md border border-line bg-surface px-2 py-1 text-xs text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-      >
-        {options.map(([value, text]) => (
-          <option key={value} value={value}>
-            {text}
-          </option>
-        ))}
-      </select>
-    </label>
+    <div role="group" aria-label={label} className={`flex flex-col gap-1.5 ${className}`}>
+      <span className="text-xs text-ink-2">{label}</span>
+      <div className="flex flex-wrap gap-1">
+        {options.map(([value, text]) => {
+          const on = ctx.stages[member] === value;
+          return (
+            <button
+              key={value}
+              type="button"
+              aria-pressed={on}
+              onClick={() => {
+                ctx.set(member, value);
+                ctx.select(member);
+              }}
+              className={`min-h-9 min-w-10 rounded-lg px-2 text-xs focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rail ${
+                on ? "bg-ink font-semibold text-bg" : "bg-surface-2 text-ink-2 hover:text-ink"
+              }`}
+            >
+              {text}
+            </button>
+          );
+        })}
+      </div>
+    </div>
   );
+}
+
+/** การ์ดตัวละครในทีม — กดเพื่อดูของของตัวนั้น · children = รูป ชื่อ ธาตุ (render ฝั่งเซิร์ฟเวอร์) */
+export function MemberTab({ member, children, footer }: { member: number; children: ReactNode; footer?: ReactNode }) {
+  const ctx = useContext(AwakenContext);
+  const on = ctx?.selected === member;
+  return (
+    <div
+      className={`flex min-w-0 flex-col gap-3 rounded-2xl border-2 bg-surface p-3 sm:p-4 ${
+        on ? "border-rail shadow-[0_6px_20px_rgba(90,99,216,0.15)]" : "border-line"
+      }`}
+    >
+      <button
+        type="button"
+        aria-pressed={on}
+        onClick={() => ctx?.select(member)}
+        className="flex min-w-0 flex-col items-center gap-2 rounded-lg text-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rail sm:flex-row sm:items-center sm:text-start"
+      >
+        {children}
+      </button>
+      {footer}
+    </div>
+  );
+}
+
+/** ของของตัวที่ member — โชว์เฉพาะตัวที่เลือก */
+export function MemberPanel({ member, children }: { member: number; children: ReactNode }) {
+  const ctx = useContext(AwakenContext);
+  return <div hidden={(ctx?.selected ?? 0) !== member}>{children}</div>;
 }
 
 /** โชว์ panel ของชุดค่าผสมที่เลือกอยู่ — pick: คีย์ชุดค่าผสม → คีย์ panel (หลายชุดใช้ panel เดียวกันได้) */
