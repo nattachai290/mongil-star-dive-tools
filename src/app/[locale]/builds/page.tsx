@@ -313,6 +313,7 @@ function MemberGear({
   effects,
   team,
   weaknessHit,
+  staggerOften,
   showStats,
   dup,
   locale,
@@ -322,6 +323,7 @@ function MemberGear({
   effects: Tagged[];
   team: Character[];
   weaknessHit: boolean;
+  staggerOften: boolean;
   /** ค่าพลังรวมโชว์เฉพาะตัวหลัก (ตัวแรก) — ผู้เล่นสั่ง 2026-10-31 */
   showStats: boolean;
   dup: Set<string>;
@@ -475,7 +477,7 @@ function MemberGear({
             {chain ? (
               <ChainInfo
                 chain={chain}
-                appears={!!c && chainAppears(chain, c, mem.cycle ?? CYCLE_SKILLS, weaknessHit)}
+                appears={!!c && chainAppears(chain, c, mem.cycle ?? CYCLE_SKILLS, weaknessHit, staggerOften)}
                 locale={locale}
                 t={t}
               />
@@ -548,6 +550,7 @@ function Loadout({ lo, locale, t }: { lo: BuildLoadout; locale: Locale; t: T }) 
           effects={received[i].effects}
           team={team}
           weaknessHit={lo.weaknessHit ?? false}
+          staggerOften={lo.staggerOften ?? false}
           showStats={i === 0}
           dup={dup}
           locale={locale}

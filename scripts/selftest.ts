@@ -189,8 +189,10 @@ console.log("\nดาเมจรวมทั้งทีม");
     const fsd = characterById("francis-summer-dive")!;
     check("ลิงก์เชนที่โผล่ตอนหลบโต้กลับ ไม่โผล่ในรอบ สับเปลี่ยน/พิเศษ/อัลติเมต", !chainAppears(claw, fsd, ["switch", "special", "ultimate"], true));
     check("ลิงก์เชนที่โผล่ตอนใช้สกิลพิเศษ โผล่ในรอบที่มีสกิลพิเศษ", chainAppears(gem, fsd, ["switch", "special", "ultimate"], true));
-    check("ลิงก์เชนที่โผล่ตอนตีศัตรูมึนงง นับว่าโผล่ (เกิดบ่อยกว่าหลบโต้กลับ)",
-      chainAppears(LINK_CHAINS.find((c) => c.id === "mutated-spirit-core")!, characterById("brisshell")!, ["switch", "special", "ultimate"], true));
+    const msc = LINK_CHAINS.find((c) => c.id === "mutated-spirit-core")!;
+    const bris = characterById("brisshell")!;
+    check("ลิงก์เชนที่โผล่ตอนตีศัตรูมึนงง นับเฉพาะบิ้วที่ทีมทำมึนงงไว",
+      chainAppears(msc, bris, ["switch", "special", "ultimate"], true, true) && !chainAppears(msc, bris, ["switch", "special", "ultimate"], true));
     const mem = { characterId: "gabi", equipment: {}, substats: {}, linkChain: "frangible-pebble",
       monsterlings: [{ id: "rock-fist-dude", traits: [] }] };
     const withChain = teamDamage({ awaken: 0, food: {}, members: [mem] }).members[0];

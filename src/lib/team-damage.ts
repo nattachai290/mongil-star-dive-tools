@@ -58,7 +58,7 @@ export const TEAM_ASSUMPTIONS = [
   "ค่าพลังของมอน (ATK/DEF/HP) ตามชนิด บอส / ทั่วไป / ตำนาน · มอนทั่วไปบางตัวอนุมานจากการไม่มีลิงก์เชน",
   "ความชำนาญบทบาทคิดเป็นดาเมจเฉพาะบรอว์เลอร์ (ดาเมจปะทะ) — บทบาทอื่นสูตรยังไม่มี",
   "ยังไม่นับดาเมจต่อเนื่อง และสกิลสนับสนุน",
-  "ลิงก์เชน: ดาเมจ 1 ครั้งต่อรอบ ถ้าเงื่อนไขปรากฏตัวเกิดในรอบสกิลหรือตีศัตรูที่ติดมึนงง (ไม่นับหลบ/โต้กลับ/โดนตี) · ไม่บอกธาตุ = กายภาพ · เอฟเฟกต์เพิ่มเติมนับเฉพาะลดต้านทาน/ลดพลังป้องกัน/ดาเมจจุดอ่อน",
+  "ลิงก์เชน: ดาเมจ 1 ครั้งต่อรอบ ถ้าเงื่อนไขปรากฏตัวเกิดในรอบสกิลหรือตีศัตรูที่ติดมึนงง (เฉพาะบิ้วที่ตั้งว่าทีมทำมึนงงไว) (ไม่นับหลบ/โต้กลับ/โดนตี) · ไม่บอกธาตุ = กายภาพ · เอฟเฟกต์เพิ่มเติมนับเฉพาะลดต้านทาน/ลดพลังป้องกัน/ดาเมจจุดอ่อน",
   "ลดคูลดาวน์สกิลพิเศษ: กดทุกครั้งที่คูลดาวน์หมด ดาเมจสกิลพิเศษ × (คูลดาวน์ตามจอ ÷ หลังลด) · หลายแหล่งบวกกัน (ผู้เล่นยืนยัน 2026-10-29) · ไม่หักเวลาตีพื้นฐาน",
 ];
 
@@ -372,7 +372,7 @@ export function receivedEffects(
   const chainFx = lo.members.flatMap((m, i) => {
     const lc = LINK_CHAINS.find((c) => c.id === m.linkChain);
     const ch = chars[i];
-    if (!lc || !ch || !chainAppears(lc, ch, m.cycle ?? CYCLE_SKILLS, weakness)) return [];
+    if (!lc || !ch || !chainAppears(lc, ch, m.cycle ?? CYCLE_SKILLS, weakness, lo.staggerOften)) return [];
     return chainEffects(lc).effects.map(tag(lc.name, false));
   });
   const shared = [...own.flat(), ...chainFx].filter((t) => ["team", "ally", "enemy", "allEnemies"].includes(t.effect.target));
@@ -536,7 +536,7 @@ export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean } = {}):
     let chain = 0;
     const lc = LINK_CHAINS.find((c) => c.id === mem.linkChain);
     const top = lc && topLevel(lc);
-    if (lc && top?.appearanceInfo.dmgPercentOfAtk && chainAppears(lc, char, mem.cycle ?? CYCLE_SKILLS, weakness)) {
+    if (lc && top?.appearanceInfo.dmgPercentOfAtk && chainAppears(lc, char, mem.cycle ?? CYCLE_SKILLS, weakness, lo.staggerOften)) {
       chain = computeDamage(inputsFor(char, mine, "chain", top.damageType ?? "physical", top.appearanceInfo.dmgPercentOfAtk, weakness)).average;
     }
     return { characterId: mem.characterId, skills, chain, total: skills.reduce((n, s) => n + s.average, 0) + chain };
