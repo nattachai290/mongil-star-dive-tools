@@ -1,0 +1,107 @@
+{
+  "id": "the-flame-that-dreams-of-justice",
+  "name": {
+    "th": "เปลวเพลิงที่ใฝ่ฝันถึงความยุติธรรม",
+    "en": "The Flame that Dreams of Justice"
+  },
+  "stars": 5,
+  "role": "fighter",
+  "level": 60,
+  "stats": [
+    {
+      "stat": "atk",
+      "value": 883,
+      "unit": "flat"
+    },
+    {
+      "stat": "critDmg",
+      "value": 45,
+      "unit": "percent"
+    }
+  ],
+  "fusion": [
+    {
+      "artifactLevel": 60,
+      "level": 1,
+      "name": {
+        "th": "เจตจำนงของเด็กสาวผู้ค้นพบหนทาง I",
+        "en": "Resolve of Girl Who Found Her Path I"
+      },
+      "desc": {
+        "th": "เมื่อตัวละคร [บรอว์เลอร์] ติดตั้ง จะได้รับเอฟเฟกต์ดังต่อไปนี้ / ทุกครั้งที่ได้รับเอฟเฟกต์เปลี่ยนธาตุโจมตี จะได้รับเอฟเฟกต์บุปผาเพลิงผลิบาน / บุปผาเพลิงผลิบาน: เพิ่มพลังโจมตี 25% นาน 3 วินาที และทุกครั้งที่ได้รับเอฟเฟกต์ เพิ่มดาเมจธาตุไฟ เวลาแสดงผลจะถูกรีเซต และจะได้รับเอฟเฟกต์บานสะพรั่งเพิ่มเติม (คูลดาวน์ 0.9 วินาที) / บานสะพรั่ง: เพิ่มดาเมจโจมตีพื้นฐาน 30% และดาเมจสกิลพิเศษ 10% (เวลาแสดงผล 3 วินาที) / รวมขั้น 3 : ทุกบรอว์เลอร์ 10 หน่วย จะได้รับเอฟเฟกต์เพิ่มดาเมจธาตุไฟ 0.06% (สูงสุด 15%) / รวมขั้น 5 : ทุกบรอว์เลอร์ 10 หน่วย จะได้รับเอฟเฟกต์เพิ่มพลังโจมตี 0.06% (สูงสุด 15%)",
+        "en": "When equipped by a [Fighter] character, grants the following effect. / Gains Blooming Flame Flower each time an Attack Element Conversion Effect is gained. / Blooming Flame Flower: Increases ATK by 25% for 3 sec. Each time a Fire DMG Boost is gained, resets duration and grants Full Bloom. (Cooldown: 0.9s) / Full Bloom: Increases Basic Attack DMG by 30% and Special Skill DMG by 10%. (Duration: 3s) / Fusion Level 3: Gains 0.06% Fire DMG Boost for every 10 points of Fighter proficiency. (Max: 15%) / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Fighter proficiency. (Max: 15%)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "target": "self",
+          "trigger": "passive",
+          "stat": "atk",
+          "value": 25,
+          "unit": "percent",
+          "durationSec": 3,
+          "condition": {
+            "requiresAttackElementChange": true,
+            "note": {
+              "th": "บุปผาเพลิงผลิบาน · ทุกครั้งที่ได้รับเอฟเฟกต์เปลี่ยนธาตุโจมตี",
+              "en": "Blooming Flame Flower · each time an Attack Element Conversion Effect is gained"
+            }
+          }
+        },
+        {
+          "kind": "buff",
+          "target": "self",
+          "trigger": "passive",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 30,
+          "unit": "percent",
+          "durationSec": 3,
+          "internalCooldownSec": 0.9,
+          "condition": {
+            "requiresAttackElementChange": true,
+            "note": {
+              "th": "บานสะพรั่ง · เมื่อได้รับเอฟเฟกต์เพิ่มดาเมจธาตุไฟระหว่างบุปผาเพลิงผลิบาน",
+              "en": "Full Bloom · each time a Fire DMG Boost is gained during Blooming Flame Flower"
+            }
+          }
+        },
+        {
+          "kind": "buff",
+          "target": "self",
+          "trigger": "passive",
+          "stat": "dmgDealt",
+          "scopes": [
+            "specialSkill"
+          ],
+          "value": 10,
+          "unit": "percent",
+          "durationSec": 3,
+          "internalCooldownSec": 0.9,
+          "condition": {
+            "requiresAttackElementChange": true,
+            "note": {
+              "th": "บานสะพรั่ง · เมื่อได้รับเอฟเฟกต์เพิ่มดาเมจธาตุไฟระหว่างบุปผาเพลิงผลิบาน",
+              "en": "Full Bloom · each time a Fire DMG Boost is gained during Blooming Flame Flower"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "images": {
+    "icon": "the-flame-that-dreams-of-justice-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-31",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "อ่านจากจอพรีวิวอาร์ติแฟกต์ไทย 2026-10-31 (Lv.60) | 5 ดาวจากเพชร 5 เม็ดบนการ์ด | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ | รวมขั้น 1 | \"เพิ่มดาเมจธาตุไฟ\" สีแดงในประโยคบุปผาเพลิงผลิบานเป็นชื่อเอฟเฟกต์ที่ต้องได้รับ | เงื่อนไขเปลี่ยนธาตุโจมตี → condition.requiresAttackElementChange ตัวคำนวณนับให้เฉพาะตัวที่มี skill.changesBasicAttackTo | **2026-10-31 จออังกฤษ (Lv.60)** ชื่อ The Flame that Dreams of Justice · Resolve of Girl Who Found Her Path I · ตัวเลขและค่าสเตตัสตรงจอไทย · id เปลี่ยนจาก plaeo-phloeng-thi-fai-fan (ถอดเสียงไทย) เป็นชื่ออังกฤษ"
+  }
+}

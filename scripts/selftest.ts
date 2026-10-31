@@ -6,8 +6,9 @@
  */
 import { buildLoadout, character, food, linkChain, monsterling, skill } from "../src/lib/schema/entities";
 import { computeDamage, proficiencyToPercent, sumBuffs } from "../src/lib/formula";
-import { canRecastSpecial, receivedEffects, teamDamage } from "../src/lib/team-damage";
-import { characterById } from "../src/lib/data";
+import { canRecastSpecial, receivedEffects, teamDamage, unusableReason } from "../src/lib/team-damage";
+import { LINK_CHAINS, characterById } from "../src/lib/data";
+import { chainAppears, chainEffects } from "../src/lib/link-chain-effects";
 import { LINK_CHAIN_LIST_IS_COMPLETE, linkableBadge, linkableIds, linkableOf } from "../src/lib/linkable";
 import type { Effect } from "../src/lib/schema/common";
 
@@ -152,7 +153,7 @@ console.log("\nดาเมจรวมทั้งทีม");
   check("กาบิ (คูลดาวน์ 11.5 วิ) ไม่ได้ +80% ของคมเยือกแข็งฯ", !has80("gabi"));
   check("Ophelia (สกิลพิเศษกดต่อได้) ได้ +80% ของคมเยือกแข็งฯ", has80("ophelia"));
   const flameFx = (id: string) =>
-    receivedEffects({ awaken: 0, food: {}, members: [{ characterId: id, artifacts: ["plaeo-phloeng-thi-fai-fan"], equipment: {}, substats: {}, monsterlings: [] }] })[0]
+    receivedEffects({ awaken: 0, food: {}, members: [{ characterId: id, artifacts: ["the-flame-that-dreams-of-justice"], equipment: {}, substats: {}, monsterlings: [] }] })[0]
       .effects.some((x) => x.effect.condition?.requiresAttackElementChange);
   check("ตัวที่ไม่มีสกิลเปลี่ยนธาตุโจมตี ไม่ได้เอฟเฟกต์ที่ต้องเปลี่ยนธาตุ", !flameFx("gabi"));
   const weakMem = (traits: string[]) => ({ characterId: "gabi", equipment: {}, substats: {},
@@ -173,6 +174,29 @@ console.log("\nดาเมจรวมทั้งทีม");
       .effects.some((x) => x.effect.trigger === "onWeaknessHit");
     check("บัฟเมื่อตีจุดอ่อน (ผู้พิทักษ์แห่งนครทองคำ) นับเฉพาะบิ้วที่ตีจุดอ่อน", eldo(true) && !eldo(false));
   }
+  {
+    const gabi = characterById("gabi")!;
+    const windShred = { kind: "debuff", stat: "res", damageType: "wind", value: 6, unit: "percent", target: "enemy", trigger: "onSpecialSkillHit" } as Effect;
+    check("ลดต้านทานลมในทีมที่ไม่มีตัวธาตุลม = ทีมใช้ไม่ได้", unusableReason(gabi, windShred, 0, [gabi]) === "teamElement");
+    check("ลดต้านทานลมในทีมที่มีตัวธาตุลม = ใช้ได้", unusableReason(gabi, windShred, 0, [gabi, characterById("chloe")!]) === undefined);
+  }
+  {
+    const gem = LINK_CHAINS.find((c) => c.id === "golems-gem")!;
+    const fx = chainEffects(gem).effects;
+    check("ลิงก์เชน: แปลง \"ลดต้านทานธาตุดิน 10%\" เป็นดีบัฟศัตรู",
+      fx.some((e) => e.stat === "res" && e.damageType === "earth" && e.value === 10 && e.target === "enemy"));
+    const claw = LINK_CHAINS.find((c) => c.id === "poisoned-claw")!;
+    const fsd = characterById("francis-summer-dive")!;
+    check("ลิงก์เชนที่โผล่ตอนหลบโต้กลับ ไม่โผล่ในรอบ สับเปลี่ยน/พิเศษ/อัลติเมต", !chainAppears(claw, fsd, ["switch", "special", "ultimate"], true));
+    check("ลิงก์เชนที่โผล่ตอนใช้สกิลพิเศษ โผล่ในรอบที่มีสกิลพิเศษ", chainAppears(gem, fsd, ["switch", "special", "ultimate"], true));
+    const mem = { characterId: "gabi", equipment: {}, substats: {}, linkChain: "frangible-pebble",
+      monsterlings: [{ id: "rock-fist-dude", traits: [] }] };
+    const withChain = teamDamage({ awaken: 0, food: {}, members: [mem] }).members[0];
+    check("ดาเมจลิงก์เชนถูกนับเข้าดาเมจรวม", withChain.chain >= 0 && Math.abs(withChain.total - withChain.skills.reduce((n, x) => n + x.average, 0) - withChain.chain) < 1e-6);
+  }
+  check("บัฟที่ต้องหลบหลีกโต้กลับไม่ถูกนับ (เกิดนาน ๆ ที)",
+    !receivedEffects({ awaken: 0, food: {}, members: [{ characterId: "gabi", equipment: {}, substats: {},
+      monsterlings: [{ id: "amons-shadow", traits: [] }] }] })[0].effects.some((x) => x.effect.trigger === "onEvasionCounter"));
   check("ตีจุดอ่อนแรงกว่าไม่ตี", teamDamage(plain, { weakness: true }).total > teamDamage(plain).total);
   check("Trait ดาเมจจุดอ่อนไม่มีผลถ้าไม่ตีจุดอ่อน",
     Math.abs(teamDamage(withWeakTrait).total - teamDamage(plain).total) < 1e-6);

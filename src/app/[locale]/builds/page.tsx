@@ -20,7 +20,9 @@ import {
   monsterlingImage,
 } from "@/lib/data";
 import { asset } from "@/lib/base-path";
+import { chainAppears } from "@/lib/link-chain-effects";
 import {
+  CYCLE_SKILLS,
   artifactFusion,
   receivedEffects,
   specialCooldownReduction,
@@ -28,6 +30,7 @@ import {
   unusableReason,
   type StatSheet,
   type Tagged,
+  type UnusableReason,
 } from "@/lib/team-damage";
 import { label } from "@/lib/vocabulary";
 import type { BuildLoadout, BuildMember, Character, LinkChain } from "@/lib/schema/entities";
@@ -90,18 +93,43 @@ function Effects({ effects, locale }: { effects: Effect[]; locale: Locale }) {
   );
 }
 
+/** เหตุที่เอฟเฟกต์ใช้กับตัวนี้/ทีมนี้ไม่ได้ — undefined = ใช้ได้ */
+type Why = (e: Effect) => UnusableReason | undefined;
+
+/** เหมือน Effects แต่เอฟเฟกต์ที่ใช้ไม่ได้เป็นสีจางพร้อมเหตุผล */
+function CheckedEffects({ effects, why, locale, t }: { effects: Effect[]; why?: Why; locale: Locale; t: T }) {
+  return (
+    <>
+      {effects.map((e, j) => {
+        const reason = why?.(e);
+        return reason ? (
+          <div key={j} className="opacity-50">
+            <Effects effects={[e]} locale={locale} />
+            <p className="mt-1 text-[11px] text-gold">{t(`builds.unusable.${reason}`)}</p>
+          </div>
+        ) : (
+          <Effects key={j} effects={[e]} locale={locale} />
+        );
+      })}
+    </>
+  );
+}
+
 /** มอนของตัวเอง — เอฟเฟกต์สายพันธุ์ + Trait 4 ช่อง */
 function MonFull({
   slot,
   locale,
   highlight,
-  traitsLabel,
+  why,
+  t,
 }: {
   slot: MonSlot;
   locale: Locale;
   highlight: boolean;
-  traitsLabel: string;
+  why?: Why;
+  t: T;
 }) {
+  const traitsLabel = t("builds.traits");
   const m = MONSTERLINGS.get(slot.id);
   return (
     <li className={`rounded-md p-1.5 ${highlight ? "ring-1 ring-gold" : ""}`}>
@@ -109,7 +137,7 @@ function MonFull({
         <Icon src={monsterlingImage(slot.id)} />
         <span className="text-sm font-semibold">{name(m?.name, locale, slot.id)}</span>
       </div>
-      <Effects effects={m?.speciesEffects ?? []} locale={locale} />
+      <CheckedEffects effects={m?.speciesEffects ?? []} why={why} locale={locale} t={t} />
       {slot.traits.length > 0 && (
         <ul className="mt-2 flex flex-wrap items-center gap-1">
           <li className="text-[11px] text-muted">{traitsLabel}:</li>
@@ -135,7 +163,7 @@ function MonFull({
 }
 
 /** ลิงก์เชน — มอนเจ้าของ เงื่อนไขปรากฏตัว ดาเมจ คูลดาวน์ และเอฟเฟกต์เพิ่มเติมของขั้นสูงสุดที่อ่านมา */
-function ChainInfo({ chain, locale, t }: { chain: LinkChain; locale: Locale; t: T }) {
+function ChainInfo({ chain, appears, locale, t }: { chain: LinkChain; appears: boolean; locale: Locale; t: T }) {
   const owner = MONSTERLINGS.get(chain.monsterlingId);
   const top = [...chain.levels].sort((a, b) => b.level - a.level)[0];
   return (
@@ -180,6 +208,7 @@ function ChainInfo({ chain, locale, t }: { chain: LinkChain; locale: Locale; t: 
           ))}
         </dl>
       )}
+      {!appears && <p className="mt-2 text-[11px] text-gold">{t("builds.chainNoAppear")}</p>}
     </div>
   );
 }
@@ -282,6 +311,8 @@ function StatsSlot({ char, effects, locale, t }: { char: Character; effects: Tag
 function MemberGear({
   mem,
   effects,
+  team,
+  weaknessHit,
   showStats,
   dup,
   locale,
@@ -289,6 +320,8 @@ function MemberGear({
 }: {
   mem: BuildMember;
   effects: Tagged[];
+  team: Character[];
+  weaknessHit: boolean;
   /** ค่าพลังรวมโชว์เฉพาะตัวหลัก (ตัวแรก) — ผู้เล่นสั่ง 2026-10-31 */
   showStats: boolean;
   dup: Set<string>;
@@ -296,6 +329,8 @@ function MemberGear({
   t: T;
 }) {
   const c = characterById(mem.characterId);
+  const cdCut = specialCooldownReduction(effects);
+  const why: Why | undefined = c && ((e) => unusableReason(c, e, cdCut, team));
   const arts = (mem.artifacts ?? []).flatMap((id) => ARTIFACTS.find((a) => a.id === id) ?? []);
   const chain = LINK_CHAINS.find((x) => x.id === mem.linkChain);
   const sets = activeSets(mem);
@@ -362,17 +397,7 @@ function MemberGear({
                         </span>
                       ))}
                     </p>
-                    {(fusion?.effects ?? []).map((e, j) => {
-                      const why = c && unusableReason(c, e, specialCooldownReduction(effects));
-                      return why ? (
-                        <div key={j} className="opacity-50">
-                          <Effects effects={[e]} locale={locale} />
-                          <p className="mt-1 text-[11px] text-gold">{t(`builds.unusable.${why}`)}</p>
-                        </div>
-                      ) : (
-                        <Effects key={j} effects={[e]} locale={locale} />
-                      );
-                    })}
+                    <CheckedEffects effects={fusion?.effects ?? []} why={why} locale={locale} t={t} />
                   </li>
                 );
               })}
@@ -430,7 +455,7 @@ function MemberGear({
                   <p className="text-[11px] text-gold">
                     {bonus.pieces} {t("builds.pieces")}
                   </p>
-                  <Effects effects={bonus.effects} locale={locale} />
+                  <CheckedEffects effects={bonus.effects} why={why} locale={locale} t={t} />
                 </div>
               ))}
             </div>
@@ -440,7 +465,7 @@ function MemberGear({
         <Slot title={t("builds.monsterlings")}>
           <ul className="space-y-2">
             {mem.monsterlings.map((m) => (
-              <MonFull key={m.id} slot={m} locale={locale} highlight={dup.has(m.id)} traitsLabel={t("builds.traits")} />
+              <MonFull key={m.id} slot={m} locale={locale} highlight={dup.has(m.id)} why={why} t={t} />
             ))}
           </ul>
         </Slot>
@@ -448,7 +473,12 @@ function MemberGear({
         <div className="space-y-3">
           <Slot title={t("builds.linkChain")}>
             {chain ? (
-              <ChainInfo chain={chain} locale={locale} t={t} />
+              <ChainInfo
+                chain={chain}
+                appears={!!c && chainAppears(chain, c, mem.cycle ?? CYCLE_SKILLS, weaknessHit)}
+                locale={locale}
+                t={t}
+              />
             ) : (
               <p className="text-sm text-muted">{t("builds.empty.slot")}</p>
             )}
@@ -460,7 +490,8 @@ function MemberGear({
                   slot={mem.legendary}
                   locale={locale}
                   highlight={dup.has(mem.legendary.id)}
-                  traitsLabel={t("builds.traits")}
+                  why={why}
+                  t={t}
                 />
               </ul>
             ) : (
@@ -483,6 +514,12 @@ function Loadout({ lo, locale, t }: { lo: BuildLoadout; locale: Locale; t: T }) 
   const all = lo.members.flatMap((m) => [...m.monsterlings.map((x) => x.id), ...(m.legendary ? [m.legendary.id] : [])]);
   const dup = new Set(all.filter((m, i) => all.indexOf(m) !== i));
   const received = receivedEffects(lo);
+  const team = lo.members.flatMap((m) => characterById(m.characterId) ?? []);
+  const foodWhy: Why = (e) =>
+    (e.damageType && e.damageType !== "physical" && !team.some((m) => m.element === e.damageType)) ||
+    (e.condition?.teammateElement && !team.some((m) => m.element === e.condition?.teammateElement))
+      ? "teamElement"
+      : undefined;
 
   return (
     <div className="space-y-3">
@@ -496,7 +533,7 @@ function Loadout({ lo, locale, t }: { lo: BuildLoadout; locale: Locale; t: T }) 
                   <span className="text-xs text-muted">{label("foodCategory", cat, locale)}: </span>
                   {f ? name(f.name, locale, f.id) : t("builds.empty.slot")}
                 </p>
-                <Effects effects={f?.effects ?? []} locale={locale} />
+                <CheckedEffects effects={f?.effects ?? []} why={foodWhy} locale={locale} t={t} />
               </div>
             );
           })}
@@ -509,6 +546,8 @@ function Loadout({ lo, locale, t }: { lo: BuildLoadout; locale: Locale; t: T }) 
           key={mem.characterId}
           mem={mem}
           effects={received[i].effects}
+          team={team}
+          weaknessHit={lo.weaknessHit ?? false}
           showStats={i === 0}
           dup={dup}
           locale={locale}

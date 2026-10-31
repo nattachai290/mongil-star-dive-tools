@@ -71,7 +71,7 @@
               ]
             },
             {
-              "id": "amons-shadow",
+              "id": "silbinator",
               "traits": [
                 {
                   "id": "dmg-vs-boss",
@@ -115,7 +115,7 @@
           ],
           "linkChain": "frangible-pebble",
           "legendary": {
-            "id": "reginula",
+            "id": "sorin",
             "traits": [
               {
                 "id": "special-skill-cooldown",
@@ -126,11 +126,11 @@
                 "grade": "gold"
               },
               {
-                "id": "weakness-dmg",
+                "id": "crit-dmg",
                 "grade": "gold"
               },
               {
-                "id": "crit-dmg",
+                "id": "weakness-dmg",
                 "grade": "gold"
               }
             ]
@@ -139,7 +139,7 @@
         {
           "characterId": "brisshell",
           "artifacts": [
-            "pisat-phu-prathana",
+            "monstrous-longing",
             "wind-harboring-broom",
             "hawks-flight"
           ],
@@ -180,67 +180,88 @@
               "id": "colossus",
               "traits": [
                 {
-                  "id": "atk",
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
                   "id": "crit-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-rate",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-earth",
                   "grade": "gold"
                 }
               ]
             },
             {
-              "id": "custos",
+              "id": "amon",
               "traits": [
                 {
-                  "id": "atk",
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
                   "id": "crit-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-rate",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-earth",
                   "grade": "gold"
                 }
               ]
             },
             {
-              "id": "master-lizcout",
+              "id": "el-dorado-guardian",
               "traits": [
                 {
-                  "id": "atk",
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
                   "id": "crit-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-rate",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-earth",
                   "grade": "gold"
                 }
               ]
             }
           ],
           "linkChain": "giants-destroyed-fist",
+          "legendary": {
+            "id": "reginula",
+            "traits": [
+              {
+                "id": "special-skill-cooldown",
+                "grade": "gold"
+              },
+              {
+                "id": "dmg-vs-boss",
+                "grade": "gold"
+              },
+              {
+                "id": "weakness-dmg",
+                "grade": "gold"
+              },
+              {
+                "id": "crit-dmg",
+                "grade": "gold"
+              }
+            ]
+          },
           "cycle": [
             "switch",
             "special",
@@ -250,7 +271,7 @@
         {
           "characterId": "francis-summer-dive",
           "artifacts": [
-            "wan-haeng-ruedu-ron",
+            "a-summer-soaked-in-love",
             "forest-fragrance",
             "melody-played-on-heartstrings"
           ],
@@ -288,70 +309,70 @@
           },
           "monsterlings": [
             {
-              "id": "odong-seed",
+              "id": "forkmugger",
               "traits": [
                 {
-                  "id": "atk",
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "special-skill-cooldown",
                   "grade": "gold"
                 },
                 {
                   "id": "crit-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-rate",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-earth",
                   "grade": "gold"
                 }
               ]
             },
             {
-              "id": "vamphid",
+              "id": "hahnul",
               "traits": [
                 {
-                  "id": "atk",
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
                   "id": "crit-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-rate",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-earth",
                   "grade": "gold"
                 }
               ]
             },
             {
-              "id": "spadupa",
+              "id": "avardan",
               "traits": [
                 {
-                  "id": "atk",
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
                   "id": "crit-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-rate",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-earth",
                   "grade": "gold"
                 }
               ]
             }
           ],
-          "linkChain": "poisoned-claw",
+          "linkChain": "golems-gem",
           "cycle": [
             "switch",
             "special",
