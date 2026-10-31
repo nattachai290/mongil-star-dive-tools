@@ -1,7 +1,8 @@
 {
   "id": "francis-summer-dive",
   "name": {
-    "en": "Francis: Summer Dive!"
+    "en": "Francis: Summer Dive!",
+    "th": "ฟรานซิส : ซัมเมอร์ ไดฟ์!"
   },
   "rarity": 5,
   "element": "earth",
@@ -64,20 +65,24 @@
     {
       "stage": 1,
       "name": {
-        "en": "Overture of a Love-Filled Festival"
+        "en": "Overture of a Love-Filled Festival",
+        "th": "ปฐมบทแห่งเทศกาลที่เต็มไปด้วยความรัก"
       },
       "desc": {
-        "en": "When Francis: Summer Dive!'s Support Skill is triggered while Summer On-the-Fly Diagnosis is active, the skill's cooldown decreases by 7s. This effect can be triggered up to 2 time(s). / A new trigger condition is added to the Support Skill, and it now also triggers when a teammate's Basic Attack hits the enemy."
+        "en": "When Francis: Summer Dive!'s Support Skill is triggered while Summer On-the-Fly Diagnosis is active, the skill's cooldown decreases by 7s. This effect can be triggered up to 2 time(s). / A new trigger condition is added to the Support Skill, and it now also triggers when a teammate's Basic Attack hits the enemy.",
+        "th": "เมื่อสกิลสนับสนุนทำงานในขณะที่ฟรานซิส : ซัมเมอร์ ไดฟ์! มีเอฟเฟกต์ผลตรวจประจำฤดูร้อน เวลาคูลดาวน์สกิลสนับสนุนของตนเอง จะลดลง 7 วินาที และเอฟเฟกต์นี้ ทำงานสูงสุด 2 ครั้ง / เพิ่มเงื่อนไขการทำงานสกิลสนับสนุน โดยเมื่อโจมตีพื้นฐานของสมาชิกทีมโดนศัตรู สกิลสนับสนุนจะทำงาน"
       },
       "effects": []
     },
     {
       "stage": 2,
       "name": {
-        "en": "Let's Get Drenched!"
+        "en": "Let's Get Drenched!",
+        "th": "มาเปียกกันให้ชุ่มฉ่ำไปเลย!"
       },
       "desc": {
-        "en": "When Francis's Support Skill is triggered, all teammates are granted a 6% DMG Boost against boss enemies. The effect is granted at max stacks upon using her Ultimate Skill. (Max Stacks: 3, Duration: 6s, New stacks reset the duration) / Also, if the target is a melee type, the duration of Summer's Vitality increases to 4s."
+        "en": "When Francis's Support Skill is triggered, all teammates are granted a 6% DMG Boost against boss enemies. The effect is granted at max stacks upon using her Ultimate Skill. (Max Stacks: 3, Duration: 6s, New stacks reset the duration) / Also, if the target is a melee type, the duration of Summer's Vitality increases to 4s.",
+        "th": "เมื่อสกิลสนับสนุนทำงาน จะมอบเอฟเฟกต์เพิ่มดาเมจมอนสเตอร์บอส 6% ให้กับสมาชิกทีมทั้งหมด เมื่อใช้สกิลอัลติเมต จะมอบเอฟเฟกต์ดังกล่าวทับซ้อนสูงสุด (ทับซ้อนสูงสุด 3 ครั้ง, เวลาแสดงผล 6 วินาที, เมื่อทับซ้อน เวลาแสดงผลจะถูกรีเฟรช) / อีกทั้งหากเป้าหมายเป็นประเภทโจมตีระยะใกล้ เวลาแสดงผลของเอฟเฟกต์พลังชีวิตแห่งฤดูร้อนที่ได้รับ จะเพิ่มขึ้นเป็น 4 วินาที"
       },
       "effects": [
         {
@@ -92,7 +97,8 @@
           "condition": {
             "vsBoss": true,
             "note": {
-              "en": "granted at max stacks upon using her Ultimate Skill · New stacks reset the duration"
+              "en": "granted at max stacks upon using her Ultimate Skill · New stacks reset the duration",
+              "th": "เมื่อใช้สกิลอัลติเมต จะมอบเอฟเฟกต์ดังกล่าวทับซ้อนสูงสุด · เมื่อทับซ้อน เวลาแสดงผลจะถูกรีเฟรช"
             }
           }
         }
@@ -101,10 +107,12 @@
     {
       "stage": 3,
       "name": {
-        "en": "With Love Hotter than the Sun"
+        "en": "With Love Hotter than the Sun",
+        "th": "ด้วยความรักที่ร้อนแรงยิ่งกว่าดวงตะวัน"
       },
       "desc": {
-        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%.",
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจโจมตีพื้นฐาน 6%"
       },
       "effects": [
         {
@@ -124,10 +132,12 @@
     {
       "stage": 4,
       "name": {
-        "en": "A Summer Festival for Everyone"
+        "en": "A Summer Festival for Everyone",
+        "th": "งานเทศกาลฤดูร้อนที่ทุกคนผสานเป็นหนึ่งเดียว"
       },
       "desc": {
-        "en": "Francis: Summer Dive!'s Ultimate Skill DMG increases by 100%. / Her Ultimate Skill gains effects identical to her Support Skill: all teammates are granted a Healing Over Time effect, and melee type teammates on the field are additionally granted Summer's Vitality. / Francis: Summer Dive!'s Ultimate Gauge increases by 100% when a Burst is triggered."
+        "en": "Francis: Summer Dive!'s Ultimate Skill DMG increases by 100%. / Her Ultimate Skill gains effects identical to her Support Skill: all teammates are granted a Healing Over Time effect, and melee type teammates on the field are additionally granted Summer's Vitality. / Francis: Summer Dive!'s Ultimate Gauge increases by 100% when a Burst is triggered.",
+        "th": "เพิ่มดาเมจสกิลอัลติเมต 100% / เมื่อใช้สกิลอัลติเมต จะมอบเอฟเฟกต์ฟื้นฟูต่อเนื่องให้กับสมาชิกทีมทั้งหมด เช่นเดียวกับสกิลสนับสนุน และมอบเอฟเฟกต์พลังชีวิตแห่งฤดูร้อนเพิ่มเติมให้กับสมาชิกทีมประเภทระยะใกล้ที่กำลังอยู่ในฟิลด์ / เมื่อเกิดเบิร์ส จะได้รับเกจสกิลอัลติเมต 100%"
       },
       "effects": [
         {
@@ -146,10 +156,12 @@
     {
       "stage": 5,
       "name": {
-        "en": "Beach Volleyball, a Summer Festival, and...♡"
+        "en": "Beach Volleyball, a Summer Festival, and...♡",
+        "th": "วอลเลย์บอลชายหาด สาดน้ำ และ...♡"
       },
       "desc": {
-        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Ultimate Skill DMG by 6%."
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Ultimate Skill DMG by 6%.",
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจสกิลอัลติเมต 6%"
       },
       "effects": [
         {
@@ -169,10 +181,12 @@
     {
       "stage": 6,
       "name": {
-        "en": "Unforgettable Midsummer Night"
+        "en": "Unforgettable Midsummer Night",
+        "th": "ค่ำคืนกลางฤดูร้อนที่จะถูกจดจำชั่วนิรันดร์"
       },
       "desc": {
-        "en": "The ATK Boost from Summer On-the-Fly Diagnosis increases to 40%. Also, the Earth DMG Boost granted to Earth teammates increases to 60%."
+        "en": "The ATK Boost from Summer On-the-Fly Diagnosis increases to 40%. Also, the Earth DMG Boost granted to Earth teammates increases to 60%.",
+        "th": "เอฟเฟกต์เพิ่มพลังโจมตีของเอฟเฟกต์ผลตรวจประจำฤดูร้อน จะเพิ่มขึ้นเป็น 40% อีกทั้งเอฟเฟกต์เพิ่มดาเมจธาตุดินที่มอบให้สมาชิกทีมธาตุดิน จะเพิ่มขึ้นเป็น 60%"
       },
       "effects": [
         {
@@ -185,7 +199,8 @@
           "durationSec": 15,
           "condition": {
             "note": {
-              "en": "Summer On-the-Fly Diagnosis ATK Boost 20% → 40%"
+              "en": "Summer On-the-Fly Diagnosis ATK Boost 20% → 40%",
+              "th": "ผลตรวจประจำฤดูร้อน เพิ่มพลังโจมตี 20% → 40%"
             }
           }
         },
@@ -201,7 +216,8 @@
           "condition": {
             "teammateElement": "earth",
             "note": {
-              "en": "Earth teammates · Earth DMG Boost 40% → 60%"
+              "en": "Earth teammates · Earth DMG Boost 40% → 60%",
+              "th": "สมาชิกทีมธาตุดิน · เพิ่มดาเมจธาตุดิน 40% → 60%"
             }
           }
         }
@@ -211,17 +227,20 @@
   "skills": {
     "basic": {
       "name": {
-        "en": "Refreshing Swim"
+        "en": "Refreshing Swim",
+        "th": "เล่นน้ำคลายร้อน"
       },
       "desc": {
-        "en": "Francis deals Earth DMG by shooting a water gun and throwing a beach volleyball at an enemy. / Summer Frenzy is generated at a set rate and explodes upon touching the ground, dealing Earth DMG equal to a portion of her Basic Attack."
+        "en": "Francis deals Earth DMG by shooting a water gun and throwing a beach volleyball at an enemy. / Summer Frenzy is generated at a set rate and explodes upon touching the ground, dealing Earth DMG equal to a portion of her Basic Attack.",
+        "th": "ยิงปืนฉีดน้ำใส่ศัตรูและขว้างลูกวอลเลย์ชายหาด สร้างดาเมจธาตุดิน / หากไข้รักหน้าร้อนที่สร้างโดยอัตราที่กำหนดสัมผัสพื้น จะเกิดระเบิดและสร้างดาเมจธาตุดินเท่ากับอัตราที่กำหนดของโจมตีพื้นฐาน"
       },
       "damageType": "earth",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "1st Hit DMG"
+            "en": "1st Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 1"
           },
           "unit": "percent",
           "scaling": [
@@ -246,7 +265,8 @@
         },
         {
           "label": {
-            "en": "2nd Hit DMG"
+            "en": "2nd Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 2"
           },
           "unit": "percent",
           "scaling": [
@@ -271,7 +291,8 @@
         },
         {
           "label": {
-            "en": "3rd Hit DMG"
+            "en": "3rd Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 3"
           },
           "unit": "percent",
           "scaling": [
@@ -296,7 +317,8 @@
         },
         {
           "label": {
-            "en": "Summer Frenzy DMG"
+            "en": "Summer Frenzy DMG",
+            "th": "ดาเมจไข้รักหน้าร้อน"
           },
           "unit": "percent",
           "scaling": [
@@ -321,7 +343,8 @@
         },
         {
           "label": {
-            "en": "Air Counter DMG"
+            "en": "Air Counter DMG",
+            "th": "ดาเมจโจมตีฉับพลัน"
           },
           "unit": "percent",
           "scaling": [
@@ -345,7 +368,8 @@
         },
         {
           "label": {
-            "en": "Evasion Counter DMG"
+            "en": "Evasion Counter DMG",
+            "th": "ดาเมจหลบหลีกโต้กลับ"
           },
           "unit": "percent",
           "scaling": [
@@ -371,17 +395,20 @@
     },
     "switch": {
       "name": {
-        "en": "How to Enjoy Summer"
+        "en": "How to Enjoy Summer",
+        "th": "วิธีสนุกไปกับฤดูร้อน"
       },
       "desc": {
-        "en": "Francis: Summer Dive! appears near the enemy and stretches casually, triggering a water bucket that dumps water on the enemy and deals Earth DMG. / If the Special Skill button is pressed at the right time, a photo of Francis: Summer Dive! is taken. Then, her Special Skill activates immediately. This Special Skill activates regardless of its cooldown. Attack Speed Boost and Reduction effects do not apply while photos are being taken. / [Support Skill] Francis: Summer Dive!'s Support Skill triggers when a teammate lands their Special Skill on the enemy. She appears near the enemy, deals Earth DMG, and inflicts Earth Affliction. / All teammates' HP is restored over time based on Francis: Summer Dive!'s ATK. She also grants Summer's Vitality to melee-type teammates on the field."
+        "en": "Francis: Summer Dive! appears near the enemy and stretches casually, triggering a water bucket that dumps water on the enemy and deals Earth DMG. / If the Special Skill button is pressed at the right time, a photo of Francis: Summer Dive! is taken. Then, her Special Skill activates immediately. This Special Skill activates regardless of its cooldown. Attack Speed Boost and Reduction effects do not apply while photos are being taken. / [Support Skill] Francis: Summer Dive!'s Support Skill triggers when a teammate lands their Special Skill on the enemy. She appears near the enemy, deals Earth DMG, and inflicts Earth Affliction. / All teammates' HP is restored over time based on Francis: Summer Dive!'s ATK. She also grants Summer's Vitality to melee-type teammates on the field.",
+        "th": "ปรากฏตัวใกล้ศัตรูและยืดเส้นยืดสายอย่างสบายใจ จากนั้นถังน้ำจะทำงานและสาดน้ำลงมาจากด้านบน สร้างดาเมจธาตุดิน / หากกดสกิลพิเศษในระยะที่กำหนด จะถ่ายภาพของฟรานซิส : ซัมเมอร์ ไดฟ์! หลังจากนั้นจะใช้สกิลพิเศษทันที และสกิลพิเศษนี้สามารถใช้งานได้ โดยไม่ขึ้นกับคูลดาวน์ และระหว่างถ่ายภาพ จะไม่ได้รับผลจากเอฟเฟกต์เพิ่มหรือลดความเร็วโจมตี / [สกิลสนับสนุน] เมื่อสกิลพิเศษของสมาชิกทีมโจมตีโดนศัตรู สกิลสนับสนุนจะทำงาน จะปรากฏตัวใกล้ศัตรู สร้างดาเมจธาตุดินและมอบเอฟเฟกต์อ่อนแอต่อดินแก่ศัตรู / ฟื้นฟูพลังชีวิตของสมาชิกทีมทั้งหมดอย่างต่อเนื่อง โดยปริมาณการฟื้นฟูจะขึ้นอยู่กับพลังโจมตีของตนเอง อีกทั้งตัวละครประเภทโจมตีระยะใกล้ที่ออกมาอยู่ในฟิลด์ จะได้รับเอฟเฟกต์พลังชีวิตแห่งฤดูร้อนเพิ่มเติม"
       },
       "damageType": "earth",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "Switch Skill DMG"
+            "en": "Switch Skill DMG",
+            "th": "ดาเมจสกิลสับเปลี่ยน"
           },
           "unit": "percent",
           "scaling": [
@@ -406,7 +433,8 @@
         },
         {
           "label": {
-            "en": "Support Skill DMG"
+            "en": "Support Skill DMG",
+            "th": "ดาเมจสกิลสนับสนุน"
           },
           "unit": "percent",
           "scaling": [
@@ -431,7 +459,8 @@
         },
         {
           "label": {
-            "en": "Support Skill Cooldown"
+            "en": "Support Skill Cooldown",
+            "th": "คูลดาวน์สกิลสนับสนุน"
           },
           "unit": "seconds",
           "scaling": [
@@ -456,7 +485,8 @@
         },
         {
           "label": {
-            "en": "Healing Over Time ATK-Based Healing"
+            "en": "Healing Over Time ATK-Based Healing",
+            "th": "ฟื้นฟูต่อเนื่องโดยปริมาณฟื้นฟูตามสัดส่วนพลังโจมตี"
           },
           "unit": "percent",
           "scaling": [
@@ -481,7 +511,8 @@
         },
         {
           "label": {
-            "en": "Healing Over Time Duration"
+            "en": "Healing Over Time Duration",
+            "th": "เวลาแสดงผลฟื้นฟูต่อเนื่อง"
           },
           "unit": "seconds",
           "scaling": [
@@ -506,7 +537,8 @@
         },
         {
           "label": {
-            "en": "Summer's Vitality Duration"
+            "en": "Summer's Vitality Duration",
+            "th": "เวลาแสดงผลพลังชีวิตแห่งฤดูร้อน"
           },
           "unit": "seconds",
           "scaling": [
@@ -531,7 +563,8 @@
         },
         {
           "label": {
-            "en": "Earth Affliction Duration"
+            "en": "Earth Affliction Duration",
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อดิน"
           },
           "unit": "seconds",
           "scaling": [
@@ -558,10 +591,12 @@
     },
     "special": {
       "name": {
-        "en": "Summer's Herald of Love"
+        "en": "Summer's Herald of Love",
+        "th": "ทูตแห่งความรักประจำฤดูร้อน"
       },
       "desc": {
-        "en": "Francis boldly flaunts her attractiveness in her swimsuit as camera flashes burst around her, dealing Earth DMG and inflicting Earth Affliction. / She grants all teammates Summer On-the-Fly Diagnosis and additionally grants Earth DMG Boosts to Earth teammates. Summer On-the-Fly Diagnosis does not stack with other On-the-Fly Diagnosis effects. / After her Switch Skill photo, even more camera flashes go off, and Francis strikes a final heart pose, dealing even more Earth DMG to enemies."
+        "en": "Francis boldly flaunts her attractiveness in her swimsuit as camera flashes burst around her, dealing Earth DMG and inflicting Earth Affliction. / She grants all teammates Summer On-the-Fly Diagnosis and additionally grants Earth DMG Boosts to Earth teammates. Summer On-the-Fly Diagnosis does not stack with other On-the-Fly Diagnosis effects. / After her Switch Skill photo, even more camera flashes go off, and Francis strikes a final heart pose, dealing even more Earth DMG to enemies.",
+        "th": "อวดเสน่ห์ในชุดว่ายน้ำอย่างมั่นใจ เรียกแสงแฟลชจากกล้องรอบตัวให้ระเบิดออก สร้างดาเมจธาตุดินและมอบเอฟเฟกต์อ่อนแอต่อดินแก่ศัตรู / มอบเอฟเฟกต์ผลตรวจประจำฤดูร้อนให้กับสมาชิกทีมทั้งหมด และมอบเอฟเฟกต์เพิ่มดาเมจธาตุดินเพิ่มเติมให้กับสมาชิกทีมธาตุดิน เอฟเฟกต์ผลตรวจประจำฤดูร้อน ไม่สามารถซ้อนทับกับเอฟเฟกต์ผลตรวจสุขภาพประเภทอื่นได้ / หลังจากใช้สกิลสับเปลี่ยนเพื่อถ่ายภาพ จะเกิดแสงแฟลชเพิ่มเติมจำนวนมาก ก่อนปิดท้ายด้วยการส่งมินิฮาร์ต สร้างดาเมจธาตุดินมากยิ่งขึ้นแก่ศัตรู"
       },
       "damageType": "earth",
       "effects": [
@@ -575,7 +610,8 @@
           "durationSec": 15,
           "condition": {
             "note": {
-              "en": "Summer On-the-Fly Diagnosis · does not stack with other On-the-Fly Diagnosis effects"
+              "en": "Summer On-the-Fly Diagnosis · does not stack with other On-the-Fly Diagnosis effects",
+              "th": "ผลตรวจประจำฤดูร้อน · ไม่สามารถซ้อนทับกับเอฟเฟกต์ผลตรวจสุขภาพประเภทอื่นได้"
             }
           }
         },
@@ -590,7 +626,8 @@
           "durationSec": 15,
           "condition": {
             "note": {
-              "en": "Earth teammates"
+              "en": "Earth teammates",
+              "th": "สมาชิกทีมธาตุดิน"
             },
             "teammateElement": "earth"
           }
@@ -599,7 +636,8 @@
       "values": [
         {
           "label": {
-            "en": "DMG"
+            "en": "DMG",
+            "th": "ดาเมจ"
           },
           "unit": "percent",
           "scaling": [
@@ -624,7 +662,8 @@
         },
         {
           "label": {
-            "en": "Post-Shot DMG"
+            "en": "Post-Shot DMG",
+            "th": "ดาเมจหลังถ่ายภาพ"
           },
           "unit": "percent",
           "scaling": [
@@ -649,7 +688,8 @@
         },
         {
           "label": {
-            "en": "ATK-Based Healing"
+            "en": "ATK-Based Healing",
+            "th": "ปริมาณฟื้นฟูตามสัดส่วนพลังโจมตี"
           },
           "unit": "percent",
           "scaling": [
@@ -674,7 +714,8 @@
         },
         {
           "label": {
-            "en": "Summer On-the-Fly Diagnosis Duration"
+            "en": "Summer On-the-Fly Diagnosis Duration",
+            "th": "เวลาแสดงผลผลตรวจประจำฤดูร้อน"
           },
           "unit": "seconds",
           "scaling": [
@@ -699,7 +740,8 @@
         },
         {
           "label": {
-            "en": "Earth DMG Boost"
+            "en": "Earth DMG Boost",
+            "th": "เพิ่มดาเมจธาตุดิน"
           },
           "unit": "percent",
           "scaling": [
@@ -724,7 +766,8 @@
         },
         {
           "label": {
-            "en": "Earth DMG Boost Duration"
+            "en": "Earth DMG Boost Duration",
+            "th": "เวลาแสดงผลเพิ่มดาเมจธาตุดิน"
           },
           "unit": "seconds",
           "scaling": [
@@ -749,7 +792,8 @@
         },
         {
           "label": {
-            "en": "Cooldown"
+            "en": "Cooldown",
+            "th": "คูลดาวน์"
           },
           "unit": "seconds",
           "scaling": [
@@ -775,17 +819,20 @@
     },
     "ultimate": {
       "name": {
-        "en": "Cool Summer Vacation"
+        "en": "Cool Summer Vacation",
+        "th": "ใช้เวลาช่วงฤดูร้อนสุดสดชื่น"
       },
       "desc": {
-        "en": "Francis unleashes powerful attacks with her water gun, dealing Earth DMG and inflicting Earth Affliction."
+        "en": "Francis unleashes powerful attacks with her water gun, dealing Earth DMG and inflicting Earth Affliction.",
+        "th": "ระดมยิงด้วยปืนฉีดน้ำอันทรงพลัง สร้างดาเมจธาตุดินและมอบเอฟเฟกต์อ่อนแอต่อดินแก่ศัตรู"
       },
       "damageType": "earth",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "DMG"
+            "en": "DMG",
+            "th": "ดาเมจ"
           },
           "unit": "percent",
           "scaling": [
@@ -810,7 +857,8 @@
         },
         {
           "label": {
-            "en": "Earth Affliction Duration"
+            "en": "Earth Affliction Duration",
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อดิน"
           },
           "unit": "seconds",
           "scaling": [
@@ -837,16 +885,38 @@
     },
     "passive": {
       "name": {
-        "en": "Preventative Care on Summer Vacation"
+        "en": "Preventative Care on Summer Vacation",
+        "th": "การดูแลสุขภาพระหว่างพักร้อน"
       },
       "desc": {
-        "en": "Francis's ATK increases by an amount equal to any received Earth DMG Boosts, but doesn't increase beyond the max conversion ratio. / Hitting an enemy with her Basic Attack has a chance of generating Summer Frenzy, and it's always generated when Summer On-the-Fly Diagnosis is active."
+        "en": "Francis's ATK increases by an amount equal to any received Earth DMG Boosts, but doesn't increase beyond the max conversion ratio. / Hitting an enemy with her Basic Attack has a chance of generating Summer Frenzy, and it's always generated when Summer On-the-Fly Diagnosis is active.",
+        "th": "พลังโจมตีของตนเองจะเพิ่มขึ้นเท่ากับดาเมจธาตุดินที่เพิ่มขึ้น โดยจะไม่เพิ่มเกินกว่าอัตราแปลงสูงสุด / เมื่อโจมตีพื้นฐานโดน จะสร้างไข้รักหน้าร้อนตามอัตราที่กำหนด และในขณะที่มีเอฟเฟกต์ผลตรวจประจำฤดูร้อน จะสร้างไข้รักหน้าร้อนโดยไม่ขึ้นอยู่กับอัตรา"
       },
-      "effects": [],
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "atk",
+          "value": 25,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive",
+          "condition": {
+            "convertFrom": {
+              "stat": "dmgDealt",
+              "ratio": 100,
+              "damageType": "earth"
+            },
+            "note": {
+              "en": "equal to received Earth DMG Boosts · Max Conversion Ratio 25%"
+            }
+          }
+        }
+      ],
       "values": [
         {
           "label": {
-            "en": "Earth DMG Boost Max Conversion Ratio"
+            "en": "Earth DMG Boost Max Conversion Ratio",
+            "th": "อัตราแปลงสูงสุดตามการเพิ่มดาเมจธาตุดิน"
           },
           "unit": "percent",
           "scaling": [
@@ -871,7 +941,8 @@
         },
         {
           "label": {
-            "en": "Summer Frenzy Generation Rate"
+            "en": "Summer Frenzy Generation Rate",
+            "th": "อัตราสร้างไข้รักหน้าร้อน"
           },
           "unit": "percent",
           "scaling": [
@@ -898,10 +969,12 @@
     },
     "elemental": {
       "name": {
-        "en": "The Return of Summer"
+        "en": "The Return of Summer",
+        "th": "ช่วงเวลาฤดูร้อนที่หวนคืนอีกครั้ง"
       },
       "desc": {
-        "en": "DMG Taken by all teammates decreases by 26% upon triggering Francis: Summer Dive!'s Support Skill. (Duration: 6s)"
+        "en": "DMG Taken by all teammates decreases by 26% upon triggering Francis: Summer Dive!'s Support Skill. (Duration: 6s)",
+        "th": "เมื่อสกิลสนับสนุนทำงาน จะลดดาเมจที่ได้รับของสมาชิกทีมทั้งหมด 26% (เวลาแสดงผล 6 วินาที)"
       },
       "effects": [
         {
@@ -920,28 +993,34 @@
   "statuses": [
     {
       "name": {
-        "en": "Summer On-the-Fly Diagnosis"
+        "en": "Summer On-the-Fly Diagnosis",
+        "th": "ผลตรวจประจำฤดูร้อน"
       },
       "desc": {
-        "en": "ATK increases by 20%, and HP is restored by an amount equal to 3% of Francis: Summer Dive!'s ATK."
+        "en": "ATK increases by 20%, and HP is restored by an amount equal to 3% of Francis: Summer Dive!'s ATK.",
+        "th": "เพิ่มพลังโจมตี 20% , ฟื้นฟูพลังชีวิตเท่ากับ 3% ของพลังโจมตีฟรานซิส : ซัมเมอร์ ไดฟ์!"
       },
       "effects": []
     },
     {
       "name": {
-        "en": "Summer's Vitality"
+        "en": "Summer's Vitality",
+        "th": "พลังชีวิตแห่งฤดูร้อน"
       },
       "desc": {
-        "en": "Movement Speed and Attack Speed increase by 30%."
+        "en": "Movement Speed and Attack Speed increase by 30%.",
+        "th": "เพิ่มความเร็วโจมตีและความเร็วเคลื่อนที่ 30%"
       },
       "effects": []
     },
     {
       "name": {
-        "en": "Earth Affliction"
+        "en": "Earth Affliction",
+        "th": "เอฟเฟกต์อ่อนแอต่อดิน"
       },
       "desc": {
-        "en": "Afflicted targets take Earth DMG over time, and Earth and Physical RES decrease by 15%."
+        "en": "Afflicted targets take Earth DMG over time, and Earth and Physical RES decrease by 15%.",
+        "th": "ได้รับดาเมจต่อเนื่องธาตุดินและลดพลังต้านทานธาตุดิน, กายภาพ 15%"
       },
       "effects": []
     }
@@ -954,8 +1033,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Support · Earth · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** · id ตามชื่ออังกฤษ \"Francis: Summer Dive!\" แบบ verna-summer-dive | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับ Narae / Isabella / Brisshell: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,063 · DEF 758 · HP 11,779 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,855 · DEF 673 · HP 10,243 · Crit 5% / 50%** — ทั้งสามค่าเคยเห็นแล้ว (ATK 1,855 เท่า Jiwon / Narae · DEF 673 เท่า Gabi · HP 10,243 เท่า Vivian / Ophelia) | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 12.18% · Support 1,078 · Ultimate 100% · Stamina 100 · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · ไม่มีบรรทัดธาตุ | Special Summer's Herald of Love (ตารางเจ็ดแถวจากสองจอ · เพื่อนธาตุดินได้ Earth DMG +40% 15 วินาที → effect target team + note) · Effect Details: Summer's Vitality · Earth Affliction · ปุ่ม Effects ของ Special ยังไม่ได้เปิด (Summer On-the-Fly Diagnosis) | **Guidance of Earth ขึ้น \"Inactive\"** บนจอบัญชีนี้ | **2026-10-22 รอบสาม** Switch ท่อนแรกครบแล้ว (จอบนสุด) · Basic Refreshing Swim · Ultimate Cool Summer Vacation (482.6%) · Passive Preventative Care on Summer Vacation · Guidance of Earth The Return of Summer: **ค่า Lv.12 = 26% จากป๊อปอัป Skill Info (Lv. 1 >> Lv. 12)** — จอหลักขึ้น Inactive Lv.1 = 15% | ปลุกพลังขั้น 2–6 (ล็อกทุกขั้นในบัญชีนี้) · effects: ขั้น 2 ทีมดาเมจใส่บอส +6% ซ้อน 3 ชั้น · ขั้น 3 Basic +6% · ขั้น 4 Ultimate +100% · ขั้น 5 Ultimate +6% · ขั้น 6 เก็บเป็นข้อความ (เปลี่ยนค่าของสถานะ) · ชื่อขั้น 5 มี \"♡\" ตามจอ | **2026-10-22 รอบสี่** ปลุกพลังขั้น 1 Overture of a Love-Filled Festival → ครบหกขั้น (\"2 time(s)\" ตามจอ) · Effect Details Summer On-the-Fly Diagnosis (ATK +20% · ฟื้น HP 3% ของ ATK) → ใส่ effect ทีม ATK +20% 15 วินาทีใน Special (ระยะเวลาจากแถว Summer On-the-Fly Diagnosis Duration) | ยังไม่ได้อ่าน: จอไทยทั้งหมด | **2026-10-24** บัฟทีมที่จอบอกว่าให้เฉพาะเพื่อนบางแบบ แปลงข้อความเงื่อนไขเดิมเป็นช่อง condition.teammateElement / teammateNotElement / teammateRange ให้เครื่องคิดดาเมจทีมอ่านได้ — ไม่ได้เพิ่มข้อมูลใหม่ ข้อความเงื่อนไขเดิมยังอยู่"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Support · Earth · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** · id ตามชื่ออังกฤษ \"Francis: Summer Dive!\" แบบ verna-summer-dive | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับ Narae / Isabella / Brisshell: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,063 · DEF 758 · HP 11,779 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,855 · DEF 673 · HP 10,243 · Crit 5% / 50%** — ทั้งสามค่าเคยเห็นแล้ว (ATK 1,855 เท่า Jiwon / Narae · DEF 673 เท่า Gabi · HP 10,243 เท่า Vivian / Ophelia) | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 12.18% · Support 1,078 · Ultimate 100% · Stamina 100 · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · ไม่มีบรรทัดธาตุ | Special Summer's Herald of Love (ตารางเจ็ดแถวจากสองจอ · เพื่อนธาตุดินได้ Earth DMG +40% 15 วินาที → effect target team + note) · Effect Details: Summer's Vitality · Earth Affliction · ปุ่ม Effects ของ Special ยังไม่ได้เปิด (Summer On-the-Fly Diagnosis) | **Guidance of Earth ขึ้น \"Inactive\"** บนจอบัญชีนี้ | **2026-10-22 รอบสาม** Switch ท่อนแรกครบแล้ว (จอบนสุด) · Basic Refreshing Swim · Ultimate Cool Summer Vacation (482.6%) · Passive Preventative Care on Summer Vacation · Guidance of Earth The Return of Summer: **ค่า Lv.12 = 26% จากป๊อปอัป Skill Info (Lv. 1 >> Lv. 12)** — จอหลักขึ้น Inactive Lv.1 = 15% | ปลุกพลังขั้น 2–6 (ล็อกทุกขั้นในบัญชีนี้) · effects: ขั้น 2 ทีมดาเมจใส่บอส +6% ซ้อน 3 ชั้น · ขั้น 3 Basic +6% · ขั้น 4 Ultimate +100% · ขั้น 5 Ultimate +6% · ขั้น 6 เก็บเป็นข้อความ (เปลี่ยนค่าของสถานะ) · ชื่อขั้น 5 มี \"♡\" ตามจอ | **2026-10-22 รอบสี่** ปลุกพลังขั้น 1 Overture of a Love-Filled Festival → ครบหกขั้น (\"2 time(s)\" ตามจอ) · Effect Details Summer On-the-Fly Diagnosis (ATK +20% · ฟื้น HP 3% ของ ATK) → ใส่ effect ทีม ATK +20% 15 วินาทีใน Special (ระยะเวลาจากแถว Summer On-the-Fly Diagnosis Duration) | ยังไม่ได้อ่าน: จอไทยทั้งหมด | **2026-10-24** บัฟทีมที่จอบอกว่าให้เฉพาะเพื่อนบางแบบ แปลงข้อความเงื่อนไขเดิมเป็นช่อง condition.teammateElement / teammateNotElement / teammateRange ให้เครื่องคิดดาเมจทีมอ่านได้ — ไม่ได้เพิ่มข้อมูลใหม่ ข้อความเงื่อนไขเดิมยังอยู่ | **2026-10-31 จอภาษาไทย** (ข้อมูล · โจมตีพื้นฐาน · อัลติเมต + รายละเอียดเอฟเฟกต์อ่อนแอต่อดิน · แพสซีฟ) ได้ชื่อไทย ฟรานซิส : ซัมเมอร์ ไดฟ์! · คำอธิบาย/ชื่อแถวของสามสกิลนี้ · ชื่อสถานะ ผลตรวจประจำฤดูร้อน (จากคำขีดเส้นใต้ในแพสซีฟ) · ตัวเลขทุกแถวตรงกับจออังกฤษ · จอข้อมูลเป็นค่าพลังที่ใส่ของแล้ว ไม่ได้ใช้ | **2026-10-31 จอภาษาไทยรอบสอง** สกิลสับเปลี่ยน วิธีสนุกไปกับฤดูร้อน (สองจอ ต่อกันได้ครบสี่ท่อน) · สกิลพิเศษ ทูตแห่งความรักประจำฤดูร้อน (สองจอ) · สกิลธาตุ ช่วงเวลาฤดูร้อนที่หวนคืนอีกครั้ง (จอหลัก Lv.1 15% · ป๊อปอัป Lv.12 26% ใช้ค่า Lv.12 ตามภาษาอังกฤษ) · ปลุกพลังขั้น 1–6 (ชื่อขั้น 4 สองบรรทัดบนจอ ต่อกันไม่เว้นวรรค) · รายละเอียดเอฟเฟกต์ ผลตรวจประจำฤดูร้อน / พลังชีวิตแห่งฤดูร้อน (ชื่อไทยของ Summer's Vitality) · ตัวเลขทุกแถวตรงกับจออังกฤษ · ข้อความเงื่อนไขของ effect ใส่ไทยจากคำบนจอเดียวกัน → **ภาษาไทยครบทั้งตัว** | **2026-10-31 ผู้เล่นสั่งใส่** แพสซีฟ ATK เท่ากับดาเมจธาตุดินที่ได้รับ สูงสุด 25% (แถวอัตราแปลงสูงสุด Lv.1) → effect ATK 25% + condition.convertFromElementDmg earth · ตัวคำนวณนับเท่าที่ได้รับจริงไม่เกิน 25% | **2026-10-31 ผู้เล่นสั่งไล่ใส่บัฟที่เป็นข้อความทั้งหมด** ใส่ effect จากข้อความ/ตารางบนจอเดิม (ไม่ได้อ่านจอใหม่): passive · \"X เท่า\" นับเป็น +100% ต่อเท่าตามที่ผู้เล่นยืนยันกับกาบี้ · ท่าที่ตีเพิ่ม/จำนวนครั้งเพิ่มใช้ bonusDmg · บัฟแปลงค่าใช้ condition.convertFrom"
   }
 }

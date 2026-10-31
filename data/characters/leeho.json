@@ -130,7 +130,26 @@
       "desc": {
         "en": "The duration of Tiger Hunter increases by 2s, and while Tiger Hunter is active, Leeho's Enhanced Basic Attack's total DMG increases by 30%. / Also, the range of his Enhanced Basic Attack's 1st and 2nd Hit increases."
       },
-      "effects": []
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 30,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onBasicAttackHit",
+          "durationSec": 5,
+          "condition": {
+            "skillRow": "Enhanced Basic Attack",
+            "note": {
+              "en": "while Tiger Hunter is active"
+            }
+          }
+        }
+      ]
     },
     {
       "stage": 5,
@@ -151,7 +170,23 @@
       "desc": {
         "en": "Prey Mark decreases Fire RES by an additional 10%. / When the target's Prey Mark is removed by Flash Spear, all enemies hit with Flash Spear are newly inflicted with Prey Mark. This effect is triggered every 15s."
       },
-      "effects": []
+      "effects": [
+        {
+          "kind": "debuff",
+          "stat": "res",
+          "damageType": "fire",
+          "value": 10,
+          "unit": "percent",
+          "target": "enemy",
+          "trigger": "onSwitchSkillHit",
+          "durationSec": 15,
+          "condition": {
+            "note": {
+              "en": "Prey Mark · additional Fire RES Reduction"
+            }
+          }
+        }
+      ]
     }
   ],
   "skills": {
@@ -163,7 +198,25 @@
         "en": "Leeho deals Physical DMG by stabbing and slashing enemies with his spear. / Holding the Basic Attack button will make Leeho throw his spear at an enemy, dealing Fire DMG. Holding the Basic Attack button for longer will make Leeho throw a more powerful Flash Spear, piercing and dealing Fire DMG to all enemies in front of him. / If the enemy he targets has Prey Mark, Flash Spear does not need time to charge. When DMG is dealt to an enemy with Prey Mark using Flash Spear, Prey Mark is removed and Leeho is granted Tiger Hunter. / Tiger Hunter: Increases Basic Attack DMG. Also, Leeho's Basic Attack is enhanced during the effect's duration, dealing powerful Fire DMG. If Tiger Hunter ends during an Enhanced Basic Attack, Leeho strikes the ground in front of him, dealing Fire DMG. If an Evasion Counter is successfully used within the duration of Tiger Hunter, its duration is reset."
       },
       "damageType": "physical",
-      "effects": [],
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 25,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onBasicAttackHit",
+          "durationSec": 3,
+          "condition": {
+            "note": {
+              "en": "Tiger Hunter · Flash Spear on a Prey Mark target"
+            }
+          }
+        }
+      ],
       "values": [
         {
           "label": {
@@ -948,6 +1001,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Assassin · Fire · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวละครชายตัวที่สาม | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,181 · DEF 653 · HP 9,647 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,961 · DEF 580 · HP 8,389 · Crit 5% / 50%** — ตรงกับ Angel (Fire Assassin 4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 11.59% · Assassin 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · Fire DMG Boost 0.7% ไม่เก็บ (แบบ Verna) | **สกิลบนจอบัญชีนี้: Basic / Special / Ultimate Lv.5 (\"Level 1 +4\") · Switch Lv.13 · Guidance of Fire Lv.2** — Basic Wild Spear เก็บลงช่อง scaling 5 | **2026-10-22 รอบสาม** ตาราง Basic ส่วนที่เลื่อนลง +6 แถว (Tiger Hunter · Enhanced Basic Attack) → 15 แถว · แถวสุดท้ายที่เห็นคือ Enhanced Basic Attack Slam DMG ก่อนกล่อง Material Used — ถ้ามีต่ออีกยังไม่เห็น | Passive Hunter (Prey Mark ลด Fire RES ศัตรู 5% 15 วินาที → effect debuff res fire) · Guidance of Fire My Grand Entrance!: **ค่า Lv.12 = 6.9% จากป๊อปอัป Skill Info (Lv. 2 >> Lv. 12)** จอหลัก Lv.2 = 5.9% | **2026-10-22 รอบสี่** ปลุกพลังขั้น 2–6 (บัญชีนี้ปลุกครบหกขั้น) · effects: ขั้น 2 Basic +10% 3 วินาที · ขั้น 3 Basic +6% · ขั้น 5 ลดคูลดาวน์ Support 4.5% เก็บเป็นข้อความ · ขั้น 4 / 6 เก็บเป็นข้อความ | **2026-10-22 รอบห้า** Switch A Whopper! ครบสามท่อน + ตารางห้าแถว (**Lv.13 — \"Level 9 +4\" → scaling ช่อง 13**) · Special Commence Hunt (Lv.5 · 132% · คูลดาวน์ 11.8 วินาที) · Ultimate Crimson Meteor (Lv.5 · 756.2%) · Effect Details Fire Affliction · ปลุกพลังขั้น 1 → ครบหกขั้น | **หน้าเว็บแสดงเลเวลสูงสุดที่มีค่าของแต่ละสกิล — Leeho จะขึ้น Basic / Special / Ultimate ที่ Lv.5 และ Switch ที่ Lv.13** · ค่า Lv.12 ยังต้องใช้จอ Preview | ยังไม่ได้อ่าน: ค่า Lv.12 ของ Basic / Special / Ultimate · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Assassin · Fire · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวละครชายตัวที่สาม | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,181 · DEF 653 · HP 9,647 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,961 · DEF 580 · HP 8,389 · Crit 5% / 50%** — ตรงกับ Angel (Fire Assassin 4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 11.59% · Assassin 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · Fire DMG Boost 0.7% ไม่เก็บ (แบบ Verna) | **สกิลบนจอบัญชีนี้: Basic / Special / Ultimate Lv.5 (\"Level 1 +4\") · Switch Lv.13 · Guidance of Fire Lv.2** — Basic Wild Spear เก็บลงช่อง scaling 5 | **2026-10-22 รอบสาม** ตาราง Basic ส่วนที่เลื่อนลง +6 แถว (Tiger Hunter · Enhanced Basic Attack) → 15 แถว · แถวสุดท้ายที่เห็นคือ Enhanced Basic Attack Slam DMG ก่อนกล่อง Material Used — ถ้ามีต่ออีกยังไม่เห็น | Passive Hunter (Prey Mark ลด Fire RES ศัตรู 5% 15 วินาที → effect debuff res fire) · Guidance of Fire My Grand Entrance!: **ค่า Lv.12 = 6.9% จากป๊อปอัป Skill Info (Lv. 2 >> Lv. 12)** จอหลัก Lv.2 = 5.9% | **2026-10-22 รอบสี่** ปลุกพลังขั้น 2–6 (บัญชีนี้ปลุกครบหกขั้น) · effects: ขั้น 2 Basic +10% 3 วินาที · ขั้น 3 Basic +6% · ขั้น 5 ลดคูลดาวน์ Support 4.5% เก็บเป็นข้อความ · ขั้น 4 / 6 เก็บเป็นข้อความ | **2026-10-22 รอบห้า** Switch A Whopper! ครบสามท่อน + ตารางห้าแถว (**Lv.13 — \"Level 9 +4\" → scaling ช่อง 13**) · Special Commence Hunt (Lv.5 · 132% · คูลดาวน์ 11.8 วินาที) · Ultimate Crimson Meteor (Lv.5 · 756.2%) · Effect Details Fire Affliction · ปลุกพลังขั้น 1 → ครบหกขั้น | **หน้าเว็บแสดงเลเวลสูงสุดที่มีค่าของแต่ละสกิล — Leeho จะขึ้น Basic / Special / Ultimate ที่ Lv.5 และ Switch ที่ Lv.13** · ค่า Lv.12 ยังต้องใช้จอ Preview | ยังไม่ได้อ่าน: ค่า Lv.12 ของ Basic / Special / Ultimate · จอไทยทั้งหมด | **2026-10-31 ผู้เล่นสั่งไล่ใส่บัฟที่เป็นข้อความทั้งหมด** ใส่ effect จากข้อความ/ตารางบนจอเดิม (ไม่ได้อ่านจอใหม่): A4, A6, basic · \"X เท่า\" นับเป็น +100% ต่อเท่าตามที่ผู้เล่นยืนยันกับกาบี้ · ท่าที่ตีเพิ่ม/จำนวนครั้งเพิ่มใช้ bonusDmg · บัฟแปลงค่าใช้ condition.convertFrom"
   }
 }

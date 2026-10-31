@@ -69,7 +69,39 @@
       "desc": {
         "en": "Narae gains a new Passive Trait effect that inflicts an additional 15% Ice RES Reduction on the enemy when any teammate inflicts Ice Affliction.Ice RES Reduction lasts for 5s. / Upon using Narae's Ultimate Skill, small droplets scatter from the cascade of water and attack the enemy, and each droplet deals Ice DMG equal to 5% of her Ultimate Attack. / When the final cascade of water falls, no water droplets are created, but water energy spreads instead, dealing Ice DMG equal to 50% of her Ultimate Skill's base damage."
       },
-      "effects": []
+      "effects": [
+        {
+          "kind": "debuff",
+          "stat": "res",
+          "damageType": "ice",
+          "value": 15,
+          "unit": "percent",
+          "target": "enemy",
+          "trigger": "onHit",
+          "durationSec": 5,
+          "condition": {
+            "note": {
+              "en": "when any teammate inflicts Ice Affliction"
+            }
+          }
+        },
+        {
+          "kind": "buff",
+          "stat": "bonusDmg",
+          "scopes": [
+            "ultimate"
+          ],
+          "value": 50,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive",
+          "condition": {
+            "note": {
+              "en": "final cascade · water energy, 50% of her Ultimate Skill's base damage"
+            }
+          }
+        }
+      ]
     },
     {
       "stage": 2,
@@ -127,7 +159,61 @@
       "desc": {
         "en": "The effect granted by Narae's Special Skill is enhanced, increasing the Ice DMG Boost granted to Ice-type teammates to 90% and the Special Skill DMG Boost to 60%. / The Special Skill DMG Boost granted to Ranged type teammates who are not Ice-type increases to 150%. / The additional Shield HP increase effect increases to 200% of Narae's ATK."
       },
-      "effects": []
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "damageType": "ice",
+          "value": 40,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onSpecialSkill",
+          "durationSec": 20,
+          "condition": {
+            "teammateElement": "ice",
+            "note": {
+              "en": "Ice teammates · Ice DMG Boost 50% → 90%"
+            }
+          }
+        },
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "specialSkill"
+          ],
+          "value": 30,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onSpecialSkill",
+          "durationSec": 20,
+          "condition": {
+            "teammateElement": "ice",
+            "note": {
+              "en": "Ice teammates · Special Skill DMG Boost 30% → 60%"
+            }
+          }
+        },
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "specialSkill"
+          ],
+          "value": 70,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onSpecialSkill",
+          "durationSec": 20,
+          "condition": {
+            "teammateRange": "ranged",
+            "teammateNotElement": "ice",
+            "note": {
+              "en": "Ranged type teammates who are not Ice-type · 80% → 150%"
+            }
+          }
+        }
+      ]
     },
     {
       "stage": 5,
@@ -148,7 +234,24 @@
       "desc": {
         "en": "Using Narae's Special Skill summons a clone. The summoned clone unleashes butterflies toward nearby enemies, dealing Ice DMG equal to 80% of her Special Skill damage. / Narae also unleashes butterflies imbued with energy of water, dealing Ice DMG equal to 200% of her Special Skill damage and inflicting Freeze. Freeze lasts for 3s."
       },
-      "effects": []
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "bonusDmg",
+          "scopes": [
+            "specialSkill"
+          ],
+          "value": 280,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive",
+          "condition": {
+            "note": {
+              "en": "clone butterflies 80% + water-energy butterflies 200% of her Special Skill damage"
+            }
+          }
+        }
+      ]
     }
   ],
   "skills": {
@@ -1026,6 +1129,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (มีปุ่ม Quick Power Up / Max Level — ไม่ใช่จอ Character Preview) · **ยังไม่มีจอไทย** | Support · Ice · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats ของจอตัวละครผู้เล่น (ติดของ): เก็บเฉพาะบรรทัดที่ตรงกับแบบ Support 5 ดาว — Support DMG Boost 12.18% · Support 1,078 · Ultimate Gauge Charge 100% · Max Stamina 100 | สกิล Lv.12 ทั้งสี่ช่องหลัก (จอผู้เล่นขึ้น Lv.12 เท่า Preview) · Special Dew Blankets All (ตาราง 12 แถว จากสองจอ · effects ทีม: ดาเมจน้ำแข็ง +50% / สกิลพิเศษ +30% ให้เพื่อนน้ำแข็ง · สกิลพิเศษ +80% ให้เพื่อนระยะไกลที่ไม่ใช่น้ำแข็ง · 14 วินาที) · Ultimate Bubble Spout (**\"Waster Stream DMG\" สะกดผิดในเกม เก็บตามจอ**) · Passive Blessings of the Morning Dew (ATK +15% 8 วินาทีเมื่อให้โล่ตัวเอง → onGrantShield) | ATK-Based Healing 5.3% ไม่มีประโยคบอกท่อน ไม่ใส่ line | **Guidance of Ice บนจอนี้ Lv.3 ไม่ใช่ 12** (ตัวของผู้เล่นยังอัปไม่เต็ม) — ยังไม่ได้อ่าน ต้องใช้จอ Preview ถ้าจะเก็บค่าที่ Lv.12 | **2026-10-22 รอบสาม** ปลุกพลังขั้น 3–6 จากจอตัวละครผู้เล่น (ขั้น 1 ปลดแล้ว ขั้น 2–6 ล็อก — ข้อความยังอ่านได้) · effects: ขั้น 3 Ultimate +6% · ขั้น 5 ลดคูลดาวน์ Special 4.5% เก็บเป็นข้อความ · ขั้น 4 / 6 เปลี่ยนค่าและกลไก เก็บเป็นข้อความ | **ขั้น 1 ของบัญชีนี้ปลดแล้ว แต่ไม่ได้เพิ่มเลเวลสกิล — ค่าสกิล Lv.12 ที่เก็บยังเป็นค่าไม่มีโบนัส** | **2026-10-22 รอบสี่** Basic Dew-Jade Barrage (เจ็ดแถว) · ปลุกพลังขั้น 1 (ปลดแล้วในบัญชีนี้ \"Awakening Complete\") และขั้น 2 → ครบหกขั้น · Effect Details: Dew · Ice Affliction | ขั้น 2: ATK ทีม +22% 20 วินาทีเมื่อ Narae ได้โล่ → effect target team · ขั้น 1 ลด Ice RES ศัตรู 15% เมื่อเพื่อนติด Ice Affliction ไม่มี trigger ตรง เก็บเป็นข้อความ · \"Affliction.Ice\" ไม่มีเว้นวรรคตามจอ | **Dew บล็อก 603 ดาเมจ** — ตัวเลขนี้มาจากจอบัญชีผู้เล่น (ติดของ ATK 2,063) และโล่บวกตาม ATK จึงอาจไม่ใช่ค่าเปล่า เก็บตามจอ | **2026-10-22 รอบห้า** Basic ส่วนที่เลื่อนลง (Freeze 3s · Air Counter 99.7% · Evasion Counter 236.6%) → ครบสิบแถว · Switch Prison of Dew (183.4%) | **Guidance of Ice Go With the Flow ค่า Lv.12 = 26% อ่านจากป๊อปอัป Skill Info ของเกม (Lv. 3 >> Lv. 12)** — จอหลักของบัญชีนี้ขึ้น Lv.3 = 17% · DMG Taken ลด → kind debuff stat dmgTaken target team · ไม่มี trigger \"เข้าสนามโดยไม่ได้ควบคุม\" ใส่ passive + note | **2026-10-22 รอบหก ค่าพลังเก็บแล้ว — ผู้เล่นยืนยัน \"นี้ไงไม่ติดของ\"** ATK 2,063 · DEF 719 · HP 12,388 · Crit 12.5% / 92.5% · Elemental Weakness 150.5% · Ice DMG Boost 1.3% | **ข้อควรระวัง: ค่านี้มาจากจอบัญชีผู้เล่น ไม่ใช่ Character Preview** — Crit / Elemental Weakness / Ice DMG ไม่ตรงกับตัวอื่นทั้ง 19 ตัวที่อ่านจาก Preview (5% / 50% / 125% / ไม่มี Ice DMG) บัญชีนี้มีแท็บเพิ่ม (Elemental Sanctum ฯลฯ) และปลุกพลังขั้น 1 แล้ว ส่วนต่างอาจมาจากระบบของบัญชี — ไม่ได้ระบุว่ามาจากอะไร · ใส่ใน fieldsUnverified จนกว่าจะเทียบกับจอ Preview | ยังไม่ได้อ่าน: จอไทยทั้งหมด | **2026-10-22 ค่าพลังแก้แล้ว — จอบัญชีมีบัฟอาหารติดอยู่** (ผู้เล่นบอก \"ตอนนี้กินอาหารอยู่ stat เลยสูงขึ้น\" + ส่งจอ Check Active Food): Green Cappy Forest Stew (Max HP +15% · ATK +11.25% · Stamina Consumption −18.75% · Crit Rate +7.5%) และ Exquisite Time to Celebrate (DEF +12.75% · Elemental Weakness DMG +25.5% · Capture Proficiency +1,275 · Crit DMG +42.5%) | หักออก: Crit 12.5 − 7.5 = 5 · 92.5 − 42.5 = 50 · Elemental Weakness 150.5 − 25.5 = 125 — ตรงกับตัว Preview ทุกตัว | ATK / DEF / HP: แก้สมการ floor(ฐาน × (1 + %)) = ค่าบนจอ ได้คำตอบจำนวนเต็มเดียวทุกค่า · **ตรวจกับ Isabella ได้ ATK 2,049 · DEF 638 · HP 9,713 ตรงกับค่า Preview ของ 5 ดาวตัวอื่นพอดี** จึงยืนยันวิธีคิด (คูณจากฐานแล้วปัดลง) | **Ice DMG Boost 1.3% ไม่ได้มาจากอาหาร และตัว Preview ไม่มีบรรทัดนี้ — ไม่ใช่ค่าตัวละคร เอาออกจาก otherStats** (ที่มายังไม่รู้) | ค่าบนจอเดิมก่อนหัก: ATK 2,063 · DEF 719 · HP 12,388 · Crit 12.5% / 92.5% · Elemental Weakness 150.5% · Ice DMG 1.3% | ผลหลังหัก: ATK 1,855 (เท่า Jiwon) · DEF 638 · HP 10,773 (ยังไม่ซ้ำตัวไหน) | **2026-10-24** บัฟทีมที่จอบอกว่าให้เฉพาะเพื่อนบางแบบ แปลงข้อความเงื่อนไขเดิมเป็นช่อง condition.teammateElement / teammateNotElement / teammateRange ให้เครื่องคิดดาเมจทีมอ่านได้ — ไม่ได้เพิ่มข้อมูลใหม่ ข้อความเงื่อนไขเดิมยังอยู่"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (มีปุ่ม Quick Power Up / Max Level — ไม่ใช่จอ Character Preview) · **ยังไม่มีจอไทย** | Support · Ice · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats ของจอตัวละครผู้เล่น (ติดของ): เก็บเฉพาะบรรทัดที่ตรงกับแบบ Support 5 ดาว — Support DMG Boost 12.18% · Support 1,078 · Ultimate Gauge Charge 100% · Max Stamina 100 | สกิล Lv.12 ทั้งสี่ช่องหลัก (จอผู้เล่นขึ้น Lv.12 เท่า Preview) · Special Dew Blankets All (ตาราง 12 แถว จากสองจอ · effects ทีม: ดาเมจน้ำแข็ง +50% / สกิลพิเศษ +30% ให้เพื่อนน้ำแข็ง · สกิลพิเศษ +80% ให้เพื่อนระยะไกลที่ไม่ใช่น้ำแข็ง · 14 วินาที) · Ultimate Bubble Spout (**\"Waster Stream DMG\" สะกดผิดในเกม เก็บตามจอ**) · Passive Blessings of the Morning Dew (ATK +15% 8 วินาทีเมื่อให้โล่ตัวเอง → onGrantShield) | ATK-Based Healing 5.3% ไม่มีประโยคบอกท่อน ไม่ใส่ line | **Guidance of Ice บนจอนี้ Lv.3 ไม่ใช่ 12** (ตัวของผู้เล่นยังอัปไม่เต็ม) — ยังไม่ได้อ่าน ต้องใช้จอ Preview ถ้าจะเก็บค่าที่ Lv.12 | **2026-10-22 รอบสาม** ปลุกพลังขั้น 3–6 จากจอตัวละครผู้เล่น (ขั้น 1 ปลดแล้ว ขั้น 2–6 ล็อก — ข้อความยังอ่านได้) · effects: ขั้น 3 Ultimate +6% · ขั้น 5 ลดคูลดาวน์ Special 4.5% เก็บเป็นข้อความ · ขั้น 4 / 6 เปลี่ยนค่าและกลไก เก็บเป็นข้อความ | **ขั้น 1 ของบัญชีนี้ปลดแล้ว แต่ไม่ได้เพิ่มเลเวลสกิล — ค่าสกิล Lv.12 ที่เก็บยังเป็นค่าไม่มีโบนัส** | **2026-10-22 รอบสี่** Basic Dew-Jade Barrage (เจ็ดแถว) · ปลุกพลังขั้น 1 (ปลดแล้วในบัญชีนี้ \"Awakening Complete\") และขั้น 2 → ครบหกขั้น · Effect Details: Dew · Ice Affliction | ขั้น 2: ATK ทีม +22% 20 วินาทีเมื่อ Narae ได้โล่ → effect target team · ขั้น 1 ลด Ice RES ศัตรู 15% เมื่อเพื่อนติด Ice Affliction ไม่มี trigger ตรง เก็บเป็นข้อความ · \"Affliction.Ice\" ไม่มีเว้นวรรคตามจอ | **Dew บล็อก 603 ดาเมจ** — ตัวเลขนี้มาจากจอบัญชีผู้เล่น (ติดของ ATK 2,063) และโล่บวกตาม ATK จึงอาจไม่ใช่ค่าเปล่า เก็บตามจอ | **2026-10-22 รอบห้า** Basic ส่วนที่เลื่อนลง (Freeze 3s · Air Counter 99.7% · Evasion Counter 236.6%) → ครบสิบแถว · Switch Prison of Dew (183.4%) | **Guidance of Ice Go With the Flow ค่า Lv.12 = 26% อ่านจากป๊อปอัป Skill Info ของเกม (Lv. 3 >> Lv. 12)** — จอหลักของบัญชีนี้ขึ้น Lv.3 = 17% · DMG Taken ลด → kind debuff stat dmgTaken target team · ไม่มี trigger \"เข้าสนามโดยไม่ได้ควบคุม\" ใส่ passive + note | **2026-10-22 รอบหก ค่าพลังเก็บแล้ว — ผู้เล่นยืนยัน \"นี้ไงไม่ติดของ\"** ATK 2,063 · DEF 719 · HP 12,388 · Crit 12.5% / 92.5% · Elemental Weakness 150.5% · Ice DMG Boost 1.3% | **ข้อควรระวัง: ค่านี้มาจากจอบัญชีผู้เล่น ไม่ใช่ Character Preview** — Crit / Elemental Weakness / Ice DMG ไม่ตรงกับตัวอื่นทั้ง 19 ตัวที่อ่านจาก Preview (5% / 50% / 125% / ไม่มี Ice DMG) บัญชีนี้มีแท็บเพิ่ม (Elemental Sanctum ฯลฯ) และปลุกพลังขั้น 1 แล้ว ส่วนต่างอาจมาจากระบบของบัญชี — ไม่ได้ระบุว่ามาจากอะไร · ใส่ใน fieldsUnverified จนกว่าจะเทียบกับจอ Preview | ยังไม่ได้อ่าน: จอไทยทั้งหมด | **2026-10-22 ค่าพลังแก้แล้ว — จอบัญชีมีบัฟอาหารติดอยู่** (ผู้เล่นบอก \"ตอนนี้กินอาหารอยู่ stat เลยสูงขึ้น\" + ส่งจอ Check Active Food): Green Cappy Forest Stew (Max HP +15% · ATK +11.25% · Stamina Consumption −18.75% · Crit Rate +7.5%) และ Exquisite Time to Celebrate (DEF +12.75% · Elemental Weakness DMG +25.5% · Capture Proficiency +1,275 · Crit DMG +42.5%) | หักออก: Crit 12.5 − 7.5 = 5 · 92.5 − 42.5 = 50 · Elemental Weakness 150.5 − 25.5 = 125 — ตรงกับตัว Preview ทุกตัว | ATK / DEF / HP: แก้สมการ floor(ฐาน × (1 + %)) = ค่าบนจอ ได้คำตอบจำนวนเต็มเดียวทุกค่า · **ตรวจกับ Isabella ได้ ATK 2,049 · DEF 638 · HP 9,713 ตรงกับค่า Preview ของ 5 ดาวตัวอื่นพอดี** จึงยืนยันวิธีคิด (คูณจากฐานแล้วปัดลง) | **Ice DMG Boost 1.3% ไม่ได้มาจากอาหาร และตัว Preview ไม่มีบรรทัดนี้ — ไม่ใช่ค่าตัวละคร เอาออกจาก otherStats** (ที่มายังไม่รู้) | ค่าบนจอเดิมก่อนหัก: ATK 2,063 · DEF 719 · HP 12,388 · Crit 12.5% / 92.5% · Elemental Weakness 150.5% · Ice DMG 1.3% | ผลหลังหัก: ATK 1,855 (เท่า Jiwon) · DEF 638 · HP 10,773 (ยังไม่ซ้ำตัวไหน) | **2026-10-24** บัฟทีมที่จอบอกว่าให้เฉพาะเพื่อนบางแบบ แปลงข้อความเงื่อนไขเดิมเป็นช่อง condition.teammateElement / teammateNotElement / teammateRange ให้เครื่องคิดดาเมจทีมอ่านได้ — ไม่ได้เพิ่มข้อมูลใหม่ ข้อความเงื่อนไขเดิมยังอยู่ | **2026-10-31 ผู้เล่นสั่งไล่ใส่บัฟที่เป็นข้อความทั้งหมด** ใส่ effect จากข้อความ/ตารางบนจอเดิม (ไม่ได้อ่านจอใหม่): A1, A4, A6 · \"X เท่า\" นับเป็น +100% ต่อเท่าตามที่ผู้เล่นยืนยันกับกาบี้ · ท่าที่ตีเพิ่ม/จำนวนครั้งเพิ่มใช้ bonusDmg · บัฟแปลงค่าใช้ condition.convertFrom"
   }
 }

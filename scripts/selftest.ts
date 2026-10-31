@@ -7,7 +7,8 @@
 import { buildLoadout, character, food, linkChain, monsterling, skill } from "../src/lib/schema/entities";
 import { computeDamage, proficiencyToPercent, sumBuffs } from "../src/lib/formula";
 import { awakenGroups, canRecastSpecial, receivedEffects, statSheet, teamDamage, unusableReason } from "../src/lib/team-damage";
-import { LINK_CHAINS, characterById } from "../src/lib/data";
+import { CHARACTERS, LINK_CHAINS, characterById } from "../src/lib/data";
+import { tierList } from "../src/lib/tier-list";
 import { chainAppears, chainEffects } from "../src/lib/link-chain-effects";
 import { LINK_CHAIN_LIST_IS_COMPLETE, linkableBadge, linkableIds, linkableOf } from "../src/lib/linkable";
 import type { Effect } from "../src/lib/schema/common";
@@ -417,6 +418,50 @@ check("yes แปะป้ายสองภาษา", linkableBadge("yes")?.th
   const isa = (aw: number) => teamDamage(buildLoadout.parse({ awaken: 0, members: [{ characterId: "ophelia" }, { characterId: "isabella", awaken: aw }] }));
   const oSwitch = (r: ReturnType<typeof teamDamage>) => r.members[0].skills.find((x) => x.skill === "switch")!.average;
   check("Embrittled ทำให้ท่าน้ำแข็งของเพื่อน +50%", Math.abs(oSwitch(isa(4)) / oSwitch(isa(3)) - 1.5) < 1e-6, String(oSwitch(isa(4)) / oSwitch(isa(3))));
+}
+
+// ---------- บัฟแปลงค่า (condition.convertFrom) ----------
+{
+  const solo = (id: string, awaken = 0) => receivedEffects(buildLoadout.parse({ awaken, members: [{ characterId: id }] }))[0];
+  const conv = (fx: ReturnType<typeof solo>["effects"], from: string, stat: string) =>
+    fx.find((t) => (t.from.en ?? "").endsWith(` · ${from}`) && t.effect.stat === stat)?.effect.value;
+  // Francis: Summer Dive! แพสซีฟ: ATK = ดาเมจดินที่ได้รับ สูงสุด 25% · สกิลพิเศษให้ดาเมจดิน +40% → 25 เต็ม
+  const f = solo("francis-summer-dive");
+  check("แปลงดาเมจดินเป็น ATK ไม่เกิน 25%", conv(f.effects, "Preventative Care on Summer Vacation", "atk") === 25, String(conv(f.effects, "Preventative Care on Summer Vacation", "atk")));
+  check("ค่าที่แปลงแล้วไม่มี convertFrom ค้าง", !f.effects.some((t) => t.effect.condition?.convertFrom));
+  // Penny แพสซีฟ: Crit Rate = 30% ของดาเมจสายฟ้า สูงสุด 30% · ปลุก 6 Jackpot ให้ดาเมจสายฟ้า 24% → 7.2
+  const p6 = solo("penny", 6);
+  check("Penny: Crit Rate 30% ของดาเมจสายฟ้า", Math.abs((conv(p6.effects, "Electric Charge", "critRate") ?? -1) - 7.2) < 1e-6, String(conv(p6.effects, "Electric Charge", "critRate")));
+  const p0 = solo("penny", 0);
+  check("Penny: ไม่มีดาเมจสายฟ้า ได้ 0", conv(p0.effects, "Electric Charge", "critRate") === 0, String(conv(p0.effects, "Electric Charge", "critRate")));
+  // Isabella แพสซีฟ + ปลุก 6 รวมเป็นอัตรา 83.2% เพดาน 35.2% (รวมเป็นรายการเดียว)
+  const i6 = solo("isabella", 6);
+  check("Isabella: แพสซีฟ + ปลุก 6 รวมเป็นรายการเดียว", i6.effects.filter((t) => t.effect.stat === "atk" && t.effect.trigger === "onApplyFreeze").length === 1);
+  // Bonnie ปลุก 2: เพื่อนได้ Crit DMG 40% ของ Crit Rate ของ Bonnie (ไม่ใช่ของคนที่ได้รับ) · Bonnie เองไม่ได้
+  const team = receivedEffects(buildLoadout.parse({ awaken: 0, members: [{ characterId: "chloe" }, { characterId: "bonnie", awaken: 2 }] }));
+  const bonnieCr = statSheet(team[1].char!, team[1].effects, false).critRate;
+  const got = conv(team[0].effects, "Encore!", "critDmg");
+  check("Bonnie ปลุก 2: เพื่อนได้ Crit DMG 40% ของ Crit Rate ของ Bonnie", Math.abs((got ?? -1) - bonnieCr * 0.4) < 0.01, `${got} vs ${bonnieCr * 0.4}`);
+  check("Bonnie ปลุก 2: ไม่ย้อนกลับไปให้ Bonnie", conv(team[1].effects, "Encore!", "critDmg") === undefined);
+}
+
+// ---------- แถว "X Count" ----------
+{
+  // Flare: Dragon Ambush 116.6% × 9 ครั้ง
+  const r = teamDamage(buildLoadout.parse({ awaken: 0, members: [{ characterId: "flare" }] }));
+  const row = r.members[0].skills.find((x) => x.skill === "ultimate")?.rows.find((x) => x.label.en === "Dragon Ambush DMG");
+  check("แถว X Count คูณแถว X DMG", Math.abs((row?.value ?? 0) - 116.6 * 9) < 1e-6, String(row?.value));
+}
+
+// ---------- Tier list ----------
+{
+  const list = tierList();
+  check("Tier list มีตัวละครครบทุกตัว", list.length === CHARACTERS.length, `${list.length} / ${CHARACTERS.length}`);
+  const covers = list.every((e) => e.ranges[0].from === 0 && e.ranges.at(-1)!.to === 6 && e.ranges.every((r, i) => i === 0 || r.from === e.ranges[i - 1].to + 1));
+  check("ช่วงปลุกพลังต่อกันครบ 0–6 ทุกตัว", covers);
+  const merged = list.every((e) => e.ranges.every((r, i) => i === 0 || r.tier !== e.ranges[i - 1].tier));
+  check("ขั้นติดกันที่ tier เท่ากันรวมเป็นช่วงเดียว", merged);
+  for (const g of ["dps", "support"] as const) check(`กลุ่ม ${g} มี tier 0`, list.some((e) => e.group === g && e.ranges.some((r) => r.tier === "0")));
 }
 
 console.log(failed === 0 ? "\nผ่านทั้งหมด\n" : `\nไม่ผ่าน ${failed} ข้อ\n`);

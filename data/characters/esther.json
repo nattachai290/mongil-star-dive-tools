@@ -72,7 +72,25 @@
         "th": "เมื่อใช้สกิลสับเปลี่ยน จะสร้างม่านควัน นาน 3 วินาที อีกทั้งเพิ่มระยะซ่อนตัวและเพิ่มดาเมจซ่อนตัว 2 เท่า",
         "en": "Using Esther's Switch Skill triggers a Dust Cloud for 3s. Ambush range increases, and Ambush DMG is multiplied by 2."
       },
-      "effects": []
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "switchSkill"
+          ],
+          "value": 100,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive",
+          "condition": {
+            "skillRow": "Support Skill",
+            "note": {
+              "en": "Ambush DMG is multiplied by 2 (counted as +100%)"
+            }
+          }
+        }
+      ]
     },
     {
       "stage": 2,
@@ -84,7 +102,22 @@
         "th": "เพิ่มขอบเขตม่านควันของสกิลพิเศษ อีกทั้งเมื่อโจมตีศัตรูที่เข้ามาในม่านควัน จะสร้างดาเมจเพิ่มเติม 75%",
         "en": "The range of Esther's Special Skill's Dust Cloud increases. She also deals 75% bonus DMG when attacking enemies within the Dust Cloud."
       },
-      "effects": []
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "bonusDmg",
+          "value": 75,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSpecialSkill",
+          "durationSec": 6,
+          "condition": {
+            "note": {
+              "en": "attacking enemies within the Dust Cloud"
+            }
+          }
+        }
+      ]
     },
     {
       "stage": 3,
@@ -156,7 +189,25 @@
         "th": "เพิ่มปริมาณดาเมจของโจมตีพื้นฐานเสริมพลัง 125% และเพิ่มขอบเขตของโจมตีพื้นฐานเสริมพลังขั้น 3",
         "en": "Esther's Enhanced Basic Attack DMG increases by 125%. The range of her enhanced Basic Attack's 3rd Hit also increases."
       },
-      "effects": []
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 125,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive",
+          "condition": {
+            "skillRow": "Enhanced",
+            "note": {
+              "en": "Enhanced Basic Attack DMG"
+            }
+          }
+        }
+      ]
     }
   ],
   "skills": {
@@ -793,7 +844,75 @@
         "th": "เมื่ออยู่ในขอบเขตม่านควันของสกิลพิเศษ จะได้รับเอฟเฟต์เพิ่มพลังโจมตี ซึ่งเอฟเฟกต์นี้จะหายไปเมื่อออกจากม่านควัน / ในขณะที่มีเอฟเฟกต์คมกริบ เมื่อใช้โจมตีพื้นฐานขั้น 3 เสริมพลัง, สกิลสนับสนุน, สกิลอัลติเมต จะใช้เอฟเฟกต์คมกริบ 1 หน่วย และเพิ่มดาเมจของการโจมตีแต่ละครั้ง",
         "en": "Esther's ATK increases when she is within the Dust Cloud created by her Special Skill. This boost goes away when she moves out of the Dust Cloud. / When Sharpness is active, using her Enhanced Basic Attack's 3rd Hit, Support Skill, or Ultimate Skill consumes 1 Sharpness stack and increases each attack's DMG."
       },
-      "effects": [],
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "atk",
+          "value": 15,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSpecialSkill",
+          "durationSec": 6,
+          "condition": {
+            "note": {
+              "en": "within the Dust Cloud created by her Special Skill"
+            }
+          }
+        },
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 70,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSpecialSkill",
+          "durationSec": 10,
+          "condition": {
+            "skillRow": "3rd Enhanced Hit",
+            "note": {
+              "en": "consumes 1 Sharpness · counted on all three (player 2026-10-31)"
+            }
+          }
+        },
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "switchSkill"
+          ],
+          "value": 70,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSpecialSkill",
+          "durationSec": 10,
+          "condition": {
+            "skillRow": "Support Skill",
+            "note": {
+              "en": "consumes 1 Sharpness · counted on all three (player 2026-10-31)"
+            }
+          }
+        },
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "ultimate"
+          ],
+          "value": 70,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "onSpecialSkill",
+          "durationSec": 10,
+          "condition": {
+            "note": {
+              "en": "consumes 1 Sharpness · counted on all three (player 2026-10-31)"
+            }
+          }
+        }
+      ],
       "values": [
         {
           "label": {
@@ -912,7 +1031,7 @@
       "en",
       "th"
     ],
-    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Assassin · Wind · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** — Assassin 5 ดาวตัวแรก | ค่าพลังห้าค่าหลักจากจอ Info: ATK 2,049 (เท่ากับ Verna / Mina ซึ่งเป็น 5 ดาวเหมือนกัน) · DEF 656 (เท่ากับ Chloe) · HP 9,537 · Crit 5% / 50% | รูป portrait ตัดจากจอ Info 360x360 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 12.18% · Assassin 1,078 · Elemental Weakness 125% — ตรงแบบตัว 5 ดาว (12.18% / 1,078) | Basic Maid's Double Life (Lv.12 ครบสิบบรรทัด จากจอที่เลื่อนลง · ดาเมจกายภาพตามท่อนแรก ท่อนเดียวกันจบด้วย Wind DMG) · Ultimate The Maid & Clover Inn's Peacekeeper (1,312.5%) · Passive (Lv.1) · Wind Affliction | **Passive Trait กับ Basic Attack ใช้ชื่อเดียวกัน \"Maid's Double Life\"** ตามที่สองจอเขียน — เก็บตามจอ ไม่ได้พิมพ์ซ้ำผิด | ปลุกพลัง: ครบหกขั้น (ขั้น 1-2 มารอบสาม) · ขั้น 4 เติม effect (ใช้สกิลพิเศษ → Crit DMG ตัวเอง +50% 10 วินาที) · ขั้น 5 (ดาเมจโจมตีพื้นฐาน +6%) · ขั้น 3 ลดคูลดาวน์สกิลสนับสนุน 4.5% และขั้น 6 Enhanced Basic Attack +125% เก็บเป็นข้อความ | **2026-10-22 รอบสาม** Switch Taking Out the Trash (ครบห้าบรรทัดจากจอที่เลื่อนลง) · Special Housekeeping! · Guidance of Wind: Maid and Silver Flash (Lv.12 ATK +40.1% 10 วินาที เมื่อได้ Sharpness · ไม่ระบุเป้าหมาย เก็บเป็นข้อความ) · ปลุกพลังขั้น 1-2 — **ครบทั้งหกช่องสกิลและหกขั้นปลุกพลังแล้ว** | special: ย่อหน้าที่สองคือคำอธิบายย่อยของ Dust Cloud (หัวข้อสีเหลือง) เก็บพร้อม \"Dust Cloud:\" · Dust Cloud DMG ผูกท่อน 1 (\"dealing Wind DMG\") · มีลิงก์สถานะ Confused แต่ยังไม่เห็นหน้าต่างรายละเอียด | **สกิลธาตุเติม effect แล้ว** (ผู้เล่นกำหนด 2026-10-22: \"ถ้าไม่บอกว่าใครก็คือตัวเอง\" — ข้อความที่ไม่ระบุผู้รับบัฟ ให้ target self) · ตัวกระตุ้นจริงคือ \"ได้ Sharpness\" ซึ่งคำอธิบายสกิลพิเศษบอกว่าได้จากสกิลพิเศษ (Sharpness Obtained 2) จึงเก็บเป็น onSpecialSkill + condition.note และติดธง trigger ไว้ เพราะยังไม่รู้ว่ามีทางอื่นที่ได้ Sharpness หรือไม่ | Effect Details ของ **Confused**: \"Afflicted targets cannot identify enemies.\" (จอนี้เปิดที่ Lv.1 — Dust Cloud DMG 60.4% ที่ Lv.1 ไม่เก็บ เพราะหน้าเว็บโชว์เลเวลสูงสุดเท่านั้น และค่าที่เก็บไว้คือ Lv.12) | **2026-10-23 จอไทย (พรีวิวตัวละคร)** ชื่อ เอสเด · ค่าพลังห้าค่าตรงจออังกฤษ · โจมตีพื้นฐาน เมดสองหน้า (ตารางสิบแถวตรงทุกค่า) · สกิลสับเปลี่ยน จัดการคนก่อกวน (เห็นแค่คำอธิบาย ตารางอยู่ใต้ขอบ — ชื่อแถวไทยยังไม่มี) · การชี้นำแห่งลม เมดและดาบแสงเงิน | สกิลสับเปลี่ยน: จอไทยวาง \"[สกิลสนับสนุน]\" ไว้บรรทัดเดียวโดด ๆ — ต่อกับย่อหน้าถัดไปเป็นท่อนที่ 2 ตามรูปแบบจออังกฤษ \"[Support Skill] …\" | **2026-10-23 จอไทยรอบสอง** ตารางสกิลสับเปลี่ยนห้าแถว · สกิลพิเศษ เริ่มทำความสะอาด · สกิลอัลติเมต อาวุธมนุษย์ของโรงเตี๊ยมสาวใช้และใบโคลเวอร์ (ชื่อขึ้นสองบรรทัด ต่อกันตามจอ) · แพสซีฟ เมดลับ · เอฟเฟกต์อ่อนแอต่อลม · ตัวเลขทุกตารางตรงจออังกฤษ | สกิลพิเศษ: จอไทยวางหัวข้อ \"ม่านควัน\" ไว้บรรทัดเดียวโดด ๆ แล้วข้อความต่อบรรทัดถัดไป — ต่อเป็น \"ม่านควัน มอบเอฟเฟกต์…\" (เว้นวรรค ไม่เติมเครื่องหมาย) คู่กับ \"Dust Cloud: …\" ของจออังกฤษ | แพสซีฟไทยพิมพ์ \"เอฟเฟต์\" (ตก ก) ในประโยคแรก เก็บตามจอ | **ชื่อแพสซีฟอังกฤษที่เก็บไว้ (\"Maid's Double Life\") ซ้ำกับชื่อโจมตีพื้นฐาน** ขณะที่จอไทยใช้คนละชื่อ (เมดสองหน้า / เมดลับ) — อาจอ่านชื่ออังกฤษของแพสซีฟผิดตอนลงข้อมูลรอบแรก ยังไม่แก้ รอจออังกฤษยืนยัน | **2026-10-23 จอไทยรอบสาม** ปลุกพลังครบหกขั้น · สถานะสับสน → **จอไทยครบทุกส่วนแล้ว** (เหลือแค่ยืนยันชื่อแพสซีฟอังกฤษ)",
+    "note": "อ่านจากจอ **Character Preview** ภาษาอังกฤษ 2026-10-22 (จอ Info จอเดียว) · **ยังไม่มีจอไทย** | Assassin · Wind · Melee · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** — Assassin 5 ดาวตัวแรก | ค่าพลังห้าค่าหลักจากจอ Info: ATK 2,049 (เท่ากับ Verna / Mina ซึ่งเป็น 5 ดาวเหมือนกัน) · DEF 656 (เท่ากับ Chloe) · HP 9,537 · Crit 5% / 50% | รูป portrait ตัดจากจอ Info 360x360 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 12.18% · Assassin 1,078 · Elemental Weakness 125% — ตรงแบบตัว 5 ดาว (12.18% / 1,078) | Basic Maid's Double Life (Lv.12 ครบสิบบรรทัด จากจอที่เลื่อนลง · ดาเมจกายภาพตามท่อนแรก ท่อนเดียวกันจบด้วย Wind DMG) · Ultimate The Maid & Clover Inn's Peacekeeper (1,312.5%) · Passive (Lv.1) · Wind Affliction | **Passive Trait กับ Basic Attack ใช้ชื่อเดียวกัน \"Maid's Double Life\"** ตามที่สองจอเขียน — เก็บตามจอ ไม่ได้พิมพ์ซ้ำผิด | ปลุกพลัง: ครบหกขั้น (ขั้น 1-2 มารอบสาม) · ขั้น 4 เติม effect (ใช้สกิลพิเศษ → Crit DMG ตัวเอง +50% 10 วินาที) · ขั้น 5 (ดาเมจโจมตีพื้นฐาน +6%) · ขั้น 3 ลดคูลดาวน์สกิลสนับสนุน 4.5% และขั้น 6 Enhanced Basic Attack +125% เก็บเป็นข้อความ | **2026-10-22 รอบสาม** Switch Taking Out the Trash (ครบห้าบรรทัดจากจอที่เลื่อนลง) · Special Housekeeping! · Guidance of Wind: Maid and Silver Flash (Lv.12 ATK +40.1% 10 วินาที เมื่อได้ Sharpness · ไม่ระบุเป้าหมาย เก็บเป็นข้อความ) · ปลุกพลังขั้น 1-2 — **ครบทั้งหกช่องสกิลและหกขั้นปลุกพลังแล้ว** | special: ย่อหน้าที่สองคือคำอธิบายย่อยของ Dust Cloud (หัวข้อสีเหลือง) เก็บพร้อม \"Dust Cloud:\" · Dust Cloud DMG ผูกท่อน 1 (\"dealing Wind DMG\") · มีลิงก์สถานะ Confused แต่ยังไม่เห็นหน้าต่างรายละเอียด | **สกิลธาตุเติม effect แล้ว** (ผู้เล่นกำหนด 2026-10-22: \"ถ้าไม่บอกว่าใครก็คือตัวเอง\" — ข้อความที่ไม่ระบุผู้รับบัฟ ให้ target self) · ตัวกระตุ้นจริงคือ \"ได้ Sharpness\" ซึ่งคำอธิบายสกิลพิเศษบอกว่าได้จากสกิลพิเศษ (Sharpness Obtained 2) จึงเก็บเป็น onSpecialSkill + condition.note และติดธง trigger ไว้ เพราะยังไม่รู้ว่ามีทางอื่นที่ได้ Sharpness หรือไม่ | Effect Details ของ **Confused**: \"Afflicted targets cannot identify enemies.\" (จอนี้เปิดที่ Lv.1 — Dust Cloud DMG 60.4% ที่ Lv.1 ไม่เก็บ เพราะหน้าเว็บโชว์เลเวลสูงสุดเท่านั้น และค่าที่เก็บไว้คือ Lv.12) | **2026-10-23 จอไทย (พรีวิวตัวละคร)** ชื่อ เอสเด · ค่าพลังห้าค่าตรงจออังกฤษ · โจมตีพื้นฐาน เมดสองหน้า (ตารางสิบแถวตรงทุกค่า) · สกิลสับเปลี่ยน จัดการคนก่อกวน (เห็นแค่คำอธิบาย ตารางอยู่ใต้ขอบ — ชื่อแถวไทยยังไม่มี) · การชี้นำแห่งลม เมดและดาบแสงเงิน | สกิลสับเปลี่ยน: จอไทยวาง \"[สกิลสนับสนุน]\" ไว้บรรทัดเดียวโดด ๆ — ต่อกับย่อหน้าถัดไปเป็นท่อนที่ 2 ตามรูปแบบจออังกฤษ \"[Support Skill] …\" | **2026-10-23 จอไทยรอบสอง** ตารางสกิลสับเปลี่ยนห้าแถว · สกิลพิเศษ เริ่มทำความสะอาด · สกิลอัลติเมต อาวุธมนุษย์ของโรงเตี๊ยมสาวใช้และใบโคลเวอร์ (ชื่อขึ้นสองบรรทัด ต่อกันตามจอ) · แพสซีฟ เมดลับ · เอฟเฟกต์อ่อนแอต่อลม · ตัวเลขทุกตารางตรงจออังกฤษ | สกิลพิเศษ: จอไทยวางหัวข้อ \"ม่านควัน\" ไว้บรรทัดเดียวโดด ๆ แล้วข้อความต่อบรรทัดถัดไป — ต่อเป็น \"ม่านควัน มอบเอฟเฟกต์…\" (เว้นวรรค ไม่เติมเครื่องหมาย) คู่กับ \"Dust Cloud: …\" ของจออังกฤษ | แพสซีฟไทยพิมพ์ \"เอฟเฟต์\" (ตก ก) ในประโยคแรก เก็บตามจอ | **ชื่อแพสซีฟอังกฤษที่เก็บไว้ (\"Maid's Double Life\") ซ้ำกับชื่อโจมตีพื้นฐาน** ขณะที่จอไทยใช้คนละชื่อ (เมดสองหน้า / เมดลับ) — อาจอ่านชื่ออังกฤษของแพสซีฟผิดตอนลงข้อมูลรอบแรก ยังไม่แก้ รอจออังกฤษยืนยัน | **2026-10-23 จอไทยรอบสาม** ปลุกพลังครบหกขั้น · สถานะสับสน → **จอไทยครบทุกส่วนแล้ว** (เหลือแค่ยืนยันชื่อแพสซีฟอังกฤษ) | **2026-10-31 ผู้เล่นสั่งไล่ใส่บัฟที่เป็นข้อความทั้งหมด** ใส่ effect จากข้อความ/ตารางบนจอเดิม (ไม่ได้อ่านจอใหม่): A1, A2, A6, passive · \"X เท่า\" นับเป็น +100% ต่อเท่าตามที่ผู้เล่นยืนยันกับกาบี้ · ท่าที่ตีเพิ่ม/จำนวนครั้งเพิ่มใช้ bonusDmg · บัฟแปลงค่าใช้ condition.convertFrom | **2026-10-31 ผู้เล่นตอบ** Sharpness +70% นับทั้งสามท่า",
     "fieldsUnverified": [
       "skills.elemental.effects.0.trigger"
     ]

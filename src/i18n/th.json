@@ -188,12 +188,20 @@
   "builds.chainNoAppear": "ลิงก์เชนนี้ไม่โผล่ในรอบสกิลของตัวนี้ (เงื่อนไขปรากฏตัวไม่ตรงกับท่าที่ใช้) จึงไม่นับในตัวคำนวณ",
   "builds.unusable.evasionCounter": "ไม่นับ: หลบหลีกโต้กลับเกิดนาน ๆ ที",
   "builds.awakenInherited": "ยังไม่ได้จัดของแยกสำหรับขั้นนี้ — ใช้ของชุดเดียวกับปลุกพลัง {n} แล้วคิดค่าพลังตามขั้นที่เลือก (เอฟเฟกต์ปลุกพลังบางส่วนยังเป็นข้อความ ยังไม่ได้นับในตัวเลข)",
-  "builds.teamOf": "ทีม{name}",
+  "builds.teamOf": "ทีม {name}",
   "builds.weaknessChip": "ตีจุดอ่อนธาตุ{el}",
   "builds.dimHint": "สีจาง = ทีมนี้ใช้ไม่ได้ ไม่นับในตัวเลข",
   "builds.subsFor": "ถ้าไม่มี{name} ใช้แทนได้",
   "builds.subsAll": "ค่ารองทุกชิ้น",
   "builds.legendaryShared": "ใช้ร่วมทุกตัว · Trait เหมือนกันทุกที่",
   "builds.mainBadge": "ตัวหลัก",
-  "builds.chainAppears": "โผล่ในรอบ"
+  "builds.chainAppears": "โผล่ในรอบ",
+  "builds.back": "กลับไปรายการบิ้ว",
+  "tierList.title": "Tier list",
+  "tierList.lede": "จัดจากตัวละคร สกิล และปลุกพลังอย่างเดียว ไม่คิดอุปกรณ์ Artifact มอนสเตอร์ อาหาร หรือทีม · ตัวเดียวกันอยู่หลาย tier ได้ตามขั้นปลุกพลัง ขั้นที่ได้ tier เท่ากันรวมเป็นช่วง เช่น ปลุก 0–6",
+  "tierList.group.dps": "สายดาเมจ",
+  "tierList.group.support": "ซัพพอร์ต",
+  "tierList.tier": "Tier",
+  "tierList.awaken": "{r}",
+  "tierList.incomplete": "ตัวเลขสกิลบางท่ายังไม่ครบถึงเลเวล 12 คะแนนจึงต่ำกว่าจริง"
 }

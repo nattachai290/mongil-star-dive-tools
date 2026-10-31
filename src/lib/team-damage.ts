@@ -14,6 +14,7 @@ import {
 import { FORMULA, computeDamage, proficiencyToPercent, type DamageInput } from "./formula";
 import { chainAppears, chainEffects, topLevel } from "./link-chain-effects";
 import type { Effect, LocalizedText } from "./schema/common";
+import { label } from "./vocabulary";
 import type { Artifact, BuildLoadout, BuildMember, Character } from "./schema/entities";
 
 /**
@@ -65,6 +66,7 @@ export const TEAM_ASSUMPTIONS = [
 /** เอฟเฟกต์พร้อมที่มา — gear = ค่าพลังของของที่ใส่ (ไม่ใช่บัฟ) */
 export type Tagged = { effect: Effect; from: LocalizedText; gear: boolean };
 type Sourced = Tagged;
+
 
 function asEffect(stat: string, value: number, unit: string, extra: Partial<Effect> = {}): Effect {
   return { kind: "buff", stat, value, unit, target: "self", trigger: "passive", ...extra } as Effect;
@@ -377,6 +379,62 @@ export function weakElementOf(lo: BuildLoadout): string | undefined {
   return characterById(lo.members[0]?.characterId ?? "")?.element;
 }
 
+/** ค่าต้นทางของบัฟแปลงค่า (condition.convertFrom) จากเอฟเฟกต์ทั้งหมดที่ตัวนั้นได้รับ */
+function convertSource(char: Character, effects: Tagged[], stat: string, damageType?: string): number {
+  const plain = effects.filter((t) => !t.effect.condition?.convertFrom);
+  if (stat === "dmgDealt") {
+    // ดาเมจธาตุที่ได้รับ — บัฟ dmgDealt ของธาตุนั้นที่ไม่ผูกท่า/จุดอ่อน/แถว
+    let sum = 0;
+    for (const { effect: e } of plain) {
+      if (e.kind !== "buff" || e.stat !== "dmgDealt" || e.damageType !== damageType || e.value === undefined) continue;
+      if (e.target === "enemy" || e.target === "allEnemies" || e.scopes?.length) continue;
+      if (e.condition?.vsBoss === false || e.condition?.skillRow) continue;
+      sum += e.value;
+    }
+    return sum;
+  }
+  const sheet = statSheet(char, plain, false);
+  if (stat === "critRate" || stat === "critDmg" || stat === "hp" || stat === "atk" || stat === "def") return sheet[stat];
+  if (ROLE_STAT_OF[char.role] === stat) return sheet.roleDmg;
+  // ดาเมจบทบาทอื่นที่ไม่ใช่บทบาทของตัวเอง (เช่น ดาเมจกดดันของ Vivian ซึ่งเป็นซัพพอร์ต)
+  return plain.reduce((n, { effect: e }) => (e.kind === "buff" && e.stat === stat && e.target !== "enemy" && e.target !== "allEnemies" ? n + (e.value ?? 0) : n), 0);
+}
+
+/** แทนค่าบัฟแปลงค่าด้วยค่าจริง — ใช้ค่าพลังของเจ้าของ (owner) ตามที่จอบอก */
+function resolveConversions(out: { char: Character | undefined; effects: Tagged[] }[], ownerOf: (t: Tagged, i: number) => number) {
+  const resolved = out.map(({ char, effects }, i) => {
+    // บัฟแปลงค่าชุดเดียวกัน (ค่าปลายทาง + ค่าต้นทาง + เจ้าของ เดียวกัน) รวมอัตราและเพดานก่อนตัด
+    // เช่น Isabella แพสซีฟ 26% สูงสุด 15% + ปลุก 6 (เป็น 83.2% สูงสุด 35.2%) = อัตรา 26 + 57.2 · เพดาน 15 + 20.2
+    const key = (t: Tagged) => {
+      const e = t.effect, cf = e.condition!.convertFrom!;
+      return [ownerOf(t, i), e.stat, e.damageType, (e.scopes ?? []).join(","), e.target, cf.stat, cf.damageType].join("|");
+    };
+    const sums = new Map<string, { ratio: number; cap: number }>();
+    for (const t of effects) {
+      if (!t.effect.condition?.convertFrom) continue;
+      const k = key(t), s = sums.get(k) ?? { ratio: 0, cap: 0 };
+      s.ratio += t.effect.condition.convertFrom.ratio;
+      s.cap += t.effect.value ?? Infinity;
+      sums.set(k, s);
+    }
+    const done = new Set<string>();
+    return effects.flatMap((t) => {
+      const cf = t.effect.condition?.convertFrom;
+      if (!cf || !char) return [t];
+      const k = key(t);
+      if (done.has(k)) return [];
+      done.add(k);
+      const { ratio, cap } = sums.get(k)!;
+      const o = ownerOf(t, i);
+      const src = out[o]?.char ? convertSource(out[o].char!, out[o].effects, cf.stat, cf.damageType) : 0;
+      const value = Math.min(cap, (src * ratio) / 100);
+      const condition = { ...t.effect.condition, convertFrom: undefined };
+      return [{ ...t, effect: { ...t.effect, value: Math.round(value * 100) / 100, unit: t.effect.unit ?? "percent", condition } }];
+    });
+  });
+  return out.map((m, i) => ({ ...m, effects: resolved[i] }));
+}
+
 /** เอฟเฟกต์ที่สมาชิกแต่ละตัวได้รับจริง — ของตัวเอง + บัฟทีม/ดีบัฟศัตรูจากเพื่อน + อาหาร + ค่าพลังพื้นฐาน */
 export function receivedEffects(
   lo: BuildLoadout,
@@ -385,7 +443,9 @@ export function receivedEffects(
   const chars = lo.members.map((m) => characterById(m.characterId));
   const food = [lo.food.entree, lo.food.side].flatMap((id) => {
     const f = FOOD.find((x) => x.id === id);
-    return f ? f.effects.filter((e) => weakness || e.trigger !== "onWeaknessHit").map(tag(f.name, false)) : [];
+    // ที่มาบอกแค่ประเภทจาน ไม่บอกชื่อ — เมนูค่าเท่ากันมีหลายอย่าง (ผู้เล่นสั่ง 2026-10-31)
+    const from = { th: `อาหาร · ${label("foodCategory", f?.category ?? "", "th")}`, en: `Food · ${label("foodCategory", f?.category ?? "", "en")}` };
+    return f ? f.effects.filter((e) => weakness || e.trigger !== "onWeaknessHit").map(tag(from, false)) : [];
   });
 
   // เอฟเฟกต์ของแต่ละตัว — target team/ally ส่งให้ทุกคน, enemy ส่งให้ทุกคน (ดีบัฟบนศัตรูตัวเดียวกัน)
@@ -418,9 +478,9 @@ export function receivedEffects(
       return true;
     });
 
-  return lo.members.map((mem, i) => {
+  const out = lo.members.map((mem, i) => {
     const char = chars[i];
-    if (!char) return { char, effects: [] };
+    if (!char) return { char, effects: [] as Tagged[] };
     // บัฟทีมที่จอบอกว่าให้เฉพาะเพื่อนธาตุหรือระยะหนึ่ง
     const fits = (t: Tagged) => {
       const c = t.effect.condition;
@@ -447,6 +507,7 @@ export function receivedEffects(
       ],
     };
   });
+  return resolveConversions(out, (t, i) => origin.get(t) ?? i);
 }
 
 export type StatSheet = {
@@ -586,9 +647,10 @@ export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean; enemyDe
       const rows: SkillRow[] = [];
       let usedLevel = level;
       let sum = 0;
-      // แถว "X Max Hits" (หน่วยครั้ง) = แถว "X DMG" ตีได้หลายครั้ง เช่น Rolling Donut ของ Ellie 9.9% × 21 — คิดว่าโดนครบ
+      // แถว "X Max Hits" / "X Count" (หน่วยครั้ง) = แถว "X DMG" ตีได้หลายครั้ง เช่น Rolling Donut ของ Ellie 9.9% × 21,
+      // Dragon Ambush ของ Flare × 9, Bonus Seed ของ Nagi × 3 — คิดว่าโดนครบ
       const hits = (sk.values ?? []).flatMap((r) => {
-        const m = r.unit === "times" ? /^(.+) Max Hits$/.exec(r.label.en ?? "") : null;
+        const m = r.unit === "times" ? /^(.+?) (?:Max Hits|Count)(?: When .*)?$/.exec(r.label.en ?? "") : null;
         const at = m ? valueAt(r.scaling, level) : undefined;
         return m && at ? [{ prefix: `${m[1]} `, n: at.value }] : [];
       });

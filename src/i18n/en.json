@@ -195,5 +195,13 @@
   "builds.subsAll": "Substats (every piece)",
   "builds.legendaryShared": "Shared by every character · same traits everywhere",
   "builds.mainBadge": "Main",
-  "builds.chainAppears": "Appears in the cycle"
+  "builds.chainAppears": "Appears in the cycle",
+  "builds.back": "Back to builds",
+  "tierList.title": "Tier list",
+  "tierList.lede": "Ranked from the character, skills and Awaken only — no gear, Artifacts, Monsterlings, food or team. A character can sit in several tiers by Awaken stage; stages with the same tier are merged, e.g. A0–6",
+  "tierList.group.dps": "Damage",
+  "tierList.group.support": "Support",
+  "tierList.tier": "Tier",
+  "tierList.awaken": "{r}",
+  "tierList.incomplete": "Some skill values are not recorded up to Lv. 12 yet, so this score is lower than it should be"
 }
