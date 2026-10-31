@@ -7,6 +7,7 @@
         "entree": "green-cappy-forest-stew",
         "side": "exquisite-time-to-celebrate"
       },
+      "weaknessHit": true,
       "members": [
         {
           "characterId": "gabi",
@@ -60,7 +61,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-rate",
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
@@ -70,7 +71,7 @@
               ]
             },
             {
-              "id": "scrap-hoarder",
+              "id": "amons-shadow",
               "traits": [
                 {
                   "id": "dmg-vs-boss",
@@ -81,7 +82,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-rate",
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
@@ -98,7 +99,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-dmg",
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
@@ -125,7 +126,7 @@
                 "grade": "gold"
               },
               {
-                "id": "crit-rate",
+                "id": "weakness-dmg",
                 "grade": "gold"
               },
               {

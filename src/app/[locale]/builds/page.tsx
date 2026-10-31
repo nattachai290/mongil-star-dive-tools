@@ -502,6 +502,7 @@ function Loadout({ lo, locale, t }: { lo: BuildLoadout; locale: Locale; t: T }) 
           })}
         </div>
       </Slot>
+      {lo.weaknessHit && <p className="text-xs text-ink-2">{t("builds.weaknessHit")}</p>}
       {dup.size > 0 && <p className="text-xs text-gold">{t("builds.dupWarning")}</p>}
       {lo.members.map((mem, i) => (
         <MemberGear

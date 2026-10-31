@@ -167,6 +167,12 @@ console.log("\nดาเมจรวมทั้งทีม");
     check("ลดคูลดาวน์สกิลพิเศษทอง 15% = ดาเมจสกิลพิเศษ × 1/0.85",
       Math.abs(sp(["special-skill-cooldown"]) / sp([]) - 1 / 0.85) < 1e-9, `ได้ ${sp(["special-skill-cooldown"]) / sp([])}`);
   }
+  {
+    const eldo = (weaknessHit: boolean) => receivedEffects({ awaken: 0, food: {}, weaknessHit,
+      members: [{ characterId: "gabi", equipment: {}, substats: {}, monsterlings: [{ id: "el-dorado-guardian", traits: [] }] }] })[0]
+      .effects.some((x) => x.effect.trigger === "onWeaknessHit");
+    check("บัฟเมื่อตีจุดอ่อน (ผู้พิทักษ์แห่งนครทองคำ) นับเฉพาะบิ้วที่ตีจุดอ่อน", eldo(true) && !eldo(false));
+  }
   check("ตีจุดอ่อนแรงกว่าไม่ตี", teamDamage(plain, { weakness: true }).total > teamDamage(plain).total);
   check("Trait ดาเมจจุดอ่อนไม่มีผลถ้าไม่ตีจุดอ่อน",
     Math.abs(teamDamage(withWeakTrait).total - teamDamage(plain).total) < 1e-6);

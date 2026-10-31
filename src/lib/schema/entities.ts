@@ -551,6 +551,8 @@ export const buildMember = z.object({
 export const buildLoadout = z.object({
   awaken: z.number().int().min(0).max(6),
   food: z.object({ entree: slug.optional(), side: slug.optional() }).strict().default({}),
+  /** คิดแบบตีจุดอ่อนธาตุ (ศัตรูแพ้ธาตุของทีม) — ไม่ใส่ = ไม่ตีจุดอ่อน */
+  weaknessHit: z.boolean().optional(),
   /** ตัวแรกคือตัวหลักของบิ้ว · สองร่างของตัวละครเดียวกันอยู่ทีมเดียวกันได้ เพราะเกมนับเป็นคนละตัว */
   members: z.array(buildMember).min(1).max(3),
 }).strict();

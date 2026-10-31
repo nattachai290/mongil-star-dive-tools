@@ -188,5 +188,6 @@
   "builds.stats.weakness": "Elemental Weakness DMG",
   "builds.stats.specialCd": "Special Skill Cooldown",
   "builds.stats.sec": "s",
-  "builds.unusable.attackElement": "Not usable by this character — no skill that changes its attack element, so it is not counted in total stats"
+  "builds.unusable.attackElement": "Not usable by this character — no skill that changes its attack element, so it is not counted in total stats",
+  "builds.weaknessHit": "This build assumes hitting the enemy's elemental weakness"
 }
