@@ -86,13 +86,13 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-fire",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
             },
             {
-              "id": "ragnadon",
+              "id": "avardan",
               "traits": [
                 {
                   "id": "crit-rate",
@@ -107,7 +107,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-fire",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -144,10 +144,10 @@
             "stabilized-superconductor"
           ],
           "equipment": {
-            "headgear": "manwols-antlers",
-            "chestpiece": "radiant-garb",
-            "gloves": "beast-claws",
-            "footwear": "beastly-footprints"
+            "headgear": "fierce-tigers-valor",
+            "chestpiece": "tiger-stripe-armor",
+            "gloves": "great-sages-touch",
+            "footwear": "moonlight-hooves"
           },
           "substats": {
             "headgear": [
@@ -177,7 +177,7 @@
           },
           "monsterlings": [
             {
-              "id": "avardan",
+              "id": "ragnadon",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -213,7 +213,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-fire",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -234,7 +234,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-fire",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -276,8 +276,8 @@
             "melody-played-on-heartstrings"
           ],
           "equipment": {
-            "headgear": "manwols-antlers",
-            "chestpiece": "radiant-garb",
+            "headgear": "mountain-peak-helm",
+            "chestpiece": "mountain-peak-iron-armor",
             "gloves": "beast-claws",
             "footwear": "beastly-footprints"
           },
@@ -320,11 +320,11 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-fire",
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
-                  "id": "weakness-dmg",
+                  "id": "dmg-fire",
                   "grade": "gold"
                 }
               ]
@@ -341,11 +341,11 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-fire",
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
-                  "id": "weakness-dmg",
+                  "id": "dmg-fire",
                   "grade": "gold"
                 }
               ]
@@ -362,11 +362,11 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-fire",
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
-                  "id": "weakness-dmg",
+                  "id": "dmg-fire",
                   "grade": "gold"
                 }
               ]
@@ -445,7 +445,7 @@
             },
             "monsterlings": [
               {
-                "id": "avardan",
+                "id": "ragnadon",
                 "traits": [
                   {
                     "id": "atk",
@@ -502,7 +502,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-fire",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]
@@ -542,15 +542,15 @@
           "member": {
             "characterId": "angel",
             "artifacts": [
-              "monstrous-longing",
               "hawks-flight",
-              "wind-harboring-broom"
+              "wind-harboring-broom",
+              "monstrous-longing"
             ],
             "equipment": {
-              "headgear": "manwols-antlers",
-              "chestpiece": "radiant-garb",
-              "gloves": "beast-claws",
-              "footwear": "beastly-footprints"
+              "headgear": "fierce-tigers-valor",
+              "chestpiece": "tiger-stripe-armor",
+              "gloves": "great-sages-touch",
+              "footwear": "moonlight-hooves"
             },
             "substats": {
               "headgear": [
@@ -580,7 +580,7 @@
             },
             "monsterlings": [
               {
-                "id": "avardan",
+                "id": "ragnadon",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -637,7 +637,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-fire",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]

@@ -13,14 +13,14 @@
           "characterId": "mina",
           "artifacts": [
             "blazing-kumiho",
-            "clashing-runaway-train",
-            "subzero-verdict"
+            "savvy-investment",
+            "clashing-runaway-train"
           ],
           "equipment": {
-            "headgear": "fierce-tigers-valor",
-            "chestpiece": "tiger-stripe-armor",
-            "gloves": "towering-mount-tais-gloves",
-            "footwear": "towering-mount-tais-boots"
+            "headgear": "gourmands-hat",
+            "chestpiece": "gourmands-apron",
+            "gloves": "gourmands-gloves",
+            "footwear": "gourmands-slippers"
           },
           "substats": {
             "headgear": [
@@ -74,7 +74,7 @@
               "id": "amon",
               "traits": [
                 {
-                  "id": "dmg-fire",
+                  "id": "crit-rate",
                   "grade": "gold"
                 },
                 {
@@ -92,7 +92,7 @@
               ]
             },
             {
-              "id": "the-great-unknown",
+              "id": "ragnadon",
               "traits": [
                 {
                   "id": "crit-rate",
@@ -144,10 +144,10 @@
             "stabilized-superconductor"
           ],
           "equipment": {
-            "headgear": "manwols-antlers",
-            "chestpiece": "radiant-garb",
-            "gloves": "beast-claws",
-            "footwear": "beastly-footprints"
+            "headgear": "fierce-tigers-valor",
+            "chestpiece": "tiger-stripe-armor",
+            "gloves": "great-sages-touch",
+            "footwear": "moonlight-hooves"
           },
           "substats": {
             "headgear": [
@@ -177,27 +177,6 @@
           },
           "monsterlings": [
             {
-              "id": "ragnadon",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-fire",
-                  "grade": "gold"
-                }
-              ]
-            },
-            {
               "id": "el-dorado-guardian",
               "traits": [
                 {
@@ -219,6 +198,27 @@
               ]
             },
             {
+              "id": "the-great-unknown",
+              "traits": [
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-dmg",
+                  "grade": "gold"
+                }
+              ]
+            },
+            {
               "id": "tealtaur",
               "traits": [
                 {
@@ -234,7 +234,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-fire",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -276,10 +276,10 @@
             "plains-embroidering-dew"
           ],
           "equipment": {
-            "headgear": "gourmands-hat",
-            "chestpiece": "gourmands-apron",
-            "gloves": "gourmands-gloves",
-            "footwear": "gourmands-slippers"
+            "headgear": "mountain-peak-helm",
+            "chestpiece": "mountain-peak-iron-armor",
+            "gloves": "beast-claws",
+            "footwear": "beastly-footprints"
           },
           "substats": {
             "headgear": [
@@ -309,27 +309,6 @@
           },
           "monsterlings": [
             {
-              "id": "silbinator",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-fire",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                }
-              ]
-            },
-            {
               "id": "avardan",
               "traits": [
                 {
@@ -341,11 +320,32 @@
                   "grade": "gold"
                 },
                 {
+                  "id": "weakness-dmg",
+                  "grade": "gold"
+                },
+                {
                   "id": "dmg-fire",
+                  "grade": "gold"
+                }
+              ]
+            },
+            {
+              "id": "silbinator",
+              "traits": [
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
                   "grade": "gold"
                 },
                 {
                   "id": "weakness-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-fire",
                   "grade": "gold"
                 }
               ]
@@ -362,11 +362,11 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-fire",
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
-                  "id": "weakness-dmg",
+                  "id": "dmg-fire",
                   "grade": "gold"
                 }
               ]
@@ -445,10 +445,10 @@
             },
             "monsterlings": [
               {
-                "id": "ragnadon",
+                "id": "el-dorado-guardian",
                 "traits": [
                   {
-                    "id": "crit-rate",
+                    "id": "atk",
                     "grade": "gold"
                   },
                   {
@@ -460,16 +460,16 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "atk",
+                    "id": "crit-rate",
                     "grade": "gold"
                   }
                 ]
               },
               {
-                "id": "el-dorado-guardian",
+                "id": "the-great-unknown",
                 "traits": [
                   {
-                    "id": "crit-rate",
+                    "id": "atk",
                     "grade": "gold"
                   },
                   {
@@ -481,7 +481,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "atk",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]
@@ -490,7 +490,7 @@
                 "id": "tealtaur",
                 "traits": [
                   {
-                    "id": "crit-rate",
+                    "id": "atk",
                     "grade": "gold"
                   },
                   {
@@ -502,7 +502,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-fire",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]
@@ -542,15 +542,15 @@
           "member": {
             "characterId": "angel",
             "artifacts": [
-              "monstrous-longing",
               "hawks-flight",
-              "wind-harboring-broom"
+              "wind-harboring-broom",
+              "monstrous-longing"
             ],
             "equipment": {
-              "headgear": "manwols-antlers",
-              "chestpiece": "radiant-garb",
-              "gloves": "beast-claws",
-              "footwear": "beastly-footprints"
+              "headgear": "fierce-tigers-valor",
+              "chestpiece": "tiger-stripe-armor",
+              "gloves": "great-sages-touch",
+              "footwear": "moonlight-hooves"
             },
             "substats": {
               "headgear": [
@@ -580,7 +580,7 @@
             },
             "monsterlings": [
               {
-                "id": "ragnadon",
+                "id": "el-dorado-guardian",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -601,7 +601,7 @@
                 ]
               },
               {
-                "id": "el-dorado-guardian",
+                "id": "the-great-unknown",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -637,7 +637,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-fire",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]
@@ -677,15 +677,15 @@
           "member": {
             "characterId": "narae",
             "artifacts": [
-              "plains-embroidering-dew",
               "a-summer-soaked-in-love",
+              "plains-embroidering-dew",
               "melody-played-on-heartstrings"
             ],
             "equipment": {
-              "headgear": "gourmands-hat",
-              "chestpiece": "gourmands-apron",
-              "gloves": "gourmands-gloves",
-              "footwear": "gourmands-slippers"
+              "headgear": "mountain-peak-helm",
+              "chestpiece": "mountain-peak-iron-armor",
+              "gloves": "magic-vine-gloves",
+              "footwear": "roots-footprints"
             },
             "substats": {
               "headgear": [
@@ -715,7 +715,7 @@
             },
             "monsterlings": [
               {
-                "id": "silbinator",
+                "id": "avardan",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -730,13 +730,13 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "crit-rate",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]
               },
               {
-                "id": "avardan",
+                "id": "silbinator",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -812,15 +812,15 @@
           "member": {
             "characterId": "francis-summer-dive",
             "artifacts": [
-              "plains-embroidering-dew",
               "a-summer-soaked-in-love",
+              "plains-embroidering-dew",
               "melody-played-on-heartstrings"
             ],
             "equipment": {
-              "headgear": "gourmands-hat",
-              "chestpiece": "gourmands-apron",
-              "gloves": "gourmands-gloves",
-              "footwear": "gourmands-slippers"
+              "headgear": "mountain-peak-helm",
+              "chestpiece": "mountain-peak-iron-armor",
+              "gloves": "avengers-gauntlet",
+              "footwear": "breeze-walkers"
             },
             "substats": {
               "headgear": [
@@ -850,27 +850,6 @@
             },
             "monsterlings": [
               {
-                "id": "silbinator",
-                "traits": [
-                  {
-                    "id": "special-skill-cooldown",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "dmg-vs-boss",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "dmg-earth",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "crit-rate",
-                    "grade": "gold"
-                  }
-                ]
-              },
-              {
                 "id": "avardan",
                 "traits": [
                   {
@@ -883,6 +862,27 @@
                   },
                   {
                     "id": "dmg-earth",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "crit-dmg",
+                    "grade": "gold"
+                  }
+                ]
+              },
+              {
+                "id": "silbinator",
+                "traits": [
+                  {
+                    "id": "special-skill-cooldown",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "dmg-vs-boss",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "crit-rate",
                     "grade": "gold"
                   },
                   {

@@ -17,10 +17,10 @@
             "clashing-runaway-train"
           ],
           "equipment": {
-            "headgear": "warden-helmet",
-            "chestpiece": "arbiter-of-nature",
-            "gloves": "crimson-gloves-of-disaster",
-            "footwear": "dark-soloists-boots"
+            "headgear": "gourmands-hat",
+            "chestpiece": "gourmands-apron",
+            "gloves": "gourmands-gloves",
+            "footwear": "gourmands-slippers"
           },
           "substats": {
             "headgear": [
@@ -213,7 +213,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-rate",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -276,10 +276,10 @@
             "melody-played-on-heartstrings"
           ],
           "equipment": {
-            "headgear": "gourmands-hat",
-            "chestpiece": "gourmands-apron",
-            "gloves": "gourmands-gloves",
-            "footwear": "gourmands-slippers"
+            "headgear": "dark-soloists-helm",
+            "chestpiece": "crimson-chestplate-of-disaster",
+            "gloves": "magic-vine-gloves",
+            "footwear": "roots-footprints"
           },
           "substats": {
             "headgear": [
@@ -324,7 +324,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-ice",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -487,7 +487,7 @@
                 ]
               },
               {
-                "id": "frostbite",
+                "id": "scarlet-queen",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -502,7 +502,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "atk",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]
@@ -534,7 +534,7 @@
               "special",
               "ultimate"
             ],
-            "linkChain": "giant-wolfs-helm"
+            "linkChain": "queens-crimson-tears"
           }
         },
         {
@@ -682,10 +682,10 @@
               "melody-played-on-heartstrings"
             ],
             "equipment": {
-              "headgear": "gourmands-hat",
-              "chestpiece": "gourmands-apron",
-              "gloves": "gourmands-gloves",
-              "footwear": "gourmands-slippers"
+              "headgear": "dark-soloists-helm",
+              "chestpiece": "crimson-chestplate-of-disaster",
+              "gloves": "avengers-gauntlet",
+              "footwear": "breeze-walkers"
             },
             "substats": {
               "headgear": [
@@ -817,10 +817,10 @@
               "melody-played-on-heartstrings"
             ],
             "equipment": {
-              "headgear": "gourmands-hat",
-              "chestpiece": "gourmands-apron",
-              "gloves": "gourmands-gloves",
-              "footwear": "gourmands-slippers"
+              "headgear": "dark-soloists-helm",
+              "chestpiece": "crimson-chestplate-of-disaster",
+              "gloves": "avengers-gauntlet",
+              "footwear": "breeze-walkers"
             },
             "substats": {
               "headgear": [
@@ -857,11 +857,11 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-vs-boss",
+                    "id": "dmg-earth",
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-earth",
+                    "id": "dmg-vs-boss",
                     "grade": "gold"
                   },
                   {
@@ -878,11 +878,11 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-vs-boss",
+                    "id": "dmg-earth",
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-earth",
+                    "id": "dmg-vs-boss",
                     "grade": "gold"
                   },
                   {

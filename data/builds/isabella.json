@@ -13,8 +13,8 @@
           "characterId": "isabella",
           "artifacts": [
             "stabilized-superconductor",
-            "serpent-dragons-white-scale",
-            "exquisite-dragon-fire"
+            "exquisite-dragon-fire",
+            "serpent-dragons-white-scale"
           ],
           "equipment": {
             "headgear": "warden-helmet",
@@ -86,7 +86,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "atk",
+                  "id": "crit-rate",
                   "grade": "gold"
                 }
               ]
@@ -857,11 +857,11 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-vs-boss",
+                    "id": "dmg-earth",
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-earth",
+                    "id": "dmg-vs-boss",
                     "grade": "gold"
                   },
                   {
@@ -892,7 +892,7 @@
                 ]
               },
               {
-                "id": "swamp-odong",
+                "id": "colossus",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",

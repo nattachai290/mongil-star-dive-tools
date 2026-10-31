@@ -13,9 +13,9 @@
         {
           "characterId": "chloe",
           "artifacts": [
-            "subzero-verdict",
             "clashing-runaway-train",
-            "to-whom-the-dokkaebi-kneel"
+            "subzero-verdict",
+            "blazing-kumiho"
           ],
           "equipment": {
             "headgear": "gourmands-hat",
@@ -66,7 +66,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-wind",
+                  "id": "crit-rate",
                   "grade": "gold"
                 }
               ]
@@ -87,7 +87,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-wind",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -193,7 +193,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-dmg",
+                  "id": "dmg-wind",
                   "grade": "gold"
                 }
               ]
@@ -274,7 +274,7 @@
           "artifacts": [
             "a-summer-soaked-in-love",
             "melody-played-on-heartstrings",
-            "military-bands-offbeat-marcher"
+            "plains-embroidering-dew"
           ],
           "equipment": {
             "headgear": "devourers-hat",
@@ -449,7 +449,7 @@
                 "id": "el-dorado-guardian",
                 "traits": [
                   {
-                    "id": "dmg-wind",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   },
                   {
@@ -461,7 +461,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "crit-dmg",
+                    "id": "dmg-wind",
                     "grade": "gold"
                   }
                 ]
@@ -679,8 +679,8 @@
             "characterId": "francis-summer-dive",
             "artifacts": [
               "a-summer-soaked-in-love",
-              "military-bands-offbeat-marcher",
-              "melody-played-on-heartstrings"
+              "melody-played-on-heartstrings",
+              "military-bands-offbeat-marcher"
             ],
             "equipment": {
               "headgear": "devourers-hat",
@@ -811,17 +811,17 @@
         {
           "replaces": "jiwon",
           "member": {
-            "characterId": "bonnie",
+            "characterId": "francis",
             "artifacts": [
               "a-summer-soaked-in-love",
               "melody-played-on-heartstrings",
               "military-bands-offbeat-marcher"
             ],
             "equipment": {
-              "headgear": "corrupted-soul-helmet",
-              "chestpiece": "ominous-sculpture",
-              "gloves": "abyssal-touch",
-              "footwear": "lord-of-the-voids-greaves"
+              "headgear": "devourers-hat",
+              "chestpiece": "devourers-apron",
+              "gloves": "devourers-gloves",
+              "footwear": "devourers-sandals"
             },
             "substats": {
               "headgear": [
@@ -862,17 +862,17 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "weakness-dmg",
+                    "id": "dmg-earth",
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-wind",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]
               },
               {
-                "id": "plains-minotaur",
+                "id": "hahnul",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -883,7 +883,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "weakness-dmg",
+                    "id": "dmg-earth",
                     "grade": "gold"
                   },
                   {
@@ -904,7 +904,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "weakness-dmg",
+                    "id": "dmg-earth",
                     "grade": "gold"
                   },
                   {

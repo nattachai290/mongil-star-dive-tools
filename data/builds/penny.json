@@ -12,8 +12,8 @@
         {
           "characterId": "penny",
           "artifacts": [
-            "subzero-verdict",
             "savvy-investment",
+            "subzero-verdict",
             "blazing-kumiho"
           ],
           "equipment": {
@@ -65,7 +65,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-lightning",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -82,17 +82,17 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-lightning",
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
-                  "id": "weakness-dmg",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
             },
             {
-              "id": "fidelis-raptor",
+              "id": "altus-raptor",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -103,11 +103,11 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-lightning",
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
-                  "id": "weakness-dmg",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -134,14 +134,14 @@
               }
             ]
           },
-          "linkChain": "sharp-steel-tooth"
+          "linkChain": "intricate-steel-claw"
         },
         {
           "characterId": "yeonhwa",
           "artifacts": [
-            "monstrous-longing",
             "hawks-flight",
-            "shadow-lotus"
+            "shadow-lotus",
+            "monstrous-longing"
           ],
           "equipment": {
             "headgear": "spirit-kings-coronet",
@@ -192,13 +192,13 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-dmg",
+                  "id": "crit-rate",
                   "grade": "gold"
                 }
               ]
             },
             {
-              "id": "avardan",
+              "id": "twisted-bloodflower",
               "traits": [
                 {
                   "id": "dmg-lightning",
@@ -213,13 +213,13 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-dmg",
+                  "id": "crit-rate",
                   "grade": "gold"
                 }
               ]
             },
             {
-              "id": "altus-raptor",
+              "id": "avardan",
               "traits": [
                 {
                   "id": "dmg-lightning",
@@ -266,7 +266,7 @@
             "special",
             "ultimate"
           ],
-          "linkChain": "intricate-steel-claw"
+          "linkChain": "golems-gem"
         },
         {
           "characterId": "francis-summer-dive",
@@ -309,7 +309,7 @@
           },
           "monsterlings": [
             {
-              "id": "twisted-bloodflower",
+              "id": "silbinator",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -330,7 +330,7 @@
               ]
             },
             {
-              "id": "silbinator",
+              "id": "hahnul",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -341,7 +341,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-rate",
+                  "id": "dmg-earth",
                   "grade": "gold"
                 },
                 {
@@ -351,7 +351,7 @@
               ]
             },
             {
-              "id": "hahnul",
+              "id": "the-great-unknown",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -407,8 +407,8 @@
           "member": {
             "characterId": "benjamin",
             "artifacts": [
-              "monstrous-longing",
               "hawks-flight",
+              "monstrous-longing",
               "shadow-lotus"
             ],
             "equipment": {
@@ -466,7 +466,7 @@
                 ]
               },
               {
-                "id": "avardan",
+                "id": "bruised-bloodflower",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -487,7 +487,7 @@
                 ]
               },
               {
-                "id": "altus-raptor",
+                "id": "avardan",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -534,7 +534,7 @@
               "special",
               "ultimate"
             ],
-            "linkChain": "intricate-steel-claw"
+            "linkChain": "golems-gem"
           }
         },
         {
@@ -601,7 +601,7 @@
                 ]
               },
               {
-                "id": "avardan",
+                "id": "twisted-bloodflower",
                 "traits": [
                   {
                     "id": "dmg-lightning",
@@ -622,7 +622,7 @@
                 ]
               },
               {
-                "id": "altus-raptor",
+                "id": "avardan",
                 "traits": [
                   {
                     "id": "dmg-lightning",
@@ -669,7 +669,7 @@
               "special",
               "ultimate"
             ],
-            "linkChain": "intricate-steel-claw"
+            "linkChain": "golems-gem"
           }
         },
         {
@@ -715,27 +715,6 @@
             },
             "monsterlings": [
               {
-                "id": "twisted-bloodflower",
-                "traits": [
-                  {
-                    "id": "special-skill-cooldown",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "dmg-vs-boss",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "dmg-earth",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "crit-dmg",
-                    "grade": "gold"
-                  }
-                ]
-              },
-              {
                 "id": "silbinator",
                 "traits": [
                   {
@@ -758,6 +737,27 @@
               },
               {
                 "id": "hahnul",
+                "traits": [
+                  {
+                    "id": "special-skill-cooldown",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "dmg-vs-boss",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "dmg-earth",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "crit-dmg",
+                    "grade": "gold"
+                  }
+                ]
+              },
+              {
+                "id": "the-great-unknown",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -850,27 +850,6 @@
             },
             "monsterlings": [
               {
-                "id": "twisted-bloodflower",
-                "traits": [
-                  {
-                    "id": "special-skill-cooldown",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "dmg-vs-boss",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "dmg-ice",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "crit-dmg",
-                    "grade": "gold"
-                  }
-                ]
-              },
-              {
                 "id": "silbinator",
                 "traits": [
                   {
@@ -893,6 +872,27 @@
               },
               {
                 "id": "hahnul",
+                "traits": [
+                  {
+                    "id": "special-skill-cooldown",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "dmg-vs-boss",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "dmg-ice",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "crit-dmg",
+                    "grade": "gold"
+                  }
+                ]
+              },
+              {
+                "id": "moon-shadow-lupe",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",

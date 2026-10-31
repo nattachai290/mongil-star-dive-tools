@@ -192,7 +192,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "atk",
+                  "id": "crit-rate",
                   "grade": "gold"
                 }
               ]
@@ -213,7 +213,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "atk",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -469,7 +469,7 @@
                 "id": "el-dorado-guardian",
                 "traits": [
                   {
-                    "id": "crit-dmg",
+                    "id": "atk",
                     "grade": "gold"
                   },
                   {
@@ -481,7 +481,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "atk",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]
@@ -622,7 +622,7 @@
                 ]
               },
               {
-                "id": "frostbite",
+                "id": "scarlet-queen",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -637,7 +637,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "atk",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]
@@ -669,7 +669,7 @@
               "special",
               "ultimate"
             ],
-            "linkChain": "giant-wolfs-helm"
+            "linkChain": "queens-crimson-tears"
           }
         },
         {
@@ -857,11 +857,11 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-vs-boss",
+                    "id": "dmg-earth",
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-earth",
+                    "id": "dmg-vs-boss",
                     "grade": "gold"
                   },
                   {
@@ -878,11 +878,11 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-vs-boss",
+                    "id": "dmg-earth",
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-earth",
+                    "id": "dmg-vs-boss",
                     "grade": "gold"
                   },
                   {

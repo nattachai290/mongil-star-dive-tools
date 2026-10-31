@@ -61,11 +61,11 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-fire",
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
-                  "id": "weakness-dmg",
+                  "id": "dmg-fire",
                   "grade": "gold"
                 }
               ]
@@ -82,11 +82,11 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-fire",
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
-                  "id": "weakness-dmg",
+                  "id": "dmg-fire",
                   "grade": "gold"
                 }
               ]
@@ -103,11 +103,11 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-fire",
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
-                  "id": "weakness-dmg",
+                  "id": "dmg-fire",
                   "grade": "gold"
                 }
               ]
@@ -144,10 +144,10 @@
             "stabilized-superconductor"
           ],
           "equipment": {
-            "headgear": "gourmands-hat",
-            "chestpiece": "gourmands-apron",
-            "gloves": "gourmands-gloves",
-            "footwear": "gourmands-slippers"
+            "headgear": "fierce-tigers-valor",
+            "chestpiece": "tiger-stripe-armor",
+            "gloves": "great-sages-touch",
+            "footwear": "moonlight-hooves"
           },
           "substats": {
             "headgear": [
@@ -198,7 +198,7 @@
               ]
             },
             {
-              "id": "silbinator",
+              "id": "the-great-unknown",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -213,7 +213,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-fire",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -234,7 +234,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-fire",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -276,10 +276,10 @@
             "melody-played-on-heartstrings"
           ],
           "equipment": {
-            "headgear": "manwols-antlers",
-            "chestpiece": "radiant-garb",
-            "gloves": "beast-claws",
-            "footwear": "beastly-footprints"
+            "headgear": "gourmands-hat",
+            "chestpiece": "gourmands-apron",
+            "gloves": "gourmands-gloves",
+            "footwear": "gourmands-slippers"
           },
           "substats": {
             "headgear": [
@@ -330,7 +330,7 @@
               ]
             },
             {
-              "id": "the-great-unknown",
+              "id": "silbinator",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -341,11 +341,11 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-fire",
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
-                  "id": "weakness-dmg",
+                  "id": "dmg-fire",
                   "grade": "gold"
                 }
               ]
@@ -362,11 +362,11 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-fire",
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
-                  "id": "weakness-dmg",
+                  "id": "dmg-fire",
                   "grade": "gold"
                 }
               ]
@@ -412,10 +412,10 @@
               "subzero-verdict"
             ],
             "equipment": {
-              "headgear": "gourmands-hat",
-              "chestpiece": "gourmands-apron",
-              "gloves": "gourmands-gloves",
-              "footwear": "gourmands-slippers"
+              "headgear": "fierce-tigers-valor",
+              "chestpiece": "tiger-stripe-armor",
+              "gloves": "towering-mount-tais-gloves",
+              "footwear": "towering-mount-tais-boots"
             },
             "substats": {
               "headgear": [
@@ -448,7 +448,7 @@
                 "id": "avardan",
                 "traits": [
                   {
-                    "id": "crit-rate",
+                    "id": "atk",
                     "grade": "gold"
                   },
                   {
@@ -460,16 +460,16 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "atk",
+                    "id": "crit-rate",
                     "grade": "gold"
                   }
                 ]
               },
               {
-                "id": "silbinator",
+                "id": "the-great-unknown",
                 "traits": [
                   {
-                    "id": "crit-rate",
+                    "id": "atk",
                     "grade": "gold"
                   },
                   {
@@ -481,7 +481,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "atk",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]
@@ -490,7 +490,7 @@
                 "id": "tealtaur",
                 "traits": [
                   {
-                    "id": "crit-rate",
+                    "id": "atk",
                     "grade": "gold"
                   },
                   {
@@ -502,7 +502,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-fire",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]
@@ -547,10 +547,10 @@
               "shadow-lotus"
             ],
             "equipment": {
-              "headgear": "gourmands-hat",
-              "chestpiece": "gourmands-apron",
-              "gloves": "gourmands-gloves",
-              "footwear": "gourmands-slippers"
+              "headgear": "mountain-peak-helm",
+              "chestpiece": "mountain-peak-iron-armor",
+              "gloves": "beast-claws",
+              "footwear": "beastly-footprints"
             },
             "substats": {
               "headgear": [
@@ -601,7 +601,7 @@
                 ]
               },
               {
-                "id": "silbinator",
+                "id": "scar",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -637,7 +637,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-fire",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]
@@ -682,10 +682,10 @@
               "plains-embroidering-dew"
             ],
             "equipment": {
-              "headgear": "mountain-peak-helm",
-              "chestpiece": "mountain-peak-iron-armor",
-              "gloves": "magic-vine-gloves",
-              "footwear": "roots-footprints"
+              "headgear": "gourmands-hat",
+              "chestpiece": "gourmands-apron",
+              "gloves": "gourmands-gloves",
+              "footwear": "gourmands-slippers"
             },
             "substats": {
               "headgear": [
@@ -736,7 +736,7 @@
                 ]
               },
               {
-                "id": "the-great-unknown",
+                "id": "silbinator",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -817,10 +817,10 @@
               "forest-fragrance"
             ],
             "equipment": {
-              "headgear": "mountain-peak-helm",
-              "chestpiece": "mountain-peak-iron-armor",
-              "gloves": "avengers-gauntlet",
-              "footwear": "breeze-walkers"
+              "headgear": "gourmands-hat",
+              "chestpiece": "gourmands-apron",
+              "gloves": "gourmands-gloves",
+              "footwear": "gourmands-slippers"
             },
             "substats": {
               "headgear": [
@@ -871,7 +871,7 @@
                 ]
               },
               {
-                "id": "the-great-unknown",
+                "id": "silbinator",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -903,7 +903,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-earth",
+                    "id": "crit-rate",
                     "grade": "gold"
                   },
                   {

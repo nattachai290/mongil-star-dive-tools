@@ -17,10 +17,10 @@
             "shadow-lotus"
           ],
           "equipment": {
-            "headgear": "manwols-antlers",
-            "chestpiece": "radiant-garb",
-            "gloves": "beast-claws",
-            "footwear": "beastly-footprints"
+            "headgear": "gourmands-hat",
+            "chestpiece": "gourmands-apron",
+            "gloves": "gourmands-gloves",
+            "footwear": "gourmands-slippers"
           },
           "substats": {
             "headgear": [
@@ -103,11 +103,11 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-fire",
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
-                  "id": "weakness-dmg",
+                  "id": "dmg-fire",
                   "grade": "gold"
                 }
               ]
@@ -144,10 +144,10 @@
             "stabilized-superconductor"
           ],
           "equipment": {
-            "headgear": "manwols-antlers",
-            "chestpiece": "radiant-garb",
-            "gloves": "beast-claws",
-            "footwear": "beastly-footprints"
+            "headgear": "fierce-tigers-valor",
+            "chestpiece": "tiger-stripe-armor",
+            "gloves": "great-sages-touch",
+            "footwear": "moonlight-hooves"
           },
           "substats": {
             "headgear": [
@@ -198,27 +198,6 @@
               ]
             },
             {
-              "id": "tealtaur",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-fire",
-                  "grade": "gold"
-                }
-              ]
-            },
-            {
               "id": "the-great-unknown",
               "traits": [
                 {
@@ -234,7 +213,28 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-fire",
+                  "id": "crit-dmg",
+                  "grade": "gold"
+                }
+              ]
+            },
+            {
+              "id": "tealtaur",
+              "traits": [
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -276,10 +276,10 @@
             "melody-played-on-heartstrings"
           ],
           "equipment": {
-            "headgear": "gourmands-hat",
-            "chestpiece": "gourmands-apron",
-            "gloves": "gourmands-gloves",
-            "footwear": "gourmands-slippers"
+            "headgear": "mountain-peak-helm",
+            "chestpiece": "mountain-peak-iron-armor",
+            "gloves": "beast-claws",
+            "footwear": "beastly-footprints"
           },
           "substats": {
             "headgear": [
@@ -320,11 +320,11 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-fire",
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
-                  "id": "weakness-dmg",
+                  "id": "dmg-fire",
                   "grade": "gold"
                 }
               ]
@@ -341,11 +341,11 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-fire",
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
-                  "id": "weakness-dmg",
+                  "id": "dmg-fire",
                   "grade": "gold"
                 }
               ]
@@ -362,11 +362,11 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-fire",
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
-                  "id": "weakness-dmg",
+                  "id": "dmg-fire",
                   "grade": "gold"
                 }
               ]
@@ -466,7 +466,7 @@
                 ]
               },
               {
-                "id": "tealtaur",
+                "id": "the-great-unknown",
                 "traits": [
                   {
                     "id": "atk",
@@ -487,7 +487,7 @@
                 ]
               },
               {
-                "id": "the-great-unknown",
+                "id": "tealtaur",
                 "traits": [
                   {
                     "id": "atk",
@@ -502,7 +502,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-fire",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]
@@ -542,15 +542,15 @@
           "member": {
             "characterId": "angel",
             "artifacts": [
-              "monstrous-longing",
               "hawks-flight",
-              "wind-harboring-broom"
+              "wind-harboring-broom",
+              "monstrous-longing"
             ],
             "equipment": {
-              "headgear": "manwols-antlers",
-              "chestpiece": "radiant-garb",
-              "gloves": "beast-claws",
-              "footwear": "beastly-footprints"
+              "headgear": "fierce-tigers-valor",
+              "chestpiece": "tiger-stripe-armor",
+              "gloves": "great-sages-touch",
+              "footwear": "moonlight-hooves"
             },
             "substats": {
               "headgear": [
@@ -601,7 +601,7 @@
                 ]
               },
               {
-                "id": "tealtaur",
+                "id": "the-great-unknown",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -622,7 +622,7 @@
                 ]
               },
               {
-                "id": "the-great-unknown",
+                "id": "tealtaur",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -637,7 +637,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-fire",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]
@@ -682,10 +682,10 @@
               "plains-embroidering-dew"
             ],
             "equipment": {
-              "headgear": "gourmands-hat",
-              "chestpiece": "gourmands-apron",
-              "gloves": "gourmands-gloves",
-              "footwear": "gourmands-slippers"
+              "headgear": "mountain-peak-helm",
+              "chestpiece": "mountain-peak-iron-armor",
+              "gloves": "magic-vine-gloves",
+              "footwear": "roots-footprints"
             },
             "substats": {
               "headgear": [
@@ -817,10 +817,10 @@
               "forest-fragrance"
             ],
             "equipment": {
-              "headgear": "gourmands-hat",
-              "chestpiece": "gourmands-apron",
-              "gloves": "gourmands-gloves",
-              "footwear": "gourmands-slippers"
+              "headgear": "mountain-peak-helm",
+              "chestpiece": "mountain-peak-iron-armor",
+              "gloves": "avengers-gauntlet",
+              "footwear": "breeze-walkers"
             },
             "substats": {
               "headgear": [
@@ -882,7 +882,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-earth",
+                    "id": "crit-rate",
                     "grade": "gold"
                   },
                   {
@@ -903,7 +903,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "crit-rate",
+                    "id": "dmg-earth",
                     "grade": "gold"
                   },
                   {

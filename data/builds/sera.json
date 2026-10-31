@@ -213,7 +213,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "atk",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -448,7 +448,7 @@
                 "id": "el-dorado-guardian",
                 "traits": [
                   {
-                    "id": "atk",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   },
                   {
@@ -460,7 +460,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "crit-dmg",
+                    "id": "atk",
                     "grade": "gold"
                   }
                 ]
@@ -469,7 +469,7 @@
                 "id": "the-great-unknown",
                 "traits": [
                   {
-                    "id": "crit-dmg",
+                    "id": "atk",
                     "grade": "gold"
                   },
                   {
@@ -481,7 +481,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "atk",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]
@@ -857,11 +857,11 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-vs-boss",
+                    "id": "dmg-earth",
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-earth",
+                    "id": "dmg-vs-boss",
                     "grade": "gold"
                   },
                   {
@@ -892,7 +892,7 @@
                 ]
               },
               {
-                "id": "hahnul",
+                "id": "colossus",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
