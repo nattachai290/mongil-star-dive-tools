@@ -396,5 +396,13 @@ check("yes แปะป้ายสองภาษา", linkableBadge("yes")?.th
   check("ตัวธาตุอื่นในทีมได้จากจุดอ่อนน้อยกว่าตัวธาตุเดียวกับตัวหลัก", gain(1) < gain(0), `${gain(1)} vs ${gain(0)}`);
 }
 
+// ---------- แถวตีหลายครั้ง ----------
+{
+  // Ellie: Rolling Donut DMG 9.9% · Rolling Donut Max Hits 21 → นับ 9.9 × 21
+  const r = teamDamage(buildLoadout.parse({ awaken: 0, members: [{ characterId: "ellie" }] }));
+  const row = r.members[0].skills.find((x) => x.skill === "special")?.rows.find((x) => x.label.en === "Rolling Donut DMG");
+  check("แถว X DMG คูณจำนวนครั้งจากแถว X Max Hits", Math.abs((row?.value ?? 0) - 9.9 * 21) < 1e-6, String(row?.value));
+}
+
 console.log(failed === 0 ? "\nผ่านทั้งหมด\n" : `\nไม่ผ่าน ${failed} ข้อ\n`);
 if (failed > 0) process.exit(1);

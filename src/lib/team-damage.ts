@@ -561,6 +561,12 @@ export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean; enemyDe
       const rows: SkillRow[] = [];
       let usedLevel = level;
       let sum = 0;
+      // แถว "X Max Hits" (หน่วยครั้ง) = แถว "X DMG" ตีได้หลายครั้ง เช่น Rolling Donut ของ Ellie 9.9% × 21 — คิดว่าโดนครบ
+      const hits = (sk.values ?? []).flatMap((r) => {
+        const m = r.unit === "times" ? /^(.+) Max Hits$/.exec(r.label.en ?? "") : null;
+        const at = m ? valueAt(r.scaling, level) : undefined;
+        return m && at ? [{ prefix: `${m[1]} `, n: at.value }] : [];
+      });
       for (const row of sk.values ?? []) {
         if (row.unit !== "percent") continue;
         const en = row.label.en ?? "";
@@ -568,8 +574,9 @@ export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean; enemyDe
         const at = valueAt(row.scaling, level);
         if (!at) continue;
         usedLevel = at.level;
-        rows.push({ label: row.label, value: at.value });
-        sum += computeDamage(inputsFor(char, mine, key, damageType, at.value, weakness, opts.enemyDef, en, weakEl)).average;
+        const n = hits.find((h) => en.startsWith(h.prefix))?.n ?? 1;
+        rows.push({ label: row.label, value: at.value * n });
+        sum += computeDamage(inputsFor(char, mine, key, damageType, at.value * n, weakness, opts.enemyDef, en, weakEl)).average;
       }
       if (key === "special") sum *= specialCastFactor(char, mine);
       if (rows.length) skills.push({ skill: key, level: usedLevel, rows, damageType, average: sum });
