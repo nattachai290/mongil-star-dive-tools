@@ -163,7 +163,7 @@
   "builds.empty.slot": "—",
   "builds.pieces": "ชิ้น",
   "builds.traits": "ลักษณะเฉพาะ",
-  "builds.artifactAlt": "สำรอง",
+  "builds.artifactAlt": "อาร์ติแฟกต์สำรอง (ใช้แทนได้ เรียงจากดีรองลงมา)",
   "builds.fusion": "รวมขั้น",
   "builds.stats": "ค่าพลังรวม",
   "builds.stats.gear": "ของที่ใส่",

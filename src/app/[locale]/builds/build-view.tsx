@@ -396,9 +396,43 @@ function GearRows({
           </div>
           <CheckedEffects effects={fusion?.effects ?? []} why={why} locale={locale} t={t} />
           {spares.length > 0 && (
-            <p className="text-xs text-muted">
-              {t("builds.artifactAlt")}: {spares.map((a) => name(a.name, locale, a.id)).join(" · ")}
-            </p>
+            // อาร์ติแฟกต์สำรอง — เรียงจากดีรองลงมา · เดิมเป็นบรรทัดชื่อเล็ก ๆ ผู้เล่นหาไม่เจอ (2026-10-31) จึงโชว์เป็นการ์ดพร้อมค่าและเอฟเฟกต์
+            <div className="space-y-2 border-t border-line pt-3">
+              <p className="text-xs font-semibold text-ink-2">{t("builds.artifactAlt")}</p>
+              <ol className="grid gap-2 lg:grid-cols-2">
+                {spares.map((a) => {
+                  const f = artifactFusion(a);
+                  return (
+                    <li key={a.id} className="space-y-1.5 rounded-xl border border-line bg-surface-2/40 p-3">
+                      <div className="flex items-center gap-2.5">
+                        <Icon src={a.images?.icon ? asset(`/images/artifacts/${a.images.icon}`) : null} />
+                        <div className="min-w-0">
+                          <p className="text-sm font-semibold">
+                            {name(a.name, locale, a.id)}{" "}
+                            <span className="text-xs font-normal text-gold">{a.stars !== undefined && "★".repeat(a.stars)}</span>
+                          </p>
+                          {f?.level !== undefined && (
+                            <p className="text-[11px] text-gold">
+                              {t("builds.fusion")} {f.level}
+                              {f.name && ` · ${name(f.name, locale, "")}`}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {a.stats.map((st, j) => (
+                          <Chip key={j}>
+                            {statName(st.stat, st.damageType, locale)} +{st.value.toLocaleString("en-US")}
+                            {st.unit === "percent" ? "%" : ""}
+                          </Chip>
+                        ))}
+                      </div>
+                      <CheckedEffects effects={f?.effects ?? []} why={why} locale={locale} t={t} />
+                    </li>
+                  );
+                })}
+              </ol>
+            </div>
           )}
         </Row>
       )}

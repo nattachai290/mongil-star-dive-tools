@@ -163,7 +163,7 @@
   "builds.empty.slot": "—",
   "builds.pieces": "pieces",
   "builds.traits": "Traits",
-  "builds.artifactAlt": "Alternative",
+  "builds.artifactAlt": "Alternative Artifacts (next best first)",
   "builds.fusion": "Fusion",
   "builds.stats": "Total stats",
   "builds.stats.gear": "Gear only",
