@@ -1,0 +1,263 @@
+{
+  "id": "ellie",
+  "name": {
+    "en": "Ellie"
+  },
+  "rarity": 4,
+  "element": "earth",
+  "role": "destroyer",
+  "range": "ranged",
+  "stats": {
+    "atLevel": 60,
+    "hp": 8389,
+    "atk": 1855,
+    "def": 609,
+    "critRate": 5,
+    "critDmg": 50
+  },
+  "otherStats": [
+    {
+      "kind": "buff",
+      "stat": "neutralizationDmg",
+      "value": 11.59,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "dmgDealt",
+      "scopes": [
+        "weaknessHit"
+      ],
+      "value": 125,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "energyGain",
+      "value": 100,
+      "unit": "percent",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "stamina",
+      "value": 100,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    },
+    {
+      "kind": "buff",
+      "stat": "destroyerPower",
+      "value": 1026,
+      "unit": "flat",
+      "target": "self",
+      "trigger": "passive"
+    }
+  ],
+  "awaken": [],
+  "skills": {
+    "basic": {
+      "name": {
+        "en": "Back Off!"
+      },
+      "desc": {
+        "en": "Ellie throws a hidden Snack or strikes directly with pillow she's riding on to deal Earth DMG. / When Sugar Charge reaches 3 stacks, holding the Basic Attack button will deal Earth DMG with Pillow Pow! and consume all Sugar Charge stacks."
+      },
+      "damageType": "earth",
+      "effects": [],
+      "values": [
+        {
+          "label": {
+            "en": "1st Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            37,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "2nd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            41.9,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "3rd Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            93.2,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "4th Hit DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            82.8,
+            null,
+            null,
+            null
+          ],
+          "line": 1
+        },
+        {
+          "label": {
+            "en": "Pillow Pow! Attack DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            511.4,
+            null,
+            null,
+            null
+          ],
+          "line": 2
+        },
+        {
+          "label": {
+            "en": "Air Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            118.7,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": {
+            "en": "Evasion Counter DMG"
+          },
+          "unit": "percent",
+          "scaling": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            249.3,
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    }
+  },
+  "images": {
+    "portrait": "ellie-portrait.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-31",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "en"
+    ],
+    "note": "อ่านจากจอภาษาอังกฤษ 2026-10-31 (ผู้เล่นส่ง 4 จอ: Info · Detailed Stats · Skills ของโจมตีพื้นฐานสองจอ) · **ยังไม่มีจอไทย** | Destroyer · **Earth** · Ranged · 4 ดาว · เลเวล 60 | **ค่าพลังบนจอมีบัฟอาหารติดอยู่** — ตรงกับอาหาร 2 จานของบิ้วกาบี้ทุกค่า: Crit 12.5% = 5 + 7.5 (สตูป่ากาปี้) · Crit DMG 92.5% = 50 + 42.5 · Elemental Weakness 150.5% = 125 + 25.5 (ช่วงเวลาแห่งการเฉลิมฉลองพิเศษ) · จอ: ATK 2,063 · DEF 686 · HP 9,647 → หักบัฟ ATK +11.25% / DEF +12.75% / HP +15% แบบปัดลง = ATK 1,855 · DEF 609 · HP 8,389 (DEF เท่าเดซี่ 4 ดาว · HP เท่าลีโฮ 4 ดาว · ถ้าเกมปัดแบบปกติ ATK จะเป็น 1,854) — ค่าพื้นฐานนี้คำนวณย้อน ยังไม่ได้เห็นจอที่ไม่มีบัฟ | Neutralization DMG Boost 11.59% · Destroyer 1,026 · Ultimate Gauge Charge 100% · Max Stamina 100 (อาหารไม่เพิ่มค่าเหล่านี้) | โจมตีพื้นฐาน Back Off! จอบอก **Level 9 +4 = Lv.13** ค่าเก็บที่ช่อง Lv.13 · ยังไม่มีจอสกิลสับเปลี่ยน สกิลพิเศษ อัลติเมต แพสซีฟ Guidance of Earth (Inactive) และปลุกพลัง | รูป portrait ตัดจากจอ Info 360x360"
+  }
+}
