@@ -5,7 +5,7 @@
       "awaken": 0,
       "food": {
         "entree": "green-cappy-forest-stew",
-        "side": "exquisite-time-to-celebrate"
+        "side": "crystal-kkaebi-mochi"
       },
       "weaknessHit": true,
       "staggerOften": true,
@@ -193,7 +193,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-wind",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -449,7 +449,7 @@
                 "id": "el-dorado-guardian",
                 "traits": [
                   {
-                    "id": "crit-dmg",
+                    "id": "dmg-wind",
                     "grade": "gold"
                   },
                   {
@@ -461,7 +461,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-wind",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]
@@ -769,7 +769,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "crit-rate",
+                    "id": "dmg-earth",
                     "grade": "gold"
                   },
                   {

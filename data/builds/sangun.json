@@ -5,7 +5,7 @@
       "awaken": 0,
       "food": {
         "entree": "green-cappy-forest-stew",
-        "side": "exquisite-time-to-celebrate"
+        "side": "crystal-kkaebi-mochi"
       },
       "weaknessHit": true,
       "members": [
@@ -50,7 +50,7 @@
           },
           "monsterlings": [
             {
-              "id": "amon",
+              "id": "clean-horde",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -71,7 +71,7 @@
               ]
             },
             {
-              "id": "clean-horde",
+              "id": "amon",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -107,7 +107,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-wind",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -341,7 +341,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-rate",
+                  "id": "dmg-earth",
                   "grade": "gold"
                 },
                 {
@@ -362,7 +362,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-earth",
+                  "id": "crit-rate",
                   "grade": "gold"
                 },
                 {
@@ -487,7 +487,7 @@
                 ]
               },
               {
-                "id": "plains-minotaur",
+                "id": "el-dorado-guardian",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",

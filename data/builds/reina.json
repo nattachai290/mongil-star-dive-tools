@@ -5,7 +5,7 @@
       "awaken": 0,
       "food": {
         "entree": "green-cappy-forest-stew",
-        "side": "exquisite-time-to-celebrate"
+        "side": "crystal-kkaebi-mochi"
       },
       "weaknessHit": true,
       "members": [
@@ -141,7 +141,7 @@
           "artifacts": [
             "hawks-flight",
             "shadow-lotus",
-            "wind-harboring-broom"
+            "monstrous-longing"
           ],
           "equipment": {
             "headgear": "spirit-kings-coronet",
@@ -192,7 +192,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-rate",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -362,7 +362,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-rate",
+                  "id": "dmg-earth",
                   "grade": "gold"
                 },
                 {
@@ -905,7 +905,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "atk",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]

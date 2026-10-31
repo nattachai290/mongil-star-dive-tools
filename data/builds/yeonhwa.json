@@ -5,7 +5,7 @@
       "awaken": 0,
       "food": {
         "entree": "green-cappy-forest-stew",
-        "side": "exquisite-time-to-celebrate"
+        "side": "crystal-kkaebi-mochi"
       },
       "weaknessHit": true,
       "members": [
@@ -13,8 +13,8 @@
           "characterId": "yeonhwa",
           "artifacts": [
             "hawks-flight",
-            "shadow-lotus",
-            "monstrous-longing"
+            "monstrous-longing",
+            "shadow-lotus"
           ],
           "equipment": {
             "headgear": "spirit-kings-coronet",
@@ -86,13 +86,13 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-dmg",
+                  "id": "crit-rate",
                   "grade": "gold"
                 }
               ]
             },
             {
-              "id": "fidelis-raptor",
+              "id": "altus-raptor",
               "traits": [
                 {
                   "id": "dmg-lightning",
@@ -134,7 +134,7 @@
               }
             ]
           },
-          "linkChain": "sharp-steel-tooth"
+          "linkChain": "intricate-steel-claw"
         },
         {
           "characterId": "penny",
@@ -219,7 +219,7 @@
               ]
             },
             {
-              "id": "altus-raptor",
+              "id": "stickmugger",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -266,7 +266,7 @@
             "special",
             "ultimate"
           ],
-          "linkChain": "intricate-steel-claw"
+          "linkChain": "golems-gem"
         },
         {
           "characterId": "francis-summer-dive",
@@ -341,7 +341,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-rate",
+                  "id": "dmg-earth",
                   "grade": "gold"
                 },
                 {
@@ -456,11 +456,11 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "weakness-dmg",
+                    "id": "dmg-lightning",
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-lightning",
+                    "id": "weakness-dmg",
                     "grade": "gold"
                   }
                 ]
@@ -487,7 +487,7 @@
                 ]
               },
               {
-                "id": "altus-raptor",
+                "id": "silbinator",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -502,7 +502,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "crit-dmg",
+                    "id": "dmg-lightning",
                     "grade": "gold"
                   }
                 ]
@@ -534,7 +534,7 @@
               "special",
               "ultimate"
             ],
-            "linkChain": "intricate-steel-claw"
+            "linkChain": "golems-gem"
           }
         },
         {
@@ -612,17 +612,17 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "weakness-dmg",
+                    "id": "dmg-lightning",
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-lightning",
+                    "id": "weakness-dmg",
                     "grade": "gold"
                   }
                 ]
               },
               {
-                "id": "altus-raptor",
+                "id": "silbinator",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -633,11 +633,11 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "weakness-dmg",
+                    "id": "dmg-lightning",
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-lightning",
+                    "id": "weakness-dmg",
                     "grade": "gold"
                   }
                 ]
@@ -669,142 +669,7 @@
               "special",
               "ultimate"
             ],
-            "linkChain": "intricate-steel-claw"
-          }
-        },
-        {
-          "replaces": "francis-summer-dive",
-          "member": {
-            "characterId": "narae",
-            "artifacts": [
-              "a-summer-soaked-in-love",
-              "melody-played-on-heartstrings",
-              "plains-embroidering-dew"
-            ],
-            "equipment": {
-              "headgear": "gourmands-hat",
-              "chestpiece": "gourmands-apron",
-              "gloves": "gourmands-gloves",
-              "footwear": "gourmands-slippers"
-            },
-            "substats": {
-              "headgear": [
-                "critDmg",
-                "critRate",
-                "atk",
-                "hp"
-              ],
-              "chestpiece": [
-                "critDmg",
-                "critRate",
-                "atk",
-                "hp"
-              ],
-              "gloves": [
-                "critDmg",
-                "critRate",
-                "atk",
-                "hp"
-              ],
-              "footwear": [
-                "critDmg",
-                "critRate",
-                "atk",
-                "hp"
-              ]
-            },
-            "monsterlings": [
-              {
-                "id": "twisted-bloodflower",
-                "traits": [
-                  {
-                    "id": "special-skill-cooldown",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "dmg-vs-boss",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "dmg-ice",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "crit-dmg",
-                    "grade": "gold"
-                  }
-                ]
-              },
-              {
-                "id": "bruised-bloodflower",
-                "traits": [
-                  {
-                    "id": "special-skill-cooldown",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "dmg-vs-boss",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "dmg-ice",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "crit-dmg",
-                    "grade": "gold"
-                  }
-                ]
-              },
-              {
-                "id": "hahnul",
-                "traits": [
-                  {
-                    "id": "special-skill-cooldown",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "dmg-vs-boss",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "dmg-ice",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "crit-dmg",
-                    "grade": "gold"
-                  }
-                ]
-              }
-            ],
-            "legendary": {
-              "id": "reginula",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-dmg",
-                  "grade": "gold"
-                }
-              ]
-            },
-            "cycle": [
-              "switch",
-              "special",
-              "ultimate"
-            ],
-            "linkChain": "giant-tigers-claw"
+            "linkChain": "golems-gem"
           }
         },
         {
@@ -904,6 +769,141 @@
                   },
                   {
                     "id": "dmg-earth",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "crit-dmg",
+                    "grade": "gold"
+                  }
+                ]
+              }
+            ],
+            "legendary": {
+              "id": "reginula",
+              "traits": [
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-dmg",
+                  "grade": "gold"
+                }
+              ]
+            },
+            "cycle": [
+              "switch",
+              "special",
+              "ultimate"
+            ],
+            "linkChain": "giant-tigers-claw"
+          }
+        },
+        {
+          "replaces": "francis-summer-dive",
+          "member": {
+            "characterId": "narae",
+            "artifacts": [
+              "a-summer-soaked-in-love",
+              "melody-played-on-heartstrings",
+              "plains-embroidering-dew"
+            ],
+            "equipment": {
+              "headgear": "gourmands-hat",
+              "chestpiece": "gourmands-apron",
+              "gloves": "gourmands-gloves",
+              "footwear": "gourmands-slippers"
+            },
+            "substats": {
+              "headgear": [
+                "critDmg",
+                "critRate",
+                "atk",
+                "hp"
+              ],
+              "chestpiece": [
+                "critDmg",
+                "critRate",
+                "atk",
+                "hp"
+              ],
+              "gloves": [
+                "critDmg",
+                "critRate",
+                "atk",
+                "hp"
+              ],
+              "footwear": [
+                "critDmg",
+                "critRate",
+                "atk",
+                "hp"
+              ]
+            },
+            "monsterlings": [
+              {
+                "id": "twisted-bloodflower",
+                "traits": [
+                  {
+                    "id": "special-skill-cooldown",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "dmg-vs-boss",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "dmg-ice",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "crit-dmg",
+                    "grade": "gold"
+                  }
+                ]
+              },
+              {
+                "id": "bruised-bloodflower",
+                "traits": [
+                  {
+                    "id": "special-skill-cooldown",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "dmg-vs-boss",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "dmg-ice",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "crit-dmg",
+                    "grade": "gold"
+                  }
+                ]
+              },
+              {
+                "id": "hahnul",
+                "traits": [
+                  {
+                    "id": "special-skill-cooldown",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "dmg-vs-boss",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "dmg-ice",
                     "grade": "gold"
                   },
                   {

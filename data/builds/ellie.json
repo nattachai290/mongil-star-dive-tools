@@ -5,7 +5,7 @@
       "awaken": 0,
       "food": {
         "entree": "green-cappy-forest-stew",
-        "side": "exquisite-time-to-celebrate"
+        "side": "crystal-kkaebi-mochi"
       },
       "weaknessHit": true,
       "members": [
@@ -198,7 +198,7 @@
               ]
             },
             {
-              "id": "el-dorado-guardian",
+              "id": "silbinator",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -219,7 +219,7 @@
               ]
             },
             {
-              "id": "silbinator",
+              "id": "el-dorado-guardian",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -324,7 +324,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-rate",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -466,7 +466,7 @@
                 ]
               },
               {
-                "id": "el-dorado-guardian",
+                "id": "silbinator",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -487,7 +487,7 @@
                 ]
               },
               {
-                "id": "silbinator",
+                "id": "el-dorado-guardian",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -502,7 +502,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-earth",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]
@@ -595,7 +595,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "crit-rate",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]

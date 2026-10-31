@@ -5,7 +5,7 @@
       "awaken": 0,
       "food": {
         "entree": "green-cappy-forest-stew",
-        "side": "exquisite-time-to-celebrate"
+        "side": "crystal-kkaebi-mochi"
       },
       "weaknessHit": true,
       "members": [
@@ -65,7 +65,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-fire",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -92,7 +92,7 @@
               ]
             },
             {
-              "id": "ragnadon",
+              "id": "avardan",
               "traits": [
                 {
                   "id": "crit-rate",
@@ -177,7 +177,7 @@
           },
           "monsterlings": [
             {
-              "id": "avardan",
+              "id": "ragnadon",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -445,7 +445,7 @@
             },
             "monsterlings": [
               {
-                "id": "avardan",
+                "id": "ragnadon",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -580,7 +580,7 @@
             },
             "monsterlings": [
               {
-                "id": "avardan",
+                "id": "ragnadon",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -601,7 +601,7 @@
                 ]
               },
               {
-                "id": "scar",
+                "id": "urgash",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",

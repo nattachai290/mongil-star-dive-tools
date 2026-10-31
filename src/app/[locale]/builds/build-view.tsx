@@ -660,7 +660,11 @@ export function BuildView({ b, locale, t }: { b: (typeof BUILDS)[number]; locale
     (e.condition?.teammateElement && !team.some((m) => m.element === e.condition?.teammateElement))
       ? "teamElement"
       : undefined;
-  const foods = (["entree", "side"] as const).flatMap((cat) => FOOD.find((x) => x.id === first.food[cat]) ?? []);
+  // ไม่โชว์ชื่ออาหาร บอกแค่ประเภท (จานหลัก/จานรอง) + บัฟ — เมนูที่ค่าเท่ากันมีหลายอย่าง ใช้อันไหนก็ได้ (ผู้เล่นสั่ง 2026-10-31)
+  const foods = (["entree", "side"] as const).flatMap((cat) => {
+    const f = FOOD.find((x) => x.id === first.food[cat]);
+    return f ? [{ cat, effects: f.effects }] : [];
+  });
   const mainChar = chars[0];
 
   return (
@@ -679,12 +683,12 @@ export function BuildView({ b, locale, t }: { b: (typeof BUILDS)[number]; locale
             {foods.length > 0 && (
               <details className="open:basis-full">
                 <summary className="inline-flex min-h-7 cursor-pointer list-none items-center rounded-full border border-line bg-surface px-3 py-1 text-xs text-ink-2 hover:border-rail [&::-webkit-details-marker]:hidden">
-                  {t("builds.food")}: {foods.map((f) => name(f.name, locale, f.id)).join(" · ")}
+                  {t("builds.food")}: {foods.map((f) => label("foodCategory", f.cat, locale)).join(" · ")}
                 </summary>
                 <div className="mt-2 grid gap-4 rounded-2xl border border-line bg-surface p-4 sm:grid-cols-2">
                   {foods.map((f) => (
-                    <div key={f.id}>
-                      <p className="text-sm font-semibold">{name(f.name, locale, f.id)}</p>
+                    <div key={f.cat}>
+                      <p className="text-sm font-semibold">{label("foodCategory", f.cat, locale)}</p>
                       <CheckedEffects effects={f.effects} why={foodWhy} locale={locale} t={t} />
                     </div>
                   ))}

@@ -5,7 +5,7 @@
       "awaken": 0,
       "food": {
         "entree": "green-cappy-forest-stew",
-        "side": "exquisite-time-to-celebrate"
+        "side": "crystal-kkaebi-mochi"
       },
       "weaknessHit": true,
       "members": [
@@ -309,7 +309,7 @@
           },
           "monsterlings": [
             {
-              "id": "scar",
+              "id": "urgash",
               "traits": [
                 {
                   "id": "special-skill-cooldown",

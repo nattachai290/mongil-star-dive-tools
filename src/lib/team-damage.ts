@@ -14,6 +14,7 @@ import {
 import { FORMULA, computeDamage, proficiencyToPercent, type DamageInput } from "./formula";
 import { chainAppears, chainEffects, topLevel } from "./link-chain-effects";
 import type { Effect, LocalizedText } from "./schema/common";
+import { label } from "./vocabulary";
 import type { Artifact, BuildLoadout, BuildMember, Character } from "./schema/entities";
 
 /**
@@ -442,7 +443,9 @@ export function receivedEffects(
   const chars = lo.members.map((m) => characterById(m.characterId));
   const food = [lo.food.entree, lo.food.side].flatMap((id) => {
     const f = FOOD.find((x) => x.id === id);
-    return f ? f.effects.filter((e) => weakness || e.trigger !== "onWeaknessHit").map(tag(f.name, false)) : [];
+    // ที่มาบอกแค่ประเภทจาน ไม่บอกชื่อ — เมนูค่าเท่ากันมีหลายอย่าง (ผู้เล่นสั่ง 2026-10-31)
+    const from = { th: `อาหาร · ${label("foodCategory", f?.category ?? "", "th")}`, en: `Food · ${label("foodCategory", f?.category ?? "", "en")}` };
+    return f ? f.effects.filter((e) => weakness || e.trigger !== "onWeaknessHit").map(tag(from, false)) : [];
   });
 
   // เอฟเฟกต์ของแต่ละตัว — target team/ally ส่งให้ทุกคน, enemy ส่งให้ทุกคน (ดีบัฟบนศัตรูตัวเดียวกัน)
