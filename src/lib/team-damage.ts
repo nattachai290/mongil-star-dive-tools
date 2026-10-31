@@ -243,6 +243,18 @@ function memberEffects(mem: BuildMember, char: Character, awaken: number): Tagge
   return out.filter((t) => !unreachable(char, t.effect, cut));
 }
 
+/**
+ * ช่วงขั้นปลุกพลังที่ตัวคำนวณให้ผลเหมือนกัน — ขั้นที่มีแค่ข้อความ (ไม่มี effects / skillLevelBonus) ไม่เปลี่ยนตัวเลข
+ * จึงรวมกับขั้นก่อนหน้า เช่น [[0,2],[3,4],[5,6]] (ผู้เล่นสั่ง 2026-10-31 "ถ้า 0-2 เหมือนกันเลือกไปก็ไม่เปลี่ยน")
+ * extra: ขั้นที่ต้องแยกเพิ่ม เช่น ขั้นที่บิ้วจัดของชุดใหม่
+ */
+export function awakenGroups(char: Character | undefined, extra: number[] = []): [number, number][] {
+  const breaks = new Set(extra.filter((s) => s > 0 && s <= 6));
+  for (const a of char?.awaken ?? []) if (a.effects.length > 0 || a.skillLevelBonus) breaks.add(a.stage);
+  const starts = [0, ...[...breaks].sort((x, y) => x - y)];
+  return starts.map((s, i) => [s, (starts[i + 1] ?? 7) - 1]);
+}
+
 function skillLevel(char: Character, awaken: number): number {
   return 12 + (char.awaken ?? []).filter((a) => a.stage <= awaken).reduce((n, a) => n + (a.skillLevelBonus ?? 0), 0);
 }
@@ -368,7 +380,7 @@ export function receivedEffects(
   // เอฟเฟกต์ของแต่ละตัว — target team/ally ส่งให้ทุกคน, enemy ส่งให้ทุกคน (ดีบัฟบนศัตรูตัวเดียวกัน)
   // บัฟที่ติดเมื่อตีจุดอ่อนธาตุ นับเฉพาะบิ้วที่ตีจุดอ่อน
   const own = lo.members.map((m, i) =>
-    (chars[i] ? memberEffects(m, chars[i]!, lo.awaken) : []).filter((t) => weakness || t.effect.trigger !== "onWeaknessHit"),
+    (chars[i] ? memberEffects(m, chars[i]!, m.awaken ?? lo.awaken) : []).filter((t) => weakness || t.effect.trigger !== "onWeaknessHit"),
   );
   // เอฟเฟกต์เพิ่มเติมของลิงก์เชนที่โผล่ในรอบ — ลงที่ศัตรู จึงได้ทั้งทีม
   const chainFx = lo.members.flatMap((m, i) => {
@@ -524,7 +536,7 @@ export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean; enemyDe
   const members: MemberDamage[] = lo.members.map((mem, i) => {
     const { char, effects: mine } = received[i];
     if (!char) return { characterId: mem.characterId, skills: [], chain: 0, total: 0 };
-    const level = skillLevel(char, lo.awaken);
+    const level = skillLevel(char, mem.awaken ?? lo.awaken);
     const skills: SkillDamage[] = [];
     for (const key of mem.cycle ?? CYCLE_SKILLS) {
       const sk = char.skills?.[key];

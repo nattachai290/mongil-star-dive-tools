@@ -6,7 +6,7 @@
  */
 import { buildLoadout, character, food, linkChain, monsterling, skill } from "../src/lib/schema/entities";
 import { computeDamage, proficiencyToPercent, sumBuffs } from "../src/lib/formula";
-import { canRecastSpecial, receivedEffects, teamDamage, unusableReason } from "../src/lib/team-damage";
+import { awakenGroups, canRecastSpecial, receivedEffects, teamDamage, unusableReason } from "../src/lib/team-damage";
 import { LINK_CHAINS, characterById } from "../src/lib/data";
 import { chainAppears, chainEffects } from "../src/lib/link-chain-effects";
 import { LINK_CHAIN_LIST_IS_COMPLETE, linkableBadge, linkableIds, linkableOf } from "../src/lib/linkable";
@@ -349,6 +349,25 @@ check("มอนที่ไม่มีลิงก์เชนชี้มา 
   "ถ้ายังไม่ยืนยันว่ารายการลิงก์เชนในเกมครบ ห้ามสรุปว่าใส่ไม่ได้");
 check("unknown ไม่แปะป้าย", linkableBadge("unknown") === null);
 check("yes แปะป้ายสองภาษา", linkableBadge("yes")?.th === "ใส่ลิงก์เชนได้");
+
+// ---------- ปลุกพลังแยกรายตัว ----------
+{
+  const gabi = characterById("gabi");
+  const g = awakenGroups(gabi);
+  check("ขั้นปลุกพลังที่มีแค่ข้อความรวมกับขั้นก่อนหน้า (กาบี้ 0–2 / 3–4 / 5–6)",
+    JSON.stringify(g) === "[[0,2],[3,4],[5,6]]", JSON.stringify(g));
+  check("ขั้นที่บิ้วจัดของชุดใหม่แยกเป็นตัวเลือกของตัวเอง",
+    JSON.stringify(awakenGroups(gabi, [1])) === "[[0,0],[1,2],[3,4],[5,6]]");
+  const lo = buildLoadout.parse({
+    awaken: 0,
+    members: [{ characterId: "gabi" }, { characterId: "brisshell" }],
+  });
+  const atMember = (stage: number) => receivedEffects({ ...lo, members: lo.members.map((m, i) => (i === 0 ? { ...m, awaken: stage } : m)) });
+  const count = (r: ReturnType<typeof receivedEffects>, i: number) => r[i].effects.filter((t) => t.from.en?.includes("Awaken") || t.from.th?.includes("ปลุกพลัง")).length;
+  const a0 = receivedEffects(lo), a3 = atMember(3);
+  check("ปลุกพลังของตัวหนึ่งไม่ลามไปตัวอื่นในทีม", count(a3, 1) === count(a0, 1), `${count(a3, 1)} vs ${count(a0, 1)}`);
+  check("ตัวที่ปลุกพลังขั้นสูงขึ้นได้เอฟเฟกต์ปลุกพลังเพิ่ม", a3[0].effects.length > a0[0].effects.length);
+}
 
 console.log(failed === 0 ? "\nผ่านทั้งหมด\n" : `\nไม่ผ่าน ${failed} ข้อ\n`);
 if (failed > 0) process.exit(1);

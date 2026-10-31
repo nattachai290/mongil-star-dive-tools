@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AwakenSelect } from "@/components/AwakenSelect";
+import { AwakenProvider, AwakenSwitch, MemberAwakenSelect } from "@/components/AwakenSelect";
 import { EffectLine } from "@/components/EffectLine";
 import { createTranslate } from "@/i18n";
 import { LOCALES, isLocale, type Locale } from "@/lib/i18n";
@@ -24,6 +25,7 @@ import { chainAppears } from "@/lib/link-chain-effects";
 import {
   CYCLE_SKILLS,
   artifactFusion,
+  awakenGroups,
   receivedEffects,
   specialCooldownReduction,
   statSheet,
@@ -314,7 +316,8 @@ function MemberGear({
   team,
   weaknessHit,
   staggerOften,
-  showStats,
+  stats,
+  awakenSelect,
   dup,
   locale,
   t,
@@ -324,8 +327,10 @@ function MemberGear({
   team: Character[];
   weaknessHit: boolean;
   staggerOften: boolean;
-  /** ค่าพลังรวมโชว์เฉพาะตัวหลัก (ตัวแรก) — ผู้เล่นสั่ง 2026-10-31 */
-  showStats: boolean;
+  /** ค่าพลังรวม — โชว์เฉพาะตัวหลัก (ตัวแรก) · ผู้เล่นสั่ง 2026-10-31 */
+  stats?: ReactNode;
+  /** dropdown ขั้นปลุกพลังของตัวนี้ */
+  awakenSelect?: ReactNode;
   dup: Set<string>;
   locale: Locale;
   t: T;
@@ -340,7 +345,7 @@ function MemberGear({
 
   return (
     <section className="rounded-xl border border-line p-3">
-      <header className="mb-3 flex items-center gap-2.5">
+      <header className="mb-3 flex flex-wrap items-center gap-2.5">
         <Icon src={img} />
         <div>
           <h3 className="text-sm font-semibold">
@@ -355,6 +360,7 @@ function MemberGear({
             </p>
           )}
         </div>
+        {awakenSelect}
       </header>
       <div className="grid gap-3 sm:grid-cols-2">
         <Slot title={t("builds.artifact")}>
@@ -501,17 +507,25 @@ function MemberGear({
             )}
           </Slot>
         </div>
-        {c && showStats && (
-          <div className="sm:col-span-2">
-            <StatsSlot char={c} effects={effects} locale={locale} t={t} />
-          </div>
-        )}
+        {stats && <div className="sm:col-span-2">{stats}</div>}
       </div>
     </section>
   );
 }
 
-function Loadout({ lo, locale, t }: { lo: BuildLoadout; locale: Locale; t: T }) {
+function Loadout({
+  lo,
+  stats,
+  selects,
+  locale,
+  t,
+}: {
+  lo: BuildLoadout;
+  stats: ReactNode;
+  selects: ReactNode[];
+  locale: Locale;
+  t: T;
+}) {
   // มอนตัวเดียวกันบนหลายคนในทีม บัฟไม่ทับซ้อน
   // มอนตำนานใส่ซ้ำได้ทุกตัวละคร (ผู้เล่นบอก 2026-10-31) จึงไม่นับ
   const all = lo.members.flatMap((m) => m.monsterlings.map((x) => x.id));
@@ -552,7 +566,8 @@ function Loadout({ lo, locale, t }: { lo: BuildLoadout; locale: Locale; t: T }) 
           team={team}
           weaknessHit={lo.weaknessHit ?? false}
           staggerOften={lo.staggerOften ?? false}
-          showStats={i === 0}
+          stats={i === 0 ? stats : undefined}
+          awakenSelect={selects[i]}
           dup={dup}
           locale={locale}
           t={t}
@@ -562,7 +577,78 @@ function Loadout({ lo, locale, t }: { lo: BuildLoadout; locale: Locale; t: T }) 
   );
 }
 
-const AWAKEN_STAGES = [0, 1, 2, 3, 4, 5, 6] as const;
+/** ทุกชุดค่าผสมของขั้นปลุกพลังรายตัว (ใช้ขั้นต่ำสุดของแต่ละช่วงเป็นตัวแทน) */
+function combos(groups: [number, number][][]): number[][] {
+  return groups.reduce<number[][]>((acc, g) => acc.flatMap((c) => g.map(([s]) => [...c, s])), [[]]);
+}
+
+/**
+ * บิ้วหนึ่งทีม — dropdown ขั้นปลุกพลังแยกรายตัว (ผู้เล่นสั่ง 2026-10-31)
+ * ขั้นที่ให้ผลเหมือนกันรวมเป็นตัวเลือกเดียว · ส่วนของที่ใส่ render ครั้งเดียวต่อ "ของชุดเดียวกัน + สีเทาเหมือนกัน"
+ * ส่วนค่าพลังรวม render ต่อชุดค่าผสม แล้วฝั่งเบราว์เซอร์แค่สลับว่าโชว์อันไหน
+ */
+function BuildView({ b, locale, t }: { b: (typeof BUILDS)[number]; locale: Locale; t: T }) {
+  const first = b.loadouts[0];
+  const chars = first.members.map((m) => characterById(m.characterId));
+  // ตัวหลักต้องแยกขั้นที่บิ้วจัดของชุดใหม่ด้วย
+  const groups = chars.map((c, i) => awakenGroups(c, i === 0 ? b.loadouts.map((x) => x.awaken) : []));
+  const groupOf = (i: number, stage: number) => groups[i].find(([s, e]) => stage >= s && stage <= e)![0];
+  const initial = first.members.map((m, i) => groupOf(i, m.awaken ?? first.awaken));
+
+  const gearPanels: Record<string, ReactNode> = {};
+  const gearPick: Record<string, string> = {};
+  const statsByGear: Record<string, Record<string, ReactNode>> = {};
+  const notes: Record<string, ReactNode> = {};
+  const pickAll: Record<string, string> = {};
+  const gearLo: Record<string, BuildLoadout> = {};
+
+  for (const combo of combos(groups)) {
+    const key = combo.join(",");
+    const baseIdx = b.loadouts.reduce((best, x, i) => (x.awaken <= combo[0] ? i : best), 0);
+    const base = b.loadouts[baseIdx];
+    const lo: BuildLoadout = {
+      ...base,
+      awaken: combo[0],
+      members: base.members.map((m, i) => ({ ...m, awaken: combo[i] ?? combo[0] })),
+    };
+    const received = receivedEffects(lo);
+    // สีเทาขึ้นกับคูลดาวน์ที่ลดได้ — ปลุกพลังที่ลดคูลดาวน์จึงอาจเปลี่ยนส่วนของที่ใส่ด้วย
+    const gearKey = [baseIdx, ...received.map((r) => specialCooldownReduction(r.effects))].join("|");
+    gearPick[key] = gearKey;
+    gearLo[gearKey] ??= lo;
+    const main = received[0];
+    (statsByGear[gearKey] ??= {})[key] = main?.char ? (
+      <StatsSlot char={main.char} effects={main.effects} locale={locale} t={t} />
+    ) : null;
+    notes[key] =
+      base.awaken !== combo[0] ? (
+        <p className="text-xs text-gold">{t("builds.awakenInherited").replace("{n}", String(base.awaken))}</p>
+      ) : null;
+    pickAll[key] = key;
+  }
+
+  const selects = groups.map((g, i) => (
+    <MemberAwakenSelect
+      key={i}
+      member={i}
+      label={t("builds.awaken")}
+      options={g.map(([s, e]) => [s, s === e ? String(s) : `${s}–${e}`])}
+    />
+  ));
+  for (const [gearKey, lo] of Object.entries(gearLo)) {
+    const stats = <AwakenSwitch panels={statsByGear[gearKey]} pick={pickAll} />;
+    gearPanels[gearKey] = <Loadout lo={lo} stats={stats} selects={selects} locale={locale} t={t} />;
+  }
+
+  return (
+    <AwakenProvider initial={initial}>
+      <div className="space-y-3">
+        <AwakenSwitch panels={notes} pick={pickAll} />
+        <AwakenSwitch panels={gearPanels} pick={gearPick} />
+      </div>
+    </AwakenProvider>
+  );
+}
 
 export default async function BuildsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -586,22 +672,8 @@ export default async function BuildsPage({ params }: { params: Promise<{ locale:
             return (
               <article key={b.id} id={b.id} className="rounded-xl border border-line p-4">
                 <h2 className="mb-4 font-display text-lg font-semibold">{team.join(" · ")}</h2>
-                <AwakenSelect
-                  label={t("builds.awakenSelect")}
-                  options={AWAKEN_STAGES.map((a) => `${t("builds.awaken")} ${a}`)}
-                  panels={AWAKEN_STAGES.map((a) => {
-                    // ขั้นที่ยังไม่ได้จัดของแยก ใช้ของชุดของขั้นที่ต่ำกว่าที่ใกล้ที่สุด แล้วคิดค่าพลังที่ขั้นนั้น
-                    const base = [...b.loadouts].reverse().find((x) => x.awaken <= a) ?? b.loadouts[0];
-                    return (
-                      <div key={a} className="space-y-3">
-                        {base.awaken !== a && (
-                          <p className="text-xs text-gold">{t("builds.awakenInherited").replace("{n}", String(base.awaken))}</p>
-                        )}
-                        <Loadout lo={{ ...base, awaken: a }} locale={locale as Locale} t={t} />
-                      </div>
-                    );
-                  })}
-                />
+                <p className="mb-3 text-xs text-ink-2">{t("builds.awakenSelect")}</p>
+                <BuildView b={b} locale={locale as Locale} t={t} />
               </article>
             );
           })}
