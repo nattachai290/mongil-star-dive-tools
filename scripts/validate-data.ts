@@ -567,6 +567,11 @@ for (const [id, doc] of Object.entries(parsed.builds ?? {})) {
         } else if (!seen) legendaryTraits.set(mem.legendary.id, { where: `${where} ${mt}`, sig });
       }
       checkRefs(where, mem.linkChain, "link-chains", `${mt}.linkChain`);
+      // ลิงก์เชนต้องเป็นของมอน 1 ใน 3 ตัวที่ใส่อยู่ (ผู้เล่นบอก 2026-10-31) — มอนตำนานไม่นับ
+      const chainOwner = mem.linkChain ? parsed["link-chains"]?.[mem.linkChain]?.monsterlingId : undefined;
+      if (chainOwner && !mons.includes(chainOwner as string)) {
+        fail(where, `${mt}.linkChain "${mem.linkChain}" เป็นของ "${String(chainOwner)}" ซึ่งไม่ได้อยู่ในมอน 3 ตัวที่ใส่`);
+      }
 
       for (const m of [...mons, ...(legId ? [legId] : [])]) {
         const prev = owner.get(m);
