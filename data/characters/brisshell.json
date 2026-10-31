@@ -131,8 +131,7 @@
           "kind": "buff",
           "stat": "dmgDealt",
           "scopes": [
-            "specialSkill",
-            "ultimate"
+            "specialSkill"
           ],
           "value": 80,
           "unit": "percent",
@@ -141,7 +140,8 @@
           "condition": {
             "skillRow": "Alien Power",
             "note": {
-              "en": "DMG from Alien Power"
+              "th": "เฉพาะแถว Alien Power ของสกิลพิเศษ ไม่รวมอัลติเมต (ผู้เล่นบอก 2026-10-31)",
+              "en": "DMG from Alien Power · Special Skill only, not the Ultimate (player confirmed 2026-10-31)"
             }
           }
         }
