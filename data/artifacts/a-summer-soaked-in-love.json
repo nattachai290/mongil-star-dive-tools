@@ -1,0 +1,80 @@
+{
+  "id": "a-summer-soaked-in-love",
+  "name": {
+    "th": "วันแห่งฤดูร้อนที่ถูกย้อมไปด้วยความรัก",
+    "en": "A Summer Soaked in Love"
+  },
+  "stars": 5,
+  "role": "supporter",
+  "level": 60,
+  "stats": [
+    {
+      "stat": "atk",
+      "value": 883,
+      "unit": "flat"
+    },
+    {
+      "stat": "dmgDealt",
+      "damageType": "earth",
+      "value": 27,
+      "unit": "percent"
+    }
+  ],
+  "fusion": [
+    {
+      "artifactLevel": 60,
+      "level": 1,
+      "name": {
+        "th": "ด้วยความอบอุ่นที่เอ่อล้น I",
+        "en": "Overflowing Warmth I"
+      },
+      "desc": {
+        "th": "เมื่อตัวละคร [ซัพพอร์ตเตอร์] ติดตั้ง จะได้รับเอฟเฟกต์ดังต่อไปนี้ / เมื่อใช้สกิลสนับสนุน จะเพิ่มอัตราคริติคอลของสมาชิกทีมทั้งหมด 6% หากสมาชิกทีมที่ได้รับเอฟเฟกต์เป็นธาตุดิน จะเพิ่มดาเมจโจมตีพื้นฐานเพิ่มเติมอีก 20% (เวลาแสดงผล 6 วินาที) / รวมขั้น 3 : ทุกซัพพอร์ตเตอร์ 10 หน่วย จะได้รับเอฟเฟกต์เพิ่มอัตราชาร์จสกิลอัลติเมต 0.06% (สูงสุด 15%) / รวมขั้น 5 : ทุกซัพพอร์ตเตอร์ 10 หน่วย จะได้รับเอฟเฟกต์เพิ่มพลังโจมตี 0.06% (สูงสุด 15%)",
+        "en": "When equipped by a [Support] character, grants the following effect. / Upon using a Support Skill, all teammates' Crit Rate increases by 6%. If the teammate granted the effect is an Earth character, their Basic Attack DMG increases by an additional 20%. (Duration: 6s) / Fusion Level 3: Gains 0.06% Ultimate Gauge Charge Boost for every 10 points of Support proficiency. (Max: 15%) / Fusion Level 5: Gains 0.06% ATK Boost for every 10 points of Support proficiency. (Max: 15%)"
+      },
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "critRate",
+          "value": 6,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onSupportSkill",
+          "durationSec": 6
+        },
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 20,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onSupportSkill",
+          "durationSec": 6,
+          "condition": {
+            "teammateElement": "earth",
+            "note": {
+              "th": "หากสมาชิกทีมที่ได้รับเอฟเฟกต์เป็นธาตุดิน",
+              "en": "If the teammate granted the effect is an Earth character"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "images": {
+    "icon": "a-summer-soaked-in-love-icon.webp"
+  },
+  "source": {
+    "verifiedAt": "2026-10-31",
+    "gameVersion": "unknown",
+    "by": "in-game",
+    "readIn": [
+      "th",
+      "en"
+    ],
+    "note": "อ่านจากจอพรีวิวอาร์ติแฟกต์ไทย 2026-10-31 (Lv.60 · รวมขั้น 1 ที่ผู้เล่นมี) | 5 ดาวจากเพชร 5 เม็ดบนการ์ด | ยังไม่มีจอรวมขั้น 5 | คำพูดตัวเอียงใต้ค่าสเตตัสเป็นคำบรรยาย ไม่เก็บ | ไอคอนตัดจากวงกลมบนการ์ด (ป้าย \"กำลังติดตั้ง\" บังขอบบน จึงตัดต่ำลงมา) | **2026-10-31 จออังกฤษ (Lv.60)** ชื่อ A Summer Soaked in Love · Overflowing Warmth I · ตัวเลขและค่าสเตตัสตรงจอไทย · id เปลี่ยนจาก wan-haeng-ruedu-ron (ถอดเสียงไทย) เป็นชื่ออังกฤษ"
+  }
+}

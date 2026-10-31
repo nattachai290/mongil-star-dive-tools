@@ -153,7 +153,7 @@ console.log("\nดาเมจรวมทั้งทีม");
   check("กาบิ (คูลดาวน์ 11.5 วิ) ไม่ได้ +80% ของคมเยือกแข็งฯ", !has80("gabi"));
   check("Ophelia (สกิลพิเศษกดต่อได้) ได้ +80% ของคมเยือกแข็งฯ", has80("ophelia"));
   const flameFx = (id: string) =>
-    receivedEffects({ awaken: 0, food: {}, members: [{ characterId: id, artifacts: ["plaeo-phloeng-thi-fai-fan"], equipment: {}, substats: {}, monsterlings: [] }] })[0]
+    receivedEffects({ awaken: 0, food: {}, members: [{ characterId: id, artifacts: ["the-flame-that-dreams-of-justice"], equipment: {}, substats: {}, monsterlings: [] }] })[0]
       .effects.some((x) => x.effect.condition?.requiresAttackElementChange);
   check("ตัวที่ไม่มีสกิลเปลี่ยนธาตุโจมตี ไม่ได้เอฟเฟกต์ที่ต้องเปลี่ยนธาตุ", !flameFx("gabi"));
   const weakMem = (traits: string[]) => ({ characterId: "gabi", equipment: {}, substats: {},
