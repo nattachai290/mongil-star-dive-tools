@@ -100,7 +100,23 @@
       "desc": {
         "en": "The ATK Boost of On-the-Fly Diagnosis is enhanced to 35%. Taking a hit while this effect is active triggers Healing Over Time, which restores HP equal to 10% of Francis's ATK for 5s."
       },
-      "effects": []
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "atk",
+          "value": 18,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onSwitchOut",
+          "durationSec": 10,
+          "condition": {
+            "note": {
+              "en": "On-the-Fly Diagnosis · ATK Boost 17% → 35%",
+              "th": "เพิ่มพลังโจมตี 17% → 35% · ให้ทั้งทีม (ผู้เล่นบอก 2026-10-31)"
+            }
+          }
+        }
+      ]
     },
     {
       "stage": 5,
@@ -305,7 +321,23 @@
         "en": "Francis strikes an enemy with her medical chart, dealing Physical DMG. / [Tag-out Skill] When switched out, she reviews the chart to trigger On-the-Fly Diagnosis. This effect does not stack with other On-the-Fly Diagnosis effects. / [Support Skill] When a teammate's HP falls to 75% or below, Francis appears by their side and deals Earth DMG, inflicts Earth Affliction on an enemy, and heals the teammate based on her ATK."
       },
       "damageType": "physical",
-      "effects": [],
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "atk",
+          "value": 17,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onSwitchOut",
+          "durationSec": 10,
+          "condition": {
+            "note": {
+              "en": "On-the-Fly Diagnosis · Tag-out Skill · goes to the team (player confirmed 2026-10-31)",
+              "th": "ให้ทั้งทีม — สกิลล่าถอยทำงานตอนฟรานซิสออกจากสนาม (ผู้เล่นบอก 2026-10-31)"
+            }
+          }
+        }
+      ],
       "values": [
         {
           "label": {
@@ -782,6 +814,6 @@
     "readIn": [
       "en"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Support · Earth · Ranged · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวปกติ ไม่ใช่ Francis: Summer Dive! (คนละไฟล์ francis-summer-dive) | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 1,866 · DEF 686 · HP 10,662 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,678 · DEF 609 · HP 9,272 · Crit 5% / 50%** — ตรงกับ Daisy (Earth Support 4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 11.59% · Support 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · ไม่มีบรรทัดธาตุ · **Special Skill Cooldown Reduction 4.5% ไม่เก็บ** (แบบ Sera — มาจากปลุกพลัง ยืนยันเมื่อเห็นจอปลุกพลัง) | **สกิลบนจอบัญชีนี้ Lv.13 ทั้งสี่ช่อง (\"Level 9 +4\")** · Passive Lv.1 · Guidance of Earth Inactive Lv.1 | Switch Outpatient Check-up (Physical · Lv.13 · สามท่อน Switch / Tag-out / Support) | Guidance of Earth Do You Need a New Prescription?: **ค่า Lv.12 = 20.5% จากป๊อปอัป Skill Info (Lv. 1 >> Lv. 12)** จอหลัก Lv.1 = 15% · ฟื้น HP ตัวที่สลับเข้ามา 20.5% ของ ATK ของ Francis → kind heal target ally onSwitchOut + note (ไม่ใช่ % ของ Max HP แบบ Daisy) | **2026-10-22 รอบสาม** ตาราง Switch ครบหกแถว (Earth Affliction 5 วินาที · Support Skill Cooldown 16 วินาที) · Effect Details: On-the-Fly Diagnosis (ATK +17% · ฟื้น HP 12% ของ ATK) · Earth Affliction | On-the-Fly Diagnosis ไม่ใส่เป็น effect ใน Switch — ท่อน Tag-out ไม่บอกผู้รับ และ Tag-out คือตอนสลับออก จึงไม่ชัดว่ากฎ \"ไม่บอก = ตัวเอง\" ใช้ได้ไหม เก็บเป็นสถานะไว้ก่อน | Basic This Might Pinch! (Lv.13 · หกแถว) · Ultimate An Exciting New Trial! (Lv.13): **คำอธิบายครบ แต่ตารางค่าอยู่ใต้ขอบ (เห็นแค่ขอบตัวอักษร \"DMG\") → values ว่าง** | **2026-10-22 รอบสี่** ตาราง Ultimate (Lv.13 · 451.4% · ฮีล 13.8% · Experimental Drug Field 15 วินาที) · Passive Preventative Care (\"with inflicted with\" ซ้ำคำตามจอ) · ปลุกพลังครบหกขั้น · Effect Details Elixir of Love (ขั้น 1) | **ยืนยันแล้ว: Special Skill Cooldown Reduction 4.5% มาจากปลุกพลังขั้น 3 (แบบ Sera)** — ไม่เก็บใน otherStats ถูกต้อง | **On-the-Fly Diagnosis สองจอไม่ตรงกัน: ปุ่ม Effects ของ Switch (Lv.13) ขึ้น \"HP restored 12% of Francis's ATK\" แต่ปุ่ม Effects ของปลุกพลังขั้น 2 ขึ้น \"6%\"** (ATK +17% เท่ากัน) — เก็บข้อความจาก Switch ไว้ในสถานะ อาจโตตามเลเวล Switch · ไม่เดา | effects: ขั้น 5 Basic +6% · ขั้นอื่นเก็บเป็นข้อความ | **2026-10-22 รอบห้า** Special Extra Dose (Lv.13 · 388.5% · คูลดาวน์ 11 วินาที) → ครบหกช่อง | ยังไม่ได้อ่าน: ค่า Lv.12 ของสกิลทั้งสี่ช่อง (บัญชีนี้ Lv.13) · จอไทยทั้งหมด"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Support · Earth · Ranged · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวปกติ ไม่ใช่ Francis: Summer Dive! (คนละไฟล์ francis-summer-dive) | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 1,866 · DEF 686 · HP 10,662 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,678 · DEF 609 · HP 9,272 · Crit 5% / 50%** — ตรงกับ Daisy (Earth Support 4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 11.59% · Support 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · ไม่มีบรรทัดธาตุ · **Special Skill Cooldown Reduction 4.5% ไม่เก็บ** (แบบ Sera — มาจากปลุกพลัง ยืนยันเมื่อเห็นจอปลุกพลัง) | **สกิลบนจอบัญชีนี้ Lv.13 ทั้งสี่ช่อง (\"Level 9 +4\")** · Passive Lv.1 · Guidance of Earth Inactive Lv.1 | Switch Outpatient Check-up (Physical · Lv.13 · สามท่อน Switch / Tag-out / Support) | Guidance of Earth Do You Need a New Prescription?: **ค่า Lv.12 = 20.5% จากป๊อปอัป Skill Info (Lv. 1 >> Lv. 12)** จอหลัก Lv.1 = 15% · ฟื้น HP ตัวที่สลับเข้ามา 20.5% ของ ATK ของ Francis → kind heal target ally onSwitchOut + note (ไม่ใช่ % ของ Max HP แบบ Daisy) | **2026-10-22 รอบสาม** ตาราง Switch ครบหกแถว (Earth Affliction 5 วินาที · Support Skill Cooldown 16 วินาที) · Effect Details: On-the-Fly Diagnosis (ATK +17% · ฟื้น HP 12% ของ ATK) · Earth Affliction | On-the-Fly Diagnosis ไม่ใส่เป็น effect ใน Switch — ท่อน Tag-out ไม่บอกผู้รับ และ Tag-out คือตอนสลับออก จึงไม่ชัดว่ากฎ \"ไม่บอก = ตัวเอง\" ใช้ได้ไหม เก็บเป็นสถานะไว้ก่อน | Basic This Might Pinch! (Lv.13 · หกแถว) · Ultimate An Exciting New Trial! (Lv.13): **คำอธิบายครบ แต่ตารางค่าอยู่ใต้ขอบ (เห็นแค่ขอบตัวอักษร \"DMG\") → values ว่าง** | **2026-10-22 รอบสี่** ตาราง Ultimate (Lv.13 · 451.4% · ฮีล 13.8% · Experimental Drug Field 15 วินาที) · Passive Preventative Care (\"with inflicted with\" ซ้ำคำตามจอ) · ปลุกพลังครบหกขั้น · Effect Details Elixir of Love (ขั้น 1) | **ยืนยันแล้ว: Special Skill Cooldown Reduction 4.5% มาจากปลุกพลังขั้น 3 (แบบ Sera)** — ไม่เก็บใน otherStats ถูกต้อง | **On-the-Fly Diagnosis สองจอไม่ตรงกัน: ปุ่ม Effects ของ Switch (Lv.13) ขึ้น \"HP restored 12% of Francis's ATK\" แต่ปุ่ม Effects ของปลุกพลังขั้น 2 ขึ้น \"6%\"** (ATK +17% เท่ากัน) — เก็บข้อความจาก Switch ไว้ในสถานะ อาจโตตามเลเวล Switch · ไม่เดา | effects: ขั้น 5 Basic +6% · ขั้นอื่นเก็บเป็นข้อความ | **2026-10-22 รอบห้า** Special Extra Dose (Lv.13 · 388.5% · คูลดาวน์ 11 วินาที) → ครบหกช่อง | ยังไม่ได้อ่าน: ค่า Lv.12 ของสกิลทั้งสี่ช่อง (บัญชีนี้ Lv.13) · จอไทยทั้งหมด | 2026-10-31 สถานะ On-the-Fly Diagnosis (ATK 17%) ใส่เป็น effect ของสกิลสับเปลี่ยน (Tag-out · 10 วินาที) เป้าหมายจอไม่ได้บอก → ตัวเองตามกติกา · ปลุก 4 เก็บส่วนต่าง +18 (→35%) | **2026-10-31 ผู้เล่นบอก: On-the-Fly Diagnosis จากสกิลล่าถอยให้ทั้งทีม** (\"มันเป็นตอนสกิลออก จะให้ตัวเองไปทำไม ตัวเองออกไปแล้ว คือให้ทีม\") — เปลี่ยน target เป็น team ทั้งค่าพื้นฐานและส่วนต่างปลุก 4 · ปลุก 2 (ได้เองตอนใช้สกิลพิเศษ) ไม่ใส่แยก เพราะ On-the-Fly Diagnosis ไม่ทับซ้อนกัน"
   }
 }

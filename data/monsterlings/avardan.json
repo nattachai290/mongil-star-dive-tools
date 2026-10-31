@@ -28,13 +28,6 @@
     }
   ],
   "effectsRank": "gold",
-  "drops": [
-    {
-      "name": {
-        "th": "แกนวิญญาณแห่งนิรันดร์"
-      }
-    }
-  ],
   "images": {
     "icon": "avardan-icon.webp"
   },

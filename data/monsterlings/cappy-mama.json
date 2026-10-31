@@ -22,13 +22,6 @@
     }
   ],
   "effectsRank": "gold",
-  "drops": [
-    {
-      "name": {
-        "th": "สปอร์ที่อุดมสมบูรณ์"
-      }
-    }
-  ],
   "images": {
     "icon": "cappy-mama-icon.webp"
   },

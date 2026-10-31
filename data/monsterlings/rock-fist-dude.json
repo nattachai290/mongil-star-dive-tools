@@ -22,13 +22,6 @@
     }
   ],
   "effectsRank": "gold",
-  "drops": [
-    {
-      "name": {
-        "th": "หินมีชีวิต"
-      }
-    }
-  ],
   "images": {
     "icon": "rock-fist-dude-icon.webp"
   },

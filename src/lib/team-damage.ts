@@ -58,7 +58,7 @@ export const TEAM_ASSUMPTIONS = [
   "ค่าพลังของมอน (ATK/DEF/HP) ตามชนิด บอส / ทั่วไป / ตำนาน · มอนทั่วไปบางตัวอนุมานจากการไม่มีลิงก์เชน",
   "ความชำนาญบทบาทคิดเป็นดาเมจเฉพาะบรอว์เลอร์ (ดาเมจปะทะ) — บทบาทอื่นสูตรยังไม่มี",
   "ยังไม่นับดาเมจต่อเนื่อง และสกิลสนับสนุน",
-  "ลิงก์เชน: ดาเมจ 1 ครั้งต่อรอบ ถ้าเงื่อนไขปรากฏตัวเกิดในรอบสกิล (ไม่นับหลบ/โต้กลับ/โดนตี) · ไม่บอกธาตุ = กายภาพ · เอฟเฟกต์เพิ่มเติมนับเฉพาะลดต้านทาน/ลดพลังป้องกัน/ดาเมจจุดอ่อน",
+  "ลิงก์เชน: ดาเมจ 1 ครั้งต่อรอบ ถ้าเงื่อนไขปรากฏตัวเกิดในรอบสกิลหรือตีศัตรูที่ติดมึนงง (เฉพาะบิ้วที่ตั้งว่าทีมทำมึนงงไว) (ไม่นับหลบ/โต้กลับ/โดนตี) · ไม่บอกธาตุ = กายภาพ · เอฟเฟกต์เพิ่มเติมนับเฉพาะลดต้านทาน/ลดพลังป้องกัน/ดาเมจจุดอ่อน",
   "ลดคูลดาวน์สกิลพิเศษ: กดทุกครั้งที่คูลดาวน์หมด ดาเมจสกิลพิเศษ × (คูลดาวน์ตามจอ ÷ หลังลด) · หลายแหล่งบวกกัน (ผู้เล่นยืนยัน 2026-10-29) · ไม่หักเวลาตีพื้นฐาน",
 ];
 
@@ -243,6 +243,18 @@ function memberEffects(mem: BuildMember, char: Character, awaken: number): Tagge
   return out.filter((t) => !unreachable(char, t.effect, cut));
 }
 
+/**
+ * ช่วงขั้นปลุกพลังที่ตัวคำนวณให้ผลเหมือนกัน — ขั้นที่มีแค่ข้อความ (ไม่มี effects / skillLevelBonus) ไม่เปลี่ยนตัวเลข
+ * จึงรวมกับขั้นก่อนหน้า เช่น [[0,2],[3,4],[5,6]] (ผู้เล่นสั่ง 2026-10-31 "ถ้า 0-2 เหมือนกันเลือกไปก็ไม่เปลี่ยน")
+ * extra: ขั้นที่ต้องแยกเพิ่ม เช่น ขั้นที่บิ้วจัดของชุดใหม่
+ */
+export function awakenGroups(char: Character | undefined, extra: number[] = []): [number, number][] {
+  const breaks = new Set(extra.filter((s) => s > 0 && s <= 6));
+  for (const a of char?.awaken ?? []) if (a.effects.length > 0 || a.skillLevelBonus) breaks.add(a.stage);
+  const starts = [0, ...[...breaks].sort((x, y) => x - y)];
+  return starts.map((s, i) => [s, (starts[i + 1] ?? 7) - 1]);
+}
+
 function skillLevel(char: Character, awaken: number): number {
   return 12 + (char.awaken ?? []).filter((a) => a.stage <= awaken).reduce((n, a) => n + (a.skillLevelBonus ?? 0), 0);
 }
@@ -279,12 +291,19 @@ function inputsFor(
   damageType: string,
   skillPercent: number,
   weakness = false,
+  enemyDef?: number,
+  /** ชื่อแถวดาเมจ (อังกฤษ) — บัฟที่มี condition.skillRow ใช้เฉพาะแถวที่ชื่อตรง */
+  row?: string,
+  /** ธาตุที่ศัตรูแพ้ — ไม่ใส่ = ทุกธาตุที่ไม่ใช่กายภาพ */
+  weakElement?: string,
 ): DamageInput {
   // บัฟที่ติดเมื่อตีจุดอ่อน (เช่น ผู้พิทักษ์แห่งนครทองคำ) ติดเฉพาะเมื่อทีมตีจุดอ่อน — เป็นบัฟค้าง ใช้กับทุกท่าหลังติดแล้ว
   const teamWeak = weakness;
-  // จุดอ่อนธาตุ: ตีด้วยธาตุที่ศัตรูแพ้ — กายภาพไม่มีจุดอ่อน
-  const weak = weakness && damageType !== "physical";
+  // จุดอ่อนธาตุ: ตีด้วยธาตุที่ศัตรูแพ้เท่านั้น — กายภาพไม่มีจุดอ่อน
+  // (ผู้เล่นบอก 2026-10-31: ตีบอสที่แพ้ธาตุดินด้วยธาตุลม ไม่ได้อะไรจากจุดอ่อน)
+  const weak = weakness && damageType !== "physical" && (!weakElement || damageType === weakElement);
   const inp: DamageInput = {
+    enemyDef,
     weaknessHit: weak,
     weaknessDmg: 0,
     atkBase: char.stats?.atk ?? 0,
@@ -303,6 +322,7 @@ function inputsFor(
   for (const { effect: e } of effects) {
     if (e.value === undefined || e.stat === undefined) continue;
     if (e.condition?.vsBoss === false) continue;
+    if (e.condition?.skillRow && !row?.includes(e.condition.skillRow)) continue;
     if (e.trigger === "onWeaknessHit" && !teamWeak) continue;
     if (e.damageType && e.stat !== "res" && e.damageType !== damageType) continue;
     const scopes = e.scopes as string[] | undefined;
@@ -352,6 +372,11 @@ function inputsFor(
   return inp;
 }
 
+/** ธาตุที่ศัตรูแพ้ในบิ้วที่ตีจุดอ่อน = ธาตุของตัวหลัก (ตัวแรก) */
+export function weakElementOf(lo: BuildLoadout): string | undefined {
+  return characterById(lo.members[0]?.characterId ?? "")?.element;
+}
+
 /** เอฟเฟกต์ที่สมาชิกแต่ละตัวได้รับจริง — ของตัวเอง + บัฟทีม/ดีบัฟศัตรูจากเพื่อน + อาหาร + ค่าพลังพื้นฐาน */
 export function receivedEffects(
   lo: BuildLoadout,
@@ -364,25 +389,42 @@ export function receivedEffects(
   });
 
   // เอฟเฟกต์ของแต่ละตัว — target team/ally ส่งให้ทุกคน, enemy ส่งให้ทุกคน (ดีบัฟบนศัตรูตัวเดียวกัน)
-  // บัฟที่ติดเมื่อตีจุดอ่อนธาตุ นับเฉพาะบิ้วที่ตีจุดอ่อน
+  // บัฟที่ติดเมื่อตีจุดอ่อนธาตุ นับเฉพาะตัวที่ตีจุดอ่อนได้จริง (ธาตุเดียวกับที่ศัตรูแพ้)
+  const weakEl = weakElementOf(lo);
+  const hitsWeak = (c: Character | undefined) => weakness && !!c && (!weakEl || c.element === weakEl);
   const own = lo.members.map((m, i) =>
-    (chars[i] ? memberEffects(m, chars[i]!, lo.awaken) : []).filter((t) => weakness || t.effect.trigger !== "onWeaknessHit"),
+    (chars[i] ? memberEffects(m, chars[i]!, m.awaken ?? lo.awaken) : []).filter((t) => hitsWeak(chars[i]) || t.effect.trigger !== "onWeaknessHit"),
   );
   // เอฟเฟกต์เพิ่มเติมของลิงก์เชนที่โผล่ในรอบ — ลงที่ศัตรู จึงได้ทั้งทีม
   const chainFx = lo.members.flatMap((m, i) => {
     const lc = LINK_CHAINS.find((c) => c.id === m.linkChain);
     const ch = chars[i];
-    if (!lc || !ch || !chainAppears(lc, ch, m.cycle ?? CYCLE_SKILLS, weakness)) return [];
+    if (!lc || !ch || !chainAppears(lc, ch, m.cycle ?? CYCLE_SKILLS, hitsWeak(ch), lo.staggerOften)) return [];
     return chainEffects(lc).effects.map(tag(lc.name, false));
   });
-  const shared = [...own.flat(), ...chainFx].filter((t) => ["team", "ally", "enemy", "allEnemies"].includes(t.effect.target));
+  // บัฟทีม/ดีบัฟศัตรูตัวเดียวกันจากหลายคน (เซ็ตเดียวกัน · Artifact เดียวกัน · มอนตำนานตัวเดียวกัน) ไม่ทับซ้อน — นับครั้งเดียว
+  // แบบเดียวกับมอนตัวเดียวกันในทีม (ผู้เล่นบอก 2026-10-24) · ตัวคำนวณเคยนับซ้ำจนเสนอให้ทุกคนใส่โบนัสเซ็ตเดียวกัน
+  const seen = new Set<string>();
+  // จำว่าเอฟเฟกต์มาจากสมาชิกคนไหน — บัฟ teammatesOnly ไม่ย้อนกลับไปให้เจ้าของ
+  const origin = new Map<Tagged, number>();
+  own.forEach((ts, i) => ts.forEach((t) => origin.set(t, i)));
+  const shared = [...own.flat(), ...chainFx]
+    .filter((t) => ["team", "ally", "enemy", "allEnemies"].includes(t.effect.target))
+    .filter((t) => {
+      const e = t.effect;
+      const k = [t.from.en ?? t.from.th, e.stat, e.damageType, e.value, e.target, e.trigger, (e.scopes ?? []).join(",")].join("|");
+      if (seen.has(k)) return false;
+      seen.add(k);
+      return true;
+    });
 
   return lo.members.map((mem, i) => {
     const char = chars[i];
     if (!char) return { char, effects: [] };
     // บัฟทีมที่จอบอกว่าให้เฉพาะเพื่อนธาตุหรือระยะหนึ่ง
-    const fits = ({ effect: e }: Tagged) => {
-      const c = e.condition;
+    const fits = (t: Tagged) => {
+      const c = t.effect.condition;
+      if (c?.teammatesOnly && origin.get(t) === i) return false;
       if (c?.teammateElement && c.teammateElement !== char.element) return false;
       if (c?.teammateNotElement && c.teammateNotElement === char.element) return false;
       if (c?.teammateRange && c.teammateRange !== char.range) return false;
@@ -445,6 +487,8 @@ export function statSheet(char: Character, effects: Tagged[], gearOnly: boolean)
     const e = t.effect;
     if (e.value === undefined || e.stat === undefined) continue;
     if (e.condition?.vsBoss === false) continue;
+    // บัฟของท่าย่อยท่าเดียว ไม่ใช่ค่าพลังของทั้งท่า — โชว์ในรายการบัฟแทน
+    if (e.condition?.skillRow) continue;
     const v = e.value;
     if (e.target === "enemy" || e.target === "allEnemies") {
       if (e.kind !== "debuff") continue;
@@ -503,14 +547,37 @@ const ROLE_STAT_OF: Record<string, string> = {
   supporter: "supportDmg",
 };
 
+/**
+ * ดาเมจเพิ่มเติม (stat bonusDmg) — % ของดาเมจท่านั้น บวกเพิ่มเป็นอีกก้อน เช่น
+ * Alluring Empress's Reign ของ Nagi "additional Wind DMG equal to 100% of base DMG" → ท่าลม × 2
+ * บัฟของตัวเอง/ทีม หรือดีบัฟบนศัตรู (Embrittled ของ Isabella: ท่าน้ำแข็งของทุกคน +50%) · หลายแหล่งบวกกัน
+ */
+function bonusDamagePct(effects: Sourced[], skill: CycleSkill | "chain", damageType: string, row?: string): number {
+  let pct = 0;
+  for (const { effect: e } of effects) {
+    if (e.stat !== "bonusDmg" || e.value === undefined) continue;
+    const onEnemy = e.target === "enemy" || e.target === "allEnemies";
+    if (onEnemy ? e.kind !== "debuff" : e.kind !== "buff") continue;
+    if (e.condition?.vsBoss === false) continue;
+    if (e.damageType && e.damageType !== damageType) continue;
+    const scopes = e.scopes as string[] | undefined;
+    if (scopes && !scopes.includes(SCOPE_OF[skill])) continue;
+    if (e.condition?.skillRow && !row?.includes(e.condition.skillRow)) continue;
+    pct += e.value;
+  }
+  return pct;
+}
+
 /** weakness: ศัตรูแพ้ธาตุของท่าที่ตี — ไม่ใส่ = ตาม lo.weaknessHit ของบิ้ว (ไม่มี = ไม่ตีจุดอ่อน) */
-export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean } = {}): TeamDamage {
+/** enemyDef: พลังป้องกันศัตรู — ไม่ใส่ = ไม่หักป้องกัน (ยังไม่รู้ค่าของบอส) · ใส่เพื่อดูว่าการลดพลังป้องกันคุ้มแค่ไหน */
+export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean; enemyDef?: number } = {}): TeamDamage {
   const weakness = opts.weakness ?? lo.weaknessHit ?? false;
   const received = receivedEffects(lo, weakness);
+  const weakEl = weakElementOf(lo);
   const members: MemberDamage[] = lo.members.map((mem, i) => {
     const { char, effects: mine } = received[i];
     if (!char) return { characterId: mem.characterId, skills: [], chain: 0, total: 0 };
-    const level = skillLevel(char, lo.awaken);
+    const level = skillLevel(char, mem.awaken ?? lo.awaken);
     const skills: SkillDamage[] = [];
     for (const key of mem.cycle ?? CYCLE_SKILLS) {
       const sk = char.skills?.[key];
@@ -519,6 +586,12 @@ export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean } = {}):
       const rows: SkillRow[] = [];
       let usedLevel = level;
       let sum = 0;
+      // แถว "X Max Hits" (หน่วยครั้ง) = แถว "X DMG" ตีได้หลายครั้ง เช่น Rolling Donut ของ Ellie 9.9% × 21 — คิดว่าโดนครบ
+      const hits = (sk.values ?? []).flatMap((r) => {
+        const m = r.unit === "times" ? /^(.+) Max Hits$/.exec(r.label.en ?? "") : null;
+        const at = m ? valueAt(r.scaling, level) : undefined;
+        return m && at ? [{ prefix: `${m[1]} `, n: at.value }] : [];
+      });
       for (const row of sk.values ?? []) {
         if (row.unit !== "percent") continue;
         const en = row.label.en ?? "";
@@ -526,8 +599,11 @@ export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean } = {}):
         const at = valueAt(row.scaling, level);
         if (!at) continue;
         usedLevel = at.level;
-        rows.push({ label: row.label, value: at.value });
-        sum += computeDamage(inputsFor(char, mine, key, damageType, at.value, weakness)).average;
+        const n = hits.find((h) => en.startsWith(h.prefix))?.n ?? 1;
+        rows.push({ label: row.label, value: at.value * n });
+        sum +=
+          computeDamage(inputsFor(char, mine, key, damageType, at.value * n, weakness, opts.enemyDef, en, weakEl)).average *
+          (1 + bonusDamagePct(mine, key, damageType, en) / 100);
       }
       if (key === "special") sum *= specialCastFactor(char, mine);
       if (rows.length) skills.push({ skill: key, level: usedLevel, rows, damageType, average: sum });
@@ -536,8 +612,12 @@ export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean } = {}):
     let chain = 0;
     const lc = LINK_CHAINS.find((c) => c.id === mem.linkChain);
     const top = lc && topLevel(lc);
-    if (lc && top?.appearanceInfo.dmgPercentOfAtk && chainAppears(lc, char, mem.cycle ?? CYCLE_SKILLS, weakness)) {
-      chain = computeDamage(inputsFor(char, mine, "chain", top.damageType ?? "physical", top.appearanceInfo.dmgPercentOfAtk, weakness)).average;
+    const memberWeak = weakness && (!weakEl || char.element === weakEl);
+    if (lc && top?.appearanceInfo.dmgPercentOfAtk && chainAppears(lc, char, mem.cycle ?? CYCLE_SKILLS, memberWeak, lo.staggerOften)) {
+      const chainType = top.damageType ?? "physical";
+      chain =
+        computeDamage(inputsFor(char, mine, "chain", chainType, top.appearanceInfo.dmgPercentOfAtk, weakness, opts.enemyDef, undefined, weakEl)).average *
+        (1 + bonusDamagePct(mine, "chain", chainType) / 100);
     }
     return { characterId: mem.characterId, skills, chain, total: skills.reduce((n, s) => n + s.average, 0) + chain };
   });

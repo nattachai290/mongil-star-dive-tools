@@ -6,7 +6,7 @@
  */
 import { buildLoadout, character, food, linkChain, monsterling, skill } from "../src/lib/schema/entities";
 import { computeDamage, proficiencyToPercent, sumBuffs } from "../src/lib/formula";
-import { canRecastSpecial, receivedEffects, teamDamage, unusableReason } from "../src/lib/team-damage";
+import { awakenGroups, canRecastSpecial, receivedEffects, statSheet, teamDamage, unusableReason } from "../src/lib/team-damage";
 import { LINK_CHAINS, characterById } from "../src/lib/data";
 import { chainAppears, chainEffects } from "../src/lib/link-chain-effects";
 import { LINK_CHAIN_LIST_IS_COMPLETE, linkableBadge, linkableIds, linkableOf } from "../src/lib/linkable";
@@ -189,6 +189,10 @@ console.log("\nดาเมจรวมทั้งทีม");
     const fsd = characterById("francis-summer-dive")!;
     check("ลิงก์เชนที่โผล่ตอนหลบโต้กลับ ไม่โผล่ในรอบ สับเปลี่ยน/พิเศษ/อัลติเมต", !chainAppears(claw, fsd, ["switch", "special", "ultimate"], true));
     check("ลิงก์เชนที่โผล่ตอนใช้สกิลพิเศษ โผล่ในรอบที่มีสกิลพิเศษ", chainAppears(gem, fsd, ["switch", "special", "ultimate"], true));
+    const msc = LINK_CHAINS.find((c) => c.id === "mutated-spirit-core")!;
+    const bris = characterById("brisshell")!;
+    check("ลิงก์เชนที่โผล่ตอนตีศัตรูมึนงง นับเฉพาะบิ้วที่ทีมทำมึนงงไว",
+      chainAppears(msc, bris, ["switch", "special", "ultimate"], true, true) && !chainAppears(msc, bris, ["switch", "special", "ultimate"], true));
     const mem = { characterId: "gabi", equipment: {}, substats: {}, linkChain: "frangible-pebble",
       monsterlings: [{ id: "rock-fist-dude", traits: [] }] };
     const withChain = teamDamage({ awaken: 0, food: {}, members: [mem] }).members[0];
@@ -197,6 +201,14 @@ console.log("\nดาเมจรวมทั้งทีม");
   check("บัฟที่ต้องหลบหลีกโต้กลับไม่ถูกนับ (เกิดนาน ๆ ที)",
     !receivedEffects({ awaken: 0, food: {}, members: [{ characterId: "gabi", equipment: {}, substats: {},
       monsterlings: [{ id: "amons-shadow", traits: [] }] }] })[0].effects.some((x) => x.effect.trigger === "onEvasionCounter"));
+  {
+    const sir = { headgear: "ascendant-white-wolfs-mask", chestpiece: "ascendant-white-wolfs-restraints" };
+    const one = receivedEffects({ awaken: 0, food: {}, members: [
+      { characterId: "gabi", equipment: sir, substats: {}, monsterlings: [] },
+      { characterId: "francis-summer-dive", equipment: sir, substats: {}, monsterlings: [] },
+    ] })[0].effects.filter((x) => x.effect.target === "team" && x.effect.damageType === "earth" && x.effect.value === 7.5);
+    check("บัฟทีมจากเซ็ตเดียวกันสองคน นับครั้งเดียว", one.length === 1, `ได้ ${one.length}`);
+  }
   check("ตีจุดอ่อนแรงกว่าไม่ตี", teamDamage(plain, { weakness: true }).total > teamDamage(plain).total);
   check("Trait ดาเมจจุดอ่อนไม่มีผลถ้าไม่ตีจุดอ่อน",
     Math.abs(teamDamage(withWeakTrait).total - teamDamage(plain).total) < 1e-6);
@@ -337,6 +349,75 @@ check("มอนที่ไม่มีลิงก์เชนชี้มา 
   "ถ้ายังไม่ยืนยันว่ารายการลิงก์เชนในเกมครบ ห้ามสรุปว่าใส่ไม่ได้");
 check("unknown ไม่แปะป้าย", linkableBadge("unknown") === null);
 check("yes แปะป้ายสองภาษา", linkableBadge("yes")?.th === "ใส่ลิงก์เชนได้");
+
+// ---------- ปลุกพลังแยกรายตัว ----------
+{
+  const gabi = characterById("gabi")!;
+  // ตัวละครสมมติ: มีตัวเลขแค่ขั้น 3 กับ 5 ที่เหลือเป็นข้อความ
+  const textOnly = { ...gabi, awaken: gabi.awaken.map((a) => (a.stage === 3 || a.stage === 5 ? a : { ...a, effects: [], skillLevelBonus: undefined })) };
+  const g = awakenGroups(textOnly);
+  check("ขั้นปลุกพลังที่มีแค่ข้อความรวมกับขั้นก่อนหน้า (0–2 / 3–4 / 5–6)",
+    JSON.stringify(g) === "[[0,2],[3,4],[5,6]]", JSON.stringify(g));
+  check("ขั้นที่บิ้วจัดของชุดใหม่แยกเป็นตัวเลือกของตัวเอง",
+    JSON.stringify(awakenGroups(textOnly, [1])) === "[[0,0],[1,2],[3,4],[5,6]]");
+  const lo = buildLoadout.parse({
+    awaken: 0,
+    members: [{ characterId: "gabi" }, { characterId: "brisshell" }],
+  });
+  const atMember = (stage: number) => receivedEffects({ ...lo, members: lo.members.map((m, i) => (i === 0 ? { ...m, awaken: stage } : m)) });
+  const count = (r: ReturnType<typeof receivedEffects>, i: number) => r[i].effects.filter((t) => t.from.en?.includes("Awaken") || t.from.th?.includes("ปลุกพลัง")).length;
+  const a0 = receivedEffects(lo), a3 = atMember(3);
+  check("ปลุกพลังของตัวหนึ่งไม่ลามไปตัวอื่นในทีม", count(a3, 1) === count(a0, 1), `${count(a3, 1)} vs ${count(a0, 1)}`);
+  check("ตัวที่ปลุกพลังขั้นสูงขึ้นได้เอฟเฟกต์ปลุกพลังเพิ่ม", a3[0].effects.length > a0[0].effects.length);
+
+  // condition.skillRow: กาบี้ปลุกพลัง 4 เพิ่มดาเมจหนึ่งพิฆาต 104% — แถวอื่นของโจมตีพื้นฐานไม่ได้
+  const solo = (stage: number) => teamDamage(buildLoadout.parse({ awaken: 0, members: [{ characterId: "gabi", awaken: stage }] }));
+  const rowAvg = (stage: number, label: string) => {
+    const basic = solo(stage).members[0].skills.find((x) => x.skill === "basic");
+    return basic?.rows.findIndex((r) => r.label.en === label) ?? -1;
+  };
+  check("แถวหนึ่งพิฆาตนับในรอบของกาบี้", rowAvg(0, "Crushing Blow DMG") >= 0);
+  const b3 = solo(3).members[0].skills.find((x) => x.skill === "basic")!.average;
+  const b4 = solo(4).members[0].skills.find((x) => x.skill === "basic")!.average;
+  check("บัฟเฉพาะแถว (หนึ่งพิฆาต) เพิ่มดาเมจโจมตีพื้นฐานรวม", b4 > b3, `${b3} → ${b4}`);
+  const sheet = (stage: number) => {
+    const r = receivedEffects(buildLoadout.parse({ awaken: 0, members: [{ characterId: "gabi", awaken: stage }] }))[0];
+    return statSheet(r.char!, r.effects, false).basicAttackDmg;
+  };
+  check("บัฟเฉพาะแถวไม่นับในตารางค่าพลังรวม", sheet(4) === sheet(3), `${sheet(3)} vs ${sheet(4)}`);
+}
+
+// ---------- จุดอ่อนธาตุนับเฉพาะธาตุของตัวหลัก ----------
+{
+  // ผู้เล่นบอก 2026-10-31: ตีบอสที่แพ้ธาตุดินด้วยธาตุลม ไม่ได้อะไรจากจุดอ่อน
+  const lo = buildLoadout.parse({ awaken: 0, members: [{ characterId: "gabi" }, { characterId: "chloe" }] });
+  const w = teamDamage(lo, { weakness: true }), n = teamDamage(lo, { weakness: false });
+  const gain = (i: number) => w.members[i].total / n.members[i].total;
+  check("ตัวธาตุอื่นในทีมได้จากจุดอ่อนน้อยกว่าตัวธาตุเดียวกับตัวหลัก", gain(1) < gain(0), `${gain(1)} vs ${gain(0)}`);
+}
+
+// ---------- แถวตีหลายครั้ง ----------
+{
+  // Ellie: Rolling Donut DMG 9.9% · Rolling Donut Max Hits 21 → นับ 9.9 × 21
+  const r = teamDamage(buildLoadout.parse({ awaken: 0, members: [{ characterId: "ellie" }] }));
+  const row = r.members[0].skills.find((x) => x.skill === "special")?.rows.find((x) => x.label.en === "Rolling Donut DMG");
+  check("แถว X DMG คูณจำนวนครั้งจากแถว X Max Hits", Math.abs((row?.value ?? 0) - 9.9 * 21) < 1e-6, String(row?.value));
+}
+
+// ---------- ดาเมจเพิ่มเติม (bonusDmg) ----------
+{
+  // Nagi: Alluring Empress's Reign = ดาเมจลมเพิ่มเติม 100% → ท่าลมของ Nagi × 2 · Imperial Grace (ปลุก 2) ให้เพื่อน ไม่ใช่ตัวเอง
+  const nagi = (awaken: number, team: string[] = []) =>
+    teamDamage(buildLoadout.parse({ awaken, members: [{ characterId: "nagi" }, ...team.map((c) => ({ characterId: c }))] }));
+  const ult = (r: ReturnType<typeof teamDamage>) => r.members[0].skills.find((x) => x.skill === "ultimate")!.average;
+  check("Imperial Grace ไม่ย้อนกลับไปให้ Nagi เอง", Math.abs(ult(nagi(2)) - ult(nagi(1))) < 1e-6, `${ult(nagi(1))} vs ${ult(nagi(2))}`);
+  const chloe = (aw: number) => nagi(aw, ["chloe"]).members[1].total;
+  check("Imperial Grace ให้เพื่อนธาตุลมได้ดาเมจเพิ่มเติม", chloe(2) > chloe(1) * 1.5, `${chloe(1)} → ${chloe(2)}`);
+  // Isabella ปลุก 4: Embrittled บนศัตรู → ท่าน้ำแข็งของเพื่อนในทีม +50%
+  const isa = (aw: number) => teamDamage(buildLoadout.parse({ awaken: 0, members: [{ characterId: "ophelia" }, { characterId: "isabella", awaken: aw }] }));
+  const oSwitch = (r: ReturnType<typeof teamDamage>) => r.members[0].skills.find((x) => x.skill === "switch")!.average;
+  check("Embrittled ทำให้ท่าน้ำแข็งของเพื่อน +50%", Math.abs(oSwitch(isa(4)) / oSwitch(isa(3)) - 1.5) < 1e-6, String(oSwitch(isa(4)) / oSwitch(isa(3))));
+}
 
 console.log(failed === 0 ? "\nผ่านทั้งหมด\n" : `\nไม่ผ่าน ${failed} ข้อ\n`);
 if (failed > 0) process.exit(1);

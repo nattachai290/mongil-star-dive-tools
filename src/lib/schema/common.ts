@@ -176,6 +176,17 @@ export const effect = z
          * ตัวคำนวณนับให้เฉพาะตัวละครที่มีสกิลเปลี่ยนธาตุการตีปกติ (skill.changesBasicAttackTo)
          */
         requiresAttackElementChange: z.literal(true).optional(),
+        /**
+         * ใช้กับแถวดาเมจของสกิลที่ชื่อ (อังกฤษ) มีคำนี้เท่านั้น เช่น "Crushing Blow", "Alien Power"
+         * สำหรับบัฟที่จอบอกว่าเพิ่มดาเมจของท่าย่อยท่าเดียว ไม่ใช่ทั้งสกิล
+         * ตารางค่าพลังรวมไม่นับ (ไม่ได้ใช้กับทั้งท่า) แต่โชว์ในรายการบัฟ
+         */
+        skillRow: z.string().min(1).optional(),
+        /**
+         * บัฟทีมที่ให้ "เพื่อน" ไม่รวมตัวเอง เช่น Imperial Grace ของ Nagi ("grants teammates")
+         * ตัวคำนวณไม่ส่งบัฟนี้กลับไปให้ตัวที่เป็นเจ้าของ
+         */
+        teammatesOnly: z.literal(true).optional(),
         note: text.optional(),
       })
       .optional(),

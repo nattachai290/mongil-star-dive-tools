@@ -26,13 +26,6 @@
     }
   ],
   "effectsRank": "gold",
-  "drops": [
-    {
-      "name": {
-        "th": "ใยแมงมุมหนาแน่น"
-      }
-    }
-  ],
   "images": {
     "icon": "spadupa-icon.webp"
   },

@@ -28,13 +28,6 @@
     }
   ],
   "effectsRank": "gold",
-  "drops": [
-    {
-      "name": {
-        "th": "เขาสายฟ้าขนาดยักษ์"
-      }
-    }
-  ],
   "images": {
     "icon": "hahnul-icon.webp"
   },

@@ -25,13 +25,6 @@
     }
   ],
   "effectsRank": "gold",
-  "drops": [
-    {
-      "name": {
-        "th": "เปลือกของสัตว์เทพสีแดง"
-      }
-    }
-  ],
   "images": {
     "icon": "red-shadow-icon.webp"
   },

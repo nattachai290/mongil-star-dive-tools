@@ -2,17 +2,20 @@
   "_meta": {
     "version": 1,
     "updatedAt": "2026-09-13",
-    "note": "คำศัพท์ทั้งหมดที่ใช้ได้ในไฟล์ข้อมูล — ห้ามใช้คำนอกไฟล์นี้ validate:data จะ fail. ป้าย th/en ใช้เป็นข้อความบนหน้าเว็บด้วย ไม่ต้องแปลซ้ำที่อื่น"
+    "note": "คำศัพท์ทั้งหมดที่ใช้ได้ในไฟล์ข้อมูล — ห้ามใช้คำนอกไฟล์นี้ validate:data จะ fail. ป้าย th/en ใช้เป็นข้อความบนหน้าเว็บด้วย ไม่ต้องแปลซ้ำที่อื่น | dexBook ภาษาอังกฤษ (Field Monsters · Legendary Monsters · Event Monsters) **เว็บตั้งเอง ไม่ได้อ่านจากจอเกม** — เป็นแค่หัวข้อแบ่งกลุ่มบนเว็บ ผู้เล่นตกลง 2026-10-31 ไม่ต้องหาคำจากจอ"
   },
   "dexBook": {
     "field": {
-      "th": "สมุดภาพมอน"
+      "th": "สมุดภาพมอน",
+      "en": "Field Monsters"
     },
     "legendary": {
-      "th": "มอนสเตอร์ตำนาน"
+      "th": "มอนสเตอร์ตำนาน",
+      "en": "Legendary Monsters"
     },
     "event": {
-      "th": "กิจกรรม"
+      "th": "กิจกรรม",
+      "en": "Event Monsters"
     }
   },
   "appearanceCondition": {
@@ -239,6 +242,10 @@
       "th": "ความเสียหายที่ได้รับ",
       "en": "DMG Taken"
     },
+    "bonusDmg": {
+      "th": "ดาเมจเพิ่มเติม",
+      "en": "Bonus DMG"
+    },
     "defShred": {
       "th": "ลดพลังป้องกันศัตรู",
       "en": "DEF Shred"
@@ -285,7 +292,8 @@
       "en": "Stamina Consumption"
     },
     "roleMastery": {
-      "th": "ความเชี่ยวชาญตามบทบาท"
+      "th": "ความเชี่ยวชาญตามบทบาท",
+      "en": "Role Specialization"
     },
     "supportDmg": {
       "th": "ดาเมจสนับสนุน",

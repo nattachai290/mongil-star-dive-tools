@@ -1,7 +1,16 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BuildTabs } from "@/components/BuildTabs";
+import {
+  AwakenOnly,
+  AwakenProvider,
+  AwakenStatsTable,
+  AwakenSwitch,
+  AwakenText,
+  MemberAwakenSelect,
+  type StatRow,
+} from "@/components/AwakenSelect";
 import { EffectLine } from "@/components/EffectLine";
 import { createTranslate } from "@/i18n";
 import { LOCALES, isLocale, type Locale } from "@/lib/i18n";
@@ -24,9 +33,11 @@ import { chainAppears } from "@/lib/link-chain-effects";
 import {
   CYCLE_SKILLS,
   artifactFusion,
+  awakenGroups,
   receivedEffects,
   specialCooldownReduction,
   statSheet,
+  teamDamage,
   unusableReason,
   type StatSheet,
   type Tagged,
@@ -222,84 +233,99 @@ function Slot({ title, children }: { title: string; children: React.ReactNode })
   );
 }
 
-const pctFmt = (v: number) => `${Math.round(v * 100) / 100}%`;
-const numFmt = (v: number) => Math.round(v).toLocaleString("en-US");
-
-/** ค่าพลังรวม — ของที่ใส่อย่างเดียว เทียบกับรวมบัฟทั้งหมด + รายการบัฟแยกตามที่มา */
-function StatsSlot({ char, effects, locale, t }: { char: Character; effects: Tagged[]; locale: Locale; t: T }) {
-  const gear = statSheet(char, effects, true);
-  const all = statSheet(char, effects, false);
+/**
+ * ค่าพลังรวม — ของที่ใส่อย่างเดียว เทียบกับรวมบัฟทั้งหมด + รายการบัฟแยกตามที่มา
+ * combos: ทุกชุดค่าผสมขั้นปลุกพลัง · ตารางส่งไปแค่ตัวเลข ส่วนบัฟแต่ละกลุ่ม render ครั้งเดียวแล้วซ่อน/โชว์ตามชุดที่เลือก
+ * (ผู้เล่นถาม 2026-10-31 ว่าหน้าใหญ่ไป)
+ */
+function StatsSlot({
+  char,
+  combos,
+  locale,
+  t,
+}: {
+  char: Character;
+  combos: { key: string; effects: Tagged[] }[];
+  locale: Locale;
+  t: T;
+}) {
   const roleStat = { fighter: "brawlDmg", assassin: "suppressionDmg", destroyer: "neutralizationDmg", supporter: "supportDmg" }[
     char.role as string
   ];
-  const rows: { label: string; key: keyof StatSheet; fmt: (v: number) => string }[] = [
-    { label: label("stat", "atk", locale), key: "atk", fmt: numFmt },
-    { label: label("stat", "def", locale), key: "def", fmt: numFmt },
-    { label: label("stat", "hp", locale), key: "hp", fmt: numFmt },
-    { label: label("stat", "critRate", locale), key: "critRate", fmt: pctFmt },
-    { label: label("stat", "critDmg", locale), key: "critDmg", fmt: pctFmt },
+  const rows: (StatRow & { key: keyof StatSheet })[] = [
+    { label: label("stat", "atk", locale), key: "atk", fmt: "num" },
+    { label: label("stat", "def", locale), key: "def", fmt: "num" },
+    { label: label("stat", "hp", locale), key: "hp", fmt: "num" },
+    { label: label("stat", "critRate", locale), key: "critRate", fmt: "pct" },
+    { label: label("stat", "critDmg", locale), key: "critDmg", fmt: "pct" },
     {
       label:
         locale === "en"
           ? `${label("element", char.element, locale)} ${t("builds.stats.element")}`
           : `${t("builds.stats.element")}${label("element", char.element, locale)}`,
-      key: "elementDmg", fmt: pctFmt },
-    { label: t("builds.stats.basic"), key: "basicAttackDmg", fmt: pctFmt },
-    { label: t("builds.stats.skill"), key: "skillDmg", fmt: pctFmt },
-    { label: t("builds.stats.boss"), key: "bossDmg", fmt: pctFmt },
-    { label: t("builds.stats.weakness"), key: "weaknessDmg", fmt: pctFmt },
-    { label: t("builds.stats.dmgBonus"), key: "dmgBonus", fmt: pctFmt },
-    { label: t("builds.stats.mastery"), key: "roleMastery", fmt: numFmt },
-    ...(roleStat ? [{ label: label("stat", roleStat, locale), key: "roleDmg" as const, fmt: pctFmt }] : []),
-    { label: t("builds.stats.specialCd"), key: "specialCd", fmt: (v: number) => `${Math.round(v * 100) / 100}${t("builds.stats.sec")}` },
-    { label: t("builds.stats.enemyDef"), key: "enemyDefDown", fmt: pctFmt },
-    { label: t("builds.stats.enemyRes"), key: "enemyResDown", fmt: pctFmt },
+      key: "elementDmg", fmt: "pct" },
+    { label: t("builds.stats.basic"), key: "basicAttackDmg", fmt: "pct" },
+    { label: t("builds.stats.skill"), key: "skillDmg", fmt: "pct" },
+    { label: t("builds.stats.boss"), key: "bossDmg", fmt: "pct" },
+    { label: t("builds.stats.weakness"), key: "weaknessDmg", fmt: "pct" },
+    { label: t("builds.stats.dmgBonus"), key: "dmgBonus", fmt: "pct" },
+    { label: t("builds.stats.mastery"), key: "roleMastery", fmt: "num" },
+    ...(roleStat ? [{ label: label("stat", roleStat, locale), key: "roleDmg" as const, fmt: "pct" as const }] : []),
+    { label: t("builds.stats.specialCd"), key: "specialCd", fmt: "sec" },
+    { label: t("builds.stats.enemyDef"), key: "enemyDefDown", fmt: "pct" },
+    { label: t("builds.stats.enemyRes"), key: "enemyResDown", fmt: "pct" },
   ];
 
-  // บัฟ (ไม่ใช่ค่าพลังของของ) จัดกลุ่มตามที่มา
-  const groups = new Map<string, { from: LocalizedText; effects: Effect[] }>();
-  for (const x of effects) {
-    if (x.gear) continue;
-    const k = `${x.from.th ?? ""}|${x.from.en ?? ""}`;
-    if (!groups.has(k)) groups.set(k, { from: x.from, effects: [] });
-    groups.get(k)!.effects.push(x.effect);
+  const values: Record<string, [number[], number[]]> = {};
+  const counts: Record<string, string> = {};
+  // บัฟ (ไม่ใช่ค่าพลังของของ) จัดกลุ่มตามที่มา — กลุ่มเดียวกันทุกชุดค่าผสม render ครั้งเดียว
+  const groups = new Map<string, { from: LocalizedText; effects: Effect[]; combos: string[] }>();
+  for (const { key, effects } of combos) {
+    const gear = statSheet(char, effects, true);
+    const all = statSheet(char, effects, false);
+    values[key] = [rows.map((r) => gear[r.key]), rows.map((r) => all[r.key])];
+    const mine = new Map<string, { from: LocalizedText; effects: Effect[] }>();
+    for (const x of effects) {
+      if (x.gear) continue;
+      const k = `${x.from.th ?? ""}|${x.from.en ?? ""}`;
+      if (!mine.has(k)) mine.set(k, { from: x.from, effects: [] });
+      mine.get(k)!.effects.push(x.effect);
+    }
+    for (const g of mine.values()) {
+      const id = JSON.stringify(g);
+      if (!groups.has(id)) groups.set(id, { ...g, combos: [] });
+      groups.get(id)!.combos.push(key);
+    }
+    counts[key] = String(mine.size);
   }
+  const everywhere = combos.length;
 
   return (
     <Slot title={t("builds.stats")}>
-      <table className="w-full text-sm">
-        <thead>
-          <tr className="text-[11px] text-muted">
-            <th className="py-1 text-start font-normal"></th>
-            <th className="py-1 text-end font-normal">{t("builds.stats.gear")}</th>
-            <th className="py-1 text-end font-normal">{t("builds.stats.buffed")}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows
-            .filter((r) => gear[r.key] !== 0 || all[r.key] !== 0)
-            .map((r) => (
-              <tr key={r.key} className="border-t border-line">
-                <td className="py-1 text-xs text-ink-2">{r.label}</td>
-                <td className="py-1 text-end font-mono">{r.fmt(gear[r.key])}</td>
-                <td className="py-1 text-end font-mono text-gold">{r.fmt(all[r.key])}</td>
-              </tr>
-            ))}
-        </tbody>
-      </table>
+      <AwakenStatsTable
+        rows={rows.map(({ label: l, fmt }) => ({ label: l, fmt }))}
+        values={values}
+        head={[t("builds.stats.gear"), t("builds.stats.buffed")]}
+        sec={t("builds.stats.sec")}
+      />
       <p className="mt-2 text-[11px] text-muted">{t("builds.stats.note")}</p>
       {groups.size > 0 && (
         <details className="mt-3 border-t border-line pt-2">
           <summary className="cursor-pointer text-xs font-semibold text-ink-2">
-            {t("builds.buffs")} ({groups.size})
+            {t("builds.buffs")} (<AwakenText values={counts} />)
           </summary>
           <ul className="mt-2 space-y-3">
-            {[...groups.values()].map((g, i) => (
-              <li key={i}>
-                <p className="text-xs font-semibold">{name(g.from, locale, "")}</p>
-                <Effects effects={g.effects} locale={locale} />
-              </li>
-            ))}
+            {[...groups.values()].map((g, i) => {
+              const body = (
+                <>
+                  <p className="text-xs font-semibold">{name(g.from, locale, "")}</p>
+                  <Effects effects={g.effects} locale={locale} />
+                </>
+              );
+              return (
+                <li key={i}>{g.combos.length === everywhere ? body : <AwakenOnly combos={g.combos}>{body}</AwakenOnly>}</li>
+              );
+            })}
           </ul>
         </details>
       )}
@@ -313,7 +339,9 @@ function MemberGear({
   effects,
   team,
   weaknessHit,
-  showStats,
+  staggerOften,
+  stats,
+  awakenSelect,
   dup,
   locale,
   t,
@@ -322,8 +350,11 @@ function MemberGear({
   effects: Tagged[];
   team: Character[];
   weaknessHit: boolean;
-  /** ค่าพลังรวมโชว์เฉพาะตัวหลัก (ตัวแรก) — ผู้เล่นสั่ง 2026-10-31 */
-  showStats: boolean;
+  staggerOften: boolean;
+  /** ค่าพลังรวม — โชว์เฉพาะตัวหลัก (ตัวแรก) · ผู้เล่นสั่ง 2026-10-31 */
+  stats?: ReactNode;
+  /** dropdown ขั้นปลุกพลังของตัวนี้ */
+  awakenSelect?: ReactNode;
   dup: Set<string>;
   locale: Locale;
   t: T;
@@ -338,7 +369,7 @@ function MemberGear({
 
   return (
     <section className="rounded-xl border border-line p-3">
-      <header className="mb-3 flex items-center gap-2.5">
+      <header className="mb-3 flex flex-wrap items-center gap-2.5">
         <Icon src={img} />
         <div>
           <h3 className="text-sm font-semibold">
@@ -353,6 +384,7 @@ function MemberGear({
             </p>
           )}
         </div>
+        {awakenSelect}
       </header>
       <div className="grid gap-3 sm:grid-cols-2">
         <Slot title={t("builds.artifact")}>
@@ -475,7 +507,7 @@ function MemberGear({
             {chain ? (
               <ChainInfo
                 chain={chain}
-                appears={!!c && chainAppears(chain, c, mem.cycle ?? CYCLE_SKILLS, weaknessHit)}
+                appears={!!c && chainAppears(chain, c, mem.cycle ?? CYCLE_SKILLS, weaknessHit, staggerOften)}
                 locale={locale}
                 t={t}
               />
@@ -499,19 +531,28 @@ function MemberGear({
             )}
           </Slot>
         </div>
-        {c && showStats && (
-          <div className="sm:col-span-2">
-            <StatsSlot char={c} effects={effects} locale={locale} t={t} />
-          </div>
-        )}
+        {stats && <div className="sm:col-span-2">{stats}</div>}
       </div>
     </section>
   );
 }
 
-function Loadout({ lo, locale, t }: { lo: BuildLoadout; locale: Locale; t: T }) {
+function Loadout({
+  lo,
+  stats,
+  selects,
+  locale,
+  t,
+}: {
+  lo: BuildLoadout;
+  stats: ReactNode;
+  selects: ReactNode[];
+  locale: Locale;
+  t: T;
+}) {
   // มอนตัวเดียวกันบนหลายคนในทีม บัฟไม่ทับซ้อน
-  const all = lo.members.flatMap((m) => [...m.monsterlings.map((x) => x.id), ...(m.legendary ? [m.legendary.id] : [])]);
+  // มอนตำนานใส่ซ้ำได้ทุกตัวละคร (ผู้เล่นบอก 2026-10-31) จึงไม่นับ
+  const all = lo.members.flatMap((m) => m.monsterlings.map((x) => x.id));
   const dup = new Set(all.filter((m, i) => all.indexOf(m) !== i));
   const received = receivedEffects(lo);
   const team = lo.members.flatMap((m) => characterById(m.characterId) ?? []);
@@ -548,13 +589,141 @@ function Loadout({ lo, locale, t }: { lo: BuildLoadout; locale: Locale; t: T }) 
           effects={received[i].effects}
           team={team}
           weaknessHit={lo.weaknessHit ?? false}
-          showStats={i === 0}
+          staggerOften={lo.staggerOften ?? false}
+          stats={i === 0 ? stats : undefined}
+          awakenSelect={selects[i]}
           dup={dup}
           locale={locale}
           t={t}
         />
       ))}
     </div>
+  );
+}
+
+/** ทุกชุดค่าผสมของขั้นปลุกพลังรายตัว (ใช้ขั้นต่ำสุดของแต่ละช่วงเป็นตัวแทน) */
+function combos(groups: [number, number][][]): number[][] {
+  return groups.reduce<number[][]>((acc, g) => acc.flatMap((c) => g.map(([s]) => [...c, s])), [[]]);
+}
+
+/**
+ * บิ้วหนึ่งทีม — dropdown ขั้นปลุกพลังแยกรายตัว (ผู้เล่นสั่ง 2026-10-31)
+ * ขั้นที่ให้ผลเหมือนกันรวมเป็นตัวเลือกเดียว · ส่วนของที่ใส่ render ครั้งเดียวต่อ "ของชุดเดียวกัน + สีเทาเหมือนกัน"
+ * ส่วนค่าพลังรวม render ต่อชุดค่าผสม แล้วฝั่งเบราว์เซอร์แค่สลับว่าโชว์อันไหน
+ */
+function BuildView({ b, locale, t }: { b: (typeof BUILDS)[number]; locale: Locale; t: T }) {
+  const first = b.loadouts[0];
+  const chars = first.members.map((m) => characterById(m.characterId));
+  // ตัวหลักต้องแยกขั้นที่บิ้วจัดของชุดใหม่ด้วย
+  const groups = chars.map((c, i) => awakenGroups(c, i === 0 ? b.loadouts.map((x) => x.awaken) : []));
+  const groupOf = (i: number, stage: number) => groups[i].find(([s, e]) => stage >= s && stage <= e)![0];
+  const initial = first.members.map((m, i) => groupOf(i, m.awaken ?? first.awaken));
+
+  const gearPanels: Record<string, ReactNode> = {};
+  const gearPick: Record<string, string> = {};
+  const statsByGear: Record<string, { key: string; effects: Tagged[] }[]> = {};
+  // ข้อความ "ยังไม่ได้จัดของแยก" — 1 อันต่อชุดของ ซ่อน/โชว์ตามชุดค่าผสม
+  const inherited = new Map<number, string[]>();
+  const gearLo: Record<string, BuildLoadout> = {};
+
+  for (const combo of combos(groups)) {
+    const key = combo.join(",");
+    const baseIdx = b.loadouts.reduce((best, x, i) => (x.awaken <= combo[0] ? i : best), 0);
+    const base = b.loadouts[baseIdx];
+    const lo: BuildLoadout = {
+      ...base,
+      awaken: combo[0],
+      members: base.members.map((m, i) => ({ ...m, awaken: combo[i] ?? combo[0] })),
+    };
+    const received = receivedEffects(lo);
+    // สีเทาขึ้นกับคูลดาวน์ที่ลดได้ — ปลุกพลังที่ลดคูลดาวน์จึงอาจเปลี่ยนส่วนของที่ใส่ด้วย
+    const gearKey = [baseIdx, ...received.map((r) => specialCooldownReduction(r.effects))].join("|");
+    gearPick[key] = gearKey;
+    gearLo[gearKey] ??= lo;
+    (statsByGear[gearKey] ??= []).push({ key, effects: received[0]?.effects ?? [] });
+    if (base.awaken !== combo[0]) inherited.set(base.awaken, [...(inherited.get(base.awaken) ?? []), key]);
+  }
+
+  const selects = groups.map((g, i) => (
+    <MemberAwakenSelect
+      key={i}
+      member={i}
+      label={t("builds.awaken")}
+      options={g.map(([s, e]) => [s, s === e ? String(s) : `${s}–${e}`])}
+    />
+  ));
+  for (const [gearKey, lo] of Object.entries(gearLo)) {
+    const main = characterById(lo.members[0].characterId);
+    const stats = main && <StatsSlot char={main} combos={statsByGear[gearKey]} locale={locale} t={t} />;
+    gearPanels[gearKey] = <Loadout lo={lo} stats={stats} selects={selects} locale={locale} t={t} />;
+  }
+
+  return (
+    <AwakenProvider initial={initial}>
+      <div className="space-y-3">
+        {[...inherited].map(([n, keys]) => (
+          <AwakenOnly key={n} combos={keys}>
+            <p className="text-xs text-gold">{t("builds.awakenInherited").replace("{n}", String(n))}</p>
+          </AwakenOnly>
+        ))}
+        <AwakenSwitch panels={gearPanels} pick={gearPick} />
+      </div>
+    </AwakenProvider>
+  );
+}
+
+/**
+ * ตัวแทน — ถ้าไม่มีตัวใดตัวหนึ่งในทีม (ผู้เล่นสั่ง 2026-10-31)
+ * คิดที่ขั้นปลุกพลังเริ่มต้นของบิ้ว ไม่ตาม dropdown · ดาเมจรวมทีมเทียบทีมหลัก
+ */
+function Substitutes({ lo, locale, t }: { lo: BuildLoadout; locale: Locale; t: T }) {
+  const subs = lo.substitutes ?? [];
+  if (subs.length === 0) return null;
+  const main = teamDamage(lo).total;
+  return (
+    <section className="mt-6 border-t border-line pt-4">
+      <h3 className="font-display text-base font-semibold">{t("builds.substitutes")}</h3>
+      <p className="mt-1 text-xs text-ink-2">{t("builds.substitutesNote")}</p>
+      <div className="mt-3 space-y-2">
+        {subs.map((sub, k) => {
+          const swapped: BuildLoadout = {
+            ...lo,
+            members: lo.members.map((m) => (m.characterId === sub.replaces ? sub.member : m)),
+          };
+          const i = swapped.members.indexOf(sub.member);
+          const received = receivedEffects(swapped);
+          const team = swapped.members.flatMap((m) => characterById(m.characterId) ?? []);
+          const others = swapped.members.filter((m) => m !== sub.member).flatMap((m) => m.monsterlings.map((x) => x.id));
+          const dup = new Set(sub.member.monsterlings.map((x) => x.id).filter((id) => others.includes(id)));
+          const pct = teamDamage(swapped).total / main - 1;
+          const pctText = `${pct >= 0 ? "+" : "−"}${Math.abs(Math.round(pct * 1000) / 10)}%`;
+          const replaced = name(characterById(sub.replaces)?.name, locale, sub.replaces);
+          const who = name(characterById(sub.member.characterId)?.name, locale, sub.member.characterId);
+          return (
+            <details key={k} className="rounded-xl border border-line p-3">
+              <summary className="cursor-pointer text-sm">
+                <span className="text-muted">{t("builds.replaces").replace("{name}", replaced)}:</span>{" "}
+                <strong className="font-semibold">{who}</strong>{" "}
+                <span className="text-xs text-gold">{t("builds.teamDmgVsMain").replace("{pct}", pctText)}</span>
+              </summary>
+              {sub.note && <p className="mt-2 text-xs text-ink-2">{name(sub.note, locale, "")}</p>}
+              <div className="mt-3">
+                <MemberGear
+                  mem={sub.member}
+                  effects={received[i]?.effects ?? []}
+                  team={team}
+                  weaknessHit={lo.weaknessHit ?? false}
+                  staggerOften={lo.staggerOften ?? false}
+                  dup={dup}
+                  locale={locale}
+                  t={t}
+                />
+              </div>
+            </details>
+          );
+        })}
+      </div>
+    </section>
   );
 }
 
@@ -580,12 +749,9 @@ export default async function BuildsPage({ params }: { params: Promise<{ locale:
             return (
               <article key={b.id} id={b.id} className="rounded-xl border border-line p-4">
                 <h2 className="mb-4 font-display text-lg font-semibold">{team.join(" · ")}</h2>
-                <BuildTabs
-                  labels={b.loadouts.map((lo) => `${t("builds.awaken")} ${lo.awaken}`)}
-                  panels={b.loadouts.map((lo) => (
-                    <Loadout key={lo.awaken} lo={lo} locale={locale as Locale} t={t} />
-                  ))}
-                />
+                <p className="mb-3 text-xs text-ink-2">{t("builds.awakenSelect")}</p>
+                <BuildView b={b} locale={locale as Locale} t={t} />
+                <Substitutes lo={b.loadouts[0]} locale={locale as Locale} t={t} />
               </article>
             );
           })}

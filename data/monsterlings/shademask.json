@@ -26,13 +26,6 @@
     }
   ],
   "effectsRank": "gold",
-  "drops": [
-    {
-      "name": {
-        "th": "เชือกวิญญาณยักษ์โทแกบี"
-      }
-    }
-  ],
   "images": {
     "icon": "shademask-icon.webp"
   },

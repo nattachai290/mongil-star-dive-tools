@@ -12,7 +12,7 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { z } from "zod";
-import { SCHEMAS, equipmentSet, gearMainStat, gearSubstat, monsterDexEntry, traitPool, dropSources, monsterStatTiers, type Collection } from "../src/lib/schema/entities";
+import { SCHEMAS, equipmentSet, gearMainStat, gearSubstat, monsterDexEntry, traitPool, monsterStatTiers, type Collection } from "../src/lib/schema/entities";
 import { FORMULA, IMPLEMENTED_STEPS } from "../src/lib/formula";
 
 const ROOT = process.cwd();
@@ -173,32 +173,6 @@ if (!statTierParsed.success) {
     if (statTierIds.has(t.id)) fail("data/meta/monster-stat-tiers.json", `id ซ้ำ: ${t.id}`);
     statTierIds.add(t.id);
   }
-}
-
-// ---------- ศัตรูที่ดรอปของแต่ไม่มีมอนสเตอร์ลิง ----------
-const dropSrcRaw = readJson(join(DATA, "meta", "drop-sources.json"), "data/meta/drop-sources.json");
-const dropSrcParsed = dropSources.safeParse(dropSrcRaw);
-if (!dropSrcParsed.success) {
-  for (const issue of dropSrcParsed.error.issues)
-    fail("data/meta/drop-sources.json", `${issue.path.join(".") || "(root)"}: ${issue.message}`);
-} else {
-  const seenIds = new Set<string>();
-  for (const e of dropSrcParsed.data.entries) {
-    if (seenIds.has(e.id)) fail("data/meta/drop-sources.json", `id ซ้ำ: ${e.id}`);
-    seenIds.add(e.id);
-    // ถ้าวันหลังตัวไหนโผล่ในสมุดภาพ แปลว่าไม่ใช่ "ไม่มีมอนสเตอร์ลิง" อีกต่อไป ต้องย้ายไป
-    // อ่านสมุดภาพซ้ำตรงนี้เอง เพราะบล็อกที่แจงสมุดภาพอยู่ล่างกว่านี้ในไฟล์
-    const dexForCheck = readJson(join(DATA, "meta", "monster-dex.json"), "data/meta/monster-dex.json") as
-      | { entries?: { name?: { th?: string } }[] }
-      | undefined;
-    const inDex = (dexForCheck?.entries ?? []).some((d) => d.name?.th && e.name.th && d.name.th === e.name.th);
-    if (inDex)
-      fail(
-        "data/meta/drop-sources.json",
-        `${e.id}: ชื่อนี้มีอยู่ในสมุดภาพแล้ว — ถ้ามีมอนสเตอร์ลิงจริง ให้ย้าย drops ไปไว้ที่ไฟล์มอน`,
-      );
-  }
-  countMissingLocale(dropSrcParsed.data.entries, "data/meta/drop-sources.json", ["entries"]);
 }
 
 // ลักษณะเฉพาะสุ่มรายตัวตอนจับ ไม่ผูกกับสายพันธุ์ — ถ้ามันไปโผล่ในไฟล์มอนเมื่อไร
@@ -468,7 +442,12 @@ type MemberShape = {
   linkChain?: string;
   legendary?: MonShape;
 };
-type LoadoutShape = { awaken: number; food?: { entree?: string; side?: string }; members?: MemberShape[] };
+type LoadoutShape = {
+  awaken: number;
+  food?: { entree?: string; side?: string };
+  members?: MemberShape[];
+  substitutes?: { replaces: string; member: MemberShape }[];
+};
 
 /** แถวตารางค่ารอง → คีย์ที่บิ้วใช้ ("critDmg", "res-fire") */
 const substatRows = (
@@ -501,8 +480,21 @@ for (const [id, doc] of Object.entries(parsed.builds ?? {})) {
 
     // มอนตัวเดียวกันบนสองคนในทีม บัฟไม่ทับซ้อน — ไม่ผิดกติกาเกม จึงแค่เตือน
     const owner = new Map<string, string>();
-    for (const [j, mem] of members.entries()) {
-      const mt = `${at}.members[${j}]`;
+    // ตัวแทน: ต้องแทนคนที่อยู่ในทีม ตัวเองต้องยังไม่อยู่ในทีม · มอนเทียบกับสมาชิกที่เหลือเท่านั้น
+    const subs = lo.substitutes ?? [];
+    for (const [k, sub] of subs.entries()) {
+      if (!ids.includes(sub.replaces)) fail(where, `${at}.substitutes[${k}].replaces "${sub.replaces}" ไม่ได้อยู่ในทีม`);
+      if (ids.includes(sub.member.characterId)) fail(where, `${at}.substitutes[${k}] "${sub.member.characterId}" อยู่ในทีมอยู่แล้ว`);
+    }
+    const toCheck: [MemberShape, string, Map<string, string>][] = [
+      ...members.map((m, j) => [m, `${at}.members[${j}]`, owner] as [MemberShape, string, Map<string, string>]),
+      ...subs.map((sub, k) => [
+        sub.member,
+        `${at}.substitutes[${k}]`,
+        new Map(members.filter((m) => m.characterId !== sub.replaces).flatMap((m) => (m.monsterlings ?? []).map((x) => [x.id, m.characterId] as [string, string]))),
+      ] as [MemberShape, string, Map<string, string>]),
+    ];
+    for (const [mem, mt, owner] of toCheck) {
       checkRefs(where, mem.characterId, "characters", `${mt}.characterId`);
       const char = parsed.characters?.[mem.characterId];
 
@@ -573,7 +565,8 @@ for (const [id, doc] of Object.entries(parsed.builds ?? {})) {
         fail(where, `${mt}.linkChain "${mem.linkChain}" เป็นของ "${String(chainOwner)}" ซึ่งไม่ได้อยู่ในมอน 3 ตัวที่ใส่`);
       }
 
-      for (const m of [...mons, ...(legId ? [legId] : [])]) {
+      // มอนตำนานใส่ซ้ำได้ทุกตัวละคร (ผู้เล่นบอก 2026-10-31) — เตือนเฉพาะมอนสเตอร์ลิงธรรมดา
+      for (const m of mons) {
         const prev = owner.get(m);
         if (prev) warn(where, `${at}: มอน "${m}" อยู่ทั้ง ${prev} และ ${mem.characterId} — บัฟไม่ทับซ้อนกัน`);
         else owner.set(m, mem.characterId);

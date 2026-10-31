@@ -346,15 +346,6 @@ export const monsterling = z.object({
    */
   statTier: slug.optional(),
   obtain: z.object({ method: vocabEnum("obtainMethod"), note: text.optional() }).optional(),
-  /**
-   * ของที่มอนตัวนี้ดรอป — เก็บแค่ชื่อ
-   *
-   * ยังไม่เก็บจำนวนกับอัตราดรอป เพราะยังไม่เคยเห็นจอที่บอกสองอย่างนั้น
-   * ชื่อที่อยู่ในนี้เป็นชื่อของของ ไม่ใช่ id ของ entity อื่น — ของพวกนี้
-   * ส่วนใหญ่เป็นวัตถุดิบที่ยังไม่มีไฟล์ของตัวเอง ถ้าวันหลังทำไฟล์วัตถุดิบ
-   * ค่อยผูก id เพิ่ม อย่าเพิ่งเดาว่าชื่อไหนตรงกับไฟล์ไหน
-   */
-  drops: z.array(z.object({ name: text })).default([]),
   images: z.object({ icon: z.string().optional() }).optional(),
   source,
 }).refine(
@@ -434,29 +425,6 @@ export const monsterStatTiers = z.object({
 });
 export type MonsterStatTiers = z.infer<typeof monsterStatTiers>;
 
-/**
- * ศัตรูที่ดรอปของแต่ "ไม่มีมอนสเตอร์ลิง" — จับไม่ได้ จึงไม่มีหน้าในสมุดภาพ
- *
- * แยกไฟล์จากมอนเพราะมันไม่ใช่มอน ไม่ใช่เพราะข้อมูลยังไม่ครบ — ถ้าวันหลังเจอว่า
- * ตัวไหนมีหน้าในสมุดภาพจริง ให้ย้าย drops ไปไว้ที่ไฟล์มอนแล้วลบออกจากที่นี่
- *
- * ยังไม่ตั้งประเภทให้ (บอส/ศัตรูสนาม/อื่น ๆ) เพราะผู้เล่นบอกแค่ว่าไม่มีมอนสเตอร์ลิง
- * การเดาประเภทเองคือการสร้างข้อมูลที่ไม่มีใครบอกมา
- */
-export const dropSources = z.object({
-  entries: z
-    .array(
-      z.object({
-        /** คีย์ภายในเท่านั้น ถอดเสียงจากไทย ไม่ใช่ชื่ออังกฤษของเกม ซึ่งยังไม่รู้ */
-        id: slug,
-        name: text,
-        drops: z.array(z.object({ name: text })).min(1),
-      }),
-    )
-    .min(1),
-  source,
-});
-export type DropSources = z.infer<typeof dropSources>;
 
 export const food = z.object({
   id: slug,
@@ -542,10 +510,15 @@ export const buildMember = z.object({
    * ไม่ใส่ = ใช้ครบทั้ง 4 ท่า
    */
   cycle: z.array(z.enum(["basic", "switch", "special", "ultimate"])).min(1).optional(),
+  /**
+   * ขั้นปลุกพลังของตัวนี้ ถ้าไม่เท่าของทั้งทีม — แต่ละตัวในทีมปลุกพลังไม่เท่ากันได้
+   * (ผู้เล่นสั่ง 2026-10-31 "dropdown ปลุกพลังต้องแยกกันของแต่ละตัวในทีม") · ไม่ใส่ = ใช้ awaken ของแท็บ
+   */
+  awaken: z.number().int().min(0).max(6).optional(),
 }).strict();
 
 /**
- * แท็บ 1 ขั้นปลุกพลัง — ทั้งทีมอยู่ขั้นเดียวกัน แต่ละขั้นใช้ของคนละชุดได้
+ * แท็บ 1 ขั้นปลุกพลัง (ของตัวหลัก) — แต่ละขั้นใช้ของคนละชุดได้ · ตัวอื่นกำหนดขั้นแยกได้ที่ member.awaken
  * อาหาร 2 จาน (จานหลัก + จานรอง) ใช้ร่วมทั้งทีม (ผู้เล่นเลือก 2026-10-24)
  */
 export const buildLoadout = z.object({
@@ -553,8 +526,21 @@ export const buildLoadout = z.object({
   food: z.object({ entree: slug.optional(), side: slug.optional() }).strict().default({}),
   /** คิดแบบตีจุดอ่อนธาตุ (ศัตรูแพ้ธาตุของทีม) — ไม่ใส่ = ไม่ตีจุดอ่อน */
   weaknessHit: z.boolean().optional(),
+  /**
+   * ทีมนี้ทำเกจมึนงงของศัตรูเต็มไว (เช่น มีนากิ) — ลิงก์เชนที่โผล่ "เมื่อโจมตีเป้าหมายที่ติดสถานะมึนงง" จึงนับว่าโผล่
+   * ไม่ใส่ = ไม่นับ (ผู้เล่นบอก 2026-10-31: มึนงงเกิดบ่อยกว่าหลบโต้กลับ แต่ขึ้นกับตัวละครในทีม)
+   */
+  staggerOften: z.boolean().optional(),
   /** ตัวแรกคือตัวหลักของบิ้ว · สองร่างของตัวละครเดียวกันอยู่ทีมเดียวกันได้ เพราะเกมนับเป็นคนละตัว */
   members: z.array(buildMember).min(1).max(3),
+  /**
+   * ตัวแทน — ถ้าไม่มีตัวใดตัวหนึ่งในทีม ใช้ใครแทน พร้อมของที่ตัวแทนใส่ (ผู้เล่นสั่ง 2026-10-31)
+   * replaces = characterId ของสมาชิกที่ถูกแทน · ตัวแทนห้ามเป็นคนที่อยู่ในทีมแล้ว
+   * มอนห้ามซ้ำกับสมาชิกที่เหลือ · มอนตำนานใช้ Trait เดียวกับทุกที่ (validate:data ตรวจ)
+   */
+  substitutes: z
+    .array(z.object({ replaces: slug, member: buildMember, note: text.optional() }).strict())
+    .optional(),
 }).strict();
 
 /**

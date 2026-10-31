@@ -52,9 +52,15 @@ export function chainEffects(chain: LinkChain): { effects: Effect[]; skipped: Lo
 
 /**
  * ลิงก์เชนโผล่ในรอบของตัวนี้ไหม — ดูจากเงื่อนไขปรากฏตัวเทียบกับท่าที่ใช้ในรอบ
- * นับเฉพาะเงื่อนไขที่เกิดแน่จากรอบสกิล ไม่นับ หลบ/โต้กลับ/โดนตี/HP/สเตมินา/สถานะศัตรู/ธาตุศัตรู
+ * นับเงื่อนไขที่เกิดจากรอบสกิล + ตีศัตรูที่ติดมึนงง (เฉพาะบิ้วที่ตั้ง staggerOften) · ไม่นับ หลบ/โต้กลับ/โดนตี/HP/สเตมินา/สถานะศัตรูอื่น/ธาตุศัตรู
  */
-export function chainAppears(chain: LinkChain, char: Character, cycle: readonly string[], weakness: boolean): boolean {
+export function chainAppears(
+  chain: LinkChain,
+  char: Character,
+  cycle: readonly string[],
+  weakness: boolean,
+  staggerOften = false,
+): boolean {
   const conds = topLevel(chain)?.appearanceConditions ?? [];
   const has = (k: string) => cycle.includes(k);
   const ok: Record<string, boolean> = {
@@ -66,6 +72,8 @@ export function chainAppears(chain: LinkChain, char: Character, cycle: readonly 
     inCombat: true,
     landCrit: true,
     weaknessAttack: weakness,
+    // มึนงงบ่อยแค่ไหนขึ้นกับทีม — ทีมที่มีตัวทำเกจมึนงงเต็มไว เช่น นากิ (ผู้เล่นบอก 2026-10-31) ตั้งในบิ้ว
+    attackStaggered: staggerOften,
     landFireAttack: char.element === "fire",
     landIceAttack: char.element === "ice",
     landWindAttack: char.element === "wind",

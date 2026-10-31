@@ -24,11 +24,8 @@
   "monsterlings.coverage": "with effects recorded",
   "monsterlings.linkable": "can take a Link Chain",
   "monsterlings.noEffect": "No effect recorded yet",
-  "monsterlings.drops": "Drops",
   "monsterlings.traitsTitle": "Traits",
   "monsterlings.traitsNote": "Rolled per captured monsterling, {slots} slots each. They belong to the individual you caught, not the species, so they are listed here as a pool and never stored on a monsterling.",
-  "monsterlings.otherDropsTitle": "Drops from enemies with no monsterling",
-  "monsterlings.otherDropsNote": "These cannot be caught, so they have no dex page and no monsterling file. Listed here so their drops are not lost.",
   "linkChains.title": "Link Chains",
   "linkChains.lede": "The moves monsterlings come out to perform, with appearance conditions and bonus effects",
   "linkChains.level": "Rank",
@@ -152,7 +149,7 @@
   "linkChains.matches": "link chains",
   "linkChains.noMatch": "No link chain matches those filters",
   "builds.title": "Builds",
-  "builds.lede": "Three-member team builds, one tab per Awaken stage, with each member's gear",
+  "builds.lede": "3-character team builds — pick each character's awaken stage — with what each character equips",
   "builds.count": "builds",
   "builds.empty": "No builds yet",
   "builds.awaken": "Awaken",
@@ -192,5 +189,11 @@
   "builds.weaknessHit": "This build assumes hitting the enemy's elemental weakness",
   "builds.unusable.teamElement": "Not usable by this team — no teammate of this element",
   "builds.chainNoAppear": "This link chain does not appear in this character's skill cycle, so the calculator does not count it",
-  "builds.unusable.evasionCounter": "Not counted — evasion counters happen rarely"
+  "builds.unusable.evasionCounter": "Not counted — evasion counters happen rarely",
+  "builds.awakenSelect": "Pick each character's awaken stage on their card — stages that calculate the same are merged into one option (e.g. 0–2)",
+  "builds.awakenInherited": "No separate gear for this stage yet — uses the Awaken {n} gear, with stats at the selected stage (some awaken effects are still text and not counted)",
+  "builds.substitutes": "Substitutes",
+  "builds.substitutesNote": "If you don't have one of the team, use this character instead, with this gear · DPS substitutes must share the main character's element; supporters can be any element · Numbers use the build's default awaken stages",
+  "builds.replaces": "Replaces {name}",
+  "builds.teamDmgVsMain": "Team DMG {pct} vs the main team"
 }
