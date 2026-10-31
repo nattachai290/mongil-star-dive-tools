@@ -25,13 +25,6 @@
   ],
   "effectsRank": "gold",
   "statTier": "scar-class",
-  "drops": [
-    {
-      "name": {
-        "th": "หนังที่มีรอยแผลเป็นใหญ่"
-      }
-    }
-  ],
   "images": {
     "icon": "scar-icon.webp"
   },

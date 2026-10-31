@@ -22,13 +22,6 @@
     }
   ],
   "effectsRank": "gold",
-  "drops": [
-    {
-      "name": {
-        "th": "ชิ้นส่วนแห่งความว่างเปล่า"
-      }
-    }
-  ],
   "images": {
     "icon": "amons-shadow-icon.webp"
   },

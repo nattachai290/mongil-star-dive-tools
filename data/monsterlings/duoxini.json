@@ -26,13 +26,6 @@
     }
   ],
   "effectsRank": "gold",
-  "drops": [
-    {
-      "name": {
-        "th": "ขนนกแห่งดวงวิญญาณ"
-      }
-    }
-  ],
   "images": {
     "icon": "duoxini-icon.webp"
   },

@@ -1,8 +1,8 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { asset } from "./base-path";
-import { artifact, build, food, monsterDexEntry, linkChain, monsterling, character, equipment, equipmentSet, gearMainStat, gearSubstat, traitPool, dropSources, monsterStatTiers } from "./schema/entities";
-import type { Artifact, Build, Character, Food, Equipment, EquipmentSet, GearMainStat, GearSubstat, LinkChain, Monsterling, TraitPool, DropSources } from "./schema/entities";
+import { artifact, build, food, monsterDexEntry, linkChain, monsterling, character, equipment, equipmentSet, gearMainStat, gearSubstat, traitPool, monsterStatTiers } from "./schema/entities";
+import type { Artifact, Build, Character, Food, Equipment, EquipmentSet, GearMainStat, GearSubstat, LinkChain, Monsterling, TraitPool } from "./schema/entities";
 
 /**
  * อ่านข้อมูลจาก data/ ตอน build — ไม่มี API ไม่มีฐานข้อมูล
@@ -144,14 +144,6 @@ export const TRAIT_POOL: TraitPool = traitPool.parse(readJson(join(DATA, "meta",
 
 /** ค่าพลังที่มอนบวกให้ตัวละคร แยกตามแบบ */
 export const MONSTER_STAT_TIERS = monsterStatTiers.parse(readJson(join(DATA, "meta", "monster-stat-tiers.json"))).tiers;
-
-/**
- * ศัตรูที่ดรอปของแต่ไม่มีมอนสเตอร์ลิง — ของดรอปที่เหลือแขวนอยู่กับไฟล์มอนตามเดิม
- * ที่นี่มีเฉพาะตัวที่ไม่มีไฟล์มอนให้แขวน
- */
-export const DROP_SOURCES: DropSources = dropSources.parse(
-  readJson(join(DATA, "meta", "drop-sources.json")),
-);
 
 /** ชิ้นของเซ็ตหนึ่ง เรียงตามลำดับช่องบนตัวละคร ไม่ใช่ตามชื่อไฟล์ */
 const SLOT_ORDER = ["headgear", "chestpiece", "gloves", "footwear"];

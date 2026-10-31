@@ -20,8 +20,6 @@ export type MonsterlingRow = {
   image: string | null;
   badge: string | null;
   effects: { headline: string; qualifiers: string[] }[];
-  /** ชื่อของที่มอนตัวนี้ดรอป เลือกภาษามาแล้วจากฝั่งเซิร์ฟเวอร์ */
-  drops: string[];
   /** ทุกอย่างที่ค้นหาได้ รวมชื่ออีกภาษาและข้อความเอฟเฟกต์ */
   haystack: string;
 };
@@ -46,7 +44,6 @@ export function MonsterlingList({
     matches: string;
     noMatch: string;
     noEffect: string;
-    drops: string;
     untranslated: string;
     untranslatedTitle: string;
     filters: string;
@@ -152,21 +149,6 @@ export function MonsterlingList({
                     <p className="mt-2 text-xs text-muted">{labels.noEffect}</p>
                   )}
 
-                  {row.drops.length > 0 && (
-                    <div className="mt-2 border-t border-line pt-2">
-                      <p className="text-[11px] uppercase tracking-wide text-muted">{labels.drops}</p>
-                      <ul className="mt-1 flex flex-wrap gap-1">
-                        {row.drops.map((drop) => (
-                          <li
-                            key={drop}
-                            className="rounded border border-line bg-surface-2 px-1.5 py-0.5 text-[11px] leading-tight text-ink-2"
-                          >
-                            {drop}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
                 </div>
               </li>
             ))}

@@ -346,15 +346,6 @@ export const monsterling = z.object({
    */
   statTier: slug.optional(),
   obtain: z.object({ method: vocabEnum("obtainMethod"), note: text.optional() }).optional(),
-  /**
-   * ของที่มอนตัวนี้ดรอป — เก็บแค่ชื่อ
-   *
-   * ยังไม่เก็บจำนวนกับอัตราดรอป เพราะยังไม่เคยเห็นจอที่บอกสองอย่างนั้น
-   * ชื่อที่อยู่ในนี้เป็นชื่อของของ ไม่ใช่ id ของ entity อื่น — ของพวกนี้
-   * ส่วนใหญ่เป็นวัตถุดิบที่ยังไม่มีไฟล์ของตัวเอง ถ้าวันหลังทำไฟล์วัตถุดิบ
-   * ค่อยผูก id เพิ่ม อย่าเพิ่งเดาว่าชื่อไหนตรงกับไฟล์ไหน
-   */
-  drops: z.array(z.object({ name: text })).default([]),
   images: z.object({ icon: z.string().optional() }).optional(),
   source,
 }).refine(
@@ -434,29 +425,6 @@ export const monsterStatTiers = z.object({
 });
 export type MonsterStatTiers = z.infer<typeof monsterStatTiers>;
 
-/**
- * ศัตรูที่ดรอปของแต่ "ไม่มีมอนสเตอร์ลิง" — จับไม่ได้ จึงไม่มีหน้าในสมุดภาพ
- *
- * แยกไฟล์จากมอนเพราะมันไม่ใช่มอน ไม่ใช่เพราะข้อมูลยังไม่ครบ — ถ้าวันหลังเจอว่า
- * ตัวไหนมีหน้าในสมุดภาพจริง ให้ย้าย drops ไปไว้ที่ไฟล์มอนแล้วลบออกจากที่นี่
- *
- * ยังไม่ตั้งประเภทให้ (บอส/ศัตรูสนาม/อื่น ๆ) เพราะผู้เล่นบอกแค่ว่าไม่มีมอนสเตอร์ลิง
- * การเดาประเภทเองคือการสร้างข้อมูลที่ไม่มีใครบอกมา
- */
-export const dropSources = z.object({
-  entries: z
-    .array(
-      z.object({
-        /** คีย์ภายในเท่านั้น ถอดเสียงจากไทย ไม่ใช่ชื่ออังกฤษของเกม ซึ่งยังไม่รู้ */
-        id: slug,
-        name: text,
-        drops: z.array(z.object({ name: text })).min(1),
-      }),
-    )
-    .min(1),
-  source,
-});
-export type DropSources = z.infer<typeof dropSources>;
 
 export const food = z.object({
   id: slug,
