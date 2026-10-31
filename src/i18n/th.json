@@ -202,6 +202,6 @@
   "tierList.group.dps": "สายดาเมจ",
   "tierList.group.support": "ซัพพอร์ต",
   "tierList.tier": "Tier",
-  "tierList.awaken": "ปลุก {r}",
+  "tierList.awaken": "{r}",
   "tierList.incomplete": "ตัวเลขสกิลบางท่ายังไม่ครบถึงเลเวล 12 คะแนนจึงต่ำกว่าจริง"
 }

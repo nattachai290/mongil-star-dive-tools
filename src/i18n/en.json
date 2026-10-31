@@ -202,6 +202,6 @@
   "tierList.group.dps": "Damage",
   "tierList.group.support": "Support",
   "tierList.tier": "Tier",
-  "tierList.awaken": "A{r}",
+  "tierList.awaken": "{r}",
   "tierList.incomplete": "Some skill values are not recorded up to Lv. 12 yet, so this score is lower than it should be"
 }
