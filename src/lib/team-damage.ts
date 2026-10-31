@@ -377,7 +377,18 @@ export function receivedEffects(
     if (!lc || !ch || !chainAppears(lc, ch, m.cycle ?? CYCLE_SKILLS, weakness, lo.staggerOften)) return [];
     return chainEffects(lc).effects.map(tag(lc.name, false));
   });
-  const shared = [...own.flat(), ...chainFx].filter((t) => ["team", "ally", "enemy", "allEnemies"].includes(t.effect.target));
+  // บัฟทีม/ดีบัฟศัตรูตัวเดียวกันจากหลายคน (เซ็ตเดียวกัน · Artifact เดียวกัน · มอนตำนานตัวเดียวกัน) ไม่ทับซ้อน — นับครั้งเดียว
+  // แบบเดียวกับมอนตัวเดียวกันในทีม (ผู้เล่นบอก 2026-10-24) · ตัวคำนวณเคยนับซ้ำจนเสนอให้ทุกคนใส่โบนัสเซ็ตเดียวกัน
+  const seen = new Set<string>();
+  const shared = [...own.flat(), ...chainFx]
+    .filter((t) => ["team", "ally", "enemy", "allEnemies"].includes(t.effect.target))
+    .filter((t) => {
+      const e = t.effect;
+      const k = [t.from.en ?? t.from.th, e.stat, e.damageType, e.value, e.target, e.trigger, (e.scopes ?? []).join(",")].join("|");
+      if (seen.has(k)) return false;
+      seen.add(k);
+      return true;
+    });
 
   return lo.members.map((mem, i) => {
     const char = chars[i];

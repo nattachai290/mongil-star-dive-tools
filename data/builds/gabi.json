@@ -65,7 +65,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-dmg",
+                  "id": "crit-rate",
                   "grade": "gold"
                 }
               ]
@@ -271,15 +271,15 @@
         {
           "characterId": "francis-summer-dive",
           "artifacts": [
-            "a-summer-soaked-in-love",
             "forest-fragrance",
+            "a-summer-soaked-in-love",
             "melody-played-on-heartstrings"
           ],
           "equipment": {
             "headgear": "ascendant-white-wolfs-mask",
             "chestpiece": "ascendant-white-wolfs-restraints",
-            "gloves": "ascendant-white-wolfs-grasp",
-            "footwear": "ascendant-white-wolfs-claw"
+            "gloves": "towering-mount-tais-gloves",
+            "footwear": "towering-mount-tais-boots"
           },
           "substats": {
             "headgear": [

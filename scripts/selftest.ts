@@ -201,6 +201,14 @@ console.log("\nดาเมจรวมทั้งทีม");
   check("บัฟที่ต้องหลบหลีกโต้กลับไม่ถูกนับ (เกิดนาน ๆ ที)",
     !receivedEffects({ awaken: 0, food: {}, members: [{ characterId: "gabi", equipment: {}, substats: {},
       monsterlings: [{ id: "amons-shadow", traits: [] }] }] })[0].effects.some((x) => x.effect.trigger === "onEvasionCounter"));
+  {
+    const sir = { headgear: "ascendant-white-wolfs-mask", chestpiece: "ascendant-white-wolfs-restraints" };
+    const one = receivedEffects({ awaken: 0, food: {}, members: [
+      { characterId: "gabi", equipment: sir, substats: {}, monsterlings: [] },
+      { characterId: "francis-summer-dive", equipment: sir, substats: {}, monsterlings: [] },
+    ] })[0].effects.filter((x) => x.effect.target === "team" && x.effect.damageType === "earth" && x.effect.value === 7.5);
+    check("บัฟทีมจากเซ็ตเดียวกันสองคน นับครั้งเดียว", one.length === 1, `ได้ ${one.length}`);
+  }
   check("ตีจุดอ่อนแรงกว่าไม่ตี", teamDamage(plain, { weakness: true }).total > teamDamage(plain).total);
   check("Trait ดาเมจจุดอ่อนไม่มีผลถ้าไม่ตีจุดอ่อน",
     Math.abs(teamDamage(withWeakTrait).total - teamDamage(plain).total) < 1e-6);
