@@ -50,7 +50,7 @@
           },
           "monsterlings": [
             {
-              "id": "rock-fist-dude",
+              "id": "maple-odong",
               "traits": [
                 {
                   "id": "dmg-vs-boss",
@@ -113,7 +113,7 @@
               ]
             }
           ],
-          "linkChain": "frangible-pebble",
+          "linkChain": "autumn-branch",
           "legendary": {
             "id": "sorin",
             "traits": [
@@ -177,7 +177,7 @@
           },
           "monsterlings": [
             {
-              "id": "frostbite",
+              "id": "colossus",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -240,7 +240,7 @@
               ]
             }
           ],
-          "linkChain": "mutated-spirit-core",
+          "linkChain": "giants-destroyed-fist",
           "legendary": {
             "id": "reginula",
             "traits": [
