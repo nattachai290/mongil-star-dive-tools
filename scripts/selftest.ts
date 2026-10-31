@@ -461,7 +461,7 @@ check("yes แปะป้ายสองภาษา", linkableBadge("yes")?.th
   check("ช่วงปลุกพลังต่อกันครบ 0–6 ทุกตัว", covers);
   const merged = list.every((e) => e.ranges.every((r, i) => i === 0 || r.tier !== e.ranges[i - 1].tier));
   check("ขั้นติดกันที่ tier เท่ากันรวมเป็นช่วงเดียว", merged);
-  for (const g of ["dps", "support"] as const) check(`กลุ่ม ${g} มี tier S`, list.some((e) => e.group === g && e.ranges.some((r) => r.tier === "S")));
+  for (const g of ["dps", "support"] as const) check(`กลุ่ม ${g} มี tier 0`, list.some((e) => e.group === g && e.ranges.some((r) => r.tier === "0")));
 }
 
 console.log(failed === 0 ? "\nผ่านทั้งหมด\n" : `\nไม่ผ่าน ${failed} ข้อ\n`);

@@ -22,11 +22,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 const name = (v: LocalizedText | undefined, locale: Locale, fallback: string) => v?.[locale] ?? v?.en ?? v?.th ?? fallback;
 
 const TIER_STYLE: Record<Tier, string> = {
-  S: "bg-gold-bg text-gold border-gold",
-  A: "bg-surface-2 text-ink border-rail",
-  B: "bg-surface-2 text-ink border-line",
-  C: "bg-surface-2 text-ink-2 border-line",
-  D: "bg-surface-2 text-muted border-line",
+  "0": "bg-gold-bg text-gold border-gold",
+  "1": "bg-surface-2 text-ink border-rail",
+  "2": "bg-surface-2 text-ink border-rail/60",
+  "3": "bg-surface-2 text-ink border-line",
+  "4": "bg-surface-2 text-ink-2 border-line",
+  "5": "bg-surface-2 text-ink-2 border-line",
+  "6": "bg-surface-2 text-muted border-line",
+  "7": "bg-surface-2 text-muted border-line",
 };
 
 type Chip = { entry: TierEntry; range: TierRange };
