@@ -4,11 +4,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   AwakenOnly,
+  AwakenPills,
   AwakenProvider,
   AwakenStatsTable,
   AwakenSwitch,
   AwakenText,
-  MemberAwakenSelect,
+  MemberPanel,
+  MemberTab,
   type StatRow,
 } from "@/components/AwakenSelect";
 import { EffectLine } from "@/components/EffectLine";
@@ -37,7 +39,6 @@ import {
   receivedEffects,
   specialCooldownReduction,
   statSheet,
-  teamDamage,
   unusableReason,
   type StatSheet,
   type Tagged,
@@ -107,16 +108,20 @@ function Effects({ effects, locale }: { effects: Effect[]; locale: Locale }) {
 /** เหตุที่เอฟเฟกต์ใช้กับตัวนี้/ทีมนี้ไม่ได้ — undefined = ใช้ได้ */
 type Why = (e: Effect) => UnusableReason | undefined;
 
-/** เหมือน Effects แต่เอฟเฟกต์ที่ใช้ไม่ได้เป็นสีจางพร้อมเหตุผล */
+/** เหมือน Effects แต่เอฟเฟกต์ที่ใช้ไม่ได้เป็นสีจาง พร้อมป้ายเหตุผลสั้น ๆ */
 function CheckedEffects({ effects, why, locale, t }: { effects: Effect[]; why?: Why; locale: Locale; t: T }) {
   return (
     <>
       {effects.map((e, j) => {
         const reason = why?.(e);
         return reason ? (
-          <div key={j} className="opacity-50">
-            <Effects effects={[e]} locale={locale} />
-            <p className="mt-1 text-[11px] text-gold">{t(`builds.unusable.${reason}`)}</p>
+          <div key={j} className="space-y-1">
+            <div className="opacity-50">
+              <Effects effects={[e]} locale={locale} />
+            </div>
+            <span className="inline-block rounded-full bg-gold-bg px-2 py-0.5 text-[11px] font-semibold text-gold">
+              {t(`builds.unusable.${reason}`)}
+            </span>
           </div>
         ) : (
           <Effects key={j} effects={[e]} locale={locale} />
@@ -126,49 +131,46 @@ function CheckedEffects({ effects, why, locale, t }: { effects: Effect[]; why?: 
   );
 }
 
-/** มอนของตัวเอง — เอฟเฟกต์สายพันธุ์ + Trait 4 ช่อง */
-function MonFull({
-  slot,
-  locale,
-  highlight,
-  why,
-  t,
-}: {
-  slot: MonSlot;
-  locale: Locale;
-  highlight: boolean;
-  why?: Why;
-  t: T;
-}) {
-  const traitsLabel = t("builds.traits");
+/** ชิปเล็ก ๆ สำหรับค่าพลังและค่ารอง */
+function Chip({ children }: { children: ReactNode }) {
+  return <span className="rounded-md bg-surface-2 px-2 py-0.5 text-xs text-ink-2">{children}</span>;
+}
+
+/** Trait 4 ช่องของมอน */
+function Traits({ slot, locale }: { slot: MonSlot; locale: Locale }) {
+  if (slot.traits.length === 0) return null;
+  return (
+    <ul className="flex flex-wrap gap-1">
+      {slot.traits.map((tr, i) => {
+        const trait = TRAIT_POOL.pool.find((x) => x.id === tr.id);
+        const value = trait ? trait.values[tr.grade as keyof typeof trait.values] : undefined;
+        return (
+          <li key={i} className="rounded-md bg-gold-bg px-1.5 py-0.5 text-[11px] text-ink">
+            {name(trait?.name, locale, tr.id)}
+            {value !== undefined && (
+              <span className="font-mono text-gold">
+                {" "}+{value}
+                {trait?.unit === "percent" ? "%" : ""}
+              </span>
+            )}
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
+/** มอนของตัวเอง — การ์ดเล็ก: ชื่อ เอฟเฟกต์สายพันธุ์ Trait */
+function MonCard({ slot, locale, highlight, why, t }: { slot: MonSlot; locale: Locale; highlight: boolean; why?: Why; t: T }) {
   const m = MONSTERLINGS.get(slot.id);
   return (
-    <li className={`rounded-md p-1.5 ${highlight ? "ring-1 ring-gold" : ""}`}>
+    <li className={`min-w-0 space-y-2 rounded-xl border p-3 ${highlight ? "border-gold" : "border-line"}`}>
       <div className="flex items-center gap-2">
         <Icon src={monsterlingImage(slot.id)} />
         <span className="text-sm font-semibold">{name(m?.name, locale, slot.id)}</span>
       </div>
       <CheckedEffects effects={m?.speciesEffects ?? []} why={why} locale={locale} t={t} />
-      {slot.traits.length > 0 && (
-        <ul className="mt-2 flex flex-wrap items-center gap-1">
-          <li className="text-[11px] text-muted">{traitsLabel}:</li>
-          {slot.traits.map((tr, i) => {
-            const trait = TRAIT_POOL.pool.find((x) => x.id === tr.id);
-            const value = trait ? trait.values[tr.grade as keyof typeof trait.values] : undefined;
-            return (
-              <li key={i} className="rounded border border-gold/60 px-1.5 py-0.5 text-[11px] text-ink">
-                {name(trait?.name, locale, tr.id)}
-                {value !== undefined && (
-                  <span className="font-mono text-gold">
-                    {" "}+{value}
-                    {trait?.unit === "percent" ? "%" : ""}
-                  </span>
-                )}
-              </li>
-            );
-          })}
-        </ul>
-      )}
+      <Traits slot={slot} locale={locale} />
     </li>
   );
 }
@@ -177,58 +179,44 @@ function MonFull({
 function ChainInfo({ chain, appears, locale, t }: { chain: LinkChain; appears: boolean; locale: Locale; t: T }) {
   const owner = MONSTERLINGS.get(chain.monsterlingId);
   const top = [...chain.levels].sort((a, b) => b.level - a.level)[0];
+  const info = top
+    ? [
+        top.appearanceConditions.map((c) => label("appearanceCondition", c, locale)).join(" / "),
+        top.appearanceInfo.dmgPercentOfAtk !== undefined ? `${t("linkChains.dmgOfAtk")} ${top.appearanceInfo.dmgPercentOfAtk}%` : null,
+        top.appearanceInfo.cooldownSec !== undefined ? `${t("linkChains.cooldown")} ${top.appearanceInfo.cooldownSec}s` : null,
+      ].filter(Boolean)
+    : [];
   return (
-    <div className="text-sm">
-      <p className="font-semibold">
-        {name(chain.name, locale, chain.id)}
-        {chain.rarity !== undefined && <span className="ms-1.5 text-xs text-gold">{"◆".repeat(chain.rarity)}</span>}
-      </p>
-      <div className="mt-1.5 flex items-center gap-2 text-xs text-ink-2">
+    <div className="space-y-1.5 text-sm">
+      <div className="flex flex-wrap items-center gap-2">
         <Icon src={monsterlingImage(chain.monsterlingId)} />
-        <span>
-          {t("linkChains.owner")}: {name(owner?.name, locale, chain.monsterlingId)}
-        </span>
+        <span className="text-base font-semibold">{name(chain.name, locale, chain.id)}</span>
+        {chain.rarity !== undefined && <span className="text-xs text-gold">{"◆".repeat(chain.rarity)}</span>}
+        {appears && (
+          <span className="rounded-full bg-[#e3efdd] px-2 py-0.5 text-[11px] font-semibold text-[#2f5a23] dark:bg-[#22331d] dark:text-[#b7dca8]">
+            {t("builds.chainAppears")}
+          </span>
+        )}
       </div>
-      {top && (
-        <dl className="mt-2 space-y-0.5 text-xs">
-          <div className="flex gap-1.5">
-            <dt className="text-muted">{t("linkChains.level")}</dt>
-            <dd>{top.level}</dd>
-          </div>
-          <div className="flex gap-1.5">
-            <dt className="text-muted">{t("linkChains.condition")}:</dt>
-            <dd>{top.appearanceConditions.map((c) => label("appearanceCondition", c, locale)).join(" / ")}</dd>
-          </div>
-          {top.appearanceInfo.dmgPercentOfAtk !== undefined && (
-            <div className="flex gap-1.5">
-              <dt className="text-muted">{t("linkChains.dmgOfAtk")}:</dt>
-              <dd className="font-mono">{top.appearanceInfo.dmgPercentOfAtk}%</dd>
-            </div>
-          )}
-          {top.appearanceInfo.cooldownSec !== undefined && (
-            <div className="flex gap-1.5">
-              <dt className="text-muted">{t("linkChains.cooldown")}:</dt>
-              <dd className="font-mono">{top.appearanceInfo.cooldownSec}s</dd>
-            </div>
-          )}
-          {top.bonusEffects?.map((bonus, i) => (
-            <div key={i} className="flex gap-1.5">
-              <dt className="text-muted">{t("linkChains.bonus")}:</dt>
-              <dd>{name(bonus, locale, "")}</dd>
-            </div>
-          ))}
-        </dl>
+      <p className="text-xs text-muted">
+        {top && `${t("linkChains.level")} ${top.level} · `}
+        {t("linkChains.owner")}: {name(owner?.name, locale, chain.monsterlingId)}
+      </p>
+      {info.length > 0 && <p className="text-ink-2">{info.join(" · ")}</p>}
+      {top?.bonusEffects && top.bonusEffects.length > 0 && (
+        <p className="text-ink-2">{top.bonusEffects.map((b) => name(b, locale, "")).join(" · ")}</p>
       )}
-      {!appears && <p className="mt-2 text-[11px] text-gold">{t("builds.chainNoAppear")}</p>}
+      {!appears && <p className="text-[11px] text-gold">{t("builds.chainNoAppear")}</p>}
     </div>
   );
 }
 
+/** การ์ดหัวข้อ — ใช้กับค่าพลังรวม */
 function Slot({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-lg border border-line bg-surface p-3">
-      <h3 className="text-[11px] font-semibold tracking-wide text-muted uppercase">{title}</h3>
-      <div className="mt-2">{children}</div>
+    <section className="rounded-2xl border border-line bg-surface p-4 sm:p-5">
+      <h3 className="font-display text-base font-semibold">{title}</h3>
+      <div className="mt-3">{children}</div>
     </section>
   );
 }
@@ -333,15 +321,34 @@ function StatsSlot({
   );
 }
 
-/** ของที่ตัวละคร 1 ตัวในทีมใส่ */
-function MemberGear({
+/** หนึ่งแถวของของที่ใส่ — หัวข้อซ้าย เนื้อหาขวา (มือถือซ้อนกัน) */
+function Row({ title, children }: { title: string; children: ReactNode }) {
+  return (
+    <div className="grid gap-x-4 gap-y-2 border-b border-line px-4 py-4 last:border-b-0 sm:grid-cols-[8rem_minmax(0,1fr)] sm:px-5">
+      <h4 className="text-xs font-semibold text-muted sm:pt-1">{title}</h4>
+      <div className="min-w-0 space-y-2">{children}</div>
+    </div>
+  );
+}
+
+/** ชื่อค่าพลังของอาร์ติแฟกต์/ค่ารอง */
+function statName(stat: string, damageType: string | undefined, locale: Locale) {
+  if (!damageType) return label("stat", stat, locale);
+  return locale === "en"
+    ? `${label("damageType", damageType, locale)} ${label("stat", stat, locale)}`
+    : `${label("stat", stat, locale)}ธาตุ${label("damageType", damageType, locale)}`;
+}
+
+/**
+ * ของที่ตัวละคร 1 ตัวใส่ เป็นแถว: อาร์ติแฟกต์ / อุปกรณ์ / มอน / ลิงก์เชน / มอนตำนาน
+ * ช่องที่ว่างไม่โชว์เลย (ผู้เล่นสั่ง 2026-10-31 "ไม่มีก็เอา section ออกเลย")
+ */
+function GearRows({
   mem,
   effects,
   team,
   weaknessHit,
   staggerOften,
-  stats,
-  awakenSelect,
   dup,
   locale,
   t,
@@ -351,10 +358,6 @@ function MemberGear({
   team: Character[];
   weaknessHit: boolean;
   staggerOften: boolean;
-  /** ค่าพลังรวม — โชว์เฉพาะตัวหลัก (ตัวแรก) · ผู้เล่นสั่ง 2026-10-31 */
-  stats?: ReactNode;
-  /** dropdown ขั้นปลุกพลังของตัวนี้ */
-  awakenSelect?: ReactNode;
   dup: Set<string>;
   locale: Locale;
   t: T;
@@ -362,128 +365,73 @@ function MemberGear({
   const c = characterById(mem.characterId);
   const cdCut = specialCooldownReduction(effects);
   const why: Why | undefined = c && ((e) => unusableReason(c, e, cdCut, team));
-  const arts = (mem.artifacts ?? []).flatMap((id) => ARTIFACTS.find((a) => a.id === id) ?? []);
+  const [art, ...spares] = (mem.artifacts ?? []).flatMap((id) => ARTIFACTS.find((a) => a.id === id) ?? []);
+  const fusion = art && artifactFusion(art);
   const chain = LINK_CHAINS.find((x) => x.id === mem.linkChain);
   const sets = activeSets(mem);
-  const img = characterImage(mem.characterId);
+  const legendary = mem.legendary && MONSTERLINGS.get(mem.legendary.id);
+
+  // ค่ารอง — ทุกชิ้นเหมือนกันโชว์บรรทัดเดียว ไม่เหมือนโชว์รายชิ้น
+  const subRows = SLOTS.flatMap((slot) => {
+    const piece = EQUIPMENT.find((e) => e.id === mem.equipment[slot]);
+    const keys = piece ? (mem.substats[slot] ?? []) : [];
+    if (!piece || keys.length === 0) return [];
+    const chips = keys.map((key) => {
+      const sub = minSubstat(key, piece.grade, piece.stars);
+      return `${statName(sub?.stat ?? key, sub?.damageType, locale)}${sub ? ` +${sub.min}${sub.unit === "percent" ? "%" : ""}` : ""}`;
+    });
+    return [{ slot, chips }];
+  });
+  const sameSubs = subRows.length === SLOTS.length && subRows.every((r) => r.chips.join() === subRows[0].chips.join());
 
   return (
-    <section className="rounded-xl border border-line p-3">
-      <header className="mb-3 flex flex-wrap items-center gap-2.5">
-        <Icon src={img} />
-        <div>
-          <h3 className="text-sm font-semibold">
-            <Link href={`/${locale}/characters/${mem.characterId}`} className="hover:underline">
-              {name(c?.name, locale, mem.characterId)}
-            </Link>
-          </h3>
-          {c && (
-            <p className="text-[11px] text-ink-2">
-              <span className="text-gold">{c.rarity !== undefined && "★".repeat(c.rarity)}</span>{" "}
-              {label("role", c.role, locale)} · {label("element", c.element, locale)}
+    <>
+      {art && (
+        <Row title={t("builds.artifact")}>
+          <div className="flex items-center gap-3">
+            <Icon src={art.images?.icon ? asset(`/images/artifacts/${art.images.icon}`) : null} />
+            <div className="min-w-0">
+              <p className="text-base font-semibold">
+                {name(art.name, locale, art.id)}{" "}
+                <span className="text-xs font-normal text-gold">{art.stars !== undefined && "★".repeat(art.stars)}</span>
+              </p>
+              {fusion?.level !== undefined && (
+                <p className="text-xs text-gold">
+                  {t("builds.fusion")} {fusion.level}
+                  {fusion.name && ` · ${name(fusion.name, locale, "")}`}
+                </p>
+              )}
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-1.5">
+            {art.stats.map((st, j) => (
+              <Chip key={j}>
+                {statName(st.stat, st.damageType, locale)} +{st.value.toLocaleString("en-US")}
+                {st.unit === "percent" ? "%" : ""}
+              </Chip>
+            ))}
+          </div>
+          <CheckedEffects effects={fusion?.effects ?? []} why={why} locale={locale} t={t} />
+          {spares.length > 0 && (
+            <p className="text-xs text-muted">
+              {t("builds.artifactAlt")}: {spares.map((a) => name(a.name, locale, a.id)).join(" · ")}
             </p>
           )}
-        </div>
-        {awakenSelect}
-      </header>
-      <div className="grid gap-3 sm:grid-cols-2">
-        <Slot title={t("builds.artifact")}>
-          {arts.length === 0 ? (
-            <p className="text-sm text-muted">{t("builds.empty.slot")}</p>
-          ) : (
-            <ol className="space-y-3">
-              {arts.map((art, i) => {
-                const fusion = artifactFusion(art);
-                return (
-                  <li key={art.id} className={i > 0 ? "border-t border-line pt-3" : undefined}>
-                    <p className="mb-1 text-[11px] text-muted">
-                      {i === 0 ? t("builds.artifactMain") : `${t("builds.artifactAlt")} ${i}`}
-                    </p>
-                    <div className="flex items-center gap-2">
-                      <Icon src={art.images?.icon ? asset(`/images/artifacts/${art.images.icon}`) : null} />
-                      <div>
-                        <p className="text-sm font-semibold">
-                          {name(art.name, locale, art.id)}{" "}
-                          <span className="text-xs font-normal text-gold">
-                            {art.stars !== undefined && "★".repeat(art.stars)}
-                          </span>
-                        </p>
-                        <p className="text-xs text-gold">
-                          {fusion?.level !== undefined && `${t("builds.fusion")} ${fusion.level}`}
-                          {fusion?.name && ` · ${name(fusion.name, locale, "")}`}
-                        </p>
-                      </div>
-                    </div>
-                    <p className="mt-1.5 flex flex-wrap gap-1">
-                      {art.stats.map((st, j) => (
-                        <span key={j} className="rounded border border-line px-1.5 py-0.5 text-[11px] text-ink-2">
-                          {st.damageType
-                            ? locale === "en"
-                              ? `${label("damageType", st.damageType, locale)} ${label("stat", st.stat, locale)}`
-                              : `${label("stat", st.stat, locale)}ธาตุ${label("damageType", st.damageType, locale)}`
-                            : label("stat", st.stat, locale)}
-                          <span className="font-mono text-gold">
-                            {" "}+{st.value.toLocaleString("en-US")}
-                            {st.unit === "percent" ? "%" : ""}
-                          </span>
-                        </span>
-                      ))}
-                    </p>
-                    <CheckedEffects effects={fusion?.effects ?? []} why={why} locale={locale} t={t} />
-                  </li>
-                );
-              })}
-            </ol>
-          )}
-        </Slot>
+        </Row>
+      )}
 
-        <Slot title={t("builds.equipment")}>
-          <ul className="space-y-1 text-sm">
-            {SLOTS.map((slot) => {
-              const piece = EQUIPMENT.find((e) => e.id === mem.equipment[slot]);
-              const subs = piece ? (mem.substats[slot] ?? []) : [];
-              return (
-                <li key={slot} className="flex gap-2">
-                  <span className="w-20 shrink-0 text-xs text-muted">{label("slot", slot, locale)}</span>
-                  <span>
-                    {piece ? name(piece.name, locale, piece.id) : t("builds.empty.slot")}
-                    {subs.length > 0 && (
-                      <span className="mt-0.5 flex flex-wrap gap-1">
-                        {subs.map((key, i) => {
-                          const sub = minSubstat(key, piece!.grade, piece!.stars);
-                          const statName = sub?.damageType
-                            ? `${label("stat", sub.stat, locale)} ${label("damageType", sub.damageType, locale)}`
-                            : label("stat", sub?.stat ?? key, locale);
-                          return (
-                            <span key={i} className="rounded border border-line px-1.5 py-0.5 text-[11px] text-ink-2">
-                              {statName}
-                              {sub && (
-                                <span className="font-mono text-gold">
-                                  {" "}+{sub.min}
-                                  {sub.unit === "percent" ? "%" : ""}
-                                </span>
-                              )}
-                            </span>
-                          );
-                        })}
-                      </span>
-                    )}
-                  </span>
-                </li>
-              );
-            })}
-          </ul>
+      {(sets.length > 0 || subRows.length > 0) && (
+        <Row title={t("builds.equipment")}>
           {sets.map(({ set, n, bonuses }) => (
-            <div key={set.id} className="mt-3 border-t border-line pt-2">
-              <p className="text-xs font-semibold text-ink-2">
-                {name(set.name, locale, set.id)}{" "}
-                <span className="font-normal text-muted">
-                  ({n}
-                  {set.pieceCount ? `/${set.pieceCount}` : ""})
+            <div key={set.id} className="space-y-1.5">
+              <p>
+                <span className="text-base font-semibold">{name(set.name, locale, set.id)}</span>{" "}
+                <span className="text-xs text-muted">
+                  {n} {t("builds.pieces")}
                 </span>
               </p>
               {bonuses.map((bonus) => (
-                <div key={bonus.pieces} className="mt-1.5">
+                <div key={bonus.pieces}>
                   <p className="text-[11px] text-gold">
                     {bonus.pieces} {t("builds.pieces")}
                   </p>
@@ -492,112 +440,182 @@ function MemberGear({
               ))}
             </div>
           ))}
-        </Slot>
+          {sameSubs ? (
+            <div className="flex flex-wrap items-center gap-1.5">
+              <span className="text-xs text-muted">{t("builds.subsAll")}</span>
+              {subRows[0].chips.map((c, i) => (
+                <Chip key={i}>{c}</Chip>
+              ))}
+            </div>
+          ) : (
+            subRows.map((r) => (
+              <div key={r.slot} className="flex flex-wrap items-center gap-1.5">
+                <span className="text-xs text-muted">{label("slot", r.slot, locale)}</span>
+                {r.chips.map((c, i) => (
+                  <Chip key={i}>{c}</Chip>
+                ))}
+              </div>
+            ))
+          )}
+        </Row>
+      )}
 
-        <Slot title={t("builds.monsterlings")}>
-          <ul className="space-y-2">
+      {mem.monsterlings.length > 0 && (
+        <Row title={t("builds.monsterlings")}>
+          <ul className="grid gap-2 sm:grid-cols-3">
             {mem.monsterlings.map((m) => (
-              <MonFull key={m.id} slot={m} locale={locale} highlight={dup.has(m.id)} why={why} t={t} />
+              <MonCard key={m.id} slot={m} locale={locale} highlight={dup.has(m.id)} why={why} t={t} />
             ))}
           </ul>
-        </Slot>
+        </Row>
+      )}
 
-        <div className="space-y-3">
-          <Slot title={t("builds.linkChain")}>
-            {chain ? (
-              <ChainInfo
-                chain={chain}
-                appears={!!c && chainAppears(chain, c, mem.cycle ?? CYCLE_SKILLS, weaknessHit, staggerOften)}
-                locale={locale}
-                t={t}
-              />
-            ) : (
-              <p className="text-sm text-muted">{t("builds.empty.slot")}</p>
-            )}
-          </Slot>
-          <Slot title={t("builds.legendary")}>
-            {mem.legendary ? (
-              <ul>
-                <MonFull
-                  slot={mem.legendary}
-                  locale={locale}
-                  highlight={dup.has(mem.legendary.id)}
-                  why={why}
-                  t={t}
-                />
-              </ul>
-            ) : (
-              <p className="text-sm text-muted">{t("builds.empty.slot")}</p>
-            )}
-          </Slot>
-        </div>
-        {stats && <div className="sm:col-span-2">{stats}</div>}
-      </div>
-    </section>
+      {chain && (
+        <Row title={t("builds.linkChain")}>
+          <ChainInfo
+            chain={chain}
+            appears={!!c && chainAppears(chain, c, mem.cycle ?? CYCLE_SKILLS, weaknessHit, staggerOften)}
+            locale={locale}
+            t={t}
+          />
+        </Row>
+      )}
+
+      {mem.legendary && (
+        <Row title={t("builds.legendary")}>
+          <div className="flex flex-wrap items-center gap-2">
+            <Icon src={monsterlingImage(mem.legendary.id)} />
+            <span className="text-base font-semibold">{name(legendary?.name, locale, mem.legendary.id)}</span>
+            <span className="text-xs text-muted">{t("builds.legendaryShared")}</span>
+          </div>
+          <CheckedEffects effects={legendary?.speciesEffects ?? []} why={why} locale={locale} t={t} />
+          <Traits slot={mem.legendary} locale={locale} />
+        </Row>
+      )}
+    </>
   );
 }
 
-function Loadout({
+/** ชื่อ + ธาตุ/บทบาท/ระยะ ของตัวละคร */
+function charSub(c: Character | undefined, locale: Locale) {
+  if (!c) return "";
+  return [label("element", c.element, locale), label("role", c.role, locale), c.range && label("range", c.range, locale)]
+    .filter(Boolean)
+    .join(" · ");
+}
+
+/** ตัวแทนของตัวที่ replaces — ชิปรูป+ชื่อ กดแล้วกางของที่ตัวแทนใส่ · ไม่มีตัวแทนก็ไม่โชว์ส่วนนี้ */
+function SubstitutesFor({ lo, replaces, locale, t }: { lo: BuildLoadout; replaces: string; locale: Locale; t: T }) {
+  const subs = (lo.substitutes ?? []).filter((s) => s.replaces === replaces);
+  if (subs.length === 0) return null;
+  const replaced = name(characterById(replaces)?.name, locale, replaces);
+  return (
+    <div className="space-y-3 border-t border-line bg-surface-2/40 px-4 py-4 sm:px-5">
+      <h4 className="text-sm font-semibold text-ink-2">{t("builds.subsFor").replace("{name}", replaced)}</h4>
+      <div className="flex flex-wrap gap-2">
+        {subs.map((sub, k) => {
+          const swapped: BuildLoadout = {
+            ...lo,
+            members: lo.members.map((m) => (m.characterId === sub.replaces ? sub.member : m)),
+          };
+          const i = swapped.members.indexOf(sub.member);
+          const received = receivedEffects(swapped);
+          const team = swapped.members.flatMap((m) => characterById(m.characterId) ?? []);
+          const others = swapped.members.filter((m) => m !== sub.member).flatMap((m) => m.monsterlings.map((x) => x.id));
+          const dup = new Set(sub.member.monsterlings.map((x) => x.id).filter((id) => others.includes(id)));
+          const who = characterById(sub.member.characterId);
+          const img = characterImage(sub.member.characterId);
+          return (
+            <details key={k} className="open:basis-full">
+              <summary className="inline-flex min-h-11 cursor-pointer list-none items-center gap-2 rounded-full border border-line bg-surface py-1 ps-1 pe-3 text-sm font-semibold hover:border-rail [&::-webkit-details-marker]:hidden">
+                {img ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={img} alt="" width={32} height={32} className="size-8 rounded-full object-cover" />
+                ) : (
+                  <span className="size-8 rounded-full bg-surface-2" />
+                )}
+                {name(who?.name, locale, sub.member.characterId)}
+              </summary>
+              <div className="mt-3 overflow-hidden rounded-xl border border-line bg-surface">
+                {sub.note && <p className="px-4 pt-3 text-xs text-ink-2 sm:px-5">{name(sub.note, locale, "")}</p>}
+                <GearRows
+                  mem={sub.member}
+                  effects={received[i]?.effects ?? []}
+                  team={team}
+                  weaknessHit={lo.weaknessHit ?? false}
+                  staggerOften={lo.staggerOften ?? false}
+                  dup={dup}
+                  locale={locale}
+                  t={t}
+                />
+              </div>
+            </details>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+/** ของของทุกตัวในทีม (ชุดของหนึ่งชุด) — โชว์ทีละตัวตามที่เลือก · ค่าพลังรวมอยู่ด้านข้างเฉพาะตัวหลัก */
+function TeamGear({
   lo,
+  base,
   stats,
-  selects,
+  pills,
   locale,
   t,
 }: {
   lo: BuildLoadout;
+  /** ชุดของตั้งต้นของบิ้ว — ใช้คิดตัวแทน */
+  base: BuildLoadout;
   stats: ReactNode;
-  selects: ReactNode[];
+  pills: ReactNode[];
   locale: Locale;
   t: T;
 }) {
-  // มอนตัวเดียวกันบนหลายคนในทีม บัฟไม่ทับซ้อน
-  // มอนตำนานใส่ซ้ำได้ทุกตัวละคร (ผู้เล่นบอก 2026-10-31) จึงไม่นับ
+  // มอนตัวเดียวกันบนหลายคนในทีม บัฟไม่ทับซ้อน · มอนตำนานใส่ซ้ำได้ทุกตัวละคร (ผู้เล่นบอก 2026-10-31) จึงไม่นับ
   const all = lo.members.flatMap((m) => m.monsterlings.map((x) => x.id));
   const dup = new Set(all.filter((m, i) => all.indexOf(m) !== i));
   const received = receivedEffects(lo);
   const team = lo.members.flatMap((m) => characterById(m.characterId) ?? []);
-  const foodWhy: Why = (e) =>
-    (e.damageType && e.damageType !== "physical" && !team.some((m) => m.element === e.damageType)) ||
-    (e.condition?.teammateElement && !team.some((m) => m.element === e.condition?.teammateElement))
-      ? "teamElement"
-      : undefined;
-
   return (
-    <div className="space-y-3">
-      <Slot title={t("builds.food")}>
-        <div className="grid gap-3 sm:grid-cols-2">
-          {(["entree", "side"] as const).map((cat) => {
-            const f = FOOD.find((x) => x.id === lo.food[cat]);
-            return (
-              <div key={cat}>
-                <p className="text-sm">
-                  <span className="text-xs text-muted">{label("foodCategory", cat, locale)}: </span>
-                  {f ? name(f.name, locale, f.id) : t("builds.empty.slot")}
-                </p>
-                <CheckedEffects effects={f?.effects ?? []} why={foodWhy} locale={locale} t={t} />
-              </div>
-            );
-          })}
-        </div>
-      </Slot>
-      {lo.weaknessHit && <p className="text-xs text-ink-2">{t("builds.weaknessHit")}</p>}
-      {dup.size > 0 && <p className="text-xs text-gold">{t("builds.dupWarning")}</p>}
-      {lo.members.map((mem, i) => (
-        <MemberGear
-          key={mem.characterId}
-          mem={mem}
-          effects={received[i].effects}
-          team={team}
-          weaknessHit={lo.weaknessHit ?? false}
-          staggerOften={lo.staggerOften ?? false}
-          stats={i === 0 ? stats : undefined}
-          awakenSelect={selects[i]}
-          dup={dup}
-          locale={locale}
-          t={t}
-        />
-      ))}
-    </div>
+    <>
+      {dup.size > 0 && <p className="mb-3 text-xs text-gold">{t("builds.dupWarning")}</p>}
+      {lo.members.map((mem, i) => {
+        const c = characterById(mem.characterId);
+        return (
+          <MemberPanel key={mem.characterId} member={i}>
+            <div className="flex flex-wrap items-start gap-6">
+              <section className="min-w-0 flex-[999_1_560px] overflow-hidden rounded-2xl border border-line bg-surface">
+                <header className="flex flex-wrap items-center gap-3 border-b border-line px-4 py-4 sm:px-5">
+                  <Icon src={characterImage(mem.characterId)} />
+                  <h3 className="font-display text-lg font-semibold">
+                    <Link href={`/${locale}/characters/${mem.characterId}`} className="hover:underline">
+                      {name(c?.name, locale, mem.characterId)}
+                    </Link>
+                  </h3>
+                  <span className="ms-auto text-xs text-muted">{t("builds.dimHint")}</span>
+                  <div className="w-full sm:hidden">{pills[i]}</div>
+                </header>
+                <GearRows
+                  mem={mem}
+                  effects={received[i].effects}
+                  team={team}
+                  weaknessHit={lo.weaknessHit ?? false}
+                  staggerOften={lo.staggerOften ?? false}
+                  dup={dup}
+                  locale={locale}
+                  t={t}
+                />
+                <SubstitutesFor lo={base} replaces={mem.characterId} locale={locale} t={t} />
+              </section>
+              {i === 0 && stats && <aside className="min-w-0 flex-[1_1_320px]">{stats}</aside>}
+            </div>
+          </MemberPanel>
+        );
+      })}
+    </>
   );
 }
 
@@ -607,9 +625,10 @@ function combos(groups: [number, number][][]): number[][] {
 }
 
 /**
- * บิ้วหนึ่งทีม — dropdown ขั้นปลุกพลังแยกรายตัว (ผู้เล่นสั่ง 2026-10-31)
- * ขั้นที่ให้ผลเหมือนกันรวมเป็นตัวเลือกเดียว · ส่วนของที่ใส่ render ครั้งเดียวต่อ "ของชุดเดียวกัน + สีเทาเหมือนกัน"
- * ส่วนค่าพลังรวม render ต่อชุดค่าผสม แล้วฝั่งเบราว์เซอร์แค่สลับว่าโชว์อันไหน
+ * บิ้วหนึ่งทีม (หน้าแบบใหม่ 2026-10-31 ตาม mockup ที่ผู้เล่นตกลง)
+ * หัว: ชื่อทีม + ป้ายตีจุดอ่อน + อาหาร · การ์ดตัวละคร 3 ใบ (กดเลือก + ปุ่มขั้นปลุกพลังรายตัว) · ของของตัวที่เลือก
+ * ขั้นที่ให้ผลเหมือนกันรวมเป็นตัวเลือกเดียว · ของ render ครั้งเดียวต่อ "ของชุดเดียวกัน + สีเทาเหมือนกัน"
+ * ค่าพลังรวม render ต่อชุดค่าผสม แล้วฝั่งเบราว์เซอร์แค่สลับว่าโชว์อันไหน
  */
 function BuildView({ b, locale, t }: { b: (typeof BUILDS)[number]; locale: Locale; t: T }) {
   const first = b.loadouts[0];
@@ -644,23 +663,82 @@ function BuildView({ b, locale, t }: { b: (typeof BUILDS)[number]; locale: Local
     if (base.awaken !== combo[0]) inherited.set(base.awaken, [...(inherited.get(base.awaken) ?? []), key]);
   }
 
-  const selects = groups.map((g, i) => (
-    <MemberAwakenSelect
-      key={i}
-      member={i}
-      label={t("builds.awaken")}
-      options={g.map(([s, e]) => [s, s === e ? String(s) : `${s}–${e}`])}
-    />
-  ));
+  const options = groups.map((g) => g.map(([s, e]) => [s, s === e ? String(s) : `${s}–${e}`] as [number, string]));
+  const pills = options.map((o, i) => <AwakenPills key={i} member={i} label={t("builds.awaken")} options={o} />);
   for (const [gearKey, lo] of Object.entries(gearLo)) {
     const main = characterById(lo.members[0].characterId);
     const stats = main && <StatsSlot char={main} combos={statsByGear[gearKey]} locale={locale} t={t} />;
-    gearPanels[gearKey] = <Loadout lo={lo} stats={stats} selects={selects} locale={locale} t={t} />;
+    gearPanels[gearKey] = <TeamGear lo={lo} base={first} stats={stats} pills={pills} locale={locale} t={t} />;
   }
+
+  const team = first.members.flatMap((m) => characterById(m.characterId) ?? []);
+  const foodWhy: Why = (e) =>
+    (e.damageType && e.damageType !== "physical" && !team.some((m) => m.element === e.damageType)) ||
+    (e.condition?.teammateElement && !team.some((m) => m.element === e.condition?.teammateElement))
+      ? "teamElement"
+      : undefined;
+  const foods = (["entree", "side"] as const).flatMap((cat) => FOOD.find((x) => x.id === first.food[cat]) ?? []);
+  const mainChar = chars[0];
 
   return (
     <AwakenProvider initial={initial}>
-      <div className="space-y-3">
+      <div className="space-y-5">
+        <header className="space-y-2">
+          <h2 className="font-display text-3xl font-semibold">
+            {t("builds.teamOf").replace("{name}", name(mainChar?.name, locale, first.members[0].characterId))}
+          </h2>
+          <div className="flex flex-wrap items-start gap-2">
+            {first.weaknessHit && mainChar && (
+              <span className="rounded-full bg-[#e3efdd] px-3 py-1 text-xs font-semibold text-[#2f5a23] dark:bg-[#22331d] dark:text-[#b7dca8]">
+                {t("builds.weaknessChip").replace("{el}", label("element", mainChar.element, locale))}
+              </span>
+            )}
+            {foods.length > 0 && (
+              <details className="open:basis-full">
+                <summary className="inline-flex min-h-7 cursor-pointer list-none items-center rounded-full border border-line bg-surface px-3 py-1 text-xs text-ink-2 hover:border-rail [&::-webkit-details-marker]:hidden">
+                  {t("builds.food")}: {foods.map((f) => name(f.name, locale, f.id)).join(" · ")}
+                </summary>
+                <div className="mt-2 grid gap-4 rounded-2xl border border-line bg-surface p-4 sm:grid-cols-2">
+                  {foods.map((f) => (
+                    <div key={f.id}>
+                      <p className="text-sm font-semibold">{name(f.name, locale, f.id)}</p>
+                      <CheckedEffects effects={f.effects} why={foodWhy} locale={locale} t={t} />
+                    </div>
+                  ))}
+                </div>
+              </details>
+            )}
+          </div>
+        </header>
+
+        <div className="grid grid-cols-3 gap-2 sm:gap-4">
+          {first.members.map((m, i) => {
+            const c = chars[i];
+            const img = characterImage(m.characterId);
+            return (
+              <MemberTab key={m.characterId} member={i} footer={<div className="hidden sm:block">{pills[i]}</div>}>
+                {img ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={img} alt="" width={64} height={64} className="size-12 shrink-0 rounded-xl object-cover sm:size-16" />
+                ) : (
+                  <span className="size-12 shrink-0 rounded-xl bg-surface-2 sm:size-16" />
+                )}
+                <span className="flex min-w-0 flex-col gap-1">
+                  <span className="font-display text-sm font-semibold leading-tight sm:text-lg">
+                    {name(c?.name, locale, m.characterId)}
+                  </span>
+                  <span className="hidden text-xs text-ink-2 sm:block">{charSub(c, locale)}</span>
+                </span>
+                {i === 0 && (
+                  <span className="hidden self-start rounded-full bg-gold-bg px-2 py-0.5 text-[11px] font-semibold text-gold sm:ms-auto sm:inline">
+                    {t("builds.mainBadge")}
+                  </span>
+                )}
+              </MemberTab>
+            );
+          })}
+        </div>
+
         {[...inherited].map(([n, keys]) => (
           <AwakenOnly key={n} combos={keys}>
             <p className="text-xs text-gold">{t("builds.awakenInherited").replace("{n}", String(n))}</p>
@@ -672,89 +750,25 @@ function BuildView({ b, locale, t }: { b: (typeof BUILDS)[number]; locale: Local
   );
 }
 
-/**
- * ตัวแทน — ถ้าไม่มีตัวใดตัวหนึ่งในทีม (ผู้เล่นสั่ง 2026-10-31)
- * คิดที่ขั้นปลุกพลังเริ่มต้นของบิ้ว ไม่ตาม dropdown · ดาเมจรวมทีมเทียบทีมหลัก
- */
-function Substitutes({ lo, locale, t }: { lo: BuildLoadout; locale: Locale; t: T }) {
-  const subs = lo.substitutes ?? [];
-  if (subs.length === 0) return null;
-  const main = teamDamage(lo).total;
-  return (
-    <section className="mt-6 border-t border-line pt-4">
-      <h3 className="font-display text-base font-semibold">{t("builds.substitutes")}</h3>
-      <p className="mt-1 text-xs text-ink-2">{t("builds.substitutesNote")}</p>
-      <div className="mt-3 space-y-2">
-        {subs.map((sub, k) => {
-          const swapped: BuildLoadout = {
-            ...lo,
-            members: lo.members.map((m) => (m.characterId === sub.replaces ? sub.member : m)),
-          };
-          const i = swapped.members.indexOf(sub.member);
-          const received = receivedEffects(swapped);
-          const team = swapped.members.flatMap((m) => characterById(m.characterId) ?? []);
-          const others = swapped.members.filter((m) => m !== sub.member).flatMap((m) => m.monsterlings.map((x) => x.id));
-          const dup = new Set(sub.member.monsterlings.map((x) => x.id).filter((id) => others.includes(id)));
-          const pct = teamDamage(swapped).total / main - 1;
-          const pctText = `${pct >= 0 ? "+" : "−"}${Math.abs(Math.round(pct * 1000) / 10)}%`;
-          const replaced = name(characterById(sub.replaces)?.name, locale, sub.replaces);
-          const who = name(characterById(sub.member.characterId)?.name, locale, sub.member.characterId);
-          return (
-            <details key={k} className="rounded-xl border border-line p-3">
-              <summary className="cursor-pointer text-sm">
-                <span className="text-muted">{t("builds.replaces").replace("{name}", replaced)}:</span>{" "}
-                <strong className="font-semibold">{who}</strong>{" "}
-                <span className="text-xs text-gold">{t("builds.teamDmgVsMain").replace("{pct}", pctText)}</span>
-              </summary>
-              {sub.note && <p className="mt-2 text-xs text-ink-2">{name(sub.note, locale, "")}</p>}
-              <div className="mt-3">
-                <MemberGear
-                  mem={sub.member}
-                  effects={received[i]?.effects ?? []}
-                  team={team}
-                  weaknessHit={lo.weaknessHit ?? false}
-                  staggerOften={lo.staggerOften ?? false}
-                  dup={dup}
-                  locale={locale}
-                  t={t}
-                />
-              </div>
-            </details>
-          );
-        })}
-      </div>
-    </section>
-  );
-}
-
 export default async function BuildsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const t = createTranslate(locale as Locale);
 
   return (
-    <div className="mx-auto max-w-5xl px-5 py-8">
+    <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
       <h1 className="font-display text-2xl font-semibold">{t("builds.title")}</h1>
       <p className="mt-2 max-w-2xl text-sm text-ink-2">{t("builds.lede")}</p>
-      <p className="mt-3 text-sm text-muted">
-        <strong className="text-ink">{BUILDS.length}</strong> {t("builds.count")}
-      </p>
 
       {BUILDS.length === 0 ? (
         <p className="mt-8 text-sm text-muted">{t("builds.empty")}</p>
       ) : (
-        <div className="mt-6 space-y-8">
-          {BUILDS.map((b) => {
-            const team = b.loadouts[0].members.map((m) => name(characterById(m.characterId)?.name, locale as Locale, m.characterId));
-            return (
-              <article key={b.id} id={b.id} className="rounded-xl border border-line p-4">
-                <h2 className="mb-4 font-display text-lg font-semibold">{team.join(" · ")}</h2>
-                <p className="mb-3 text-xs text-ink-2">{t("builds.awakenSelect")}</p>
-                <BuildView b={b} locale={locale as Locale} t={t} />
-                <Substitutes lo={b.loadouts[0]} locale={locale as Locale} t={t} />
-              </article>
-            );
-          })}
+        <div className="mt-8 space-y-16">
+          {BUILDS.map((b) => (
+            <article key={b.id} id={b.id}>
+              <BuildView b={b} locale={locale as Locale} t={t} />
+            </article>
+          ))}
         </div>
       )}
     </div>
