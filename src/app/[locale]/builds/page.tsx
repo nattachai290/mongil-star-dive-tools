@@ -20,7 +20,9 @@ import {
   monsterlingImage,
 } from "@/lib/data";
 import { asset } from "@/lib/base-path";
+import { chainAppears } from "@/lib/link-chain-effects";
 import {
+  CYCLE_SKILLS,
   artifactFusion,
   receivedEffects,
   specialCooldownReduction,
@@ -161,7 +163,7 @@ function MonFull({
 }
 
 /** ลิงก์เชน — มอนเจ้าของ เงื่อนไขปรากฏตัว ดาเมจ คูลดาวน์ และเอฟเฟกต์เพิ่มเติมของขั้นสูงสุดที่อ่านมา */
-function ChainInfo({ chain, locale, t }: { chain: LinkChain; locale: Locale; t: T }) {
+function ChainInfo({ chain, appears, locale, t }: { chain: LinkChain; appears: boolean; locale: Locale; t: T }) {
   const owner = MONSTERLINGS.get(chain.monsterlingId);
   const top = [...chain.levels].sort((a, b) => b.level - a.level)[0];
   return (
@@ -206,6 +208,7 @@ function ChainInfo({ chain, locale, t }: { chain: LinkChain; locale: Locale; t: 
           ))}
         </dl>
       )}
+      {!appears && <p className="mt-2 text-[11px] text-gold">{t("builds.chainNoAppear")}</p>}
     </div>
   );
 }
@@ -309,6 +312,7 @@ function MemberGear({
   mem,
   effects,
   team,
+  weaknessHit,
   showStats,
   dup,
   locale,
@@ -317,6 +321,7 @@ function MemberGear({
   mem: BuildMember;
   effects: Tagged[];
   team: Character[];
+  weaknessHit: boolean;
   /** ค่าพลังรวมโชว์เฉพาะตัวหลัก (ตัวแรก) — ผู้เล่นสั่ง 2026-10-31 */
   showStats: boolean;
   dup: Set<string>;
@@ -468,7 +473,12 @@ function MemberGear({
         <div className="space-y-3">
           <Slot title={t("builds.linkChain")}>
             {chain ? (
-              <ChainInfo chain={chain} locale={locale} t={t} />
+              <ChainInfo
+                chain={chain}
+                appears={!!c && chainAppears(chain, c, mem.cycle ?? CYCLE_SKILLS, weaknessHit)}
+                locale={locale}
+                t={t}
+              />
             ) : (
               <p className="text-sm text-muted">{t("builds.empty.slot")}</p>
             )}
@@ -537,6 +547,7 @@ function Loadout({ lo, locale, t }: { lo: BuildLoadout; locale: Locale; t: T }) 
           mem={mem}
           effects={received[i].effects}
           team={team}
+          weaknessHit={lo.weaknessHit ?? false}
           showStats={i === 0}
           dup={dup}
           locale={locale}

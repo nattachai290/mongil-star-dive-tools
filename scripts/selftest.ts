@@ -7,7 +7,8 @@
 import { buildLoadout, character, food, linkChain, monsterling, skill } from "../src/lib/schema/entities";
 import { computeDamage, proficiencyToPercent, sumBuffs } from "../src/lib/formula";
 import { canRecastSpecial, receivedEffects, teamDamage, unusableReason } from "../src/lib/team-damage";
-import { characterById } from "../src/lib/data";
+import { LINK_CHAINS, characterById } from "../src/lib/data";
+import { chainAppears, chainEffects } from "../src/lib/link-chain-effects";
 import { LINK_CHAIN_LIST_IS_COMPLETE, linkableBadge, linkableIds, linkableOf } from "../src/lib/linkable";
 import type { Effect } from "../src/lib/schema/common";
 
@@ -178,6 +179,20 @@ console.log("\nดาเมจรวมทั้งทีม");
     const windShred = { kind: "debuff", stat: "res", damageType: "wind", value: 6, unit: "percent", target: "enemy", trigger: "onSpecialSkillHit" } as Effect;
     check("ลดต้านทานลมในทีมที่ไม่มีตัวธาตุลม = ทีมใช้ไม่ได้", unusableReason(gabi, windShred, 0, [gabi]) === "teamElement");
     check("ลดต้านทานลมในทีมที่มีตัวธาตุลม = ใช้ได้", unusableReason(gabi, windShred, 0, [gabi, characterById("chloe")!]) === undefined);
+  }
+  {
+    const gem = LINK_CHAINS.find((c) => c.id === "golems-gem")!;
+    const fx = chainEffects(gem).effects;
+    check("ลิงก์เชน: แปลง \"ลดต้านทานธาตุดิน 10%\" เป็นดีบัฟศัตรู",
+      fx.some((e) => e.stat === "res" && e.damageType === "earth" && e.value === 10 && e.target === "enemy"));
+    const claw = LINK_CHAINS.find((c) => c.id === "poisoned-claw")!;
+    const fsd = characterById("francis-summer-dive")!;
+    check("ลิงก์เชนที่โผล่ตอนหลบโต้กลับ ไม่โผล่ในรอบ สับเปลี่ยน/พิเศษ/อัลติเมต", !chainAppears(claw, fsd, ["switch", "special", "ultimate"], true));
+    check("ลิงก์เชนที่โผล่ตอนใช้สกิลพิเศษ โผล่ในรอบที่มีสกิลพิเศษ", chainAppears(gem, fsd, ["switch", "special", "ultimate"], true));
+    const mem = { characterId: "gabi", equipment: {}, substats: {}, linkChain: "frangible-pebble",
+      monsterlings: [{ id: "rock-fist-dude", traits: [] }] };
+    const withChain = teamDamage({ awaken: 0, food: {}, members: [mem] }).members[0];
+    check("ดาเมจลิงก์เชนถูกนับเข้าดาเมจรวม", withChain.chain >= 0 && Math.abs(withChain.total - withChain.skills.reduce((n, x) => n + x.average, 0) - withChain.chain) < 1e-6);
   }
   check("ตีจุดอ่อนแรงกว่าไม่ตี", teamDamage(plain, { weakness: true }).total > teamDamage(plain).total);
   check("Trait ดาเมจจุดอ่อนไม่มีผลถ้าไม่ตีจุดอ่อน",

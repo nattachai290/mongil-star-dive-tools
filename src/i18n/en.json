@@ -190,5 +190,6 @@
   "builds.stats.sec": "s",
   "builds.unusable.attackElement": "Not usable by this character — no skill that changes its attack element, so it is not counted in total stats",
   "builds.weaknessHit": "This build assumes hitting the enemy's elemental weakness",
-  "builds.unusable.teamElement": "Not usable by this team — no teammate of this element"
+  "builds.unusable.teamElement": "Not usable by this team — no teammate of this element",
+  "builds.chainNoAppear": "This link chain does not appear in this character's skill cycle, so the calculator does not count it"
 }

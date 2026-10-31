@@ -4,6 +4,7 @@ import {
   EQUIPMENT_SETS,
   FOOD,
   GEAR_MAIN_STATS,
+  LINK_CHAINS,
   MONSTERLINGS,
   MONSTER_STAT_TIERS,
   TRAIT_POOL,
@@ -11,6 +12,7 @@ import {
   minSubstat,
 } from "./data";
 import { FORMULA, computeDamage, proficiencyToPercent, type DamageInput } from "./formula";
+import { chainAppears, chainEffects, topLevel } from "./link-chain-effects";
 import type { Effect, LocalizedText } from "./schema/common";
 import type { Artifact, BuildLoadout, BuildMember, Character } from "./schema/entities";
 
@@ -43,6 +45,8 @@ export type SkillDamage = {
 export type MemberDamage = {
   characterId: string;
   skills: SkillDamage[];
+  /** ดาเมจลิงก์เชน 1 ครั้งต่อรอบ (0 = ไม่โผล่ในรอบนี้ / ไม่มี) */
+  chain: number;
   total: number;
 };
 export type TeamDamage = { members: MemberDamage[]; total: number };
@@ -53,7 +57,8 @@ export const TEAM_ASSUMPTIONS = [
   "ค่าหลักของอุปกรณ์คิดที่เลเวลสูงสุด · ค่ารองใช้ค่าต่ำสุด (เลเวล 1) ของระดับชิ้น",
   "ค่าพลังของมอน (ATK/DEF/HP) ตามชนิด บอส / ทั่วไป / ตำนาน · มอนทั่วไปบางตัวอนุมานจากการไม่มีลิงก์เชน",
   "ความชำนาญบทบาทคิดเป็นดาเมจเฉพาะบรอว์เลอร์ (ดาเมจปะทะ) — บทบาทอื่นสูตรยังไม่มี",
-  "ยังไม่นับดาเมจต่อเนื่อง ดาเมจลิงก์เชน และสกิลสนับสนุน",
+  "ยังไม่นับดาเมจต่อเนื่อง และสกิลสนับสนุน",
+  "ลิงก์เชน: ดาเมจ 1 ครั้งต่อรอบ ถ้าเงื่อนไขปรากฏตัวเกิดในรอบสกิล (ไม่นับหลบ/โต้กลับ/โดนตี) · ไม่บอกธาตุ = กายภาพ · เอฟเฟกต์เพิ่มเติมนับเฉพาะลดต้านทาน/ลดพลังป้องกัน/ดาเมจจุดอ่อน",
   "ลดคูลดาวน์สกิลพิเศษ: กดทุกครั้งที่คูลดาวน์หมด ดาเมจสกิลพิเศษ × (คูลดาวน์ตามจอ ÷ หลังลด) · หลายแหล่งบวกกัน (ผู้เล่นยืนยัน 2026-10-29) · ไม่หักเวลาตีพื้นฐาน",
 ];
 
@@ -256,7 +261,8 @@ function valueAt(scaling: (number | null)[], level: number): { value: number; le
 /** ดาเมจบทบาทที่มาจากความชำนาญพื้นฐานของตัวละคร — ถูกแทนด้วยค่าจากรองเท้าเมื่อใส่รองเท้า */
 const ROLE_DMG_STATS = new Set(["brawlDmg", "suppressionDmg", "neutralizationDmg", "supportDmg"]);
 
-const SCOPE_OF: Record<CycleSkill, string> = {
+const SCOPE_OF: Record<CycleSkill | "chain", string> = {
+  chain: "linkChain",
   basic: "basicAttack",
   switch: "switchSkill",
   special: "specialSkill",
@@ -267,7 +273,7 @@ const SCOPE_OF: Record<CycleSkill, string> = {
 function inputsFor(
   char: Character,
   effects: Sourced[],
-  skill: CycleSkill,
+  skill: CycleSkill | "chain",
   damageType: string,
   skillPercent: number,
   weakness = false,
@@ -299,7 +305,8 @@ function inputsFor(
     if (e.damageType && e.stat !== "res" && e.damageType !== damageType) continue;
     const scopes = e.scopes as string[] | undefined;
     if (scopes?.includes("weaknessHit")) {
-      if (weak && e.kind === "buff" && e.stat === "dmgDealt") inp.weaknessDmg! += e.value;
+      const onEnemy = (e.target === "enemy" || e.target === "allEnemies") && e.kind === "debuff" && e.stat === "dmgTaken";
+      if (weak && ((e.kind === "buff" && e.stat === "dmgDealt") || onEnemy)) inp.weaknessDmg! += e.value;
       continue;
     }
     if (scopes && !scopes.includes(SCOPE_OF[skill])) continue;
@@ -359,7 +366,14 @@ export function receivedEffects(
   const own = lo.members.map((m, i) =>
     (chars[i] ? memberEffects(m, chars[i]!, lo.awaken) : []).filter((t) => weakness || t.effect.trigger !== "onWeaknessHit"),
   );
-  const shared = own.flat().filter((t) => ["team", "ally", "enemy", "allEnemies"].includes(t.effect.target));
+  // เอฟเฟกต์เพิ่มเติมของลิงก์เชนที่โผล่ในรอบ — ลงที่ศัตรู จึงได้ทั้งทีม
+  const chainFx = lo.members.flatMap((m, i) => {
+    const lc = LINK_CHAINS.find((c) => c.id === m.linkChain);
+    const ch = chars[i];
+    if (!lc || !ch || !chainAppears(lc, ch, m.cycle ?? CYCLE_SKILLS, weakness)) return [];
+    return chainEffects(lc).effects.map(tag(lc.name, false));
+  });
+  const shared = [...own.flat(), ...chainFx].filter((t) => ["team", "ally", "enemy", "allEnemies"].includes(t.effect.target));
 
   return lo.members.map((mem, i) => {
     const char = chars[i];
@@ -434,7 +448,10 @@ export function statSheet(char: Character, effects: Tagged[], gearOnly: boolean)
       if (e.kind !== "debuff") continue;
       if (e.stat === "def") s.enemyDefDown += v;
       else if (e.stat === "res" && (!e.damageType || e.damageType === char.element)) s.enemyResDown += v;
-      else if (e.stat === "dmgTaken") s.dmgBonus += v;
+      else if (e.stat === "dmgTaken") {
+        if (e.scopes?.includes("weaknessHit")) s.weaknessDmg += v;
+        else s.dmgBonus += v;
+      }
       continue;
     }
     if (e.kind !== "buff") continue;
@@ -490,7 +507,7 @@ export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean } = {}):
   const received = receivedEffects(lo, weakness);
   const members: MemberDamage[] = lo.members.map((mem, i) => {
     const { char, effects: mine } = received[i];
-    if (!char) return { characterId: mem.characterId, skills: [], total: 0 };
+    if (!char) return { characterId: mem.characterId, skills: [], chain: 0, total: 0 };
     const level = skillLevel(char, lo.awaken);
     const skills: SkillDamage[] = [];
     for (const key of mem.cycle ?? CYCLE_SKILLS) {
@@ -513,7 +530,14 @@ export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean } = {}):
       if (key === "special") sum *= specialCastFactor(char, mine);
       if (rows.length) skills.push({ skill: key, level: usedLevel, rows, damageType, average: sum });
     }
-    return { characterId: mem.characterId, skills, total: skills.reduce((n, s) => n + s.average, 0) };
+    // ลิงก์เชน: โผล่ 1 ครั้งต่อรอบ (คูลดาวน์ 15 วิ ~ 1 รอบ) ถ้าเงื่อนไขปรากฏตัวเกิดในรอบ · ไม่บอกธาตุ = กายภาพ
+    let chain = 0;
+    const lc = LINK_CHAINS.find((c) => c.id === mem.linkChain);
+    const top = lc && topLevel(lc);
+    if (lc && top?.appearanceInfo.dmgPercentOfAtk && chainAppears(lc, char, mem.cycle ?? CYCLE_SKILLS, weakness)) {
+      chain = computeDamage(inputsFor(char, mine, "chain", top.damageType ?? "physical", top.appearanceInfo.dmgPercentOfAtk, weakness)).average;
+    }
+    return { characterId: mem.characterId, skills, chain, total: skills.reduce((n, s) => n + s.average, 0) + chain };
   });
   return { members, total: members.reduce((n, m) => n + m.total, 0) };
 }
