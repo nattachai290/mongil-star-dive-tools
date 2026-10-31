@@ -174,7 +174,38 @@
       "desc": {
         "en": "The ATK Boost from Summer On-the-Fly Diagnosis increases to 40%. Also, the Earth DMG Boost granted to Earth teammates increases to 60%."
       },
-      "effects": []
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "atk",
+          "value": 20,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onSpecialSkill",
+          "durationSec": 15,
+          "condition": {
+            "note": {
+              "en": "Summer On-the-Fly Diagnosis ATK Boost 20% → 40%"
+            }
+          }
+        },
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "damageType": "earth",
+          "value": 20,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onSpecialSkill",
+          "durationSec": 15,
+          "condition": {
+            "teammateElement": "earth",
+            "note": {
+              "en": "Earth teammates · Earth DMG Boost 40% → 60%"
+            }
+          }
+        }
+      ]
     }
   ],
   "skills": {

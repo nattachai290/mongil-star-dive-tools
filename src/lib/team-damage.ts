@@ -292,6 +292,8 @@ function inputsFor(
   skillPercent: number,
   weakness = false,
   enemyDef?: number,
+  /** ชื่อแถวดาเมจ (อังกฤษ) — บัฟที่มี condition.skillRow ใช้เฉพาะแถวที่ชื่อตรง */
+  row?: string,
 ): DamageInput {
   // บัฟที่ติดเมื่อตีจุดอ่อน (เช่น ผู้พิทักษ์แห่งนครทองคำ) ติดเฉพาะเมื่อทีมตีจุดอ่อน — เป็นบัฟค้าง ใช้กับทุกท่าหลังติดแล้ว
   const teamWeak = weakness;
@@ -317,6 +319,7 @@ function inputsFor(
   for (const { effect: e } of effects) {
     if (e.value === undefined || e.stat === undefined) continue;
     if (e.condition?.vsBoss === false) continue;
+    if (e.condition?.skillRow && !row?.includes(e.condition.skillRow)) continue;
     if (e.trigger === "onWeaknessHit" && !teamWeak) continue;
     if (e.damageType && e.stat !== "res" && e.damageType !== damageType) continue;
     const scopes = e.scopes as string[] | undefined;
@@ -470,6 +473,8 @@ export function statSheet(char: Character, effects: Tagged[], gearOnly: boolean)
     const e = t.effect;
     if (e.value === undefined || e.stat === undefined) continue;
     if (e.condition?.vsBoss === false) continue;
+    // บัฟของท่าย่อยท่าเดียว ไม่ใช่ค่าพลังของทั้งท่า — โชว์ในรายการบัฟแทน
+    if (e.condition?.skillRow) continue;
     const v = e.value;
     if (e.target === "enemy" || e.target === "allEnemies") {
       if (e.kind !== "debuff") continue;
@@ -553,7 +558,7 @@ export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean; enemyDe
         if (!at) continue;
         usedLevel = at.level;
         rows.push({ label: row.label, value: at.value });
-        sum += computeDamage(inputsFor(char, mine, key, damageType, at.value, weakness, opts.enemyDef)).average;
+        sum += computeDamage(inputsFor(char, mine, key, damageType, at.value, weakness, opts.enemyDef, en)).average;
       }
       if (key === "special") sum *= specialCastFactor(char, mine);
       if (rows.length) skills.push({ skill: key, level: usedLevel, rows, damageType, average: sum });

@@ -121,7 +121,26 @@
         "th": "ดาเมจของหนึ่งพิฆาตเพิ่มขึ้น 104% และดาเมจเพิ่มเติมที่หนึ่งพิฆาตสร้างแก่ศัตรูในสถานะกลายเป็นหินจะเพิ่มขึ้นเป็น 170%",
         "en": "Gabi's Crushing Blow deals 104% increased DMG, and the Bonus DMG that Crushing Blow inflicts against targets with Petrification increases to 170%."
       },
-      "effects": []
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "basicAttack"
+          ],
+          "value": 104,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive",
+          "condition": {
+            "skillRow": "Crushing Blow",
+            "note": {
+              "th": "หนึ่งพิฆาต",
+              "en": "Crushing Blow"
+            }
+          }
+        }
+      ]
     },
     {
       "stage": 5,
@@ -158,7 +177,39 @@
         "th": "เพิ่มเอฟเฟกต์สลักไม้แห่งเทพพิทักษ์ขึ้นเป็น 3.4 เท่า ในขณะที่ได้รับเอฟเฟกต์จากสลักไม้ ปริมาณดาเมจของโจมตีพื้นฐานและหนึ่งพิฆาตจะเพิ่มขึ้นเป็น 2 เท่า / อีกทั้งสลักไม้แห่งเทพพิทักษ์จะมอบเอฟเฟกต์กลายเป็นหินแก่ศัตรูรอบข้างเป็นระยะ เอฟเฟกต์กลายเป็นหินจะคงอยู่ 4 วินาที และปรับใช้ได้สูงสุด 7 คน",
         "en": "The Wooden Guardian Statue effect increases 3.4-fold. Gabi's Basic Attack and Crushing Blow DMG increases 2-fold while the Wooden Guardian Statue effect is active / In addition, Wooden Guardian Statue periodically inflicts Petrification on nearby enemies. Petrification lasts for 4 sec and can affect up to 7 target(s)."
       },
-      "effects": []
+      "effects": [
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "damageType": "earth",
+          "value": 24,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onUltimate",
+          "durationSec": 15,
+          "condition": {
+            "note": {
+              "th": "สลักไม้แห่งเทพพิทักษ์ ×3.4 (10% → 34%)",
+              "en": "Wooden Guardian Statue ×3.4 (10% → 34%)"
+            }
+          }
+        },
+        {
+          "kind": "buff",
+          "stat": "def",
+          "value": 48,
+          "unit": "percent",
+          "target": "team",
+          "trigger": "onUltimate",
+          "durationSec": 15,
+          "condition": {
+            "note": {
+              "th": "สลักไม้แห่งเทพพิทักษ์ ×3.4 (20% → 68%)",
+              "en": "Wooden Guardian Statue ×3.4 (20% → 68%)"
+            }
+          }
+        }
+      ]
     }
   ],
   "skills": {

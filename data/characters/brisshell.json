@@ -112,7 +112,40 @@
       "desc": {
         "en": "DEF Reduction increases to 20% upon landing an attack with Alien Power on an enemy. / DMG from Alien Power increases by80%."
       },
-      "effects": []
+      "effects": [
+        {
+          "kind": "debuff",
+          "stat": "def",
+          "value": 10,
+          "unit": "percent",
+          "target": "enemy",
+          "trigger": "onHit",
+          "durationSec": 6,
+          "condition": {
+            "note": {
+              "en": "upon landing attacks with Alien Power · DEF Reduction 10% → 20%"
+            }
+          }
+        },
+        {
+          "kind": "buff",
+          "stat": "dmgDealt",
+          "scopes": [
+            "specialSkill",
+            "ultimate"
+          ],
+          "value": 80,
+          "unit": "percent",
+          "target": "self",
+          "trigger": "passive",
+          "condition": {
+            "skillRow": "Alien Power",
+            "note": {
+              "en": "DMG from Alien Power"
+            }
+          }
+        }
+      ]
     },
     {
       "stage": 5,
