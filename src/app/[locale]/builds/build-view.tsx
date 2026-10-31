@@ -577,65 +577,29 @@ function SubstitutesFor({ lo, replaces, locale, t }: { lo: BuildLoadout; replace
   );
 }
 
-/** ของของทุกตัวในทีม (ชุดของหนึ่งชุด) — โชว์ทีละตัวตามที่เลือก · ค่าพลังรวมอยู่ด้านข้างเฉพาะตัวหลัก */
-function TeamGear({
-  lo,
-  base,
-  stats,
-  pills,
-  locale,
-  t,
-}: {
-  lo: BuildLoadout;
-  /** ชุดของตั้งต้นของบิ้ว — ใช้คิดตัวแทน */
-  base: BuildLoadout;
-  stats: ReactNode;
-  pills: ReactNode[];
-  locale: Locale;
-  t: T;
-}) {
-  // มอนตัวเดียวกันบนหลายคนในทีม บัฟไม่ทับซ้อน · มอนตำนานใส่ซ้ำได้ทุกตัวละคร (ผู้เล่นบอก 2026-10-31) จึงไม่นับ
+/** มอนซ้ำในทีม — มอนตัวเดียวกันบนหลายคนบัฟไม่ทับซ้อน · มอนตำนานใส่ซ้ำได้ทุกตัวละคร (ผู้เล่นบอก 2026-10-31) จึงไม่นับ */
+function dupMonsters(lo: BuildLoadout): Set<string> {
   const all = lo.members.flatMap((m) => m.monsterlings.map((x) => x.id));
-  const dup = new Set(all.filter((m, i) => all.indexOf(m) !== i));
-  const received = receivedEffects(lo);
+  return new Set(all.filter((m, i) => all.indexOf(m) !== i));
+}
+
+/**
+ * ของของตัวละครหนึ่งตัวในชุดของหนึ่งชุด — render ครั้งเดียวต่อ "ของชุดเดียวกัน + สีเทาเหมือนกัน" ของตัวนั้น
+ * (เดิม render ของทั้งทีมต่อชุดของ พอมีของแยกตามขั้นปลุกพลัง หน้าใหญ่เกิน 2 MB)
+ */
+function MemberGear({ lo, i, effects, locale, t }: { lo: BuildLoadout; i: number; effects: Tagged[]; locale: Locale; t: T }) {
   const team = lo.members.flatMap((m) => characterById(m.characterId) ?? []);
   return (
-    <>
-      {dup.size > 0 && <p className="mb-3 text-xs text-gold">{t("builds.dupWarning")}</p>}
-      {lo.members.map((mem, i) => {
-        const c = characterById(mem.characterId);
-        return (
-          <MemberPanel key={mem.characterId} member={i}>
-            <div className="flex flex-wrap items-start gap-6">
-              <section className="min-w-0 flex-[999_1_560px] overflow-hidden rounded-2xl border border-line bg-surface">
-                <header className="flex flex-wrap items-center gap-3 border-b border-line px-4 py-4 sm:px-5">
-                  <Icon src={characterImage(mem.characterId)} />
-                  <h3 className="font-display text-lg font-semibold">
-                    <Link href={`/${locale}/characters/${mem.characterId}`} className="hover:underline">
-                      {name(c?.name, locale, mem.characterId)}
-                    </Link>
-                  </h3>
-                  <span className="ms-auto text-xs text-muted">{t("builds.dimHint")}</span>
-                  <div className="w-full sm:hidden">{pills[i]}</div>
-                </header>
-                <GearRows
-                  mem={mem}
-                  effects={received[i].effects}
-                  team={team}
-                  weaknessHit={lo.weaknessHit ?? false}
-                  staggerOften={lo.staggerOften ?? false}
-                  dup={dup}
-                  locale={locale}
-                  t={t}
-                />
-                <SubstitutesFor lo={base} replaces={mem.characterId} locale={locale} t={t} />
-              </section>
-              {i === 0 && stats && <aside className="min-w-0 flex-[1_1_320px]">{stats}</aside>}
-            </div>
-          </MemberPanel>
-        );
-      })}
-    </>
+    <GearRows
+      mem={lo.members[i]}
+      effects={effects}
+      team={team}
+      weaknessHit={lo.weaknessHit ?? false}
+      staggerOften={lo.staggerOften ?? false}
+      dup={dupMonsters(lo)}
+      locale={locale}
+      t={t}
+    />
   );
 }
 
@@ -658,11 +622,14 @@ export function BuildView({ b, locale, t }: { b: (typeof BUILDS)[number]; locale
   const groupOf = (i: number, stage: number) => groups[i].find(([s, e]) => stage >= s && stage <= e)![0];
   const initial = first.members.map((m, i) => groupOf(i, m.awaken ?? first.awaken));
 
-  const gearPanels: Record<string, ReactNode> = {};
   const gearPick: Record<string, string> = {};
   const statsByGear: Record<string, { key: string; effects: Tagged[] }[]> = {};
-  // ข้อความ "ยังไม่ได้จัดของแยก" — 1 อันต่อชุดของ ซ่อน/โชว์ตามชุดค่าผสม
   const gearLo: Record<string, BuildLoadout> = {};
+  // ของรายตัว: คีย์ = ของที่ใส่ + คูลดาวน์ที่ลดได้ (สีเทา) + มอนซ้ำในทีม + เงื่อนไขทีม
+  const memberPick: Record<string, string>[] = first.members.map(() => ({}));
+  const memberPanels: Record<string, ReactNode>[] = first.members.map(() => ({}));
+  const dupPick: Record<string, string> = {};
+  const memberIds: Map<string, string>[] = first.members.map(() => new Map());
 
   for (const combo of combos(groups)) {
     const key = combo.join(",");
@@ -679,14 +646,26 @@ export function BuildView({ b, locale, t }: { b: (typeof BUILDS)[number]; locale
     gearPick[key] = gearKey;
     gearLo[gearKey] ??= lo;
     (statsByGear[gearKey] ??= []).push({ key, effects: received[0]?.effects ?? [] });
+    const dup = dupMonsters(lo);
+    dupPick[key] = dup.size > 0 ? "dup" : "none";
+    lo.members.forEach((m, i) => {
+      const { awaken: _a, ...gear } = m;
+      void _a;
+      const sig = JSON.stringify([gear, specialCooldownReduction(received[i].effects), [...dup], lo.weaknessHit, lo.staggerOften]);
+      // คีย์สั้น — คีย์ส่งไปเบราว์เซอร์ทุกชุดค่าผสม ถ้าใช้ JSON ยาว ๆ หน้าบวมเป็น MB
+      if (!memberIds[i].has(sig)) memberIds[i].set(sig, String(memberIds[i].size));
+      const mk = memberIds[i].get(sig)!;
+      memberPick[i][key] = mk;
+      memberPanels[i][mk] ??= <MemberGear lo={lo} i={i} effects={received[i].effects} locale={locale} t={t} />;
+    });
   }
 
   const options = groups.map((g) => g.map(([s, e]) => [s, s === e ? String(s) : `${s}–${e}`] as [number, string]));
   const pills = options.map((o, i) => <AwakenPills key={i} member={i} label={t("builds.awaken")} options={o} />);
+  const statsPanels: Record<string, ReactNode> = {};
   for (const [gearKey, lo] of Object.entries(gearLo)) {
     const main = characterById(lo.members[0].characterId);
-    const stats = main && <StatsSlot char={main} combos={statsByGear[gearKey]} locale={locale} t={t} />;
-    gearPanels[gearKey] = <TeamGear lo={lo} base={first} stats={stats} pills={pills} locale={locale} t={t} />;
+    statsPanels[gearKey] = main && <StatsSlot char={main} combos={statsByGear[gearKey]} locale={locale} t={t} />;
   }
 
   const team = first.members.flatMap((m) => characterById(m.characterId) ?? []);
@@ -761,7 +740,37 @@ export function BuildView({ b, locale, t }: { b: (typeof BUILDS)[number]; locale
           })}
         </div>
 
-        <AwakenSwitch panels={gearPanels} pick={gearPick} />
+        <AwakenSwitch panels={{ dup: <p className="text-xs text-gold">{t("builds.dupWarning")}</p>, none: null }} pick={dupPick} />
+        {first.members.map((mem, i) => {
+          const c = chars[i];
+          const subs = (first.substitutes ?? []).some((x) => x.replaces === mem.characterId);
+          return (
+            <MemberPanel key={mem.characterId} member={i}>
+              <div className="flex flex-wrap items-start gap-6">
+                <section className="min-w-0 flex-[999_1_560px] overflow-hidden rounded-2xl border border-line bg-surface">
+                  <header className="flex flex-wrap items-center gap-3 border-b border-line px-4 py-4 sm:px-5">
+                    <Icon src={characterImage(mem.characterId)} />
+                    <h3 className="font-display text-lg font-semibold">
+                      <Link href={`/${locale}/characters/${mem.characterId}`} className="hover:underline">
+                        {name(c?.name, locale, mem.characterId)}
+                      </Link>
+                    </h3>
+                    <span className="ms-auto text-xs text-muted">{t("builds.dimHint")}</span>
+                    <div className="w-full sm:hidden">{pills[i]}</div>
+                  </header>
+                  <AwakenSwitch panels={memberPanels[i]} pick={memberPick[i]} />
+                  {/* ตัวแทนคิดจากของชุดแรกของบิ้ว — render ครั้งเดียว */}
+                  {subs && <SubstitutesFor lo={first} replaces={mem.characterId} locale={locale} t={t} />}
+                </section>
+                {i === 0 && (
+                  <aside className="min-w-0 flex-[1_1_320px]">
+                    <AwakenSwitch panels={statsPanels} pick={gearPick} />
+                  </aside>
+                )}
+              </div>
+            </MemberPanel>
+          );
+        })}
       </div>
     </AwakenProvider>
   );
