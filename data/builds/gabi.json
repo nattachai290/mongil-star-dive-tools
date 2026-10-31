@@ -198,22 +198,22 @@
               ]
             },
             {
-              "id": "custos",
+              "id": "amon",
               "traits": [
                 {
-                  "id": "atk",
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
                   "id": "crit-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-rate",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-earth",
                   "grade": "gold"
                 }
               ]
