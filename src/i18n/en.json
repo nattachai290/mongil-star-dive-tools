@@ -195,5 +195,6 @@
   "builds.subsAll": "Substats (every piece)",
   "builds.legendaryShared": "Shared by every character · same traits everywhere",
   "builds.mainBadge": "Main",
-  "builds.chainAppears": "Appears in the cycle"
+  "builds.chainAppears": "Appears in the cycle",
+  "builds.back": "Back to builds"
 }
