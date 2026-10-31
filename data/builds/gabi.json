@@ -177,7 +177,7 @@
           },
           "monsterlings": [
             {
-              "id": "colossus",
+              "id": "frostbite",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -240,7 +240,7 @@
               ]
             }
           ],
-          "linkChain": "giants-destroyed-fist",
+          "linkChain": "mutated-spirit-core",
           "legendary": {
             "id": "reginula",
             "traits": [
