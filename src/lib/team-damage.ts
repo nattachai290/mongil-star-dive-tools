@@ -49,7 +49,7 @@ export type TeamDamage = { members: MemberDamage[]; total: number };
 
 export const TEAM_ASSUMPTIONS = [
   "บัฟทุกตัวทำงานตลอดรอบ (ไม่คิดเงื่อนไขและเวลาแสดงผล)",
-  "ศัตรูเป็นบอส · ไม่ตีจุดอ่อน · ไม่หมดฤทธิ์ · ไม่หักป้องกัน",
+  "ศัตรูเป็นบอส · ตีจุดอ่อนตามที่บิ้วตั้ง (weaknessHit) · บัฟที่ติดเมื่อตีจุดอ่อนนับเฉพาะบิ้วที่ตีจุดอ่อน · ไม่หมดฤทธิ์ · ไม่หักป้องกัน",
   "ค่าหลักของอุปกรณ์คิดที่เลเวลสูงสุด · ค่ารองใช้ค่าต่ำสุด (เลเวล 1) ของระดับชิ้น",
   "ค่าพลังของมอน (ATK/DEF/HP) ตามชนิด บอส / ทั่วไป / ตำนาน · มอนทั่วไปบางตัวอนุมานจากการไม่มีลิงก์เชน",
   "ความชำนาญบทบาทคิดเป็นดาเมจเฉพาะบรอว์เลอร์ (ดาเมจปะทะ) — บทบาทอื่นสูตรยังไม่มี",
@@ -162,8 +162,15 @@ const ownsType = (char: Character, t: string | undefined) => !t || t === char.el
  * - element: บัฟดาเมจธาตุอื่นให้ตัวเอง หรือต้องตีด้วยธาตุอื่นถึงจะติด (เช่น ดาเมจน้ำแข็งบนกาบิธาตุดิน)
  * - recast: ต้องใช้สกิลพิเศษซ้ำเร็วกว่าคูลดาวน์ของตัวละคร
  */
-export function unusableReason(char: Character, e: Effect, cdCutPercent = 0): "element" | "recast" | undefined {
+export function unusableReason(
+  char: Character,
+  e: Effect,
+  cdCutPercent = 0,
+): "element" | "recast" | "attackElement" | undefined {
   if (!ownsType(char, e.condition?.triggerDamageType)) return "element";
+  if (e.condition?.requiresAttackElementChange && !Object.values(char.skills ?? {}).some((sk) => sk?.changesBasicAttackTo)) {
+    return "attackElement";
+  }
   if (e.target === "self" && e.kind === "buff" && !ownsType(char, e.damageType)) return "element";
   const sec = e.condition?.specialRecastWithinSec;
   if (sec !== undefined && canRecastSpecial(char, sec, cdCutPercent) === false) return "recast";
@@ -253,6 +260,8 @@ function inputsFor(
   skillPercent: number,
   weakness = false,
 ): DamageInput {
+  // บัฟที่ติดเมื่อตีจุดอ่อน (เช่น ผู้พิทักษ์แห่งนครทองคำ) ติดเฉพาะเมื่อทีมตีจุดอ่อน — เป็นบัฟค้าง ใช้กับทุกท่าหลังติดแล้ว
+  const teamWeak = weakness;
   // จุดอ่อนธาตุ: ตีด้วยธาตุที่ศัตรูแพ้ — กายภาพไม่มีจุดอ่อน
   const weak = weakness && damageType !== "physical";
   const inp: DamageInput = {
@@ -274,6 +283,7 @@ function inputsFor(
   for (const { effect: e } of effects) {
     if (e.value === undefined || e.stat === undefined) continue;
     if (e.condition?.vsBoss === false) continue;
+    if (e.trigger === "onWeaknessHit" && !teamWeak) continue;
     if (e.damageType && e.stat !== "res" && e.damageType !== damageType) continue;
     const scopes = e.scopes as string[] | undefined;
     if (scopes?.includes("weaknessHit")) {
@@ -322,15 +332,21 @@ function inputsFor(
 }
 
 /** เอฟเฟกต์ที่สมาชิกแต่ละตัวได้รับจริง — ของตัวเอง + บัฟทีม/ดีบัฟศัตรูจากเพื่อน + อาหาร + ค่าพลังพื้นฐาน */
-export function receivedEffects(lo: BuildLoadout): { char: Character | undefined; effects: Tagged[] }[] {
+export function receivedEffects(
+  lo: BuildLoadout,
+  weakness = lo.weaknessHit ?? false,
+): { char: Character | undefined; effects: Tagged[] }[] {
   const chars = lo.members.map((m) => characterById(m.characterId));
   const food = [lo.food.entree, lo.food.side].flatMap((id) => {
     const f = FOOD.find((x) => x.id === id);
-    return f ? f.effects.map(tag(f.name, false)) : [];
+    return f ? f.effects.filter((e) => weakness || e.trigger !== "onWeaknessHit").map(tag(f.name, false)) : [];
   });
 
   // เอฟเฟกต์ของแต่ละตัว — target team/ally ส่งให้ทุกคน, enemy ส่งให้ทุกคน (ดีบัฟบนศัตรูตัวเดียวกัน)
-  const own = lo.members.map((m, i) => (chars[i] ? memberEffects(m, chars[i]!, lo.awaken) : []));
+  // บัฟที่ติดเมื่อตีจุดอ่อนธาตุ นับเฉพาะบิ้วที่ตีจุดอ่อน
+  const own = lo.members.map((m, i) =>
+    (chars[i] ? memberEffects(m, chars[i]!, lo.awaken) : []).filter((t) => weakness || t.effect.trigger !== "onWeaknessHit"),
+  );
   const shared = own.flat().filter((t) => ["team", "ally", "enemy", "allEnemies"].includes(t.effect.target));
 
   return lo.members.map((mem, i) => {
@@ -456,9 +472,10 @@ const ROLE_STAT_OF: Record<string, string> = {
   supporter: "supportDmg",
 };
 
-/** weakness: ศัตรูแพ้ธาตุของท่าที่ตี (ค่าเริ่มต้น = ไม่ตีจุดอ่อน ตาม TEAM_ASSUMPTIONS) */
+/** weakness: ศัตรูแพ้ธาตุของท่าที่ตี — ไม่ใส่ = ตาม lo.weaknessHit ของบิ้ว (ไม่มี = ไม่ตีจุดอ่อน) */
 export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean } = {}): TeamDamage {
-  const received = receivedEffects(lo);
+  const weakness = opts.weakness ?? lo.weaknessHit ?? false;
+  const received = receivedEffects(lo, weakness);
   const members: MemberDamage[] = lo.members.map((mem, i) => {
     const { char, effects: mine } = received[i];
     if (!char) return { characterId: mem.characterId, skills: [], total: 0 };
@@ -479,7 +496,7 @@ export function teamDamage(lo: BuildLoadout, opts: { weakness?: boolean } = {}):
         if (!at) continue;
         usedLevel = at.level;
         rows.push({ label: row.label, value: at.value });
-        sum += computeDamage(inputsFor(char, mine, key, damageType, at.value, opts.weakness)).average;
+        sum += computeDamage(inputsFor(char, mine, key, damageType, at.value, weakness)).average;
       }
       if (key === "special") sum *= specialCastFactor(char, mine);
       if (rows.length) skills.push({ skill: key, level: usedLevel, rows, damageType, average: sum });

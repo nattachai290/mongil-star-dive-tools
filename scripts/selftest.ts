@@ -151,6 +151,10 @@ console.log("\nดาเมจรวมทั้งทีม");
       .effects.some((x) => x.effect.condition?.specialRecastWithinSec !== undefined);
   check("กาบิ (คูลดาวน์ 11.5 วิ) ไม่ได้ +80% ของคมเยือกแข็งฯ", !has80("gabi"));
   check("Ophelia (สกิลพิเศษกดต่อได้) ได้ +80% ของคมเยือกแข็งฯ", has80("ophelia"));
+  const flameFx = (id: string) =>
+    receivedEffects({ awaken: 0, food: {}, members: [{ characterId: id, artifacts: ["plaeo-phloeng-thi-fai-fan"], equipment: {}, substats: {}, monsterlings: [] }] })[0]
+      .effects.some((x) => x.effect.condition?.requiresAttackElementChange);
+  check("ตัวที่ไม่มีสกิลเปลี่ยนธาตุโจมตี ไม่ได้เอฟเฟกต์ที่ต้องเปลี่ยนธาตุ", !flameFx("gabi"));
   const weakMem = (traits: string[]) => ({ characterId: "gabi", equipment: {}, substats: {},
     monsterlings: [{ id: "rock-fist-dude", traits: traits.map((id) => ({ id, grade: "gold" as const })) }] });
   const plain = { awaken: 0, food: {}, members: [weakMem([])] };
@@ -162,6 +166,12 @@ console.log("\nดาเมจรวมทั้งทีม");
       .members[0].skills.find((x) => x.skill === "special")!.average;
     check("ลดคูลดาวน์สกิลพิเศษทอง 15% = ดาเมจสกิลพิเศษ × 1/0.85",
       Math.abs(sp(["special-skill-cooldown"]) / sp([]) - 1 / 0.85) < 1e-9, `ได้ ${sp(["special-skill-cooldown"]) / sp([])}`);
+  }
+  {
+    const eldo = (weaknessHit: boolean) => receivedEffects({ awaken: 0, food: {}, weaknessHit,
+      members: [{ characterId: "gabi", equipment: {}, substats: {}, monsterlings: [{ id: "el-dorado-guardian", traits: [] }] }] })[0]
+      .effects.some((x) => x.effect.trigger === "onWeaknessHit");
+    check("บัฟเมื่อตีจุดอ่อน (ผู้พิทักษ์แห่งนครทองคำ) นับเฉพาะบิ้วที่ตีจุดอ่อน", eldo(true) && !eldo(false));
   }
   check("ตีจุดอ่อนแรงกว่าไม่ตี", teamDamage(plain, { weakness: true }).total > teamDamage(plain).total);
   check("Trait ดาเมจจุดอ่อนไม่มีผลถ้าไม่ตีจุดอ่อน",

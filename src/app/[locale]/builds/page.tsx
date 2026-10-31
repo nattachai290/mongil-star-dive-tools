@@ -282,12 +282,15 @@ function StatsSlot({ char, effects, locale, t }: { char: Character; effects: Tag
 function MemberGear({
   mem,
   effects,
+  showStats,
   dup,
   locale,
   t,
 }: {
   mem: BuildMember;
   effects: Tagged[];
+  /** ค่าพลังรวมโชว์เฉพาะตัวหลัก (ตัวแรก) — ผู้เล่นสั่ง 2026-10-31 */
+  showStats: boolean;
   dup: Set<string>;
   locale: Locale;
   t: T;
@@ -465,7 +468,7 @@ function MemberGear({
             )}
           </Slot>
         </div>
-        {c && (
+        {c && showStats && (
           <div className="sm:col-span-2">
             <StatsSlot char={c} effects={effects} locale={locale} t={t} />
           </div>
@@ -499,9 +502,18 @@ function Loadout({ lo, locale, t }: { lo: BuildLoadout; locale: Locale; t: T }) 
           })}
         </div>
       </Slot>
+      {lo.weaknessHit && <p className="text-xs text-ink-2">{t("builds.weaknessHit")}</p>}
       {dup.size > 0 && <p className="text-xs text-gold">{t("builds.dupWarning")}</p>}
       {lo.members.map((mem, i) => (
-        <MemberGear key={mem.characterId} mem={mem} effects={received[i].effects} dup={dup} locale={locale} t={t} />
+        <MemberGear
+          key={mem.characterId}
+          mem={mem}
+          effects={received[i].effects}
+          showStats={i === 0}
+          dup={dup}
+          locale={locale}
+          t={t}
+        />
       ))}
     </div>
   );

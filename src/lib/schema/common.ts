@@ -171,6 +171,11 @@ export const effect = z
          * (ทดสอบในเกม 2026-10-29: Ophelia ซึ่งกด E ต่อได้ ได้บัฟนี้จริง)
          */
         specialRecastWithinSec: z.number().positive().optional(),
+        /**
+         * ต้องได้รับ "เอฟเฟกต์เปลี่ยนธาตุโจมตี" ก่อน (เช่น เปลวเพลิงที่ใฝ่ฝันถึงความยุติธรรม)
+         * ตัวคำนวณนับให้เฉพาะตัวละครที่มีสกิลเปลี่ยนธาตุการตีปกติ (skill.changesBasicAttackTo)
+         */
+        requiresAttackElementChange: z.literal(true).optional(),
         note: text.optional(),
       })
       .optional(),
