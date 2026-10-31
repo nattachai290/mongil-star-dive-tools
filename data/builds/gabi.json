@@ -810,11 +810,11 @@
         {
           "replaces": "francis-summer-dive",
           "member": {
-            "characterId": "ellie",
+            "characterId": "francis",
             "artifacts": [
-              "exquisite-dragon-fire",
-              "serpent-dragons-white-scale",
-              "stabilized-superconductor"
+              "forest-fragrance",
+              "a-summer-soaked-in-love",
+              "melody-played-on-heartstrings"
             ],
             "equipment": {
               "headgear": "ascendant-white-wolfs-mask",
@@ -865,7 +865,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "dmg-earth",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]
@@ -945,11 +945,11 @@
         {
           "replaces": "francis-summer-dive",
           "member": {
-            "characterId": "francis",
+            "characterId": "ellie",
             "artifacts": [
-              "forest-fragrance",
-              "a-summer-soaked-in-love",
-              "melody-played-on-heartstrings"
+              "exquisite-dragon-fire",
+              "serpent-dragons-white-scale",
+              "stabilized-superconductor"
             ],
             "equipment": {
               "headgear": "ascendant-white-wolfs-mask",
@@ -1000,7 +1000,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "crit-dmg",
+                    "id": "dmg-earth",
                     "grade": "gold"
                   }
                 ]
