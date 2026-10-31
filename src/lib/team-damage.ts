@@ -66,6 +66,25 @@ export const TEAM_ASSUMPTIONS = [
 export type Tagged = { effect: Effect; from: LocalizedText; gear: boolean };
 type Sourced = Tagged;
 
+/** ดาเมจธาตุ el ที่ได้รับรวม — บัฟ dmgDealt ของธาตุนั้นที่ไม่ผูกท่า/จุดอ่อน/แถว · keep กรองเพิ่ม (เช่น เฉพาะของที่ใส่) */
+function elementDmgReceived(effects: Sourced[], el: string, keep: (t: Sourced) => boolean = () => true): number {
+  let sum = 0;
+  for (const t of effects) {
+    const e = t.effect;
+    if (!keep(t) || e.kind !== "buff" || e.stat !== "dmgDealt" || e.damageType !== el || e.value === undefined) continue;
+    if (e.target === "enemy" || e.target === "allEnemies" || e.scopes?.length) continue;
+    if (e.condition?.vsBoss === false || e.condition?.skillRow || e.condition?.convertFromElementDmg) continue;
+    sum += e.value;
+  }
+  return sum;
+}
+
+/** ค่าจริงของเอฟเฟกต์ — แบบแปลงจากดาเมจธาตุ (condition.convertFromElementDmg) ได้เท่าที่ได้รับ ไม่เกิน value */
+function effectValue(e: Effect, effects: Sourced[], keep?: (t: Sourced) => boolean): number {
+  const el = e.condition?.convertFromElementDmg;
+  return el ? Math.min(e.value ?? 0, elementDmgReceived(effects, el, keep)) : (e.value ?? 0);
+}
+
 function asEffect(stat: string, value: number, unit: string, extra: Partial<Effect> = {}): Effect {
   return { kind: "buff", stat, value, unit, target: "self", trigger: "passive", ...extra } as Effect;
 }
@@ -332,7 +351,7 @@ function inputsFor(
       continue;
     }
     if (scopes && !scopes.includes(SCOPE_OF[skill])) continue;
-    const v = e.value;
+    const v = effectValue(e, effects, (t) => teamWeak || t.effect.trigger !== "onWeaknessHit");
 
     if (e.target === "enemy" || e.target === "allEnemies") {
       if (e.kind !== "debuff") continue;
@@ -489,7 +508,7 @@ export function statSheet(char: Character, effects: Tagged[], gearOnly: boolean)
     if (e.condition?.vsBoss === false) continue;
     // บัฟของท่าย่อยท่าเดียว ไม่ใช่ค่าพลังของทั้งท่า — โชว์ในรายการบัฟแทน
     if (e.condition?.skillRow) continue;
-    const v = e.value;
+    const v = effectValue(e, effects, (x) => !gearOnly || x.gear);
     if (e.target === "enemy" || e.target === "allEnemies") {
       if (e.kind !== "debuff") continue;
       if (e.stat === "def") s.enemyDefDown += v;

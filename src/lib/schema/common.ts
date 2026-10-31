@@ -187,6 +187,11 @@ export const effect = z
          * ตัวคำนวณไม่ส่งบัฟนี้กลับไปให้ตัวที่เป็นเจ้าของ
          */
         teammatesOnly: z.literal(true).optional(),
+        /**
+         * ค่าของเอฟเฟกต์ = ดาเมจธาตุนี้ (บัฟ dmgDealt ของธาตุนั้น) ที่ตัวเองได้รับรวมกัน แต่ไม่เกิน value (อัตราแปลงสูงสุด)
+         * เช่น แพสซีฟของ Francis: Summer Dive! "ATK increases by an amount equal to any received Earth DMG Boosts" สูงสุด 25%
+         */
+        convertFromElementDmg: vocabEnum("damageType").optional(),
         note: text.optional(),
       })
       .optional(),

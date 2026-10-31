@@ -419,5 +419,20 @@ check("yes แปะป้ายสองภาษา", linkableBadge("yes")?.th
   check("Embrittled ทำให้ท่าน้ำแข็งของเพื่อน +50%", Math.abs(oSwitch(isa(4)) / oSwitch(isa(3)) - 1.5) < 1e-6, String(oSwitch(isa(4)) / oSwitch(isa(3))));
 }
 
+// ---------- บัฟแปลงจากดาเมจธาตุ (condition.convertFromElementDmg) ----------
+{
+  // Francis: Summer Dive! แพสซีฟ: ATK เพิ่มเท่ากับดาเมจธาตุดินที่ได้รับ สูงสุด 25%
+  const r = receivedEffects(buildLoadout.parse({ awaken: 0, members: [{ characterId: "francis-summer-dive" }] }))[0];
+  const conv = (t: (typeof r.effects)[number]) => !!t.effect.condition?.convertFromElementDmg;
+  const earth = (t: (typeof r.effects)[number]) => t.effect.stat === "dmgDealt" && t.effect.damageType === "earth";
+  const atk = (fx: typeof r.effects) => statSheet(r.char!, fx, false).atk;
+  const base = r.char!.stats!.atk;
+  // สกิลพิเศษให้ดาเมจดิน +40% (เกิน 25%) → ได้ ATK +25% เต็ม
+  check("แปลงดาเมจดินเป็น ATK ไม่เกิน 25%", Math.abs(atk(r.effects) - atk(r.effects.filter((t) => !conv(t))) - base * 0.25) < 1e-6);
+  // ไม่มีบัฟดาเมจดินเลย → ไม่ได้อะไร
+  const noEarth = r.effects.filter((t) => !earth(t));
+  check("ไม่มีดาเมจดิน ไม่ได้ ATK จากการแปลง", Math.abs(atk(noEarth) - atk(noEarth.filter((t) => !conv(t)))) < 1e-6);
+}
+
 console.log(failed === 0 ? "\nผ่านทั้งหมด\n" : `\nไม่ผ่าน ${failed} ข้อ\n`);
 if (failed > 0) process.exit(1);
