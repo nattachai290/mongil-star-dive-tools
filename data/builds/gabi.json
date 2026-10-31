@@ -180,19 +180,19 @@
               "id": "colossus",
               "traits": [
                 {
-                  "id": "atk",
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
                   "id": "crit-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-rate",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-earth",
                   "grade": "gold"
                 }
               ]
@@ -219,22 +219,22 @@
               ]
             },
             {
-              "id": "master-lizcout",
+              "id": "el-dorado-guardian",
               "traits": [
                 {
-                  "id": "atk",
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
                   "id": "crit-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-rate",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-earth",
                   "grade": "gold"
                 }
               ]
@@ -309,43 +309,43 @@
           },
           "monsterlings": [
             {
-              "id": "odong-seed",
+              "id": "forkmugger",
               "traits": [
                 {
-                  "id": "atk",
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "special-skill-cooldown",
                   "grade": "gold"
                 },
                 {
                   "id": "crit-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-rate",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-earth",
                   "grade": "gold"
                 }
               ]
             },
             {
-              "id": "vamphid",
+              "id": "hahnul",
               "traits": [
                 {
-                  "id": "atk",
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
                   "id": "crit-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-rate",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-earth",
                   "grade": "gold"
                 }
               ]
@@ -354,19 +354,19 @@
               "id": "spadupa",
               "traits": [
                 {
-                  "id": "atk",
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 },
                 {
                   "id": "crit-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-rate",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-earth",
                   "grade": "gold"
                 }
               ]
