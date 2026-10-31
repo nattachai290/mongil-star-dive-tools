@@ -52,7 +52,7 @@ export type MemberDamage = {
 export type TeamDamage = { members: MemberDamage[]; total: number };
 
 export const TEAM_ASSUMPTIONS = [
-  "บัฟทุกตัวทำงานตลอดรอบ (ไม่คิดเงื่อนไขและเวลาแสดงผล)",
+  "บัฟทุกตัวทำงานตลอดรอบ (ไม่คิดเงื่อนไขและเวลาแสดงผล) · ยกเว้นบัฟที่ต้องหลบหลีกโต้กลับ ไม่นับเพราะเกิดนาน ๆ ที",
   "ศัตรูเป็นบอส · ตีจุดอ่อนตามที่บิ้วตั้ง (weaknessHit) · บัฟที่ติดเมื่อตีจุดอ่อนนับเฉพาะบิ้วที่ตีจุดอ่อน · ไม่หมดฤทธิ์ · ไม่หักป้องกัน",
   "ค่าหลักของอุปกรณ์คิดที่เลเวลสูงสุด · ค่ารองใช้ค่าต่ำสุด (เลเวล 1) ของระดับชิ้น",
   "ค่าพลังของมอน (ATK/DEF/HP) ตามชนิด บอส / ทั่วไป / ตำนาน · มอนทั่วไปบางตัวอนุมานจากการไม่มีลิงก์เชน",
@@ -167,7 +167,7 @@ const ownsType = (char: Character, t: string | undefined) => !t || t === char.el
  * - element: บัฟดาเมจธาตุอื่นให้ตัวเอง หรือต้องตีด้วยธาตุอื่นถึงจะติด (เช่น ดาเมจน้ำแข็งบนกาบิธาตุดิน)
  * - recast: ต้องใช้สกิลพิเศษซ้ำเร็วกว่าคูลดาวน์ของตัวละคร
  */
-export type UnusableReason = "element" | "recast" | "attackElement" | "teamElement";
+export type UnusableReason = "element" | "recast" | "attackElement" | "teamElement" | "evasionCounter";
 
 /**
  * team (ถ้าส่งมา) = ตัวละครทั้งทีม — ใช้ตัดบัฟทีม/ดีบัฟศัตรูของธาตุที่ไม่มีใครในทีมใช้
@@ -180,6 +180,8 @@ export function unusableReason(
   team?: Character[],
 ): UnusableReason | undefined {
   if (!ownsType(char, e.condition?.triggerDamageType)) return "element";
+  // หลบหลีกโต้กลับเกิดนาน ๆ ที (ผู้เล่นบอก 2026-10-31) — ไม่นับบัฟที่ต้องหลบโต้กลับ
+  if (e.trigger === "onEvasionCounter") return "evasionCounter";
   if (e.condition?.requiresAttackElementChange && !Object.values(char.skills ?? {}).some((sk) => sk?.changesBasicAttackTo)) {
     return "attackElement";
   }

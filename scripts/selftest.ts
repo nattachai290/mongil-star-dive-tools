@@ -194,6 +194,9 @@ console.log("\nดาเมจรวมทั้งทีม");
     const withChain = teamDamage({ awaken: 0, food: {}, members: [mem] }).members[0];
     check("ดาเมจลิงก์เชนถูกนับเข้าดาเมจรวม", withChain.chain >= 0 && Math.abs(withChain.total - withChain.skills.reduce((n, x) => n + x.average, 0) - withChain.chain) < 1e-6);
   }
+  check("บัฟที่ต้องหลบหลีกโต้กลับไม่ถูกนับ (เกิดนาน ๆ ที)",
+    !receivedEffects({ awaken: 0, food: {}, members: [{ characterId: "gabi", equipment: {}, substats: {},
+      monsterlings: [{ id: "amons-shadow", traits: [] }] }] })[0].effects.some((x) => x.effect.trigger === "onEvasionCounter"));
   check("ตีจุดอ่อนแรงกว่าไม่ตี", teamDamage(plain, { weakness: true }).total > teamDamage(plain).total);
   check("Trait ดาเมจจุดอ่อนไม่มีผลถ้าไม่ตีจุดอ่อน",
     Math.abs(teamDamage(withWeakTrait).total - teamDamage(plain).total) < 1e-6);
