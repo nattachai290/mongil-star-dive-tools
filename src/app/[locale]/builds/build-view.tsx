@@ -396,9 +396,46 @@ function GearRows({
           </div>
           <CheckedEffects effects={fusion?.effects ?? []} why={why} locale={locale} t={t} />
           {spares.length > 0 && (
-            <p className="text-xs text-muted">
-              {t("builds.artifactAlt")}: {spares.map((a) => name(a.name, locale, a.id)).join(" · ")}
-            </p>
+            // อาร์ติแฟกต์สำรอง — เรียงจากดีรองลงมา · เดิมเป็นบรรทัดชื่อเล็ก ๆ ผู้เล่นหาไม่เจอ (2026-10-31) จึงโชว์เป็นการ์ดพร้อมค่าและเอฟเฟกต์
+            <details className="group border-t border-line pt-3">
+              <summary className="flex min-h-8 cursor-pointer list-none items-center gap-1.5 text-xs font-semibold text-ink-2 hover:text-ink [&::-webkit-details-marker]:hidden">
+                <span aria-hidden className="inline-block transition-transform group-open:rotate-90">▸</span>
+                {t("builds.artifactAlt")} ({spares.length})
+              </summary>
+              <ol className="mt-2 grid gap-2 lg:grid-cols-2">
+                {spares.map((a) => {
+                  const f = artifactFusion(a);
+                  return (
+                    <li key={a.id} className="space-y-1.5 rounded-xl border border-line bg-surface-2/40 p-3">
+                      <div className="flex items-center gap-2.5">
+                        <Icon src={a.images?.icon ? asset(`/images/artifacts/${a.images.icon}`) : null} />
+                        <div className="min-w-0">
+                          <p className="text-sm font-semibold">
+                            {name(a.name, locale, a.id)}{" "}
+                            <span className="text-xs font-normal text-gold">{a.stars !== undefined && "★".repeat(a.stars)}</span>
+                          </p>
+                          {f?.level !== undefined && (
+                            <p className="text-[11px] text-gold">
+                              {t("builds.fusion")} {f.level}
+                              {f.name && ` · ${name(f.name, locale, "")}`}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {a.stats.map((st, j) => (
+                          <Chip key={j}>
+                            {statName(st.stat, st.damageType, locale)} +{st.value.toLocaleString("en-US")}
+                            {st.unit === "percent" ? "%" : ""}
+                          </Chip>
+                        ))}
+                      </div>
+                      <CheckedEffects effects={f?.effects ?? []} why={why} locale={locale} t={t} />
+                    </li>
+                  );
+                })}
+              </ol>
+            </details>
           )}
         </Row>
       )}
@@ -625,7 +662,6 @@ export function BuildView({ b, locale, t }: { b: (typeof BUILDS)[number]; locale
   const gearPick: Record<string, string> = {};
   const statsByGear: Record<string, { key: string; effects: Tagged[] }[]> = {};
   // ข้อความ "ยังไม่ได้จัดของแยก" — 1 อันต่อชุดของ ซ่อน/โชว์ตามชุดค่าผสม
-  const inherited = new Map<number, string[]>();
   const gearLo: Record<string, BuildLoadout> = {};
 
   for (const combo of combos(groups)) {
@@ -643,7 +679,6 @@ export function BuildView({ b, locale, t }: { b: (typeof BUILDS)[number]; locale
     gearPick[key] = gearKey;
     gearLo[gearKey] ??= lo;
     (statsByGear[gearKey] ??= []).push({ key, effects: received[0]?.effects ?? [] });
-    if (base.awaken !== combo[0]) inherited.set(base.awaken, [...(inherited.get(base.awaken) ?? []), key]);
   }
 
   const options = groups.map((g) => g.map(([s, e]) => [s, s === e ? String(s) : `${s}–${e}`] as [number, string]));
@@ -726,11 +761,6 @@ export function BuildView({ b, locale, t }: { b: (typeof BUILDS)[number]; locale
           })}
         </div>
 
-        {[...inherited].map(([n, keys]) => (
-          <AwakenOnly key={n} combos={keys}>
-            <p className="text-xs text-gold">{t("builds.awakenInherited").replace("{n}", String(n))}</p>
-          </AwakenOnly>
-        ))}
         <AwakenSwitch panels={gearPanels} pick={gearPick} />
       </div>
     </AwakenProvider>
