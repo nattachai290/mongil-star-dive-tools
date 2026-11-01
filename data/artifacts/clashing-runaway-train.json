@@ -49,7 +49,8 @@
             "note": {
               "th": "เมื่อใช้สกิลพิเศษหรือสกิลอัลติเมต",
               "en": "Using a Special Skill or an Ultimate Skill"
-            }
+            },
+            "selfMet": true
           }
         },
         {
@@ -69,7 +70,8 @@
             "note": {
               "th": "เมื่อใช้สกิลพิเศษหรือสกิลอัลติเมต",
               "en": "Using a Special Skill or an Ultimate Skill"
-            }
+            },
+            "selfMet": true
           }
         }
       ]
@@ -103,7 +105,8 @@
             "note": {
               "th": "เมื่อใช้สกิลพิเศษหรือสกิลอัลติเมต",
               "en": "Using a Special Skill or an Ultimate Skill"
-            }
+            },
+            "selfMet": true
           }
         },
         {
@@ -123,7 +126,8 @@
             "note": {
               "th": "เมื่อใช้สกิลพิเศษหรือสกิลอัลติเมต",
               "en": "Using a Special Skill or an Ultimate Skill"
-            }
+            },
+            "selfMet": true
           }
         }
       ]

@@ -1,7 +1,8 @@
 {
   "id": "sera",
   "name": {
-    "en": "Sera"
+    "en": "Sera",
+    "th": "เซร่า"
   },
   "rarity": 4,
   "element": "ice",
@@ -64,20 +65,24 @@
     {
       "stage": 1,
       "name": {
-        "en": "Secret Time"
+        "en": "Secret Time",
+        "th": "เวลาแห่งความลับ"
       },
       "desc": {
-        "en": "Sera gains Laxima Energy 2 times faster upon using her Basic Attacks or Switch Skill. / Holding the Basic Attack button when she has Arkarion Energy quickly moves her to the enemy and triggers Arkarion: Focused Spin. / Arkarion: Focused Spin: This attack deals Ice DMG equal to 150% of Sera's Basic Attack's 4th Hit and consumes up to 31.25% of her Arkarion Energy. However, Sera cannot gain Laxima Energy, and enters the Unstable Arkarion state for 5s after using this skill, making Arkarion: Focused Spin unavailable."
+        "en": "Sera gains Laxima Energy 2 times faster upon using her Basic Attacks or Switch Skill. / Holding the Basic Attack button when she has Arkarion Energy quickly moves her to the enemy and triggers Arkarion: Focused Spin. / Arkarion: Focused Spin: This attack deals Ice DMG equal to 150% of Sera's Basic Attack's 4th Hit and consumes up to 31.25% of her Arkarion Energy. However, Sera cannot gain Laxima Energy, and enters the Unstable Arkarion state for 5s after using this skill, making Arkarion: Focused Spin unavailable.",
+        "th": "เมื่อโจมตีพื้นฐานหรือใช้สกิลสับเปลี่ยน จะเพิ่มอัตราพลังงานลักษิมาที่ได้รับ 2 เท่า / เมื่อกดค้างโจมตีพื้นฐานขณะที่มีพลังงานอาร์คาริออน จะเข้าไปใกล้ศัตรูอย่างรวดเร็วและใช้อาร์คาริออน: หมุนจดจ่อ / อาร์คาริออน: หมุนจดจ่อ: สร้างดาเมจธาตุน้ำแข็งเท่ากับ 150% ของโจมตีพื้นฐานขั้น 4 แก่ศัตรู และใช้งานพลังงานอาร์คาริออนสูงสุด 31.25% อย่างไรก็ตาม จะไม่สามารถรับพลังงานลักษิมาได้ และหลังจากใช้งานจะเข้าสู่สถานะอาร์คาริออนไม่เสถียรนาน 5 วินาที และจะไม่สามารถใช้อาร์คาริออน: หมุนจดจ่อ"
       },
       "effects": []
     },
     {
       "stage": 2,
       "name": {
-        "en": "Key Maker"
+        "en": "Key Maker",
+        "th": "ผู้สร้างกุญแจ"
       },
       "desc": {
-        "en": "The max Arkarion Gauge charge increases by 62.5%. / Sera's Special Skill's spin duration increases, increasing total DMG by 50%. Her Movement Speed while spinning increases by 60%, and the amount of obtainable Arkarion Energy increases by 62.5%."
+        "en": "The max Arkarion Gauge charge increases by 62.5%. / Sera's Special Skill's spin duration increases, increasing total DMG by 50%. Her Movement Speed while spinning increases by 60%, and the amount of obtainable Arkarion Energy increases by 62.5%.",
+        "th": "เพิ่มค่าสูงสุดเกจอาร์คาริออน 62.5% / เพิ่มเวลาหมุนของสกิลพิเศษ ทำให้ปริมาณดาเมจรวมเพิ่มขึ้น 50% ในขณะหมุน จะเพิ่มความเร็วเคลื่อนที่ 60% และเพิ่มค่าสูงสุดพลังงานอาร์คาริออนที่สามารถรับได้ 62.5%"
       },
       "effects": [
         {
@@ -101,10 +106,12 @@
     {
       "stage": 3,
       "name": {
-        "en": "Insatiable Curiosity"
+        "en": "Insatiable Curiosity",
+        "th": "อดสงสัยไม่ได้เลย"
       },
       "desc": {
-        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Special Skill's cooldown decreases by 4.5%."
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Special Skill's cooldown decreases by 4.5%.",
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / ลดคูลดาวน์สกิลพิเศษ 4.5%"
       },
       "effects": [],
       "skillLevelBonus": 2
@@ -112,20 +119,24 @@
     {
       "stage": 4,
       "name": {
-        "en": "Open the Magic Path"
+        "en": "Open the Magic Path",
+        "th": "บุกเบิกเส้นทางแห่งเวทมนตร์"
       },
       "desc": {
-        "en": "Arkarion Unleashed lasts for 10s upon using Sera's Ultimate Skill. / While in the Arkarion Unleashed state, the next Basic Attack or Switch Skill DMG have a 30% chance of inflicting Ice Affliction on the enemy."
+        "en": "Arkarion Unleashed lasts for 10s upon using Sera's Ultimate Skill. / While in the Arkarion Unleashed state, the next Basic Attack or Switch Skill DMG have a 30% chance of inflicting Ice Affliction on the enemy.",
+        "th": "เมื่อใช้สกิลอัลติเมต จะคงสถานะปลดปล่อยอาร์คาริออนนาน 10 วินาที / ในสถานะปลดปล่อยอาร์คาริออน ดาเมจของโจมตีพื้นฐานหรือสกิลสับเปลี่ยนที่ใช้ครั้งถัดไปมีโอกาส 30% มอบเอฟเฟกต์อ่อนแอต่อน้ำแข็งแก่ศัตรู"
       },
       "effects": []
     },
     {
       "stage": 5,
       "name": {
-        "en": "Unleashed"
+        "en": "Unleashed",
+        "th": "ปลดผนึก"
       },
       "desc": {
-        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%.",
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจโจมตีพื้นฐาน 6%"
       },
       "effects": [
         {
@@ -145,10 +156,12 @@
     {
       "stage": 6,
       "name": {
-        "en": "Unlock the Light"
+        "en": "Unlock the Light",
+        "th": "กุญแจส่องแสงอันธการ"
       },
       "desc": {
-        "en": "When Sera enters the Laxima Unleashed state, her Special Skill cooldown is reset. / While in the Arkarion Unleashed state, the Crit DMG of her next Basic Attack or Switch Skill increases by 30%."
+        "en": "When Sera enters the Laxima Unleashed state, her Special Skill cooldown is reset. / While in the Arkarion Unleashed state, the Crit DMG of her next Basic Attack or Switch Skill increases by 30%.",
+        "th": "เมื่อเปลี่ยนเข้าสู่สถานะปลดปล่อยลักษิมา คูลดาวน์ของสกิลพิเศษจะถูกรีเซต / ในสถานะปลดปล่อยอาร์คาริออน จะเพิ่มดาเมจคริติคอลของโจมตีพื้นฐานหรือสกิลสับเปลี่ยนที่ใช้ครั้งถัดไป 30%"
       },
       "effects": [
         {
@@ -173,17 +186,20 @@
   "skills": {
     "basic": {
       "name": {
-        "en": "Arkarion: Bound"
+        "en": "Arkarion: Bound",
+        "th": "อาร์คาริออน: พันธนะ"
       },
       "desc": {
-        "en": "Sera deals Physical DMG by swinging Arkarion and gains Laxima Energy."
+        "en": "Sera deals Physical DMG by swinging Arkarion and gains Laxima Energy.",
+        "th": "แกว่งอาร์คาริออน สร้างดาเมจกายภาพและรับพลังงานลักษิมา"
       },
       "damageType": "physical",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "1st Hit DMG"
+            "en": "1st Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 1"
           },
           "unit": "percent",
           "scaling": [
@@ -208,7 +224,8 @@
         },
         {
           "label": {
-            "en": "2nd Hit DMG"
+            "en": "2nd Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 2"
           },
           "unit": "percent",
           "scaling": [
@@ -233,7 +250,8 @@
         },
         {
           "label": {
-            "en": "3rd Hit DMG"
+            "en": "3rd Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 3"
           },
           "unit": "percent",
           "scaling": [
@@ -258,7 +276,8 @@
         },
         {
           "label": {
-            "en": "4th Hit DMG"
+            "en": "4th Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 4"
           },
           "unit": "percent",
           "scaling": [
@@ -283,7 +302,8 @@
         },
         {
           "label": {
-            "en": "Charge Attack DMG"
+            "en": "Charge Attack DMG",
+            "th": "ดาเมจโจมตีชาร์จ"
           },
           "unit": "percent",
           "scaling": [
@@ -307,7 +327,8 @@
         },
         {
           "label": {
-            "en": "Air Counter DMG"
+            "en": "Air Counter DMG",
+            "th": "ดาเมจโจมตีฉับพลัน"
           },
           "unit": "percent",
           "scaling": [
@@ -331,7 +352,8 @@
         },
         {
           "label": {
-            "en": "Evasion Counter DMG"
+            "en": "Evasion Counter DMG",
+            "th": "ดาเมจหลบหลีกโต้กลับ"
           },
           "unit": "percent",
           "scaling": [
@@ -355,7 +377,8 @@
         },
         {
           "label": {
-            "en": "Laxima Energy Charge Ratio"
+            "en": "Laxima Energy Charge Ratio",
+            "th": "อัตราได้รับพลังงานลักษิมา"
           },
           "unit": "percent",
           "scaling": [
@@ -382,17 +405,20 @@
     },
     "switch": {
       "name": {
-        "en": "Arkarion: Restricted"
+        "en": "Arkarion: Restricted",
+        "th": "อาร์คาริออน: ควบคุม"
       },
       "desc": {
-        "en": "Sera deals Physical DMG by quickly approaching the enemy and swinging Arkarion, gaining Laxima Energy."
+        "en": "Sera deals Physical DMG by quickly approaching the enemy and swinging Arkarion, gaining Laxima Energy.",
+        "th": "พุ่งเข้าใส่ศัตรูอย่างรวดเร็วและแกว่งอาร์คาริออน สร้างดาเมจกายภาพและรับพลังงานลักษิมา"
       },
       "damageType": "physical",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "DMG"
+            "en": "DMG",
+            "th": "ดาเมจ"
           },
           "unit": "percent",
           "scaling": [
@@ -417,7 +443,8 @@
         },
         {
           "label": {
-            "en": "Laxima Energy Charge Ratio"
+            "en": "Laxima Energy Charge Ratio",
+            "th": "อัตราได้รับพลังงานลักษิมา"
           },
           "unit": "percent",
           "scaling": [
@@ -444,17 +471,20 @@
     },
     "special": {
       "name": {
-        "en": "Laxima: Sealed"
+        "en": "Laxima: Sealed",
+        "th": "ลักษิมา: ผนึก"
       },
       "desc": {
-        "en": "Sera spins with Laxima in hand, dealing Ice DMG and gaining Arkarion Energy. / While spinning, enemies within range are pulled towards her. Upon releasing the Special Skill button, she raises Laxima to render enemies Airborne. (Total DMG remains the same regardless of when the button is released.) / If enemies are too far, she approaches them quickly before spinning. Sera can move slowly while spinning."
+        "en": "Sera spins with Laxima in hand, dealing Ice DMG and gaining Arkarion Energy. / While spinning, enemies within range are pulled towards her. Upon releasing the Special Skill button, she raises Laxima to render enemies Airborne. (Total DMG remains the same regardless of when the button is released.) / If enemies are too far, she approaches them quickly before spinning. Sera can move slowly while spinning.",
+        "th": "จับลักษิมาแล้วหมุน สร้างดาเมจธาตุน้ำแข็งและรับพลังงานอาร์คาริออน / ในขณะหมุนจะลากศัตรูเข้ามารวมในขอบเขต และเมื่อหยุดกด จะฟาดลักษิมาขึ้นทันที ทำให้ศัตรูลอยขึ้นไปบนอากาศ (เมื่อหยุดกด ปริมาณดาเมจรวมจะเท่ากัน) / ในกรณีที่ศัตรูอยู่ไกล จะพุ่งเข้าใส่อย่างรวดเร็วแล้วหมุน หากกดปุ่มเคลื่อนที่ขณะหมุน จะทำให้เคลื่อนที่ไปยังทิศทางดังกล่าวช้าลง"
       },
       "damageType": "ice",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "DMG"
+            "en": "DMG",
+            "th": "ดาเมจ"
           },
           "unit": "percent",
           "scaling": [
@@ -479,7 +509,8 @@
         },
         {
           "label": {
-            "en": "Arkarion Energy Charge per DMG Ratio"
+            "en": "Arkarion Energy Charge per DMG Ratio",
+            "th": "อัตราได้รับพลังงานอาร์คาริออนต่อดาเมจ"
           },
           "unit": "percent",
           "scaling": [
@@ -504,7 +535,8 @@
         },
         {
           "label": {
-            "en": "Cooldown"
+            "en": "Cooldown",
+            "th": "คูลดาวน์"
           },
           "unit": "seconds",
           "scaling": [
@@ -530,17 +562,20 @@
     },
     "ultimate": {
       "name": {
-        "en": "Arkarion Laxima: Unleashed"
+        "en": "Arkarion Laxima: Unleashed",
+        "th": "อาร์คาริออน·ลักษิมา: เปิดใช้งาน"
       },
       "desc": {
-        "en": "Sera unleashes Laxima's hidden power into Arkarion, dealing Ice DMG and inflicting Ice Affliction and Freeze. / After unleashing, Sera enters the Arkarion Unleashed state."
+        "en": "Sera unleashes Laxima's hidden power into Arkarion, dealing Ice DMG and inflicting Ice Affliction and Freeze. / After unleashing, Sera enters the Arkarion Unleashed state.",
+        "th": "เปิดใช้งานพลังที่ถูกผนึกในลักษิมาด้วยอาร์คาริออน สร้างดาเมจธาตุน้ำแข็งและมอบเอฟเฟกต์อ่อนแอต่อน้ำแข็งกับเอฟเฟกต์เยือกแข็งแก่ศัตรู / หลังจากเปิดใช้งาน เซร่าจะเข้าสู่สถานะปลดปล่อยอาร์คาริออน"
       },
       "damageType": "ice",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "Laxima Unleashed DMG"
+            "en": "Laxima Unleashed DMG",
+            "th": "ดาเมจเปิดใช้งานลักษิมา"
           },
           "unit": "percent",
           "scaling": [
@@ -565,7 +600,8 @@
         },
         {
           "label": {
-            "en": "Freeze Duration"
+            "en": "Freeze Duration",
+            "th": "เวลาแสดงผลเยือกแข็ง"
           },
           "unit": "seconds",
           "scaling": [
@@ -590,7 +626,8 @@
         },
         {
           "label": {
-            "en": "Ice Affliction Duration"
+            "en": "Ice Affliction Duration",
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อน้ำแข็ง"
           },
           "unit": "seconds",
           "scaling": [
@@ -617,10 +654,12 @@
     },
     "passive": {
       "name": {
-        "en": "Lock Shard"
+        "en": "Lock Shard",
+        "th": "ชิ้นส่วนของการปิดล็อก"
       },
       "desc": {
-        "en": "Using a Basic Attack or Switch Skill while controlling Sera consumes Arkarion Energy, dealing Ice DMG and triggering an additional strike. Sera's Crit DMG increases for a set duration upon attacking enemies afflicted with Ice Affliction. / Using a Special Skill in the Laxima Unleashed state completely consumes Sera's Laxima Energy to increase her Special Skill DMG. / Laxima Unleashed: Once Sera's Laxima Gauge is fully charged with Laxima Energy, she enters the Laxima Unleashed state. / Arkarion Unleashed: Once Sera's Arkarion Gauge is fully charged with Arkarion Energy, she enters the Arkarion Unleashed state."
+        "en": "Using a Basic Attack or Switch Skill while controlling Sera consumes Arkarion Energy, dealing Ice DMG and triggering an additional strike. Sera's Crit DMG increases for a set duration upon attacking enemies afflicted with Ice Affliction. / Using a Special Skill in the Laxima Unleashed state completely consumes Sera's Laxima Energy to increase her Special Skill DMG. / Laxima Unleashed: Once Sera's Laxima Gauge is fully charged with Laxima Energy, she enters the Laxima Unleashed state. / Arkarion Unleashed: Once Sera's Arkarion Gauge is fully charged with Arkarion Energy, she enters the Arkarion Unleashed state.",
+        "th": "เมื่อใช้โจมตีพื้นฐานหรือสกิลสับเปลี่ยนขณะควบคุม จะใช้พลังงานอาร์คาริออน สร้างดาเมจธาตุน้ำแข็งและเกิดการโจมตีโดนเพิ่มเติม เมื่อโจมตีเป้าหมายที่ติดสถานะเอฟเฟกต์อ่อนแอต่อน้ำแข็ง จะเพิ่มดาเมจคริติคอลของตนเองในระยะเวลาที่กำหนด / เมื่อใช้สกิลพิเศษในสถานะปลดปล่อยลักษิมา จะใช้พลังงานลักษิมาทั้งหมด เพิ่มดาเมจสกิลพิเศษของตนเอง / ปลดปล่อยลักษิมา: หากสะสมเกจลักษิมาให้เต็มด้วยพลังงานลักษิมา จะเปลี่ยนเข้าสู่สถานะปลดปล่อยลักษิมา / ปลดปล่อยอาร์คาริออน: หากสะสมเกจอาร์คาริออนให้เต็มด้วยพลังงานอาร์คาริออน จะเปลี่ยนเข้าสู่สถานะปลดปล่อยอาร์คาริออน"
       },
       "effects": [
         {
@@ -672,7 +711,8 @@
       "values": [
         {
           "label": {
-            "en": "Bonus DMG"
+            "en": "Bonus DMG",
+            "th": "ดาเมจเพิ่มเติม"
           },
           "unit": "percent",
           "scaling": [
@@ -697,7 +737,8 @@
         },
         {
           "label": {
-            "en": "Arkarion Energy Drain Ratio"
+            "en": "Arkarion Energy Drain Ratio",
+            "th": "อัตราใช้พลังงานอาร์คาริออน"
           },
           "unit": "percent",
           "scaling": [
@@ -722,7 +763,8 @@
         },
         {
           "label": {
-            "en": "Crit DMG Boost"
+            "en": "Crit DMG Boost",
+            "th": "เพิ่มดาเมจคริติคอล"
           },
           "unit": "percent",
           "scaling": [
@@ -747,7 +789,8 @@
         },
         {
           "label": {
-            "en": "Crit DMG Boost Duration"
+            "en": "Crit DMG Boost Duration",
+            "th": "เวลาแสดงผลเพิ่มดาเมจคริติคอล"
           },
           "unit": "seconds",
           "scaling": [
@@ -772,7 +815,8 @@
         },
         {
           "label": {
-            "en": "Special Skill DMG Boost"
+            "en": "Special Skill DMG Boost",
+            "th": "เพิ่มดาเมจสกิลพิเศษ"
           },
           "unit": "percent",
           "scaling": [
@@ -799,10 +843,12 @@
     },
     "elemental": {
       "name": {
-        "en": "Arkarion: Resonance"
+        "en": "Arkarion: Resonance",
+        "th": "อาร์คาริออน: ก้องกังวาน"
       },
       "desc": {
-        "en": "ATK increases by 7.1% upon switching to another teammate. (Duration: 15s)"
+        "en": "ATK increases by 7.1% upon switching to another teammate. (Duration: 15s)",
+        "th": "เมื่อเปลี่ยนเป็นสมาชิกทีมคนอื่น จะเพิ่มพลังโจมตี 7.1% (เวลาแสดงผล 15 วินาที)"
       },
       "effects": [
         {
@@ -821,19 +867,23 @@
   "statuses": [
     {
       "name": {
-        "en": "Ice Affliction"
+        "en": "Ice Affliction",
+        "th": "เอฟเฟกต์อ่อนแอต่อน้ำแข็ง"
       },
       "desc": {
-        "en": "Afflicted targets take Ice DMG over time, and Ice RES decreases by 15%."
+        "en": "Afflicted targets take Ice DMG over time, and Ice RES decreases by 15%.",
+        "th": "ได้รับดาเมจต่อเนื่องธาตุน้ำแข็งและลดพลังต้านทานธาตุน้ำแข็ง 15%"
       },
       "effects": []
     },
     {
       "name": {
-        "en": "Freeze"
+        "en": "Freeze",
+        "th": "เยือกแข็ง"
       },
       "desc": {
-        "en": "Afflicted targets are frozen and cannot move."
+        "en": "Afflicted targets are frozen and cannot move.",
+        "th": "ร่างกายถูกแช่แข็ง ไม่สามารถขยับตัวได้"
       },
       "effects": []
     }
@@ -846,8 +896,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Fighter · Ice · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 1,964 · DEF 653 · HP 10,662 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,766 · DEF 580 · HP 9,272 · Crit 5% / 50%** — DEF 580 แบบ 4 ดาวตัวอื่น · HP 9,272 เท่า Daisy · **ATK 1,766 ยังไม่ซ้ำกับตัวไหน** | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Brawl DMG Boost 11.59% · Fighter 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · Ice DMG 1.3% ไม่เก็บ | **\"Special Skill Cooldown Reduction 4.5%\" ไม่เก็บ** — ตัวอื่นที่อ่านจาก Preview ไม่มีบรรทัดนี้ และ 4.5% ตรงกับปลุกพลังขั้น 5 ของหลายตัว (\"Special Skill's cooldown decreases by 4.5%\") น่าจะมาจากปลุกพลังของบัญชีนี้ — ยืนยันเมื่อเห็นจอปลุกพลัง | **เลเวลสกิลบนจอบัญชี: Basic Lv.7 (\"Level 3 +4\") · Switch / Ultimate Lv.5 · Special Lv.13 · Guidance of Ice Lv.3** — เก็บตามเลเวลบนจอ | Basic Arkarion: Bound (Physical · Lv.7 · แปดแถว) · Ultimate Arkarion Laxima: Unleashed (Lv.5 · 317.9% · Freeze 10 วินาที) · Effect Details: Ice Affliction · Freeze · ปุ่ม Effects ไม่มีคำอธิบาย Arkarion Unleashed (ยังไม่เห็น) | **2026-10-22 รอบสาม** Switch Arkarion: Restricted (Physical · Lv.5 · 102%) · Special Laxima: Sealed (**Lv.13 \"Level 9 +4\"** · 517.2% · คูลดาวน์ 14.9 วินาที) · Passive Lock Shard (คำอธิบายสี่ท่อน รวมหัวข้อ Laxima Unleashed / Arkarion Unleashed · Crit DMG +20% 7 วินาทีเมื่อตีศัตรูที่ติด Ice Affliction → effect onHit + triggerEnemyAffliction ice) | Arkarion Unleashed มีคำอธิบายใน Passive แล้ว (ไม่ทำเป็น statuses แยก) | **2026-10-22 รอบสี่** Guidance of Ice Arkarion: Resonance: **ค่า Lv.12 = 7.1% จากป๊อปอัป Skill Info (Lv. 3 >> Lv. 12)** จอหลัก Lv.3 = 6.2% · ATK +7.1% เมื่อสลับไปตัวอื่น → onSwitchOut แบบ Benjamin · ปลุกพลังขั้น 1–2 (บัญชีนี้ปลุกครบหกขั้น) | **2026-10-22 รอบห้า** ปลุกพลังขั้น 3–6 → ครบหกขั้น · **ยืนยันแล้ว: \"Special Skill Cooldown Reduction 4.5%\" ใน Detailed Stats มาจากปลุกพลังขั้น 3 ของ Sera (ไม่ใช่ขั้น 5 อย่างที่เดาไว้) — ไม่เก็บใน otherStats ถูกต้อง** | effects: ขั้น 5 Basic +6% · ขั้น 3 ลดคูลดาวน์ Special 4.5% เก็บเป็นข้อความ · ขั้นอื่นเก็บเป็นข้อความ · ขั้น 4 \"Skill DMG have\" ตามจอ | Effect Details ของ Passive = Ice Affliction ข้อความเดียวกับที่เก็บแล้ว (2026-10-22) — ไม่ต้องเพิ่ม | ยังไม่ได้อ่าน: ค่า Lv.12 ของ Basic / Switch / Ultimate · จอไทยทั้งหมด | **2026-10-31 ผู้เล่นสั่งไล่ใส่บัฟที่เป็นข้อความทั้งหมด** ใส่ effect จากข้อความ/ตารางบนจอเดิม (ไม่ได้อ่านจอใหม่): A2, A6, passive · \"X เท่า\" นับเป็น +100% ต่อเท่าตามที่ผู้เล่นยืนยันกับกาบี้ · ท่าที่ตีเพิ่ม/จำนวนครั้งเพิ่มใช้ bonusDmg · บัฟแปลงค่าใช้ condition.convertFrom"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Fighter · Ice · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 1,964 · DEF 653 · HP 10,662 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,766 · DEF 580 · HP 9,272 · Crit 5% / 50%** — DEF 580 แบบ 4 ดาวตัวอื่น · HP 9,272 เท่า Daisy · **ATK 1,766 ยังไม่ซ้ำกับตัวไหน** | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Brawl DMG Boost 11.59% · Fighter 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · Ice DMG 1.3% ไม่เก็บ | **\"Special Skill Cooldown Reduction 4.5%\" ไม่เก็บ** — ตัวอื่นที่อ่านจาก Preview ไม่มีบรรทัดนี้ และ 4.5% ตรงกับปลุกพลังขั้น 5 ของหลายตัว (\"Special Skill's cooldown decreases by 4.5%\") น่าจะมาจากปลุกพลังของบัญชีนี้ — ยืนยันเมื่อเห็นจอปลุกพลัง | **เลเวลสกิลบนจอบัญชี: Basic Lv.7 (\"Level 3 +4\") · Switch / Ultimate Lv.5 · Special Lv.13 · Guidance of Ice Lv.3** — เก็บตามเลเวลบนจอ | Basic Arkarion: Bound (Physical · Lv.7 · แปดแถว) · Ultimate Arkarion Laxima: Unleashed (Lv.5 · 317.9% · Freeze 10 วินาที) · Effect Details: Ice Affliction · Freeze · ปุ่ม Effects ไม่มีคำอธิบาย Arkarion Unleashed (ยังไม่เห็น) | **2026-10-22 รอบสาม** Switch Arkarion: Restricted (Physical · Lv.5 · 102%) · Special Laxima: Sealed (**Lv.13 \"Level 9 +4\"** · 517.2% · คูลดาวน์ 14.9 วินาที) · Passive Lock Shard (คำอธิบายสี่ท่อน รวมหัวข้อ Laxima Unleashed / Arkarion Unleashed · Crit DMG +20% 7 วินาทีเมื่อตีศัตรูที่ติด Ice Affliction → effect onHit + triggerEnemyAffliction ice) | Arkarion Unleashed มีคำอธิบายใน Passive แล้ว (ไม่ทำเป็น statuses แยก) | **2026-10-22 รอบสี่** Guidance of Ice Arkarion: Resonance: **ค่า Lv.12 = 7.1% จากป๊อปอัป Skill Info (Lv. 3 >> Lv. 12)** จอหลัก Lv.3 = 6.2% · ATK +7.1% เมื่อสลับไปตัวอื่น → onSwitchOut แบบ Benjamin · ปลุกพลังขั้น 1–2 (บัญชีนี้ปลุกครบหกขั้น) | **2026-10-22 รอบห้า** ปลุกพลังขั้น 3–6 → ครบหกขั้น · **ยืนยันแล้ว: \"Special Skill Cooldown Reduction 4.5%\" ใน Detailed Stats มาจากปลุกพลังขั้น 3 ของ Sera (ไม่ใช่ขั้น 5 อย่างที่เดาไว้) — ไม่เก็บใน otherStats ถูกต้อง** | effects: ขั้น 5 Basic +6% · ขั้น 3 ลดคูลดาวน์ Special 4.5% เก็บเป็นข้อความ · ขั้นอื่นเก็บเป็นข้อความ · ขั้น 4 \"Skill DMG have\" ตามจอ | Effect Details ของ Passive = Ice Affliction ข้อความเดียวกับที่เก็บแล้ว (2026-10-22) — ไม่ต้องเพิ่ม | ยังไม่ได้อ่าน: ค่า Lv.12 ของ Basic / Switch / Ultimate · จอไทยทั้งหมด | **2026-10-31 ผู้เล่นสั่งไล่ใส่บัฟที่เป็นข้อความทั้งหมด** ใส่ effect จากข้อความ/ตารางบนจอเดิม (ไม่ได้อ่านจอใหม่): A2, A6, passive · \"X เท่า\" นับเป็น +100% ต่อเท่าตามที่ผู้เล่นยืนยันกับกาบี้ · ท่าที่ตีเพิ่ม/จำนวนครั้งเพิ่มใช้ bonusDmg · บัฟแปลงค่าใช้ condition.convertFrom | **2026-11-01 จอภาษาไทย** (ข้อมูล · โจมตีพื้นฐาน Lv.7 · การชี้นำ Lv.3 + ป๊อปอัป Lv.12 · สกิลสับเปลี่ยน Lv.5) ได้ชื่อไทย เซร่า · ชื่อ/คำอธิบาย/ชื่อแถวของโจมตีพื้นฐาน สกิลสับเปลี่ยน การชี้นำ · ตัวเลขทุกแถวตรงกับจออังกฤษ · การชี้นำใช้ Lv.12 7.1% อยู่แล้ว · จอข้อมูลเป็นค่าพลังที่ใส่ของแล้ว ไม่ได้ใช้ | **2026-11-01 จอภาษาไทยชุดสอง** (สกิลพิเศษ Lv.13 สองจอ · อัลติเมต Lv.5 + รายละเอียดเอฟเฟกต์ · แพสซีฟสองจอ + รายละเอียดเอฟเฟกต์ · ปลุกพลัง 1–6) ครบทุกสกิลแล้ว · ตัวเลขทุกแถวตรงกับจออังกฤษ · หัวข้อ \"ปลดปล่อยลักษิมา\" / \"ปลดปล่อยอาร์คาริออน\" / \"อาร์คาริออน: หมุนจดจ่อ\" ที่จอไทยแยกบรรทัด เขียนเป็น \"หัวข้อ: …\" ตามแบบอังกฤษ"
   }
 }

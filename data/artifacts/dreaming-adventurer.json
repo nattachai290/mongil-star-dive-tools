@@ -49,7 +49,8 @@
             "note": {
               "th": "การโจมตีพื้นฐานธาตุน้ำแข็งครั้งถัดไป 1 ครั้ง",
               "en": "the next (and only the next) Basic Ice Attack"
-            }
+            },
+            "selfMet": true
           }
         }
       ]

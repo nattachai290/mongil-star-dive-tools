@@ -188,6 +188,32 @@ export const effect = z
          */
         teammatesOnly: z.literal(true).optional(),
         /**
+         * ทำงานเมื่อตัวที่ใส่ "ได้รับบัฟดาเมจธาตุนี้" (เอฟเฟกต์ ไม่ใช่ค่าพลังติดของ) เช่น หินอัคนีสลักของ ปราณมังกรที่ลุกโชน
+         * "gaining a Fire DMG Boost" · ตัวคำนวณตัดออกถ้าไม่มีบัฟดาเมจธาตุนั้นเลย (ผู้เล่นเจอ Ellie ทีมดินได้ ATK +30% 2026-11-01)
+         */
+        requiresElementBoost: vocabEnum("damageType").optional(),
+        /**
+         * ทำงานเมื่อตัวที่ใส่ "ได้รับบัฟค่านี้" เป็นเอฟเฟกต์ (ค่าพลังติดตัว/ของไม่นับ) เช่น ปีศาจผู้ปรารถนา
+         * "เมื่อเอฟเฟกต์เพิ่มดาเมจกดขี่ปรับใช้" → suppressionDmg (ผู้เล่นบอก 2026-11-01: แบบ Attention Overload ของบรีเซล)
+         */
+        requiresStatBuff: vocabEnum("stat").optional(),
+        /** ทำงานเมื่อตัวที่ใส่ "ได้รับบัฟดาเมจสกิล" (dmgDealt ที่ผูกสกิลพิเศษ/สับเปลี่ยน/อัลติเมต) เช่น Savvy Investment */
+        requiresSkillBoost: z.literal(true).optional(),
+        /** ตัวที่ใส่ต้องมีสถานะนี้ของตัวเอง (ชื่ออังกฤษใน statuses) เช่น "DMG Immunity" ของ เกล็ดขาวของอสรพิษวารี */
+        requiresSelfStatus: z.string().min(1).optional(),
+        /** สกิลนี้ของตัวที่ใส่ต้องทำให้ศัตรูติดสถานะนี้ (หาในคำอธิบายอังกฤษ) เช่น สับเปลี่ยน + "Freeze" ของ Stabilized Superconductor */
+        requiresSkillInflicts: z
+          .object({ skill: z.enum(["basic", "switch", "special", "ultimate"]), status: z.string().min(1) })
+          .optional(),
+        /** ตัวที่ใส่ต้องเป็นระยะนี้ เช่น "if the equipping character is a Ranged type" */
+        holderRange: vocabEnum("range").optional(),
+        /**
+         * ตรวจแล้ว: เงื่อนไขในข้อความเป็นสิ่งที่ตัวที่ใส่ทำได้เอง (เช่น "เมื่อใช้สกิลพิเศษ") นับตลอดได้
+         * ตัวตรวจข้อมูลเตือนเอฟเฟกต์ของอาร์ติแฟกต์/เซ็ต/มอน/ลิงก์เชนที่มีเงื่อนไขเป็นข้อความอย่างเดียวและยังไม่ได้ตรวจ
+         * (กันไม่ให้นับบัฟที่ตัวนั้นทำไม่ได้แบบหินอัคนีสลัก 2026-11-01)
+         */
+        selfMet: z.literal(true).optional(),
+        /**
          * ค่าของเอฟเฟกต์แปลงจากค่าอื่นของ "เจ้าของเอฟเฟกต์" = ค่าต้นทาง × ratio% แต่ไม่เกิน value (ค่าสูงสุดบนจอ · ไม่มีเพดาน = ไม่ใส่ value)
          * stat ต้นทาง: dmgDealt + damageType (ดาเมจธาตุที่ได้รับ) · critRate · critDmg · hp (ค่าพลังรวม) · ดาเมจบทบาท (supportDmg ฯลฯ)
          * เช่น แพสซีฟ Francis: Summer Dive! "ATK increases by an amount equal to any received Earth DMG Boosts" สูงสุด 25%

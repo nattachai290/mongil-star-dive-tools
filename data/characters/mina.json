@@ -1,7 +1,8 @@
 {
   "id": "mina",
   "name": {
-    "en": "Mina"
+    "en": "Mina",
+    "th": "มีนา"
   },
   "rarity": 5,
   "element": "fire",
@@ -73,30 +74,36 @@
     {
       "stage": 1,
       "name": {
-        "en": "Threads of Souls"
+        "en": "Threads of Souls",
+        "th": "เส้นด้ายแห่งพันธะวิญญาณ"
       },
       "desc": {
-        "en": "Using Mina's Basic Attack after her Special Skill will chain directly to her Basic Attack's 4th Hit. / Additionally, using her Ultimate Skill summons one more Clone."
+        "en": "Using Mina's Basic Attack after her Special Skill will chain directly to her Basic Attack's 4th Hit. / Additionally, using her Ultimate Skill summons one more Clone.",
+        "th": "เมื่อใช้โจมตีพื้นฐานหลังจากใช้สกิลพิเศษ จะประสานการโจมตีขั้น 4 / อีกทั้งเมื่อใช้สกิลอัลติเมต จะอัญเชิญร่างแยกเพิ่มอีก 1 ร่าง"
       },
       "effects": []
     },
     {
       "stage": 2,
       "name": {
-        "en": "Spirit's Blessing"
+        "en": "Spirit's Blessing",
+        "th": "การคุ้มครองของเทพเจ้า"
       },
       "desc": {
-        "en": "Mina's Ultimate Gauge Charge increases by 20%. / Using Mina's Ultimate Skill grants 3 stack(s) of Essence."
+        "en": "Mina's Ultimate Gauge Charge increases by 20%. / Using Mina's Ultimate Skill grants 3 stack(s) of Essence.",
+        "th": "เพิ่มอัตราชาร์จสกิลอัลติเมต 20% / เมื่อใช้สกิลอัลติเมต จะได้รับจิตวิญญาณ 3 ดวง"
       },
       "effects": []
     },
     {
       "stage": 3,
       "name": {
-        "en": "Hands of Fate"
+        "en": "Hands of Fate",
+        "th": "การชี้นำแห่งโชคชะตา"
       },
       "desc": {
-        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Special Skill's cooldown decreases by 4.5%."
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Special Skill's cooldown decreases by 4.5%.",
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / ลดคูลดาวน์สกิลพิเศษ 4.5%"
       },
       "effects": [],
       "skillLevelBonus": 2
@@ -104,20 +111,24 @@
     {
       "stage": 4,
       "name": {
-        "en": "Foxfire Dance"
+        "en": "Foxfire Dance",
+        "th": "ท่าร่ายรำเพลิงจิ้งจอก"
       },
       "desc": {
-        "en": "Using Mina's Ultimate Skill changes the stat ratio of her summoned Clones from 50% to 100% and increases Clone duration by 5s. / Additionally, Charm is enhanced, decreasing inflicted enemies' DEF by 10%."
+        "en": "Using Mina's Ultimate Skill changes the stat ratio of her summoned Clones from 50% to 100% and increases Clone duration by 5s. / Additionally, Charm is enhanced, decreasing inflicted enemies' DEF by 10%.",
+        "th": "เมื่อใช้สกิลอัลติเมต อัตราค่าพลังของร่างแยกที่ถูกอัญเชิญจะถูกเปลี่ยนจาก 50% เป็น 100% และเพิ่มเวลาแสดงผลของร่างแยก 5 วินาที / อีกทั้งเสริมพลังเอฟเฟกต์หลงใหล และลดพลังป้องกันของศัตรูที่ได้รับเอฟเฟกต์เพิ่มอีก 10%"
       },
       "effects": []
     },
     {
       "stage": 5,
       "name": {
-        "en": "Worshipped Maiden"
+        "en": "Worshipped Maiden",
+        "th": "นักบวชหญิงผู้ได้รับการยกย่อง"
       },
       "desc": {
-        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%.",
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจโจมตีพื้นฐาน 6%"
       },
       "effects": [
         {
@@ -137,10 +148,12 @@
     {
       "stage": 6,
       "name": {
-        "en": "Nine Tails"
+        "en": "Nine Tails",
+        "th": "หางทั้งเก้า"
       },
       "desc": {
-        "en": "Luminous Rush's DMG increases by 50%, and the range of Luminous Rush's 1st Hit and 2nd Hit increases. / Holding the Basic Attack button after Luminous Rush's last Hit while there is a Clone present will chain the attack directly into Mina's Basic Attack's 4th Hit."
+        "en": "Luminous Rush's DMG increases by 50%, and the range of Luminous Rush's 1st Hit and 2nd Hit increases. / Holding the Basic Attack button after Luminous Rush's last Hit while there is a Clone present will chain the attack directly into Mina's Basic Attack's 4th Hit.",
+        "th": "เพิ่มดาเมจที่เกิดจากเพลิงจิ้งจอกกระหน่ำ 50% และเพิ่มขอบเขตโจมตีขั้น 1 และ 2 ของเพลิงจิ้งจอกกระหน่ำ / อีกทั้งเมื่อกดค้างโจมตีพื้นฐานหลังการโจมตีครั้งสุดท้ายของเพลิงจิ้งจอกกระหน่ำ ในขณะที่มีร่างแยก จะประสานการโจมตีพื้นฐานขั้น 4"
       },
       "effects": [
         {
@@ -166,17 +179,20 @@
   "skills": {
     "basic": {
       "name": {
-        "en": "Foxfire Orb"
+        "en": "Foxfire Orb",
+        "th": "ลูกแก้วภูตไฟ"
       },
       "desc": {
-        "en": "Mina deals Fire DMG by launching Foxfire Orbs at an enemy. On her final attack, she flourishes her tails to deal Fire DMG and gains a stack of Essence. / When Mina has 1 or more stacks of Essence, holding the Basic Attack button triggers Luminous Rush, dealing Fire DMG and consuming Essence. / When Luminous Rush triggers 3 times, using her Basic Attack again triggers its 4th Hit without consuming Essence."
+        "en": "Mina deals Fire DMG by launching Foxfire Orbs at an enemy. On her final attack, she flourishes her tails to deal Fire DMG and gains a stack of Essence. / When Mina has 1 or more stacks of Essence, holding the Basic Attack button triggers Luminous Rush, dealing Fire DMG and consuming Essence. / When Luminous Rush triggers 3 times, using her Basic Attack again triggers its 4th Hit without consuming Essence.",
+        "th": "ขว้างลูกแก้วภูตไฟใส่ศัตรู สร้างดาเมจธาตุไฟในการโจมตีสุดท้ายจะหมุนหาง สร้างดาเมจธาตุไฟและได้รับจิตวิญญาณ / เมื่อกดค้างโจมตีพื้นฐานในขณะที่มีจิตวิญญาณมากกว่า 1 ดวง จะเกิดเพลิงจิ้งจอกกระหน่ำ สร้างดาเมจธาตุไฟและจิตวิญญาณจะถูกใช้งาน / เมื่อเกิดเพลิงจิ้งจอกกระหน่ำจนถึงขั้น 3 จะสามารถกดโจมตีพื้นฐานเพิ่มเติมเพื่อทำให้เกิดการโจมตีขั้น 4 ได้โดยไม่ต้องใช้จิตวิญญาณ"
       },
       "damageType": "fire",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "1st Hit DMG"
+            "en": "1st Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 1"
           },
           "unit": "percent",
           "scaling": [
@@ -201,7 +217,8 @@
         },
         {
           "label": {
-            "en": "2nd Hit DMG"
+            "en": "2nd Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 2"
           },
           "unit": "percent",
           "scaling": [
@@ -226,7 +243,8 @@
         },
         {
           "label": {
-            "en": "3rd Hit DMG"
+            "en": "3rd Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 3"
           },
           "unit": "percent",
           "scaling": [
@@ -251,7 +269,8 @@
         },
         {
           "label": {
-            "en": "4th Hit DMG"
+            "en": "4th Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 4"
           },
           "unit": "percent",
           "scaling": [
@@ -276,7 +295,8 @@
         },
         {
           "label": {
-            "en": "Luminous Rush 1st Hit DMG"
+            "en": "Luminous Rush 1st Hit DMG",
+            "th": "ดาเมจโจมตีเพลิงจิ้งจอกกระหน่ำ ขั้น 1"
           },
           "unit": "percent",
           "scaling": [
@@ -301,7 +321,8 @@
         },
         {
           "label": {
-            "en": "Luminous Rush 2nd Hit DMG"
+            "en": "Luminous Rush 2nd Hit DMG",
+            "th": "ดาเมจโจมตีเพลิงจิ้งจอกกระหน่ำ ขั้น 2"
           },
           "unit": "percent",
           "scaling": [
@@ -326,7 +347,8 @@
         },
         {
           "label": {
-            "en": "Luminous Rush 3rd Hit DMG"
+            "en": "Luminous Rush 3rd Hit DMG",
+            "th": "ดาเมจโจมตีเพลิงจิ้งจอกกระหน่ำ ขั้น 3"
           },
           "unit": "percent",
           "scaling": [
@@ -351,7 +373,8 @@
         },
         {
           "label": {
-            "en": "Luminous Rush 4th Hit DMG"
+            "en": "Luminous Rush 4th Hit DMG",
+            "th": "ดาเมจโจมตีเพลิงจิ้งจอกกระหน่ำ ขั้น 4"
           },
           "unit": "percent",
           "scaling": [
@@ -376,7 +399,8 @@
         },
         {
           "label": {
-            "en": "Air Counter DMG"
+            "en": "Air Counter DMG",
+            "th": "ดาเมจโจมตีฉับพลัน"
           },
           "unit": "percent",
           "scaling": [
@@ -400,7 +424,8 @@
         },
         {
           "label": {
-            "en": "Evasion Counter DMG"
+            "en": "Evasion Counter DMG",
+            "th": "ดาเมจหลบหลีกโต้กลับ"
           },
           "unit": "percent",
           "scaling": [
@@ -426,17 +451,20 @@
     },
     "switch": {
       "name": {
-        "en": "Sparkling Flourish"
+        "en": "Sparkling Flourish",
+        "th": "หมัดจิ้งจอกเพลิง"
       },
       "desc": {
-        "en": "Mina appears near an enemy and swings her tails, creating a vortex that pulls in enemies, dealing Fire DMG and gaining a stack of Essence. After, she creates an explosion at its center, dealing additional Fire DMG."
+        "en": "Mina appears near an enemy and swings her tails, creating a vortex that pulls in enemies, dealing Fire DMG and gaining a stack of Essence. After, she creates an explosion at its center, dealing additional Fire DMG.",
+        "th": "ปรากฏตัวใกล้ศัตรู หมุนหางแล้วทำให้เกิดลมหมุนลากศัตรูเข้ามา สร้างดาเมจธาตุไฟและรับจิตวิญญาณ หลังจากนั้นจะทำให้เกิดระเบิดบริเวณตรงกลาง สร้างดาเมจธาตุไฟเพิ่มเติม"
       },
       "damageType": "fire",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "Spin Attack DMG"
+            "en": "Spin Attack DMG",
+            "th": "ดาเมจโจมตีหมุน"
           },
           "unit": "percent",
           "scaling": [
@@ -461,7 +489,8 @@
         },
         {
           "label": {
-            "en": "Bonus Explosion DMG"
+            "en": "Bonus Explosion DMG",
+            "th": "ดาเมจระเบิดเพิ่มเติม"
           },
           "unit": "percent",
           "scaling": [
@@ -488,17 +517,20 @@
     },
     "special": {
       "name": {
-        "en": "Foxfire Blast"
+        "en": "Foxfire Blast",
+        "th": "ภูตไฟเสริมพลัง"
       },
       "desc": {
-        "en": "Mina throws an enhanced Foxfire Orb at an enemy and gains a stack of Essence. The orb deals Fire DMG as it pulls in nearby enemies, then explodes to deal bonus Fire DMG."
+        "en": "Mina throws an enhanced Foxfire Orb at an enemy and gains a stack of Essence. The orb deals Fire DMG as it pulls in nearby enemies, then explodes to deal bonus Fire DMG.",
+        "th": "ขว้างลูกแก้วภูตไฟเสริมพลังใส่ศัตรูเพื่อรับจิตวิญญาณ ลูกแก้วภูตไฟจะลากศัตรูที่อยู่รอบข้างเข้ามา สร้างดาเมจธาตุไฟ และจะระเบิด สร้างดาเมจธาตุไฟเพิ่มเติม"
       },
       "damageType": "fire",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "Foxfire Orb (Pull-in) DMG"
+            "en": "Foxfire Orb (Pull-in) DMG",
+            "th": "ดาเมจลูกแก้วภูตไฟดึงศัตรูเข้ามา"
           },
           "unit": "percent",
           "scaling": [
@@ -523,7 +555,8 @@
         },
         {
           "label": {
-            "en": "Bonus Explosion DMG"
+            "en": "Bonus Explosion DMG",
+            "th": "ดาเมจระเบิดเพิ่มเติม"
           },
           "unit": "percent",
           "scaling": [
@@ -548,7 +581,8 @@
         },
         {
           "label": {
-            "en": "Cooldown"
+            "en": "Cooldown",
+            "th": "คูลดาวน์"
           },
           "unit": "seconds",
           "scaling": [
@@ -574,17 +608,20 @@
     },
     "ultimate": {
       "name": {
-        "en": "Foxfire Clone"
+        "en": "Foxfire Clone",
+        "th": "ร่างแยกภูตไฟ"
       },
       "desc": {
-        "en": "Mina summons a clone, and the two of them gather energy to throw a powerful Foxfire Orb at an enemy, dealing Fire DMG, inflicting Fire Affliction, and gaining a stack of Essence. / The clone follows Mina around and mimics her skills to attack enemies for a set duration. While Mina has clones active, the number of Essence stacks gained from her Basic Attack's 4th Hit increases by the number of active clones."
+        "en": "Mina summons a clone, and the two of them gather energy to throw a powerful Foxfire Orb at an enemy, dealing Fire DMG, inflicting Fire Affliction, and gaining a stack of Essence. / The clone follows Mina around and mimics her skills to attack enemies for a set duration. While Mina has clones active, the number of Essence stacks gained from her Basic Attack's 4th Hit increases by the number of active clones.",
+        "th": "อัญเชิญร่างแยกออกมาเป็นสิ่งอัญเชิญ แล้วรวมพลังกันขว้างลูกแก้วภูตไฟแข็งแกร่งใส่ศัตรู สร้างดาเมจธาตุไฟและมอบเอฟเฟกต์อ่อนแอต่อไฟและรับจิตวิญญาณ / ร่างแยกจะติดตามไปด้วยในระยะเวลาที่กำหนดและเลียนแบบสกิลเพื่อใช้โจมตีศัตรู ในขณะที่ร่างแยกยังอยู่ จำนวนจิตวิญญาณที่ได้รับจากโจมตีพื้นฐานขั้น 4 จะเพิ่มอีกเท่ากับจำนวนร่างแยก"
       },
       "damageType": "fire",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "DMG"
+            "en": "DMG",
+            "th": "ดาเมจ"
           },
           "unit": "percent",
           "scaling": [
@@ -609,7 +646,8 @@
         },
         {
           "label": {
-            "en": "Clone Summon Count"
+            "en": "Clone Summon Count",
+            "th": "จำนวนอัญเชิญร่างแยก"
           },
           "unit": "times",
           "scaling": [
@@ -634,7 +672,8 @@
         },
         {
           "label": {
-            "en": "Clone Stat Ratio"
+            "en": "Clone Stat Ratio",
+            "th": "อัตราค่าพลังของร่างแยก"
           },
           "unit": "percent",
           "scaling": [
@@ -659,7 +698,8 @@
         },
         {
           "label": {
-            "en": "Clone Duration"
+            "en": "Clone Duration",
+            "th": "เวลาแสดงผลร่างแยก"
           },
           "unit": "seconds",
           "scaling": [
@@ -684,7 +724,8 @@
         },
         {
           "label": {
-            "en": "Fire Affliction Duration"
+            "en": "Fire Affliction Duration",
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อไฟ"
           },
           "unit": "seconds",
           "scaling": [
@@ -711,16 +752,19 @@
     },
     "passive": {
       "name": {
-        "en": "Essence of Fire"
+        "en": "Essence of Fire",
+        "th": "วิญญาณแห่งไฟ"
       },
       "desc": {
-        "en": "Mina gains a stack of Essence upon using certain attacks and inflicts Charm onto enemies who've lost their Essence. / Essence stacks can be consumed by holding the Basic Attack button."
+        "en": "Mina gains a stack of Essence upon using certain attacks and inflicts Charm onto enemies who've lost their Essence. / Essence stacks can be consumed by holding the Basic Attack button.",
+        "th": "เมื่อใช้โจมตีพิเศษ จะได้รับจิตวิญญาณและจะมอบเอฟเฟกต์หลงใหลแก่ศัตรูที่ถูกแย่งจิตวิญญาณ / สามารถกดค้างโจมตีพื้นฐานเพื่อใช้จิตวิญญาณที่ได้รับ"
       },
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "Essence Gained by Landing 4th Basic Attack Hit"
+            "en": "Essence Gained by Landing 4th Basic Attack Hit",
+            "th": "เมื่อใช้โจมตีพื้นฐาน ขั้น 4 จะได้รับจิตวิญญาณ"
           },
           "unit": "times",
           "scaling": [
@@ -745,7 +789,8 @@
         },
         {
           "label": {
-            "en": "Essence Gained by Landing Switch Skill"
+            "en": "Essence Gained by Landing Switch Skill",
+            "th": "เมื่อสกิลสับเปลี่ยนโดน จะได้รับจิตวิญญาณ"
           },
           "unit": "times",
           "scaling": [
@@ -770,7 +815,8 @@
         },
         {
           "label": {
-            "en": "Essence Gained by Using Special Skill"
+            "en": "Essence Gained by Using Special Skill",
+            "th": "เมื่อใช้สกิลพิเศษ จะได้รับจิตวิญญาณ"
           },
           "unit": "times",
           "scaling": [
@@ -795,7 +841,8 @@
         },
         {
           "label": {
-            "en": "Essence Gained by Using Ultimate Skill"
+            "en": "Essence Gained by Using Ultimate Skill",
+            "th": "เมื่อใช้สกิลอัลติเมต จะได้รับจิตวิญญาณ"
           },
           "unit": "times",
           "scaling": [
@@ -820,7 +867,8 @@
         },
         {
           "label": {
-            "en": "Essence Gained by Using Air Counter"
+            "en": "Essence Gained by Using Air Counter",
+            "th": "เมื่อใช้โจมตีฉับพลัน จะได้รับจิตวิญญาณ"
           },
           "unit": "times",
           "scaling": [
@@ -845,7 +893,8 @@
         },
         {
           "label": {
-            "en": "Essence Gained upon Using Evasion Counter"
+            "en": "Essence Gained upon Using Evasion Counter",
+            "th": "เมื่อใช้หลบหลีกโต้กลับ จะได้รับจิตวิญญาณ"
           },
           "unit": "times",
           "scaling": [
@@ -870,7 +919,8 @@
         },
         {
           "label": {
-            "en": "Charm Duration"
+            "en": "Charm Duration",
+            "th": "เวลาแสดงผลหลงใหล"
           },
           "unit": "seconds",
           "scaling": [
@@ -897,17 +947,19 @@
     },
     "elemental": {
       "name": {
-        "en": "Resonating Essence of Fire"
+        "en": "Resonating Essence of Fire",
+        "th": "วิญญาณแห่งไฟก้องกังวาน"
       },
       "desc": {
-        "en": "Using Mina's Switch Skill increases Fire DMG by 23.9%. (Duration: 15s)"
+        "en": "Using Mina's Switch Skill increases Fire DMG by 32.9%. (Duration: 15s)",
+        "th": "เมื่อใช้สกิลสับเปลี่ยน จะเพิ่มดาเมจธาตุไฟ 32.9% (เวลาแสดงผล 15 วินาที)"
       },
       "effects": [
         {
           "kind": "buff",
           "stat": "dmgDealt",
           "damageType": "fire",
-          "value": 23.9,
+          "value": 32.9,
           "unit": "percent",
           "target": "self",
           "trigger": "onSwitch",
@@ -923,10 +975,12 @@
   "statuses": [
     {
       "name": {
-        "en": "Charm"
+        "en": "Charm",
+        "th": "หลงใหล"
       },
       "desc": {
-        "en": "ATK decreases by 10% and DEF decreases by 10%."
+        "en": "ATK decreases by 10% and DEF decreases by 10%.",
+        "th": "ลดพลังโจมตี 10% และลดพลังป้องกัน 10%"
       },
       "effects": [
         {
@@ -949,10 +1003,12 @@
     },
     {
       "name": {
-        "en": "Fire Affliction"
+        "en": "Fire Affliction",
+        "th": "เอฟเฟกต์อ่อนแอต่อไฟ"
       },
       "desc": {
-        "en": "Afflicted targets take Fire DMG over time, and Fire RES decreases by 15%."
+        "en": "Afflicted targets take Fire DMG over time, and Fire RES decreases by 15%.",
+        "th": "ได้รับดาเมจต่อเนื่องธาตุไฟและลดพลังต้านทานธาตุไฟ 15%"
       },
       "effects": []
     }
@@ -962,8 +1018,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอตัวละครภาษาอังกฤษ 2026-10-22 (Info · Detailed Stats · Passive Trait · Guidance of Fire) · **ยังไม่มีจอไทย** ทุกช่องภาษาไทยว่าง | Fighter · Fire · **Ranged** (คำใหม่ในพจนานุกรม range เดิมมีแต่ Melee) · เลเวล 60 สูงสุด | **5 ดาว (ผู้เล่นบอก 2026-10-22)** — ดาวสี่ดวงบนจอ Info คือดาวอัปเลเวล ไม่ใช่แรงก์ | ค่าพลังเปล่าจากจอ Detailed Stats (ATK 2,049 ฯลฯ — จอ Info ที่ติดของอยู่เขียน 4,428) · **ตัวเลขเท่ากับ Verna: Summer Dive! ทุกบรรทัด** ยกเว้น Fire DMG Boost (Mina 0.7% · Verna 13.72%) — อ่านจากจอตรง ๆ ไม่ได้คัดลอก ดูเหมือนตัวละคร 5 ดาวบทบาทเดียวกันใช้ค่าฐานชุดเดียวกัน | Passive (Lv.1) บรรทัด Essence ทั้งหมดกับ Charm Duration ผูกท่อนที่ 1 · ท่อนที่ 2 (กดค้างโจมตีพื้นฐานเพื่อใช้ Essence) ไม่มีตัวเลข | Guidance of Fire: Resonating Essence of Fire Lv.2 = Fire DMG +23.9% 15 วินาที เมื่อใช้สกิลสับเปลี่ยน · ป๊อปอัปบอก Lv.12 = 32.9% (จดไว้ ไม่ใส่) · effects ว่าง เพราะจอไม่ได้บอกว่าบัฟลงที่ใคร (ตัวเอง / ทีม) | รูป portrait ตัดจากภาพในฉากที่ผู้เล่นส่งมา 2026-10-22 (1920x1080) 460x460 ช่วงหัวถึงอก พร้อมลูกไฟ แทนรูปที่ตัดจากจอ Info เดิม | **2026-10-22 รอบสอง** Basic Attack · Switch Skill · Special Skill · Ultimate Skill ที่ Lv.12 (สูงสุด) และ Effect Details ของ Charm กับ Fire Affliction · **ครบทั้งหกช่องสกิลแล้ว** ทุกท่าเป็นธาตุไฟ (จอเขียน Fire DMG ทุกท่า) | line: โจมตีพื้นฐาน 1st-4th = ท่อน 1 · Luminous Rush = ท่อน 2 · Air/Evasion Counter ไม่ถูกพูดถึง ไม่ใส่ · อัลติเมต DMG กับ Fire Affliction = ท่อน 1 · บรรทัดโคลนสามบรรทัด = ท่อน 2 | Charm ใส่ effects ได้ครบ (ลดพลังโจมตี 10% · ลดพลังป้องกัน 10% ของตัวที่ติดสถานะ) · Fire Affliction ข้อความตรงกับของวิเวียนและ Verna ทุกตัวอักษร เก็บเป็นข้อความ | Essence ไม่มีหน้าต่าง Effect Details ของตัวเอง (จอไม่ได้ขีดเส้นใต้) จึงไม่มีในสถานะ | **2026-10-22 รอบสาม** ปลุกพลังครบหกขั้น ภาษาอังกฤษ (ทุกขั้นยังล็อก แต่จอแสดงคำอธิบาย) | effects เติมเฉพาะขั้น 5 (ดาเมจโจมตีพื้นฐาน +6%) · ขั้น 3 ลดคูลดาวน์สกิลพิเศษ 4.5% เก็บเป็นข้อความตามแบบขั้น 3 ของวิเวียนที่ใช้ประโยคเดียวกัน · ขั้น 2 (+20% Ultimate Gauge Charge) อยู่คู่กับ Essence 3 ชั้นในขั้นเดียวกัน จึงไม่เติมบางส่วน | ขั้น 4 เขียนว่า Charm ลดพลังป้องกันศัตรูเพิ่มอีก 10% — ไม่ได้แก้ statuses.Charm เพราะเป็นผลของปลุกพลัง ไม่ใช่ค่าพื้นฐาน | ยังไม่ได้อ่าน: จอไทยทั้งหมด | **สกิลธาตุเติม effect แล้ว** (ผู้เล่นกำหนด 2026-10-22: \"ถ้าไม่บอกว่าใครก็คือตัวเอง\" — ข้อความที่ไม่ระบุผู้รับบัฟ ให้ target self) | **2026-10-31 ผู้เล่นสั่งไล่ใส่บัฟที่เป็นข้อความทั้งหมด** ใส่ effect จากข้อความ/ตารางบนจอเดิม (ไม่ได้อ่านจอใหม่): A6 · \"X เท่า\" นับเป็น +100% ต่อเท่าตามที่ผู้เล่นยืนยันกับกาบี้ · ท่าที่ตีเพิ่ม/จำนวนครั้งเพิ่มใช้ bonusDmg · บัฟแปลงค่าใช้ condition.convertFrom"
+    "note": "อ่านจากจอตัวละครภาษาอังกฤษ 2026-10-22 (Info · Detailed Stats · Passive Trait · Guidance of Fire) · **ยังไม่มีจอไทย** ทุกช่องภาษาไทยว่าง | Fighter · Fire · **Ranged** (คำใหม่ในพจนานุกรม range เดิมมีแต่ Melee) · เลเวล 60 สูงสุด | **5 ดาว (ผู้เล่นบอก 2026-10-22)** — ดาวสี่ดวงบนจอ Info คือดาวอัปเลเวล ไม่ใช่แรงก์ | ค่าพลังเปล่าจากจอ Detailed Stats (ATK 2,049 ฯลฯ — จอ Info ที่ติดของอยู่เขียน 4,428) · **ตัวเลขเท่ากับ Verna: Summer Dive! ทุกบรรทัด** ยกเว้น Fire DMG Boost (Mina 0.7% · Verna 13.72%) — อ่านจากจอตรง ๆ ไม่ได้คัดลอก ดูเหมือนตัวละคร 5 ดาวบทบาทเดียวกันใช้ค่าฐานชุดเดียวกัน | Passive (Lv.1) บรรทัด Essence ทั้งหมดกับ Charm Duration ผูกท่อนที่ 1 · ท่อนที่ 2 (กดค้างโจมตีพื้นฐานเพื่อใช้ Essence) ไม่มีตัวเลข | Guidance of Fire: Resonating Essence of Fire Lv.2 = Fire DMG +23.9% 15 วินาที เมื่อใช้สกิลสับเปลี่ยน · ป๊อปอัปบอก Lv.12 = 32.9% (จดไว้ ไม่ใส่) · effects ว่าง เพราะจอไม่ได้บอกว่าบัฟลงที่ใคร (ตัวเอง / ทีม) | รูป portrait ตัดจากภาพในฉากที่ผู้เล่นส่งมา 2026-10-22 (1920x1080) 460x460 ช่วงหัวถึงอก พร้อมลูกไฟ แทนรูปที่ตัดจากจอ Info เดิม | **2026-10-22 รอบสอง** Basic Attack · Switch Skill · Special Skill · Ultimate Skill ที่ Lv.12 (สูงสุด) และ Effect Details ของ Charm กับ Fire Affliction · **ครบทั้งหกช่องสกิลแล้ว** ทุกท่าเป็นธาตุไฟ (จอเขียน Fire DMG ทุกท่า) | line: โจมตีพื้นฐาน 1st-4th = ท่อน 1 · Luminous Rush = ท่อน 2 · Air/Evasion Counter ไม่ถูกพูดถึง ไม่ใส่ · อัลติเมต DMG กับ Fire Affliction = ท่อน 1 · บรรทัดโคลนสามบรรทัด = ท่อน 2 | Charm ใส่ effects ได้ครบ (ลดพลังโจมตี 10% · ลดพลังป้องกัน 10% ของตัวที่ติดสถานะ) · Fire Affliction ข้อความตรงกับของวิเวียนและ Verna ทุกตัวอักษร เก็บเป็นข้อความ | Essence ไม่มีหน้าต่าง Effect Details ของตัวเอง (จอไม่ได้ขีดเส้นใต้) จึงไม่มีในสถานะ | **2026-10-22 รอบสาม** ปลุกพลังครบหกขั้น ภาษาอังกฤษ (ทุกขั้นยังล็อก แต่จอแสดงคำอธิบาย) | effects เติมเฉพาะขั้น 5 (ดาเมจโจมตีพื้นฐาน +6%) · ขั้น 3 ลดคูลดาวน์สกิลพิเศษ 4.5% เก็บเป็นข้อความตามแบบขั้น 3 ของวิเวียนที่ใช้ประโยคเดียวกัน · ขั้น 2 (+20% Ultimate Gauge Charge) อยู่คู่กับ Essence 3 ชั้นในขั้นเดียวกัน จึงไม่เติมบางส่วน | ขั้น 4 เขียนว่า Charm ลดพลังป้องกันศัตรูเพิ่มอีก 10% — ไม่ได้แก้ statuses.Charm เพราะเป็นผลของปลุกพลัง ไม่ใช่ค่าพื้นฐาน | ยังไม่ได้อ่าน: จอไทยทั้งหมด | **สกิลธาตุเติม effect แล้ว** (ผู้เล่นกำหนด 2026-10-22: \"ถ้าไม่บอกว่าใครก็คือตัวเอง\" — ข้อความที่ไม่ระบุผู้รับบัฟ ให้ target self) | **2026-10-31 ผู้เล่นสั่งไล่ใส่บัฟที่เป็นข้อความทั้งหมด** ใส่ effect จากข้อความ/ตารางบนจอเดิม (ไม่ได้อ่านจอใหม่): A6 · \"X เท่า\" นับเป็น +100% ต่อเท่าตามที่ผู้เล่นยืนยันกับกาบี้ · ท่าที่ตีเพิ่ม/จำนวนครั้งเพิ่มใช้ bonusDmg · บัฟแปลงค่าใช้ condition.convertFrom | **2026-11-01 จอภาษาไทย** (ข้อมูล · โจมตีพื้นฐานสองจอ · อัลติเมต + รายละเอียดเอฟเฟกต์อ่อนแอต่อไฟ) ได้ชื่อไทย มีนา · ชื่อ/คำอธิบาย/ชื่อแถวของโจมตีพื้นฐานกับอัลติเมต · สถานะ เอฟเฟกต์อ่อนแอต่อไฟ · ตัวเลขทุกแถวตรงกับจออังกฤษ · \"สร้างดาเมจธาตุไฟในการโจมตีสุดท้าย\" ไม่มีเว้นวรรคตามจอ · จอข้อมูลเป็นค่าพลังที่ใส่ของแล้ว ไม่ได้ใช้ | **2026-11-01 จอภาษาไทยชุดสอง** (แพสซีฟ + รายละเอียดหลงใหล · การชี้นำ Lv.2 + ป๊อปอัป Lv.12 · สกิลสับเปลี่ยน · สกิลพิเศษ · ปลุกพลัง 1–6) ครบทุกสกิลแล้ว · การชี้นำเปลี่ยนเป็นค่า Lv.12 32.9% ทั้งคำอธิบายอังกฤษและเอฟเฟกต์ (จอเดิม Lv.2 23.9%) ตามแบบที่ใช้กับตัวอื่น · แพสซีฟจอไทยเขียน \"เมื่อใช้โจมตีพิเศษ จะได้รับจิตวิญญาณ\" ส่วนจออังกฤษเขียน \"upon using certain attacks\" ใส่ตามจอแต่ละภาษา · แถวแพสซีฟ Air Counter = โจมตีฉับพลัน · ปลุกพลัง 4 ลดพลังป้องกันศัตรูเพิ่ม 10% ไม่ได้คิดในเครื่องคิดดาเมจ (ไม่คิดพลังป้องกันศัตรู)"
   }
 }

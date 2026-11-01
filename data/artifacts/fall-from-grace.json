@@ -43,7 +43,8 @@
             "note": {
               "th": "เมื่อตัวละครที่ติดตั้งเป็นประเภทระยะไกล",
               "en": "if the equipping character is a Ranged type"
-            }
+            },
+            "holderRange": "ranged"
           }
         },
         {

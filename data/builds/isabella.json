@@ -13,8 +13,8 @@
           "characterId": "isabella",
           "artifacts": [
             "stabilized-superconductor",
-            "exquisite-dragon-fire",
-            "serpent-dragons-white-scale"
+            "serpent-dragons-white-scale",
+            "dreaming-adventurer"
           ],
           "equipment": {
             "headgear": "warden-helmet",
@@ -65,7 +65,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "atk",
+                  "id": "neutralization-dmg",
                   "grade": "gold"
                 }
               ]
@@ -542,9 +542,9 @@
           "member": {
             "characterId": "cloud",
             "artifacts": [
+              "serpent-dragons-white-scale",
               "stabilized-superconductor",
-              "exquisite-dragon-fire",
-              "serpent-dragons-white-scale"
+              "dreaming-adventurer"
             ],
             "equipment": {
               "headgear": "gourmands-hat",
@@ -595,7 +595,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "crit-rate",
+                    "id": "dmg-ice",
                     "grade": "gold"
                   }
                 ]
@@ -616,7 +616,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "crit-rate",
+                    "id": "dmg-ice",
                     "grade": "gold"
                   }
                 ]
@@ -637,7 +637,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "crit-rate",
+                    "id": "dmg-ice",
                     "grade": "gold"
                   }
                 ]
@@ -956,8 +956,8 @@
           "characterId": "isabella",
           "artifacts": [
             "stabilized-superconductor",
-            "exquisite-dragon-fire",
-            "serpent-dragons-white-scale"
+            "serpent-dragons-white-scale",
+            "dreaming-adventurer"
           ],
           "equipment": {
             "headgear": "warden-helmet",
@@ -1357,8 +1357,8 @@
           "characterId": "isabella",
           "artifacts": [
             "stabilized-superconductor",
-            "exquisite-dragon-fire",
-            "serpent-dragons-white-scale"
+            "serpent-dragons-white-scale",
+            "dreaming-adventurer"
           ],
           "equipment": {
             "headgear": "warden-helmet",
@@ -1758,14 +1758,14 @@
           "characterId": "isabella",
           "artifacts": [
             "stabilized-superconductor",
-            "exquisite-dragon-fire",
-            "serpent-dragons-white-scale"
+            "serpent-dragons-white-scale",
+            "dreaming-adventurer"
           ],
           "equipment": {
-            "headgear": "warden-helmet",
-            "chestpiece": "arbiter-of-nature",
-            "gloves": "magic-vine-gloves",
-            "footwear": "roots-footprints"
+            "headgear": "merciless-destroyers-helmet",
+            "chestpiece": "merciless-destroyers-breastplate",
+            "gloves": "merciless-destroyers-gauntlets",
+            "footwear": "merciless-destroyers-greaves"
           },
           "substats": {
             "headgear": [
@@ -1837,7 +1837,7 @@
               ]
             },
             {
-              "id": "golden-fist-dude",
+              "id": "scar",
               "traits": [
                 {
                   "id": "special-skill-cooldown",

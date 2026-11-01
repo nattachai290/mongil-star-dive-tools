@@ -140,8 +140,8 @@
           "characterId": "isabella",
           "artifacts": [
             "stabilized-superconductor",
-            "exquisite-dragon-fire",
-            "serpent-dragons-white-scale"
+            "serpent-dragons-white-scale",
+            "dreaming-adventurer"
           ],
           "equipment": {
             "headgear": "warden-helmet",
@@ -192,7 +192,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "atk",
+                  "id": "dmg-ice",
                   "grade": "gold"
                 }
               ]
@@ -219,7 +219,7 @@
               ]
             },
             {
-              "id": "scarlet-queen",
+              "id": "golden-fist-dude",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -265,8 +265,7 @@
             "switch",
             "special",
             "ultimate"
-          ],
-          "linkChain": "queens-crimson-tears"
+          ]
         },
         {
           "characterId": "narae",
@@ -542,9 +541,9 @@
           "member": {
             "characterId": "cloud",
             "artifacts": [
+              "serpent-dragons-white-scale",
               "stabilized-superconductor",
-              "exquisite-dragon-fire",
-              "serpent-dragons-white-scale"
+              "dreaming-adventurer"
             ],
             "equipment": {
               "headgear": "warden-helmet",
@@ -595,7 +594,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "crit-rate",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]
@@ -616,13 +615,13 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "crit-rate",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]
               },
               {
-                "id": "scarlet-queen",
+                "id": "black-hauntstack",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -669,7 +668,7 @@
               "special",
               "ultimate"
             ],
-            "linkChain": "queens-crimson-tears"
+            "linkChain": "youkais-giant-charm"
           }
         },
         {
@@ -1083,8 +1082,8 @@
           "characterId": "isabella",
           "artifacts": [
             "stabilized-superconductor",
-            "exquisite-dragon-fire",
-            "serpent-dragons-white-scale"
+            "serpent-dragons-white-scale",
+            "dreaming-adventurer"
           ],
           "equipment": {
             "headgear": "warden-helmet",
@@ -1162,7 +1161,7 @@
               ]
             },
             {
-              "id": "scarlet-queen",
+              "id": "golden-fist-dude",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -1208,8 +1207,7 @@
             "switch",
             "special",
             "ultimate"
-          ],
-          "linkChain": "queens-crimson-tears"
+          ]
         },
         {
           "characterId": "narae",
@@ -1484,8 +1482,8 @@
           "characterId": "isabella",
           "artifacts": [
             "stabilized-superconductor",
-            "exquisite-dragon-fire",
-            "serpent-dragons-white-scale"
+            "serpent-dragons-white-scale",
+            "dreaming-adventurer"
           ],
           "equipment": {
             "headgear": "warden-helmet",
@@ -1563,7 +1561,7 @@
               ]
             },
             {
-              "id": "urgash",
+              "id": "golden-fist-dude",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -1884,8 +1882,8 @@
           "characterId": "isabella",
           "artifacts": [
             "stabilized-superconductor",
-            "exquisite-dragon-fire",
-            "serpent-dragons-white-scale"
+            "serpent-dragons-white-scale",
+            "dreaming-adventurer"
           ],
           "equipment": {
             "headgear": "warden-helmet",
@@ -1963,7 +1961,7 @@
               ]
             },
             {
-              "id": "urgash",
+              "id": "golden-fist-dude",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -2015,8 +2013,8 @@
           "characterId": "narae",
           "artifacts": [
             "plains-embroidering-dew",
-            "a-summer-soaked-in-love",
-            "melody-played-on-heartstrings"
+            "melody-played-on-heartstrings",
+            "a-summer-soaked-in-love"
           ],
           "equipment": {
             "headgear": "dark-soloists-helm",
@@ -2284,8 +2282,8 @@
           "characterId": "isabella",
           "artifacts": [
             "stabilized-superconductor",
-            "exquisite-dragon-fire",
-            "serpent-dragons-white-scale"
+            "serpent-dragons-white-scale",
+            "dreaming-adventurer"
           ],
           "equipment": {
             "headgear": "warden-helmet",
@@ -2321,7 +2319,7 @@
           },
           "monsterlings": [
             {
-              "id": "golden-fist-dude",
+              "id": "el-dorado-guardian",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -2363,7 +2361,7 @@
               ]
             },
             {
-              "id": "el-dorado-guardian",
+              "id": "golden-fist-dude",
               "traits": [
                 {
                   "id": "special-skill-cooldown",

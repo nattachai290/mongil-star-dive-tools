@@ -12,9 +12,9 @@
         {
           "characterId": "cloud",
           "artifacts": [
-            "stabilized-superconductor",
             "serpent-dragons-white-scale",
-            "exquisite-dragon-fire"
+            "stabilized-superconductor",
+            "dreaming-adventurer"
           ],
           "equipment": {
             "headgear": "gourmands-hat",
@@ -61,11 +61,11 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "weakness-dmg",
+                  "id": "crit-rate",
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-rate",
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 }
               ]
@@ -86,7 +86,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-rate",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -107,7 +107,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-rate",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -140,8 +140,8 @@
           "characterId": "isabella",
           "artifacts": [
             "stabilized-superconductor",
-            "exquisite-dragon-fire",
-            "serpent-dragons-white-scale"
+            "serpent-dragons-white-scale",
+            "dreaming-adventurer"
           ],
           "equipment": {
             "headgear": "warden-helmet",
@@ -198,7 +198,7 @@
               ]
             },
             {
-              "id": "el-dorado-guardian",
+              "id": "golden-fist-dude",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -219,7 +219,7 @@
               ]
             },
             {
-              "id": "scarlet-queen",
+              "id": "blue-shadow",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -266,14 +266,14 @@
             "special",
             "ultimate"
           ],
-          "linkChain": "queens-crimson-tears"
+          "linkChain": "purple-gem"
         },
         {
           "characterId": "narae",
           "artifacts": [
             "plains-embroidering-dew",
-            "a-summer-soaked-in-love",
-            "melody-played-on-heartstrings"
+            "melody-played-on-heartstrings",
+            "a-summer-soaked-in-love"
           ],
           "equipment": {
             "headgear": "dark-soloists-helm",
@@ -308,6 +308,27 @@
             ]
           },
           "monsterlings": [
+            {
+              "id": "el-dorado-guardian",
+              "traits": [
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-ice",
+                  "grade": "gold"
+                }
+              ]
+            },
             {
               "id": "silbinator",
               "traits": [
@@ -345,27 +366,6 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-ice",
-                  "grade": "gold"
-                }
-              ]
-            },
-            {
-              "id": "hahnul",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
                   "id": "crit-dmg",
                   "grade": "gold"
                 }
@@ -398,7 +398,7 @@
             "special",
             "ultimate"
           ],
-          "linkChain": "giant-tigers-claw"
+          "linkChain": "golems-gem"
         }
       ],
       "substitutes": [
@@ -466,7 +466,7 @@
                 ]
               },
               {
-                "id": "el-dorado-guardian",
+                "id": "scarlet-queen",
                 "traits": [
                   {
                     "id": "atk",
@@ -487,7 +487,7 @@
                 ]
               },
               {
-                "id": "scarlet-queen",
+                "id": "blue-shadow",
                 "traits": [
                   {
                     "id": "atk",
@@ -534,7 +534,7 @@
               "special",
               "ultimate"
             ],
-            "linkChain": "queens-crimson-tears"
+            "linkChain": "purple-gem"
           }
         },
         {
@@ -601,7 +601,7 @@
                 ]
               },
               {
-                "id": "el-dorado-guardian",
+                "id": "scarlet-queen",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -622,7 +622,7 @@
                 ]
               },
               {
-                "id": "scarlet-queen",
+                "id": "blue-shadow",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -669,7 +669,7 @@
               "special",
               "ultimate"
             ],
-            "linkChain": "queens-crimson-tears"
+            "linkChain": "purple-gem"
           }
         },
         {
@@ -715,6 +715,27 @@
             },
             "monsterlings": [
               {
+                "id": "hahnul",
+                "traits": [
+                  {
+                    "id": "special-skill-cooldown",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "dmg-vs-boss",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "dmg-earth",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "crit-dmg",
+                    "grade": "gold"
+                  }
+                ]
+              },
+              {
                 "id": "silbinator",
                 "traits": [
                   {
@@ -737,27 +758,6 @@
               },
               {
                 "id": "avardan",
-                "traits": [
-                  {
-                    "id": "special-skill-cooldown",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "dmg-vs-boss",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "dmg-earth",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "crit-dmg",
-                    "grade": "gold"
-                  }
-                ]
-              },
-              {
-                "id": "hahnul",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -850,7 +850,7 @@
             },
             "monsterlings": [
               {
-                "id": "silbinator",
+                "id": "colossus",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -862,6 +862,27 @@
                   },
                   {
                     "id": "dmg-vs-boss",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "crit-dmg",
+                    "grade": "gold"
+                  }
+                ]
+              },
+              {
+                "id": "silbinator",
+                "traits": [
+                  {
+                    "id": "special-skill-cooldown",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "dmg-vs-boss",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "dmg-earth",
                     "grade": "gold"
                   },
                   {
@@ -872,27 +893,6 @@
               },
               {
                 "id": "avardan",
-                "traits": [
-                  {
-                    "id": "special-skill-cooldown",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "dmg-earth",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "dmg-vs-boss",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "crit-dmg",
-                    "grade": "gold"
-                  }
-                ]
-              },
-              {
-                "id": "hahnul",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -945,406 +945,6 @@
       ]
     },
     {
-      "awaken": 2,
-      "food": {
-        "entree": "green-cappy-forest-stew",
-        "side": "crystal-kkaebi-mochi"
-      },
-      "weaknessHit": true,
-      "members": [
-        {
-          "characterId": "cloud",
-          "artifacts": [
-            "stabilized-superconductor",
-            "serpent-dragons-white-scale",
-            "exquisite-dragon-fire"
-          ],
-          "equipment": {
-            "headgear": "gourmands-hat",
-            "chestpiece": "gourmands-apron",
-            "gloves": "gourmands-gloves",
-            "footwear": "gourmands-slippers"
-          },
-          "substats": {
-            "headgear": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ],
-            "chestpiece": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ],
-            "gloves": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ],
-            "footwear": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ]
-          },
-          "monsterlings": [
-            {
-              "id": "moon-shadow-lupe",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-rate",
-                  "grade": "gold"
-                }
-              ]
-            },
-            {
-              "id": "amon",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-rate",
-                  "grade": "gold"
-                }
-              ]
-            },
-            {
-              "id": "whitelon",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-rate",
-                  "grade": "gold"
-                }
-              ]
-            }
-          ],
-          "legendary": {
-            "id": "reginula",
-            "traits": [
-              {
-                "id": "special-skill-cooldown",
-                "grade": "gold"
-              },
-              {
-                "id": "dmg-vs-boss",
-                "grade": "gold"
-              },
-              {
-                "id": "weakness-dmg",
-                "grade": "gold"
-              },
-              {
-                "id": "crit-dmg",
-                "grade": "gold"
-              }
-            ]
-          },
-          "linkChain": "iron-saw-horn"
-        },
-        {
-          "characterId": "isabella",
-          "artifacts": [
-            "stabilized-superconductor",
-            "exquisite-dragon-fire",
-            "serpent-dragons-white-scale"
-          ],
-          "equipment": {
-            "headgear": "warden-helmet",
-            "chestpiece": "arbiter-of-nature",
-            "gloves": "magic-vine-gloves",
-            "footwear": "roots-footprints"
-          },
-          "substats": {
-            "headgear": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ],
-            "chestpiece": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ],
-            "gloves": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ],
-            "footwear": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ]
-          },
-          "monsterlings": [
-            {
-              "id": "the-great-unknown",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-rate",
-                  "grade": "gold"
-                }
-              ]
-            },
-            {
-              "id": "el-dorado-guardian",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-dmg",
-                  "grade": "gold"
-                }
-              ]
-            },
-            {
-              "id": "urgash",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-dmg",
-                  "grade": "gold"
-                }
-              ]
-            }
-          ],
-          "legendary": {
-            "id": "reginula",
-            "traits": [
-              {
-                "id": "special-skill-cooldown",
-                "grade": "gold"
-              },
-              {
-                "id": "dmg-vs-boss",
-                "grade": "gold"
-              },
-              {
-                "id": "weakness-dmg",
-                "grade": "gold"
-              },
-              {
-                "id": "crit-dmg",
-                "grade": "gold"
-              }
-            ]
-          },
-          "cycle": [
-            "switch",
-            "special",
-            "ultimate"
-          ]
-        },
-        {
-          "characterId": "narae",
-          "artifacts": [
-            "plains-embroidering-dew",
-            "melody-played-on-heartstrings",
-            "a-summer-soaked-in-love"
-          ],
-          "equipment": {
-            "headgear": "dark-soloists-helm",
-            "chestpiece": "crimson-chestplate-of-disaster",
-            "gloves": "magic-vine-gloves",
-            "footwear": "roots-footprints"
-          },
-          "substats": {
-            "headgear": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ],
-            "chestpiece": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ],
-            "gloves": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ],
-            "footwear": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ]
-          },
-          "monsterlings": [
-            {
-              "id": "silbinator",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-ice",
-                  "grade": "gold"
-                }
-              ]
-            },
-            {
-              "id": "avardan",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-ice",
-                  "grade": "gold"
-                }
-              ]
-            },
-            {
-              "id": "hahnul",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-dmg",
-                  "grade": "gold"
-                }
-              ]
-            }
-          ],
-          "legendary": {
-            "id": "reginula",
-            "traits": [
-              {
-                "id": "special-skill-cooldown",
-                "grade": "gold"
-              },
-              {
-                "id": "dmg-vs-boss",
-                "grade": "gold"
-              },
-              {
-                "id": "weakness-dmg",
-                "grade": "gold"
-              },
-              {
-                "id": "crit-dmg",
-                "grade": "gold"
-              }
-            ]
-          },
-          "cycle": [
-            "switch",
-            "special",
-            "ultimate"
-          ],
-          "linkChain": "giant-tigers-claw"
-        }
-      ]
-    },
-    {
       "awaken": 4,
       "food": {
         "entree": "green-cappy-forest-stew",
@@ -1355,9 +955,9 @@
         {
           "characterId": "cloud",
           "artifacts": [
+            "serpent-dragons-white-scale",
             "stabilized-superconductor",
-            "exquisite-dragon-fire",
-            "serpent-dragons-white-scale"
+            "dreaming-adventurer"
           ],
           "equipment": {
             "headgear": "gourmands-hat",
@@ -1404,11 +1004,11 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "weakness-dmg",
+                  "id": "crit-rate",
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-rate",
+                  "id": "weakness-dmg",
                   "grade": "gold"
                 }
               ]
@@ -1429,7 +1029,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-rate",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -1450,7 +1050,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-rate",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -1483,8 +1083,8 @@
           "characterId": "isabella",
           "artifacts": [
             "stabilized-superconductor",
-            "exquisite-dragon-fire",
-            "serpent-dragons-white-scale"
+            "serpent-dragons-white-scale",
+            "dreaming-adventurer"
           ],
           "equipment": {
             "headgear": "warden-helmet",
@@ -1540,385 +1140,6 @@
                 }
               ]
             },
-            {
-              "id": "el-dorado-guardian",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-dmg",
-                  "grade": "gold"
-                }
-              ]
-            },
-            {
-              "id": "urgash",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-dmg",
-                  "grade": "gold"
-                }
-              ]
-            }
-          ],
-          "legendary": {
-            "id": "reginula",
-            "traits": [
-              {
-                "id": "special-skill-cooldown",
-                "grade": "gold"
-              },
-              {
-                "id": "dmg-vs-boss",
-                "grade": "gold"
-              },
-              {
-                "id": "weakness-dmg",
-                "grade": "gold"
-              },
-              {
-                "id": "crit-dmg",
-                "grade": "gold"
-              }
-            ]
-          },
-          "cycle": [
-            "switch",
-            "special",
-            "ultimate"
-          ]
-        },
-        {
-          "characterId": "narae",
-          "artifacts": [
-            "plains-embroidering-dew",
-            "a-summer-soaked-in-love",
-            "melody-played-on-heartstrings"
-          ],
-          "equipment": {
-            "headgear": "dark-soloists-helm",
-            "chestpiece": "crimson-chestplate-of-disaster",
-            "gloves": "magic-vine-gloves",
-            "footwear": "roots-footprints"
-          },
-          "substats": {
-            "headgear": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ],
-            "chestpiece": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ],
-            "gloves": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ],
-            "footwear": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ]
-          },
-          "monsterlings": [
-            {
-              "id": "silbinator",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-rate",
-                  "grade": "gold"
-                }
-              ]
-            },
-            {
-              "id": "avardan",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-dmg",
-                  "grade": "gold"
-                }
-              ]
-            },
-            {
-              "id": "hahnul",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-dmg",
-                  "grade": "gold"
-                }
-              ]
-            }
-          ],
-          "legendary": {
-            "id": "reginula",
-            "traits": [
-              {
-                "id": "special-skill-cooldown",
-                "grade": "gold"
-              },
-              {
-                "id": "dmg-vs-boss",
-                "grade": "gold"
-              },
-              {
-                "id": "weakness-dmg",
-                "grade": "gold"
-              },
-              {
-                "id": "crit-dmg",
-                "grade": "gold"
-              }
-            ]
-          },
-          "cycle": [
-            "switch",
-            "special",
-            "ultimate"
-          ],
-          "linkChain": "giant-tigers-claw"
-        }
-      ]
-    },
-    {
-      "awaken": 6,
-      "food": {
-        "entree": "green-cappy-forest-stew",
-        "side": "crystal-kkaebi-mochi"
-      },
-      "weaknessHit": true,
-      "members": [
-        {
-          "characterId": "cloud",
-          "artifacts": [
-            "stabilized-superconductor",
-            "exquisite-dragon-fire",
-            "serpent-dragons-white-scale"
-          ],
-          "equipment": {
-            "headgear": "gourmands-hat",
-            "chestpiece": "gourmands-apron",
-            "gloves": "gourmands-gloves",
-            "footwear": "gourmands-slippers"
-          },
-          "substats": {
-            "headgear": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ],
-            "chestpiece": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ],
-            "gloves": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ],
-            "footwear": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ]
-          },
-          "monsterlings": [
-            {
-              "id": "moon-shadow-lupe",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-rate",
-                  "grade": "gold"
-                }
-              ]
-            },
-            {
-              "id": "amon",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-rate",
-                  "grade": "gold"
-                }
-              ]
-            },
-            {
-              "id": "whitelon",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-rate",
-                  "grade": "gold"
-                }
-              ]
-            }
-          ],
-          "legendary": {
-            "id": "reginula",
-            "traits": [
-              {
-                "id": "special-skill-cooldown",
-                "grade": "gold"
-              },
-              {
-                "id": "dmg-vs-boss",
-                "grade": "gold"
-              },
-              {
-                "id": "weakness-dmg",
-                "grade": "gold"
-              },
-              {
-                "id": "crit-dmg",
-                "grade": "gold"
-              }
-            ]
-          },
-          "linkChain": "iron-saw-horn"
-        },
-        {
-          "characterId": "isabella",
-          "artifacts": [
-            "stabilized-superconductor",
-            "exquisite-dragon-fire",
-            "serpent-dragons-white-scale"
-          ],
-          "equipment": {
-            "headgear": "warden-helmet",
-            "chestpiece": "arbiter-of-nature",
-            "gloves": "magic-vine-gloves",
-            "footwear": "roots-footprints"
-          },
-          "substats": {
-            "headgear": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ],
-            "chestpiece": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ],
-            "gloves": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ],
-            "footwear": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ]
-          },
-          "monsterlings": [
             {
               "id": "golden-fist-dude",
               "traits": [
@@ -1941,28 +1162,7 @@
               ]
             },
             {
-              "id": "el-dorado-guardian",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-dmg",
-                  "grade": "gold"
-                }
-              ]
-            },
-            {
-              "id": "urgash",
+              "id": "blue-shadow",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -2008,7 +1208,8 @@
             "switch",
             "special",
             "ultimate"
-          ]
+          ],
+          "linkChain": "purple-gem"
         },
         {
           "characterId": "narae",
@@ -2051,6 +1252,27 @@
           },
           "monsterlings": [
             {
+              "id": "el-dorado-guardian",
+              "traits": [
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-rate",
+                  "grade": "gold"
+                }
+              ]
+            },
+            {
               "id": "silbinator",
               "traits": [
                 {
@@ -2091,9 +1313,389 @@
                   "grade": "gold"
                 }
               ]
+            }
+          ],
+          "legendary": {
+            "id": "reginula",
+            "traits": [
+              {
+                "id": "special-skill-cooldown",
+                "grade": "gold"
+              },
+              {
+                "id": "dmg-vs-boss",
+                "grade": "gold"
+              },
+              {
+                "id": "weakness-dmg",
+                "grade": "gold"
+              },
+              {
+                "id": "crit-dmg",
+                "grade": "gold"
+              }
+            ]
+          },
+          "cycle": [
+            "switch",
+            "special",
+            "ultimate"
+          ],
+          "linkChain": "golems-gem"
+        }
+      ]
+    },
+    {
+      "awaken": 6,
+      "food": {
+        "entree": "green-cappy-forest-stew",
+        "side": "crystal-kkaebi-mochi"
+      },
+      "weaknessHit": true,
+      "members": [
+        {
+          "characterId": "cloud",
+          "artifacts": [
+            "serpent-dragons-white-scale",
+            "stabilized-superconductor",
+            "dreaming-adventurer"
+          ],
+          "equipment": {
+            "headgear": "gourmands-hat",
+            "chestpiece": "gourmands-apron",
+            "gloves": "gourmands-gloves",
+            "footwear": "gourmands-slippers"
+          },
+          "substats": {
+            "headgear": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ],
+            "chestpiece": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ],
+            "gloves": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ],
+            "footwear": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ]
+          },
+          "monsterlings": [
+            {
+              "id": "moon-shadow-lupe",
+              "traits": [
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-rate",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
+                  "grade": "gold"
+                }
+              ]
             },
             {
-              "id": "the-great-unknown",
+              "id": "amon",
+              "traits": [
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-dmg",
+                  "grade": "gold"
+                }
+              ]
+            },
+            {
+              "id": "whitelon",
+              "traits": [
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-dmg",
+                  "grade": "gold"
+                }
+              ]
+            }
+          ],
+          "legendary": {
+            "id": "reginula",
+            "traits": [
+              {
+                "id": "special-skill-cooldown",
+                "grade": "gold"
+              },
+              {
+                "id": "dmg-vs-boss",
+                "grade": "gold"
+              },
+              {
+                "id": "weakness-dmg",
+                "grade": "gold"
+              },
+              {
+                "id": "crit-dmg",
+                "grade": "gold"
+              }
+            ]
+          },
+          "linkChain": "iron-saw-horn"
+        },
+        {
+          "characterId": "isabella",
+          "artifacts": [
+            "stabilized-superconductor",
+            "serpent-dragons-white-scale",
+            "dreaming-adventurer"
+          ],
+          "equipment": {
+            "headgear": "warden-helmet",
+            "chestpiece": "arbiter-of-nature",
+            "gloves": "magic-vine-gloves",
+            "footwear": "roots-footprints"
+          },
+          "substats": {
+            "headgear": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ],
+            "chestpiece": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ],
+            "gloves": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ],
+            "footwear": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ]
+          },
+          "monsterlings": [
+            {
+              "id": "scar",
+              "traits": [
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-dmg",
+                  "grade": "gold"
+                }
+              ]
+            },
+            {
+              "id": "golden-fist-dude",
+              "traits": [
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-dmg",
+                  "grade": "gold"
+                }
+              ]
+            },
+            {
+              "id": "blue-shadow",
+              "traits": [
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-dmg",
+                  "grade": "gold"
+                }
+              ]
+            }
+          ],
+          "legendary": {
+            "id": "reginula",
+            "traits": [
+              {
+                "id": "special-skill-cooldown",
+                "grade": "gold"
+              },
+              {
+                "id": "dmg-vs-boss",
+                "grade": "gold"
+              },
+              {
+                "id": "weakness-dmg",
+                "grade": "gold"
+              },
+              {
+                "id": "crit-dmg",
+                "grade": "gold"
+              }
+            ]
+          },
+          "cycle": [
+            "switch",
+            "special",
+            "ultimate"
+          ],
+          "linkChain": "purple-gem"
+        },
+        {
+          "characterId": "narae",
+          "artifacts": [
+            "plains-embroidering-dew",
+            "a-summer-soaked-in-love",
+            "melody-played-on-heartstrings"
+          ],
+          "equipment": {
+            "headgear": "dark-soloists-helm",
+            "chestpiece": "crimson-chestplate-of-disaster",
+            "gloves": "magic-vine-gloves",
+            "footwear": "roots-footprints"
+          },
+          "substats": {
+            "headgear": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ],
+            "chestpiece": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ],
+            "gloves": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ],
+            "footwear": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ]
+          },
+          "monsterlings": [
+            {
+              "id": "el-dorado-guardian",
+              "traits": [
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-rate",
+                  "grade": "gold"
+                }
+              ]
+            },
+            {
+              "id": "silbinator",
+              "traits": [
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-dmg",
+                  "grade": "gold"
+                }
+              ]
+            },
+            {
+              "id": "avardan",
               "traits": [
                 {
                   "id": "special-skill-cooldown",

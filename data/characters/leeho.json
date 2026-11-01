@@ -1,7 +1,8 @@
 {
   "id": "leeho",
   "name": {
-    "en": "Leeho"
+    "en": "Leeho",
+    "th": "อีโฮ"
   },
   "rarity": 4,
   "element": "fire",
@@ -64,20 +65,24 @@
     {
       "stage": 1,
       "name": {
-        "en": "Tiger Hunter's Instinct"
+        "en": "Tiger Hunter's Instinct",
+        "th": "สัญชาตญาณของนักล่าเสือ"
       },
       "desc": {
-        "en": "All enemies caught by Leeho's Special Skill's net are inflicted with a Prey Mark. (Only activates when Leeho is being controlled)"
+        "en": "All enemies caught by Leeho's Special Skill's net are inflicted with a Prey Mark. (Only activates when Leeho is being controlled)",
+        "th": "การโจมตีตาข่ายของสกิลพิเศษ จะมอบเอฟเฟกต์รอยตราแห่งเหยื่อแก่ศัตรูทั้งหมดที่โดนโจมตี (ทำงานเฉพาะขณะควบคุมอีโฮเท่านั้น)"
       },
       "effects": []
     },
     {
       "stage": 2,
       "name": {
-        "en": "Unyielding Spirit"
+        "en": "Unyielding Spirit",
+        "th": "แรงผลักดันที่ไม่หยุดยั้ง"
       },
       "desc": {
-        "en": "Prey Mark is inflicted on all enemies hit by Leeho's Basic Attack's 4th Hit. (Only activates when Leeho is being controlled) / Leeho's Basic Attack DMG increases by 10% upon landing an Enhanced Basic Attack while Tiger Hunter is active. (Duration: 3s)"
+        "en": "Prey Mark is inflicted on all enemies hit by Leeho's Basic Attack's 4th Hit. (Only activates when Leeho is being controlled) / Leeho's Basic Attack DMG increases by 10% upon landing an Enhanced Basic Attack while Tiger Hunter is active. (Duration: 3s)",
+        "th": "การโจมตีพื้นฐานขั้น 4 จะมอบเอฟเฟกต์รอยตราแห่งเหยื่อแก่ศัตรูทั้งหมดที่โดนโจมตี (ทำงานเฉพาะขณะควบคุมอีโฮเท่านั้น) / เมื่อโจมตีพื้นฐานเสริมพลังโดนขณะอยู่ในสถานะนักล่าเสือ จะเพิ่มดาเมจโจมตีพื้นฐาน 10% (เวลาแสดงผล 3 วินาที)"
       },
       "effects": [
         {
@@ -102,10 +107,12 @@
     {
       "stage": 3,
       "name": {
-        "en": "No Limits"
+        "en": "No Limits",
+        "th": "อย่าติดอยู่ในกรอบ"
       },
       "desc": {
-        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%.",
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจโจมตีพื้นฐาน 6%"
       },
       "effects": [
         {
@@ -125,10 +132,12 @@
     {
       "stage": 4,
       "name": {
-        "en": "Awakened Instinct"
+        "en": "Awakened Instinct",
+        "th": "จงปลุกสัญชาตญาณให้ตื่น"
       },
       "desc": {
-        "en": "The duration of Tiger Hunter increases by 2s, and while Tiger Hunter is active, Leeho's Enhanced Basic Attack's total DMG increases by 30%. / Also, the range of his Enhanced Basic Attack's 1st and 2nd Hit increases."
+        "en": "The duration of Tiger Hunter increases by 2s, and while Tiger Hunter is active, Leeho's Enhanced Basic Attack's total DMG increases by 30%. / Also, the range of his Enhanced Basic Attack's 1st and 2nd Hit increases.",
+        "th": "เพิ่มเวลาแสดงผลนักล่าเสือ 2 วินาที และเพิ่มดาเมจรวมของโจมตีพื้นฐานเสริมพลังในสถานะนักล่าเสือ 30% / อีกทั้งเพิ่มขอบเขตโจมตีของโจมตีพื้นฐานขั้น 1 และขั้น 2"
       },
       "effects": [
         {
@@ -154,10 +163,12 @@
     {
       "stage": 5,
       "name": {
-        "en": "Beast Heart"
+        "en": "Beast Heart",
+        "th": "ครอบครองดวงใจอสูร"
       },
       "desc": {
-        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Support Skill's cooldown decreases by 4.5%."
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Support Skill's cooldown decreases by 4.5%.",
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / ลดคูลดาวน์สกิลสนับสนุน 4.5%"
       },
       "effects": [],
       "skillLevelBonus": 2
@@ -165,10 +176,12 @@
     {
       "stage": 6,
       "name": {
-        "en": "Ferocity Unleashed"
+        "en": "Ferocity Unleashed",
+        "th": "ปลดปล่อยสัญชาตญาณดิบ"
       },
       "desc": {
-        "en": "Prey Mark decreases Fire RES by an additional 10%. / When the target's Prey Mark is removed by Flash Spear, all enemies hit with Flash Spear are newly inflicted with Prey Mark. This effect is triggered every 15s."
+        "en": "Prey Mark decreases Fire RES by an additional 10%. / When the target's Prey Mark is removed by Flash Spear, all enemies hit with Flash Spear are newly inflicted with Prey Mark. This effect is triggered every 15s.",
+        "th": "เอฟเฟกต์รอยตราแห่งเหยื่อ จะลดต้านทานธาตุไฟอีก 10% / เมื่อเอฟเฟกต์รอยตราแห่งเหยื่อของเป้าหมายถูกลบด้วยการโจมตีหอกแสงพิฆาต จะมอบเอฟเฟกต์รอยตราแห่งเหยื่อใหม่แก่ศัตรูทั้งหมดที่ถูกหอกแสงพิฆาตโจมตีโดน ซึ่งเอฟเฟกต์นี้ทำงานทีละครั้ง ทุก 15 วินาที"
       },
       "effects": [
         {
@@ -192,10 +205,12 @@
   "skills": {
     "basic": {
       "name": {
-        "en": "Wild Spear"
+        "en": "Wild Spear",
+        "th": "หอกแห่งสัญชาตญาณดิบ"
       },
       "desc": {
-        "en": "Leeho deals Physical DMG by stabbing and slashing enemies with his spear. / Holding the Basic Attack button will make Leeho throw his spear at an enemy, dealing Fire DMG. Holding the Basic Attack button for longer will make Leeho throw a more powerful Flash Spear, piercing and dealing Fire DMG to all enemies in front of him. / If the enemy he targets has Prey Mark, Flash Spear does not need time to charge. When DMG is dealt to an enemy with Prey Mark using Flash Spear, Prey Mark is removed and Leeho is granted Tiger Hunter. / Tiger Hunter: Increases Basic Attack DMG. Also, Leeho's Basic Attack is enhanced during the effect's duration, dealing powerful Fire DMG. If Tiger Hunter ends during an Enhanced Basic Attack, Leeho strikes the ground in front of him, dealing Fire DMG. If an Evasion Counter is successfully used within the duration of Tiger Hunter, its duration is reset."
+        "en": "Leeho deals Physical DMG by stabbing and slashing enemies with his spear. / Holding the Basic Attack button will make Leeho throw his spear at an enemy, dealing Fire DMG. Holding the Basic Attack button for longer will make Leeho throw a more powerful Flash Spear, piercing and dealing Fire DMG to all enemies in front of him. / If the enemy he targets has Prey Mark, Flash Spear does not need time to charge. When DMG is dealt to an enemy with Prey Mark using Flash Spear, Prey Mark is removed and Leeho is granted Tiger Hunter. / Tiger Hunter: Increases Basic Attack DMG. Also, Leeho's Basic Attack is enhanced during the effect's duration, dealing powerful Fire DMG. If Tiger Hunter ends during an Enhanced Basic Attack, Leeho strikes the ground in front of him, dealing Fire DMG. If an Evasion Counter is successfully used within the duration of Tiger Hunter, its duration is reset.",
+        "th": "แทงและฟันศัตรูด้วยหอก สร้างดาเมจกายภาพ / เมื่อกดค้างโจมตีพื้นฐาน จะขว้างหอกใส่ศัตรู สร้างดาเมจธาตุไฟ และหากกดค้างโจมตีพื้นฐานนานขึ้นอีก จะขว้างหอกแสงพิฆาตที่ทรงพลังยิ่งขึ้น ทะลุทะลวงศัตรูด้านหน้าทั้งหมด สร้างดาเมจธาตุไฟ / ในกรณีที่เป้าหมายเป็นศัตรูที่มีเอฟเฟกต์รอยตราแห่งเหยื่อ จะสามารถโจมตีหอกแสงพิฆาตได้ โดยไม่ต้องกดค้างโจมตีพื้นฐาน และเมื่อมอบดาเมจแก่ศัตรูที่มีเอฟเฟกต์รอยตราแห่งเหยื่อด้วยหอกแสงพิฆาต จะลบเอฟเฟกต์รอยตราแห่งเหยื่อ และตนเองจะได้รับเอฟเฟกต์นักล่าเสือ / นักล่าเสือ: เพิ่มดาเมจโจมตีพื้นฐาน อีกทั้งเมื่อโจมตีพื้นฐานภายในระยะเวลาที่กำหนด จะใช้โจมตีพื้นฐานเสริมพลัง สร้างดาเมจธาตุไฟที่ทรงพลัง และในกรณีที่เวลาแสดงผลนักล่าเสือสิ้นสุด ขณะโจมตีพื้นฐานเสริมพลัง จะฟาดลงพื้นด้านหน้าอย่างรุนแรง สร้างดาเมจธาตุไฟ และในกรณีที่หลบหลีกโต้กลับสำเร็จภายในขณะเวลาแสดงผลของเอฟเฟกต์ดังกล่าว เวลาแสดงผลจะถูกรีเซต"
       },
       "damageType": "physical",
       "effects": [
@@ -220,7 +235,8 @@
       "values": [
         {
           "label": {
-            "en": "1st Hit DMG"
+            "en": "1st Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 1"
           },
           "unit": "percent",
           "scaling": [
@@ -245,7 +261,8 @@
         },
         {
           "label": {
-            "en": "2nd Hit DMG"
+            "en": "2nd Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 2"
           },
           "unit": "percent",
           "scaling": [
@@ -270,7 +287,8 @@
         },
         {
           "label": {
-            "en": "3rd Hit DMG"
+            "en": "3rd Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 3"
           },
           "unit": "percent",
           "scaling": [
@@ -295,7 +313,8 @@
         },
         {
           "label": {
-            "en": "4th Hit DMG"
+            "en": "4th Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 4"
           },
           "unit": "percent",
           "scaling": [
@@ -320,7 +339,8 @@
         },
         {
           "label": {
-            "en": "Spear Attack DMG"
+            "en": "Spear Attack DMG",
+            "th": "ดาเมจโจมตีหอก"
           },
           "unit": "percent",
           "scaling": [
@@ -345,7 +365,8 @@
         },
         {
           "label": {
-            "en": "Flash Spear Attack DMG"
+            "en": "Flash Spear Attack DMG",
+            "th": "ดาเมจโจมตีหอกแสงพิฆาต"
           },
           "unit": "percent",
           "scaling": [
@@ -370,7 +391,8 @@
         },
         {
           "label": {
-            "en": "Charge Attack DMG"
+            "en": "Charge Attack DMG",
+            "th": "ดาเมจโจมตีชาร์จ"
           },
           "unit": "percent",
           "scaling": [
@@ -394,7 +416,8 @@
         },
         {
           "label": {
-            "en": "Air Counter DMG"
+            "en": "Air Counter DMG",
+            "th": "ดาเมจโจมตีฉับพลัน"
           },
           "unit": "percent",
           "scaling": [
@@ -418,7 +441,8 @@
         },
         {
           "label": {
-            "en": "Evasion Counter DMG"
+            "en": "Evasion Counter DMG",
+            "th": "ดาเมจหลบหลีกโต้กลับ"
           },
           "unit": "percent",
           "scaling": [
@@ -442,7 +466,8 @@
         },
         {
           "label": {
-            "en": "Tiger Hunter Duration"
+            "en": "Tiger Hunter Duration",
+            "th": "เวลาแสดงผลนักล่าเสือ"
           },
           "unit": "seconds",
           "scaling": [
@@ -467,7 +492,8 @@
         },
         {
           "label": {
-            "en": "Tiger Hunter Basic Attack DMG Boost"
+            "en": "Tiger Hunter Basic Attack DMG Boost",
+            "th": "เพิ่มดาเมจโจมตีพื้นฐานนักล่าเสือ"
           },
           "unit": "percent",
           "scaling": [
@@ -492,7 +518,8 @@
         },
         {
           "label": {
-            "en": "Enhanced Basic Attack Charge DMG"
+            "en": "Enhanced Basic Attack Charge DMG",
+            "th": "ดาเมจพุ่งใส่จากการโจมตีพื้นฐานเสริมพลัง"
           },
           "unit": "percent",
           "scaling": [
@@ -517,7 +544,8 @@
         },
         {
           "label": {
-            "en": "Enhanced Basic Attack 1st Hit DMG"
+            "en": "Enhanced Basic Attack 1st Hit DMG",
+            "th": "ดาเมจพุ่งใส่จากการโจมตีพื้นฐานเสริมพลัง ขั้น 1"
           },
           "unit": "percent",
           "scaling": [
@@ -542,7 +570,8 @@
         },
         {
           "label": {
-            "en": "Enhanced Basic Attack 2nd Hit DMG"
+            "en": "Enhanced Basic Attack 2nd Hit DMG",
+            "th": "ดาเมจพุ่งใส่จากการโจมตีพื้นฐานเสริมพลัง ขั้น 2"
           },
           "unit": "percent",
           "scaling": [
@@ -567,7 +596,8 @@
         },
         {
           "label": {
-            "en": "Enhanced Basic Attack Slam DMG"
+            "en": "Enhanced Basic Attack Slam DMG",
+            "th": "ดาเมจฟาดของโจมตีพื้นฐานเสริมพลัง"
           },
           "unit": "percent",
           "scaling": [
@@ -594,17 +624,20 @@
     },
     "switch": {
       "name": {
-        "en": "A Whopper!"
+        "en": "A Whopper!",
+        "th": "โชคหล่นทับ!"
       },
       "desc": {
-        "en": "Leeho throws his net forward, dealing Fire DMG and pulling in hit enemies. If Leeho is being controlled, all hit enemies are inflicted with Prey Mark. / [Support Skill] When a teammate uses a Special Skill during combat, Leeho descends from above the nearest enemy, dealing Fire DMG and inflicting Fire Affliction. After the attack, Leeho enters Hunting Stance for a set duration. / Switching to Leeho while he's in Hunting Stance unleashes Blazing Flash, dealing powerful Fire DMG to all enemies in front of him and inflicting Prey Mark effect on hit enemies."
+        "en": "Leeho throws his net forward, dealing Fire DMG and pulling in hit enemies. If Leeho is being controlled, all hit enemies are inflicted with Prey Mark. / [Support Skill] When a teammate uses a Special Skill during combat, Leeho descends from above the nearest enemy, dealing Fire DMG and inflicting Fire Affliction. After the attack, Leeho enters Hunting Stance for a set duration. / Switching to Leeho while he's in Hunting Stance unleashes Blazing Flash, dealing powerful Fire DMG to all enemies in front of him and inflicting Prey Mark effect on hit enemies.",
+        "th": "ขว้างตาข่ายไปด้านหน้า สร้างดาเมจธาตุไฟและดึงศัตรูที่โดนโจมตีเข้ามา หากกำลังควบคุมอีโฮ จะมอบเอฟเฟกต์รอยตราแห่งเหยื่อแก่ศัตรูที่โดนโจมตี / [สกิลสนับสนุน] เมื่อสมาชิกทีมใช้สกิลพิเศษในระหว่างต่อสู้ จะพุ่งตกลงเหนือศัตรูที่อยู่ใกล้ที่สุด สร้างดาเมจธาตุไฟและมอบเอฟเฟกต์อ่อนแอต่อไฟ หลังจากโจมตีเสร็จ อีโฮจะเข้าสู่ท่วงท่าออกล่าภายในระยะเวลาที่กำหนด / หากเปลี่ยนเป็นอีโฮที่เข้าสู่ท่วงท่าออกล่า จะสร้างดาเมจธาตุไฟทรงพลังแก่ศัตรูทั้งหมดที่อยู่ด้านหน้าด้วยการโจมตีหอกแสงเพลิงลุกโชน และมอบเอฟเฟกต์รอยตราแห่งเหยื่อแก่ศัตรูทั้งหมดที่โดนโจมตี"
       },
       "damageType": "fire",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "Net Attack DMG"
+            "en": "Net Attack DMG",
+            "th": "ดาเมจโจมตีร่างแห"
           },
           "unit": "percent",
           "scaling": [
@@ -629,7 +662,8 @@
         },
         {
           "label": {
-            "en": "Support Skill DMG"
+            "en": "Support Skill DMG",
+            "th": "ดาเมจสกิลสนับสนุน"
           },
           "unit": "percent",
           "scaling": [
@@ -654,7 +688,8 @@
         },
         {
           "label": {
-            "en": "Support Skill Cooldown"
+            "en": "Support Skill Cooldown",
+            "th": "คูลดาวน์สกิลสนับสนุน"
           },
           "unit": "seconds",
           "scaling": [
@@ -679,7 +714,8 @@
         },
         {
           "label": {
-            "en": "Fire Affliction Duration"
+            "en": "Fire Affliction Duration",
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อไฟ"
           },
           "unit": "seconds",
           "scaling": [
@@ -704,7 +740,8 @@
         },
         {
           "label": {
-            "en": "Blazing Flash DMG"
+            "en": "Blazing Flash DMG",
+            "th": "ดาเมจหอกแสงเพลิงลุกโชน"
           },
           "unit": "percent",
           "scaling": [
@@ -731,17 +768,20 @@
     },
     "special": {
       "name": {
-        "en": "Commence Hunt"
+        "en": "Commence Hunt",
+        "th": "เริ่มออกล่า"
       },
       "desc": {
-        "en": "Leeho charges at the enemy, stabs with his spear, and spins around while swinging his spear, dealing Fire DMG. / If the button is pressed again within a set time after using the skill, he will throw a Net, dealing Fire DMG and dragging in hit enemies."
+        "en": "Leeho charges at the enemy, stabs with his spear, and spins around while swinging his spear, dealing Fire DMG. / If the button is pressed again within a set time after using the skill, he will throw a Net, dealing Fire DMG and dragging in hit enemies.",
+        "th": "พุ่งเข้าใส่ศัตรูแล้วแทงด้วยหอก จากนั้นหมุนตัวหนึ่งรอบแล้วตวัดฟาดหอกอย่างแรง สร้างดาเมจธาตุไฟ / เมื่อกดปุ่มอีกครั้งภายในระยะเวลาที่กำหนดหลังจากใช้สกิล จะขว้างตาข่าย สร้างดาเมจธาตุไฟและลากศัตรูที่โดนโจมตี"
       },
       "damageType": "fire",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "Spear Attack DMG"
+            "en": "Spear Attack DMG",
+            "th": "ดาเมจโจมตีหอก"
           },
           "unit": "percent",
           "scaling": [
@@ -766,7 +806,8 @@
         },
         {
           "label": {
-            "en": "Net Attack DMG"
+            "en": "Net Attack DMG",
+            "th": "ดาเมจโจมตีร่างแห"
           },
           "unit": "percent",
           "scaling": [
@@ -791,7 +832,8 @@
         },
         {
           "label": {
-            "en": "Cooldown"
+            "en": "Cooldown",
+            "th": "คูลดาวน์"
           },
           "unit": "seconds",
           "scaling": [
@@ -817,17 +859,20 @@
     },
     "ultimate": {
       "name": {
-        "en": "Crimson Meteor"
+        "en": "Crimson Meteor",
+        "th": "ดาวตกสีแดง"
       },
       "desc": {
-        "en": "Leeho soars into the air and stalks his prey for a set duration. After that duration passes, or when the skill button is pressed again, he slams down on the targeted location, dealing powerful Fire DMG and inflicting Fire Affliction."
+        "en": "Leeho soars into the air and stalks his prey for a set duration. After that duration passes, or when the skill button is pressed again, he slams down on the targeted location, dealing powerful Fire DMG and inflicting Fire Affliction.",
+        "th": "พุ่งทะยานขึ้นสูงและเล็งเหยื่อภายในระยะเวลาที่กำหนด เมื่อเลยเวลาที่กำหนดหรือกดปุ่มสกิลอีกครั้ง จะพุ่งตกลงมายังตำแหน่งที่กำหนด สร้างดาเมจธาตุไฟทรงพลังและมอบเอฟเฟกต์อ่อนแอต่อไฟ"
       },
       "damageType": "fire",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "Descending Attack DMG"
+            "en": "Descending Attack DMG",
+            "th": "ดาเมจโจมตีพุ่งลงมา"
           },
           "unit": "percent",
           "scaling": [
@@ -852,7 +897,8 @@
         },
         {
           "label": {
-            "en": "Fire Affliction Duration"
+            "en": "Fire Affliction Duration",
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อไฟ"
           },
           "unit": "seconds",
           "scaling": [
@@ -879,10 +925,12 @@
     },
     "passive": {
       "name": {
-        "en": "Hunter"
+        "en": "Hunter",
+        "th": "ผู้ล่า"
       },
       "desc": {
-        "en": "Leeho will inflict Prey Mark on enemies hit by his Switch Skill, lowering their Fire RES."
+        "en": "Leeho will inflict Prey Mark on enemies hit by his Switch Skill, lowering their Fire RES.",
+        "th": "มอบรอยตราแห่งเหยื่อแก่ศัตรูที่โดนสกิลสับเปลี่ยน และลดต้านทานธาตุไฟ"
       },
       "effects": [
         {
@@ -904,7 +952,8 @@
       "values": [
         {
           "label": {
-            "en": "Prey Mark Duration"
+            "en": "Prey Mark Duration",
+            "th": "เวลาแสดงผลรอยตราแห่งเหยื่อ"
           },
           "unit": "seconds",
           "scaling": [
@@ -929,7 +978,8 @@
         },
         {
           "label": {
-            "en": "Fire RES Reduction"
+            "en": "Fire RES Reduction",
+            "th": "ลดต้านทานธาตุไฟ"
           },
           "unit": "percent",
           "scaling": [
@@ -956,10 +1006,12 @@
     },
     "elemental": {
       "name": {
-        "en": "My Grand Entrance!"
+        "en": "My Grand Entrance!",
+        "th": "การปรากฏตัวอย่างอลังการของข้า!"
       },
       "desc": {
-        "en": "ATK increases by 6.9% upon switching to Leeho while he's in Hunting Stance and using Blazing Flash. (Duration: 15s)"
+        "en": "ATK increases by 6.9% upon switching to Leeho while he's in Hunting Stance and using Blazing Flash. (Duration: 15s)",
+        "th": "เปลี่ยนเป็นอีโฮหลังจากเข้าสู่ท่วงท่าออกล่าแล้วใช้การโจมตีหอกแสงเพลิงลุกโชน จะเพิ่มพลังโจมตี 6.9% (เวลาแสดงผล 15 วินาที)"
       },
       "effects": [
         {
@@ -983,10 +1035,12 @@
   "statuses": [
     {
       "name": {
-        "en": "Fire Affliction"
+        "en": "Fire Affliction",
+        "th": "เอฟเฟกต์อ่อนแอต่อไฟ"
       },
       "desc": {
-        "en": "Afflicted targets take Fire DMG over time, and Fire RES decreases by 15%."
+        "en": "Afflicted targets take Fire DMG over time, and Fire RES decreases by 15%.",
+        "th": "ได้รับดาเมจต่อเนื่องธาตุไฟและลดพลังต้านทานธาตุไฟ 15%"
       },
       "effects": []
     }
@@ -999,8 +1053,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Assassin · Fire · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวละครชายตัวที่สาม | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,181 · DEF 653 · HP 9,647 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,961 · DEF 580 · HP 8,389 · Crit 5% / 50%** — ตรงกับ Angel (Fire Assassin 4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 11.59% · Assassin 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · Fire DMG Boost 0.7% ไม่เก็บ (แบบ Verna) | **สกิลบนจอบัญชีนี้: Basic / Special / Ultimate Lv.5 (\"Level 1 +4\") · Switch Lv.13 · Guidance of Fire Lv.2** — Basic Wild Spear เก็บลงช่อง scaling 5 | **2026-10-22 รอบสาม** ตาราง Basic ส่วนที่เลื่อนลง +6 แถว (Tiger Hunter · Enhanced Basic Attack) → 15 แถว · แถวสุดท้ายที่เห็นคือ Enhanced Basic Attack Slam DMG ก่อนกล่อง Material Used — ถ้ามีต่ออีกยังไม่เห็น | Passive Hunter (Prey Mark ลด Fire RES ศัตรู 5% 15 วินาที → effect debuff res fire) · Guidance of Fire My Grand Entrance!: **ค่า Lv.12 = 6.9% จากป๊อปอัป Skill Info (Lv. 2 >> Lv. 12)** จอหลัก Lv.2 = 5.9% | **2026-10-22 รอบสี่** ปลุกพลังขั้น 2–6 (บัญชีนี้ปลุกครบหกขั้น) · effects: ขั้น 2 Basic +10% 3 วินาที · ขั้น 3 Basic +6% · ขั้น 5 ลดคูลดาวน์ Support 4.5% เก็บเป็นข้อความ · ขั้น 4 / 6 เก็บเป็นข้อความ | **2026-10-22 รอบห้า** Switch A Whopper! ครบสามท่อน + ตารางห้าแถว (**Lv.13 — \"Level 9 +4\" → scaling ช่อง 13**) · Special Commence Hunt (Lv.5 · 132% · คูลดาวน์ 11.8 วินาที) · Ultimate Crimson Meteor (Lv.5 · 756.2%) · Effect Details Fire Affliction · ปลุกพลังขั้น 1 → ครบหกขั้น | **หน้าเว็บแสดงเลเวลสูงสุดที่มีค่าของแต่ละสกิล — Leeho จะขึ้น Basic / Special / Ultimate ที่ Lv.5 และ Switch ที่ Lv.13** · ค่า Lv.12 ยังต้องใช้จอ Preview | ยังไม่ได้อ่าน: ค่า Lv.12 ของ Basic / Special / Ultimate · จอไทยทั้งหมด | **2026-10-31 ผู้เล่นสั่งไล่ใส่บัฟที่เป็นข้อความทั้งหมด** ใส่ effect จากข้อความ/ตารางบนจอเดิม (ไม่ได้อ่านจอใหม่): A4, A6, basic · \"X เท่า\" นับเป็น +100% ต่อเท่าตามที่ผู้เล่นยืนยันกับกาบี้ · ท่าที่ตีเพิ่ม/จำนวนครั้งเพิ่มใช้ bonusDmg · บัฟแปลงค่าใช้ condition.convertFrom"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Assassin · Fire · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวละครชายตัวที่สาม | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,181 · DEF 653 · HP 9,647 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,961 · DEF 580 · HP 8,389 · Crit 5% / 50%** — ตรงกับ Angel (Fire Assassin 4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Suppression DMG Boost 11.59% · Assassin 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · Fire DMG Boost 0.7% ไม่เก็บ (แบบ Verna) | **สกิลบนจอบัญชีนี้: Basic / Special / Ultimate Lv.5 (\"Level 1 +4\") · Switch Lv.13 · Guidance of Fire Lv.2** — Basic Wild Spear เก็บลงช่อง scaling 5 | **2026-10-22 รอบสาม** ตาราง Basic ส่วนที่เลื่อนลง +6 แถว (Tiger Hunter · Enhanced Basic Attack) → 15 แถว · แถวสุดท้ายที่เห็นคือ Enhanced Basic Attack Slam DMG ก่อนกล่อง Material Used — ถ้ามีต่ออีกยังไม่เห็น | Passive Hunter (Prey Mark ลด Fire RES ศัตรู 5% 15 วินาที → effect debuff res fire) · Guidance of Fire My Grand Entrance!: **ค่า Lv.12 = 6.9% จากป๊อปอัป Skill Info (Lv. 2 >> Lv. 12)** จอหลัก Lv.2 = 5.9% | **2026-10-22 รอบสี่** ปลุกพลังขั้น 2–6 (บัญชีนี้ปลุกครบหกขั้น) · effects: ขั้น 2 Basic +10% 3 วินาที · ขั้น 3 Basic +6% · ขั้น 5 ลดคูลดาวน์ Support 4.5% เก็บเป็นข้อความ · ขั้น 4 / 6 เก็บเป็นข้อความ | **2026-10-22 รอบห้า** Switch A Whopper! ครบสามท่อน + ตารางห้าแถว (**Lv.13 — \"Level 9 +4\" → scaling ช่อง 13**) · Special Commence Hunt (Lv.5 · 132% · คูลดาวน์ 11.8 วินาที) · Ultimate Crimson Meteor (Lv.5 · 756.2%) · Effect Details Fire Affliction · ปลุกพลังขั้น 1 → ครบหกขั้น | **หน้าเว็บแสดงเลเวลสูงสุดที่มีค่าของแต่ละสกิล — Leeho จะขึ้น Basic / Special / Ultimate ที่ Lv.5 และ Switch ที่ Lv.13** · ค่า Lv.12 ยังต้องใช้จอ Preview | ยังไม่ได้อ่าน: ค่า Lv.12 ของ Basic / Special / Ultimate | **2026-10-31 ผู้เล่นสั่งไล่ใส่บัฟที่เป็นข้อความทั้งหมด** ใส่ effect จากข้อความ/ตารางบนจอเดิม (ไม่ได้อ่านจอใหม่): A4, A6, basic · \"X เท่า\" นับเป็น +100% ต่อเท่าตามที่ผู้เล่นยืนยันกับกาบี้ · ท่าที่ตีเพิ่ม/จำนวนครั้งเพิ่มใช้ bonusDmg · บัฟแปลงค่าใช้ condition.convertFrom | **2026-11-01 จอภาษาไทย** (ข้อมูล · โจมตีพื้นฐาน 5 จอ · สกิลสับเปลี่ยน 3 จอ + รายละเอียดเอฟเฟกต์อ่อนแอต่อไฟ · สกิลพิเศษ · อัลติเมต · แพสซีฟ · การชี้นำ Lv.2 + ป๊อปอัป Lv.12 · ปลุกพลัง 1–6) ครบทุกสกิล ได้ชื่อไทย อีโฮ · ตัวเลขทุกแถวตรงกับจออังกฤษ (โจมตีพื้นฐาน/พิเศษ/อัลติเมต Lv.5 · สับเปลี่ยน Lv.13) · การชี้นำใช้ Lv.12 6.9% อยู่แล้ว · ย่อหน้า \"นักล่าเสือ\" ในจอไทยเป็นหัวข้อแยกบรรทัด เขียนเป็น \"นักล่าเสือ: …\" ตามแบบอังกฤษ · Air Counter = โจมตีฉับพลัน · Enhanced Basic Attack Charge = ดาเมจพุ่งใส่จากการโจมตีพื้นฐานเสริมพลัง · Net Attack ของสกิลพิเศษ/สับเปลี่ยน = ดาเมจโจมตีร่างแห (จอเขียนว่าร่างแห ส่วนคำอธิบายเขียนว่าตาข่าย)"
   }
 }

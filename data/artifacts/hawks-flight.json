@@ -46,7 +46,8 @@
             "note": {
               "th": "ภวังค์ร้าย",
               "en": "Nightmare"
-            }
+            },
+            "selfMet": true
           }
         },
         {
@@ -63,7 +64,8 @@
             "note": {
               "th": "ภวังค์ร้าย · เมื่อใช้สกิลสนับสนุนหรือสกิลล่าถอย จะเพิ่มดาเมจธาตุสายฟ้าเพิ่มขึ้นอีก 6%",
               "en": "Nightmare · Upon using a Support Skill or Tag-out Skill, an additional 6%"
-            }
+            },
+            "selfMet": true
           }
         },
         {
@@ -81,7 +83,8 @@
             "note": {
               "th": "คลื่นพลัง · เมื่อทับซ้อนสูงสุด 3 ภายในเวลาแสดงผลเอฟเฟกต์ · เมื่อใช้สกิลพิเศษ เอฟเฟกต์คลื่นพลังจะถูกลบ",
               "en": "Pulse · If the max of 3 Nightmare stacks is reached · Using a Special Skill will remove Pulse"
-            }
+            },
+            "selfMet": true
           }
         }
       ]

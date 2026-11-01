@@ -1,7 +1,8 @@
 {
   "id": "verna",
   "name": {
-    "en": "Verna"
+    "en": "Verna",
+    "th": "เวอร์นา"
   },
   "rarity": 4,
   "element": "fire",
@@ -64,10 +65,12 @@
     {
       "stage": 1,
       "name": {
-        "en": "Zero Tolerance of Injustice"
+        "en": "Zero Tolerance of Injustice",
+        "th": "ไม่อาจทนต่ออธรรม"
       },
       "desc": {
-        "en": "Using Verna's Special Skill immediately activates her Passive Trait effects. / Her Special Skill's range changes, and its total DMG increases by 20%."
+        "en": "Using Verna's Special Skill immediately activates her Passive Trait effects. / Her Special Skill's range changes, and its total DMG increases by 20%.",
+        "th": "เมื่อใช้สกิลพิเศษ จะปรับใช้เอฟเฟกต์แพสซีฟทันที / อีกทั้งเปลี่ยนขอบเขตของสกิลพิเศษ และเพิ่มปริมาณดาเมจรวม 20%"
       },
       "effects": [
         {
@@ -91,10 +94,12 @@
     {
       "stage": 2,
       "name": {
-        "en": "Running Ever Forward!"
+        "en": "Running Ever Forward!",
+        "th": "มองแค่ข้างหน้าแล้ววิ่งไปเลย!"
       },
       "desc": {
-        "en": "A 20% Crit Rate boost is added to Verna's Passive Trait effects and their duration increases by 2s."
+        "en": "A 20% Crit Rate boost is added to Verna's Passive Trait effects and their duration increases by 2s.",
+        "th": "เพิ่มเอฟเฟกต์เพิ่มอัตราคริติคอลของแพสซีฟ 20% และเพิ่มเวลาแสดงผล 2 วินาที"
       },
       "effects": [
         {
@@ -116,10 +121,12 @@
     {
       "stage": 3,
       "name": {
-        "en": "Fervent Heart"
+        "en": "Fervent Heart",
+        "th": "จิตใจที่ร้อนรุ่ม"
       },
       "desc": {
-        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%.",
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจโจมตีพื้นฐาน 6%"
       },
       "effects": [
         {
@@ -139,20 +146,24 @@
     {
       "stage": 4,
       "name": {
-        "en": "Hot-Blooded Girl"
+        "en": "Hot-Blooded Girl",
+        "th": "สาวน้อยเลือดร้อน"
       },
       "desc": {
-        "en": "While Passive Trait effects are active, using a Basic Attack again after the Basic Attack's 5th Hit will chain directly to the 4th Hit."
+        "en": "While Passive Trait effects are active, using a Basic Attack again after the Basic Attack's 5th Hit will chain directly to the 4th Hit.",
+        "th": "เมื่อเอฟเฟกต์แพสซีฟถูกปรับใช้งาน หากใช้โจมตีพื้นฐาน หลังการโจมตีขั้น 5 ของโจมตีพื้นฐาน จะประสานการโจมตีขั้น 4"
       },
       "effects": []
     },
     {
       "stage": 5,
       "name": {
-        "en": "My Own Path"
+        "en": "My Own Path",
+        "th": "เส้นทางของตัวเอง"
       },
       "desc": {
-        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Special Skill DMG by 6%."
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Special Skill DMG by 6%.",
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจสกิลพิเศษ 6%"
       },
       "effects": [
         {
@@ -172,10 +183,12 @@
     {
       "stage": 6,
       "name": {
-        "en": "Blessing of Fire"
+        "en": "Blessing of Fire",
+        "th": "พรแห่งอัคคี"
       },
       "desc": {
-        "en": "Verna's Passive Trait effects' duration increases by 1s, and it increases by an additional 1s when defeating an enemy with a Fire attack. This effect can trigger 1 time every 0.5s. / While Passive Trait effects are active, Verna's Basic Attack's 5th Hit DMG increases by 100%."
+        "en": "Verna's Passive Trait effects' duration increases by 1s, and it increases by an additional 1s when defeating an enemy with a Fire attack. This effect can trigger 1 time every 0.5s. / While Passive Trait effects are active, Verna's Basic Attack's 5th Hit DMG increases by 100%.",
+        "th": "เพิ่มเวลาแสดงผลของเอฟเฟกต์แพสซีฟ 1 วินาที และทุกครั้งที่กำจัดศัตรูด้วยการโจมตีธาตุไฟ เวลาแสดงผลจะเพิ่มขึ้นทีละ 1 วินาที ซึ่งเอฟเฟกต์นี้จะทำงานสูงสุด 1 ครั้ง ทุก 0.5 วินาที / อีกทั้งขณะที่เอฟเฟกต์แพสซีฟปรับใช้ ปริมาณดาเมจของโจมตีพื้นฐานขั้น 5 จะเพิ่ม 100%"
       },
       "effects": [
         {
@@ -201,17 +214,20 @@
   "skills": {
     "basic": {
       "name": {
-        "en": "Sword of Justice"
+        "en": "Sword of Justice",
+        "th": "จัสติสต์ซอร์ด"
       },
       "desc": {
-        "en": "Verna deals Physical DMG to enemies by consecutively striking them with her sword. Enemies hit by her final strike are Knocked Back."
+        "en": "Verna deals Physical DMG to enemies by consecutively striking them with her sword. Enemies hit by her final strike are Knocked Back.",
+        "th": "โจมตีต่อเนื่องด้วยดาบ สร้างดาเมจกายภาพ โดยการโจมตีครั้งสุดท้ายจะทำให้ศัตรูถูกผลักออกไป"
       },
       "damageType": "physical",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "1st Hit DMG"
+            "en": "1st Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 1"
           },
           "unit": "percent",
           "scaling": [
@@ -236,7 +252,8 @@
         },
         {
           "label": {
-            "en": "2nd Hit DMG"
+            "en": "2nd Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 2"
           },
           "unit": "percent",
           "scaling": [
@@ -261,7 +278,8 @@
         },
         {
           "label": {
-            "en": "3rd Hit DMG"
+            "en": "3rd Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 3"
           },
           "unit": "percent",
           "scaling": [
@@ -286,7 +304,8 @@
         },
         {
           "label": {
-            "en": "4th Hit DMG"
+            "en": "4th Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 4"
           },
           "unit": "percent",
           "scaling": [
@@ -311,7 +330,8 @@
         },
         {
           "label": {
-            "en": "5th Hit DMG"
+            "en": "5th Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 5"
           },
           "unit": "percent",
           "scaling": [
@@ -336,7 +356,8 @@
         },
         {
           "label": {
-            "en": "Charge Attack DMG"
+            "en": "Charge Attack DMG",
+            "th": "ดาเมจโจมตีชาร์จ"
           },
           "unit": "percent",
           "scaling": [
@@ -360,7 +381,8 @@
         },
         {
           "label": {
-            "en": "Air Counter DMG"
+            "en": "Air Counter DMG",
+            "th": "ดาเมจโจมตีฉับพลัน"
           },
           "unit": "percent",
           "scaling": [
@@ -384,7 +406,8 @@
         },
         {
           "label": {
-            "en": "Evasion Counter DMG"
+            "en": "Evasion Counter DMG",
+            "th": "ดาเมจหลบหลีกโต้กลับ"
           },
           "unit": "percent",
           "scaling": [
@@ -410,17 +433,20 @@
     },
     "switch": {
       "name": {
-        "en": "Sword Smash"
+        "en": "Sword Smash",
+        "th": "ซอร์ดสแมช"
       },
       "desc": {
-        "en": "Verna appears near an enemy to deliver a somersaulting slash that deals Fire DMG."
+        "en": "Verna appears near an enemy to deliver a somersaulting slash that deals Fire DMG.",
+        "th": "ปรากฏตัวใกล้ศัตรู ถือดาบและหมุนตัวบนอากาศแล้วฟันลงใส่ศัตรู สร้างดาเมจธาตุไฟ"
       },
       "damageType": "fire",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "Switch Skill DMG"
+            "en": "Switch Skill DMG",
+            "th": "ดาเมจสกิลสับเปลี่ยน"
           },
           "unit": "percent",
           "scaling": [
@@ -447,17 +473,20 @@
     },
     "special": {
       "name": {
-        "en": "Boomerang Sword"
+        "en": "Boomerang Sword",
+        "th": "ซอร์ดบูมเมอแรง"
       },
       "desc": {
-        "en": "Verna throws her sword at an enemy to draw them in towards her, dealing Physical DMG. / When her sword returns, she delivers an upward strike that deals Physical DMG. Enemies hit are rendered Airborne."
+        "en": "Verna throws her sword at an enemy to draw them in towards her, dealing Physical DMG. / When her sword returns, she delivers an upward strike that deals Physical DMG. Enemies hit are rendered Airborne.",
+        "th": "ขว้างดาบใส่ศัตรู สร้างดาเมจกายภาพ และลากศัตรูที่โดนโจมตีเข้ามา / รับดาบที่วนกลับมาหาตนเองแล้วยกขึ้นฟันลง สร้างดาเมจกายภาพ และทำให้ศัตรูลอยขึ้นไปบนอากาศ"
       },
       "damageType": "physical",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "Sword Throw DMG"
+            "en": "Sword Throw DMG",
+            "th": "ดาเมจขว้างดาบ"
           },
           "unit": "percent",
           "scaling": [
@@ -482,7 +511,8 @@
         },
         {
           "label": {
-            "en": "Rising Slash DMG"
+            "en": "Rising Slash DMG",
+            "th": "ดาเมจฟันเฉือน"
           },
           "unit": "percent",
           "scaling": [
@@ -507,7 +537,8 @@
         },
         {
           "label": {
-            "en": "Cooldown"
+            "en": "Cooldown",
+            "th": "คูลดาวน์"
           },
           "unit": "seconds",
           "scaling": [
@@ -533,17 +564,20 @@
     },
     "ultimate": {
       "name": {
-        "en": "Flame Cutter"
+        "en": "Flame Cutter",
+        "th": "เฟลมคัต"
       },
       "desc": {
-        "en": "Verna gathers Fire energy in her sword, then unleashes it in one strike. Hit enemies take Fire DMG, are Knocked Back, and are inflicted with Fire Affliction."
+        "en": "Verna gathers Fire energy in her sword, then unleashes it in one strike. Hit enemies take Fire DMG, are Knocked Back, and are inflicted with Fire Affliction.",
+        "th": "รวบรวมพลังแห่งไฟไว้ที่ดาบ และตวัดอย่างแรงเพื่อปลดปล่อยพลังนั้นออกมา สร้างดาเมจธาตุไฟ และหลังจากซัดศัตรูให้กระเด็นจะมอบเอฟเฟกต์อ่อนแอต่อไฟ"
       },
       "damageType": "fire",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "DMG"
+            "en": "DMG",
+            "th": "ดาเมจ"
           },
           "unit": "percent",
           "scaling": [
@@ -568,7 +602,8 @@
         },
         {
           "label": {
-            "en": "Fire Affliction Duration"
+            "en": "Fire Affliction Duration",
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อไฟ"
           },
           "unit": "seconds",
           "scaling": [
@@ -595,10 +630,12 @@
     },
     "passive": {
       "name": {
-        "en": "Fiery Spirit"
+        "en": "Fiery Spirit",
+        "th": "ไฟสู้ลุกโชน"
       },
       "desc": {
-        "en": "Using Verna's Special Skill, Ultimate Skill, Evasion Counter, Air Counter, or Switch Skill converts the element of all her attacks to Fire and adds a bonus strike to each of her Basic Attacks for a set duration, increasing total DMG."
+        "en": "Using Verna's Special Skill, Ultimate Skill, Evasion Counter, Air Counter, or Switch Skill converts the element of all her attacks to Fire and adds a bonus strike to each of her Basic Attacks for a set duration, increasing total DMG.",
+        "th": "เมื่อใช้สกิลพิเศษ สกิลอัลติเมต หลบหลีกโต้กลับ โจมตีฉับพลัน หรือสกิลสับเปลี่ยน การโจมตีทั้งหมดจะถูกเปลี่ยนเป็นธาตุไฟภายในระยะเวลาที่กำหนด และเมื่อโจมตีพื้นฐาน จะเกิดการโจมตีโดนเพิ่มเติม และจะเพิ่มปริมาณดาเมจรวม"
       },
       "effects": [
         {
@@ -622,7 +659,8 @@
       "values": [
         {
           "label": {
-            "en": "Duration"
+            "en": "Duration",
+            "th": "เวลาแสดงผล"
           },
           "unit": "seconds",
           "scaling": [
@@ -646,7 +684,8 @@
         },
         {
           "label": {
-            "en": "Basic Attack's total DMG Boost upon landing an additional strike"
+            "en": "Basic Attack's total DMG Boost upon landing an additional strike",
+            "th": "เมื่อเกิดการโจมตีโดนเพิ่มเติม ดาเมจรวมของโจมตีพื้นฐานจะเพิ่มขึ้น"
           },
           "unit": "percent",
           "scaling": [
@@ -672,10 +711,12 @@
     },
     "elemental": {
       "name": {
-        "en": "Will of Kindled Fire"
+        "en": "Will of Kindled Fire",
+        "th": "เจตจำนงแห่งเปลวเพลิงที่หลอมรวม"
       },
       "desc": {
-        "en": "Using Verna's Switch Skill increases ATK by 7.1% (Duration: 15s)"
+        "en": "Using Verna's Switch Skill increases ATK by 7.1% (Duration: 15s)",
+        "th": "เมื่อใช้สกิลสับเปลี่ยน จะเพิ่มพลังโจมตี 7.1% (เวลาแสดงผล 15 วินาที)"
       },
       "effects": [
         {
@@ -694,10 +735,12 @@
   "statuses": [
     {
       "name": {
-        "en": "Fire Affliction"
+        "en": "Fire Affliction",
+        "th": "เอฟเฟกต์อ่อนแอต่อไฟ"
       },
       "desc": {
-        "en": "Afflicted targets take Fire DMG over time, and Fire RES decreases by 15%."
+        "en": "Afflicted targets take Fire DMG over time, and Fire RES decreases by 15%.",
+        "th": "ได้รับดาเมจต่อเนื่องธาตุไฟและลดพลังต้านทานธาตุไฟ 15%"
       },
       "effects": []
     }
@@ -710,8 +753,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Fighter · Fire · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวปกติ ไม่ใช่ Verna: Summer Dive! (คนละไฟล์ verna-summer-dive) | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,063 · DEF 653 · HP 10,154 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,855 · DEF 580 · HP 8,830 · Crit 5% / 50%** — ตรงกับ Cloud (4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Brawl DMG Boost 11.59% · Fighter 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · **Fire DMG Boost 0.7% ไม่เก็บ** (ไม่ได้มาจากอาหาร ตัว Preview ไม่มีบรรทัดนี้ — แบบเดียวกับ Ice DMG 1.3% ของ Narae / Isabella) | ปลุกพลังขั้น 1–3 (บัญชีนี้ปลุกพลังครบหกขั้น) | **2026-10-22 รอบสาม** ปลุกพลังขั้น 4–6 → ครบหกขั้น · effects: ขั้น 3 Basic +6% · ขั้น 5 Special +6% · ขั้นอื่นเก็บเป็นข้อความ | **2026-10-22 รอบสี่ — สกิลบนจอบัญชีนี้เป็น \"Level 1 +4\" = Lv.5 (ยังไม่ได้อัปสกิล มีแค่โบนัสปลุกพลัง +4) ไม่ใช่ Lv.12 / 16 → ค่าเก็บลงช่อง scaling 5** · หน้าเว็บจะแสดงค่า Lv.5 จนกว่าจะได้จอ Lv.12+ (Preview หรือบัญชีที่อัปแล้ว) | Basic Sword of Justice (Physical · แปดแถว) · Switch Sword Smash (89.6%) · Passive Fiery Spirit · Guidance of Fire Will of Kindled Fire: **ค่า Lv.12 = 7.1% จากป๊อปอัป Skill Info (Lv. 2 >> Lv. 12)** ไม่มีจุดท้ายประโยคตามจอ | **2026-10-22 รอบห้า** Special Boomerang Sword (Physical · Lv.5 · 119.8% สองท่า · คูลดาวน์ 11.7 วินาที) · Ultimate Flame Cutter (Lv.5 · 750.8%) · Effect Details Fire Affliction · จอหลัก Guidance of Fire Lv.2 = 6.1% (ค่าที่เก็บเป็น Lv.12 = 7.1% จากป๊อปอัป) | ยังไม่ได้อ่าน: ค่า Lv.12 ของสกิลทั้งสี่ช่อง (ต้องใช้จอ Preview หรือบัญชีที่อัปสกิลแล้ว) · จอไทยทั้งหมด | **2026-10-31 ผู้เล่นสั่งไล่ใส่บัฟที่เป็นข้อความทั้งหมด** ใส่ effect จากข้อความ/ตารางบนจอเดิม (ไม่ได้อ่านจอใหม่): A1, A2, A6, passive · \"X เท่า\" นับเป็น +100% ต่อเท่าตามที่ผู้เล่นยืนยันกับกาบี้ · ท่าที่ตีเพิ่ม/จำนวนครั้งเพิ่มใช้ bonusDmg · บัฟแปลงค่าใช้ condition.convertFrom"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Fighter · Fire · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวปกติ ไม่ใช่ Verna: Summer Dive! (คนละไฟล์ verna-summer-dive) | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,063 · DEF 653 · HP 10,154 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,855 · DEF 580 · HP 8,830 · Crit 5% / 50%** — ตรงกับ Cloud (4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Brawl DMG Boost 11.59% · Fighter 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · **Fire DMG Boost 0.7% ไม่เก็บ** (ไม่ได้มาจากอาหาร ตัว Preview ไม่มีบรรทัดนี้ — แบบเดียวกับ Ice DMG 1.3% ของ Narae / Isabella) | ปลุกพลังขั้น 1–3 (บัญชีนี้ปลุกพลังครบหกขั้น) | **2026-10-22 รอบสาม** ปลุกพลังขั้น 4–6 → ครบหกขั้น · effects: ขั้น 3 Basic +6% · ขั้น 5 Special +6% · ขั้นอื่นเก็บเป็นข้อความ | **2026-10-22 รอบสี่ — สกิลบนจอบัญชีนี้เป็น \"Level 1 +4\" = Lv.5 (ยังไม่ได้อัปสกิล มีแค่โบนัสปลุกพลัง +4) ไม่ใช่ Lv.12 / 16 → ค่าเก็บลงช่อง scaling 5** · หน้าเว็บจะแสดงค่า Lv.5 จนกว่าจะได้จอ Lv.12+ (Preview หรือบัญชีที่อัปแล้ว) | Basic Sword of Justice (Physical · แปดแถว) · Switch Sword Smash (89.6%) · Passive Fiery Spirit · Guidance of Fire Will of Kindled Fire: **ค่า Lv.12 = 7.1% จากป๊อปอัป Skill Info (Lv. 2 >> Lv. 12)** ไม่มีจุดท้ายประโยคตามจอ | **2026-10-22 รอบห้า** Special Boomerang Sword (Physical · Lv.5 · 119.8% สองท่า · คูลดาวน์ 11.7 วินาที) · Ultimate Flame Cutter (Lv.5 · 750.8%) · Effect Details Fire Affliction · จอหลัก Guidance of Fire Lv.2 = 6.1% (ค่าที่เก็บเป็น Lv.12 = 7.1% จากป๊อปอัป) | ยังไม่ได้อ่าน: ค่า Lv.12 ของสกิลทั้งสี่ช่อง (ต้องใช้จอ Preview หรือบัญชีที่อัปสกิลแล้ว) · จอไทยทั้งหมด | **2026-10-31 ผู้เล่นสั่งไล่ใส่บัฟที่เป็นข้อความทั้งหมด** ใส่ effect จากข้อความ/ตารางบนจอเดิม (ไม่ได้อ่านจอใหม่): A1, A2, A6, passive · \"X เท่า\" นับเป็น +100% ต่อเท่าตามที่ผู้เล่นยืนยันกับกาบี้ · ท่าที่ตีเพิ่ม/จำนวนครั้งเพิ่มใช้ bonusDmg · บัฟแปลงค่าใช้ condition.convertFrom | **2026-11-01 จอภาษาไทย** (ข้อมูล · ปลุกพลัง 1–3) ได้ชื่อไทย เวอร์นา · ปลุกพลัง 1–3 · จอข้อมูลเป็นค่าพลังที่ใส่ของแล้ว ไม่ได้ใช้ | **2026-11-01 จอภาษาไทยชุดสอง** (ปลุกพลัง 4–6 · โจมตีพื้นฐาน Lv.5) · ตัวเลขทุกแถวตรงกับจออังกฤษ | **2026-11-01 จอภาษาไทยชุดสาม** (การชี้นำ Lv.2 + ป๊อปอัป Lv.12 · แพสซีฟ · สับเปลี่ยน · พิเศษ · อัลติเมต + รายละเอียดเอฟเฟกต์อ่อนแอต่อไฟ) ครบทุกสกิลแล้ว · ตัวเลขทุกแถวตรงกับจออังกฤษ · การชี้นำใช้ Lv.12 7.1% อยู่แล้ว"
   }
 }

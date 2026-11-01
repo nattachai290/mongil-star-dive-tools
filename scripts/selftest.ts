@@ -464,5 +464,41 @@ check("yes แปะป้ายสองภาษา", linkableBadge("yes")?.th
   for (const g of ["dps", "support"] as const) check(`กลุ่ม ${g} มี tier 0`, list.some((e) => e.group === g && e.ranges.some((r) => r.tier === "0")));
 }
 
+// ---------- บัฟที่ต้องได้บัฟดาเมจธาตุก่อน (condition.requiresElementBoost) ----------
+{
+  // ปราณมังกรที่ลุกโชน: หินอัคนีสลัก ATK +30% ต้องได้บัฟดาเมจไฟ — Ellie (ดิน) ไม่มี · Flare มี Dragon's Breath
+  const atk30 = (id: string) =>
+    receivedEffects(buildLoadout.parse({ awaken: 0, members: [{ characterId: id, artifacts: ["exquisite-dragon-fire"] }] }))[0].effects.some(
+      (t) => t.effect.stat === "atk" && t.effect.condition?.requiresElementBoost === "fire",
+    );
+  check("ไม่มีบัฟดาเมจไฟ ไม่ได้หินอัคนีสลัก (Ellie)", !atk30("ellie"));
+  check("มีบัฟดาเมจไฟ ได้หินอัคนีสลัก (Flare)", atk30("flare"));
+}
+
+// ---------- เงื่อนไขของตัวที่ใส่ (requiresSelfStatus / requiresSkillInflicts) ----------
+{
+  const has = (id: string, art: string, stat: string) =>
+    receivedEffects(buildLoadout.parse({ awaken: 0, members: [{ characterId: id, artifacts: [art] }] }))[0].effects.some(
+      (t) => t.effect.stat === stat && t.from.en?.startsWith(art === "serpent-dragons-white-scale" ? "Serpent" : "Stabilized"),
+    );
+  // เกล็ดขาว: ตีปกติ +30% ต้องมี DMG Immunity — Nagi มี (Beguiling Scale) · Ellie ไม่มี
+  check("เกล็ดขาว: Ellie ไม่มี DMG Immunity ไม่ได้ดาเมจตีปกติ +30%", !has("ellie", "serpent-dragons-white-scale", "dmgDealt"));
+  check("เกล็ดขาว: Nagi ได้ดาเมจตีปกติ +30%", has("nagi", "serpent-dragons-white-scale", "dmgDealt"));
+  // Stabilized Superconductor: ต้องทำ Freeze ด้วยสกิลสับเปลี่ยน — Isabella ได้ · Cloud ไม่ได้
+  check("Superconductor: Isabella ได้ Crit DMG", has("isabella", "stabilized-superconductor", "critDmg"));
+  check("Superconductor: Cloud สับเปลี่ยนไม่ทำ Freeze ไม่ได้ Crit DMG", !has("cloud", "stabilized-superconductor", "critDmg"));
+}
+
+// ---------- requiresStatBuff ----------
+{
+  // ปีศาจผู้ปรารถนา: ATK +12% ต้องได้บัฟดาเมจกดขี่ — บรีเซลมี (Attention Overload) · Yeonhwa คนเดียวไม่มี
+  const atk12 = (id: string) =>
+    receivedEffects(buildLoadout.parse({ awaken: 0, members: [{ characterId: id, artifacts: ["monstrous-longing"] }] }))[0].effects.some(
+      (t) => t.effect.stat === "atk" && t.effect.condition?.requiresStatBuff === "suppressionDmg",
+    );
+  check("ปีศาจผู้ปรารถนา: บรีเซลได้ ATK +12%", atk12("brisshell"));
+  check("ปีศาจผู้ปรารถนา: Yeonhwa ไม่มีบัฟดาเมจกดขี่ ไม่ได้", !atk12("yeonhwa"));
+}
+
 console.log(failed === 0 ? "\nผ่านทั้งหมด\n" : `\nไม่ผ่าน ${failed} ข้อ\n`);
 if (failed > 0) process.exit(1);

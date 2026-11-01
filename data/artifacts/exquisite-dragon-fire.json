@@ -46,7 +46,8 @@
             "note": {
               "th": "หินอัคนี · เมื่อเข้าสู่โจมตีสับเปลี่ยน",
               "en": "Flamestone · Using a Switch Attack"
-            }
+            },
+            "selfMet": true
           }
         },
         {
@@ -61,7 +62,8 @@
             "note": {
               "th": "หินอัคนีสลัก · เมื่อได้รับเอฟเฟกต์เพิ่มดาเมจธาตุไฟในขณะที่มีเอฟเฟกต์หินอัคนี",
               "en": "Inscribed Flamestone · gaining a Fire DMG Boost while Flamestone is active"
-            }
+            },
+            "requiresElementBoost": "fire"
           }
         },
         {
@@ -76,7 +78,8 @@
             "note": {
               "th": "หินอัคนีสลัก · เมื่อได้รับเอฟเฟกต์เพิ่มดาเมจธาตุไฟในขณะที่มีเอฟเฟกต์หินอัคนี",
               "en": "Inscribed Flamestone · gaining a Fire DMG Boost while Flamestone is active"
-            }
+            },
+            "requiresElementBoost": "fire"
           }
         }
       ]
@@ -106,7 +109,8 @@
             "note": {
               "th": "หินอัคนี · เมื่อเข้าสู่โจมตีสับเปลี่ยน",
               "en": "Flamestone · Using a Switch Attack"
-            }
+            },
+            "selfMet": true
           }
         },
         {
@@ -121,7 +125,8 @@
             "note": {
               "th": "หินอัคนีสลัก · เมื่อได้รับเอฟเฟกต์เพิ่มดาเมจธาตุไฟในขณะที่มีเอฟเฟกต์หินอัคนี",
               "en": "Inscribed Flamestone · gaining a Fire DMG Boost while Flamestone is active"
-            }
+            },
+            "requiresElementBoost": "fire"
           }
         },
         {
@@ -136,7 +141,8 @@
             "note": {
               "th": "หินอัคนีสลัก · เมื่อได้รับเอฟเฟกต์เพิ่มดาเมจธาตุไฟในขณะที่มีเอฟเฟกต์หินอัคนี",
               "en": "Inscribed Flamestone · gaining a Fire DMG Boost while Flamestone is active"
-            }
+            },
+            "requiresElementBoost": "fire"
           }
         }
       ]

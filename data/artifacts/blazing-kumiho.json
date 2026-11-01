@@ -56,7 +56,8 @@
             "note": {
               "th": "เปลวเพลิงจิ้งจอกเก้าหาง · เมื่อใช้สกิลอัลติเมต / อัญเชิญสิ่งอัญเชิญ 1 สิ่ง / โจมตีพื้นฐานธาตุไฟโดน 4 ครั้ง (คูลดาวน์ 11 วินาที) · แต่ละทับซ้อนมีเวลาแสดงผลแยกกัน",
               "en": "Kumiho Flame · Using an Ultimate Skill / Summoning a minion / Landing a Fire Basic Attack 4 times (Cooldown: 11s) · each stack has its own duration"
-            }
+            },
+            "selfMet": true
           }
         },
         {

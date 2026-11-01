@@ -407,9 +407,9 @@
           "member": {
             "characterId": "ellie",
             "artifacts": [
-              "exquisite-dragon-fire",
               "serpent-dragons-white-scale",
-              "stabilized-superconductor"
+              "dreaming-adventurer",
+              "exquisite-dragon-fire"
             ],
             "equipment": {
               "headgear": "gourmands-hat",
@@ -947,9 +947,9 @@
           "member": {
             "characterId": "ellie",
             "artifacts": [
-              "exquisite-dragon-fire",
               "serpent-dragons-white-scale",
-              "stabilized-superconductor"
+              "dreaming-adventurer",
+              "exquisite-dragon-fire"
             ],
             "equipment": {
               "headgear": "ascendant-white-wolfs-mask",

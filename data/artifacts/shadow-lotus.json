@@ -44,7 +44,8 @@
             "note": {
               "th": "จู่โจม · เมื่อเปลี่ยนเป็นตัวละครที่ติดตั้ง เอฟเฟกต์จู่โจมจะหายไปหลัง 1 วินาที",
               "en": "Assault · Switching to the equipping character removes Assault after 1s."
-            }
+            },
+            "selfMet": true
           }
         },
         {
@@ -58,7 +59,8 @@
             "note": {
               "th": "จู่โจม · เมื่อเปลี่ยนเป็นตัวละครที่ติดตั้ง เอฟเฟกต์จู่โจมจะหายไปหลัง 1 วินาที",
               "en": "Assault · Switching to the equipping character removes Assault after 1s."
-            }
+            },
+            "selfMet": true
           }
         }
       ]

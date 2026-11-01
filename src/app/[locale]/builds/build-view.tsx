@@ -33,6 +33,9 @@ import { chainAppears } from "@/lib/link-chain-effects";
 import {
   CYCLE_SKILLS,
   artifactFusion,
+  hasElementBoost,
+  hasSkillBoost,
+  hasStatBuff,
   receivedEffects,
   specialCooldownReduction,
   unusableReason,
@@ -234,7 +237,17 @@ function GearRows({
 }) {
   const c = characterById(mem.characterId);
   const cdCut = specialCooldownReduction(effects);
-  const why: Why | undefined = c && ((e) => unusableReason(c, e, cdCut, team));
+  const why: Why | undefined =
+    c &&
+    ((e) =>
+      unusableReason(c, e, cdCut, team) ??
+      (e.condition?.requiresElementBoost && !hasElementBoost(effects, e.condition.requiresElementBoost)
+        ? "elementBoost"
+        : e.condition?.requiresSkillBoost && !hasSkillBoost(effects)
+          ? "skillBoost"
+          : e.condition?.requiresStatBuff && !hasStatBuff(effects, e.condition.requiresStatBuff)
+            ? "statBuff"
+            : undefined));
   const [art, ...spares] = (mem.artifacts ?? []).flatMap((id) => ARTIFACTS.find((a) => a.id === id) ?? []);
   const fusion = art && artifactFusion(art);
   const chain = LINK_CHAINS.find((x) => x.id === mem.linkChain);

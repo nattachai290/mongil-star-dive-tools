@@ -188,5 +188,11 @@
   "tierList.incomplete": "Some skill values are not recorded up to Lv. 12 yet, so this score is lower than it should be",
   "builds.subsShort": "Alternatives",
   "builds.subPanel": "{sub} — in place of {name}",
-  "builds.subClose": "Close"
+  "builds.subClose": "Close",
+  "builds.unusable.elementBoost": "Unusable: no DMG Boost of this element",
+  "builds.unusable.skillBoost": "Unusable: no Skill DMG Boost received",
+  "builds.unusable.selfStatus": "Unusable: this character lacks the required effect",
+  "builds.unusable.inflicts": "Unusable: the skill doesn't inflict the required status",
+  "builds.unusable.range": "Unusable: wrong range type",
+  "builds.unusable.statBuff": "Unusable: the required buff is not received"
 }

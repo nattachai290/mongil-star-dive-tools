@@ -44,7 +44,8 @@
             "note": {
               "th": "เมื่อเอฟเฟกต์เพิ่มดาเมจกดขี่ปรับใช้",
               "en": "when the Suppression DMG Boost is active"
-            }
+            },
+            "requiresStatBuff": "suppressionDmg"
           }
         },
         {
@@ -80,7 +81,8 @@
             "note": {
               "th": "เมื่อใช้สกิลสนับสนุนหรือสกิลสับเปลี่ยน · เมื่อทับซ้อน เวลาแสดงผลจะรีเฟรช",
               "en": "upon using Support Skill or Switch Skill · New stacks reset the duration"
-            }
+            },
+            "selfMet": true
           }
         }
       ]
