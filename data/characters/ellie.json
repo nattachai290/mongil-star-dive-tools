@@ -65,20 +65,24 @@
     {
       "stage": 1,
       "name": {
-        "en": "High Sugar"
+        "en": "High Sugar",
+        "th": "ระดับน้ำตาลในเลือดเพิ่มขึ้น"
       },
       "desc": {
-        "en": "3 Snacks are immediately gained upon using Ellie's Special Skill."
+        "en": "3 Snacks are immediately gained upon using Ellie's Special Skill.",
+        "th": "เมื่อใช้สกิลพิเศษ จะได้รับขนมทันที 3 ชิ้น"
       },
       "effects": []
     },
     {
       "stage": 2,
       "name": {
-        "en": "Sugar Spike"
+        "en": "Sugar Spike",
+        "th": "น้ำตาลในเลือดพุ่งกระฉูด"
       },
       "desc": {
-        "en": "When Ellie uses Pillow Pow!, all teammates' Earth DMG increases by 10%. (Duration: 5s) / When Ellie uses Pillow Pow! while Sleepy..., the duration of Sleepy... additionally increases by 2s."
+        "en": "When Ellie uses Pillow Pow!, all teammates' Earth DMG increases by 10%. (Duration: 5s) / When Ellie uses Pillow Pow! while Sleepy..., the duration of Sleepy... additionally increases by 2s.",
+        "th": "เมื่อโจมตีหมอนปั๋ง! จะเพิ่มดาเมจธาตุดินของสมาชิกทั้งหมด 10% (เวลาแสดงผล 5 วินาที) / เมื่อโจมตีหมอนปั๋ง! ในสถานะง่วงนอน.. จะเพิ่มเวลาแสดงผลของสถานะง่วงนอน.. เพิ่มเติม 2 วินาที"
       },
       "effects": [
         {
@@ -101,10 +105,12 @@
     {
       "stage": 3,
       "name": {
-        "en": "Contains Added Sugars"
+        "en": "Contains Added Sugars",
+        "th": "สูตรอาหารเติมน้ำตาล"
       },
       "desc": {
-        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%.",
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจโจมตีพื้นฐาน 6%"
       },
       "skillLevelBonus": 2,
       "effects": [
@@ -124,10 +130,12 @@
     {
       "stage": 4,
       "name": {
-        "en": "Sweet Enough to Make Your Teeth Hurt"
+        "en": "Sweet Enough to Make Your Teeth Hurt",
+        "th": "รสชาติหอมหวานที่แฝงไปด้วยความขม"
       },
       "desc": {
-        "en": "Ellie's Special Skill's final Explosion DMG increases by 50%. / All generated Snacks begin to move immediately, and their Movement Speed is increased. / When becoming Sleepy..., Ellie generates an additional Super-Sized Snack. The Super-Sized Snack explodes on contact with the ground, dealing Earth DMG equal to 350% of Ellie's ATK and generating 1 Snack."
+        "en": "Ellie's Special Skill's final Explosion DMG increases by 50%. / All generated Snacks begin to move immediately, and their Movement Speed is increased. / When becoming Sleepy..., Ellie generates an additional Super-Sized Snack. The Super-Sized Snack explodes on contact with the ground, dealing Earth DMG equal to 350% of Ellie's ATK and generating 1 Snack.",
+        "th": "เพิ่มดาเมจระเบิดครั้งสุดท้ายของสกิลพิเศษ 50% / ขนมที่ถูกสร้างขึ้นทั้งหมด จะเคลื่อนที่หลังจากสร้างทันที และเพิ่มความเร็วเคลื่อนที่ของขนม / เมื่อเข้าสู่สถานะง่วงนอน.. เอลลี่จะสร้างซูเปอร์ของว่างไซซ์สุดพิเศษเพิ่ม และเมื่อซูเปอร์ของว่างไซซ์สุดพิเศษแตะพื้นจะระเบิด สร้างดาเมจธาตุดิน 350% ของพลังโจมตีเอลลี่และสร้างขนม 1 ชิ้น"
       },
       "effects": [
         {
@@ -152,10 +160,12 @@
     {
       "stage": 5,
       "name": {
-        "en": "Sugar Bomb"
+        "en": "Sugar Bomb",
+        "th": "สูตรอาหารระเบิดน้ำตาล"
       },
       "desc": {
-        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Special Skill DMG by 6%."
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Special Skill DMG by 6%.",
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจสกิลพิเศษ 6%"
       },
       "skillLevelBonus": 2,
       "effects": [
@@ -175,10 +185,12 @@
     {
       "stage": 6,
       "name": {
-        "en": "Eternal Magic Cycle"
+        "en": "Eternal Magic Cycle",
+        "th": "เวทมนตร์วนเวียนนิรันดร์"
       },
       "desc": {
-        "en": "Pillow Pow! DMG increases by 20%, and Ellie gains Super Armor during Pillow Pow! / Holding the Basic Attack button after Pillow Pow! will chain directly to Ellie's Basic Attack's 4th Hit. / Ellie's Basic Attack's 4th Hit generates 3 Snacks. This effect is triggered every 10s."
+        "en": "Pillow Pow! DMG increases by 20%, and Ellie gains Super Armor during Pillow Pow! / Holding the Basic Attack button after Pillow Pow! will chain directly to Ellie's Basic Attack's 4th Hit. / Ellie's Basic Attack's 4th Hit generates 3 Snacks. This effect is triggered every 10s.",
+        "th": "เพิ่มดาเมจของโจมตีหมอนปั๋ง! 20% และได้รับเอฟเฟกต์ซูเปอร์อาร์เมอร์ขณะโจมตีหมอนปั๋ง! / หากกดค้างโจมตีพื้นฐานหลังจากโจมตีหมอนปั๋ง! จะประสานการโจมตีพื้นฐานขั้น 4 / เมื่อโจมตีพื้นฐานขั้น 4 จะสร้างขนม 3 ชิ้น ซึ่งเอฟเฟกต์นี้ทำงานทีละครั้ง ทุก 10 วินาที"
       },
       "effects": [
         {
@@ -398,17 +410,20 @@
     },
     "switch": {
       "name": {
-        "en": "Snack Time"
+        "en": "Snack Time",
+        "th": "เวลาน้ำชา"
       },
       "desc": {
-        "en": "Ellie deals Earth DMG around herself and scatters Snacks hidden in her pillow."
+        "en": "Ellie deals Earth DMG around herself and scatters Snacks hidden in her pillow.",
+        "th": "สร้างดาเมจธาตุดินรอบตัวเอลลี่และโปรยขนมที่ซ่อนไว้ในหมอนกระจายออกมา"
       },
       "damageType": "earth",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "DMG"
+            "en": "DMG",
+            "th": "ดาเมจ"
           },
           "unit": "percent",
           "scaling": [
@@ -435,17 +450,20 @@
     },
     "special": {
       "name": {
-        "en": "Big Donut"
+        "en": "Big Donut",
+        "th": "บิ๊กนัท"
       },
       "desc": {
-        "en": "Ellie summons a giant donut and rolls it towards the enemy. The donut rolls across the ground and attacks the enemy consecutively. It deals Earth DMG, and after a set number of attacks, it explodes, dealing additional Earth DMG."
+        "en": "Ellie summons a giant donut and rolls it towards the enemy. The donut rolls across the ground and attacks the enemy consecutively. It deals Earth DMG, and after a set number of attacks, it explodes, dealing additional Earth DMG.",
+        "th": "เรียกโดนัทขนาดยักษ์ออกมาแล้วกลิ้งไปด้านหน้า โดนัทจะกลิ้งไหลไปตามทางและโจมตีศัตรูอย่างต่อเนื่อง สร้างดาเมจธาตุดิน และเมื่อโจมตีมากกว่าจำนวนครั้งที่กำหนด จะเกิดระเบิดและสร้างดาเมจธาตุดินเพิ่มเติม"
       },
       "damageType": "earth",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "Rolling Donut DMG"
+            "en": "Rolling Donut DMG",
+            "th": "ดาเมจโดนัทพุ่ง"
           },
           "unit": "percent",
           "scaling": [
@@ -470,7 +488,8 @@
         },
         {
           "label": {
-            "en": "Rolling Donut Max Hits"
+            "en": "Rolling Donut Max Hits",
+            "th": "จำนวนการโจมตีสูงสุดโดนัทพุ่ง"
           },
           "unit": "times",
           "scaling": [
@@ -495,7 +514,8 @@
         },
         {
           "label": {
-            "en": "Donut Explosion DMG"
+            "en": "Donut Explosion DMG",
+            "th": "ดาเมจระเบิดโดนัท"
           },
           "unit": "percent",
           "scaling": [
@@ -520,7 +540,8 @@
         },
         {
           "label": {
-            "en": "Cooldown"
+            "en": "Cooldown",
+            "th": "คูลดาวน์"
           },
           "unit": "seconds",
           "scaling": [
@@ -638,10 +659,12 @@
     },
     "passive": {
       "name": {
-        "en": "Sugar Charge"
+        "en": "Sugar Charge",
+        "th": "เติมน้ำตาล"
       },
       "desc": {
-        "en": "Ellie generates Snacks upon performing certain attacks. The generated Snacks remain on the ground, and after a set time, they slowly travel towards the current teammate in use. / Snack: Approaching a Snack allows you to collect it. Upon collection, it restores a small amount of that character's HP and grants Ellie a Neutralization DMG Boost effect and 1 stack of Sugar Charge. / Sugar Charge: Sugar Charge can stack up to 3 times. At max stacks, holding the Basic Attack button will deal Pillow Pow! and consume all stacks. If Ellie is Sleepy..., Pillow Pow! is automatically triggered upon reaching 3 stacks. / Sleepy...: Switching to another character during combat will make Ellie Sleepy... for a set duration, and she will travel slowly to the enemy and generate Snacks. Using Pillow Pow! when Ellie is Sleepy... will increase the duration of Sleepy..."
+        "en": "Ellie generates Snacks upon performing certain attacks. The generated Snacks remain on the ground, and after a set time, they slowly travel towards the current teammate in use. / Snack: Approaching a Snack allows you to collect it. Upon collection, it restores a small amount of that character's HP and grants Ellie a Neutralization DMG Boost effect and 1 stack of Sugar Charge. / Sugar Charge: Sugar Charge can stack up to 3 times. At max stacks, holding the Basic Attack button will deal Pillow Pow! and consume all stacks. If Ellie is Sleepy..., Pillow Pow! is automatically triggered upon reaching 3 stacks. / Sleepy...: Switching to another character during combat will make Ellie Sleepy... for a set duration, and she will travel slowly to the enemy and generate Snacks. Using Pillow Pow! when Ellie is Sleepy... will increase the duration of Sleepy...",
+        "th": "เมื่อโจมตีพิเศษ เอลลี่จะสร้างขนม ขนมที่ถูกสร้างขึ้นจะอยู่บนพื้นและเมื่อเวลาผ่านไป จะค่อยๆ เคลื่อนที่ไปยังสมาชิกทีมที่กำลังควบคุมอยู่ในขณะนั้น / ขนม: หากเข้าใกล้จะสามารถเก็บได้ เมื่อได้รับ จะฟื้นฟูพลังชีวิตของตัวละครที่ได้รับ และจะมอบเอฟเฟกต์เติมน้ำตาลทับซ้อน 1 กับเอฟเฟกต์เพิ่มดาเมจหมดฤทธิ์ให้กับเอลลี่ / เติมน้ำตาล: สามารถทับซ้อนได้สูงสุด 3 และเมื่อทับซ้อนสูงสุด หากกดค้างโจมตีพื้นฐานไว้ จะใช้การโจมตีหมอนปั๋ง!และใช้งานทับซ้อนทั้งหมด ในกรณีที่เอลลี่อยู่ในสถานะง่วงนอน.. เมื่อบรรลุทับซ้อน 3 จะใช้การโจมตีหมอนปั๋งโดยอัตโนมัติ / ง่วงนอน..: ในระหว่างการต่อสู้ เมื่อเปลี่ยนจากเอลลี่เป็นตัวละครอื่น เอลลี่จะคงสถานะง่วงนอน.. ในระยะเวลาที่กำหนดและเคลื่อนที่ไปยังศัตรูอย่างช้าๆ และสร้างของว่าง หากใช้การโจมตีหมอนปั๋ง! ขณะอยู่ในสถานะง่วงนอน.. จะยืดเวลานับถอยหลังของสถานะง่วงนอน.. ออกไป"
       },
       "effects": [
         {
@@ -663,7 +686,8 @@
       "values": [
         {
           "label": {
-            "en": "Snacks Generated by Switch Skill"
+            "en": "Snacks Generated by Switch Skill",
+            "th": "เมื่อใช้สกิลสับเปลี่ยน จะสร้างขนม"
           },
           "unit": "flat",
           "scaling": [
@@ -688,7 +712,8 @@
         },
         {
           "label": {
-            "en": "Snacks Generated by Ultimate Skill"
+            "en": "Snacks Generated by Ultimate Skill",
+            "th": "เมื่อใช้สกิลอัลติเมต จะสร้างขนม"
           },
           "unit": "flat",
           "scaling": [
@@ -713,7 +738,8 @@
         },
         {
           "label": {
-            "en": "Sleepy... Snacks Generated per Second"
+            "en": "Sleepy... Snacks Generated per Second",
+            "th": "สร้างขนมต่อวินาที ขณะอยู่ในสถานะง่วงนอน.."
           },
           "unit": "flat",
           "scaling": [
@@ -738,7 +764,8 @@
         },
         {
           "label": {
-            "en": "Snack Duration"
+            "en": "Snack Duration",
+            "th": "เวลานับถอยหลังขนมที่ถูกสร้างขึ้น"
           },
           "unit": "seconds",
           "scaling": [
@@ -763,7 +790,8 @@
         },
         {
           "label": {
-            "en": "Snack Collection HP Recovery"
+            "en": "Snack Collection HP Recovery",
+            "th": "เมื่อได้รับขนม จะฟื้นฟูพลังชีวิต"
           },
           "unit": "flat",
           "scaling": [
@@ -788,7 +816,8 @@
         },
         {
           "label": {
-            "en": "Snack Collection Neutralization DMG Boost"
+            "en": "Snack Collection Neutralization DMG Boost",
+            "th": "เมื่อได้รับขนม จะเพิ่มดาเมจหมดฤทธิ์"
           },
           "unit": "percent",
           "scaling": [
@@ -813,7 +842,8 @@
         },
         {
           "label": {
-            "en": "Snack Collection Neutralization DMG Boost Duration"
+            "en": "Snack Collection Neutralization DMG Boost Duration",
+            "th": "เมื่อได้รับขนม เวลาแสดงผลเพิ่มดาเมจหมดฤทธิ์"
           },
           "unit": "seconds",
           "scaling": [
@@ -838,7 +868,8 @@
         },
         {
           "label": {
-            "en": "Snack Collection Neutralization DMG Boost Max Stacks"
+            "en": "Snack Collection Neutralization DMG Boost Max Stacks",
+            "th": "เมื่อได้รับขนม จำนวนทับซ้อนสูงสุดเพิ่มดาเมจหมดฤทธิ์"
           },
           "unit": "times",
           "scaling": [
@@ -863,7 +894,8 @@
         },
         {
           "label": {
-            "en": "Sleepy... Default Duration"
+            "en": "Sleepy... Default Duration",
+            "th": "เวลานับถอยหลังพื้นฐานของสถานะง่วงนอน.."
           },
           "unit": "seconds",
           "scaling": [
@@ -888,7 +920,8 @@
         },
         {
           "label": {
-            "en": "Pillow Pow! Sleepy... Duration Increase"
+            "en": "Pillow Pow! Sleepy... Duration Increase",
+            "th": "เมื่อโจมตีหมอนปั๋ง! จะยืดเวลานับถอยหลังสถานะง่วงนอน.."
           },
           "unit": "seconds",
           "scaling": [
@@ -915,10 +948,12 @@
     },
     "elemental": {
       "name": {
-        "en": "Can I Sleep Now?"
+        "en": "Can I Sleep Now?",
+        "th": "ตอนนี้นอนได้ยัง?"
       },
       "desc": {
-        "en": "ATK increases by 9.15% upon switching to another teammate. (Duration: 15s)"
+        "en": "ATK increases by 9.15% upon switching to another teammate. (Duration: 15s)",
+        "th": "เมื่อเปลี่ยนเป็นสมาชิกทีมคนอื่น จะเพิ่มพลังโจมตี 9.15% (เวลาแสดงผล 15 วินาที)"
       },
       "effects": [
         {
@@ -945,7 +980,7 @@
       "en",
       "th"
     ],
-    "note": "อ่านจากจอภาษาอังกฤษ 2026-10-31 (ผู้เล่นส่ง 4 จอ: Info · Detailed Stats · Skills ของโจมตีพื้นฐานสองจอ) · **ยังไม่มีจอไทย** | Destroyer · **Earth** · Ranged · 4 ดาว · เลเวล 60 | **ค่าพลังบนจอมีบัฟอาหารติดอยู่** — ตรงกับอาหาร 2 จานของบิ้วกาบี้ทุกค่า: Crit 12.5% = 5 + 7.5 (สตูป่ากาปี้) · Crit DMG 92.5% = 50 + 42.5 · Elemental Weakness 150.5% = 125 + 25.5 (ช่วงเวลาแห่งการเฉลิมฉลองพิเศษ) · จอ: ATK 2,063 · DEF 686 · HP 9,647 → หักบัฟ ATK +11.25% / DEF +12.75% / HP +15% แบบปัดลง = ATK 1,855 · DEF 609 · HP 8,389 (DEF เท่าเดซี่ 4 ดาว · HP เท่าลีโฮ 4 ดาว · ถ้าเกมปัดแบบปกติ ATK จะเป็น 1,854) — ค่าพื้นฐานนี้คำนวณย้อน ยังไม่ได้เห็นจอที่ไม่มีบัฟ | Neutralization DMG Boost 11.59% · Destroyer 1,026 · Ultimate Gauge Charge 100% · Max Stamina 100 (อาหารไม่เพิ่มค่าเหล่านี้) | โจมตีพื้นฐาน Back Off! จอบอก **Level 9 +4 = Lv.13** ค่าเก็บที่ช่อง Lv.13 | รูป portrait ตัดจากจอ Info 360x360 | **2026-10-31 รอบสอง** ผู้เล่นส่งจอ Switch Snack Time · Special Big Donut · Ultimate Ultimate Sweetness (+ Effect Details ของ Earth Affliction — ข้อความเดียวกับของเดซี่ทุกคำ จึงใช้ status เดียวกัน) · Passive Sugar Charge (Lv.1 · 3 จอเลื่อน) · Guidance of Earth: Can I Sleep Now? (ของผู้เล่นยัง Inactive Lv.1 = ATK 7.5% · จอ Skill Info บอก Lv.12 = 9.15% ใช้ค่า Lv.12 แบบเดียวกับตัวอื่น) · ปลุกพลังครบหกขั้น (ของผู้เล่น Awakening Complete — สกิล Lv.13 = 9 +4 จากขั้น 3 และ 5) | สกิลทุกช่องเลเวล 13 ค่าเก็บที่ช่อง Lv.13 | Rolling Donut ตีได้สูงสุด 21 ครั้ง (แถว Rolling Donut Max Hits) | Sugar Charge: ค่าที่หน่วยไม่ได้บอก (จำนวน Snack · HP Recovery 3) เก็บเป็น flat | ปลุก 2 บัฟดาเมจดินทั้งทีม 10% ตอนใช้ Pillow Pow! — Pillow Pow! ติดเองตอน Sleepy... (ออกจากสนาม) ได้ด้วยตามแพสซีฟ | ปลุก 4: Super-Sized Snack 350% ATK ตอนเข้า Sleepy... (ทุกครั้งที่สลับออก) ยังเป็นข้อความ — ตัวคำนวณยังไม่มีดาเมจเสริมจากปลุกพลัง | **2026-11-01 จอภาษาไทย** (ข้อมูล · โจมตีพื้นฐาน Lv.13 สองจอ · อัลติเมต Lv.13 + รายละเอียดเอฟเฟกต์อ่อนแอต่อดิน ตรงกับที่มีอยู่แล้ว) ได้ชื่อไทย เอลลี่ · ชื่อ/คำอธิบาย/ชื่อแถวของโจมตีพื้นฐานกับอัลติเมต · ตัวเลขทุกแถวตรงกับจออังกฤษ · การชี้นำแห่งดินยังปิดใช้งานในจอนี้ · จอข้อมูลเป็นค่าพลังที่ใส่ของแล้ว ไม่ได้ใช้ · ยังขาดจอไทยของสกิลสับเปลี่ยน สกิลพิเศษ แพสซีฟ การชี้นำ ปลุกพลัง 1–6 และสถานะอื่น"
+    "note": "อ่านจากจอภาษาอังกฤษ 2026-10-31 (ผู้เล่นส่ง 4 จอ: Info · Detailed Stats · Skills ของโจมตีพื้นฐานสองจอ) · **ยังไม่มีจอไทย** | Destroyer · **Earth** · Ranged · 4 ดาว · เลเวล 60 | **ค่าพลังบนจอมีบัฟอาหารติดอยู่** — ตรงกับอาหาร 2 จานของบิ้วกาบี้ทุกค่า: Crit 12.5% = 5 + 7.5 (สตูป่ากาปี้) · Crit DMG 92.5% = 50 + 42.5 · Elemental Weakness 150.5% = 125 + 25.5 (ช่วงเวลาแห่งการเฉลิมฉลองพิเศษ) · จอ: ATK 2,063 · DEF 686 · HP 9,647 → หักบัฟ ATK +11.25% / DEF +12.75% / HP +15% แบบปัดลง = ATK 1,855 · DEF 609 · HP 8,389 (DEF เท่าเดซี่ 4 ดาว · HP เท่าลีโฮ 4 ดาว · ถ้าเกมปัดแบบปกติ ATK จะเป็น 1,854) — ค่าพื้นฐานนี้คำนวณย้อน ยังไม่ได้เห็นจอที่ไม่มีบัฟ | Neutralization DMG Boost 11.59% · Destroyer 1,026 · Ultimate Gauge Charge 100% · Max Stamina 100 (อาหารไม่เพิ่มค่าเหล่านี้) | โจมตีพื้นฐาน Back Off! จอบอก **Level 9 +4 = Lv.13** ค่าเก็บที่ช่อง Lv.13 | รูป portrait ตัดจากจอ Info 360x360 | **2026-10-31 รอบสอง** ผู้เล่นส่งจอ Switch Snack Time · Special Big Donut · Ultimate Ultimate Sweetness (+ Effect Details ของ Earth Affliction — ข้อความเดียวกับของเดซี่ทุกคำ จึงใช้ status เดียวกัน) · Passive Sugar Charge (Lv.1 · 3 จอเลื่อน) · Guidance of Earth: Can I Sleep Now? (ของผู้เล่นยัง Inactive Lv.1 = ATK 7.5% · จอ Skill Info บอก Lv.12 = 9.15% ใช้ค่า Lv.12 แบบเดียวกับตัวอื่น) · ปลุกพลังครบหกขั้น (ของผู้เล่น Awakening Complete — สกิล Lv.13 = 9 +4 จากขั้น 3 และ 5) | สกิลทุกช่องเลเวล 13 ค่าเก็บที่ช่อง Lv.13 | Rolling Donut ตีได้สูงสุด 21 ครั้ง (แถว Rolling Donut Max Hits) | Sugar Charge: ค่าที่หน่วยไม่ได้บอก (จำนวน Snack · HP Recovery 3) เก็บเป็น flat | ปลุก 2 บัฟดาเมจดินทั้งทีม 10% ตอนใช้ Pillow Pow! — Pillow Pow! ติดเองตอน Sleepy... (ออกจากสนาม) ได้ด้วยตามแพสซีฟ | ปลุก 4: Super-Sized Snack 350% ATK ตอนเข้า Sleepy... (ทุกครั้งที่สลับออก) ยังเป็นข้อความ — ตัวคำนวณยังไม่มีดาเมจเสริมจากปลุกพลัง | **2026-11-01 จอภาษาไทย** (ข้อมูล · โจมตีพื้นฐาน Lv.13 สองจอ · อัลติเมต Lv.13 + รายละเอียดเอฟเฟกต์อ่อนแอต่อดิน ตรงกับที่มีอยู่แล้ว) ได้ชื่อไทย เอลลี่ · ชื่อ/คำอธิบาย/ชื่อแถวของโจมตีพื้นฐานกับอัลติเมต · ตัวเลขทุกแถวตรงกับจออังกฤษ · การชี้นำแห่งดินยังปิดใช้งานในจอนี้ · จอข้อมูลเป็นค่าพลังที่ใส่ของแล้ว ไม่ได้ใช้ | **2026-11-01 จอภาษาไทยชุดสอง** (สกิลสับเปลี่ยน · สกิลพิเศษ · แพสซีฟสามจอ · การชี้นำ Lv.1 + ป๊อปอัป Lv.12 · ปลุกพลัง 1–6) ครบทุกสกิลแล้ว · ตัวเลขทุกแถวตรงกับจออังกฤษ · การชี้นำใช้ Lv.12 9.15% อยู่แล้ว · แพสซีฟจอไทยเขียน \"เมื่อโจมตีพิเศษ เอลลี่จะสร้างขนม\" ส่วนจออังกฤษเขียน \"upon performing certain attacks\" ใส่ตามจอแต่ละภาษา · หัวข้อ ขนม / เติมน้ำตาล / ง่วงนอน.. ที่จอไทยแยกบรรทัด เขียนเป็น \"หัวข้อ: …\" · จอไทยเขียน \"หมอนปั๋ง\" ไม่มี ! หนึ่งที่ กับ \"สร้างของว่าง\" ตามจอ · Neutralization DMG = ดาเมจหมดฤทธิ์"
   },
   "statuses": [
     {
