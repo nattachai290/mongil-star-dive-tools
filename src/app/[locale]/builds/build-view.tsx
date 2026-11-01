@@ -1,15 +1,11 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import {
-  AwakenOnly,
   AwakenPills,
   AwakenProvider,
-  AwakenStatsTable,
   AwakenSwitch,
-  AwakenText,
   MemberPanel,
   MemberTab,
-  type StatRow,
 } from "@/components/AwakenSelect";
 import { EffectLine } from "@/components/EffectLine";
 import type { createTranslate } from "@/i18n";
@@ -33,12 +29,9 @@ import { chainAppears } from "@/lib/link-chain-effects";
 import {
   CYCLE_SKILLS,
   artifactFusion,
-  awakenGroups,
   receivedEffects,
   specialCooldownReduction,
-  statSheet,
   unusableReason,
-  type StatSheet,
   type Tagged,
   type UnusableReason,
 } from "@/lib/team-damage";
@@ -191,116 +184,6 @@ function ChainInfo({ chain, appears, locale, t }: { chain: LinkChain; appears: b
       )}
       {!appears && <p className="text-[11px] text-gold">{t("builds.chainNoAppear")}</p>}
     </div>
-  );
-}
-
-/** การ์ดหัวข้อ — ใช้กับค่าพลังรวม */
-function Slot({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <section className="rounded-2xl border border-line bg-surface p-4 sm:p-5">
-      <h3 className="font-display text-base font-semibold">{title}</h3>
-      <div className="mt-3">{children}</div>
-    </section>
-  );
-}
-
-/**
- * ค่าพลังรวม — ของที่ใส่อย่างเดียว เทียบกับรวมบัฟทั้งหมด + รายการบัฟแยกตามที่มา
- * combos: ทุกชุดค่าผสมขั้นปลุกพลัง · ตารางส่งไปแค่ตัวเลข ส่วนบัฟแต่ละกลุ่ม render ครั้งเดียวแล้วซ่อน/โชว์ตามชุดที่เลือก
- * (ผู้เล่นถาม 2026-10-31 ว่าหน้าใหญ่ไป)
- */
-function StatsSlot({
-  char,
-  combos,
-  locale,
-  t,
-}: {
-  char: Character;
-  combos: { key: string; effects: Tagged[] }[];
-  locale: Locale;
-  t: T;
-}) {
-  const roleStat = { fighter: "brawlDmg", assassin: "suppressionDmg", destroyer: "neutralizationDmg", supporter: "supportDmg" }[
-    char.role as string
-  ];
-  const rows: (StatRow & { key: keyof StatSheet })[] = [
-    { label: label("stat", "atk", locale), key: "atk", fmt: "num" },
-    { label: label("stat", "def", locale), key: "def", fmt: "num" },
-    { label: label("stat", "hp", locale), key: "hp", fmt: "num" },
-    { label: label("stat", "critRate", locale), key: "critRate", fmt: "pct" },
-    { label: label("stat", "critDmg", locale), key: "critDmg", fmt: "pct" },
-    {
-      label:
-        locale === "en"
-          ? `${label("element", char.element, locale)} ${t("builds.stats.element")}`
-          : `${t("builds.stats.element")}${label("element", char.element, locale)}`,
-      key: "elementDmg", fmt: "pct" },
-    { label: t("builds.stats.basic"), key: "basicAttackDmg", fmt: "pct" },
-    { label: t("builds.stats.skill"), key: "skillDmg", fmt: "pct" },
-    { label: t("builds.stats.boss"), key: "bossDmg", fmt: "pct" },
-    { label: t("builds.stats.weakness"), key: "weaknessDmg", fmt: "pct" },
-    { label: t("builds.stats.dmgBonus"), key: "dmgBonus", fmt: "pct" },
-    { label: t("builds.stats.mastery"), key: "roleMastery", fmt: "num" },
-    ...(roleStat ? [{ label: label("stat", roleStat, locale), key: "roleDmg" as const, fmt: "pct" as const }] : []),
-    { label: t("builds.stats.specialCd"), key: "specialCd", fmt: "sec" },
-    { label: t("builds.stats.enemyDef"), key: "enemyDefDown", fmt: "pct" },
-    { label: t("builds.stats.enemyRes"), key: "enemyResDown", fmt: "pct" },
-  ];
-
-  const values: Record<string, [number[], number[]]> = {};
-  const counts: Record<string, string> = {};
-  // บัฟ (ไม่ใช่ค่าพลังของของ) จัดกลุ่มตามที่มา — กลุ่มเดียวกันทุกชุดค่าผสม render ครั้งเดียว
-  const groups = new Map<string, { from: LocalizedText; effects: Effect[]; combos: string[] }>();
-  for (const { key, effects } of combos) {
-    const gear = statSheet(char, effects, true);
-    const all = statSheet(char, effects, false);
-    values[key] = [rows.map((r) => gear[r.key]), rows.map((r) => all[r.key])];
-    const mine = new Map<string, { from: LocalizedText; effects: Effect[] }>();
-    for (const x of effects) {
-      if (x.gear) continue;
-      const k = `${x.from.th ?? ""}|${x.from.en ?? ""}`;
-      if (!mine.has(k)) mine.set(k, { from: x.from, effects: [] });
-      mine.get(k)!.effects.push(x.effect);
-    }
-    for (const g of mine.values()) {
-      const id = JSON.stringify(g);
-      if (!groups.has(id)) groups.set(id, { ...g, combos: [] });
-      groups.get(id)!.combos.push(key);
-    }
-    counts[key] = String(mine.size);
-  }
-  const everywhere = combos.length;
-
-  return (
-    <Slot title={t("builds.stats")}>
-      <AwakenStatsTable
-        rows={rows.map(({ label: l, fmt }) => ({ label: l, fmt }))}
-        values={values}
-        head={[t("builds.stats.gear"), t("builds.stats.buffed")]}
-        sec={t("builds.stats.sec")}
-      />
-      <p className="mt-2 text-[11px] text-muted">{t("builds.stats.note")}</p>
-      {groups.size > 0 && (
-        <details className="mt-3 border-t border-line pt-2">
-          <summary className="cursor-pointer text-xs font-semibold text-ink-2">
-            {t("builds.buffs")} (<AwakenText values={counts} />)
-          </summary>
-          <ul className="mt-2 space-y-3">
-            {[...groups.values()].map((g, i) => {
-              const body = (
-                <>
-                  <p className="text-xs font-semibold">{name(g.from, locale, "")}</p>
-                  <Effects effects={g.effects} locale={locale} />
-                </>
-              );
-              return (
-                <li key={i}>{g.combos.length === everywhere ? body : <AwakenOnly combos={g.combos}>{body}</AwakenOnly>}</li>
-              );
-            })}
-          </ul>
-        </details>
-      )}
-    </Slot>
   );
 }
 
@@ -612,19 +495,18 @@ function combos(groups: [number, number][][]): number[][] {
  * บิ้วหนึ่งทีม (หน้าแบบใหม่ 2026-10-31 ตาม mockup ที่ผู้เล่นตกลง)
  * หัว: ชื่อทีม + ป้ายตีจุดอ่อน + อาหาร · การ์ดตัวละคร 3 ใบ (กดเลือก + ปุ่มขั้นปลุกพลังรายตัว) · ของของตัวที่เลือก
  * ขั้นที่ให้ผลเหมือนกันรวมเป็นตัวเลือกเดียว · ของ render ครั้งเดียวต่อ "ของชุดเดียวกัน + สีเทาเหมือนกัน"
- * ค่าพลังรวม render ต่อชุดค่าผสม แล้วฝั่งเบราว์เซอร์แค่สลับว่าโชว์อันไหน
  */
 export function BuildView({ b, locale, t }: { b: (typeof BUILDS)[number]; locale: Locale; t: T }) {
   const first = b.loadouts[0];
   const chars = first.members.map((m) => characterById(m.characterId));
-  // ตัวหลักต้องแยกขั้นที่บิ้วจัดของชุดใหม่ด้วย
-  const groups = chars.map((c, i) => awakenGroups(c, i === 0 ? b.loadouts.map((x) => x.awaken) : []));
+  // ปุ่มปลุกพลังมีแค่ของตัวหลัก แบ่งตามชุดของ — ขั้นที่ใส่ของ/มอนชุดเดียวกันรวมเป็นปุ่มเดียว (ผู้เล่นสั่ง 2026-11-01)
+  // เช่น Gabi 0–3 · 4–5 · 6 · ทั้งทีมถือว่าอยู่ขั้นเดียวกับตัวหลัก (ของแต่ละชุดจัดแบบนั้น) · ไม่โชว์ค่าพลังรวมแล้ว
+  const starts = [...new Set(b.loadouts.map((x) => x.awaken))].sort((x, y) => x - y);
+  const mainRanges: [number, number][] = starts.map((s, k) => [s, (starts[k + 1] ?? 7) - 1]);
+  const groups: [number, number][][] = chars.map((_, i) => (i === 0 ? mainRanges : [[0, 6]]));
   const groupOf = (i: number, stage: number) => groups[i].find(([s, e]) => stage >= s && stage <= e)![0];
   const initial = first.members.map((m, i) => groupOf(i, m.awaken ?? first.awaken));
 
-  const gearPick: Record<string, string> = {};
-  const statsByGear: Record<string, { key: string; effects: Tagged[] }[]> = {};
-  const gearLo: Record<string, BuildLoadout> = {};
   // ของรายตัว: คีย์ = ของที่ใส่ + คูลดาวน์ที่ลดได้ (สีเทา) + มอนซ้ำในทีม + เงื่อนไขทีม
   const memberPick: Record<string, string>[] = first.members.map(() => ({}));
   const memberPanels: Record<string, ReactNode>[] = first.members.map(() => ({}));
@@ -638,14 +520,10 @@ export function BuildView({ b, locale, t }: { b: (typeof BUILDS)[number]; locale
     const lo: BuildLoadout = {
       ...base,
       awaken: combo[0],
-      members: base.members.map((m, i) => ({ ...m, awaken: combo[i] ?? combo[0] })),
+      members: base.members.map((m) => ({ ...m, awaken: combo[0] })),
     };
-    const received = receivedEffects(lo);
     // สีเทาขึ้นกับคูลดาวน์ที่ลดได้ — ปลุกพลังที่ลดคูลดาวน์จึงอาจเปลี่ยนส่วนของที่ใส่ด้วย
-    const gearKey = [baseIdx, ...received.map((r) => specialCooldownReduction(r.effects))].join("|");
-    gearPick[key] = gearKey;
-    gearLo[gearKey] ??= lo;
-    (statsByGear[gearKey] ??= []).push({ key, effects: received[0]?.effects ?? [] });
+    const received = receivedEffects(lo);
     const dup = dupMonsters(lo);
     dupPick[key] = dup.size > 0 ? "dup" : "none";
     lo.members.forEach((m, i) => {
@@ -661,12 +539,7 @@ export function BuildView({ b, locale, t }: { b: (typeof BUILDS)[number]; locale
   }
 
   const options = groups.map((g) => g.map(([s, e]) => [s, s === e ? String(s) : `${s}–${e}`] as [number, string]));
-  const pills = options.map((o, i) => <AwakenPills key={i} member={i} label={t("builds.awaken")} options={o} />);
-  const statsPanels: Record<string, ReactNode> = {};
-  for (const [gearKey, lo] of Object.entries(gearLo)) {
-    const main = characterById(lo.members[0].characterId);
-    statsPanels[gearKey] = main && <StatsSlot char={main} combos={statsByGear[gearKey]} locale={locale} t={t} />;
-  }
+  const pills = options.map((o, i) => (i === 0 && o.length > 1 ? <AwakenPills key={i} member={i} label={t("builds.awaken")} options={o} /> : null));
 
   const team = first.members.flatMap((m) => characterById(m.characterId) ?? []);
   const foodWhy: Why = (e) =>
@@ -712,12 +585,12 @@ export function BuildView({ b, locale, t }: { b: (typeof BUILDS)[number]; locale
           </div>
         </header>
 
-        <div className="grid grid-cols-3 gap-2 sm:gap-4">
+        <div className="grid grid-cols-3 items-start gap-2 sm:gap-4">
           {first.members.map((m, i) => {
             const c = chars[i];
             const img = characterImage(m.characterId);
             return (
-              <MemberTab key={m.characterId} member={i} footer={<div className="hidden sm:block">{pills[i]}</div>}>
+              <MemberTab key={m.characterId} member={i} footer={pills[i] ? <div className="hidden sm:block">{pills[i]}</div> : undefined}>
                 {img ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img src={img} alt="" width={64} height={64} className="size-12 shrink-0 rounded-xl object-cover sm:size-16" />
@@ -756,17 +629,12 @@ export function BuildView({ b, locale, t }: { b: (typeof BUILDS)[number]; locale
                       </Link>
                     </h3>
                     <span className="ms-auto text-xs text-muted">{t("builds.dimHint")}</span>
-                    <div className="w-full sm:hidden">{pills[i]}</div>
+                    {pills[i] && <div className="w-full sm:hidden">{pills[i]}</div>}
                   </header>
                   <AwakenSwitch panels={memberPanels[i]} pick={memberPick[i]} />
                   {/* ตัวแทนคิดจากของชุดแรกของบิ้ว — render ครั้งเดียว */}
                   {subs && <SubstitutesFor lo={first} replaces={mem.characterId} locale={locale} t={t} />}
                 </section>
-                {i === 0 && (
-                  <aside className="min-w-0 flex-[1_1_320px]">
-                    <AwakenSwitch panels={statsPanels} pick={gearPick} />
-                  </aside>
-                )}
               </div>
             </MemberPanel>
           );
