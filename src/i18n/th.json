@@ -188,5 +188,6 @@
   "tierList.incomplete": "ตัวเลขสกิลบางท่ายังไม่ครบถึงเลเวล 12 คะแนนจึงต่ำกว่าจริง",
   "builds.subsShort": "ใช้แทนได้",
   "builds.subPanel": "{sub} — ใช้แทน{name}",
-  "builds.subClose": "ปิด"
+  "builds.subClose": "ปิด",
+  "builds.unusable.elementBoost": "ใช้ไม่ได้: ไม่ได้รับบัฟดาเมจธาตุนี้"
 }

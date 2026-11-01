@@ -61,7 +61,8 @@
             "note": {
               "th": "หินอัคนีสลัก · เมื่อได้รับเอฟเฟกต์เพิ่มดาเมจธาตุไฟในขณะที่มีเอฟเฟกต์หินอัคนี",
               "en": "Inscribed Flamestone · gaining a Fire DMG Boost while Flamestone is active"
-            }
+            },
+            "requiresElementBoost": "fire"
           }
         },
         {
@@ -76,7 +77,8 @@
             "note": {
               "th": "หินอัคนีสลัก · เมื่อได้รับเอฟเฟกต์เพิ่มดาเมจธาตุไฟในขณะที่มีเอฟเฟกต์หินอัคนี",
               "en": "Inscribed Flamestone · gaining a Fire DMG Boost while Flamestone is active"
-            }
+            },
+            "requiresElementBoost": "fire"
           }
         }
       ]
@@ -121,7 +123,8 @@
             "note": {
               "th": "หินอัคนีสลัก · เมื่อได้รับเอฟเฟกต์เพิ่มดาเมจธาตุไฟในขณะที่มีเอฟเฟกต์หินอัคนี",
               "en": "Inscribed Flamestone · gaining a Fire DMG Boost while Flamestone is active"
-            }
+            },
+            "requiresElementBoost": "fire"
           }
         },
         {
@@ -136,7 +139,8 @@
             "note": {
               "th": "หินอัคนีสลัก · เมื่อได้รับเอฟเฟกต์เพิ่มดาเมจธาตุไฟในขณะที่มีเอฟเฟกต์หินอัคนี",
               "en": "Inscribed Flamestone · gaining a Fire DMG Boost while Flamestone is active"
-            }
+            },
+            "requiresElementBoost": "fire"
           }
         }
       ]

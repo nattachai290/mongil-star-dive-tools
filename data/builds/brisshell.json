@@ -139,9 +139,9 @@
         {
           "characterId": "ellie",
           "artifacts": [
-            "exquisite-dragon-fire",
             "serpent-dragons-white-scale",
-            "stabilized-superconductor"
+            "stabilized-superconductor",
+            "dreaming-adventurer"
           ],
           "equipment": {
             "headgear": "gourmands-hat",
@@ -947,9 +947,9 @@
         {
           "characterId": "ellie",
           "artifacts": [
-            "exquisite-dragon-fire",
             "serpent-dragons-white-scale",
-            "stabilized-superconductor"
+            "stabilized-superconductor",
+            "dreaming-adventurer"
           ],
           "equipment": {
             "headgear": "gourmands-hat",

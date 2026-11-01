@@ -464,5 +464,16 @@ check("yes แปะป้ายสองภาษา", linkableBadge("yes")?.th
   for (const g of ["dps", "support"] as const) check(`กลุ่ม ${g} มี tier 0`, list.some((e) => e.group === g && e.ranges.some((r) => r.tier === "0")));
 }
 
+// ---------- บัฟที่ต้องได้บัฟดาเมจธาตุก่อน (condition.requiresElementBoost) ----------
+{
+  // ปราณมังกรที่ลุกโชน: หินอัคนีสลัก ATK +30% ต้องได้บัฟดาเมจไฟ — Ellie (ดิน) ไม่มี · Flare มี Dragon's Breath
+  const atk30 = (id: string) =>
+    receivedEffects(buildLoadout.parse({ awaken: 0, members: [{ characterId: id, artifacts: ["exquisite-dragon-fire"] }] }))[0].effects.some(
+      (t) => t.effect.stat === "atk" && t.effect.condition?.requiresElementBoost === "fire",
+    );
+  check("ไม่มีบัฟดาเมจไฟ ไม่ได้หินอัคนีสลัก (Ellie)", !atk30("ellie"));
+  check("มีบัฟดาเมจไฟ ได้หินอัคนีสลัก (Flare)", atk30("flare"));
+}
+
 console.log(failed === 0 ? "\nผ่านทั้งหมด\n" : `\nไม่ผ่าน ${failed} ข้อ\n`);
 if (failed > 0) process.exit(1);

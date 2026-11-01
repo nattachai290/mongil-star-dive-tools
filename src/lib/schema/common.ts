@@ -188,6 +188,11 @@ export const effect = z
          */
         teammatesOnly: z.literal(true).optional(),
         /**
+         * ทำงานเมื่อตัวที่ใส่ "ได้รับบัฟดาเมจธาตุนี้" (เอฟเฟกต์ ไม่ใช่ค่าพลังติดของ) เช่น หินอัคนีสลักของ ปราณมังกรที่ลุกโชน
+         * "gaining a Fire DMG Boost" · ตัวคำนวณตัดออกถ้าไม่มีบัฟดาเมจธาตุนั้นเลย (ผู้เล่นเจอ Ellie ทีมดินได้ ATK +30% 2026-11-01)
+         */
+        requiresElementBoost: vocabEnum("damageType").optional(),
+        /**
          * ค่าของเอฟเฟกต์แปลงจากค่าอื่นของ "เจ้าของเอฟเฟกต์" = ค่าต้นทาง × ratio% แต่ไม่เกิน value (ค่าสูงสุดบนจอ · ไม่มีเพดาน = ไม่ใส่ value)
          * stat ต้นทาง: dmgDealt + damageType (ดาเมจธาตุที่ได้รับ) · critRate · critDmg · hp (ค่าพลังรวม) · ดาเมจบทบาท (supportDmg ฯลฯ)
          * เช่น แพสซีฟ Francis: Summer Dive! "ATK increases by an amount equal to any received Earth DMG Boosts" สูงสุด 25%

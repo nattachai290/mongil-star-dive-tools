@@ -542,9 +542,9 @@
           "member": {
             "characterId": "reina",
             "artifacts": [
-              "exquisite-dragon-fire",
               "serpent-dragons-white-scale",
-              "stabilized-superconductor"
+              "stabilized-superconductor",
+              "dreaming-adventurer"
             ],
             "equipment": {
               "headgear": "spirit-kings-coronet",
