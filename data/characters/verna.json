@@ -1,7 +1,8 @@
 {
   "id": "verna",
   "name": {
-    "en": "Verna"
+    "en": "Verna",
+    "th": "เวอร์นา"
   },
   "rarity": 4,
   "element": "fire",
@@ -64,10 +65,12 @@
     {
       "stage": 1,
       "name": {
-        "en": "Zero Tolerance of Injustice"
+        "en": "Zero Tolerance of Injustice",
+        "th": "ไม่อาจทนต่ออธรรม"
       },
       "desc": {
-        "en": "Using Verna's Special Skill immediately activates her Passive Trait effects. / Her Special Skill's range changes, and its total DMG increases by 20%."
+        "en": "Using Verna's Special Skill immediately activates her Passive Trait effects. / Her Special Skill's range changes, and its total DMG increases by 20%.",
+        "th": "เมื่อใช้สกิลพิเศษ จะปรับใช้เอฟเฟกต์แพสซีฟทันที / อีกทั้งเปลี่ยนขอบเขตของสกิลพิเศษ และเพิ่มปริมาณดาเมจรวม 20%"
       },
       "effects": [
         {
@@ -91,10 +94,12 @@
     {
       "stage": 2,
       "name": {
-        "en": "Running Ever Forward!"
+        "en": "Running Ever Forward!",
+        "th": "มองแค่ข้างหน้าแล้ววิ่งไปเลย!"
       },
       "desc": {
-        "en": "A 20% Crit Rate boost is added to Verna's Passive Trait effects and their duration increases by 2s."
+        "en": "A 20% Crit Rate boost is added to Verna's Passive Trait effects and their duration increases by 2s.",
+        "th": "เพิ่มเอฟเฟกต์เพิ่มอัตราคริติคอลของแพสซีฟ 20% และเพิ่มเวลาแสดงผล 2 วินาที"
       },
       "effects": [
         {
@@ -116,10 +121,12 @@
     {
       "stage": 3,
       "name": {
-        "en": "Fervent Heart"
+        "en": "Fervent Heart",
+        "th": "จิตใจที่ร้อนรุ่ม"
       },
       "desc": {
-        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%.",
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจโจมตีพื้นฐาน 6%"
       },
       "effects": [
         {
@@ -710,8 +717,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Fighter · Fire · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวปกติ ไม่ใช่ Verna: Summer Dive! (คนละไฟล์ verna-summer-dive) | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,063 · DEF 653 · HP 10,154 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,855 · DEF 580 · HP 8,830 · Crit 5% / 50%** — ตรงกับ Cloud (4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Brawl DMG Boost 11.59% · Fighter 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · **Fire DMG Boost 0.7% ไม่เก็บ** (ไม่ได้มาจากอาหาร ตัว Preview ไม่มีบรรทัดนี้ — แบบเดียวกับ Ice DMG 1.3% ของ Narae / Isabella) | ปลุกพลังขั้น 1–3 (บัญชีนี้ปลุกพลังครบหกขั้น) | **2026-10-22 รอบสาม** ปลุกพลังขั้น 4–6 → ครบหกขั้น · effects: ขั้น 3 Basic +6% · ขั้น 5 Special +6% · ขั้นอื่นเก็บเป็นข้อความ | **2026-10-22 รอบสี่ — สกิลบนจอบัญชีนี้เป็น \"Level 1 +4\" = Lv.5 (ยังไม่ได้อัปสกิล มีแค่โบนัสปลุกพลัง +4) ไม่ใช่ Lv.12 / 16 → ค่าเก็บลงช่อง scaling 5** · หน้าเว็บจะแสดงค่า Lv.5 จนกว่าจะได้จอ Lv.12+ (Preview หรือบัญชีที่อัปแล้ว) | Basic Sword of Justice (Physical · แปดแถว) · Switch Sword Smash (89.6%) · Passive Fiery Spirit · Guidance of Fire Will of Kindled Fire: **ค่า Lv.12 = 7.1% จากป๊อปอัป Skill Info (Lv. 2 >> Lv. 12)** ไม่มีจุดท้ายประโยคตามจอ | **2026-10-22 รอบห้า** Special Boomerang Sword (Physical · Lv.5 · 119.8% สองท่า · คูลดาวน์ 11.7 วินาที) · Ultimate Flame Cutter (Lv.5 · 750.8%) · Effect Details Fire Affliction · จอหลัก Guidance of Fire Lv.2 = 6.1% (ค่าที่เก็บเป็น Lv.12 = 7.1% จากป๊อปอัป) | ยังไม่ได้อ่าน: ค่า Lv.12 ของสกิลทั้งสี่ช่อง (ต้องใช้จอ Preview หรือบัญชีที่อัปสกิลแล้ว) · จอไทยทั้งหมด | **2026-10-31 ผู้เล่นสั่งไล่ใส่บัฟที่เป็นข้อความทั้งหมด** ใส่ effect จากข้อความ/ตารางบนจอเดิม (ไม่ได้อ่านจอใหม่): A1, A2, A6, passive · \"X เท่า\" นับเป็น +100% ต่อเท่าตามที่ผู้เล่นยืนยันกับกาบี้ · ท่าที่ตีเพิ่ม/จำนวนครั้งเพิ่มใช้ bonusDmg · บัฟแปลงค่าใช้ condition.convertFrom"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Fighter · Fire · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวปกติ ไม่ใช่ Verna: Summer Dive! (คนละไฟล์ verna-summer-dive) | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 2,063 · DEF 653 · HP 10,154 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,855 · DEF 580 · HP 8,830 · Crit 5% / 50%** — ตรงกับ Cloud (4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Brawl DMG Boost 11.59% · Fighter 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · **Fire DMG Boost 0.7% ไม่เก็บ** (ไม่ได้มาจากอาหาร ตัว Preview ไม่มีบรรทัดนี้ — แบบเดียวกับ Ice DMG 1.3% ของ Narae / Isabella) | ปลุกพลังขั้น 1–3 (บัญชีนี้ปลุกพลังครบหกขั้น) | **2026-10-22 รอบสาม** ปลุกพลังขั้น 4–6 → ครบหกขั้น · effects: ขั้น 3 Basic +6% · ขั้น 5 Special +6% · ขั้นอื่นเก็บเป็นข้อความ | **2026-10-22 รอบสี่ — สกิลบนจอบัญชีนี้เป็น \"Level 1 +4\" = Lv.5 (ยังไม่ได้อัปสกิล มีแค่โบนัสปลุกพลัง +4) ไม่ใช่ Lv.12 / 16 → ค่าเก็บลงช่อง scaling 5** · หน้าเว็บจะแสดงค่า Lv.5 จนกว่าจะได้จอ Lv.12+ (Preview หรือบัญชีที่อัปแล้ว) | Basic Sword of Justice (Physical · แปดแถว) · Switch Sword Smash (89.6%) · Passive Fiery Spirit · Guidance of Fire Will of Kindled Fire: **ค่า Lv.12 = 7.1% จากป๊อปอัป Skill Info (Lv. 2 >> Lv. 12)** ไม่มีจุดท้ายประโยคตามจอ | **2026-10-22 รอบห้า** Special Boomerang Sword (Physical · Lv.5 · 119.8% สองท่า · คูลดาวน์ 11.7 วินาที) · Ultimate Flame Cutter (Lv.5 · 750.8%) · Effect Details Fire Affliction · จอหลัก Guidance of Fire Lv.2 = 6.1% (ค่าที่เก็บเป็น Lv.12 = 7.1% จากป๊อปอัป) | ยังไม่ได้อ่าน: ค่า Lv.12 ของสกิลทั้งสี่ช่อง (ต้องใช้จอ Preview หรือบัญชีที่อัปสกิลแล้ว) · จอไทยทั้งหมด | **2026-10-31 ผู้เล่นสั่งไล่ใส่บัฟที่เป็นข้อความทั้งหมด** ใส่ effect จากข้อความ/ตารางบนจอเดิม (ไม่ได้อ่านจอใหม่): A1, A2, A6, passive · \"X เท่า\" นับเป็น +100% ต่อเท่าตามที่ผู้เล่นยืนยันกับกาบี้ · ท่าที่ตีเพิ่ม/จำนวนครั้งเพิ่มใช้ bonusDmg · บัฟแปลงค่าใช้ condition.convertFrom | **2026-11-01 จอภาษาไทย** (ข้อมูล · ปลุกพลัง 1–3) ได้ชื่อไทย เวอร์นา · ปลุกพลัง 1–3 · จอข้อมูลเป็นค่าพลังที่ใส่ของแล้ว ไม่ได้ใช้ · ยังขาดจอไทยของทุกสกิล ปลุกพลัง 4–6 และสถานะ Fire Affliction"
   }
 }
