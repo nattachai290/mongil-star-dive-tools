@@ -14,7 +14,7 @@
           "artifacts": [
             "blazing-kumiho",
             "savvy-investment",
-            "clashing-runaway-train"
+            "to-whom-the-dokkaebi-kneel"
           ],
           "equipment": {
             "headgear": "gourmands-hat",
@@ -65,7 +65,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "dmg-fire",
+                  "id": "crit-dmg",
                   "grade": "gold"
                 }
               ]
@@ -198,7 +198,7 @@
               ]
             },
             {
-              "id": "the-great-unknown",
+              "id": "avardan",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -213,13 +213,13 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-dmg",
+                  "id": "dmg-fire",
                   "grade": "gold"
                 }
               ]
             },
             {
-              "id": "tealtaur",
+              "id": "the-great-unknown",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -266,7 +266,7 @@
             "special",
             "ultimate"
           ],
-          "linkChain": "weathered-hoof"
+          "linkChain": "golems-gem"
         },
         {
           "characterId": "vivian",
@@ -309,27 +309,6 @@
           },
           "monsterlings": [
             {
-              "id": "avardan",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-fire",
-                  "grade": "gold"
-                }
-              ]
-            },
-            {
               "id": "silbinator",
               "traits": [
                 {
@@ -352,6 +331,27 @@
             },
             {
               "id": "hahnul",
+              "traits": [
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-fire",
+                  "grade": "gold"
+                }
+              ]
+            },
+            {
+              "id": "tealtaur",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -398,7 +398,7 @@
             "special",
             "ultimate"
           ],
-          "linkChain": "giant-tigers-claw"
+          "linkChain": "weathered-hoof"
         }
       ],
       "substitutes": [
@@ -466,7 +466,7 @@
                 ]
               },
               {
-                "id": "the-great-unknown",
+                "id": "avardan",
                 "traits": [
                   {
                     "id": "atk",
@@ -487,7 +487,7 @@
                 ]
               },
               {
-                "id": "tealtaur",
+                "id": "the-great-unknown",
                 "traits": [
                   {
                     "id": "atk",
@@ -534,7 +534,7 @@
               "special",
               "ultimate"
             ],
-            "linkChain": "weathered-hoof"
+            "linkChain": "golems-gem"
           }
         },
         {
@@ -601,7 +601,7 @@
                 ]
               },
               {
-                "id": "the-great-unknown",
+                "id": "avardan",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -622,7 +622,7 @@
                 ]
               },
               {
-                "id": "tealtaur",
+                "id": "the-great-unknown",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -637,7 +637,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "crit-dmg",
+                    "id": "dmg-fire",
                     "grade": "gold"
                   }
                 ]
@@ -669,7 +669,7 @@
               "special",
               "ultimate"
             ],
-            "linkChain": "weathered-hoof"
+            "linkChain": "golems-gem"
           }
         },
         {
@@ -715,27 +715,6 @@
             },
             "monsterlings": [
               {
-                "id": "avardan",
-                "traits": [
-                  {
-                    "id": "special-skill-cooldown",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "dmg-vs-boss",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "dmg-ice",
-                    "grade": "gold"
-                  },
-                  {
-                    "id": "crit-dmg",
-                    "grade": "gold"
-                  }
-                ]
-              },
-              {
                 "id": "silbinator",
                 "traits": [
                   {
@@ -758,6 +737,27 @@
               },
               {
                 "id": "hahnul",
+                "traits": [
+                  {
+                    "id": "special-skill-cooldown",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "dmg-vs-boss",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "dmg-ice",
+                    "grade": "gold"
+                  },
+                  {
+                    "id": "crit-dmg",
+                    "grade": "gold"
+                  }
+                ]
+              },
+              {
+                "id": "tealtaur",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -804,7 +804,7 @@
               "special",
               "ultimate"
             ],
-            "linkChain": "giant-tigers-claw"
+            "linkChain": "weathered-hoof"
           }
         },
         {
@@ -850,7 +850,7 @@
             },
             "monsterlings": [
               {
-                "id": "avardan",
+                "id": "silbinator",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -871,7 +871,7 @@
                 ]
               },
               {
-                "id": "silbinator",
+                "id": "hahnul",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -892,7 +892,7 @@
                 ]
               },
               {
-                "id": "hahnul",
+                "id": "tealtaur",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -939,7 +939,7 @@
               "special",
               "ultimate"
             ],
-            "linkChain": "golems-gem"
+            "linkChain": "weathered-hoof"
           }
         }
       ]
@@ -1141,7 +1141,139 @@
               ]
             },
             {
+              "id": "avardan",
+              "traits": [
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-dmg",
+                  "grade": "gold"
+                }
+              ]
+            },
+            {
               "id": "the-great-unknown",
+              "traits": [
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-dmg",
+                  "grade": "gold"
+                }
+              ]
+            }
+          ],
+          "legendary": {
+            "id": "reginula",
+            "traits": [
+              {
+                "id": "special-skill-cooldown",
+                "grade": "gold"
+              },
+              {
+                "id": "dmg-vs-boss",
+                "grade": "gold"
+              },
+              {
+                "id": "weakness-dmg",
+                "grade": "gold"
+              },
+              {
+                "id": "crit-dmg",
+                "grade": "gold"
+              }
+            ]
+          },
+          "cycle": [
+            "switch",
+            "special",
+            "ultimate"
+          ],
+          "linkChain": "golems-gem"
+        },
+        {
+          "characterId": "vivian",
+          "artifacts": [
+            "unending-finale",
+            "plains-embroidering-dew",
+            "melody-played-on-heartstrings"
+          ],
+          "equipment": {
+            "headgear": "mountain-peak-helm",
+            "chestpiece": "mountain-peak-iron-armor",
+            "gloves": "beast-claws",
+            "footwear": "beastly-footprints"
+          },
+          "substats": {
+            "headgear": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ],
+            "chestpiece": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ],
+            "gloves": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ],
+            "footwear": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ]
+          },
+          "monsterlings": [
+            {
+              "id": "silbinator",
+              "traits": [
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-rate",
+                  "grade": "gold"
+                }
+              ]
+            },
+            {
+              "id": "hahnul",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -1210,138 +1342,6 @@
             "ultimate"
           ],
           "linkChain": "weathered-hoof"
-        },
-        {
-          "characterId": "vivian",
-          "artifacts": [
-            "unending-finale",
-            "plains-embroidering-dew",
-            "melody-played-on-heartstrings"
-          ],
-          "equipment": {
-            "headgear": "mountain-peak-helm",
-            "chestpiece": "mountain-peak-iron-armor",
-            "gloves": "beast-claws",
-            "footwear": "beastly-footprints"
-          },
-          "substats": {
-            "headgear": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ],
-            "chestpiece": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ],
-            "gloves": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ],
-            "footwear": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ]
-          },
-          "monsterlings": [
-            {
-              "id": "avardan",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-rate",
-                  "grade": "gold"
-                }
-              ]
-            },
-            {
-              "id": "silbinator",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-dmg",
-                  "grade": "gold"
-                }
-              ]
-            },
-            {
-              "id": "hahnul",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-dmg",
-                  "grade": "gold"
-                }
-              ]
-            }
-          ],
-          "legendary": {
-            "id": "reginula",
-            "traits": [
-              {
-                "id": "special-skill-cooldown",
-                "grade": "gold"
-              },
-              {
-                "id": "dmg-vs-boss",
-                "grade": "gold"
-              },
-              {
-                "id": "weakness-dmg",
-                "grade": "gold"
-              },
-              {
-                "id": "crit-dmg",
-                "grade": "gold"
-              }
-            ]
-          },
-          "cycle": [
-            "switch",
-            "special",
-            "ultimate"
-          ],
-          "linkChain": "giant-tigers-claw"
         }
       ]
     },
@@ -1542,7 +1542,138 @@
               ]
             },
             {
+              "id": "urgash",
+              "traits": [
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-dmg",
+                  "grade": "gold"
+                }
+              ]
+            },
+            {
               "id": "the-great-unknown",
+              "traits": [
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-dmg",
+                  "grade": "gold"
+                }
+              ]
+            }
+          ],
+          "legendary": {
+            "id": "reginula",
+            "traits": [
+              {
+                "id": "special-skill-cooldown",
+                "grade": "gold"
+              },
+              {
+                "id": "dmg-vs-boss",
+                "grade": "gold"
+              },
+              {
+                "id": "weakness-dmg",
+                "grade": "gold"
+              },
+              {
+                "id": "crit-dmg",
+                "grade": "gold"
+              }
+            ]
+          },
+          "cycle": [
+            "switch",
+            "special",
+            "ultimate"
+          ]
+        },
+        {
+          "characterId": "vivian",
+          "artifacts": [
+            "unending-finale",
+            "a-summer-soaked-in-love",
+            "plains-embroidering-dew"
+          ],
+          "equipment": {
+            "headgear": "mountain-peak-helm",
+            "chestpiece": "mountain-peak-iron-armor",
+            "gloves": "beast-claws",
+            "footwear": "beastly-footprints"
+          },
+          "substats": {
+            "headgear": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ],
+            "chestpiece": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ],
+            "gloves": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ],
+            "footwear": [
+              "critDmg",
+              "critRate",
+              "atk",
+              "hp"
+            ]
+          },
+          "monsterlings": [
+            {
+              "id": "silbinator",
+              "traits": [
+                {
+                  "id": "special-skill-cooldown",
+                  "grade": "gold"
+                },
+                {
+                  "id": "dmg-vs-boss",
+                  "grade": "gold"
+                },
+                {
+                  "id": "weakness-dmg",
+                  "grade": "gold"
+                },
+                {
+                  "id": "crit-rate",
+                  "grade": "gold"
+                }
+              ]
+            },
+            {
+              "id": "avardan",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -1611,138 +1742,6 @@
             "ultimate"
           ],
           "linkChain": "weathered-hoof"
-        },
-        {
-          "characterId": "vivian",
-          "artifacts": [
-            "unending-finale",
-            "a-summer-soaked-in-love",
-            "plains-embroidering-dew"
-          ],
-          "equipment": {
-            "headgear": "mountain-peak-helm",
-            "chestpiece": "mountain-peak-iron-armor",
-            "gloves": "beast-claws",
-            "footwear": "beastly-footprints"
-          },
-          "substats": {
-            "headgear": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ],
-            "chestpiece": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ],
-            "gloves": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ],
-            "footwear": [
-              "critDmg",
-              "critRate",
-              "atk",
-              "hp"
-            ]
-          },
-          "monsterlings": [
-            {
-              "id": "avardan",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-rate",
-                  "grade": "gold"
-                }
-              ]
-            },
-            {
-              "id": "silbinator",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-dmg",
-                  "grade": "gold"
-                }
-              ]
-            },
-            {
-              "id": "gold-digger-moley-mole",
-              "traits": [
-                {
-                  "id": "special-skill-cooldown",
-                  "grade": "gold"
-                },
-                {
-                  "id": "dmg-vs-boss",
-                  "grade": "gold"
-                },
-                {
-                  "id": "weakness-dmg",
-                  "grade": "gold"
-                },
-                {
-                  "id": "crit-dmg",
-                  "grade": "gold"
-                }
-              ]
-            }
-          ],
-          "legendary": {
-            "id": "reginula",
-            "traits": [
-              {
-                "id": "special-skill-cooldown",
-                "grade": "gold"
-              },
-              {
-                "id": "dmg-vs-boss",
-                "grade": "gold"
-              },
-              {
-                "id": "weakness-dmg",
-                "grade": "gold"
-              },
-              {
-                "id": "crit-dmg",
-                "grade": "gold"
-              }
-            ]
-          },
-          "cycle": [
-            "switch",
-            "special",
-            "ultimate"
-          ],
-          "linkChain": "golems-gem"
         }
       ]
     }
