@@ -192,6 +192,11 @@ export const effect = z
          * "gaining a Fire DMG Boost" · ตัวคำนวณตัดออกถ้าไม่มีบัฟดาเมจธาตุนั้นเลย (ผู้เล่นเจอ Ellie ทีมดินได้ ATK +30% 2026-11-01)
          */
         requiresElementBoost: vocabEnum("damageType").optional(),
+        /**
+         * ทำงานเมื่อตัวที่ใส่ "ได้รับบัฟค่านี้" เป็นเอฟเฟกต์ (ค่าพลังติดตัว/ของไม่นับ) เช่น ปีศาจผู้ปรารถนา
+         * "เมื่อเอฟเฟกต์เพิ่มดาเมจกดขี่ปรับใช้" → suppressionDmg (ผู้เล่นบอก 2026-11-01: แบบ Attention Overload ของบรีเซล)
+         */
+        requiresStatBuff: vocabEnum("stat").optional(),
         /** ทำงานเมื่อตัวที่ใส่ "ได้รับบัฟดาเมจสกิล" (dmgDealt ที่ผูกสกิลพิเศษ/สับเปลี่ยน/อัลติเมต) เช่น Savvy Investment */
         requiresSkillBoost: z.literal(true).optional(),
         /** ตัวที่ใส่ต้องมีสถานะนี้ของตัวเอง (ชื่ออังกฤษใน statuses) เช่น "DMG Immunity" ของ เกล็ดขาวของอสรพิษวารี */

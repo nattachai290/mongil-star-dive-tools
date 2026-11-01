@@ -13,8 +13,8 @@
           "characterId": "yeonhwa",
           "artifacts": [
             "hawks-flight",
-            "monstrous-longing",
-            "shadow-lotus"
+            "shadow-lotus",
+            "wind-harboring-broom"
           ],
           "equipment": {
             "headgear": "spirit-kings-coronet",
@@ -408,8 +408,8 @@
             "characterId": "benjamin",
             "artifacts": [
               "hawks-flight",
-              "monstrous-longing",
-              "shadow-lotus"
+              "shadow-lotus",
+              "wind-harboring-broom"
             ],
             "equipment": {
               "headgear": "spirit-kings-coronet",
@@ -955,9 +955,9 @@
         {
           "characterId": "yeonhwa",
           "artifacts": [
-            "monstrous-longing",
             "hawks-flight",
-            "shadow-lotus"
+            "shadow-lotus",
+            "wind-harboring-broom"
           ],
           "equipment": {
             "headgear": "spirit-kings-coronet",
@@ -1029,7 +1029,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "crit-dmg",
+                  "id": "crit-rate",
                   "grade": "gold"
                 }
               ]

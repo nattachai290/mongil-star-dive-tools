@@ -45,7 +45,7 @@
               "th": "เมื่อเอฟเฟกต์เพิ่มดาเมจกดขี่ปรับใช้",
               "en": "when the Suppression DMG Boost is active"
             },
-            "selfMet": true
+            "requiresStatBuff": "suppressionDmg"
           }
         },
         {

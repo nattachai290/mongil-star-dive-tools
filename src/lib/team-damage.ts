@@ -177,9 +177,18 @@ export type UnusableReason =
   | "evasionCounter"
   | "elementBoost"
   | "skillBoost"
+  | "statBuff"
   | "selfStatus"
   | "inflicts"
   | "range";
+
+/** ได้รับบัฟค่า stat เป็นเอฟเฟกต์ (ไม่ใช่ค่าพลังติดตัว/ของ) — ใช้กับ condition.requiresStatBuff */
+export function hasStatBuff(effects: Tagged[], stat: string): boolean {
+  return effects.some(
+    ({ effect: e, gear }) =>
+      !gear && e.kind === "buff" && e.stat === stat && !e.condition?.requiresStatBuff && e.target !== "enemy" && e.target !== "allEnemies",
+  );
+}
 
 /** ได้รับบัฟดาเมจสกิล (dmgDealt ผูกสกิลพิเศษ/สับเปลี่ยน/อัลติเมต) เป็นเอฟเฟกต์ — ใช้กับ condition.requiresSkillBoost */
 export function hasSkillBoost(effects: Tagged[]): boolean {
@@ -549,6 +558,8 @@ export function receivedEffects(
     effects: m.effects.filter((t) => {
       const el = t.effect.condition?.requiresElementBoost;
       if (t.effect.condition?.requiresSkillBoost && !hasSkillBoost(m.effects)) return false;
+      const sb = t.effect.condition?.requiresStatBuff;
+      if (sb && !hasStatBuff(m.effects, sb)) return false;
       return !el || hasElementBoost(m.effects, el);
     }),
   }));

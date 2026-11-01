@@ -35,6 +35,7 @@ import {
   artifactFusion,
   hasElementBoost,
   hasSkillBoost,
+  hasStatBuff,
   receivedEffects,
   specialCooldownReduction,
   unusableReason,
@@ -244,7 +245,9 @@ function GearRows({
         ? "elementBoost"
         : e.condition?.requiresSkillBoost && !hasSkillBoost(effects)
           ? "skillBoost"
-          : undefined));
+          : e.condition?.requiresStatBuff && !hasStatBuff(effects, e.condition.requiresStatBuff)
+            ? "statBuff"
+            : undefined));
   const [art, ...spares] = (mem.artifacts ?? []).flatMap((id) => ARTIFACTS.find((a) => a.id === id) ?? []);
   const fusion = art && artifactFusion(art);
   const chain = LINK_CHAINS.find((x) => x.id === mem.linkChain);

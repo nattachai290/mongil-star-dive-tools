@@ -193,5 +193,6 @@
   "builds.unusable.skillBoost": "ใช้ไม่ได้: ไม่ได้รับบัฟดาเมจสกิล",
   "builds.unusable.selfStatus": "ใช้ไม่ได้: ตัวนี้ไม่มีเอฟเฟกต์ที่ต้องใช้",
   "builds.unusable.inflicts": "ใช้ไม่ได้: สกิลไม่ทำให้ติดสถานะที่ต้องใช้",
-  "builds.unusable.range": "ใช้ไม่ได้: ประเภทระยะไม่ตรง"
+  "builds.unusable.range": "ใช้ไม่ได้: ประเภทระยะไม่ตรง",
+  "builds.unusable.statBuff": "ใช้ไม่ได้: ไม่ได้รับบัฟที่ต้องใช้"
 }

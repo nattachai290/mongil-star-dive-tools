@@ -193,5 +193,6 @@
   "builds.unusable.skillBoost": "Unusable: no Skill DMG Boost received",
   "builds.unusable.selfStatus": "Unusable: this character lacks the required effect",
   "builds.unusable.inflicts": "Unusable: the skill doesn't inflict the required status",
-  "builds.unusable.range": "Unusable: wrong range type"
+  "builds.unusable.range": "Unusable: wrong range type",
+  "builds.unusable.statBuff": "Unusable: the required buff is not received"
 }

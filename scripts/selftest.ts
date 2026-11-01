@@ -489,5 +489,16 @@ check("yes แปะป้ายสองภาษา", linkableBadge("yes")?.th
   check("Superconductor: Cloud สับเปลี่ยนไม่ทำ Freeze ไม่ได้ Crit DMG", !has("cloud", "stabilized-superconductor", "critDmg"));
 }
 
+// ---------- requiresStatBuff ----------
+{
+  // ปีศาจผู้ปรารถนา: ATK +12% ต้องได้บัฟดาเมจกดขี่ — บรีเซลมี (Attention Overload) · Yeonhwa คนเดียวไม่มี
+  const atk12 = (id: string) =>
+    receivedEffects(buildLoadout.parse({ awaken: 0, members: [{ characterId: id, artifacts: ["monstrous-longing"] }] }))[0].effects.some(
+      (t) => t.effect.stat === "atk" && t.effect.condition?.requiresStatBuff === "suppressionDmg",
+    );
+  check("ปีศาจผู้ปรารถนา: บรีเซลได้ ATK +12%", atk12("brisshell"));
+  check("ปีศาจผู้ปรารถนา: Yeonhwa ไม่มีบัฟดาเมจกดขี่ ไม่ได้", !atk12("yeonhwa"));
+}
+
 console.log(failed === 0 ? "\nผ่านทั้งหมด\n" : `\nไม่ผ่าน ${failed} ข้อ\n`);
 if (failed > 0) process.exit(1);
