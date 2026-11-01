@@ -63,6 +63,27 @@ function countMissingLocale(value: unknown, where: string, path: string[] = []) 
   for (const [k, v] of Object.entries(obj)) countMissingLocale(v, where, [...path, k]);
 }
 
+/**
+ * เอฟเฟกต์ของอาร์ติแฟกต์ / เซ็ต / มอน / ลิงก์เชน ที่มีเงื่อนไขเป็นข้อความอย่างเดียว — ตัวคำนวณนับตลอด
+ * ต้องมีเงื่อนไขที่ตัวคำนวณเช็กได้ (requiresElementBoost, requiresSelfStatus, holderRange ฯลฯ)
+ * หรือ selfMet: true (ตรวจแล้วว่าตัวที่ใส่ทำเองได้) — กันไม่ให้นับบัฟที่ทำไม่ได้แบบหินอัคนีสลัก (2026-11-01)
+ */
+function checkUnreviewedConditions(value: unknown, where: string, path: string[] = []) {
+  if (Array.isArray(value)) {
+    value.forEach((v, i) => checkUnreviewedConditions(v, where, [...path, String(i)]));
+    return;
+  }
+  if (typeof value !== "object" || value === null) return;
+  const obj = value as Record<string, unknown>;
+  if ("kind" in obj && "stat" in obj) {
+    const c = obj.condition as Record<string, unknown> | undefined;
+    if (c?.note && Object.keys(c).every((k) => k === "note")) {
+      warn(where, `${path.join(".")} มีเงื่อนไขเป็นข้อความอย่างเดียว — ใส่เงื่อนไขที่ตัวคำนวณเช็กได้ หรือ selfMet: true ถ้าตัวที่ใส่ทำเองได้`);
+    }
+  }
+  for (const [k, v] of Object.entries(obj)) checkUnreviewedConditions(v, where, [...path, k]);
+}
+
 // ---------- 1–2. schema + id ----------
 const parsed: Record<string, Record<string, Record<string, unknown>>> = {};
 
@@ -90,6 +111,7 @@ for (const collection of Object.keys(SCHEMAS) as Collection[]) {
     ids[collection].add(id);
     parsed[collection][id] = doc;
     countMissingLocale(raw, where);
+    if (collection !== "characters" && collection !== "builds") checkUnreviewedConditions(raw, where);
 
     const src = doc.source as { fieldsUnverified?: string[] } | undefined;
     if (src?.fieldsUnverified?.length) {
@@ -242,6 +264,7 @@ if (Array.isArray(setsRaw)) {
       // เซ็ตอยู่นอกลูปหมวด จึงต้องเรียกตรวจภาษาและเก็บไปนับ readIn เอง
       // ไม่งั้นเซ็ตที่มีภาษาเดียวจะผ่านไปเงียบ ๆ ทั้งที่ไฟล์หมวดอื่นโดนเตือน
       countMissingLocale(s, `${where} (${r.data.id})`);
+      checkUnreviewedConditions(s, `${where} (${r.data.id})`);
       setDocs.push(r.data as Record<string, unknown>);
       const src = r.data.source as { fieldsUnverified?: string[] } | undefined;
       if (src?.fieldsUnverified?.length) {

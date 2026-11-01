@@ -46,6 +46,10 @@
             "note": {
               "th": "ระบบตัวนำยวดยิ่ง",
               "en": "Superconducting System"
+            },
+            "requiresSkillInflicts": {
+              "skill": "switch",
+              "status": "Freeze"
             }
           }
         },
@@ -64,8 +68,17 @@
             "note": {
               "th": "ระบบตัวนำยวดยิ่ง · 133.2% ของค่าเพิ่มดาเมจหมดฤทธิ์ สูงสุด 60%",
               "en": "Superconducting System · 133.2% of Neutralization DMG Boost, up to 60%"
+            },
+            "requiresSkillInflicts": {
+              "skill": "switch",
+              "status": "Freeze"
+            },
+            "convertFrom": {
+              "stat": "neutralizationDmg",
+              "ratio": 133.2
             }
-          }
+          },
+          "value": 60
         },
         {
           "kind": "buff",
@@ -80,8 +93,17 @@
             "note": {
               "th": "ในขณะที่มีระบบตัวนำยวดยิ่ง · 81.2% ของค่าเพิ่มดาเมจหมดฤทธิ์ สูงสุด 35% · ลบออกหลังปรับใช้กับสกิลพิเศษ",
               "en": "when Superconducting System is active · 81.2% of Neutralization DMG Boost, up to 35% · applies only to Special Skills, then is removed"
+            },
+            "requiresSkillInflicts": {
+              "skill": "switch",
+              "status": "Freeze"
+            },
+            "convertFrom": {
+              "stat": "neutralizationDmg",
+              "ratio": 81.2
             }
-          }
+          },
+          "value": 35
         }
       ]
     }

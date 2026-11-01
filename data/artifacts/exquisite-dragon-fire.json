@@ -46,7 +46,8 @@
             "note": {
               "th": "หินอัคนี · เมื่อเข้าสู่โจมตีสับเปลี่ยน",
               "en": "Flamestone · Using a Switch Attack"
-            }
+            },
+            "selfMet": true
           }
         },
         {
@@ -108,7 +109,8 @@
             "note": {
               "th": "หินอัคนี · เมื่อเข้าสู่โจมตีสับเปลี่ยน",
               "en": "Flamestone · Using a Switch Attack"
-            }
+            },
+            "selfMet": true
           }
         },
         {

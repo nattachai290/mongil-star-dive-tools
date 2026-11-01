@@ -34,6 +34,7 @@ import {
   CYCLE_SKILLS,
   artifactFusion,
   hasElementBoost,
+  hasSkillBoost,
   receivedEffects,
   specialCooldownReduction,
   unusableReason,
@@ -239,7 +240,11 @@ function GearRows({
     c &&
     ((e) =>
       unusableReason(c, e, cdCut, team) ??
-      (e.condition?.requiresElementBoost && !hasElementBoost(effects, e.condition.requiresElementBoost) ? "elementBoost" : undefined));
+      (e.condition?.requiresElementBoost && !hasElementBoost(effects, e.condition.requiresElementBoost)
+        ? "elementBoost"
+        : e.condition?.requiresSkillBoost && !hasSkillBoost(effects)
+          ? "skillBoost"
+          : undefined));
   const [art, ...spares] = (mem.artifacts ?? []).flatMap((id) => ARTIFACTS.find((a) => a.id === id) ?? []);
   const fusion = art && artifactFusion(art);
   const chain = LINK_CHAINS.find((x) => x.id === mem.linkChain);

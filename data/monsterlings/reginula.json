@@ -32,7 +32,8 @@
         "note": {
           "th": "เอฟเฟกต์จันทร์เสี้ยว",
           "en": "Crescent Moon"
-        }
+        },
+        "selfMet": true
       }
     },
     {
@@ -51,7 +52,8 @@
         "note": {
           "th": "พระจันทร์เต็มดวง",
           "en": "Full Moon"
-        }
+        },
+        "selfMet": true
       }
     }
   ],

@@ -189,5 +189,9 @@
   "builds.subsShort": "Alternatives",
   "builds.subPanel": "{sub} — in place of {name}",
   "builds.subClose": "Close",
-  "builds.unusable.elementBoost": "Unusable: no DMG Boost of this element"
+  "builds.unusable.elementBoost": "Unusable: no DMG Boost of this element",
+  "builds.unusable.skillBoost": "Unusable: no Skill DMG Boost received",
+  "builds.unusable.selfStatus": "Unusable: this character lacks the required effect",
+  "builds.unusable.inflicts": "Unusable: the skill doesn't inflict the required status",
+  "builds.unusable.range": "Unusable: wrong range type"
 }

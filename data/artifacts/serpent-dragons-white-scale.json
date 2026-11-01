@@ -46,7 +46,8 @@
             "note": {
               "th": "เกล็ดขาว",
               "en": "White Scale"
-            }
+            },
+            "selfMet": true
           }
         },
         {
@@ -64,7 +65,8 @@
             "note": {
               "th": "เมื่อเอฟเฟกต์ไม่สนดาเมจปรับใช้งานขณะที่มีเอฟเฟกต์เกล็ดขาว",
               "en": "if DMG Immunity is applied while White Scale is active"
-            }
+            },
+            "requiresSelfStatus": "DMG Immunity"
           }
         }
       ]
@@ -95,7 +97,8 @@
             "note": {
               "th": "เกล็ดขาว",
               "en": "White Scale"
-            }
+            },
+            "selfMet": true
           }
         },
         {
@@ -113,7 +116,8 @@
             "note": {
               "th": "เมื่อเอฟเฟกต์ไม่สนดาเมจปรับใช้งานขณะที่มีเอฟเฟกต์เกล็ดขาว",
               "en": "if DMG Immunity is applied while White Scale is active"
-            }
+            },
+            "requiresSelfStatus": "DMG Immunity"
           }
         }
       ]

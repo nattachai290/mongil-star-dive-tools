@@ -47,7 +47,8 @@
             "note": {
               "th": "บันไดเสียง · เมื่อทับซ้อน เวลาแสดงผลจะถูกรีเฟรช",
               "en": "Musical Scale · New stacks reset the duration"
-            }
+            },
+            "selfMet": true
           }
         }
       ]

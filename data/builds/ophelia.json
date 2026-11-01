@@ -192,7 +192,7 @@
                   "grade": "gold"
                 },
                 {
-                  "id": "atk",
+                  "id": "dmg-ice",
                   "grade": "gold"
                 }
               ]
@@ -219,7 +219,7 @@
               ]
             },
             {
-              "id": "scarlet-queen",
+              "id": "golden-fist-dude",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -265,8 +265,7 @@
             "switch",
             "special",
             "ultimate"
-          ],
-          "linkChain": "queens-crimson-tears"
+          ]
         },
         {
           "characterId": "narae",
@@ -542,8 +541,8 @@
           "member": {
             "characterId": "cloud",
             "artifacts": [
-              "stabilized-superconductor",
               "serpent-dragons-white-scale",
+              "stabilized-superconductor",
               "dreaming-adventurer"
             ],
             "equipment": {
@@ -595,7 +594,7 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "crit-rate",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]
@@ -616,13 +615,13 @@
                     "grade": "gold"
                   },
                   {
-                    "id": "crit-rate",
+                    "id": "crit-dmg",
                     "grade": "gold"
                   }
                 ]
               },
               {
-                "id": "scarlet-queen",
+                "id": "black-hauntstack",
                 "traits": [
                   {
                     "id": "special-skill-cooldown",
@@ -669,7 +668,7 @@
               "special",
               "ultimate"
             ],
-            "linkChain": "queens-crimson-tears"
+            "linkChain": "youkais-giant-charm"
           }
         },
         {
@@ -1162,7 +1161,7 @@
               ]
             },
             {
-              "id": "scarlet-queen",
+              "id": "golden-fist-dude",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -1208,8 +1207,7 @@
             "switch",
             "special",
             "ultimate"
-          ],
-          "linkChain": "queens-crimson-tears"
+          ]
         },
         {
           "characterId": "narae",
@@ -1563,7 +1561,7 @@
               ]
             },
             {
-              "id": "urgash",
+              "id": "golden-fist-dude",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -1963,7 +1961,7 @@
               ]
             },
             {
-              "id": "urgash",
+              "id": "golden-fist-dude",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -2015,8 +2013,8 @@
           "characterId": "narae",
           "artifacts": [
             "plains-embroidering-dew",
-            "a-summer-soaked-in-love",
-            "melody-played-on-heartstrings"
+            "melody-played-on-heartstrings",
+            "a-summer-soaked-in-love"
           ],
           "equipment": {
             "headgear": "dark-soloists-helm",
@@ -2321,7 +2319,7 @@
           },
           "monsterlings": [
             {
-              "id": "golden-fist-dude",
+              "id": "el-dorado-guardian",
               "traits": [
                 {
                   "id": "special-skill-cooldown",
@@ -2363,7 +2361,7 @@
               ]
             },
             {
-              "id": "el-dorado-guardian",
+              "id": "golden-fist-dude",
               "traits": [
                 {
                   "id": "special-skill-cooldown",

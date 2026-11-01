@@ -169,7 +169,29 @@ const ownsType = (char: Character, t: string | undefined) => !t || t === char.el
  * - element: บัฟดาเมจธาตุอื่นให้ตัวเอง หรือต้องตีด้วยธาตุอื่นถึงจะติด (เช่น ดาเมจน้ำแข็งบนกาบิธาตุดิน)
  * - recast: ต้องใช้สกิลพิเศษซ้ำเร็วกว่าคูลดาวน์ของตัวละคร
  */
-export type UnusableReason = "element" | "recast" | "attackElement" | "teamElement" | "evasionCounter" | "elementBoost";
+export type UnusableReason =
+  | "element"
+  | "recast"
+  | "attackElement"
+  | "teamElement"
+  | "evasionCounter"
+  | "elementBoost"
+  | "skillBoost"
+  | "selfStatus"
+  | "inflicts"
+  | "range";
+
+/** ได้รับบัฟดาเมจสกิล (dmgDealt ผูกสกิลพิเศษ/สับเปลี่ยน/อัลติเมต) เป็นเอฟเฟกต์ — ใช้กับ condition.requiresSkillBoost */
+export function hasSkillBoost(effects: Tagged[]): boolean {
+  return effects.some(
+    ({ effect: e, gear }) =>
+      !gear &&
+      e.kind === "buff" &&
+      e.stat === "dmgDealt" &&
+      !e.condition?.requiresSkillBoost &&
+      (e.scopes ?? []).some((x) => x === "specialSkill" || x === "switchSkill" || x === "ultimate"),
+  );
+}
 
 /** ได้รับบัฟดาเมจธาตุ el เป็นเอฟเฟกต์ (ไม่ใช่ค่าพลังติดของ) — ใช้กับ condition.requiresElementBoost */
 export function hasElementBoost(effects: Tagged[], el: string): boolean {
@@ -196,6 +218,12 @@ export function unusableReason(
     return "attackElement";
   }
   if (e.target === "self" && e.kind === "buff" && !ownsType(char, e.damageType)) return "element";
+  const c = e.condition;
+  if (c?.holderRange && char.range !== c.holderRange) return "range";
+  if (c?.requiresSelfStatus && !(char.statuses ?? []).some((st) => st.name.en === c.requiresSelfStatus)) return "selfStatus";
+  if (c?.requiresSkillInflicts && !(char.skills?.[c.requiresSkillInflicts.skill]?.desc?.en ?? "").includes(c.requiresSkillInflicts.status)) {
+    return "inflicts";
+  }
   const sec = e.condition?.specialRecastWithinSec;
   if (sec !== undefined && canRecastSpecial(char, sec, cdCutPercent) === false) return "recast";
   if (team && e.target !== "self") {
@@ -520,6 +548,7 @@ export function receivedEffects(
     ...m,
     effects: m.effects.filter((t) => {
       const el = t.effect.condition?.requiresElementBoost;
+      if (t.effect.condition?.requiresSkillBoost && !hasSkillBoost(m.effects)) return false;
       return !el || hasElementBoost(m.effects, el);
     }),
   }));
