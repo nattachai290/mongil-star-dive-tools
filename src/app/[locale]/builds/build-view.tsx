@@ -585,7 +585,7 @@ export function BuildView({ b, locale, t }: { b: (typeof BUILDS)[number]; locale
           </div>
         </header>
 
-        <div className="grid grid-cols-3 gap-2 sm:gap-4">
+        <div className="grid grid-cols-3 items-start gap-2 sm:gap-4">
           {first.members.map((m, i) => {
             const c = chars[i];
             const img = characterImage(m.characterId);
