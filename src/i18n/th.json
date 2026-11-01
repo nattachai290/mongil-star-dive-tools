@@ -174,7 +174,6 @@
   "builds.teamOf": "ทีม {name}",
   "builds.weaknessChip": "ตีจุดอ่อนธาตุ{el}",
   "builds.dimHint": "สีจาง = ทีมนี้ใช้ไม่ได้ ไม่นับในตัวเลข",
-  "builds.subsFor": "ถ้าไม่มี{name} ใช้แทนได้",
   "builds.subsAll": "ค่ารองทุกชิ้น",
   "builds.legendaryShared": "ใช้ร่วมทุกตัว · Trait เหมือนกันทุกที่",
   "builds.mainBadge": "ตัวหลัก",
@@ -186,5 +185,8 @@
   "tierList.group.support": "ซัพพอร์ต",
   "tierList.tier": "Tier",
   "tierList.awaken": "{r}",
-  "tierList.incomplete": "ตัวเลขสกิลบางท่ายังไม่ครบถึงเลเวล 12 คะแนนจึงต่ำกว่าจริง"
+  "tierList.incomplete": "ตัวเลขสกิลบางท่ายังไม่ครบถึงเลเวล 12 คะแนนจึงต่ำกว่าจริง",
+  "builds.subsShort": "ใช้แทนได้",
+  "builds.subPanel": "{sub} — ใช้แทน{name}",
+  "builds.subClose": "ปิด"
 }

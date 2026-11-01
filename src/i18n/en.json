@@ -174,7 +174,6 @@
   "builds.teamOf": "{name} team",
   "builds.weaknessChip": "Hits {el} weakness",
   "builds.dimHint": "Faded = this team can't use it; not counted",
-  "builds.subsFor": "Without {name}, use instead",
   "builds.subsAll": "Substats (every piece)",
   "builds.legendaryShared": "Shared by every character · same traits everywhere",
   "builds.mainBadge": "Main",
@@ -186,5 +185,8 @@
   "tierList.group.support": "Support",
   "tierList.tier": "Tier",
   "tierList.awaken": "{r}",
-  "tierList.incomplete": "Some skill values are not recorded up to Lv. 12 yet, so this score is lower than it should be"
+  "tierList.incomplete": "Some skill values are not recorded up to Lv. 12 yet, so this score is lower than it should be",
+  "builds.subsShort": "Alternatives",
+  "builds.subPanel": "{sub} — in place of {name}",
+  "builds.subClose": "Close"
 }

@@ -14,6 +14,9 @@ type Ctx = {
   /** ตัวละครที่กำลังดูของอยู่ (หน้าบิ้วโชว์ทีละตัว) */
   selected: number;
   select: (member: number) => void;
+  /** ตัวแทนที่กำลังเปิดดูของ (id ของปุ่มตัวแทน) — null = ไม่ได้เปิด */
+  sub: string | null;
+  setSub: (id: string | null) => void;
 };
 const AwakenContext = createContext<Ctx | null>(null);
 
@@ -23,8 +26,9 @@ export const awakenKey = (stages: number[]) => stages.join(",");
 export function AwakenProvider({ initial, children }: { initial: number[]; children: ReactNode }) {
   const [stages, setStages] = useState(initial);
   const [selected, select] = useState(0);
+  const [sub, setSub] = useState<string | null>(null);
   const set = (member: number, stage: number) => setStages((s) => s.map((x, i) => (i === member ? stage : x)));
-  return <AwakenContext.Provider value={{ stages, set, selected, select }}>{children}</AwakenContext.Provider>;
+  return <AwakenContext.Provider value={{ stages, set, selected, select, sub, setSub }}>{children}</AwakenContext.Provider>;
 }
 
 /**
@@ -113,5 +117,57 @@ export function AwakenSwitch({ panels, pick }: { panels: Record<string, ReactNod
         </div>
       ))}
     </>
+  );
+}
+
+/**
+ * ปุ่มตัวแทนในการ์ดตัวละคร (ผู้เล่นสั่ง 2026-11-01 ย้ายตัวแทนไปไว้ใต้ชื่อในการ์ด)
+ * กดแล้วเลือกตัวที่ถูกแทน + เปิดของของตัวแทนด้านล่าง · กดซ้ำเพื่อปิด
+ */
+export function SubChip({ member, id, label, children }: { member: number; id: string; label: string; children: ReactNode }) {
+  const ctx = useContext(AwakenContext);
+  const on = ctx?.sub === id;
+  return (
+    <button
+      type="button"
+      aria-pressed={on}
+      aria-label={label}
+      title={label}
+      onClick={() => {
+        if (!ctx) return;
+        ctx.select(member);
+        ctx.setSub(on ? null : id);
+        if (!on) requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" }));
+      }}
+      className={`inline-flex min-h-9 items-center gap-1.5 rounded-full border py-0.5 ps-0.5 pe-0.5 text-xs font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rail sm:pe-2.5 ${
+        on ? "border-rail bg-surface-2" : "border-line bg-surface hover:border-rail"
+      }`}
+    >
+      {children}
+    </button>
+  );
+}
+
+/** ของของตัวแทนที่เปิดอยู่ — โชว์เฉพาะตอนกดปุ่มตัวแทนนั้น */
+export function SubPanel({ id, children }: { id: string; children: ReactNode }) {
+  const ctx = useContext(AwakenContext);
+  return (
+    <div id={id} hidden={ctx?.sub !== id} className="scroll-mt-20">
+      {children}
+    </div>
+  );
+}
+
+/** ปุ่มปิดของตัวแทน */
+export function SubClose({ label }: { label: string }) {
+  const ctx = useContext(AwakenContext);
+  return (
+    <button
+      type="button"
+      onClick={() => ctx?.setSub(null)}
+      className="ms-auto min-h-9 rounded-lg px-3 text-xs text-ink-2 hover:bg-surface-2 hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-rail"
+    >
+      {label}
+    </button>
   );
 }
