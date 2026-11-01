@@ -1,7 +1,8 @@
 {
   "id": "verna-summer-dive",
   "name": {
-    "en": "Verna: Summer Dive!"
+    "en": "Verna: Summer Dive!",
+    "th": "เวอร์นา : ซัมเมอร์ ไดฟ์!"
   },
   "rarity": 5,
   "element": "fire",
@@ -73,10 +74,12 @@
     {
       "stage": 1,
       "name": {
-        "en": "All or Nothing Fun!"
+        "en": "All or Nothing Fun!",
+        "th": "จะเล่นทั้งที ก็ต้องเล่นให้สุดไปเลยสิ!"
       },
       "desc": {
-        "en": "When Flaming Will is triggered, Verna: Summer Dive!'s ATK increases by 5% and her Crit Rate increases by 10%. (Max Stacks: 2, Duration: 15s, new stacks reset the duration) / The Fire DMG Boost of Ember changes to 4%."
+        "en": "When Flaming Will is triggered, Verna: Summer Dive!'s ATK increases by 5% and her Crit Rate increases by 10%. (Max Stacks: 2, Duration: 15s, new stacks reset the duration) / The Fire DMG Boost of Ember changes to 4%.",
+        "th": "เมื่อเอฟเฟกต์เจตจำนงลุกโชนทำงาน จะเพิ่มพลังโจมตี 5%, อัตราคริติคอล 10% (ทับซ้อนสูงสุด 2, เวลาแสดงผล 15 วินาที, เมื่อทับซ้อน เวลาแสดงผลจะถูกรีเฟรช) / ค่าการเพิ่มดาเมจธาตุไฟของประกายไฟ จะถูกปรับเป็น 4%"
       },
       "effects": [
         {
@@ -130,10 +133,12 @@
     {
       "stage": 2,
       "name": {
-        "en": "Until You Forget the Heat"
+        "en": "Until You Forget the Heat",
+        "th": "จนกว่าจะลืมความร้อน"
       },
       "desc": {
-        "en": "Upon switching to another teammate during combat, Verna's Support DMG increases by 10% for 15s, and the duration she remains on the field for increases by 4s. / Also, she uses her Special Skill once upon switching to another teammate. This Special Skill is used regardless of cooldown and does not trigger its cooldown after use."
+        "en": "Upon switching to another teammate during combat, Verna's Support DMG increases by 10% for 15s, and the duration she remains on the field for increases by 4s. / Also, she uses her Special Skill once upon switching to another teammate. This Special Skill is used regardless of cooldown and does not trigger its cooldown after use.",
+        "th": "เมื่อเปลี่ยนเป็นตัวละครอื่นในระหว่างต่อสู้ จะเพิ่มดาเมจสนับสนุน 10% นาน 15 วินาที และเพิ่มระยะเวลาคงอยู่ในฟิลด์ 4 วินาที / อีกทั้งเมื่อเปลี่ยนเป็นตัวละครอื่น จะใช้สกิลพิเศษ 1 ครั้ง สกิลพิเศษนี้ใช้ได้โดยไม่ขึ้นอยู่กับคูลดาวน์ และไม่มีการคูลดาวน์หลังจากใช้งาน"
       },
       "effects": [
         {
@@ -157,10 +162,12 @@
     {
       "stage": 3,
       "name": {
-        "en": "Hotter and Harder"
+        "en": "Hotter and Harder",
+        "th": "ร้อนแรงกว่าเดิม หนักแน่นยิ่งขึ้น"
       },
       "desc": {
-        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%.",
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจโจมตีพื้นฐาน 6%"
       },
       "effects": [
         {
@@ -180,10 +187,12 @@
     {
       "stage": 4,
       "name": {
-        "en": "Unstoppable Festival of Heat"
+        "en": "Unstoppable Festival of Heat",
+        "th": "เทศกาลสุดเดือดที่ไม่มีสิ้นสุด"
       },
       "desc": {
-        "en": "The Total DMG of Verna: Summer Dive!'s Special Skill increases by 20%. Upon landing a Basic Fire Attack, her Special Skill's cooldown decreases by 0.2s. (Cooldown: 0.1s) / Upon switching to another teammate during combat, the duration she remains on the field for additionally increases by 4s."
+        "en": "The Total DMG of Verna: Summer Dive!'s Special Skill increases by 20%. Upon landing a Basic Fire Attack, her Special Skill's cooldown decreases by 0.2s. (Cooldown: 0.1s) / Upon switching to another teammate during combat, the duration she remains on the field for additionally increases by 4s.",
+        "th": "เพิ่มดาเมจรวมของสกิลพิเศษ 20% และเมื่อโจมตีพื้นฐานธาตุไฟโดน คูลดาวน์ของสกิลพิเศษจะลดลง 0.2 วินาที (ทำงานเพียงครั้งเดียว ทุก 0.1 วินาที) / เมื่อเปลี่ยนเป็นตัวละครอื่นในขณะต่อสู้ จะเพิ่มเวลาคงเหลือในฟิลด์ขึ้นอีก 4 วินาที"
       },
       "effects": [
         {
@@ -207,10 +216,12 @@
     {
       "stage": 5,
       "name": {
-        "en": "Let's Make This Party Even Hotter!"
+        "en": "Let's Make This Party Even Hotter!",
+        "th": "มาเล่นให้มันส์กว่าเดิม!"
       },
       "desc": {
-        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Special Skill DMG by 6%."
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Special Skill DMG by 6%.",
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจสกิลพิเศษ 6%"
       },
       "effects": [
         {
@@ -230,10 +241,12 @@
     {
       "stage": 6,
       "name": {
-        "en": "Scorching Summer Memories"
+        "en": "Scorching Summer Memories",
+        "th": "ไอร้อนแห่งฤดูร้อนที่จะกลายเป็นความทรงจำอันลึกซึ้ง"
       },
       "desc": {
-        "en": "In the effect description of Ember, the condition \"when Verna: Summer Dive! is not being controlled\" is removed, and the effect value of Ember is always multiplied by 2. / Also, upon landing a Fire attack while controlling Verna: Summer Dive!, Crit Rate increases by 3% and Crit DMG increases by 5% for 1.5s. (Max Stacks: 10, new stacks reset the duration) When this effect is at max stacks, ATK increases by an additional 30% and Pierce Rate increases by 15%."
+        "en": "In the effect description of Ember, the condition \"when Verna: Summer Dive! is not being controlled\" is removed, and the effect value of Ember is always multiplied by 2. / Also, upon landing a Fire attack while controlling Verna: Summer Dive!, Crit Rate increases by 3% and Crit DMG increases by 5% for 1.5s. (Max Stacks: 10, new stacks reset the duration) When this effect is at max stacks, ATK increases by an additional 30% and Pierce Rate increases by 15%.",
+        "th": "ในรายละเอียดเอฟเฟกต์ประกายไฟ เงื่อนไขเมื่อไม่ได้ควบคุมเวอร์นา : ซัมเมอร์ ไดฟ์! จะถูกลบออก ทำให้ค่าของเอฟเฟกต์ประกายไฟถูกปรับใช้งาน 2 เท่าเสมอ / อีกทั้งเมื่อโจมตีธาตุไฟโดนในขณะควบคุมเวอร์นา : ซัมเมอร์ ไดฟ์! จะเพิ่มอัตราคริติคอล 3% และดาเมจคริติคอล 5% นาน 1.5 วินาที (ทับซ้อนสูงสุด 10, เมื่อทับซ้อน เวลาแสดงผลจะถูกรีเฟรช) เมื่อเอฟเฟกต์ดังกล่าวทับซ้อนสูงสุด จะเพิ่มพลังโจมตีเพิ่มเติม 30% และเพิ่มอัตราเจาะเกราะ 15%"
       },
       "effects": [
         {
@@ -303,17 +316,20 @@
   "skills": {
     "basic": {
       "name": {
-        "en": "Sword of Justice"
+        "en": "Sword of Justice",
+        "th": "จัสติสต์ซอร์ด"
       },
       "desc": {
-        "en": "Verna deals Physical DMG to enemies by consecutively striking them with her sword. / When Flaming Will is active, all attacks except for her 1st Hit are enhanced, and a 5th Hit can be triggered."
+        "en": "Verna deals Physical DMG to enemies by consecutively striking them with her sword. / When Flaming Will is active, all attacks except for her 1st Hit are enhanced, and a 5th Hit can be triggered.",
+        "th": "โจมตีต่อเนื่องด้วยดาบ สร้างดาเมจกายภาพ / เมื่อเอฟเฟกต์เจตจำนงลุกโชนปรับใช้งาน ยกเว้นการโจมตีขั้น 1 การโจมตีที่เหลือจะถูกเสริมพลังและสามารถใช้งานการโจมตีขั้น 5 ได้"
       },
       "damageType": "physical",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "1st Hit DMG"
+            "en": "1st Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 1"
           },
           "unit": "percent",
           "scaling": [
@@ -338,7 +354,8 @@
         },
         {
           "label": {
-            "en": "2nd Hit DMG"
+            "en": "2nd Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 2"
           },
           "unit": "percent",
           "scaling": [
@@ -363,7 +380,8 @@
         },
         {
           "label": {
-            "en": "3rd Hit DMG"
+            "en": "3rd Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 3"
           },
           "unit": "percent",
           "scaling": [
@@ -388,7 +406,8 @@
         },
         {
           "label": {
-            "en": "4th Hit DMG"
+            "en": "4th Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 4"
           },
           "unit": "percent",
           "scaling": [
@@ -413,7 +432,8 @@
         },
         {
           "label": {
-            "en": "Charge Attack DMG"
+            "en": "Charge Attack DMG",
+            "th": "ดาเมจโจมตีชาร์จ"
           },
           "unit": "percent",
           "scaling": [
@@ -437,7 +457,8 @@
         },
         {
           "label": {
-            "en": "Enhanced 2nd Hit DMG"
+            "en": "Enhanced 2nd Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 2 เสริมพลัง"
           },
           "unit": "percent",
           "scaling": [
@@ -462,7 +483,8 @@
         },
         {
           "label": {
-            "en": "Enhanced 3rd Hit DMG"
+            "en": "Enhanced 3rd Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 3 เสริมพลัง"
           },
           "unit": "percent",
           "scaling": [
@@ -487,7 +509,8 @@
         },
         {
           "label": {
-            "en": "Enhanced 4th Hit DMG"
+            "en": "Enhanced 4th Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 4 เสริมพลัง"
           },
           "unit": "percent",
           "scaling": [
@@ -512,7 +535,8 @@
         },
         {
           "label": {
-            "en": "Enhanced 5th Hit DMG"
+            "en": "Enhanced 5th Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 5 เสริมพลัง"
           },
           "unit": "percent",
           "scaling": [
@@ -537,7 +561,8 @@
         },
         {
           "label": {
-            "en": "Air Counter DMG"
+            "en": "Air Counter DMG",
+            "th": "ดาเมจโจมตีฉับพลัน"
           },
           "unit": "percent",
           "scaling": [
@@ -561,7 +586,8 @@
         },
         {
           "label": {
-            "en": "Evasion Counter DMG"
+            "en": "Evasion Counter DMG",
+            "th": "ดาเมจหลบหลีกโต้กลับ"
           },
           "unit": "percent",
           "scaling": [
@@ -585,7 +611,8 @@
         },
         {
           "label": {
-            "en": "Enhanced Air Counter DMG"
+            "en": "Enhanced Air Counter DMG",
+            "th": "ดาเมจโจมตีฉับพลันเสริมพลัง"
           },
           "unit": "percent",
           "scaling": [
@@ -610,7 +637,8 @@
         },
         {
           "label": {
-            "en": "Enhanced Evasion Counter DMG"
+            "en": "Enhanced Evasion Counter DMG",
+            "th": "ดาเมจหลบหลีกโต้กลับเสริมพลัง"
           },
           "unit": "percent",
           "scaling": [
@@ -637,17 +665,20 @@
     },
     "switch": {
       "name": {
-        "en": "Sword Uppercut"
+        "en": "Sword Uppercut",
+        "th": "ซอร์ดอัปเปอร์คัต"
       },
       "desc": {
-        "en": "Verna: Summer Dive! appears near the enemy and generates a powerful blade of fire beneath them, striking upward to deal Fire DMG. / Using her Switch Skill while Flaming Will is active triggers an enhanced skill, dealing powerful Fire DMG. / If the Special Skill button is pressed at the right time during her Enhanced Switch Skill, a photo of Verna: Summer Dive! is taken. Then, it ends the Switch Skill sooner and activates her Special Skill. This Special Skill activates regardless of its cooldown. Attack Speed Boost and Reduction effects do not apply while photos are being taken."
+        "en": "Verna: Summer Dive! appears near the enemy and generates a powerful blade of fire beneath them, striking upward to deal Fire DMG. / Using her Switch Skill while Flaming Will is active triggers an enhanced skill, dealing powerful Fire DMG. / If the Special Skill button is pressed at the right time during her Enhanced Switch Skill, a photo of Verna: Summer Dive! is taken. Then, it ends the Switch Skill sooner and activates her Special Skill. This Special Skill activates regardless of its cooldown. Attack Speed Boost and Reduction effects do not apply while photos are being taken.",
+        "th": "ปรากฏตัวใกล้ศัตรู สร้างดาบแห่งไฟขนาดใหญ่ไว้ใต้ศัตรู จากนั้นฟาดขึ้นอย่างรุนแรง สร้างดาเมจธาตุไฟ / เมื่อเอฟเฟกต์เจตจำนงลุกโชนปรับใช้งาน หากใช้สกิลสับเปลี่ยน จะใช้สกิลที่ถูกเสริมพลัง สร้างดาเมจธาตุไฟทรงพลัง / ในขณะที่ใช้สกิลสับเปลี่ยนเสริมพลัง หากกดสกิลพิเศษในระยะที่กำหนด จะถ่ายภาพของเวอร์นา : ซัมเมอร์ ไดฟ์! จากนั้นสกิลสับเปลี่ยนจะสิ้นสุดอย่างรวดเร็ว จะใช้สกิลพิเศษ และสกิลพิเศษนี้สามารถใช้งานได้ โดยไม่ขึ้นกับคูลดาวน์ และระหว่างถ่ายภาพ จะไม่ได้รับผลจากเอฟเฟกต์เพิ่มหรือลดความเร็วโจมตี"
       },
       "damageType": "fire",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "DMG"
+            "en": "DMG",
+            "th": "ดาเมจ"
           },
           "unit": "percent",
           "scaling": [
@@ -672,7 +703,8 @@
         },
         {
           "label": {
-            "en": "Enhanced DMG When Flaming Will Is Active"
+            "en": "Enhanced DMG When Flaming Will Is Active",
+            "th": "ดาเมจเสริมพลังขณะอยู่ในสถานะเจตจำนงลุกโชน"
           },
           "unit": "percent",
           "scaling": [
@@ -699,17 +731,20 @@
     },
     "special": {
       "name": {
-        "en": "Manifestation of Will"
+        "en": "Manifestation of Will",
+        "th": "การแสดงออกของเจตจำนง"
       },
       "desc": {
-        "en": "Verna releases fire energy around herself, dealing Fire DMG. / Using her Special Skill while Flaming Will is active triggers an enhanced skill, dealing powerful Fire DMG and refreshing the duration of Flaming Will."
+        "en": "Verna releases fire energy around herself, dealing Fire DMG. / Using her Special Skill while Flaming Will is active triggers an enhanced skill, dealing powerful Fire DMG and refreshing the duration of Flaming Will.",
+        "th": "ปล่อยพลังไฟรอบตนเอง สร้างดาเมจธาตุไฟ / เมื่อเอฟเฟกต์เจตจำนงลุกโชนปรับใช้งาน หากใช้สกิลพิเศษ จะใช้สกิลที่ถูกเสริมพลัง สร้างดาเมจธาตุไฟทรงพลัง และเวลาแสดงผลของเอฟเฟกต์เจตจำนงลุกโชนจะถูกรีเซต"
       },
       "damageType": "fire",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "DMG"
+            "en": "DMG",
+            "th": "ดาเมจ"
           },
           "unit": "percent",
           "scaling": [
@@ -734,7 +769,8 @@
         },
         {
           "label": {
-            "en": "Enhanced DMG When Flaming Will Is Active"
+            "en": "Enhanced DMG When Flaming Will Is Active",
+            "th": "ดาเมจเสริมพลังขณะอยู่ในสถานะเจตจำนงลุกโชน"
           },
           "unit": "percent",
           "scaling": [
@@ -759,7 +795,8 @@
         },
         {
           "label": {
-            "en": "Cooldown"
+            "en": "Cooldown",
+            "th": "คูลดาวน์"
           },
           "unit": "seconds",
           "scaling": [
@@ -785,17 +822,20 @@
     },
     "ultimate": {
       "name": {
-        "en": "Flame Spear"
+        "en": "Flame Spear",
+        "th": "เฟลมสเปียร์"
       },
       "desc": {
-        "en": "Verna gathers a large amount of fire energy and unleashes a powerful thrust forward, inflicting Fire Affliction. / If she uses her Ultimate Skill while Flaming Will is active, a blade of fire is generated, dealing bonus Fire DMG and refreshing the duration of Flaming Will."
+        "en": "Verna gathers a large amount of fire energy and unleashes a powerful thrust forward, inflicting Fire Affliction. / If she uses her Ultimate Skill while Flaming Will is active, a blade of fire is generated, dealing bonus Fire DMG and refreshing the duration of Flaming Will.",
+        "th": "รวบรวมพลังไฟจำนวนมาก แล้วพุ่งแทงไปด้านหน้าอย่างรุนแรง สร้างดาเมจอย่างมาก และมอบเอฟเฟกต์อ่อนแอต่อไฟ / เมื่อเอฟเฟกต์เจตจำนงลุกโชนปรับใช้งาน หากใช้สกิลอัลติเมต จะสร้างดาบแห่งไฟเพื่อสร้างดาเมจธาตุไฟเพิ่มเติม และเวลาแสดงผลของเอฟเฟกต์เจตจำนงลุกโชนจะถูกรีเซต"
       },
       "damageType": "fire",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "DMG"
+            "en": "DMG",
+            "th": "ดาเมจ"
           },
           "unit": "percent",
           "scaling": [
@@ -820,7 +860,8 @@
         },
         {
           "label": {
-            "en": "Fire Affliction Duration"
+            "en": "Fire Affliction Duration",
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อไฟ"
           },
           "unit": "seconds",
           "scaling": [
@@ -845,7 +886,8 @@
         },
         {
           "label": {
-            "en": "Bonus DMG When Flaming Will Is Active"
+            "en": "Bonus DMG When Flaming Will Is Active",
+            "th": "ดาเมจเพิ่มเติมขณะอยู่ในสถานะเจตจำนงลุกโชน"
           },
           "unit": "percent",
           "scaling": [
@@ -872,10 +914,12 @@
     },
     "passive": {
       "name": {
-        "en": "Flaming Will"
+        "en": "Flaming Will",
+        "th": "เจตจำนงลุกโชน"
       },
       "desc": {
-        "en": "Using any of Verna: Summer Dive!'s skills except her Basic Attack, including Evasion Counter and Air Counter, converts the element of all her attacks to Fire and decreases DMG Taken for a set duration. The duration does not decrease while Verna: Summer Dive! is not being actively controlled in combat. / Landing a Fire attack during this duration grants Ember."
+        "en": "Using any of Verna: Summer Dive!'s skills except her Basic Attack, including Evasion Counter and Air Counter, converts the element of all her attacks to Fire and decreases DMG Taken for a set duration. The duration does not decrease while Verna: Summer Dive! is not being actively controlled in combat. / Landing a Fire attack during this duration grants Ember.",
+        "th": "ใช้หลบหลีกโต้กลับ โจมตีฉับพลัน และสกิลทั้งหมด ยกเว้นโจมตีพื้นฐาน การโจมตีทั้งหมดจะถูกเปลี่ยนเป็นธาตุไฟภายในระยะเวลาที่กำหนด และลดดาเมจที่ได้รับ ในระหว่างต่อสู้ หากไม่ได้ควบคุมตัวเองอยู่ เวลาแสดงผลจะไม่ลดลง / เมื่อโจมตีธาตุไฟโดนภายในระยะเวลาแสดงผล จะได้รับเอฟเฟกต์ประกายไฟ"
       },
       "effects": [
         {
@@ -898,7 +942,8 @@
       "values": [
         {
           "label": {
-            "en": "Flaming Will Duration"
+            "en": "Flaming Will Duration",
+            "th": "เวลาแสดงผลเจตจำนงลุกโชน"
           },
           "unit": "seconds",
           "scaling": [
@@ -923,7 +968,8 @@
         },
         {
           "label": {
-            "en": "Ember Duration"
+            "en": "Ember Duration",
+            "th": "เวลาแสดงผลประกายไฟ"
           },
           "unit": "seconds",
           "scaling": [
@@ -948,7 +994,8 @@
         },
         {
           "label": {
-            "en": "DMG Taken Reduction"
+            "en": "DMG Taken Reduction",
+            "th": "ลดดาเมจที่ได้รับ"
           },
           "unit": "percent",
           "scaling": [
@@ -975,16 +1022,18 @@
     },
     "elemental": {
       "name": {
-        "en": "Burning Hostility"
+        "en": "Burning Hostility",
+        "th": "จิตสังหารที่ลุกโชน"
       },
       "desc": {
-        "en": "Hitting an enemy with a Fire attack decreases the target's DEF by 15.5% for 4s."
+        "en": "Hitting an enemy with a Fire attack decreases the target's DEF by 20.5% for 4s.",
+        "th": "เมื่อโจมตีธาตุไฟโดน จะลดพลังป้องกันของเป้าหมาย 20.5% นาน 4 วินาที"
       },
       "effects": [
         {
           "kind": "debuff",
           "stat": "def",
-          "value": 15.5,
+          "value": 20.5,
           "unit": "percent",
           "target": "enemy",
           "trigger": "onHit",
@@ -1000,28 +1049,34 @@
   "statuses": [
     {
       "name": {
-        "en": "Fire Affliction"
+        "en": "Fire Affliction",
+        "th": "เอฟเฟกต์อ่อนแอต่อไฟ"
       },
       "desc": {
-        "en": "Afflicted targets take Fire DMG over time, and Fire RES decreases by 15%."
+        "en": "Afflicted targets take Fire DMG over time, and Fire RES decreases by 15%.",
+        "th": "ได้รับดาเมจต่อเนื่องธาตุไฟและลดพลังต้านทานธาตุไฟ 15%"
       },
       "effects": []
     },
     {
       "name": {
-        "en": "Flaming Will"
+        "en": "Flaming Will",
+        "th": "เจตจำนงลุกโชน"
       },
       "desc": {
-        "en": "Converts the element of all attacks to Fire, and decreases DMG Taken by 35%. The duration does not decrease while Verna: Summer Dive! is not being actively controlled in combat. / Landing a Fire attack during this duration grants Ember."
+        "en": "Converts the element of all attacks to Fire, and decreases DMG Taken by 35%. The duration does not decrease while Verna: Summer Dive! is not being actively controlled in combat. / Landing a Fire attack during this duration grants Ember.",
+        "th": "ธาตุการโจมตีจะเปลี่ยนเป็นธาตุไฟ และดาเมจที่ได้รับจะลดลง 35% ในระหว่างการต่อสู้ หากไม่ได้ควบคุมตนเองอยู่ เวลาแสดงผลจะไม่ลดลง / เมื่อโจมตีธาตุไฟโดนในขณะเวลาแสดงผล จะได้รับเอฟเฟกต์ประกายไฟ"
       },
       "effects": []
     },
     {
       "name": {
-        "en": "Ember"
+        "en": "Ember",
+        "th": "ประกายไฟ"
       },
       "desc": {
-        "en": "Fire DMG increases by 2%. (Max Stacks: 5, new stacks reset the duration) / When Verna: Summer Dive! is not being controlled, the effect value of Ember is doubled."
+        "en": "Fire DMG increases by 2%. (Max Stacks: 5, new stacks reset the duration) / When Verna: Summer Dive! is not being controlled, the effect value of Ember is doubled.",
+        "th": "เพิ่มดาเมจธาตุไฟ 2% (ทับซ้อนสูงสุด 5, เมื่อทับซ้อน เวลาแสดงผลจะถูกรีเฟรช) / หากไม่ได้ควบคุมเวอร์นา : ซัมเมอร์ ไดฟ์! ค่าของเอฟเฟกต์ประกายไฟจะถูกปรับใช้เป็น 2 เท่า"
       },
       "effects": []
     }
@@ -1034,8 +1089,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอตัวละครภาษาอังกฤษ 2026-10-22 (Info · Skills: Basic Attack / Special Skill · Effect Details) · **ยังไม่มีจอไทยเลย** ชื่อไทยและข้อความไทยทุกช่องจึงว่าง ไม่ได้แปลเอง | id มาจากชื่ออังกฤษ \"Verna: Summer Dive!\" -> verna-summer-dive ตามแบบมอนชุด Summer Dive (cappy-summer-dive ฯลฯ) — **เป็นตัวละครคนละตัวกับ Verna ปกติ** จอเรียกตัวเองเต็มชื่อทุกที่ (\"Verna: Summer Dive! is not being controlled\") | Fighter · Fire · Melee · เลเวล 60 สูงสุด · **5 ดาว (ผู้เล่นบอก 2026-10-22)** — ดาวสี่ดวงบนจอ Info ใต้ชื่อ **ไม่ใช่แรงก์** แต่เป็นดาวของการอัปเลเวล (อัปเต็มแล้ว) เคยเก็บผิดเป็น 4 | **ไม่เก็บค่าพลัง** จอ Info แสดง ATK 5,409 · DEF 5,877 · HP 20,893 · Crit Rate 15% · Crit DMG 110% แต่ตัวละครอยู่ในทีม (On Team) และตัวเลขสูงกว่าค่าเปล่าของวิเวียนที่เลเวลเดียวกันหลายเท่า แปลว่ารวมอุปกรณ์/มอนสเตอร์ลิงแล้ว schema ห้ามเก็บค่าที่ติดของอยู่ | สกิลทุกท่าเลเวล 12 (Max level reached) เติม scaling เฉพาะช่องที่ 12 · โจมตีพื้นฐานเป็น**กายภาพ** แต่ระหว่าง Flaming Will การโจมตีทั้งหมดเปลี่ยนเป็นธาตุไฟ (จอ Effect Details) — changesBasicAttackTo ไม่ได้ใส่ เพราะช่องนั้นหมายถึงสกิลที่ใช้แล้วเปลี่ยน ส่วนนี่คือสถานะ ดู statuses | line: บรรทัด Enhanced ทั้งหมดผูกกับท่อนที่ 2 (\"When Flaming Will is active ... enhanced\") ส่วน 1st-4th ผูกท่อนที่ 1 · Charge Attack / Air Counter / Evasion Counter ไม่ได้ถูกพูดถึงในท่อนไหน จึงไม่ใส่ line | statuses ไม่ใส่ effects เพราะครอบคำอธิบายไม่ได้ทั้งหมด (แปลงธาตุ · ไม่ลดเวลาตอนไม่ได้บังคับ · Ember เพิ่มเป็นสองเท่าตอนไม่ได้บังคับ) | **2026-10-22 รอบสอง** Switch Skill (Lv.12) · Passive Trait (Lv.1) · Guidance of Fire (Lv.2) ภาษาอังกฤษ | **ช่องที่หก \"Guidance of Fire\" คือสกิลธาตุ** ชื่อท่า Burning Hostility · เลเวลขึ้นตาม Elemental Blessing (ปุ่ม Elemental Sanctum) · Lv.2: ตีโดนด้วยการโจมตีธาตุไฟ ลดพลังป้องกันเป้าหมาย 15.5% นาน 4 วินาที · **ป๊อปอัป Skill Info แสดง Lv.12 = 20.5%** เก็บไว้ในโน้ต ไม่ใส่เป็น effect เพราะยังไม่ได้ถึงเลเวลนั้น และไม่คำนวณเลเวลระหว่างกลาง · เพิ่มช่อง skills.elemental ใน schema และหน้าเว็บ | Passive: line 1 = Flaming Will Duration และ DMG Taken Reduction (ท่อนแรกพูดถึงระยะเวลาและการลดดาเมจที่ได้รับ) · line 2 = Ember Duration | Switch Skill ท่อนที่สามเรื่องถ่ายรูป (กดสกิลพิเศษถูกจังหวะระหว่าง Enhanced Switch Skill จะเปิดสกิลพิเศษโดยไม่สนคูลดาวน์) ไม่มีตัวเลข เก็บเป็นข้อความ | **2026-10-22 รอบสาม** Ultimate Skill Flame Spear (Lv.12) และ Effect Details ที่มี Fire Affliction · ครบทั้งหกช่องสกิลแล้ว (ภาษาอังกฤษ) | ultimate damageType fire: ท่อนแรกไม่ได้เขียนชนิดดาเมจตรง ๆ แต่สร้าง Fire Affliction และอีกสี่ท่าของเวอร์ชันนี้เป็นไฟหมดยกเว้นโจมตีพื้นฐาน — **ติดไว้ในโน้ตว่าเป็นการอ่านจากบริบท** ท่อนสองเขียน bonus Fire DMG ชัด | **Fire Affliction ข้อความอังกฤษตรงกับของวิเวียนทุกตัวอักษร** วิเวียนมีชื่อไทย \"เอฟเฟกต์อ่อนแอต่อไฟ\" อยู่แล้ว แต่ไม่ได้ยกมาใส่ที่นี่ เพราะยังไม่เห็นจอไทยของตัวนี้ (ผู้เล่นสั่ง: อ่านจากภาพเท่านั้น) | **2026-10-22 รอบสี่** ปลุกพลังขั้น 1-3 ภาษาอังกฤษ (ทุกขั้นยังล็อก แต่จอแสดงคำอธิบาย) · ขั้น 3 เติม effects ได้ตรง (ดาเมจโจมตีพื้นฐาน +6% + skillLevelBonus 2) · ขั้น 1-2 มีเงื่อนไขซ้อน (ซ้อนได้ 2 ชั้น · เปลี่ยนค่า Ember · อยู่ในสนามนานขึ้น · ใช้สกิลพิเศษฟรี) จึงเก็บเป็นข้อความ ตามแบบวิเวียน · ขั้น 2 จอเขียน \"Verna's\" ไม่ใช่ชื่อเต็ม เก็บตามจอ | **จอ Detailed Stats รอบนี้ยังเป็นค่าที่ติดอุปกรณ์อยู่** (ATK 5,409 · DEF 5,877 · HP 20,893 ตรงกับจอ Info) จึงยังไม่เก็บทั้งห้าค่าหลักและบรรทัดอื่น (Brawl DMG Boost 12.18% · DMG vs boss 50% · Special Skill Cooldown Reduction 15% · Fighter 1,078 · Elemental Weakness DMG Boost 175% · Physical 9% · Fire 13.72%) — บางบรรทัดน่าจะเป็นค่าเปล่าแต่แยกไม่ออกว่าบรรทัดไหนมีของบวก | **2026-10-22 รอบห้า** ปลุกพลังขั้น 4-6 ภาษาอังกฤษ — **ครบหกขั้นแล้ว** · ขั้น 5 เติม effects (ดาเมจสกิลพิเศษ +6% + skillLevelBonus 2) · ขั้น 4 กับ 6 เก็บเป็นข้อความ: ขั้น 4 มี +20% Total DMG ของสกิลพิเศษ แต่ท่อนเดียวกันมีลดคูลดาวน์ตามการตี จึงไม่เติมบางส่วน · ขั้น 6 พูดถึง **\"Pierce Rate\"** ซึ่งเป็นค่าพลังที่ยังไม่เคยเห็นและไม่มีในพจนานุกรม | **2026-10-22 ค่าพลังเปล่า** จอ Detailed Stats ภาษาอังกฤษหลังถอดของออก (ผู้เล่นบอกว่ารอบก่อนลืมถอด) เลเวล 60: ATK 2,049 · DEF 638 · HP 9,713 · Crit Rate 5% · Crit DMG 50% · otherStats: Brawl DMG Boost 12.18% · Elemental Weakness DMG Boost 125% · Fire DMG Boost 13.72% · Ultimate Gauge Charge 100% · Max Stamina 100 | บรรทัดที่หายไปเมื่อถอดของ (มาจากของ ไม่ใช่ค่าเปล่า): DMG Boost against boss enemies · Special Skill Cooldown Reduction · Physical DMG Boost · Elemental Weakness 175 -> 125 | **บรรทัด \"Fighter 1,078\" เก็บเป็น stat ใหม่ fighterPower** ทูลทิปเขียนว่า \"Fighters' Brawl DMG increases based on their Fighter proficiency\" — เป็นค่าความชำนาญตามบทบาท คู่กับ \"Support 1,078\" ของวิเวียน (supportPower) ที่ตัวเลขเท่ากันทุกหลัก · แยกเป็นคำตามบทบาทแทนที่จะรวมเป็นคำเดียว เพื่อให้ป้ายบนเว็บตรงกับที่เกมเขียนในแต่ละตัว (Support / Fighter) และไม่ต้องแก้ข้อมูลของวิเวียน · ชื่อไทยยังว่าง | รูป portrait ตัดจากภาพเต็มตัวที่ผู้เล่นส่งมา 2026-10-22 (1920x1080) ช่วงหน้าและลำตัวบน 310x310 ไม่ขยาย | 2026-10-31 สถานะ Ember (ดาเมจไฟ +2% สูงสุด 5 ชั้น) ใส่เป็น effect ของแพสซีฟ · ปลุก 1: ATK +5% / คริ +10% (สูงสุด 2 ชั้น 15 วินาที) และ Ember → 4% (+2) · ปลุก 6: Ember คูณ 2 เสมอ (+4) · ส่วนคริ/ATK ที่ทับซ้อน 10 ชั้นของปลุก 6 ยังเป็นข้อความ | **2026-10-31 ผู้เล่นสั่งไล่ใส่บัฟที่เป็นข้อความทั้งหมด** ใส่ effect จากข้อความ/ตารางบนจอเดิม (ไม่ได้อ่านจอใหม่): A2, A4 · \"X เท่า\" นับเป็น +100% ต่อเท่าตามที่ผู้เล่นยืนยันกับกาบี้ · ท่าที่ตีเพิ่ม/จำนวนครั้งเพิ่มใช้ bonusDmg · บัฟแปลงค่าใช้ condition.convertFrom | **2026-10-31 ผู้เล่นตอบ** ปลุก 6 นับเต็ม 10 ชั้น"
+    "note": "อ่านจากจอตัวละครภาษาอังกฤษ 2026-10-22 (Info · Skills: Basic Attack / Special Skill · Effect Details) · **ยังไม่มีจอไทยเลย** ชื่อไทยและข้อความไทยทุกช่องจึงว่าง ไม่ได้แปลเอง | id มาจากชื่ออังกฤษ \"Verna: Summer Dive!\" -> verna-summer-dive ตามแบบมอนชุด Summer Dive (cappy-summer-dive ฯลฯ) — **เป็นตัวละครคนละตัวกับ Verna ปกติ** จอเรียกตัวเองเต็มชื่อทุกที่ (\"Verna: Summer Dive! is not being controlled\") | Fighter · Fire · Melee · เลเวล 60 สูงสุด · **5 ดาว (ผู้เล่นบอก 2026-10-22)** — ดาวสี่ดวงบนจอ Info ใต้ชื่อ **ไม่ใช่แรงก์** แต่เป็นดาวของการอัปเลเวล (อัปเต็มแล้ว) เคยเก็บผิดเป็น 4 | **ไม่เก็บค่าพลัง** จอ Info แสดง ATK 5,409 · DEF 5,877 · HP 20,893 · Crit Rate 15% · Crit DMG 110% แต่ตัวละครอยู่ในทีม (On Team) และตัวเลขสูงกว่าค่าเปล่าของวิเวียนที่เลเวลเดียวกันหลายเท่า แปลว่ารวมอุปกรณ์/มอนสเตอร์ลิงแล้ว schema ห้ามเก็บค่าที่ติดของอยู่ | สกิลทุกท่าเลเวล 12 (Max level reached) เติม scaling เฉพาะช่องที่ 12 · โจมตีพื้นฐานเป็น**กายภาพ** แต่ระหว่าง Flaming Will การโจมตีทั้งหมดเปลี่ยนเป็นธาตุไฟ (จอ Effect Details) — changesBasicAttackTo ไม่ได้ใส่ เพราะช่องนั้นหมายถึงสกิลที่ใช้แล้วเปลี่ยน ส่วนนี่คือสถานะ ดู statuses | line: บรรทัด Enhanced ทั้งหมดผูกกับท่อนที่ 2 (\"When Flaming Will is active ... enhanced\") ส่วน 1st-4th ผูกท่อนที่ 1 · Charge Attack / Air Counter / Evasion Counter ไม่ได้ถูกพูดถึงในท่อนไหน จึงไม่ใส่ line | statuses ไม่ใส่ effects เพราะครอบคำอธิบายไม่ได้ทั้งหมด (แปลงธาตุ · ไม่ลดเวลาตอนไม่ได้บังคับ · Ember เพิ่มเป็นสองเท่าตอนไม่ได้บังคับ) | **2026-10-22 รอบสอง** Switch Skill (Lv.12) · Passive Trait (Lv.1) · Guidance of Fire (Lv.2) ภาษาอังกฤษ | **ช่องที่หก \"Guidance of Fire\" คือสกิลธาตุ** ชื่อท่า Burning Hostility · เลเวลขึ้นตาม Elemental Blessing (ปุ่ม Elemental Sanctum) · Lv.2: ตีโดนด้วยการโจมตีธาตุไฟ ลดพลังป้องกันเป้าหมาย 15.5% นาน 4 วินาที · **ป๊อปอัป Skill Info แสดง Lv.12 = 20.5%** เก็บไว้ในโน้ต ไม่ใส่เป็น effect เพราะยังไม่ได้ถึงเลเวลนั้น และไม่คำนวณเลเวลระหว่างกลาง · เพิ่มช่อง skills.elemental ใน schema และหน้าเว็บ | Passive: line 1 = Flaming Will Duration และ DMG Taken Reduction (ท่อนแรกพูดถึงระยะเวลาและการลดดาเมจที่ได้รับ) · line 2 = Ember Duration | Switch Skill ท่อนที่สามเรื่องถ่ายรูป (กดสกิลพิเศษถูกจังหวะระหว่าง Enhanced Switch Skill จะเปิดสกิลพิเศษโดยไม่สนคูลดาวน์) ไม่มีตัวเลข เก็บเป็นข้อความ | **2026-10-22 รอบสาม** Ultimate Skill Flame Spear (Lv.12) และ Effect Details ที่มี Fire Affliction · ครบทั้งหกช่องสกิลแล้ว (ภาษาอังกฤษ) | ultimate damageType fire: ท่อนแรกไม่ได้เขียนชนิดดาเมจตรง ๆ แต่สร้าง Fire Affliction และอีกสี่ท่าของเวอร์ชันนี้เป็นไฟหมดยกเว้นโจมตีพื้นฐาน — **ติดไว้ในโน้ตว่าเป็นการอ่านจากบริบท** ท่อนสองเขียน bonus Fire DMG ชัด | **Fire Affliction ข้อความอังกฤษตรงกับของวิเวียนทุกตัวอักษร** วิเวียนมีชื่อไทย \"เอฟเฟกต์อ่อนแอต่อไฟ\" อยู่แล้ว แต่ไม่ได้ยกมาใส่ที่นี่ เพราะยังไม่เห็นจอไทยของตัวนี้ (ผู้เล่นสั่ง: อ่านจากภาพเท่านั้น) | **2026-10-22 รอบสี่** ปลุกพลังขั้น 1-3 ภาษาอังกฤษ (ทุกขั้นยังล็อก แต่จอแสดงคำอธิบาย) · ขั้น 3 เติม effects ได้ตรง (ดาเมจโจมตีพื้นฐาน +6% + skillLevelBonus 2) · ขั้น 1-2 มีเงื่อนไขซ้อน (ซ้อนได้ 2 ชั้น · เปลี่ยนค่า Ember · อยู่ในสนามนานขึ้น · ใช้สกิลพิเศษฟรี) จึงเก็บเป็นข้อความ ตามแบบวิเวียน · ขั้น 2 จอเขียน \"Verna's\" ไม่ใช่ชื่อเต็ม เก็บตามจอ | **จอ Detailed Stats รอบนี้ยังเป็นค่าที่ติดอุปกรณ์อยู่** (ATK 5,409 · DEF 5,877 · HP 20,893 ตรงกับจอ Info) จึงยังไม่เก็บทั้งห้าค่าหลักและบรรทัดอื่น (Brawl DMG Boost 12.18% · DMG vs boss 50% · Special Skill Cooldown Reduction 15% · Fighter 1,078 · Elemental Weakness DMG Boost 175% · Physical 9% · Fire 13.72%) — บางบรรทัดน่าจะเป็นค่าเปล่าแต่แยกไม่ออกว่าบรรทัดไหนมีของบวก | **2026-10-22 รอบห้า** ปลุกพลังขั้น 4-6 ภาษาอังกฤษ — **ครบหกขั้นแล้ว** · ขั้น 5 เติม effects (ดาเมจสกิลพิเศษ +6% + skillLevelBonus 2) · ขั้น 4 กับ 6 เก็บเป็นข้อความ: ขั้น 4 มี +20% Total DMG ของสกิลพิเศษ แต่ท่อนเดียวกันมีลดคูลดาวน์ตามการตี จึงไม่เติมบางส่วน · ขั้น 6 พูดถึง **\"Pierce Rate\"** ซึ่งเป็นค่าพลังที่ยังไม่เคยเห็นและไม่มีในพจนานุกรม | **2026-10-22 ค่าพลังเปล่า** จอ Detailed Stats ภาษาอังกฤษหลังถอดของออก (ผู้เล่นบอกว่ารอบก่อนลืมถอด) เลเวล 60: ATK 2,049 · DEF 638 · HP 9,713 · Crit Rate 5% · Crit DMG 50% · otherStats: Brawl DMG Boost 12.18% · Elemental Weakness DMG Boost 125% · Fire DMG Boost 13.72% · Ultimate Gauge Charge 100% · Max Stamina 100 | บรรทัดที่หายไปเมื่อถอดของ (มาจากของ ไม่ใช่ค่าเปล่า): DMG Boost against boss enemies · Special Skill Cooldown Reduction · Physical DMG Boost · Elemental Weakness 175 -> 125 | **บรรทัด \"Fighter 1,078\" เก็บเป็น stat ใหม่ fighterPower** ทูลทิปเขียนว่า \"Fighters' Brawl DMG increases based on their Fighter proficiency\" — เป็นค่าความชำนาญตามบทบาท คู่กับ \"Support 1,078\" ของวิเวียน (supportPower) ที่ตัวเลขเท่ากันทุกหลัก · แยกเป็นคำตามบทบาทแทนที่จะรวมเป็นคำเดียว เพื่อให้ป้ายบนเว็บตรงกับที่เกมเขียนในแต่ละตัว (Support / Fighter) และไม่ต้องแก้ข้อมูลของวิเวียน · ชื่อไทยยังว่าง | รูป portrait ตัดจากภาพเต็มตัวที่ผู้เล่นส่งมา 2026-10-22 (1920x1080) ช่วงหน้าและลำตัวบน 310x310 ไม่ขยาย | 2026-10-31 สถานะ Ember (ดาเมจไฟ +2% สูงสุด 5 ชั้น) ใส่เป็น effect ของแพสซีฟ · ปลุก 1: ATK +5% / คริ +10% (สูงสุด 2 ชั้น 15 วินาที) และ Ember → 4% (+2) · ปลุก 6: Ember คูณ 2 เสมอ (+4) · ส่วนคริ/ATK ที่ทับซ้อน 10 ชั้นของปลุก 6 ยังเป็นข้อความ | **2026-10-31 ผู้เล่นสั่งไล่ใส่บัฟที่เป็นข้อความทั้งหมด** ใส่ effect จากข้อความ/ตารางบนจอเดิม (ไม่ได้อ่านจอใหม่): A2, A4 · \"X เท่า\" นับเป็น +100% ต่อเท่าตามที่ผู้เล่นยืนยันกับกาบี้ · ท่าที่ตีเพิ่ม/จำนวนครั้งเพิ่มใช้ bonusDmg · บัฟแปลงค่าใช้ condition.convertFrom | **2026-10-31 ผู้เล่นตอบ** ปลุก 6 นับเต็ม 10 ชั้น | **2026-11-01 จอภาษาไทย** (ข้อมูล · โจมตีพื้นฐาน · สับเปลี่ยน · พิเศษ · อัลติเมต · แพสซีฟ · การชี้นำแห่งไฟ + ป๊อปอัป Lv.2 → Lv.12 · รายละเอียดเอฟเฟกต์ เจตจำนงลุกโชน / ประกายไฟ / เอฟเฟกต์อ่อนแอต่อไฟ) ได้ชื่อไทย เวอร์นา : ซัมเมอร์ ไดฟ์! · ชื่อ/คำอธิบาย/ชื่อแถวของห้าสกิล + การชี้นำ · สถานะสามอัน · ตัวเลขทุกแถวตรงกับจออังกฤษ · **การชี้นำแห่งไฟ จิตสังหารที่ลุกโชน: จอหลักเป็น Lv.2 = 15.5% (ค่าเดิมในไฟล์) · ป๊อปอัป Lv.12 = 20.5% → เปลี่ยนเป็นค่า Lv.12 แบบเดียวกับ Francis: Summer Dive!** (คำอธิบายอังกฤษแก้ตัวเลขตาม) · จอข้อมูลเป็นค่าพลังที่ใส่ของแล้ว ไม่ได้ใช้ · ปลุกพลัง 1–6 (ชื่อขั้น 6 สองบรรทัดบนจอ ต่อกันไม่เว้นวรรค) → **ภาษาไทยครบทั้งตัว**"
   }
 }
