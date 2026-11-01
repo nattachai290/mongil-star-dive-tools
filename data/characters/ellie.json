@@ -1,7 +1,8 @@
 {
   "id": "ellie",
   "name": {
-    "en": "Ellie"
+    "en": "Ellie",
+    "th": "เอลลี่"
   },
   "rarity": 4,
   "element": "earth",
@@ -203,17 +204,20 @@
   "skills": {
     "basic": {
       "name": {
-        "en": "Back Off!"
+        "en": "Back Off!",
+        "th": "ไปให้พ้น"
       },
       "desc": {
-        "en": "Ellie throws a hidden Snack or strikes directly with pillow she's riding on to deal Earth DMG. / When Sugar Charge reaches 3 stacks, holding the Basic Attack button will deal Earth DMG with Pillow Pow! and consume all Sugar Charge stacks."
+        "en": "Ellie throws a hidden Snack or strikes directly with pillow she's riding on to deal Earth DMG. / When Sugar Charge reaches 3 stacks, holding the Basic Attack button will deal Earth DMG with Pillow Pow! and consume all Sugar Charge stacks.",
+        "th": "ขว้างขนมที่ซ่อนอยู่หรือโจมตีโดนโดยตรงด้วยหมอนที่กำลังนั่งอยู่ สร้างดาเมจธาตุดิน / เมื่อเอฟเฟกต์เติมน้ำตาลทับซ้อน 3 หากกดค้างโจมตีพื้นฐานไว้ จะสามารถใช้การโจมตีหมอนปั๋ง! สร้างดาเมจธาตุดินและใช้ทับซ้อนของเอฟเฟกต์เติมน้ำตาลทั้งหมดได้"
       },
       "damageType": "earth",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "1st Hit DMG"
+            "en": "1st Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 1"
           },
           "unit": "percent",
           "scaling": [
@@ -238,7 +242,8 @@
         },
         {
           "label": {
-            "en": "2nd Hit DMG"
+            "en": "2nd Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 2"
           },
           "unit": "percent",
           "scaling": [
@@ -263,7 +268,8 @@
         },
         {
           "label": {
-            "en": "3rd Hit DMG"
+            "en": "3rd Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 3"
           },
           "unit": "percent",
           "scaling": [
@@ -288,7 +294,8 @@
         },
         {
           "label": {
-            "en": "4th Hit DMG"
+            "en": "4th Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 4"
           },
           "unit": "percent",
           "scaling": [
@@ -313,7 +320,8 @@
         },
         {
           "label": {
-            "en": "Pillow Pow! Attack DMG"
+            "en": "Pillow Pow! Attack DMG",
+            "th": "ดาเมจโจมตีหมอนปั๋ง!"
           },
           "unit": "percent",
           "scaling": [
@@ -338,7 +346,8 @@
         },
         {
           "label": {
-            "en": "Air Counter DMG"
+            "en": "Air Counter DMG",
+            "th": "ดาเมจโจมตีฉับพลัน"
           },
           "unit": "percent",
           "scaling": [
@@ -362,7 +371,8 @@
         },
         {
           "label": {
-            "en": "Evasion Counter DMG"
+            "en": "Evasion Counter DMG",
+            "th": "ดาเมจหลบหลีกโต้กลับ"
           },
           "unit": "percent",
           "scaling": [
@@ -536,17 +546,20 @@
     },
     "ultimate": {
       "name": {
-        "en": "Ultimate Sweetness"
+        "en": "Ultimate Sweetness",
+        "th": "สวีทอัลติเมต"
       },
       "desc": {
-        "en": "Ellie summons a giant cake and sends it hurtling to the ground, dealing Earth DMG. The cake explodes moments later, dealing additional Earth DMG and inflicting Earth Affliction. / When the cake explodes, it generates and scatters Snacks."
+        "en": "Ellie summons a giant cake and sends it hurtling to the ground, dealing Earth DMG. The cake explodes moments later, dealing additional Earth DMG and inflicting Earth Affliction. / When the cake explodes, it generates and scatters Snacks.",
+        "th": "เรียกเค้กยักษ์ออกมาแล้วทำให้พุ่งตกลงบนพื้น สร้างดาเมจธาตุดิน หลังจากพุ่งตกลงมาได้สักพัก เค้กจะระเบิด สร้างดาเมจธาตุดินเพิ่มเติมและมอบเอฟเฟกต์อ่อนแอต่อดิน / เมื่อเค้กระเบิด จะสร้างขนมโปรยกระจายออกมา"
       },
       "damageType": "earth",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "Cake Hurtle DMG"
+            "en": "Cake Hurtle DMG",
+            "th": "ดาเมจเค้กพุ่งตกลง"
           },
           "unit": "percent",
           "scaling": [
@@ -571,7 +584,8 @@
         },
         {
           "label": {
-            "en": "Cake Explosion DMG"
+            "en": "Cake Explosion DMG",
+            "th": "ดาเมจระเบิดเค้ก"
           },
           "unit": "percent",
           "scaling": [
@@ -596,7 +610,8 @@
         },
         {
           "label": {
-            "en": "Earth Affliction Duration"
+            "en": "Earth Affliction Duration",
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อดิน"
           },
           "unit": "seconds",
           "scaling": [
@@ -927,9 +942,10 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอภาษาอังกฤษ 2026-10-31 (ผู้เล่นส่ง 4 จอ: Info · Detailed Stats · Skills ของโจมตีพื้นฐานสองจอ) · **ยังไม่มีจอไทย** | Destroyer · **Earth** · Ranged · 4 ดาว · เลเวล 60 | **ค่าพลังบนจอมีบัฟอาหารติดอยู่** — ตรงกับอาหาร 2 จานของบิ้วกาบี้ทุกค่า: Crit 12.5% = 5 + 7.5 (สตูป่ากาปี้) · Crit DMG 92.5% = 50 + 42.5 · Elemental Weakness 150.5% = 125 + 25.5 (ช่วงเวลาแห่งการเฉลิมฉลองพิเศษ) · จอ: ATK 2,063 · DEF 686 · HP 9,647 → หักบัฟ ATK +11.25% / DEF +12.75% / HP +15% แบบปัดลง = ATK 1,855 · DEF 609 · HP 8,389 (DEF เท่าเดซี่ 4 ดาว · HP เท่าลีโฮ 4 ดาว · ถ้าเกมปัดแบบปกติ ATK จะเป็น 1,854) — ค่าพื้นฐานนี้คำนวณย้อน ยังไม่ได้เห็นจอที่ไม่มีบัฟ | Neutralization DMG Boost 11.59% · Destroyer 1,026 · Ultimate Gauge Charge 100% · Max Stamina 100 (อาหารไม่เพิ่มค่าเหล่านี้) | โจมตีพื้นฐาน Back Off! จอบอก **Level 9 +4 = Lv.13** ค่าเก็บที่ช่อง Lv.13 | รูป portrait ตัดจากจอ Info 360x360 | **2026-10-31 รอบสอง** ผู้เล่นส่งจอ Switch Snack Time · Special Big Donut · Ultimate Ultimate Sweetness (+ Effect Details ของ Earth Affliction — ข้อความเดียวกับของเดซี่ทุกคำ จึงใช้ status เดียวกัน) · Passive Sugar Charge (Lv.1 · 3 จอเลื่อน) · Guidance of Earth: Can I Sleep Now? (ของผู้เล่นยัง Inactive Lv.1 = ATK 7.5% · จอ Skill Info บอก Lv.12 = 9.15% ใช้ค่า Lv.12 แบบเดียวกับตัวอื่น) · ปลุกพลังครบหกขั้น (ของผู้เล่น Awakening Complete — สกิล Lv.13 = 9 +4 จากขั้น 3 และ 5) | สกิลทุกช่องเลเวล 13 ค่าเก็บที่ช่อง Lv.13 | Rolling Donut ตีได้สูงสุด 21 ครั้ง (แถว Rolling Donut Max Hits) | Sugar Charge: ค่าที่หน่วยไม่ได้บอก (จำนวน Snack · HP Recovery 3) เก็บเป็น flat | ปลุก 2 บัฟดาเมจดินทั้งทีม 10% ตอนใช้ Pillow Pow! — Pillow Pow! ติดเองตอน Sleepy... (ออกจากสนาม) ได้ด้วยตามแพสซีฟ | ปลุก 4: Super-Sized Snack 350% ATK ตอนเข้า Sleepy... (ทุกครั้งที่สลับออก) ยังเป็นข้อความ — ตัวคำนวณยังไม่มีดาเมจเสริมจากปลุกพลัง"
+    "note": "อ่านจากจอภาษาอังกฤษ 2026-10-31 (ผู้เล่นส่ง 4 จอ: Info · Detailed Stats · Skills ของโจมตีพื้นฐานสองจอ) · **ยังไม่มีจอไทย** | Destroyer · **Earth** · Ranged · 4 ดาว · เลเวล 60 | **ค่าพลังบนจอมีบัฟอาหารติดอยู่** — ตรงกับอาหาร 2 จานของบิ้วกาบี้ทุกค่า: Crit 12.5% = 5 + 7.5 (สตูป่ากาปี้) · Crit DMG 92.5% = 50 + 42.5 · Elemental Weakness 150.5% = 125 + 25.5 (ช่วงเวลาแห่งการเฉลิมฉลองพิเศษ) · จอ: ATK 2,063 · DEF 686 · HP 9,647 → หักบัฟ ATK +11.25% / DEF +12.75% / HP +15% แบบปัดลง = ATK 1,855 · DEF 609 · HP 8,389 (DEF เท่าเดซี่ 4 ดาว · HP เท่าลีโฮ 4 ดาว · ถ้าเกมปัดแบบปกติ ATK จะเป็น 1,854) — ค่าพื้นฐานนี้คำนวณย้อน ยังไม่ได้เห็นจอที่ไม่มีบัฟ | Neutralization DMG Boost 11.59% · Destroyer 1,026 · Ultimate Gauge Charge 100% · Max Stamina 100 (อาหารไม่เพิ่มค่าเหล่านี้) | โจมตีพื้นฐาน Back Off! จอบอก **Level 9 +4 = Lv.13** ค่าเก็บที่ช่อง Lv.13 | รูป portrait ตัดจากจอ Info 360x360 | **2026-10-31 รอบสอง** ผู้เล่นส่งจอ Switch Snack Time · Special Big Donut · Ultimate Ultimate Sweetness (+ Effect Details ของ Earth Affliction — ข้อความเดียวกับของเดซี่ทุกคำ จึงใช้ status เดียวกัน) · Passive Sugar Charge (Lv.1 · 3 จอเลื่อน) · Guidance of Earth: Can I Sleep Now? (ของผู้เล่นยัง Inactive Lv.1 = ATK 7.5% · จอ Skill Info บอก Lv.12 = 9.15% ใช้ค่า Lv.12 แบบเดียวกับตัวอื่น) · ปลุกพลังครบหกขั้น (ของผู้เล่น Awakening Complete — สกิล Lv.13 = 9 +4 จากขั้น 3 และ 5) | สกิลทุกช่องเลเวล 13 ค่าเก็บที่ช่อง Lv.13 | Rolling Donut ตีได้สูงสุด 21 ครั้ง (แถว Rolling Donut Max Hits) | Sugar Charge: ค่าที่หน่วยไม่ได้บอก (จำนวน Snack · HP Recovery 3) เก็บเป็น flat | ปลุก 2 บัฟดาเมจดินทั้งทีม 10% ตอนใช้ Pillow Pow! — Pillow Pow! ติดเองตอน Sleepy... (ออกจากสนาม) ได้ด้วยตามแพสซีฟ | ปลุก 4: Super-Sized Snack 350% ATK ตอนเข้า Sleepy... (ทุกครั้งที่สลับออก) ยังเป็นข้อความ — ตัวคำนวณยังไม่มีดาเมจเสริมจากปลุกพลัง | **2026-11-01 จอภาษาไทย** (ข้อมูล · โจมตีพื้นฐาน Lv.13 สองจอ · อัลติเมต Lv.13 + รายละเอียดเอฟเฟกต์อ่อนแอต่อดิน ตรงกับที่มีอยู่แล้ว) ได้ชื่อไทย เอลลี่ · ชื่อ/คำอธิบาย/ชื่อแถวของโจมตีพื้นฐานกับอัลติเมต · ตัวเลขทุกแถวตรงกับจออังกฤษ · การชี้นำแห่งดินยังปิดใช้งานในจอนี้ · จอข้อมูลเป็นค่าพลังที่ใส่ของแล้ว ไม่ได้ใช้ · ยังขาดจอไทยของสกิลสับเปลี่ยน สกิลพิเศษ แพสซีฟ การชี้นำ ปลุกพลัง 1–6 และสถานะอื่น"
   },
   "statuses": [
     {
