@@ -221,10 +221,12 @@
     {
       "stage": 5,
       "name": {
-        "en": "Caffeine for an All-Nighter"
+        "en": "Caffeine for an All-Nighter",
+        "th": "คาเฟอีนสำหรับคืนโต้รุ่ง"
       },
       "desc": {
-        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Special Skill DMG by 6%."
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Special Skill DMG by 6%.",
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจสกิลพิเศษ 6%"
       },
       "effects": [
         {
@@ -244,10 +246,12 @@
     {
       "stage": 6,
       "name": {
-        "en": "Subtle Adjustment, Great Results"
+        "en": "Subtle Adjustment, Great Results",
+        "th": "ปรับเพียงเล็กน้อยเพื่อผลลัพธ์อันยิ่งใหญ่"
       },
       "desc": {
-        "en": "Enhances the effect gained upon triggering Freeze with Isabella's Passive Trait, increasing ATK by 83.2% of Neutralization DMG Boost, up to 35.2%, and increasing Crit Rate by 24% and duration by 5s. / Additionally, triggering Freeze increases Pierce Rate by 17.89% for 10s."
+        "en": "Enhances the effect gained upon triggering Freeze with Isabella's Passive Trait, increasing ATK by 83.2% of Neutralization DMG Boost, up to 35.2%, and increasing Crit Rate by 24% and duration by 5s. / Additionally, triggering Freeze increases Pierce Rate by 17.89% for 10s.",
+        "th": "เมื่อเอฟเฟกต์เยือกแข็งทำงานด้วยแพสซีฟ เอฟเฟกต์ที่ได้รับจะถูกเสริมพลัง ทำให้เพิ่มพลังโจมตี 83.2% ของค่าเพิ่มดาเมจหมดฤทธิ์ สูงสุด 35.2% และเพิ่มอัตราคริติคอลเป็น 24% และเพิ่มเวลาแสดงผล 5 วินาที / อีกทั้งเมื่อเอฟเฟกต์เยือกแข็งทำงาน จะเพิ่มอัตราเจาะเกราะเพิ่มเติม 17.89% นาน 10 วินาที"
       },
       "effects": [
         {
@@ -288,17 +292,20 @@
   "skills": {
     "basic": {
       "name": {
-        "en": "Plasma Forge"
+        "en": "Plasma Forge",
+        "th": "พลาสมาฟอร์จ"
       },
       "desc": {
-        "en": "Isabella attacks the enemy with a plasma reflector, dealing Ice DMG and gaining energy. Energy cannot exceed maximum capacity. / Energy is also gained upon using Evasion Counter. However, energy can't be gained with Evasion Counter while Cooling Cycle is active. / When energy reaches a certain level, Isabella's Basic Attack's 4th Hit is triggered. While it's active, DMG Taken decreases and hit enemies are inflicted with Freeze. Also, Isabella's Charge Attack leads to Basic Attack's 4th Hit. / When Isabella remains on the field and attacks enemies after using her Tag-out Skill, she uses her Basic Attack's 3rd and 5th Hit. Enemies hit by her Basic Attack's 5th Hit have their Neutralization RES decreased. / Isabella cannot gain energy with her Basic Attack when she's not being actively controlled."
+        "en": "Isabella attacks the enemy with a plasma reflector, dealing Ice DMG and gaining energy. Energy cannot exceed maximum capacity. / Energy is also gained upon using Evasion Counter. However, energy can't be gained with Evasion Counter while Cooling Cycle is active. / When energy reaches a certain level, Isabella's Basic Attack's 4th Hit is triggered. While it's active, DMG Taken decreases and hit enemies are inflicted with Freeze. Also, Isabella's Charge Attack leads to Basic Attack's 4th Hit. / When Isabella remains on the field and attacks enemies after using her Tag-out Skill, she uses her Basic Attack's 3rd and 5th Hit. Enemies hit by her Basic Attack's 5th Hit have their Neutralization RES decreased. / Isabella cannot gain energy with her Basic Attack when she's not being actively controlled.",
+        "th": "โจมตีศัตรูด้วยพลาสมารีเฟล็กเตอร์ สร้างดาเมจธาตุน้ำแข็งและได้รับพลังงาน โดยพลังงานจะไม่สามารถรับได้เกินปริมาณครอบครองสูงสุด / เมื่อใช้หลบหลีกโต้กลับก็สามารถรับพลังงานได้เช่นกัน แต่ในขณะที่มีวงจรหล่อเย็นจะไม่สามารถรับพลังงานได้ด้วยหลบหลีกโต้กลับ / หากพลังงานถึงค่าที่กำหนด โจมตีพื้นฐานขั้น 4 จะทำงาน ซึ่งในขณะที่ทำงาน จะลดดาเมจที่ตนเองได้รับ และมอบเอฟเฟกต์เยือกแข็งแก่ศัตรูที่โดนโจมตี อีกทั้งหลังจากใช้โจมตีชาร์จ จะประสานต่อด้วยโจมตีพื้นฐานขั้น 4 / หลังจากใช้สกิลล่าถอย อิซาเบลล่าจะยังคงอยู่ในฟิลด์และโจมตีศัตรูด้วยโจมตีพื้นฐานขั้น 3 และขั้น 5 ซึ่งต้านทานหมดฤทธิ์ของศัตรูที่โดนการโจมตีพื้นฐานขั้น 5 จะลดลง / ในขณะที่ไม่ได้ควบคุมโดยตรง จะไม่สามารถรับพลังงานจากโจมตีพื้นฐานได้"
       },
       "damageType": "ice",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "1st Hit DMG"
+            "en": "1st Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 1"
           },
           "unit": "percent",
           "scaling": [
@@ -323,7 +330,8 @@
         },
         {
           "label": {
-            "en": "2nd Hit DMG"
+            "en": "2nd Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 2"
           },
           "unit": "percent",
           "scaling": [
@@ -348,7 +356,8 @@
         },
         {
           "label": {
-            "en": "3rd Hit DMG"
+            "en": "3rd Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 3"
           },
           "unit": "percent",
           "scaling": [
@@ -373,7 +382,8 @@
         },
         {
           "label": {
-            "en": "Basic Attack Energy Gain"
+            "en": "Basic Attack Energy Gain",
+            "th": "ปริมาณได้รับพลังงานจากโจมตีพื้นฐาน"
           },
           "unit": "flat",
           "scaling": [
@@ -398,7 +408,8 @@
         },
         {
           "label": {
-            "en": "Max Energy Capacity"
+            "en": "Max Energy Capacity",
+            "th": "ปริมาณครอบครองพลังงานสูงสุด"
           },
           "unit": "flat",
           "scaling": [
@@ -423,7 +434,8 @@
         },
         {
           "label": {
-            "en": "Energy Required to Trigger 4th Hit"
+            "en": "Energy Required to Trigger 4th Hit",
+            "th": "ปริมาณพลังงานที่จำเป็นเพื่อให้การโจมตีขั้น 4 ทำงาน"
           },
           "unit": "flat",
           "scaling": [
@@ -448,7 +460,8 @@
         },
         {
           "label": {
-            "en": "4th Hit DMG"
+            "en": "4th Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 4"
           },
           "unit": "percent",
           "scaling": [
@@ -473,7 +486,8 @@
         },
         {
           "label": {
-            "en": "Basic Attack's 4th Hit Energy Gain"
+            "en": "Basic Attack's 4th Hit Energy Gain",
+            "th": "ปริมาณได้รับพลังงานจากโจมตีพื้นฐานขั้น 4"
           },
           "unit": "flat",
           "scaling": [
@@ -498,7 +512,8 @@
         },
         {
           "label": {
-            "en": "DMG Taken Reduction"
+            "en": "DMG Taken Reduction",
+            "th": "ลดดาเมจที่ได้รับ"
           },
           "unit": "percent",
           "scaling": [
@@ -523,7 +538,8 @@
         },
         {
           "label": {
-            "en": "5th Hit DMG"
+            "en": "5th Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 5"
           },
           "unit": "percent",
           "scaling": [
@@ -548,7 +564,8 @@
         },
         {
           "label": {
-            "en": "Incapacitate RES Decrease"
+            "en": "Incapacitate RES Decrease",
+            "th": "ลดพลังต้านทานการไร้ความสามารถ"
           },
           "unit": "percent",
           "scaling": [
@@ -573,7 +590,8 @@
         },
         {
           "label": {
-            "en": "Neutralization RES Reduction Duration"
+            "en": "Neutralization RES Reduction Duration",
+            "th": "เวลาแสดงผลลดต้านทานหมดฤทธิ์"
           },
           "unit": "seconds",
           "scaling": [
@@ -598,7 +616,8 @@
         },
         {
           "label": {
-            "en": "Charge Attack DMG"
+            "en": "Charge Attack DMG",
+            "th": "ดาเมจโจมตีชาร์จ"
           },
           "unit": "percent",
           "scaling": [
@@ -622,7 +641,8 @@
         },
         {
           "label": {
-            "en": "Air Counter DMG"
+            "en": "Air Counter DMG",
+            "th": "ดาเมจโจมตีฉับพลัน"
           },
           "unit": "percent",
           "scaling": [
@@ -646,7 +666,8 @@
         },
         {
           "label": {
-            "en": "Evasion Counter DMG"
+            "en": "Evasion Counter DMG",
+            "th": "ดาเมจหลบหลีกโต้กลับ"
           },
           "unit": "percent",
           "scaling": [
@@ -670,7 +691,8 @@
         },
         {
           "label": {
-            "en": "Evasion Counter Energy Gain"
+            "en": "Evasion Counter Energy Gain",
+            "th": "ปริมาณพลังงานที่ได้รับจากหลบหลีกโต้กลับ"
           },
           "unit": "flat",
           "scaling": [
@@ -695,7 +717,8 @@
         },
         {
           "label": {
-            "en": "Freeze Duration"
+            "en": "Freeze Duration",
+            "th": "เวลาแสดงผลเยือกแข็ง"
           },
           "unit": "seconds",
           "scaling": [
@@ -722,17 +745,20 @@
     },
     "switch": {
       "name": {
-        "en": "Repulsion"
+        "en": "Repulsion",
+        "th": "สะท้อนกลับ"
       },
       "desc": {
-        "en": "Isabella causes an explosion on the ground with her plasma reflector, dealing Ice DMG, and then leaps backward. Hit enemies are inflicted with Freeze, and the remaining cooldown for Isabella's Special Skill immediately decreases. / [Tag-out Skill] Isabella's Tag-out Skill is triggered upon switching to another teammate while Cooling Cycle is active, and Isabella remains on the field for a set duration and attacks enemies with her Basic Attack."
+        "en": "Isabella causes an explosion on the ground with her plasma reflector, dealing Ice DMG, and then leaps backward. Hit enemies are inflicted with Freeze, and the remaining cooldown for Isabella's Special Skill immediately decreases. / [Tag-out Skill] Isabella's Tag-out Skill is triggered upon switching to another teammate while Cooling Cycle is active, and Isabella remains on the field for a set duration and attacks enemies with her Basic Attack.",
+        "th": "ใช้พลาสมารีเฟล็กเตอร์ทำให้เกิดระเบิดบนพื้น สร้างดาเมจธาตุน้ำแข็งจากนั้นกระโดดถอยไปด้านหลัง มอบเอฟเฟกต์เยือกแข็งแก่ศัตรูที่โดนการโจมตี และลดเวลาคงเหลือของสกิลพิเศษในช่วงคูลดาวน์ลงทันที / [สกิลล่าถอย] เมื่อเปลี่ยนเป็นสมาชิกทีมคนอื่นในขณะที่มีวงจรหล่อเย็น สกิลล่าถอยจะทำงาน และยังคงอยู่ในฟิลด์ตามระยะเวลาที่กำหนดและโจมตีพื้นฐานแก่ศัตรู"
       },
       "damageType": "ice",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "Switch Skill DMG"
+            "en": "Switch Skill DMG",
+            "th": "ดาเมจสกิลสับเปลี่ยน"
           },
           "unit": "percent",
           "scaling": [
@@ -757,7 +783,8 @@
         },
         {
           "label": {
-            "en": "Freeze Duration"
+            "en": "Freeze Duration",
+            "th": "เวลาแสดงผลเยือกแข็ง"
           },
           "unit": "seconds",
           "scaling": [
@@ -782,7 +809,8 @@
         },
         {
           "label": {
-            "en": "Special Skill Cooldown Decrease"
+            "en": "Special Skill Cooldown Decrease",
+            "th": "ลดคูลดาวน์สกิลพิเศษ"
           },
           "unit": "percent",
           "scaling": [
@@ -807,7 +835,8 @@
         },
         {
           "label": {
-            "en": "On-Field Duration"
+            "en": "On-Field Duration",
+            "th": "เวลาคงอยู่ในฟิลด์"
           },
           "unit": "seconds",
           "scaling": [
@@ -834,10 +863,12 @@
     },
     "special": {
       "name": {
-        "en": "Energy Conversion"
+        "en": "Energy Conversion",
+        "th": "แปลงพลังงาน"
       },
       "desc": {
-        "en": "Isabella fires a shell at the enemy, dealing Ice DMG and inflicting Freeze. / DMG Taken decreases and energy is consumed while using her Special Skill. Consuming energy increases Special Skill DMG, and consuming maximum energy all at once additionally increases the Pierce Rate. / The Special Skill DMG Boost and Pierce Rate Boost only apply while Isabella's Special Skill is being used."
+        "en": "Isabella fires a shell at the enemy, dealing Ice DMG and inflicting Freeze. / DMG Taken decreases and energy is consumed while using her Special Skill. Consuming energy increases Special Skill DMG, and consuming maximum energy all at once additionally increases the Pierce Rate. / The Special Skill DMG Boost and Pierce Rate Boost only apply while Isabella's Special Skill is being used.",
+        "th": "ยิงลูกกระสุนปืนใหญ่ใส่ศัตรู สร้างดาเมจธาตุน้ำแข็งและมอบเอฟเฟกต์เยือกแข็ง / ในขณะที่ใช้สกิลพิเศษ จะลดดาเมจที่ตนเองได้รับ และจะใช้พลังงาน ซึ่งเมื่อใช้พลังงาน จะเพิ่มดาเมจสกิลพิเศษ และหากใช้พลังงานทั้งหมดที่มีอยู่ในครั้งเดียวจนหมดเท่าปริมาณพลังงานสูงสุด จะเพิ่มอัตราเจาะเกราะเพิ่มเติม / เอฟเฟกต์เพิ่มดาเมจสกิลพิเศษและเอฟเฟกต์เพิ่มอัตราเจาะเกราะ จะถูกปรับใช้แค่ขณะที่ใช้สกิลพิเศษ"
       },
       "damageType": "ice",
       "effects": [
@@ -861,7 +892,8 @@
       "values": [
         {
           "label": {
-            "en": "DMG"
+            "en": "DMG",
+            "th": "ดาเมจ"
           },
           "unit": "percent",
           "scaling": [
@@ -886,7 +918,8 @@
         },
         {
           "label": {
-            "en": "Energy Consumption"
+            "en": "Energy Consumption",
+            "th": "ปริมาณการใช้พลังงาน"
           },
           "unit": "flat",
           "scaling": [
@@ -911,7 +944,8 @@
         },
         {
           "label": {
-            "en": "Special Skill DMG Boost"
+            "en": "Special Skill DMG Boost",
+            "th": "เพิ่มดาเมจสกิลพิเศษ"
           },
           "unit": "percent",
           "scaling": [
@@ -936,7 +970,8 @@
         },
         {
           "label": {
-            "en": "Special Skill DMG Boost Max Stacks"
+            "en": "Special Skill DMG Boost Max Stacks",
+            "th": "ทับซ้อนสูงสุดในการเพิ่มดาเมจสกิลพิเศษ"
           },
           "unit": "flat",
           "scaling": [
@@ -961,7 +996,8 @@
         },
         {
           "label": {
-            "en": "Penetration Rate Increase"
+            "en": "Penetration Rate Increase",
+            "th": "เพิ่มอัตราการเจาะทะลุ"
           },
           "unit": "percent",
           "scaling": [
@@ -986,7 +1022,8 @@
         },
         {
           "label": {
-            "en": "DMG Taken Reduction"
+            "en": "DMG Taken Reduction",
+            "th": "ลดดาเมจที่ได้รับ"
           },
           "unit": "percent",
           "scaling": [
@@ -1011,7 +1048,8 @@
         },
         {
           "label": {
-            "en": "Freeze Duration"
+            "en": "Freeze Duration",
+            "th": "เวลาแสดงผลเยือกแข็ง"
           },
           "unit": "seconds",
           "scaling": [
@@ -1036,7 +1074,8 @@
         },
         {
           "label": {
-            "en": "Cooldown"
+            "en": "Cooldown",
+            "th": "คูลดาวน์"
           },
           "unit": "seconds",
           "scaling": [
@@ -1062,17 +1101,20 @@
     },
     "ultimate": {
       "name": {
-        "en": "Kilonova"
+        "en": "Kilonova",
+        "th": "คิลโลโนวา"
       },
       "desc": {
-        "en": "Isabella shoots a sphere of condensed reactive energy forward, drawing enemies in. An explosion occurs at the end of the energy reaction, dealing Ice DMG and inflicting Ice Affliction."
+        "en": "Isabella shoots a sphere of condensed reactive energy forward, drawing enemies in. An explosion occurs at the end of the energy reaction, dealing Ice DMG and inflicting Ice Affliction.",
+        "th": "ยิงก้อนปฏิกิริยาพลังงานที่ถูกอัดแน่นไปด้านหน้าเพื่อดึงศัตรูเข้าหากัน เมื่อปฏิกิริยาพลังงานเสร็จสิ้นจะเกิดระเบิด สร้างดาเมจธาตุน้ำแข็งและมอบเอฟเฟกต์อ่อนแอต่อน้ำแข็ง"
       },
       "damageType": "ice",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "DMG"
+            "en": "DMG",
+            "th": "ดาเมจ"
           },
           "unit": "percent",
           "scaling": [
@@ -1097,7 +1139,8 @@
         },
         {
           "label": {
-            "en": "Ice Affliction Duration"
+            "en": "Ice Affliction Duration",
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อน้ำแข็ง"
           },
           "unit": "seconds",
           "scaling": [
@@ -1124,10 +1167,12 @@
     },
     "passive": {
       "name": {
-        "en": "Reactivity Test"
+        "en": "Reactivity Test",
+        "th": "ตรวจสอบปฏิกิริยา"
       },
       "desc": {
-        "en": "Isabella's Crit Rate increases, and ATK increases by a portion of Neutralization DMG Boost upon triggering Freeze on the enemy, but it doesn't increase above a set maximum. / Isabella gains Cooling Cycle upon using her Switch Skill or Special Skill. Cooling Cycle ends immediately upon gaining energy. / All unconsumed energy is removed upon switching to Isabella."
+        "en": "Isabella's Crit Rate increases, and ATK increases by a portion of Neutralization DMG Boost upon triggering Freeze on the enemy, but it doesn't increase above a set maximum. / Isabella gains Cooling Cycle upon using her Switch Skill or Special Skill. Cooling Cycle ends immediately upon gaining energy. / All unconsumed energy is removed upon switching to Isabella.",
+        "th": "เมื่อทำให้ศัตรูติดเอฟเฟกต์เยือกแข็ง จะเพิ่มอัตราคริติคอลและเพิ่มพลังโจมตีตามอัตราที่กำหนดของค่าเพิ่มดาเมจหมดฤทธิ์ และจะไม่เพิ่มเกินค่าสูงสุด / เมื่อใช้สกิลสับเปลี่ยนหรือสกิลพิเศษ จะได้รับเอฟเฟกต์วงจรหล่อเย็น และเมื่อได้รับพลังงาน วงจรหล่อเย็นจะสิ้นสุดลงทันที / เมื่อเปลี่ยนเป็นอิซาเบลล่า พลังงานที่ยังไม่ได้ใช้จะถูกลบออกทั้งหมด"
       },
       "effects": [
         {
@@ -1161,7 +1206,8 @@
       "values": [
         {
           "label": {
-            "en": "Crit Rate Boost"
+            "en": "Crit Rate Boost",
+            "th": "เพิ่มอัตราคริติคอล"
           },
           "unit": "percent",
           "scaling": [
@@ -1186,7 +1232,8 @@
         },
         {
           "label": {
-            "en": "Crit Rate Boost Duration"
+            "en": "Crit Rate Boost Duration",
+            "th": "เวลาแสดงผลเพิ่มอัตราคริติคอล"
           },
           "unit": "seconds",
           "scaling": [
@@ -1211,7 +1258,8 @@
         },
         {
           "label": {
-            "en": "Neutralization DMG Boost Conversion Ratio"
+            "en": "Neutralization DMG Boost Conversion Ratio",
+            "th": "อัตราแปลงตามค่าเพิ่มดาเมจหมดฤทธิ์"
           },
           "unit": "percent",
           "scaling": [
@@ -1236,7 +1284,8 @@
         },
         {
           "label": {
-            "en": "ATK Boost Max"
+            "en": "ATK Boost Max",
+            "th": "ค่าสูงสุดของการเพิ่มพลังโจมตี"
           },
           "unit": "percent",
           "scaling": [
@@ -1261,7 +1310,8 @@
         },
         {
           "label": {
-            "en": "ATK Boost Duration"
+            "en": "ATK Boost Duration",
+            "th": "เวลาแสดงผลเพิ่มพลังโจมตี"
           },
           "unit": "seconds",
           "scaling": [
@@ -1286,7 +1336,8 @@
         },
         {
           "label": {
-            "en": "Cooling Cycle Duration"
+            "en": "Cooling Cycle Duration",
+            "th": "เวลาแสดงผลวงจรหล่อเย็น"
           },
           "unit": "seconds",
           "scaling": [
@@ -1313,10 +1364,12 @@
     },
     "elemental": {
       "name": {
-        "en": "Support System Maintenance"
+        "en": "Support System Maintenance",
+        "th": "ตรวจสอบระบบซัพพอร์ต"
       },
       "desc": {
-        "en": "Using Isabella's Switch Skill increases Ice teammates' Basic Attack DMG by 40.1% (Duration: 12s)"
+        "en": "Using Isabella's Switch Skill increases Ice teammates' Basic Attack DMG by 40.1% (Duration: 12s)",
+        "th": "เมื่อใช้สกิลสับเปลี่ยน จะเพิ่มดาเมจโจมตีพื้นฐานของสมาชิกทีมธาตุน้ำแข็ง 40.1% (เวลาแสดงผล 12 วินาที)"
       },
       "effects": [
         {
@@ -1344,10 +1397,12 @@
   "statuses": [
     {
       "name": {
-        "en": "Cooling Cycle"
+        "en": "Cooling Cycle",
+        "th": "ระบบหมุนเวียนหล่อเย็น"
       },
       "desc": {
-        "en": "Energy cycles through the plasma reflector, and Isabella's Tag-out Skill is triggered upon switching to another teammate while the effect is active."
+        "en": "Energy cycles through the plasma reflector, and Isabella's Tag-out Skill is triggered upon switching to another teammate while the effect is active.",
+        "th": "หมุนเวียนพลังงานในพลาสมารีเฟล็กเตอร์ และเปลี่ยนเป็นสมาชิกทีมคนอื่นในขณะที่มีเอฟเฟกต์ เพื่อใช้สกิลล่าถอย"
       },
       "effects": []
     },
@@ -1357,16 +1412,19 @@
         "th": "ภาวะเปราะเย็น"
       },
       "desc": {
-        "en": "Landing an attack with the Ice element deals additional DMG equal to 50% of the attack's DMG."
+        "en": "Landing an attack with the Ice element deals additional DMG equal to 50% of the attack's DMG.",
+        "th": "เมื่อโจมตีโดนด้วยธาตุน้ำแข็ง จะเกิดดาเมจเพิ่มเติม 50% ของดาเมจดังกล่าว"
       },
       "effects": []
     },
     {
       "name": {
-        "en": "Ice Affliction"
+        "en": "Ice Affliction",
+        "th": "เอฟเฟกต์อ่อนแอต่อน้ำแข็ง"
       },
       "desc": {
-        "en": "Afflicted targets take Ice DMG over time, and Ice RES decreases by 15%."
+        "en": "Afflicted targets take Ice DMG over time, and Ice RES decreases by 15%.",
+        "th": "ได้รับดาเมจต่อเนื่องธาตุน้ำแข็งและลดพลังต้านทานธาตุน้ำแข็ง 15%"
       },
       "effects": []
     }
@@ -1382,6 +1440,6 @@
       "en",
       "th"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max · มีปุ่ม Quick Power Up — ไม่ใช่ Character Preview) · **ยังไม่มีจอไทย** | Destroyer · Ice · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลัง ATK 2,279 · DEF 719 · HP 11,169 · Crit 12.5% / 92.5% — เก็บตามแบบ Narae ที่ผู้เล่นยืนยันว่าจอบัญชีไม่ติดของ · **Crit 12.5 / 92.5 เท่า Narae และไม่ตรงกับตัว Preview ทั้งหมด (5 / 50)** → fieldsUnverified จนกว่าจะเทียบจอ Preview | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats (จอบัญชี): Neutralization DMG Boost 12.18% · Destroyer 1,078 · Ultimate Gauge 100% · Stamina 100 · **Elemental Weakness 150.5% · Ice DMG Boost 1.3% เท่า Narae** (ไม่ตรงกับตัว Preview → fieldsUnverified) | Basic Plasma Forge (คำอธิบายห้าท่อน · ตาราง 17 แถว จากสามจอเลื่อนต่อกัน · พลังงานเป็นค่าคงที่) · **ตารางใช้สองคำกับค่าเดียว: \"Incapacitate RES Decrease\" กับ \"Neutralization RES Reduction Duration\" เก็บตามจอ** | **2026-10-22 รอบสาม** Switch Repulsion (238.1% + Tag-out) · Special Energy Conversion (1,472% · คูลดาวน์ 30 วินาที · ตารางแปดแถวจากสองจอ) · **คำอธิบายใช้ \"Pierce Rate\" แต่ตารางใช้ \"Penetration Rate Increase\" — ค่าเดียวกันตามโน้ตของ Chloe เก็บตามจอ** | Guidance of Ice Support System Maintenance: **ค่า Lv.12 = 40.1% อ่านจากป๊อปอัป Skill Info (Lv. 3 >> Lv. 12)** จอหลักขึ้น Lv.3 = 30.2% · ไม่มีจุดท้ายประโยคตามจอ | **2026-10-22 รอบสี่** Ultimate Kilonova (1,394.5%) · Passive Reactivity Test (Crit Rate +10% 5 วินาทีเมื่อติด Freeze → onApplyFreeze · ATK ตาม Neutralization สูงสุด 15% เก็บในตาราง) · Effect Details: Cooling Cycle · Embrittled (จากขั้น 4) · ปลุกพลังครบหกขั้น | **ปลุกพลังของบัญชีนี้ล็อกทุกขั้น แต่ Crit ยังขึ้น 12.5 / 92.5 — ส่วนต่างจากตัว Preview จึงไม่ได้มาจากปลุกพลัง** (ยังไม่รู้ว่ามาจากอะไร) | ปลุกพลัง effects: ขั้น 2 Ice DMG +9.1% ซ้อน 4 ชั้น 4 วินาที (ตอนได้พลังงานจาก Basic → onBasicAttackHit + note) และ Basic +20% 6 วินาทีเมื่อใช้ Tag-out · ขั้น 3 Basic +6% · ขั้น 5 Special +6% · ขั้น 1 / 4 / 6 เก็บเป็นข้อความ | Effect Details ของ Ultimate: Ice Affliction (อ่านจากจอ) | ยังไม่ได้อ่าน: จอไทยทั้งหมด | **2026-10-22 ค่าพลังแก้แล้ว — จอบัญชีมีบัฟอาหารติดอยู่** (ผู้เล่นบอก \"ตอนนี้กินอาหารอยู่ stat เลยสูงขึ้น\" + ส่งจอ Check Active Food): Green Cappy Forest Stew (Max HP +15% · ATK +11.25% · Stamina Consumption −18.75% · Crit Rate +7.5%) และ Exquisite Time to Celebrate (DEF +12.75% · Elemental Weakness DMG +25.5% · Capture Proficiency +1,275 · Crit DMG +42.5%) | หักออก: Crit 12.5 − 7.5 = 5 · 92.5 − 42.5 = 50 · Elemental Weakness 150.5 − 25.5 = 125 — ตรงกับตัว Preview ทุกตัว | ATK / DEF / HP: แก้สมการ floor(ฐาน × (1 + %)) = ค่าบนจอ ได้คำตอบจำนวนเต็มเดียวทุกค่า · **ตรวจกับ Isabella ได้ ATK 2,049 · DEF 638 · HP 9,713 ตรงกับค่า Preview ของ 5 ดาวตัวอื่นพอดี** จึงยืนยันวิธีคิด (คูณจากฐานแล้วปัดลง) | **Ice DMG Boost 1.3% ไม่ได้มาจากอาหาร และตัว Preview ไม่มีบรรทัดนี้ — ไม่ใช่ค่าตัวละคร เอาออกจาก otherStats** (ที่มายังไม่รู้) | ค่าบนจอเดิมก่อนหัก: ATK 2,279 · DEF 719 · HP 11,169 · Crit 12.5% / 92.5% · Elemental Weakness 150.5% · Ice DMG 1.3% | ผลหลังหัก: ATK 2,049 · DEF 638 · HP 9,713 | **2026-10-24** บัฟทีมที่จอบอกว่าให้เฉพาะเพื่อนบางแบบ แปลงข้อความเงื่อนไขเดิมเป็นช่อง condition.teammateElement / teammateNotElement / teammateRange ให้เครื่องคิดดาเมจทีมอ่านได้ — ไม่ได้เพิ่มข้อมูลใหม่ ข้อความเงื่อนไขเดิมยังอยู่ | 2026-10-31 ปลุก 4 ใส่เป็น effect: ยิงสนับสนุน = ดาเมจเพิ่มเติม 50% ของสกิลสับเปลี่ยน · สถานะ Embrittled บนศัตรู 8 วินาที = ท่าน้ำแข็งของทุกคนได้ดาเมจเพิ่มเติม 50% (stat bonusDmg ใหม่) | **2026-10-31 ผู้เล่นสั่งไล่ใส่บัฟที่เป็นข้อความทั้งหมด** ใส่ effect จากข้อความ/ตารางบนจอเดิม (ไม่ได้อ่านจอใหม่): A1, A2, A6, passive, special · \"X เท่า\" นับเป็น +100% ต่อเท่าตามที่ผู้เล่นยืนยันกับกาบี้ · ท่าที่ตีเพิ่ม/จำนวนครั้งเพิ่มใช้ bonusDmg · บัฟแปลงค่าใช้ condition.convertFrom | **2026-11-01 จอภาษาไทย** (ข้อมูล · ปลุกพลัง 1–4) ได้ชื่อไทย อิซาเบลล่า · ชื่อ/คำอธิบายปลุกพลัง 1–4 · ชื่อสถานะ ภาวะเปราะเย็น (คำขีดเส้นใต้ในปลุก 4) · ตัวเลขตรงกับจออังกฤษ (ปลุก 1 100% · ปลุก 2 182% / 9.1% / 20% · ปลุก 4 50% / 8 วินาที) · จอข้อมูลเป็นค่าพลังที่ใส่ของแล้ว ไม่ได้ใช้ · ยังขาดจอไทยของสกิลทั้งหมด ปลุกพลัง 5–6 และคำอธิบายสถานะ"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max · มีปุ่ม Quick Power Up — ไม่ใช่ Character Preview) · **ยังไม่มีจอไทย** | Destroyer · Ice · Ranged · เลเวล 60 · **5 ดาว (ผู้เล่นบอก 2026-10-22)** | ค่าพลัง ATK 2,279 · DEF 719 · HP 11,169 · Crit 12.5% / 92.5% — เก็บตามแบบ Narae ที่ผู้เล่นยืนยันว่าจอบัญชีไม่ติดของ · **Crit 12.5 / 92.5 เท่า Narae และไม่ตรงกับตัว Preview ทั้งหมด (5 / 50)** → fieldsUnverified จนกว่าจะเทียบจอ Preview | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats (จอบัญชี): Neutralization DMG Boost 12.18% · Destroyer 1,078 · Ultimate Gauge 100% · Stamina 100 · **Elemental Weakness 150.5% · Ice DMG Boost 1.3% เท่า Narae** (ไม่ตรงกับตัว Preview → fieldsUnverified) | Basic Plasma Forge (คำอธิบายห้าท่อน · ตาราง 17 แถว จากสามจอเลื่อนต่อกัน · พลังงานเป็นค่าคงที่) · **ตารางใช้สองคำกับค่าเดียว: \"Incapacitate RES Decrease\" กับ \"Neutralization RES Reduction Duration\" เก็บตามจอ** | **2026-10-22 รอบสาม** Switch Repulsion (238.1% + Tag-out) · Special Energy Conversion (1,472% · คูลดาวน์ 30 วินาที · ตารางแปดแถวจากสองจอ) · **คำอธิบายใช้ \"Pierce Rate\" แต่ตารางใช้ \"Penetration Rate Increase\" — ค่าเดียวกันตามโน้ตของ Chloe เก็บตามจอ** | Guidance of Ice Support System Maintenance: **ค่า Lv.12 = 40.1% อ่านจากป๊อปอัป Skill Info (Lv. 3 >> Lv. 12)** จอหลักขึ้น Lv.3 = 30.2% · ไม่มีจุดท้ายประโยคตามจอ | **2026-10-22 รอบสี่** Ultimate Kilonova (1,394.5%) · Passive Reactivity Test (Crit Rate +10% 5 วินาทีเมื่อติด Freeze → onApplyFreeze · ATK ตาม Neutralization สูงสุด 15% เก็บในตาราง) · Effect Details: Cooling Cycle · Embrittled (จากขั้น 4) · ปลุกพลังครบหกขั้น | **ปลุกพลังของบัญชีนี้ล็อกทุกขั้น แต่ Crit ยังขึ้น 12.5 / 92.5 — ส่วนต่างจากตัว Preview จึงไม่ได้มาจากปลุกพลัง** (ยังไม่รู้ว่ามาจากอะไร) | ปลุกพลัง effects: ขั้น 2 Ice DMG +9.1% ซ้อน 4 ชั้น 4 วินาที (ตอนได้พลังงานจาก Basic → onBasicAttackHit + note) และ Basic +20% 6 วินาทีเมื่อใช้ Tag-out · ขั้น 3 Basic +6% · ขั้น 5 Special +6% · ขั้น 1 / 4 / 6 เก็บเป็นข้อความ | Effect Details ของ Ultimate: Ice Affliction (อ่านจากจอ) | ยังไม่ได้อ่าน: จอไทยทั้งหมด | **2026-10-22 ค่าพลังแก้แล้ว — จอบัญชีมีบัฟอาหารติดอยู่** (ผู้เล่นบอก \"ตอนนี้กินอาหารอยู่ stat เลยสูงขึ้น\" + ส่งจอ Check Active Food): Green Cappy Forest Stew (Max HP +15% · ATK +11.25% · Stamina Consumption −18.75% · Crit Rate +7.5%) และ Exquisite Time to Celebrate (DEF +12.75% · Elemental Weakness DMG +25.5% · Capture Proficiency +1,275 · Crit DMG +42.5%) | หักออก: Crit 12.5 − 7.5 = 5 · 92.5 − 42.5 = 50 · Elemental Weakness 150.5 − 25.5 = 125 — ตรงกับตัว Preview ทุกตัว | ATK / DEF / HP: แก้สมการ floor(ฐาน × (1 + %)) = ค่าบนจอ ได้คำตอบจำนวนเต็มเดียวทุกค่า · **ตรวจกับ Isabella ได้ ATK 2,049 · DEF 638 · HP 9,713 ตรงกับค่า Preview ของ 5 ดาวตัวอื่นพอดี** จึงยืนยันวิธีคิด (คูณจากฐานแล้วปัดลง) | **Ice DMG Boost 1.3% ไม่ได้มาจากอาหาร และตัว Preview ไม่มีบรรทัดนี้ — ไม่ใช่ค่าตัวละคร เอาออกจาก otherStats** (ที่มายังไม่รู้) | ค่าบนจอเดิมก่อนหัก: ATK 2,279 · DEF 719 · HP 11,169 · Crit 12.5% / 92.5% · Elemental Weakness 150.5% · Ice DMG 1.3% | ผลหลังหัก: ATK 2,049 · DEF 638 · HP 9,713 | **2026-10-24** บัฟทีมที่จอบอกว่าให้เฉพาะเพื่อนบางแบบ แปลงข้อความเงื่อนไขเดิมเป็นช่อง condition.teammateElement / teammateNotElement / teammateRange ให้เครื่องคิดดาเมจทีมอ่านได้ — ไม่ได้เพิ่มข้อมูลใหม่ ข้อความเงื่อนไขเดิมยังอยู่ | 2026-10-31 ปลุก 4 ใส่เป็น effect: ยิงสนับสนุน = ดาเมจเพิ่มเติม 50% ของสกิลสับเปลี่ยน · สถานะ Embrittled บนศัตรู 8 วินาที = ท่าน้ำแข็งของทุกคนได้ดาเมจเพิ่มเติม 50% (stat bonusDmg ใหม่) | **2026-10-31 ผู้เล่นสั่งไล่ใส่บัฟที่เป็นข้อความทั้งหมด** ใส่ effect จากข้อความ/ตารางบนจอเดิม (ไม่ได้อ่านจอใหม่): A1, A2, A6, passive, special · \"X เท่า\" นับเป็น +100% ต่อเท่าตามที่ผู้เล่นยืนยันกับกาบี้ · ท่าที่ตีเพิ่ม/จำนวนครั้งเพิ่มใช้ bonusDmg · บัฟแปลงค่าใช้ condition.convertFrom | **2026-11-01 จอภาษาไทย** (ข้อมูล · ปลุกพลัง 1–4) ได้ชื่อไทย อิซาเบลล่า · ชื่อ/คำอธิบายปลุกพลัง 1–4 · ชื่อสถานะ ภาวะเปราะเย็น (คำขีดเส้นใต้ในปลุก 4) · ตัวเลขตรงกับจออังกฤษ (ปลุก 1 100% · ปลุก 2 182% / 9.1% / 20% · ปลุก 4 50% / 8 วินาที) · จอข้อมูลเป็นค่าพลังที่ใส่ของแล้ว ไม่ได้ใช้ · **รอบสอง** สกิลทั้งหกท่า (โจมตีพื้นฐานสามจอต่อกัน · สกิลพิเศษสองจอ · การชี้นำ Lv.3 = 30.2% บนจอหลัก, ป๊อปอัป Lv.12 = 40.1% ตรงกับค่าในไฟล์) · ปลุกพลัง 5–6 · รายละเอียดเอฟเฟกต์ ภาวะเปราะเย็น / เอฟเฟกต์อ่อนแอต่อน้ำแข็ง / Cooling Cycle · **ชื่อ Cooling Cycle: ป๊อปอัปรายละเอียดเอฟเฟกต์เขียน \"ระบบหมุนเวียนหล่อเย็น\" แต่คำขีดเส้นใต้ในสกิลเขียน \"วงจรหล่อเย็น\" — ชื่อสถานะใช้ตามป๊อปอัป ในคำอธิบายสกิลใช้ตามที่เขียนในสกิล** · ตัวเลขทุกแถวตรงกับจออังกฤษ → **ภาษาไทยครบทั้งตัว**"
   }
 }
