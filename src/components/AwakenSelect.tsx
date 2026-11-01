@@ -171,3 +171,9 @@ export function SubClose({ label }: { label: string }) {
     </button>
   );
 }
+
+/** ซ่อนของของตัวจริงตอนเปิดดูตัวแทนของตัวนั้น — ของตัวแทนขึ้นมาแทนที่ ไม่ดันลงไป (ผู้เล่นสั่ง 2026-11-01) */
+export function HideWhenSub({ prefix, children }: { prefix: string; children: ReactNode }) {
+  const ctx = useContext(AwakenContext);
+  return <div hidden={!!ctx?.sub?.startsWith(prefix)}>{children}</div>;
+}

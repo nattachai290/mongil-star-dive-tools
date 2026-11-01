@@ -9,6 +9,7 @@ import {
   SubChip,
   SubClose,
   SubPanel,
+  HideWhenSub,
 } from "@/components/AwakenSelect";
 import { EffectLine } from "@/components/EffectLine";
 import type { createTranslate } from "@/i18n";
@@ -459,7 +460,7 @@ function SubstitutePanels({ lo, replaces, locale, t }: { lo: BuildLoadout; repla
         const who = characterById(sub.member.characterId);
         return (
           <SubPanel key={sub.member.characterId} id={`sub-${replaces}-${sub.member.characterId}`}>
-            <section className="mb-4 overflow-hidden rounded-2xl border-2 border-rail bg-surface">
+            <section className="overflow-hidden rounded-2xl border-2 border-rail bg-surface">
               <header className="flex flex-wrap items-center gap-3 border-b border-line px-4 py-3 sm:px-5">
                 <Icon src={characterImage(sub.member.characterId)} />
                 <h3 className="font-display text-base font-semibold">
@@ -654,21 +655,23 @@ export function BuildView({ b, locale, t }: { b: (typeof BUILDS)[number]; locale
           return (
             <MemberPanel key={mem.characterId} member={i}>
               {subs && <SubstitutePanels lo={first} replaces={mem.characterId} locale={locale} t={t} />}
-              <div className="flex flex-wrap items-start gap-6">
-                <section className="min-w-0 flex-[999_1_560px] overflow-hidden rounded-2xl border border-line bg-surface">
-                  <header className="flex flex-wrap items-center gap-3 border-b border-line px-4 py-4 sm:px-5">
-                    <Icon src={characterImage(mem.characterId)} />
-                    <h3 className="font-display text-lg font-semibold">
-                      <Link href={`/${locale}/characters/${mem.characterId}`} className="hover:underline">
-                        {name(c?.name, locale, mem.characterId)}
-                      </Link>
-                    </h3>
-                    <span className="ms-auto text-xs text-muted">{t("builds.dimHint")}</span>
-                    {pills[i] && <div className="w-full sm:hidden">{pills[i]}</div>}
-                  </header>
-                  <AwakenSwitch panels={memberPanels[i]} pick={memberPick[i]} />
-                </section>
-              </div>
+              <HideWhenSub prefix={`sub-${mem.characterId}-`}>
+                <div className="flex flex-wrap items-start gap-6">
+                  <section className="min-w-0 flex-[999_1_560px] overflow-hidden rounded-2xl border border-line bg-surface">
+                    <header className="flex flex-wrap items-center gap-3 border-b border-line px-4 py-4 sm:px-5">
+                      <Icon src={characterImage(mem.characterId)} />
+                      <h3 className="font-display text-lg font-semibold">
+                        <Link href={`/${locale}/characters/${mem.characterId}`} className="hover:underline">
+                          {name(c?.name, locale, mem.characterId)}
+                        </Link>
+                      </h3>
+                      <span className="ms-auto text-xs text-muted">{t("builds.dimHint")}</span>
+                      {pills[i] && <div className="w-full sm:hidden">{pills[i]}</div>}
+                    </header>
+                    <AwakenSwitch panels={memberPanels[i]} pick={memberPick[i]} />
+                  </section>
+                </div>
+              </HideWhenSub>
             </MemberPanel>
           );
         })}
