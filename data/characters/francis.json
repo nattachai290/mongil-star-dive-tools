@@ -1,7 +1,8 @@
 {
   "id": "francis",
   "name": {
-    "en": "Francis"
+    "en": "Francis",
+    "th": "ฟรานซิส"
   },
   "rarity": 4,
   "element": "earth",
@@ -64,30 +65,36 @@
     {
       "stage": 1,
       "name": {
-        "en": "Feel This"
+        "en": "Feel This",
+        "th": "ลองเปิดใจสัมผัสดูนะคะ"
       },
       "desc": {
-        "en": "Enemies hit with Francis's Special Skill fall into the Elixir of Love state for 3s."
+        "en": "Enemies hit with Francis's Special Skill fall into the Elixir of Love state for 3s.",
+        "th": "ศัตรูที่โดนสกิลพิเศษโจมตี จะติดสถานะยาวิเศษแห่งความรักต่อเนื่องนาน 3 วินาที"
       },
       "effects": []
     },
     {
       "stage": 2,
       "name": {
-        "en": "Spare Nothing!"
+        "en": "Spare Nothing!",
+        "th": "อย่าแอบกั๊กไว้เลยค่ะ~"
       },
       "desc": {
-        "en": "When Francis uses her Special Skill during combat, she gains On-the-Fly Diagnosis. Love Frenzy inflicts Earth Affliction on enemies while On-the-Fly Diagnosis is active."
+        "en": "When Francis uses her Special Skill during combat, she gains On-the-Fly Diagnosis. Love Frenzy inflicts Earth Affliction on enemies while On-the-Fly Diagnosis is active.",
+        "th": "เมื่อใช้สกิลพิเศษ จะมอบเอฟเฟกต์ผลวินิจฉัยโรคให้กับตนเอง ในขณะที่มีเอฟเฟกต์ดังกล่าว โรคคลั่งรักจะมอบเอฟเฟกต์อ่อนแอต่อดินแก่ศัตรู"
       },
       "effects": []
     },
     {
       "stage": 3,
       "name": {
-        "en": "Honesty, Please?"
+        "en": "Honesty, Please?",
+        "th": "ต้องซื่อสัตย์กับความรู้สึกนะคะ"
       },
       "desc": {
-        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Special Skill's cooldown decreases by 4.5%."
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Special Skill's cooldown decreases by 4.5%.",
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / ลดคูลดาวน์สกิลพิเศษ 4.5%"
       },
       "effects": [],
       "skillLevelBonus": 2
@@ -95,10 +102,12 @@
     {
       "stage": 4,
       "name": {
-        "en": "No Comparisons!"
+        "en": "No Comparisons!",
+        "th": "อย่าเอาไปเปรียบเทียบกันเลยค่ะ"
       },
       "desc": {
-        "en": "The ATK Boost of On-the-Fly Diagnosis is enhanced to 35%. Taking a hit while this effect is active triggers Healing Over Time, which restores HP equal to 10% of Francis's ATK for 5s."
+        "en": "The ATK Boost of On-the-Fly Diagnosis is enhanced to 35%. Taking a hit while this effect is active triggers Healing Over Time, which restores HP equal to 10% of Francis's ATK for 5s.",
+        "th": "เสริมพลังเอฟเฟกต์เพิ่มพลังโจมตีของผลวินิจฉัยโรคเป็น 35% เมื่อถูกศัตรูโจมตีในขณะที่มีเอฟเฟกต์ เอฟเฟกต์ฟื้นฟูต่อเนื่องจะทำงาน และฟื้นฟูเท่ากับ 10% ของพลังโจมตีฟรานซิส นาน 5 วินาที"
       },
       "effects": [
         {
@@ -121,10 +130,12 @@
     {
       "stage": 5,
       "name": {
-        "en": "Hotter and More Intense"
+        "en": "Hotter and More Intense",
+        "th": "จะร้อนรุ่มและแข็งแกร่งขึ้นค่ะ"
       },
       "desc": {
-        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%."
+        "en": "The skill levels of the Basic Attack, Switch Skill, Special Skill, and Ultimate Skill increase by 2. / Increases Basic Attack DMG by 6%.",
+        "th": "เพิ่มเลเวลสกิลของโจมตีพื้นฐาน สกิลสับเปลี่ยน สกิลพิเศษ และสกิลอัลติเมตขึ้น 2 เลเวล / เพิ่มดาเมจโจมตีพื้นฐาน 6%"
       },
       "effects": [
         {
@@ -144,10 +155,12 @@
     {
       "stage": 6,
       "name": {
-        "en": "Love Overcomes Pain!"
+        "en": "Love Overcomes Pain!",
+        "th": "ความรักคือพลังเอาชนะความเจ็บปวดค่ะ!"
       },
       "desc": {
-        "en": "If a Vial falls within the Experimental Drug Field created by Francis's Ultimate Skill, a Massive Explosion is triggered 1 time(s). / Massive Explosion: Deals Earth DMG equal to 100% of Francis's Ultimate Skill DMG and increases the Elemental Weakness DMG taken by enemies by 30% for 10s."
+        "en": "If a Vial falls within the Experimental Drug Field created by Francis's Ultimate Skill, a Massive Explosion is triggered 1 time(s). / Massive Explosion: Deals Earth DMG equal to 100% of Francis's Ultimate Skill DMG and increases the Elemental Weakness DMG taken by enemies by 30% for 10s.",
+        "th": "หากหลอดทดลองตกอยู่ในเขตยาสูตรใหม่ที่สร้างโดยสกิลอัลติเมต จะเกิดระเบิดครั้งใหญ่ 1 ครั้ง / ระเบิดครั้งใหญ่: สร้างดาเมจธาตุดินเท่ากับ 100% ของสกิลอัลติเมต และเพิ่มดาเมจธาตุจุดอ่อนที่ศัตรูได้รับ 30% นาน 10 วินาที"
       },
       "effects": [
         {
@@ -189,17 +202,20 @@
   "skills": {
     "basic": {
       "name": {
-        "en": "This Might Pinch!"
+        "en": "This Might Pinch!",
+        "th": "เข็มฉีดยาแหลมเฟี้ยว"
       },
       "desc": {
-        "en": "Francis deals Earth DMG by throwing a syringe at an enemy. / Love Frenzy is generated at a set rate and explodes upon touching the ground, dealing Earth DMG equal to a portion of her Basic Attack."
+        "en": "Francis deals Earth DMG by throwing a syringe at an enemy. / Love Frenzy is generated at a set rate and explodes upon touching the ground, dealing Earth DMG equal to a portion of her Basic Attack.",
+        "th": "ขว้างเข็มฉีดยาใส่ศัตรู สร้างดาเมจธาตุดิน / หากโรคคลั่งรักที่สร้างโดยอัตราที่กำหนดสัมผัสพื้น จะเกิดระเบิดและสร้างดาเมจธาตุดิน เท่ากับอัตราที่กำหนดของโจมตีพื้นฐาน"
       },
       "damageType": "earth",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "1st Hit DMG"
+            "en": "1st Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 1"
           },
           "unit": "percent",
           "scaling": [
@@ -216,7 +232,7 @@
             null,
             null,
             17.7,
-            null,
+            18.7,
             null,
             null
           ],
@@ -224,7 +240,8 @@
         },
         {
           "label": {
-            "en": "2nd Hit DMG"
+            "en": "2nd Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 2"
           },
           "unit": "percent",
           "scaling": [
@@ -241,7 +258,7 @@
             null,
             null,
             32,
-            null,
+            33.7,
             null,
             null
           ],
@@ -249,7 +266,8 @@
         },
         {
           "label": {
-            "en": "3rd Hit DMG"
+            "en": "3rd Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 3"
           },
           "unit": "percent",
           "scaling": [
@@ -266,7 +284,7 @@
             null,
             null,
             54.2,
-            null,
+            57.1,
             null,
             null
           ],
@@ -274,7 +292,8 @@
         },
         {
           "label": {
-            "en": "Love Frenzy DMG"
+            "en": "Love Frenzy DMG",
+            "th": "ดาเมจโรคคลั่งรัก"
           },
           "unit": "percent",
           "scaling": [
@@ -291,7 +310,7 @@
             null,
             null,
             30,
-            null,
+            30,
             null,
             null
           ],
@@ -299,7 +318,8 @@
         },
         {
           "label": {
-            "en": "Air Counter DMG"
+            "en": "Air Counter DMG",
+            "th": "ดาเมจโจมตีฉับพลัน"
           },
           "unit": "percent",
           "scaling": [
@@ -316,14 +336,15 @@
             null,
             null,
             116.8,
-            null,
+            123.1,
             null,
             null
           ]
         },
         {
           "label": {
-            "en": "Evasion Counter DMG"
+            "en": "Evasion Counter DMG",
+            "th": "ดาเมจหลบหลีกโต้กลับ"
           },
           "unit": "percent",
           "scaling": [
@@ -340,7 +361,7 @@
             null,
             null,
             248.6,
-            null,
+            262,
             null,
             null
           ]
@@ -349,10 +370,12 @@
     },
     "switch": {
       "name": {
-        "en": "Outpatient Check-up"
+        "en": "Outpatient Check-up",
+        "th": "ตรวจสอบเป้าหมาย"
       },
       "desc": {
-        "en": "Francis strikes an enemy with her medical chart, dealing Physical DMG. / [Tag-out Skill] When switched out, she reviews the chart to trigger On-the-Fly Diagnosis. This effect does not stack with other On-the-Fly Diagnosis effects. / [Support Skill] When a teammate's HP falls to 75% or below, Francis appears by their side and deals Earth DMG, inflicts Earth Affliction on an enemy, and heals the teammate based on her ATK."
+        "en": "Francis strikes an enemy with her medical chart, dealing Physical DMG. / [Tag-out Skill] When switched out, she reviews the chart to trigger On-the-Fly Diagnosis. This effect does not stack with other On-the-Fly Diagnosis effects. / [Support Skill] When a teammate's HP falls to 75% or below, Francis appears by their side and deals Earth DMG, inflicts Earth Affliction on an enemy, and heals the teammate based on her ATK.",
+        "th": "ฟาดใส่ศัตรูให้ลอยขึ้นด้วยชาร์ต สร้างดาเมจกายภาพ / [สกิลล่าถอย] ตรวจชาร์ตวินิจฉัยตัวละครที่ถูกเปลี่ยน มอบเอฟเฟกต์ผลวินิจฉัยโรค เอฟเฟกต์ดังกล่าวไม่สามารถซ้อนทับกับเอฟเฟกต์ผลตรวจสุขภาพประเภทอื่นได้ / [สกิลสนับสนุน] ในระหว่างต่อสู้ หากปรากฏตัวใกล้สมาชิกทีมในตอนที่พลังชีวิตของสมาชิกทีมเหลือต่ำกว่า 75% จะสร้างดาเมจธาตุดินและมอบเอฟเฟกต์อ่อนแอต่อดินแก่ศัตรู และฟื้นฟูพลังชีวิตของสมาชิกทีมตามสัดส่วนพลังโจมตีของฟรานซิส"
       },
       "damageType": "physical",
       "effects": [
@@ -375,7 +398,8 @@
       "values": [
         {
           "label": {
-            "en": "Switch Skill DMG"
+            "en": "Switch Skill DMG",
+            "th": "ดาเมจสกิลสับเปลี่ยน"
           },
           "unit": "percent",
           "scaling": [
@@ -394,13 +418,14 @@
             132.6,
             null,
             null,
-            null
+            157.7
           ],
           "line": 1
         },
         {
           "label": {
-            "en": "On-the-Fly Diagnosis Duration"
+            "en": "On-the-Fly Diagnosis Duration",
+            "th": "เวลาแสดงผลผลวินิจฉัยโรค"
           },
           "unit": "seconds",
           "scaling": [
@@ -419,13 +444,14 @@
             10,
             null,
             null,
-            null
+            10
           ],
           "line": 2
         },
         {
           "label": {
-            "en": "Support Skill DMG"
+            "en": "Support Skill DMG",
+            "th": "ดาเมจสกิลสนับสนุน"
           },
           "unit": "percent",
           "scaling": [
@@ -444,13 +470,14 @@
             109.7,
             null,
             null,
-            null
+            130.4
           ],
           "line": 3
         },
         {
           "label": {
-            "en": "ATK-Based Healing"
+            "en": "ATK-Based Healing",
+            "th": "ปริมาณฟื้นฟูตามสัดส่วนพลังโจมตี"
           },
           "unit": "percent",
           "scaling": [
@@ -469,13 +496,14 @@
             66,
             null,
             null,
-            null
+            75
           ],
           "line": 3
         },
         {
           "label": {
-            "en": "Earth Affliction Duration"
+            "en": "Earth Affliction Duration",
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อดิน"
           },
           "unit": "seconds",
           "scaling": [
@@ -494,13 +522,14 @@
             5,
             null,
             null,
-            null
+            5
           ],
           "line": 3
         },
         {
           "label": {
-            "en": "Support Skill Cooldown"
+            "en": "Support Skill Cooldown",
+            "th": "คูลดาวน์สกิลสนับสนุน"
           },
           "unit": "seconds",
           "scaling": [
@@ -519,7 +548,7 @@
             16,
             null,
             null,
-            null
+            16
           ],
           "line": 3
         }
@@ -527,17 +556,20 @@
     },
     "special": {
       "name": {
-        "en": "Extra Dose"
+        "en": "Extra Dose",
+        "th": "การกำจัดยาขยะ"
       },
       "desc": {
-        "en": "Francis throws out a handful of vials full of suspicious medicine, dealing Earth DMG and inflicting Earth Affliction."
+        "en": "Francis throws out a handful of vials full of suspicious medicine, dealing Earth DMG and inflicting Earth Affliction.",
+        "th": "ขว้างหลอดทดลองหลายอันที่บรรจุยาน่าสงสัยไว้ออกไป สร้างดาเมจธาตุดินและมอบเอฟเฟกต์อ่อนแอต่อดิน"
       },
       "damageType": "earth",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "Vial DMG"
+            "en": "Vial DMG",
+            "th": "ดาเมจหลอดทดลอง"
           },
           "unit": "percent",
           "scaling": [
@@ -556,13 +588,14 @@
             388.5,
             null,
             null,
-            null
+            462
           ],
           "line": 1
         },
         {
           "label": {
-            "en": "Earth Affliction Duration"
+            "en": "Earth Affliction Duration",
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อดิน"
           },
           "unit": "seconds",
           "scaling": [
@@ -581,13 +614,14 @@
             5,
             null,
             null,
-            null
+            5
           ],
           "line": 1
         },
         {
           "label": {
-            "en": "Cooldown"
+            "en": "Cooldown",
+            "th": "คูลดาวน์"
           },
           "unit": "seconds",
           "scaling": [
@@ -606,24 +640,27 @@
             11,
             null,
             null,
-            null
+            11
           ]
         }
       ]
     },
     "ultimate": {
       "name": {
-        "en": "An Exciting New Trial!"
+        "en": "An Exciting New Trial!",
+        "th": "ทดลองยาสูตรใหม่สุดเร้าใจ"
       },
       "desc": {
-        "en": "Francis leaps up and slams a giant syringe into the ground, dealing Earth DMG and inflicting Earth Affliction on nearby enemies. An Experimental Drug Field is created where the syringe lands. / Experimental Drug Field: Allies that hit an enemy from within this zone recover their HP based on a portion of Francis's ATK."
+        "en": "Francis leaps up and slams a giant syringe into the ground, dealing Earth DMG and inflicting Earth Affliction on nearby enemies. An Experimental Drug Field is created where the syringe lands. / Experimental Drug Field: Allies that hit an enemy from within this zone recover their HP based on a portion of Francis's ATK.",
+        "th": "ถือเข็มฉีดยายักษ์แล้วกระโดดไปด้านหน้า จากนั้นปักเข็มฉีดยายักษ์ลงบนพื้นอย่างรุนแรง สร้างดาเมจธาตุดินและมอบเอฟเฟกต์อ่อนแอต่อดินแก่ศัตรู และสร้างเขตยาสูตรใหม่บริเวณที่เข็มฉีดยาปักลง / เขตยาสูตรใหม่: เมื่อโจมตีโดนศัตรู สมาชิกทีมที่อยู่ภายในเขตดังกล่าวจะได้รับการฟื้นฟูพลังชีวิตเท่ากับอัตราที่กำหนดของพลังโจมตีฟรานซิส"
       },
       "damageType": "earth",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "DMG"
+            "en": "DMG",
+            "th": "ดาเมจ"
           },
           "unit": "percent",
           "scaling": [
@@ -641,14 +678,15 @@
             null,
             451.4,
             null,
-            null,
+            505,
             null
           ],
           "line": 1
         },
         {
           "label": {
-            "en": "ATK-Based Healing"
+            "en": "ATK-Based Healing",
+            "th": "ปริมาณฟื้นฟูตามสัดส่วนพลังโจมตี"
           },
           "unit": "percent",
           "scaling": [
@@ -666,14 +704,15 @@
             null,
             13.8,
             null,
-            null,
+            15,
             null
           ],
           "line": 2
         },
         {
           "label": {
-            "en": "Earth Affliction Duration"
+            "en": "Earth Affliction Duration",
+            "th": "เวลาแสดงผลเอฟเฟกต์อ่อนแอต่อดิน"
           },
           "unit": "seconds",
           "scaling": [
@@ -691,14 +730,15 @@
             null,
             5,
             null,
-            null,
+            5,
             null
           ],
           "line": 1
         },
         {
           "label": {
-            "en": "Experimental Drug Field Duration"
+            "en": "Experimental Drug Field Duration",
+            "th": "เวลาแสดงผลเขตยาสูตรใหม่"
           },
           "unit": "seconds",
           "scaling": [
@@ -716,7 +756,7 @@
             null,
             15,
             null,
-            null,
+            15,
             null
           ],
           "line": 1
@@ -725,10 +765,12 @@
     },
     "passive": {
       "name": {
-        "en": "Preventative Care"
+        "en": "Preventative Care",
+        "th": "ดูแลสุขภาพ"
       },
       "desc": {
-        "en": "Francis's ATK increases by an amount equal to any received Earth DMG Boosts, but doesn't increase beyond the max conversion ratio. / Hitting an enemy with her Basic Attack has a chance of generating Love Frenzy, and it is always generated when hitting an enemy with inflicted with Earth Affliction."
+        "en": "Francis's ATK increases by an amount equal to any received Earth DMG Boosts, but doesn't increase beyond the max conversion ratio. / Hitting an enemy with her Basic Attack has a chance of generating Love Frenzy, and it is always generated when hitting an enemy with inflicted with Earth Affliction.",
+        "th": "พลังโจมตีของตนเองจะเพิ่มขึ้นเท่ากับการเพิ่มของดาเมจธาตุดิน โดยจะไม่เพิ่มเกินกว่าอัตราแปลงสูงสุด / เมื่อโจมตีพื้นฐานโดน จะสร้างโรคคลั่งรักตามอัตราที่กำหนดและจะสร้างแก่ศัตรูที่ติดเอฟเฟกต์อ่อนแอต่อดินโดยไม่สนอัตรา"
       },
       "effects": [
         {
@@ -753,7 +795,8 @@
       "values": [
         {
           "label": {
-            "en": "Earth DMG Boost Max Conversion Ratio"
+            "en": "Earth DMG Boost Max Conversion Ratio",
+            "th": "อัตราแปลงสูงสุดตามการเพิ่มดาเมจธาตุดิน"
           },
           "unit": "percent",
           "scaling": [
@@ -778,7 +821,8 @@
         },
         {
           "label": {
-            "en": "Chance of Triggering Love Frenzy"
+            "en": "Chance of Triggering Love Frenzy",
+            "th": "อัตราเกิดโรคคลั่งรัก"
           },
           "unit": "percent",
           "scaling": [
@@ -805,10 +849,12 @@
     },
     "elemental": {
       "name": {
-        "en": "Do You Need a New Prescription?"
+        "en": "Do You Need a New Prescription?",
+        "th": "อยากได้ยาใหม่ไหมคะ?"
       },
       "desc": {
-        "en": "Upon switching to another teammate, the new character's HP is restored by 20.5% of Francis's ATK."
+        "en": "Upon switching to another teammate, the new character's HP is restored by 20.5% of Francis's ATK.",
+        "th": "เมื่อเปลี่ยนเป็นสมาชิกทีมคนอื่น จะฟื้นฟูพลังชีวิตของสมาชิกทีมที่ถูกเปลี่ยน 20.5% ของพลังโจมตีฟรานซิส"
       },
       "effects": [
         {
@@ -831,28 +877,34 @@
   "statuses": [
     {
       "name": {
-        "en": "On-the-Fly Diagnosis"
+        "en": "On-the-Fly Diagnosis",
+        "th": "ผลวินิจฉัยโรค"
       },
       "desc": {
-        "en": "ATK increases by 17% and HP is restored by an amount equal to 12% of Francis's ATK."
+        "en": "ATK increases by 17% and HP is restored by an amount equal to 12% of Francis's ATK.",
+        "th": "เพิ่มพลังโจมตี 17% และฟื้นฟูพลังชีวิตเท่ากับ 6% ของพลังโจมตีฟรานซิส"
       },
       "effects": []
     },
     {
       "name": {
-        "en": "Earth Affliction"
+        "en": "Earth Affliction",
+        "th": "เอฟเฟกต์อ่อนแอต่อดิน"
       },
       "desc": {
-        "en": "Afflicted targets take Earth DMG over time, and Earth and Physical RES decrease by 15%."
+        "en": "Afflicted targets take Earth DMG over time, and Earth and Physical RES decrease by 15%.",
+        "th": "ได้รับดาเมจต่อเนื่องธาตุดินและลดพลังต้านทานธาตุดิน, กายภาพ 15%"
       },
       "effects": []
     },
     {
       "name": {
-        "en": "Elixir of Love"
+        "en": "Elixir of Love",
+        "th": "ยาวิเศษแห่งความรัก"
       },
       "desc": {
-        "en": "Afflicted targets fall in love and cannot move."
+        "en": "Afflicted targets fall in love and cannot move.",
+        "th": "ศัตรูตกหลุมรัก ไม่สามารถขยับตัวได้"
       },
       "effects": []
     }
@@ -865,8 +917,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Support · Earth · Ranged · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวปกติ ไม่ใช่ Francis: Summer Dive! (คนละไฟล์ francis-summer-dive) | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 1,866 · DEF 686 · HP 10,662 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,678 · DEF 609 · HP 9,272 · Crit 5% / 50%** — ตรงกับ Daisy (Earth Support 4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 11.59% · Support 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · ไม่มีบรรทัดธาตุ · **Special Skill Cooldown Reduction 4.5% ไม่เก็บ** (แบบ Sera — มาจากปลุกพลัง ยืนยันเมื่อเห็นจอปลุกพลัง) | **สกิลบนจอบัญชีนี้ Lv.13 ทั้งสี่ช่อง (\"Level 9 +4\")** · Passive Lv.1 · Guidance of Earth Inactive Lv.1 | Switch Outpatient Check-up (Physical · Lv.13 · สามท่อน Switch / Tag-out / Support) | Guidance of Earth Do You Need a New Prescription?: **ค่า Lv.12 = 20.5% จากป๊อปอัป Skill Info (Lv. 1 >> Lv. 12)** จอหลัก Lv.1 = 15% · ฟื้น HP ตัวที่สลับเข้ามา 20.5% ของ ATK ของ Francis → kind heal target ally onSwitchOut + note (ไม่ใช่ % ของ Max HP แบบ Daisy) | **2026-10-22 รอบสาม** ตาราง Switch ครบหกแถว (Earth Affliction 5 วินาที · Support Skill Cooldown 16 วินาที) · Effect Details: On-the-Fly Diagnosis (ATK +17% · ฟื้น HP 12% ของ ATK) · Earth Affliction | On-the-Fly Diagnosis ไม่ใส่เป็น effect ใน Switch — ท่อน Tag-out ไม่บอกผู้รับ และ Tag-out คือตอนสลับออก จึงไม่ชัดว่ากฎ \"ไม่บอก = ตัวเอง\" ใช้ได้ไหม เก็บเป็นสถานะไว้ก่อน | Basic This Might Pinch! (Lv.13 · หกแถว) · Ultimate An Exciting New Trial! (Lv.13): **คำอธิบายครบ แต่ตารางค่าอยู่ใต้ขอบ (เห็นแค่ขอบตัวอักษร \"DMG\") → values ว่าง** | **2026-10-22 รอบสี่** ตาราง Ultimate (Lv.13 · 451.4% · ฮีล 13.8% · Experimental Drug Field 15 วินาที) · Passive Preventative Care (\"with inflicted with\" ซ้ำคำตามจอ) · ปลุกพลังครบหกขั้น · Effect Details Elixir of Love (ขั้น 1) | **ยืนยันแล้ว: Special Skill Cooldown Reduction 4.5% มาจากปลุกพลังขั้น 3 (แบบ Sera)** — ไม่เก็บใน otherStats ถูกต้อง | **On-the-Fly Diagnosis สองจอไม่ตรงกัน: ปุ่ม Effects ของ Switch (Lv.13) ขึ้น \"HP restored 12% of Francis's ATK\" แต่ปุ่ม Effects ของปลุกพลังขั้น 2 ขึ้น \"6%\"** (ATK +17% เท่ากัน) — เก็บข้อความจาก Switch ไว้ในสถานะ อาจโตตามเลเวล Switch · ไม่เดา | effects: ขั้น 5 Basic +6% · ขั้นอื่นเก็บเป็นข้อความ | **2026-10-22 รอบห้า** Special Extra Dose (Lv.13 · 388.5% · คูลดาวน์ 11 วินาที) → ครบหกช่อง | ยังไม่ได้อ่าน: ค่า Lv.12 ของสกิลทั้งสี่ช่อง (บัญชีนี้ Lv.13) · จอไทยทั้งหมด | 2026-10-31 สถานะ On-the-Fly Diagnosis (ATK 17%) ใส่เป็น effect ของสกิลสับเปลี่ยน (Tag-out · 10 วินาที) เป้าหมายจอไม่ได้บอก → ตัวเองตามกติกา · ปลุก 4 เก็บส่วนต่าง +18 (→35%) | **2026-10-31 ผู้เล่นบอก: On-the-Fly Diagnosis จากสกิลล่าถอยให้ทั้งทีม** (\"มันเป็นตอนสกิลออก จะให้ตัวเองไปทำไม ตัวเองออกไปแล้ว คือให้ทีม\") — เปลี่ยน target เป็น team ทั้งค่าพื้นฐานและส่วนต่างปลุก 4 · ปลุก 2 (ได้เองตอนใช้สกิลพิเศษ) ไม่ใส่แยก เพราะ On-the-Fly Diagnosis ไม่ทับซ้อนกัน | **2026-10-31 ผู้เล่นสั่งไล่ใส่บัฟที่เป็นข้อความทั้งหมด** ใส่ effect จากข้อความ/ตารางบนจอเดิม (ไม่ได้อ่านจอใหม่): A6, passive · \"X เท่า\" นับเป็น +100% ต่อเท่าตามที่ผู้เล่นยืนยันกับกาบี้ · ท่าที่ตีเพิ่ม/จำนวนครั้งเพิ่มใช้ bonusDmg · บัฟแปลงค่าใช้ condition.convertFrom"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Support · Earth · Ranged · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** · ตัวปกติ ไม่ใช่ Francis: Summer Dive! (คนละไฟล์ francis-summer-dive) | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 1,866 · DEF 686 · HP 10,662 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,678 · DEF 609 · HP 9,272 · Crit 5% / 50%** — ตรงกับ Daisy (Earth Support 4 ดาว) ทั้งสามค่า | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Support DMG Boost 11.59% · Support 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · ไม่มีบรรทัดธาตุ · **Special Skill Cooldown Reduction 4.5% ไม่เก็บ** (แบบ Sera — มาจากปลุกพลัง ยืนยันเมื่อเห็นจอปลุกพลัง) | **สกิลบนจอบัญชีนี้ Lv.13 ทั้งสี่ช่อง (\"Level 9 +4\")** · Passive Lv.1 · Guidance of Earth Inactive Lv.1 | Switch Outpatient Check-up (Physical · Lv.13 · สามท่อน Switch / Tag-out / Support) | Guidance of Earth Do You Need a New Prescription?: **ค่า Lv.12 = 20.5% จากป๊อปอัป Skill Info (Lv. 1 >> Lv. 12)** จอหลัก Lv.1 = 15% · ฟื้น HP ตัวที่สลับเข้ามา 20.5% ของ ATK ของ Francis → kind heal target ally onSwitchOut + note (ไม่ใช่ % ของ Max HP แบบ Daisy) | **2026-10-22 รอบสาม** ตาราง Switch ครบหกแถว (Earth Affliction 5 วินาที · Support Skill Cooldown 16 วินาที) · Effect Details: On-the-Fly Diagnosis (ATK +17% · ฟื้น HP 12% ของ ATK) · Earth Affliction | On-the-Fly Diagnosis ไม่ใส่เป็น effect ใน Switch — ท่อน Tag-out ไม่บอกผู้รับ และ Tag-out คือตอนสลับออก จึงไม่ชัดว่ากฎ \"ไม่บอก = ตัวเอง\" ใช้ได้ไหม เก็บเป็นสถานะไว้ก่อน | Basic This Might Pinch! (Lv.13 · หกแถว) · Ultimate An Exciting New Trial! (Lv.13): **คำอธิบายครบ แต่ตารางค่าอยู่ใต้ขอบ (เห็นแค่ขอบตัวอักษร \"DMG\") → values ว่าง** | **2026-10-22 รอบสี่** ตาราง Ultimate (Lv.13 · 451.4% · ฮีล 13.8% · Experimental Drug Field 15 วินาที) · Passive Preventative Care (\"with inflicted with\" ซ้ำคำตามจอ) · ปลุกพลังครบหกขั้น · Effect Details Elixir of Love (ขั้น 1) | **ยืนยันแล้ว: Special Skill Cooldown Reduction 4.5% มาจากปลุกพลังขั้น 3 (แบบ Sera)** — ไม่เก็บใน otherStats ถูกต้อง | **On-the-Fly Diagnosis สองจอไม่ตรงกัน: ปุ่ม Effects ของ Switch (Lv.13) ขึ้น \"HP restored 12% of Francis's ATK\" แต่ปุ่ม Effects ของปลุกพลังขั้น 2 ขึ้น \"6%\"** (ATK +17% เท่ากัน) — เก็บข้อความจาก Switch ไว้ในสถานะ อาจโตตามเลเวล Switch · ไม่เดา | effects: ขั้น 5 Basic +6% · ขั้นอื่นเก็บเป็นข้อความ | **2026-10-22 รอบห้า** Special Extra Dose (Lv.13 · 388.5% · คูลดาวน์ 11 วินาที) → ครบหกช่อง | ยังไม่ได้อ่าน: ค่า Lv.12 ของสกิลทั้งสี่ช่อง (บัญชีนี้ Lv.13) | 2026-10-31 สถานะ On-the-Fly Diagnosis (ATK 17%) ใส่เป็น effect ของสกิลสับเปลี่ยน (Tag-out · 10 วินาที) เป้าหมายจอไม่ได้บอก → ตัวเองตามกติกา · ปลุก 4 เก็บส่วนต่าง +18 (→35%) | **2026-10-31 ผู้เล่นบอก: On-the-Fly Diagnosis จากสกิลล่าถอยให้ทั้งทีม** (\"มันเป็นตอนสกิลออก จะให้ตัวเองไปทำไม ตัวเองออกไปแล้ว คือให้ทีม\") — เปลี่ยน target เป็น team ทั้งค่าพื้นฐานและส่วนต่างปลุก 4 · ปลุก 2 (ได้เองตอนใช้สกิลพิเศษ) ไม่ใส่แยก เพราะ On-the-Fly Diagnosis ไม่ทับซ้อนกัน | **2026-10-31 ผู้เล่นสั่งไล่ใส่บัฟที่เป็นข้อความทั้งหมด** ใส่ effect จากข้อความ/ตารางบนจอเดิม (ไม่ได้อ่านจอใหม่): A6, passive · \"X เท่า\" นับเป็น +100% ต่อเท่าตามที่ผู้เล่นยืนยันกับกาบี้ · ท่าที่ตีเพิ่ม/จำนวนครั้งเพิ่มใช้ bonusDmg · บัฟแปลงค่าใช้ condition.convertFrom | **2026-11-01 จอภาษาไทย** (ข้อมูล · ปลุกพลัง 1–6 + รายละเอียดเอฟเฟกต์ · การชี้นำ Lv.1 + ป๊อปอัป Lv.12 · สับเปลี่ยน Lv.16 สองจอ · พิเศษ Lv.16 · โจมตีพื้นฐาน Lv.14 · อัลติเมต Lv.15 สองจอ + รายละเอียด · แพสซีฟ) ครบทุกสกิล ได้ชื่อไทย ฟรานซิส · **จอไทยเป็นเลเวลสูงกว่าจออังกฤษ (Lv.13) เลยได้ค่าเพิ่ม:** โจมตีพื้นฐาน Lv.14 (18.7/33.7/57.1/30/123.1/262) · สับเปลี่ยน Lv.16 (157.7/10/130.4/75/5/16) · พิเศษ Lv.16 (462/5/11) · อัลติเมต Lv.15 (505/15/5/15) — ตัวคำนวณใช้ค่าเหล่านี้ที่ปลุก 3 ขึ้นไป · ค่า Lv.12 ยังไม่มี (ปลุก 0 ยังใช้ Lv.13) · การชี้นำใช้ Lv.12 20.5% อยู่แล้ว · **ผลวินิจฉัยโรค จอไทยเขียนฟื้นฟู 6% ของพลังโจมตี ส่วนจออังกฤษเขียน 12%** ใส่ตามจอแต่ละภาษา (ไม่ได้ใช้ในการคำนวณดาเมจ) · สกิลล่าถอยจอไทยเขียน \"มอบแก่ตัวละครที่ถูกเปลี่ยน\" ยังคงเป็นทั้งทีมตามที่ผู้เล่นบอก 2026-10-31 · จอข้อมูลเป็นค่าพลังที่ใส่ของแล้ว ไม่ได้ใช้"
   }
 }
