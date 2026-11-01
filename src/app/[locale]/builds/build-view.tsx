@@ -6,6 +6,10 @@ import {
   AwakenSwitch,
   MemberPanel,
   MemberTab,
+  SubChip,
+  SubClose,
+  SubPanel,
+  HideWhenSub,
 } from "@/components/AwakenSelect";
 import { EffectLine } from "@/components/EffectLine";
 import type { createTranslate } from "@/i18n";
@@ -407,56 +411,81 @@ function charSub(c: Character | undefined, locale: Locale) {
     .join(" · ");
 }
 
-/** ตัวแทนของตัวที่ replaces — ชิปรูป+ชื่อ กดแล้วกางของที่ตัวแทนใส่ · ไม่มีตัวแทนก็ไม่โชว์ส่วนนี้ */
-function SubstitutesFor({ lo, replaces, locale, t }: { lo: BuildLoadout; replaces: string; locale: Locale; t: T }) {
+/** ปุ่มตัวแทนในการ์ดตัวละคร — รูป + ชื่อ (มือถือโชว์แค่รูป) */
+function SubstituteChips({ lo, member, locale, t }: { lo: BuildLoadout; member: number; locale: Locale; t: T }) {
+  const replaces = lo.members[member].characterId;
   const subs = (lo.substitutes ?? []).filter((s) => s.replaces === replaces);
   if (subs.length === 0) return null;
-  const replaced = name(characterById(replaces)?.name, locale, replaces);
   return (
-    <div className="space-y-3 border-t border-line bg-surface-2/40 px-4 py-4 sm:px-5">
-      <h4 className="text-sm font-semibold text-ink-2">{t("builds.subsFor").replace("{name}", replaced)}</h4>
-      <div className="flex flex-wrap gap-2">
-        {subs.map((sub, k) => {
-          const swapped: BuildLoadout = {
-            ...lo,
-            members: lo.members.map((m) => (m.characterId === sub.replaces ? sub.member : m)),
-          };
-          const i = swapped.members.indexOf(sub.member);
-          const received = receivedEffects(swapped);
-          const team = swapped.members.flatMap((m) => characterById(m.characterId) ?? []);
-          const others = swapped.members.filter((m) => m !== sub.member).flatMap((m) => m.monsterlings.map((x) => x.id));
-          const dup = new Set(sub.member.monsterlings.map((x) => x.id).filter((id) => others.includes(id)));
+    <div className="space-y-1.5">
+      <span className="block text-xs text-ink-2">{t("builds.subsShort")}</span>
+      <div className="flex flex-wrap gap-1.5">
+        {subs.map((sub) => {
           const who = characterById(sub.member.characterId);
           const img = characterImage(sub.member.characterId);
+          const nm = name(who?.name, locale, sub.member.characterId);
           return (
-            <details key={k} className="open:basis-full">
-              <summary className="inline-flex min-h-11 cursor-pointer list-none items-center gap-2 rounded-full border border-line bg-surface py-1 ps-1 pe-3 text-sm font-semibold hover:border-rail [&::-webkit-details-marker]:hidden">
-                {img ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={img} alt="" width={32} height={32} className="size-8 rounded-full object-cover" />
-                ) : (
-                  <span className="size-8 rounded-full bg-surface-2" />
-                )}
-                {name(who?.name, locale, sub.member.characterId)}
-              </summary>
-              <div className="mt-3 overflow-hidden rounded-xl border border-line bg-surface">
-                {sub.note && <p className="px-4 pt-3 text-xs text-ink-2 sm:px-5">{name(sub.note, locale, "")}</p>}
-                <GearRows
-                  mem={sub.member}
-                  effects={received[i]?.effects ?? []}
-                  team={team}
-                  weaknessHit={lo.weaknessHit ?? false}
-                  staggerOften={lo.staggerOften ?? false}
-                  dup={dup}
-                  locale={locale}
-                  t={t}
-                />
-              </div>
-            </details>
+            <SubChip key={sub.member.characterId} member={member} id={`sub-${replaces}-${sub.member.characterId}`} label={nm}>
+              {img ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={img} alt="" width={28} height={28} className="size-7 rounded-full object-cover" />
+              ) : (
+                <span className="size-7 rounded-full bg-surface-2" />
+              )}
+              <span className="hidden sm:inline">{nm}</span>
+            </SubChip>
           );
         })}
       </div>
     </div>
+  );
+}
+
+/** ของของตัวแทนแต่ละตัว — ซ่อนไว้ เปิดเมื่อกดปุ่มตัวแทนในการ์ด · คิดจากของชุดแรกของบิ้ว */
+function SubstitutePanels({ lo, replaces, locale, t }: { lo: BuildLoadout; replaces: string; locale: Locale; t: T }) {
+  const subs = (lo.substitutes ?? []).filter((s) => s.replaces === replaces);
+  const replaced = name(characterById(replaces)?.name, locale, replaces);
+  return (
+    <>
+      {subs.map((sub) => {
+        const swapped: BuildLoadout = {
+          ...lo,
+          members: lo.members.map((m) => (m.characterId === sub.replaces ? sub.member : m)),
+        };
+        const i = swapped.members.indexOf(sub.member);
+        const received = receivedEffects(swapped);
+        const team = swapped.members.flatMap((m) => characterById(m.characterId) ?? []);
+        const others = swapped.members.filter((m) => m !== sub.member).flatMap((m) => m.monsterlings.map((x) => x.id));
+        const dup = new Set(sub.member.monsterlings.map((x) => x.id).filter((id) => others.includes(id)));
+        const who = characterById(sub.member.characterId);
+        return (
+          <SubPanel key={sub.member.characterId} id={`sub-${replaces}-${sub.member.characterId}`}>
+            <section className="overflow-hidden rounded-2xl border-2 border-rail bg-surface">
+              <header className="flex flex-wrap items-center gap-3 border-b border-line px-4 py-3 sm:px-5">
+                <Icon src={characterImage(sub.member.characterId)} />
+                <h3 className="font-display text-base font-semibold">
+                  {t("builds.subPanel")
+                    .replace("{sub}", name(who?.name, locale, sub.member.characterId))
+                    .replace("{name}", replaced)}
+                </h3>
+                <SubClose label={t("builds.subClose")} />
+              </header>
+              {sub.note && <p className="px-4 pt-3 text-xs text-ink-2 sm:px-5">{name(sub.note, locale, "")}</p>}
+              <GearRows
+                mem={sub.member}
+                effects={received[i]?.effects ?? []}
+                team={team}
+                weaknessHit={lo.weaknessHit ?? false}
+                staggerOften={lo.staggerOften ?? false}
+                dup={dup}
+                locale={locale}
+                t={t}
+              />
+            </section>
+          </SubPanel>
+        );
+      })}
+    </>
   );
 }
 
@@ -590,7 +619,13 @@ export function BuildView({ b, locale, t }: { b: (typeof BUILDS)[number]; locale
             const c = chars[i];
             const img = characterImage(m.characterId);
             return (
-              <MemberTab key={m.characterId} member={i} footer={pills[i] ? <div className="hidden sm:block">{pills[i]}</div> : undefined}>
+              <MemberTab key={m.characterId} member={i} footer={
+                  pills[i] ? (
+                    <div className="hidden sm:block">{pills[i]}</div>
+                  ) : (
+                    <SubstituteChips lo={first} member={i} locale={locale} t={t} />
+                  )
+                }>
                 {img ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img src={img} alt="" width={64} height={64} className="size-12 shrink-0 rounded-xl object-cover sm:size-16" />
@@ -619,23 +654,24 @@ export function BuildView({ b, locale, t }: { b: (typeof BUILDS)[number]; locale
           const subs = (first.substitutes ?? []).some((x) => x.replaces === mem.characterId);
           return (
             <MemberPanel key={mem.characterId} member={i}>
-              <div className="flex flex-wrap items-start gap-6">
-                <section className="min-w-0 flex-[999_1_560px] overflow-hidden rounded-2xl border border-line bg-surface">
-                  <header className="flex flex-wrap items-center gap-3 border-b border-line px-4 py-4 sm:px-5">
-                    <Icon src={characterImage(mem.characterId)} />
-                    <h3 className="font-display text-lg font-semibold">
-                      <Link href={`/${locale}/characters/${mem.characterId}`} className="hover:underline">
-                        {name(c?.name, locale, mem.characterId)}
-                      </Link>
-                    </h3>
-                    <span className="ms-auto text-xs text-muted">{t("builds.dimHint")}</span>
-                    {pills[i] && <div className="w-full sm:hidden">{pills[i]}</div>}
-                  </header>
-                  <AwakenSwitch panels={memberPanels[i]} pick={memberPick[i]} />
-                  {/* ตัวแทนคิดจากของชุดแรกของบิ้ว — render ครั้งเดียว */}
-                  {subs && <SubstitutesFor lo={first} replaces={mem.characterId} locale={locale} t={t} />}
-                </section>
-              </div>
+              {subs && <SubstitutePanels lo={first} replaces={mem.characterId} locale={locale} t={t} />}
+              <HideWhenSub prefix={`sub-${mem.characterId}-`}>
+                <div className="flex flex-wrap items-start gap-6">
+                  <section className="min-w-0 flex-[999_1_560px] overflow-hidden rounded-2xl border border-line bg-surface">
+                    <header className="flex flex-wrap items-center gap-3 border-b border-line px-4 py-4 sm:px-5">
+                      <Icon src={characterImage(mem.characterId)} />
+                      <h3 className="font-display text-lg font-semibold">
+                        <Link href={`/${locale}/characters/${mem.characterId}`} className="hover:underline">
+                          {name(c?.name, locale, mem.characterId)}
+                        </Link>
+                      </h3>
+                      <span className="ms-auto text-xs text-muted">{t("builds.dimHint")}</span>
+                      {pills[i] && <div className="w-full sm:hidden">{pills[i]}</div>}
+                    </header>
+                    <AwakenSwitch panels={memberPanels[i]} pick={memberPick[i]} />
+                  </section>
+                </div>
+              </HideWhenSub>
             </MemberPanel>
           );
         })}
