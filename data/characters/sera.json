@@ -1,7 +1,8 @@
 {
   "id": "sera",
   "name": {
-    "en": "Sera"
+    "en": "Sera",
+    "th": "เซร่า"
   },
   "rarity": 4,
   "element": "ice",
@@ -173,17 +174,20 @@
   "skills": {
     "basic": {
       "name": {
-        "en": "Arkarion: Bound"
+        "en": "Arkarion: Bound",
+        "th": "อาร์คาริออน: พันธนะ"
       },
       "desc": {
-        "en": "Sera deals Physical DMG by swinging Arkarion and gains Laxima Energy."
+        "en": "Sera deals Physical DMG by swinging Arkarion and gains Laxima Energy.",
+        "th": "แกว่งอาร์คาริออน สร้างดาเมจกายภาพและรับพลังงานลักษิมา"
       },
       "damageType": "physical",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "1st Hit DMG"
+            "en": "1st Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 1"
           },
           "unit": "percent",
           "scaling": [
@@ -208,7 +212,8 @@
         },
         {
           "label": {
-            "en": "2nd Hit DMG"
+            "en": "2nd Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 2"
           },
           "unit": "percent",
           "scaling": [
@@ -233,7 +238,8 @@
         },
         {
           "label": {
-            "en": "3rd Hit DMG"
+            "en": "3rd Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 3"
           },
           "unit": "percent",
           "scaling": [
@@ -258,7 +264,8 @@
         },
         {
           "label": {
-            "en": "4th Hit DMG"
+            "en": "4th Hit DMG",
+            "th": "ดาเมจโจมตี ขั้น 4"
           },
           "unit": "percent",
           "scaling": [
@@ -283,7 +290,8 @@
         },
         {
           "label": {
-            "en": "Charge Attack DMG"
+            "en": "Charge Attack DMG",
+            "th": "ดาเมจโจมตีชาร์จ"
           },
           "unit": "percent",
           "scaling": [
@@ -307,7 +315,8 @@
         },
         {
           "label": {
-            "en": "Air Counter DMG"
+            "en": "Air Counter DMG",
+            "th": "ดาเมจโจมตีฉับพลัน"
           },
           "unit": "percent",
           "scaling": [
@@ -331,7 +340,8 @@
         },
         {
           "label": {
-            "en": "Evasion Counter DMG"
+            "en": "Evasion Counter DMG",
+            "th": "ดาเมจหลบหลีกโต้กลับ"
           },
           "unit": "percent",
           "scaling": [
@@ -355,7 +365,8 @@
         },
         {
           "label": {
-            "en": "Laxima Energy Charge Ratio"
+            "en": "Laxima Energy Charge Ratio",
+            "th": "อัตราได้รับพลังงานลักษิมา"
           },
           "unit": "percent",
           "scaling": [
@@ -382,17 +393,20 @@
     },
     "switch": {
       "name": {
-        "en": "Arkarion: Restricted"
+        "en": "Arkarion: Restricted",
+        "th": "อาร์คาริออน: ควบคุม"
       },
       "desc": {
-        "en": "Sera deals Physical DMG by quickly approaching the enemy and swinging Arkarion, gaining Laxima Energy."
+        "en": "Sera deals Physical DMG by quickly approaching the enemy and swinging Arkarion, gaining Laxima Energy.",
+        "th": "พุ่งเข้าใส่ศัตรูอย่างรวดเร็วและแกว่งอาร์คาริออน สร้างดาเมจกายภาพและรับพลังงานลักษิมา"
       },
       "damageType": "physical",
       "effects": [],
       "values": [
         {
           "label": {
-            "en": "DMG"
+            "en": "DMG",
+            "th": "ดาเมจ"
           },
           "unit": "percent",
           "scaling": [
@@ -417,7 +431,8 @@
         },
         {
           "label": {
-            "en": "Laxima Energy Charge Ratio"
+            "en": "Laxima Energy Charge Ratio",
+            "th": "อัตราได้รับพลังงานลักษิมา"
           },
           "unit": "percent",
           "scaling": [
@@ -799,10 +814,12 @@
     },
     "elemental": {
       "name": {
-        "en": "Arkarion: Resonance"
+        "en": "Arkarion: Resonance",
+        "th": "อาร์คาริออน: ก้องกังวาน"
       },
       "desc": {
-        "en": "ATK increases by 7.1% upon switching to another teammate. (Duration: 15s)"
+        "en": "ATK increases by 7.1% upon switching to another teammate. (Duration: 15s)",
+        "th": "เมื่อเปลี่ยนเป็นสมาชิกทีมคนอื่น จะเพิ่มพลังโจมตี 7.1% (เวลาแสดงผล 15 วินาที)"
       },
       "effects": [
         {
@@ -846,8 +863,9 @@
     "gameVersion": "unknown",
     "by": "in-game",
     "readIn": [
-      "en"
+      "en",
+      "th"
     ],
-    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Fighter · Ice · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 1,964 · DEF 653 · HP 10,662 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,766 · DEF 580 · HP 9,272 · Crit 5% / 50%** — DEF 580 แบบ 4 ดาวตัวอื่น · HP 9,272 เท่า Daisy · **ATK 1,766 ยังไม่ซ้ำกับตัวไหน** | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Brawl DMG Boost 11.59% · Fighter 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · Ice DMG 1.3% ไม่เก็บ | **\"Special Skill Cooldown Reduction 4.5%\" ไม่เก็บ** — ตัวอื่นที่อ่านจาก Preview ไม่มีบรรทัดนี้ และ 4.5% ตรงกับปลุกพลังขั้น 5 ของหลายตัว (\"Special Skill's cooldown decreases by 4.5%\") น่าจะมาจากปลุกพลังของบัญชีนี้ — ยืนยันเมื่อเห็นจอปลุกพลัง | **เลเวลสกิลบนจอบัญชี: Basic Lv.7 (\"Level 3 +4\") · Switch / Ultimate Lv.5 · Special Lv.13 · Guidance of Ice Lv.3** — เก็บตามเลเวลบนจอ | Basic Arkarion: Bound (Physical · Lv.7 · แปดแถว) · Ultimate Arkarion Laxima: Unleashed (Lv.5 · 317.9% · Freeze 10 วินาที) · Effect Details: Ice Affliction · Freeze · ปุ่ม Effects ไม่มีคำอธิบาย Arkarion Unleashed (ยังไม่เห็น) | **2026-10-22 รอบสาม** Switch Arkarion: Restricted (Physical · Lv.5 · 102%) · Special Laxima: Sealed (**Lv.13 \"Level 9 +4\"** · 517.2% · คูลดาวน์ 14.9 วินาที) · Passive Lock Shard (คำอธิบายสี่ท่อน รวมหัวข้อ Laxima Unleashed / Arkarion Unleashed · Crit DMG +20% 7 วินาทีเมื่อตีศัตรูที่ติด Ice Affliction → effect onHit + triggerEnemyAffliction ice) | Arkarion Unleashed มีคำอธิบายใน Passive แล้ว (ไม่ทำเป็น statuses แยก) | **2026-10-22 รอบสี่** Guidance of Ice Arkarion: Resonance: **ค่า Lv.12 = 7.1% จากป๊อปอัป Skill Info (Lv. 3 >> Lv. 12)** จอหลัก Lv.3 = 6.2% · ATK +7.1% เมื่อสลับไปตัวอื่น → onSwitchOut แบบ Benjamin · ปลุกพลังขั้น 1–2 (บัญชีนี้ปลุกครบหกขั้น) | **2026-10-22 รอบห้า** ปลุกพลังขั้น 3–6 → ครบหกขั้น · **ยืนยันแล้ว: \"Special Skill Cooldown Reduction 4.5%\" ใน Detailed Stats มาจากปลุกพลังขั้น 3 ของ Sera (ไม่ใช่ขั้น 5 อย่างที่เดาไว้) — ไม่เก็บใน otherStats ถูกต้อง** | effects: ขั้น 5 Basic +6% · ขั้น 3 ลดคูลดาวน์ Special 4.5% เก็บเป็นข้อความ · ขั้นอื่นเก็บเป็นข้อความ · ขั้น 4 \"Skill DMG have\" ตามจอ | Effect Details ของ Passive = Ice Affliction ข้อความเดียวกับที่เก็บแล้ว (2026-10-22) — ไม่ต้องเพิ่ม | ยังไม่ได้อ่าน: ค่า Lv.12 ของ Basic / Switch / Ultimate · จอไทยทั้งหมด | **2026-10-31 ผู้เล่นสั่งไล่ใส่บัฟที่เป็นข้อความทั้งหมด** ใส่ effect จากข้อความ/ตารางบนจอเดิม (ไม่ได้อ่านจอใหม่): A2, A6, passive · \"X เท่า\" นับเป็น +100% ต่อเท่าตามที่ผู้เล่นยืนยันกับกาบี้ · ท่าที่ตีเพิ่ม/จำนวนครั้งเพิ่มใช้ bonusDmg · บัฟแปลงค่าใช้ condition.convertFrom"
+    "note": "อ่านจากจอ **ตัวละครของผู้เล่นเอง** ภาษาอังกฤษ 2026-10-22 (Info · Level Max) · **ยังไม่มีจอไทย** | Fighter · Ice · Melee · เลเวล 60 · **4 ดาว (ผู้เล่นบอก 2026-10-22)** | **ค่าพลังหักบัฟอาหารแล้ว** (ชุดเดียวกับตัวก่อนหน้า: HP +15% · ATK +11.25% · DEF +12.75% · Crit Rate +7.5% · Crit DMG +42.5%) | บนจอ: ATK 1,964 · DEF 653 · HP 10,662 · Crit 12.5% / 92.5% → floor(ฐาน × (1 + %)) ได้คำตอบเดียวทุกค่า: **ATK 1,766 · DEF 580 · HP 9,272 · Crit 5% / 50%** — DEF 580 แบบ 4 ดาวตัวอื่น · HP 9,272 เท่า Daisy · **ATK 1,766 ยังไม่ซ้ำกับตัวไหน** | คำแนะนำตัวละครเป็นคำบรรยาย ไม่เก็บ | รูป portrait ตัดจากจอนี้ 380x380 ขยายเป็น 400x400 | **2026-10-22 รอบสอง** Detailed Stats: Brawl DMG Boost 11.59% · Fighter 1,026 (แบบ 4 ดาว) · Elemental Weakness 150.5% − อาหาร 25.5% = **125%** · Ice DMG 1.3% ไม่เก็บ | **\"Special Skill Cooldown Reduction 4.5%\" ไม่เก็บ** — ตัวอื่นที่อ่านจาก Preview ไม่มีบรรทัดนี้ และ 4.5% ตรงกับปลุกพลังขั้น 5 ของหลายตัว (\"Special Skill's cooldown decreases by 4.5%\") น่าจะมาจากปลุกพลังของบัญชีนี้ — ยืนยันเมื่อเห็นจอปลุกพลัง | **เลเวลสกิลบนจอบัญชี: Basic Lv.7 (\"Level 3 +4\") · Switch / Ultimate Lv.5 · Special Lv.13 · Guidance of Ice Lv.3** — เก็บตามเลเวลบนจอ | Basic Arkarion: Bound (Physical · Lv.7 · แปดแถว) · Ultimate Arkarion Laxima: Unleashed (Lv.5 · 317.9% · Freeze 10 วินาที) · Effect Details: Ice Affliction · Freeze · ปุ่ม Effects ไม่มีคำอธิบาย Arkarion Unleashed (ยังไม่เห็น) | **2026-10-22 รอบสาม** Switch Arkarion: Restricted (Physical · Lv.5 · 102%) · Special Laxima: Sealed (**Lv.13 \"Level 9 +4\"** · 517.2% · คูลดาวน์ 14.9 วินาที) · Passive Lock Shard (คำอธิบายสี่ท่อน รวมหัวข้อ Laxima Unleashed / Arkarion Unleashed · Crit DMG +20% 7 วินาทีเมื่อตีศัตรูที่ติด Ice Affliction → effect onHit + triggerEnemyAffliction ice) | Arkarion Unleashed มีคำอธิบายใน Passive แล้ว (ไม่ทำเป็น statuses แยก) | **2026-10-22 รอบสี่** Guidance of Ice Arkarion: Resonance: **ค่า Lv.12 = 7.1% จากป๊อปอัป Skill Info (Lv. 3 >> Lv. 12)** จอหลัก Lv.3 = 6.2% · ATK +7.1% เมื่อสลับไปตัวอื่น → onSwitchOut แบบ Benjamin · ปลุกพลังขั้น 1–2 (บัญชีนี้ปลุกครบหกขั้น) | **2026-10-22 รอบห้า** ปลุกพลังขั้น 3–6 → ครบหกขั้น · **ยืนยันแล้ว: \"Special Skill Cooldown Reduction 4.5%\" ใน Detailed Stats มาจากปลุกพลังขั้น 3 ของ Sera (ไม่ใช่ขั้น 5 อย่างที่เดาไว้) — ไม่เก็บใน otherStats ถูกต้อง** | effects: ขั้น 5 Basic +6% · ขั้น 3 ลดคูลดาวน์ Special 4.5% เก็บเป็นข้อความ · ขั้นอื่นเก็บเป็นข้อความ · ขั้น 4 \"Skill DMG have\" ตามจอ | Effect Details ของ Passive = Ice Affliction ข้อความเดียวกับที่เก็บแล้ว (2026-10-22) — ไม่ต้องเพิ่ม | ยังไม่ได้อ่าน: ค่า Lv.12 ของ Basic / Switch / Ultimate · จอไทยทั้งหมด | **2026-10-31 ผู้เล่นสั่งไล่ใส่บัฟที่เป็นข้อความทั้งหมด** ใส่ effect จากข้อความ/ตารางบนจอเดิม (ไม่ได้อ่านจอใหม่): A2, A6, passive · \"X เท่า\" นับเป็น +100% ต่อเท่าตามที่ผู้เล่นยืนยันกับกาบี้ · ท่าที่ตีเพิ่ม/จำนวนครั้งเพิ่มใช้ bonusDmg · บัฟแปลงค่าใช้ condition.convertFrom | **2026-11-01 จอภาษาไทย** (ข้อมูล · โจมตีพื้นฐาน Lv.7 · การชี้นำ Lv.3 + ป๊อปอัป Lv.12 · สกิลสับเปลี่ยน Lv.5) ได้ชื่อไทย เซร่า · ชื่อ/คำอธิบาย/ชื่อแถวของโจมตีพื้นฐาน สกิลสับเปลี่ยน การชี้นำ · ตัวเลขทุกแถวตรงกับจออังกฤษ · การชี้นำใช้ Lv.12 7.1% อยู่แล้ว · จอข้อมูลเป็นค่าพลังที่ใส่ของแล้ว ไม่ได้ใช้ · ยังขาดจอไทยของสกิลพิเศษ อัลติเมต แพสซีฟ ปลุกพลัง 1–6 และสถานะ Ice Affliction / Freeze"
   }
 }
